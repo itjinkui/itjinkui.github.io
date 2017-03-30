@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://itjinkui.github.io/"/>
   <updated>2017-03-28T10:29:41.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://itjinkui.github.io/</id>
   
   <author>
     <name>千古不见一人闲</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/28/hello-world/"/>
-    <id>http://yoursite.com/2017/03/28/hello-world/</id>
+    <link href="http://itjinkui.github.io/2017/03/28/hello-world/"/>
+    <id>http://itjinkui.github.io/2017/03/28/hello-world/</id>
     <published>2017-03-28T10:29:41.000Z</published>
     <updated>2017-03-28T10:29:41.000Z</updated>
     
