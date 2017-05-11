@@ -1692,7 +1692,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7effe2;
+  background: #70e022;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2475,19 +2475,19 @@ pre .javascript .function {
   overflow: hidden;
 }
 .header {
+/*
   position: relative;
   margin: 0 auto;
-  width: 960px;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .header {
+  width: $main-desktop;
+
+  +tablet() {
     width: auto;
   }
-}
-@media (max-width: 767px) {
-  .header {
+  +mobile() {
     width: auto;
   }
+  */
+  width: 90%;
 }
 .header-inner {
   position: absolute;
@@ -2537,42 +2537,10 @@ pre .javascript .function {
   }
 }
 .container .main-inner {
-  width: 960px;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .container .main-inner {
-    width: auto;
-  }
-}
-@media (max-width: 767px) {
-  .container .main-inner {
-    width: auto;
-  }
+  width: 90%;
 }
 .content-wrap {
-  float: right;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 700px;
-  background: #fff;
-  min-height: 700px;
-  box-shadow: initial;
-  border-radius: initial;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .content-wrap {
-    width: 100%;
-    padding: 20px;
-    border-radius: initial;
-  }
-}
-@media (max-width: 767px) {
-  .content-wrap {
-    width: 100%;
-    padding: 20px;
-    min-height: auto;
-    border-radius: initial;
-  }
+  width: calc(100% - 260px);
 }
 .sidebar {
   position: static;
