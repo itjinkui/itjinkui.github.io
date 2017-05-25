@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-05-25T10:20:13.000Z</updated>
+  <updated>2017-05-25T10:24:25.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://itjinkui.github.io/2017/05/25/systemd/"/>
     <id>http://itjinkui.github.io/2017/05/25/systemd/</id>
     <published>2017-05-25T09:59:57.000Z</published>
-    <updated>2017-05-25T10:20:13.000Z</updated>
+    <updated>2017-05-25T10:24:25.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Systemd-入门教程：命令篇"><a href="#Systemd-入门教程：命令篇" class="headerlink" title="Systemd 入门教程：命令篇"></a>Systemd 入门教程：命令篇</h1><p>Systemd 是 Linux 系统工具，用来启动<a href="http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html" target="_blank" rel="external">守护进程</a>，已成为大多数发行版的标准配置。</p>
 <p>本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030701.gif" alt=""></p>
+<a id="more"></a>
 <h2 id="一、由来"><a href="#一、由来" class="headerlink" title="一、由来"></a>一、由来</h2><p>历史上，<a href="http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html" target="_blank" rel="external">Linux 的启动</a>一直采用<a href="https://en.wikipedia.org/wiki/Init" target="_blank" rel="external"><code>init</code></a>进程。</p>
 <p>下面的命令用来启动服务。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo /etc/init.d/apache2 start</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ service apache2 start</div></pre></td></tr></table></figure>
@@ -194,7 +194,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Systemd-入门教程：命令篇&quot;&gt;&lt;a href=&quot;#Systemd-入门教程：命令篇&quot; class=&quot;headerlink&quot; title=&quot;Systemd 入门教程：命令篇&quot;&gt;&lt;/a&gt;Systemd 入门教程：命令篇&lt;/h1&gt;&lt;p&gt;Systemd 是 Linu
+      &lt;h1 id=&quot;Systemd-入门教程：命令篇&quot;&gt;&lt;a href=&quot;#Systemd-入门教程：命令篇&quot; class=&quot;headerlink&quot; title=&quot;Systemd 入门教程：命令篇&quot;&gt;&lt;/a&gt;Systemd 入门教程：命令篇&lt;/h1&gt;&lt;p&gt;Systemd 是 Linux 系统工具，用来启动&lt;a href=&quot;http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html&quot;&gt;守护进程&lt;/a&gt;，已成为大多数发行版的标准配置。&lt;/p&gt;
+&lt;p&gt;本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。&lt;/p&gt;
     
     </summary>
     

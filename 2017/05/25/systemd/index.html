@@ -90,34 +90,21 @@
 
 
 <meta name="description" content="Systemd 入门教程：命令篇Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。
-本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。
-
-一、由来历史上，Linux 的启动一直采用init进程。
-下面的命令用来启动服务。
-123$ sudo /etc/init.d/apache2 start# 或者$ service apac">
+本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://itjinkui.github.io/2017/05/25/systemd/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="Systemd 入门教程：命令篇Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。
-本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。
-
-一、由来历史上，Linux 的启动一直采用init进程。
-下面的命令用来启动服务。
-123$ sudo /etc/init.d/apache2 start# 或者$ service apac">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030701.gif">
+本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030702.jpg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030703.png">
-<meta property="og:updated_time" content="2017-05-25T10:20:13.000Z">
+<meta property="og:updated_time" content="2017-05-25T10:24:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
 <meta name="twitter:description" content="Systemd 入门教程：命令篇Systemd 是 Linux 系统工具，用来启动守护进程，已成为大多数发行版的标准配置。
-本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。
-
-一、由来历史上，Linux 的启动一直采用init进程。
-下面的命令用来启动服务。
-123$ sudo /etc/init.d/apache2 start# 或者$ service apac">
-<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030701.gif">
+本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030702.jpg">
 
 
 
@@ -420,7 +407,7 @@
       
         <h1 id="Systemd-入门教程：命令篇"><a href="#Systemd-入门教程：命令篇" class="headerlink" title="Systemd 入门教程：命令篇"></a>Systemd 入门教程：命令篇</h1><p>Systemd 是 Linux 系统工具，用来启动<a href="http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html" target="_blank" rel="external">守护进程</a>，已成为大多数发行版的标准配置。</p>
 <p>本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030701.gif" alt=""></p>
+<a id="more"></a>
 <h2 id="一、由来"><a href="#一、由来" class="headerlink" title="一、由来"></a>一、由来</h2><p>历史上，<a href="http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html" target="_blank" rel="external">Linux 的启动</a>一直采用<a href="https://en.wikipedia.org/wiki/Init" target="_blank" rel="external"><code>init</code></a>进程。</p>
 <p>下面的命令用来启动服务。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo /etc/init.d/apache2 start</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ service apache2 start</div></pre></td></tr></table></figure>
