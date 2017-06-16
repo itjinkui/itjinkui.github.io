@@ -92,15 +92,15 @@
 <meta name="description" content="初始容器与Dockerhttps://docs.docker.com/engine/docker-overview/
 什么是DockerDocker开源项目背景Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docke">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker初探">
-<meta property="og:url" content="http://itjinkui.github.io/2017/06/16/docker-how-1/index.html">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://itjinkui.github.io/2017/06/16/docker-how/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="初始容器与Dockerhttps://docs.docker.com/engine/docker-overview/
 什么是DockerDocker开源项目背景Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docke">
 <meta property="og:image" content="http://itjinkui.github.io/VirtualBoxformac.png">
-<meta property="og:updated_time" content="2017-06-16T07:11:32.000Z">
+<meta property="og:updated_time" content="2017-06-16T05:51:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker初探">
+<meta name="twitter:title" content="Docker">
 <meta name="twitter:description" content="初始容器与Dockerhttps://docs.docker.com/engine/docker-overview/
 什么是DockerDocker开源项目背景Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docke">
 <meta name="twitter:image" content="http://itjinkui.github.io/VirtualBoxformac.png">
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://itjinkui.github.io/2017/06/16/docker-how-1/"/>
+  <link rel="canonical" href="http://itjinkui.github.io/2017/06/16/docker-how/"/>
 
 
 
 
 
-  <title> Docker初探 | 闻道 </title>
+  <title> Docker | 闻道 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -310,7 +310,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://itjinkui.github.io/2017/06/16/docker-how-1/">
+    <link itemprop="mainEntityOfPage" href="http://itjinkui.github.io/2017/06/16/docker-how/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="千古不见一人闲">
@@ -331,7 +331,7 @@
             
             
               
-                Docker初探
+                Docker
               
             
           </h1>
@@ -346,7 +346,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T14:59:19+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T13:37:20+08:00">
                 2017-06-16
               </time>
             
@@ -436,7 +436,7 @@
 <p>镜像是运行容器的前提，官方的Docker Hub网站已经提供了数十万个镜像供大家开放下载。<br>可以使用docker pull命令直接从Docker Hub镜像源来下载镜像。该命令的格式为docker pull NAME[：TAG]。其中，NAME是镜像仓库的名称（用来区分镜像），TAG是镜像的标签（往往用来表示版本信息）。通常情况下，描述一个镜像需要包括“名称+标签”信息。</p>
 <p>现在想要获得centos的Docker镜像，<br>1.docker search –no-trunc centos<br>2.docker pull  docker.io/jdeathe/centos-ssh</p>
 <h3 id="查看镜像信息"><a href="#查看镜像信息" class="headerlink" title="查看镜像信息"></a>查看镜像信息</h3><p>1.使用images命令列出镜像<br>2.使用tag命令添加镜像标签<br>3.使用inspect命令查看详细信息<br>4.使用history命令查看镜像历史(docker history –no-trunc centos-ssh)</p>
-<h3 id="搜寻镜像"><a href="#搜寻镜像" class="headerlink" title="搜寻镜像"></a>搜寻镜像</h3><p>使用docker search命令可以搜索远端仓库中共享的镜像，默认搜索官方仓库中的镜像。用法为docker search TERM，支持的参数主要包括：<br>·–automated=true|false：仅显示自动创建的镜像，默认为否；<br>·–no-trunc=true|false：输出信息不截断显示，默认为否；<br>·-s，–stars=X：指定仅显示评价为指定星级以上的镜像，默认为0，即输出所有镜像。</p>
+<h3 id="搜寻镜像"><a href="#搜寻镜像" class="headerlink" title="搜寻镜像"></a>搜寻镜像</h3><p>使用docker search命令可以搜索远端仓库中共享的镜像，默认搜索官方仓库中的镜像。用法为docker search TERM，支持的参数主要包括：<br>·–automated=true|false：仅显示自动创建的镜像，默认为否；<br>·–no-trunc=true|false：输出信息不截断显示，默认为否；<br>·–filter=stars=X：指定仅显示评价为指定星级以上的镜像，默认为0，即输出所有镜像。<br>例如：<br>$ docker search –filter=stars=3 ubuntu<br>$ docker search -f stars=25 centos</p>
 <h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><p>使用标签删除镜像<br>使用docker rmi命令可以删除镜像，命令格式为docker rmi IMAGE[IMAGE…]，其中IMAGE可以为标签或ID。</p>
 <h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>创建镜像的方法主要有三种：基于已有镜像的容器创建、基于本地模板导入、基于Dockerfile创建。<br>本节将重点介绍前两种方法。最后一种基于Dockerfile创建的方法将在后续章节专门予以详细介绍。</p>
 <h4 id="基于已有镜像的容器创建"><a href="#基于已有镜像的容器创建" class="headerlink" title="基于已有镜像的容器创建"></a>基于已有镜像的容器创建</h4><p>该方法主要是使用docker commit命令。命令格式为docker commit[OPTIONS]CONTAINER[REPOSITORY[：TAG]]，主要选项包括：<br>·-a，–author=””：作者信息；<br>·-c，–change=[]：提交的时候执行Dockerfile指令，包括CMD|ENTRYPOINT|ENV|EXPOSE|LABEL|ONBUILD|USER|VOLUME|WORKDIR等；<br>·-m，–message=””：提交消息；<br>·-p，–pause=true：提交时暂停容器运行。</p>
@@ -446,6 +446,12 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@centos-docker docker]<span class="comment"># docker load --input centos_7.tar.gz</span></div><div class="line">Loaded image: daocloud.io/centos:7</div></pre></td></tr></table></figure>
 <p>或者<br>$ docker load &lt; centos_7.tar.gz<br>这将导入镜像及其相关的元数据信息（包括标签等）。</p>
 <h3 id="创建-amp-启动一个容器："><a href="#创建-amp-启动一个容器：" class="headerlink" title="创建&amp;启动一个容器："></a>创建&amp;启动一个容器：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ docker run <span class="_">-d</span> -p 10022:22 -v /dfile/:/dfile/ -h <span class="string">"centos-d"</span> --name centos<span class="_">-d</span> centos-ssh /usr/sbin/sshd -D</div><div class="line"></div><div class="line">$ mount -t vboxsf docker_files /docker</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@centos<span class="_">-d</span> /]<span class="comment"># netstat -tunlp</span></div><div class="line">Active Internet connections (only servers)</div><div class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</div><div class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1/sshd</div><div class="line">tcp6       0      0 :::22                   :::*                    LISTEN      1/sshd</div></pre></td></tr></table></figure>
+<p>其中10022是宿主主机的端口，22是容器的SSH服务监听端口：<br>-p 10022:22<br>使用HostPort：ContainerPort格式将本地的10022端口映射到容器的22端口。</p>
+<p>在宿主主机或其他主机上，可以通过SSH访问10022端口来登录容器。</p>
+<p>使用docker inspect来查看容器的</p>
+<p>-v /dfile(主机):/dfile(容器):ro<br>上面的命令加载主机的/dfile目录到容器的/dfile目录。<br>ps：本地目录的路径必须是绝对路径，如果目录不存在，Docker会自动创建。</p>
+<p>Docker挂载数据卷的默认权限是读写（rw），用户也可以通过ro指定为只读。</p>
 <p>mount -t vboxsf the_share_name /a_folder_name<br>ps:VirtualBox与Mac共享文件夹为：docker_files<br><img src="VirtualBoxformac.png" alt="VirtualBoxformac"><br>ps: $ docker ps -a<br>查看容器。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@centos-docker docker]<span class="comment"># docker start centos-d</span></div><div class="line">centos<span class="_">-d</span></div><div class="line">[root@centos-docker docker]<span class="comment"># docker ps -a</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS                   PORTS                   NAMES</div><div class="line">db802d85c70f        centos-ssh          <span class="string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Exited (0) 3 weeks ago                           centos-ssh</div><div class="line">0ffb8ab3f777        centos-ssh          <span class="string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Up 12 seconds            0.0.0.0:10022-&gt;22/tcp   centos<span class="_">-d</span></div></pre></td></tr></table></figure>
 <p>$ docker-enter centos-d 进入容器。<br>可以按Ctrl+d或输入exit命令来退出容器，<br>通过exit命令或Ctrl+d来退出终端时，所创建的容器立刻终止，处于stopped状态。</p>
