@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-06-16T06:01:55.000Z</updated>
+  <updated>2017-06-16T06:05:20.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Docker</title>
-    <link href="http://itjinkui.github.io/2017/06/16/docker-how/"/>
-    <id>http://itjinkui.github.io/2017/06/16/docker-how/</id>
-    <published>2017-06-16T05:37:20.000Z</published>
-    <updated>2017-06-16T06:01:55.000Z</updated>
+    <link href="http://itjinkui.github.io/2017/06/16/docker-how-1/"/>
+    <id>http://itjinkui.github.io/2017/06/16/docker-how-1/</id>
+    <published>2017-06-16T06:04:53.000Z</published>
+    <updated>2017-06-16T06:05:20.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="初始容器与Docker"><a href="#初始容器与Docker" class="headerlink" title="初始容器与Docker"></a>初始容器与Docker</h1><p><a href="https://docs.docker.com/engine/docker-overview/" target="_blank" rel="external">https://docs.docker.com/engine/docker-overview/</a></p>
 <h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><h3 id="Docker开源项目背景"><a href="#Docker开源项目背景" class="headerlink" title="Docker开源项目背景"></a>Docker开源项目背景</h3><p>Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docker容器的生态体系。<br>由于Docker在业界造成的影响力实在太大，dotCloud公司后来也直接改名为Docker Inc，并专注于Docker相关技术和产品的开发。</p>
