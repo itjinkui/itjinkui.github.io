@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-06-19T07:24:25.000Z</updated>
+  <updated>2017-06-19T07:31:49.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://itjinkui.github.io/2017/06/16/docker-how-1/"/>
     <id>http://itjinkui.github.io/2017/06/16/docker-how-1/</id>
     <published>2017-06-16T06:04:53.000Z</published>
-    <updated>2017-06-19T07:24:25.000Z</updated>
+    <updated>2017-06-19T07:31:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="初始容器与Docker"><a href="#初始容器与Docker" class="headerlink" title="初始容器与Docker"></a>初始容器与Docker</h1><p><a href="https://docs.docker.com/engine/docker-overview/" target="_blank" rel="external">https://docs.docker.com/engine/docker-overview/</a></p>
 <h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><h3 id="Docker开源项目背景"><a href="#Docker开源项目背景" class="headerlink" title="Docker开源项目背景"></a>Docker开源项目背景</h3><p>Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docker容器的生态体系。<br>由于Docker在业界造成的影响力实在太大，dotCloud公司后来也直接改名为Docker Inc，并专注于Docker相关技术和产品的开发。</p>
@@ -92,7 +92,7 @@
 <h4 id="导出容器"><a href="#导出容器" class="headerlink" title="导出容器"></a>导出容器</h4><p>导出容器是指导出一个已经创建的容器到一个文件，不管此时这个容器是否处于运行状态，可以使用docker export命令，该命令的格式为docker export[-o|–output[=””]]CONTAINER。其中，可以通过-o选项来指定导出的tar文件名，也可以直接通过重定向来实现。<br>ps:实现容器的迁移</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@centos-docker docker]<span class="comment"># docker export -o test_centos-d.tar.gz centos-d</span></div><div class="line">[root@centos-docker docker]<span class="comment"># ls</span></div><div class="line">a.txt  b.txt  c.txt  epel-release-7-9.noarch.rpm  test_centos-d.tar.gz</div><div class="line">[root@centos-docker docker]<span class="comment"># docker export centos-d &gt;test2_centos-d.tar.gz</span></div><div class="line">[root@centos-docker docker]<span class="comment"># ls</span></div><div class="line">a.txt  b.txt  c.txt  epel-release-7-9.noarch.rpm  <span class="built_in">test</span>2_centos-d.tar.gz  test_centos-d.tar.gz</div></pre></td></tr></table></figure>
 <p>实际上，既可以使用docker load命令来导入镜像存储文件到本地镜像库，也可以使用docker import命令来导入一个容器快照到本地镜像库。<br>这两者的区别在于容器快照文件将丢弃所有的历史记录和元数据信息（即仅保存容器当时的快照状态），而镜像存储文件将保存完整记录，体积也更大。此外，从容器快照文件导入时可以重新指定标签等元数据信息。</p>
-<p>完）<br>参考资料：<a href="https://read.douban.com/reader/ebook/30546100/" target="_blank" rel="external">Docker技术入门与实践</a><br><a href="https://read.douban.com/reader/ebook/17825949/" target="_blank" rel="external">Docker进阶与实战</a> 作者：华为Docker实践小组</p>
+<p>参考在此：<a href="https://read.douban.com/reader/ebook/30546100/" target="_blank" rel="external">Docker技术入门与实践</a><br><a href="https://read.douban.com/reader/ebook/17825949/" target="_blank" rel="external">Docker进阶与实战</a> 作者：华为Docker实践小组</p>
 ]]></content>
     
     <summary type="html">
