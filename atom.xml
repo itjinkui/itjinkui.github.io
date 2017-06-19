@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-06-16T06:05:20.000Z</updated>
+  <updated>2017-06-19T07:24:25.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Docker</title>
+    <title>Docker初探</title>
     <link href="http://itjinkui.github.io/2017/06/16/docker-how-1/"/>
     <id>http://itjinkui.github.io/2017/06/16/docker-how-1/</id>
     <published>2017-06-16T06:04:53.000Z</published>
-    <updated>2017-06-16T06:05:20.000Z</updated>
+    <updated>2017-06-19T07:24:25.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="初始容器与Docker"><a href="#初始容器与Docker" class="headerlink" title="初始容器与Docker"></a>初始容器与Docker</h1><p><a href="https://docs.docker.com/engine/docker-overview/" target="_blank" rel="external">https://docs.docker.com/engine/docker-overview/</a></p>
 <h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><h3 id="Docker开源项目背景"><a href="#Docker开源项目背景" class="headerlink" title="Docker开源项目背景"></a>Docker开源项目背景</h3><p>Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docker容器的生态体系。<br>由于Docker在业界造成的影响力实在太大，dotCloud公司后来也直接改名为Docker Inc，并专注于Docker相关技术和产品的开发。</p>
@@ -115,7 +115,7 @@
     <link href="http://itjinkui.github.io/2017/05/25/systemd/"/>
     <id>http://itjinkui.github.io/2017/05/25/systemd/</id>
     <published>2017-05-25T09:59:57.000Z</published>
-    <updated>2017-05-26T05:53:35.000Z</updated>
+    <updated>2017-06-19T07:20:29.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Systemd-入门教程：命令篇"><a href="#Systemd-入门教程：命令篇" class="headerlink" title="Systemd 入门教程：命令篇"></a>Systemd 入门教程：命令篇</h1><p>Systemd 是 Linux 系统工具，用来启动<a href="http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html" target="_blank" rel="external">守护进程</a>，已成为大多数发行版的标准配置。</p>
 <p>本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。</p>
@@ -307,7 +307,7 @@
     <link href="http://itjinkui.github.io/2017/05/11/git-how/"/>
     <id>http://itjinkui.github.io/2017/05/11/git-how/</id>
     <published>2017-05-11T09:57:29.000Z</published>
-    <updated>2017-05-15T08:06:11.000Z</updated>
+    <updated>2017-06-19T07:21:07.000Z</updated>
     
     <content type="html"><![CDATA[<p>#Git 闲话</p>
 <blockquote>
