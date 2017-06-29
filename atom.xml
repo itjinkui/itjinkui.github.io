@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-06-19T07:31:49.000Z</updated>
+  <updated>2017-06-29T10:43:28.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</title>
+    <link href="http://itjinkui.github.io/2017/06/22/MySQL-how/"/>
+    <id>http://itjinkui.github.io/2017/06/22/MySQL-how/</id>
+    <published>2017-06-22T05:17:06.000Z</published>
+    <updated>2017-06-29T10:43:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
+<blockquote>
+<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1</p>
+</blockquote>
+<p><strong>homebrew 卸载</strong></p>
+<ul>
+<li><code>brew remove mysql@5.6</code></li>
+<li><code>brew cleanup</code></li>
+<li><code>launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</code><br>删除文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm <span class="_">-f</span> /etc/my.cnf</div><div class="line">sudo rm -rf /usr/<span class="built_in">local</span>/var/mysql</div><div class="line">sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><ul>
+<li><code>brew install mysql@5.6</code><h3 id="让-MySQL-开机自动启动，可以如下操作："><a href="#让-MySQL-开机自动启动，可以如下操作：" class="headerlink" title="让 MySQL 开机自动启动，可以如下操作："></a>让 MySQL 开机自动启动，可以如下操作：</h3></li>
+<li>ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents</li>
+<li>sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name “homebrew.mxcl.mysql@5.6.plist” -exec cp {} ~/Library/LaunchAgents/ \;</li>
+<li>launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3></li>
+<li>mysql_install_db –verbose –user=<code>whoami</code> –basedir=”/usr/local/Cellar/mysql@5.6/5.6.36_1” –datadir=/usr/local/var/mysql –tmpdir=/tmp</li>
+<li>cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;</li>
+</ul>
+<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># For advice on how to change settings please see</div><div class="line"># http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html</div><div class="line"></div><div class="line"></div><div class="line">[mysqld]</div><div class="line">port=3306</div><div class="line">datadir=/usr/local/var/mysql</div><div class="line"></div><div class="line"></div><div class="line"># Remove leading # and set to the amount of RAM for the most important data</div><div class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</div><div class="line"># innodb_buffer_pool_size = 128M</div><div class="line"></div><div class="line"># Remove leading # to turn on a very important data integrity option: logging</div><div class="line"># changes to the binary log between backups.</div><div class="line"># log_bin</div><div class="line"></div><div class="line"># These are commonly set, remove the # and set as required.</div><div class="line"># basedir = .....</div><div class="line"># datadir = .....</div><div class="line"># port = .....</div><div class="line"># server_id = .....</div><div class="line"># socket = .....</div><div class="line"></div><div class="line"># Remove leading # to set options mainly useful for reporting servers.</div></pre></td></tr></table></figure>
+<p>ok ,可以启动MySQL了。</p>
+<ul>
+<li>mysql.server start</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/etc mysql -u root -p</div><div class="line">Enter password:</div><div class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</div><div class="line">Your MySQL connection id is 395</div><div class="line">Server version: 5.6.36 Homebrew</div><div class="line"></div><div class="line">Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.</div><div class="line"></div><div class="line">Oracle is a registered trademark of Oracle Corporation and/or its</div><div class="line">affiliates. Other names may be trademarks of their respective</div><div class="line">owners.</div><div class="line"></div><div class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</div><div class="line"></div><div class="line">mysql&gt; show variables like <span class="string">'character%'</span>;</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| Variable_name            | Value                                                      |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| character_set_client     | utf8                                                       |</div><div class="line">| character_set_connection | utf8                                                       |</div><div class="line">| character_set_database   | utf8                                                       |</div><div class="line">| character_set_filesystem | binary                                                     |</div><div class="line">| character_set_results    | utf8                                                       |</div><div class="line">| character_set_server     | utf8                                                       |</div><div class="line">| character_set_system     | utf8                                                       |</div><div class="line">| character_sets_dir       | /usr/<span class="built_in">local</span>/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">8 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.04 sec)</div></pre></td></tr></table></figure>
+<p>看到utf8，编码就不会出问题了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mac上使用Homebrew进行MySQL卸载、安装，解决乱码&quot;&gt;&lt;a href=&quot;#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码&quot; class=&quot;headerlink&quot; title=&quot;Mac上使用Homebrew进行MySQL卸载、安装，解决乱
+    
+    </summary>
+    
+      <category term="Homebrew" scheme="http://itjinkui.github.io/categories/Homebrew/"/>
+    
+      <category term="MySQL" scheme="http://itjinkui.github.io/categories/Homebrew/MySQL/"/>
+    
+    
+      <category term="Homebrew" scheme="http://itjinkui.github.io/tags/Homebrew/"/>
+    
+      <category term="MySQL" scheme="http://itjinkui.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Docker初探</title>
     <link href="http://itjinkui.github.io/2017/06/16/docker-how-1/"/>
     <id>http://itjinkui.github.io/2017/06/16/docker-how-1/</id>
     <published>2017-06-16T06:04:53.000Z</published>
-    <updated>2017-06-19T07:31:49.000Z</updated>
+    <updated>2017-06-29T09:36:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="初始容器与Docker"><a href="#初始容器与Docker" class="headerlink" title="初始容器与Docker"></a>初始容器与Docker</h1><p><a href="https://docs.docker.com/engine/docker-overview/" target="_blank" rel="external">https://docs.docker.com/engine/docker-overview/</a></p>
 <h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><h3 id="Docker开源项目背景"><a href="#Docker开源项目背景" class="headerlink" title="Docker开源项目背景"></a>Docker开源项目背景</h3><p>Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docker容器的生态体系。<br>由于Docker在业界造成的影响力实在太大，dotCloud公司后来也直接改名为Docker Inc，并专注于Docker相关技术和产品的开发。</p>
@@ -54,7 +106,8 @@
 <p>镜像是运行容器的前提，官方的Docker Hub网站已经提供了数十万个镜像供大家开放下载。<br>可以使用docker pull命令直接从Docker Hub镜像源来下载镜像。该命令的格式为docker pull NAME[：TAG]。其中，NAME是镜像仓库的名称（用来区分镜像），TAG是镜像的标签（往往用来表示版本信息）。通常情况下，描述一个镜像需要包括“名称+标签”信息。</p>
 <p>现在想要获得centos的Docker镜像，<br>1.docker search –no-trunc centos<br>2.docker pull  docker.io/jdeathe/centos-ssh</p>
 <h3 id="查看镜像信息"><a href="#查看镜像信息" class="headerlink" title="查看镜像信息"></a>查看镜像信息</h3><p>1.使用images命令列出镜像<br>2.使用tag命令添加镜像标签<br>3.使用inspect命令查看详细信息<br>4.使用history命令查看镜像历史(docker history –no-trunc centos-ssh)</p>
-<h3 id="搜寻镜像"><a href="#搜寻镜像" class="headerlink" title="搜寻镜像"></a>搜寻镜像</h3><p>使用docker search命令可以搜索远端仓库中共享的镜像，默认搜索官方仓库中的镜像。用法为docker search TERM，支持的参数主要包括：<br>·–automated=true|false：仅显示自动创建的镜像，默认为否；<br>·–no-trunc=true|false：输出信息不截断显示，默认为否；<br>·–filter=stars=X：指定仅显示评价为指定星级以上的镜像，默认为0，即输出所有镜像。<br>例如：<br>$ docker search –filter=stars=3 ubuntu<br>$ docker search -f stars=25 centos</p>
+<h3 id="搜寻镜像"><a href="#搜寻镜像" class="headerlink" title="搜寻镜像"></a>搜寻镜像</h3><p>使用docker search命令可以搜索远端仓库中共享的镜像，默认搜索官方仓库中的镜像。用法为docker search TERM，支持的参数主要包括：<br>·–automated=true|false：仅显示自动创建的镜像，默认为否；<br>·–no-trunc=true|false：输出信息不截断显示，默认为否；<br>·–filter=stars=X：指定仅显示评价为指定星级以上的镜像，默认为0，即输出所有镜像。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker search --filter=stars=3 ubuntu</div><div class="line">$ docker search -f stars=25 centos</div></pre></td></tr></table></figure>
 <h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><p>使用标签删除镜像<br>使用docker rmi命令可以删除镜像，命令格式为docker rmi IMAGE[IMAGE…]，其中IMAGE可以为标签或ID。</p>
 <h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>创建镜像的方法主要有三种：基于已有镜像的容器创建、基于本地模板导入、基于Dockerfile创建。<br>本节将重点介绍前两种方法。最后一种基于Dockerfile创建的方法将在后续章节专门予以详细介绍。</p>
 <h4 id="基于已有镜像的容器创建"><a href="#基于已有镜像的容器创建" class="headerlink" title="基于已有镜像的容器创建"></a>基于已有镜像的容器创建</h4><p>该方法主要是使用docker commit命令。命令格式为docker commit[OPTIONS]CONTAINER[REPOSITORY[：TAG]]，主要选项包括：<br>·-a，–author=””：作者信息；<br>·-c，–change=[]：提交的时候执行Dockerfile指令，包括CMD|ENTRYPOINT|ENV|EXPOSE|LABEL|ONBUILD|USER|VOLUME|WORKDIR等；<br>·-m，–message=””：提交消息；<br>·-p，–pause=true：提交时暂停容器运行。</p>
@@ -71,8 +124,12 @@
 <p>-v /dfile(主机):/dfile(容器):ro<br>上面的命令加载主机的/dfile目录到容器的/dfile目录。<br>ps：本地目录的路径必须是绝对路径，如果目录不存在，Docker会自动创建。</p>
 <p>Docker挂载数据卷的默认权限是读写（rw），用户也可以通过ro指定为只读。</p>
 <p>mount -t vboxsf the_share_name /a_folder_name<br>ps:VirtualBox与Mac共享文件夹为：docker_files<br><img src="VirtualBoxformac.png" alt="VirtualBoxformac"><br>ps: $ docker ps -a<br>查看容器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@centos-docker docker]<span class="comment"># docker start centos-d</span></div><div class="line">centos<span class="_">-d</span></div><div class="line">[root@centos-docker docker]<span class="comment"># docker ps -a</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS                   PORTS                   NAMES</div><div class="line">db802d85c70f        centos-ssh          <span class="string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Exited (0) 3 weeks ago                           centos-ssh</div><div class="line">0ffb8ab3f777        centos-ssh          <span class="string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Up 12 seconds            0.0.0.0:10022-&gt;22/tcp   centos<span class="_">-d</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@centos-docker docker]<span class="comment"># docker start centos-d</span></div><div class="line">centos<span class="_">-d</span></div><div class="line">[root@centos-docker docker]<span class="comment"># docker ps -a</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS                   PORTS                   NAMES</div><div class="line">0ffb8ab3f777        centos-ssh          <span class="string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Up 12 seconds            0.0.0.0:10022-&gt;22/tcp   centos<span class="_">-d</span></div></pre></td></tr></table></figure>
 <p>$ docker-enter centos-d 进入容器。<br>可以按Ctrl+d或输入exit命令来退出容器，<br>通过exit命令或Ctrl+d来退出终端时，所创建的容器立刻终止，处于stopped状态。</p>
+<h4 id="利用ssh进入到docker中的centos里"><a href="#利用ssh进入到docker中的centos里" class="headerlink" title="利用ssh进入到docker中的centos里"></a>利用ssh进入到docker中的centos里</h4><p>然后 我们试着从宿主机直接进入到docker中的centos里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">~ ssh root@192.168.99.100 -p 10022</div><div class="line">root@192.168.99.100<span class="string">'s password:</span></div><div class="line">Last login: Thu Jun 29 09:03:57 2017 from 192.168.99.1</div><div class="line">[root@centos-d ~]#</div></pre></td></tr></table></figure>
+<p>避免了先进入虚拟机系统，然后再进入docker中的centos里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">~ ssh root@192.168.99.100 -p 22</div><div class="line">root@192.168.99.100<span class="string">'s password:</span></div><div class="line">Last login: Thu Jun 29 17:11:29 2017 from 192.168.99.1</div><div class="line">[root@centos-docker ~]# docker-enter centos-d</div><div class="line">Last login: Thu Jun 29 09:21:21 UTC 2017 from 192.168.99.1 on pts/0</div><div class="line">[root@centos-d ~]#</div></pre></td></tr></table></figure>
 <h4 id="create命令与容器运行模式相关的选项"><a href="#create命令与容器运行模式相关的选项" class="headerlink" title="create命令与容器运行模式相关的选项"></a>create命令与容器运行模式相关的选项</h4><p>-d, –detach=true|false (是否在后台运行容器，默认为否)<br>-P, –publish-all=true|false (通过NAT机制将容器标记暴露的端口自动映射到本地主机的临时端口)<br>-p, –publish=[] (指定如何映射到本地主机端口)<br>–rm=true|false （容器退出后是否自动删除，不能跟-d同时使用）<br>-i, –interactive=true|false (保持标准输入打开，默认为false)<br>-t, –tty=true|false (是否分配一个伪终端，默认是false)<br>–expose=[] (指定容器会暴露出来的端口或端口范围)<br>–group-add=[] (运行容器的用户组)<br>-v|–volume[=[[HOST-DIR:]CONTAINER-DIR[:OPTIONS]]] (挂载主机上的文件卷到容器内)<br>-w, –workdir=”” (容器内的默认工作目录)</p>
 <h4 id="create命令与容器环境和配置相关的选项"><a href="#create命令与容器环境和配置相关的选项" class="headerlink" title="create命令与容器环境和配置相关的选项"></a>create命令与容器环境和配置相关的选项</h4><p>–add-host=[] (在容器内添加一个主机名到IP地址的映射关系（通过/etc/hosts文件）)<br>-h, –hostname=”” (指定容器内的主机名)<br>–name=”” (指定容器的别名)</p>
 <h4 id="create命令与容器资源限制和安全保护相关的选项"><a href="#create命令与容器资源限制和安全保护相关的选项" class="headerlink" title="create命令与容器资源限制和安全保护相关的选项"></a>create命令与容器资源限制和安全保护相关的选项</h4><p>–privileged=true|false (是否给容器以高权限，这意味着容器内应用将不受权限下限制，一般不推荐)<br>–read-only=true|false (是否让容器内的文件系统只读)</p>
