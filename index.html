@@ -415,35 +415,16 @@
 
       
         
-          
-            <h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
+          <h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
 <blockquote>
-<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1</p>
-</blockquote>
-<p><strong>homebrew 卸载</strong></p>
-<ul>
-<li><code>brew remove mysql@5.6</code></li>
-<li><code>brew cleanup</code></li>
-<li><code>launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</code><br>删除文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rm <span class="_">-f</span> /etc/my.cnf</div><div class="line">sudo rm -rf /usr/<span class="built_in">local</span>/var/mysql</div><div class="line">sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><ul>
-<li><code>brew install mysql@5.6</code><h3 id="让-MySQL-开机自动启动，可以如下操作："><a href="#让-MySQL-开机自动启动，可以如下操作：" class="headerlink" title="让 MySQL 开机自动启动，可以如下操作："></a>让 MySQL 开机自动启动，可以如下操作：</h3></li>
-<li>ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents</li>
-<li>sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name “homebrew.mxcl.mysql@5.6.plist” -exec cp {} ~/Library/LaunchAgents/ \;</li>
-<li>launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3></li>
-<li>mysql_install_db –verbose –user=<code>whoami</code> –basedir=”/usr/local/Cellar/mysql@5.6/5.6.36_1” –datadir=/usr/local/var/mysql –tmpdir=/tmp</li>
-<li>cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;</li>
-</ul>
-<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># For advice on how to change settings please see</div><div class="line"># http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html</div><div class="line"></div><div class="line"></div><div class="line">[mysqld]</div><div class="line">port=3306</div><div class="line">datadir=/usr/local/var/mysql</div><div class="line"></div><div class="line"></div><div class="line"># Remove leading # and set to the amount of RAM for the most important data</div><div class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</div><div class="line"># innodb_buffer_pool_size = 128M</div><div class="line"></div><div class="line"># Remove leading # to turn on a very important data integrity option: logging</div><div class="line"># changes to the binary log between backups.</div><div class="line"># log_bin</div><div class="line"></div><div class="line"># These are commonly set, remove the # and set as required.</div><div class="line"># basedir = .....</div><div class="line"># datadir = .....</div><div class="line"># port = .....</div><div class="line"># server_id = .....</div><div class="line"># socket = .....</div><div class="line"></div><div class="line"># Remove leading # to set options mainly useful for reporting servers.</div></pre></td></tr></table></figure>
-<p>ok ,可以启动MySQL了。</p>
-<ul>
-<li>mysql.server start</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/etc mysql -u root -p</div><div class="line">Enter password:</div><div class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</div><div class="line">Your MySQL connection id is 395</div><div class="line">Server version: 5.6.36 Homebrew</div><div class="line"></div><div class="line">Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.</div><div class="line"></div><div class="line">Oracle is a registered trademark of Oracle Corporation and/or its</div><div class="line">affiliates. Other names may be trademarks of their respective</div><div class="line">owners.</div><div class="line"></div><div class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</div><div class="line"></div><div class="line">mysql&gt; show variables like <span class="string">'character%'</span>;</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| Variable_name            | Value                                                      |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| character_set_client     | utf8                                                       |</div><div class="line">| character_set_connection | utf8                                                       |</div><div class="line">| character_set_database   | utf8                                                       |</div><div class="line">| character_set_filesystem | binary                                                     |</div><div class="line">| character_set_results    | utf8                                                       |</div><div class="line">| character_set_server     | utf8                                                       |</div><div class="line">| character_set_system     | utf8                                                       |</div><div class="line">| character_sets_dir       | /usr/<span class="built_in">local</span>/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">8 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.04 sec)</div></pre></td></tr></table></figure>
-<p>看到utf8，编码就不会出问题了。</p>
-
-          
+<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/22/MySQL-how/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
