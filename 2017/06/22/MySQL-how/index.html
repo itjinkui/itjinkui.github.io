@@ -99,7 +99,7 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
 <meta property="og:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
 
 Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
-<meta property="og:updated_time" content="2017-06-29T10:49:57.000Z">
+<meta property="og:updated_time" content="2017-06-30T01:28:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码">
 <meta name="twitter:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
@@ -428,11 +428,11 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
 </ul>
 <h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><ul>
 <li><code>brew install mysql@5.6</code><h3 id="让-MySQL-开机自动启动，可以如下操作："><a href="#让-MySQL-开机自动启动，可以如下操作：" class="headerlink" title="让 MySQL 开机自动启动，可以如下操作："></a>让 MySQL 开机自动启动，可以如下操作：</h3></li>
-<li>ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents</li>
-<li>sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name “homebrew.mxcl.mysql@5.6.plist” -exec cp {} ~/Library/LaunchAgents/ \;</li>
-<li>launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3></li>
-<li>mysql_install_db –verbose –user=<code>whoami</code> –basedir=”/usr/local/Cellar/mysql@5.6/5.6.36_1” –datadir=/usr/local/var/mysql –tmpdir=/tmp</li>
-<li>cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;</li>
+<li><code>ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents</code></li>
+<li><code>sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name &quot;homebrew.mxcl.mysql@5.6.plist&quot; -exec cp {} ~/Library/LaunchAgents/ \;</code></li>
+<li><code>launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</code><h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3></li>
+<li><code>mysql_install_db --verbose --user=</code>whoami<code>--basedir=&quot;/usr/local/Cellar/mysql@5.6/5.6.36_1&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</code></li>
+<li><code>cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;</code></li>
 </ul>
 <h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># For advice on how to change settings please see</div><div class="line"># http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html</div><div class="line"></div><div class="line"></div><div class="line">[mysqld]</div><div class="line">port=3306</div><div class="line">datadir=/usr/local/var/mysql</div><div class="line"></div><div class="line"></div><div class="line"># Remove leading # and set to the amount of RAM for the most important data</div><div class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</div><div class="line"># innodb_buffer_pool_size = 128M</div><div class="line"></div><div class="line"># Remove leading # to turn on a very important data integrity option: logging</div><div class="line"># changes to the binary log between backups.</div><div class="line"># log_bin</div><div class="line"></div><div class="line"># These are commonly set, remove the # and set as required.</div><div class="line"># basedir = .....</div><div class="line"># datadir = .....</div><div class="line"># port = .....</div><div class="line"># server_id = .....</div><div class="line"># socket = .....</div><div class="line"></div><div class="line"># Remove leading # to set options mainly useful for reporting servers.</div></pre></td></tr></table></figure>
 <p>ok ,可以启动MySQL了。</p>
