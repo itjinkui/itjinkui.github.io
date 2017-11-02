@@ -90,25 +90,19 @@
 
 
 <meta name="description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
-进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
-线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java锁的种类">
 <meta property="og:url" content="http://itjinkui.github.io/2017/11/01/Java-lock/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
-进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
-线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
 <meta property="og:image" content="http://itjinkui.github.io/JVM运行时数据区.png">
-<meta property="og:updated_time" content="2017-11-02T05:49:12.000Z">
+<meta property="og:updated_time" content="2017-11-02T07:38:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java锁的种类">
 <meta name="twitter:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
-进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
-线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
 <meta name="twitter:image" content="http://itjinkui.github.io/JVM运行时数据区.png">
 
 
@@ -412,10 +406,9 @@
       
         <h1 id="Java锁的种类-完整列表"><a href="#Java锁的种类-完整列表" class="headerlink" title="Java锁的种类,完整列表"></a>Java锁的种类,完整列表</h1><p><a href="http://ifeve.com/java_lock_see/" target="_blank" rel="external">http://ifeve.com/java_lock_see/</a></p>
 <h2 id="什么是锁"><a href="#什么是锁" class="headerlink" title="什么是锁"></a>什么是锁</h2><h3 id="Java锁与Java内存管理"><a href="#Java锁与Java内存管理" class="headerlink" title="Java锁与Java内存管理"></a>Java锁与Java内存管理</h3><p>先来复习下进程与线程的概念：</p>
+<a id="more"></a>
 <p>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。</p>
 <p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源(如程序计数器，一组寄存器和栈)，但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</p>
-<a id="more"></a>
-<p>进程有一个独立的执行环境。进程通常有一个完整的、私人的基本运行时资源;特别是,每个进程都有其自己的内存空间。<br>进程往往被视为等同于程序或应用程序。然而,用户将看到一个单独的应用程序可能实际上是一组合作的进程。大多数操作系统都支持进程间通信( Inter Process Communication，简称 IPC)资源,如管道和套接字。IPC 不仅用于同个系统的进程之间的通信，也可以用在不同系统的进程。</p>
 <p>概念归类到此结束。</p>
 <p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
 <p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
@@ -424,6 +417,7 @@
 <p>CountDownLatch 允许一个或多个线程等待其他线程完成操作。<br>CyclicBarrier 让一组线程到达一个同步点后再一起继续运行，在其中任意一个线程未达到同步点，其他到达的线程均会被阻塞。</p>
 <h3 id="Semaphore（信号量）"><a href="#Semaphore（信号量）" class="headerlink" title="Semaphore（信号量）"></a>Semaphore（信号量）</h3><p>信号量(Semaphore)，有时被称为信号灯，是在多线程环境下使用的一种设施, 它负责协调各个线程, 以保证它们能够正确、合理的使用公共资源。</p>
 <p>一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个 acquire()，然后再获取该许可。<br>每个 release() 添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 控制并发线程数</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SemaphoreDemo</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 *执行任务类，获取信号量</div><div class="line">	 */</div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">SemaphoreRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line">		<span class="keyword">private</span> Semaphore semaphore;</div><div class="line">		<span class="keyword">private</span> <span class="keyword">int</span> user;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="title">SemaphoreRunnable</span><span class="params">(Semaphore semaphore, <span class="keyword">int</span> user)</span> </span>&#123;</div><div class="line">			<span class="keyword">this</span>.semaphore = semaphore;</div><div class="line">			<span class="keyword">this</span>.user = user;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="comment">//获取信号量许可</span></div><div class="line">				semaphore.acquire();</div><div class="line">				System.out.println(<span class="string">"用户【"</span> + user + <span class="string">"】进入窗口，准备买票..."</span>);</div><div class="line">				Thread.sleep((<span class="keyword">long</span>)(Math.random()*<span class="number">10000</span>));</div><div class="line">				System.out.println(<span class="string">"用户【"</span> + user + <span class="string">"】买票完成，即将离开..."</span>);</div><div class="line">				Thread.sleep((<span class="keyword">long</span>)(Math.random()*<span class="number">10000</span>));</div><div class="line">				System.out.println(<span class="string">"用户【"</span> + user + <span class="string">"】离开售票窗口..."</span>);</div><div class="line">				<span class="comment">//释放信号量许可</span></div><div class="line">				semaphore.release();</div><div class="line">			&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="comment">//定义窗口个数</span></div><div class="line">		<span class="keyword">final</span> Semaphore semaphore = <span class="keyword">new</span> Semaphore(<span class="number">3</span>);</div><div class="line">		<span class="comment">//线程池</span></div><div class="line">		ExecutorService threadPool = Executors.newCachedThreadPool();</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">			threadPool.execute(<span class="keyword">new</span> SemaphoreRunnable(semaphore,i + <span class="number">1</span>));</div><div class="line">		&#125;</div><div class="line">		threadPool.shutdown();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		SemaphoreDemo semaphoreDemo = <span class="keyword">new</span> SemaphoreDemo();</div><div class="line">		semaphoreDemo.execute();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p>源码注释：<br>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.<br>（一个或者多个线程，等待其他多个线程完成某件事情之后才能执行）</p>
 <blockquote>
 <ul>
