@@ -73,7 +73,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Homebrew,MySQL," />
+  <meta name="keywords" content="Java,Concurrent," />
 
 
 
@@ -89,22 +89,27 @@
 
 
 
-<meta name="description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
+<meta name="description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
+进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
+线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码">
-<meta property="og:url" content="http://itjinkui.github.io/2017/06/22/MySQL-how/index.html">
+<meta property="og:title" content="Java锁的种类">
+<meta property="og:url" content="http://itjinkui.github.io/2017/11/01/Java-lock/index.html">
 <meta property="og:site_name" content="闻道">
-<meta property="og:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
-<meta property="og:updated_time" content="2017-06-30T02:30:39.000Z">
+<meta property="og:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
+进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
+线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
+<meta property="og:image" content="http://itjinkui.github.io/JVM运行时数据区.png">
+<meta property="og:updated_time" content="2017-11-02T05:49:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码">
-<meta name="twitter:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
+<meta name="twitter:title" content="Java锁的种类">
+<meta name="twitter:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
+什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：
+进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。
+线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行">
+<meta name="twitter:image" content="http://itjinkui.github.io/JVM运行时数据区.png">
 
 
 
@@ -132,13 +137,13 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
 
 
 
-  <link rel="canonical" href="http://itjinkui.github.io/2017/06/22/MySQL-how/"/>
+  <link rel="canonical" href="http://itjinkui.github.io/2017/11/01/Java-lock/"/>
 
 
 
 
 
-  <title> Mac上使用Homebrew进行MySQL卸载、安装，解决乱码 | 闻道 </title>
+  <title> Java锁的种类 | 闻道 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -311,7 +316,7 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://itjinkui.github.io/2017/06/22/MySQL-how/">
+    <link itemprop="mainEntityOfPage" href="http://itjinkui.github.io/2017/11/01/Java-lock/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="千古不见一人闲">
@@ -332,7 +337,7 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
             
             
               
-                Mac上使用Homebrew进行MySQL卸载、安装，解决乱码
+                Java锁的种类
               
             
           </h1>
@@ -347,8 +352,8 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T13:17:06+08:00">
-                2017-06-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T14:49:18+08:00">
+                2017-11-01
               </time>
             
 
@@ -370,19 +375,8 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Homebrew/" itemprop="url" rel="index">
-                    <span itemprop="name">Homebrew</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Homebrew/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/Java-Concurrent/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Concurrent</span>
                   </a>
                 </span>
 
@@ -416,25 +410,40 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
       
 
       
-        <h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
+        <h1 id="Java锁的种类-完整列表"><a href="#Java锁的种类-完整列表" class="headerlink" title="Java锁的种类,完整列表"></a>Java锁的种类,完整列表</h1><p><a href="http://ifeve.com/java_lock_see/" target="_blank" rel="external">http://ifeve.com/java_lock_see/</a></p>
+<h2 id="什么是锁"><a href="#什么是锁" class="headerlink" title="什么是锁"></a>什么是锁</h2><h3 id="Java锁与Java内存管理"><a href="#Java锁与Java内存管理" class="headerlink" title="Java锁与Java内存管理"></a>Java锁与Java内存管理</h3><p>先来复习下进程与线程的概念：</p>
+<p>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。</p>
+<p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源(如程序计数器，一组寄存器和栈)，但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</p>
+<a id="more"></a>
+<p>进程有一个独立的执行环境。进程通常有一个完整的、私人的基本运行时资源;特别是,每个进程都有其自己的内存空间。<br>进程往往被视为等同于程序或应用程序。然而,用户将看到一个单独的应用程序可能实际上是一组合作的进程。大多数操作系统都支持进程间通信( Inter Process Communication，简称 IPC)资源,如管道和套接字。IPC 不仅用于同个系统的进程之间的通信，也可以用在不同系统的进程。</p>
+<p>概念归类到此结束。</p>
+<p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
+<p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
+<h3 id="Java对象锁"><a href="#Java对象锁" class="headerlink" title="Java对象锁"></a>Java对象锁</h3><p>1.类锁：在代码中的方法上加了static和synchronized的锁，或者synchronized(xxx.class）的代码段<br>2.对象锁：在代码中的方法上加了synchronized的锁，或者synchronized(this）的代码段<br>3.私有锁：在类内部声明一个私有属性如private Object lock，在需要加锁的代码段synchronized(lock）</p>
+<h2 id="并发工具类"><a href="#并发工具类" class="headerlink" title="并发工具类"></a>并发工具类</h2><p>CountDownLatch和CyclicBarrier是jdk concurrent包下非常有用的两个并发工具类，它们提供了一种控制并发流程的手段。</p>
+<p>CountDownLatch 允许一个或多个线程等待其他线程完成操作。<br>CyclicBarrier 让一组线程到达一个同步点后再一起继续运行，在其中任意一个线程未达到同步点，其他到达的线程均会被阻塞。</p>
+<h3 id="Semaphore（信号量）"><a href="#Semaphore（信号量）" class="headerlink" title="Semaphore（信号量）"></a>Semaphore（信号量）</h3><p>信号量(Semaphore)，有时被称为信号灯，是在多线程环境下使用的一种设施, 它负责协调各个线程, 以保证它们能够正确、合理的使用公共资源。</p>
+<p>一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个 acquire()，然后再获取该许可。<br>每个 release() 添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</p>
+<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p>源码注释：<br>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.<br>（一个或者多个线程，等待其他多个线程完成某件事情之后才能执行）</p>
 <blockquote>
-<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1<br><a id="more"></a><br><strong>homebrew 卸载</strong></p>
+<ul>
+<li>CountDownLatch声明： </li>
+<li>CountDownLatch的构造函数接受int型参数作为它的计数器，如果想等待N个点完成，就传入N；</li>
+<li>调用CountDownLatch的countDown方法时，N会减1，CountDownLatch的await方法会阻塞主线程直到N减少到0。</li>
+</ul>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ brew remove mysql@5.6</div><div class="line">$ brew cleanup</div><div class="line">$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</div></pre></td></tr></table></figure>
-<p><strong>删除文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo rm <span class="_">-f</span> /etc/my.cnf</div><div class="line">$ sudo rm -rf /usr/<span class="built_in">local</span>/var/mysql</div><div class="line">$ sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</div></pre></td></tr></table></figure>
-<h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><p>$ brew install mysql@5.6</p>
-<h3 id="让-MySQL-开机自行启动"><a href="#让-MySQL-开机自行启动" class="headerlink" title="让 MySQL 开机自行启动"></a>让 MySQL 开机自行启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ln -sfv /usr/<span class="built_in">local</span>/opt/mysql@5.6/*.plist ~/Library/LaunchAgents</div><div class="line">$ sudo find /usr/<span class="built_in">local</span>/Cellar/mysql@5.6/5.6.36_1/ -name <span class="string">"homebrew.mxcl.mysql@5.6.plist"</span> -exec cp &#123;&#125; ~/Library/LaunchAgents/ \;</div><div class="line">$ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist</div></pre></td></tr></table></figure>
-<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mysql_install_db --verbose --user=`whoami` --basedir=<span class="string">"/usr/local/Cellar/mysql@5.6/5.6.36_1"</span> --datadir=/usr/<span class="built_in">local</span>/var/mysql --tmpdir=/tmp</div><div class="line">$ <span class="built_in">cd</span> . ; /usr/<span class="built_in">local</span>/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;</div></pre></td></tr></table></figure>
-<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># For advice on how to change settings please see</div><div class="line"># http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html</div><div class="line"></div><div class="line"></div><div class="line">[mysqld]</div><div class="line">port=3306</div><div class="line">datadir=/usr/local/var/mysql</div><div class="line"></div><div class="line"></div><div class="line"># Remove leading # and set to the amount of RAM for the most important data</div><div class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</div><div class="line"># innodb_buffer_pool_size = 128M</div><div class="line"></div><div class="line"># Remove leading # to turn on a very important data integrity option: logging</div><div class="line"># changes to the binary log between backups.</div><div class="line"># log_bin</div><div class="line"></div><div class="line"># These are commonly set, remove the # and set as required.</div><div class="line"># basedir = .....</div><div class="line"># datadir = .....</div><div class="line"># port = .....</div><div class="line"># server_id = .....</div><div class="line"># socket = .....</div><div class="line"></div><div class="line"># Remove leading # to set options mainly useful for reporting servers.</div></pre></td></tr></table></figure>
-<h3 id="将mysql加入系统环境变量"><a href="#将mysql加入系统环境变量" class="headerlink" title="将mysql加入系统环境变量"></a>将mysql加入系统环境变量</h3><p>执行vim ~/.bash_profile<br>在该文件中添加如下语句，完成后，按esc，然后输入wq保存。<br>export PATH=/usr/local/opt/mysql@5.6/bin:$PATH<br>最后在命令行输入source ~/.bash_profile</p>
-<p>ok ,可以启动MySQL了。<br>$ mysql.server start<br>权限配置参见官网：<br><a href="https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html</a></p>
-<h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>默认是没有密码的，进去mysql后，执行语句：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; <span class="built_in">set</span> password <span class="keyword">for</span> <span class="string">'root'</span>@<span class="string">'localhost'</span>=password(<span class="string">'root'</span>);</div><div class="line">Query OK, 0 rows affected (0.01 sec)</div></pre></td></tr></table></figure>
-<p>接下来使用密码登录MySQL：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$ mysql -uroot -p</div><div class="line">Enter password:</div><div class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</div><div class="line">Your MySQL connection id is 395</div><div class="line">Server version: 5.6.36 Homebrew</div><div class="line"></div><div class="line">Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.</div><div class="line"></div><div class="line">Oracle is a registered trademark of Oracle Corporation and/or its</div><div class="line">affiliates. Other names may be trademarks of their respective</div><div class="line">owners.</div><div class="line"></div><div class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</div><div class="line"></div><div class="line">mysql&gt; show variables like <span class="string">'character%'</span>;</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| Variable_name            | Value                                                      |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">| character_set_client     | utf8                                                       |</div><div class="line">| character_set_connection | utf8                                                       |</div><div class="line">| character_set_database   | utf8                                                       |</div><div class="line">| character_set_filesystem | binary                                                     |</div><div class="line">| character_set_results    | utf8                                                       |</div><div class="line">| character_set_server     | utf8                                                       |</div><div class="line">| character_set_system     | utf8                                                       |</div><div class="line">| character_sets_dir       | /usr/<span class="built_in">local</span>/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ |</div><div class="line">+--------------------------+------------------------------------------------------------+</div><div class="line">8 rows <span class="keyword">in</span> <span class="built_in">set</span> (0.04 sec)</div></pre></td></tr></table></figure>
-<p>看到utf8，编码就不会出问题了。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>之所以写这篇，原因是从Windows转到Mac环境搞开发，碰到了乱码问题，各种配置都试了也没解决。卸载重装妥妥的。</p>
+<p>网上有个经典例子，在此抄录一下帮助理解记忆。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * F1赛车每次进站后，车队技师都需要在尽可能短的时间内对赛车做三个工作：加注燃油、更换轮胎、更换刹车片。</div><div class="line"> * 当然，这三项工作都是同时进行的。只有当这三项工作完成，赛车才能驶出维修站。</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CountdownlatchDemo</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Mechanician</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line">        String work;</div><div class="line">        CountDownLatch cDownLatch ;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Mechanician</span><span class="params">(String work,CountDownLatch cDownLatch)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.work = work;</div><div class="line">            <span class="keyword">this</span>.cDownLatch = cDownLatch;</div><div class="line">        &#125;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">int</span> random=<span class="keyword">new</span> Random().nextInt(<span class="number">7</span>);</div><div class="line">                TimeUnit.SECONDS.sleep(random);</div><div class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">"--- "</span>+work+<span class="string">" 完成，此组耗时："</span>+random+<span class="string">"秒"</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;<span class="keyword">finally</span>&#123;</div><div class="line">                <span class="comment">/*当前技师的任务完成,cDownLatch计算器减1</span></div><div class="line">                 *通常countDown放在finally里中使用*/</div><div class="line">                cDownLatch.countDown();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		CountDownLatch cDownLatch=<span class="keyword">new</span> CountDownLatch(<span class="number">3</span>);<span class="comment">//初始计数器值为3，对应3个维修组</span></div><div class="line">		 <span class="comment">/*1、赛车进站*/</span></div><div class="line">        System.out.println(<span class="string">"F1赛车进站，时间："</span>+Calendar.getInstance().get(Calendar.SECOND));</div><div class="line">        </div><div class="line">        List&lt;Mechanician&gt; mechanician_team=<span class="keyword">new</span> ArrayList&lt;Mechanician&gt;();</div><div class="line">        mechanician_team.add(<span class="keyword">new</span> Mechanician(<span class="string">"加注燃油"</span>, cDownLatch));</div><div class="line">        mechanician_team.add(<span class="keyword">new</span> Mechanician(<span class="string">"更换轮胎"</span>, cDownLatch));</div><div class="line">        mechanician_team.add(<span class="keyword">new</span> Mechanician(<span class="string">"更换刹车片"</span>, cDownLatch));</div><div class="line">        <span class="keyword">for</span>(Mechanician mechanician : mechanician_team)&#123;</div><div class="line">            <span class="keyword">new</span> Thread(mechanician).start();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">/*3、等待技师完成三项工作。实际就是等待cDownLatch计数器变成0*/</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">			cDownLatch.await();</div><div class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line"></div><div class="line">        <span class="comment">/*4、完成维护，出发*/</span></div><div class="line">        System.out.println(<span class="string">"F1赛车维修完毕，出发！时间："</span>+Calendar.getInstance().get(Calendar.SECOND));</div><div class="line">        </div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Countdownlatch 是一个倒计数器锁。调用CountDownLatch对象的await()方法使线程处于等待状态，调用countDown()方法的线程会将计数器减1，当计数到达0时，所有等待线程（可多个，但通常的应用场景中只有一个等待者）开始继续执行。</p>
+<h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>源码注释：<br>A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.（多个线程互相等待，直到到达同一个同步点，再继续一起执行）</p>
+<blockquote>
+<ul>
+<li>CyclicBarrier(int parties) 默认构造方法，参数表示拦截的线程数量。</li>
+<li>CyclicBarrier(int parties, Runnable barrierAction)<br>由于线程之前的调度是由CPU决定的，所以默认的构造方法无法设置线程执行优先级，CyclicBarrier提供一个更高级的构造函数(int parties, Runnable barrierAction)，用于在线程到达同步点时，优先执行线程barrierAction，这样可以更加方便的处理一些复杂的业务场景。</li>
+<li>创建CyclicBarrier后，每个线程调用await方法告诉CyclicBarrier自己已经到达同步点，然后当前线程被阻塞。</li>
+</ul>
+</blockquote>
+<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="http://lovestblog.cn/blog/2015/10/21/deadlock/" target="_blank" rel="external">消失的死锁</a> 作者：你假笨@JVM<br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
 
       
     </div>
@@ -464,9 +473,9 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
       
         <div class="post-tags">
           
-            <a href="/tags/Homebrew/" rel="tag"># Homebrew</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Concurrent/" rel="tag"># Concurrent</a>
           
         </div>
       
@@ -479,8 +488,8 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/16/docker-how-1/" rel="next" title="Docker初探">
-                <i class="fa fa-chevron-left"></i> Docker初探
+              <a href="/2017/10/23/Excel-poi-how/" rel="next" title="poi实现Excel文件导入、导出">
+                <i class="fa fa-chevron-left"></i> poi实现Excel文件导入、导出
               </a>
             
           </div>
@@ -488,10 +497,6 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/itext-how/" rel="prev" title="itext实现录取通知书、成绩单">
-                itext实现录取通知书、成绩单 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -633,7 +638,7 @@ Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><span class="nav-number">1.</span> <span class="nav-text">Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac上使用Homebrew进行MySQL卸载"><span class="nav-number">1.1.</span> <span class="nav-text">Mac上使用Homebrew进行MySQL卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac上使用Homebrew安装MySQL"><span class="nav-number">1.2.</span> <span class="nav-text">Mac上使用Homebrew安装MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让-MySQL-开机自行启动"><span class="nav-number">1.2.1.</span> <span class="nav-text">让 MySQL 开机自行启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定MySQL数据存放路径"><span class="nav-number">1.2.2.</span> <span class="nav-text">指定MySQL数据存放路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">配置MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><span class="nav-number">1.3.1.</span> <span class="nav-text">修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将mysql加入系统环境变量"><span class="nav-number">1.3.2.</span> <span class="nav-text">将mysql加入系统环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置密码"><span class="nav-number">1.3.3.</span> <span class="nav-text">设置密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">1.4.</span> <span class="nav-text">结语</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java锁的种类-完整列表"><span class="nav-number">1.</span> <span class="nav-text">Java锁的种类,完整列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是锁"><span class="nav-number">1.1.</span> <span class="nav-text">什么是锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java锁与Java内存管理"><span class="nav-number">1.1.1.</span> <span class="nav-text">Java锁与Java内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java对象锁"><span class="nav-number">1.1.2.</span> <span class="nav-text">Java对象锁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发工具类"><span class="nav-number">1.2.</span> <span class="nav-text">并发工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Semaphore（信号量）"><span class="nav-number">1.2.1.</span> <span class="nav-text">Semaphore（信号量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CountDownLatch"><span class="nav-number">1.2.2.</span> <span class="nav-text">CountDownLatch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CyclicBarrier"><span class="nav-number">1.2.3.</span> <span class="nav-text">CyclicBarrier</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
