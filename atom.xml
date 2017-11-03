@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-11-03T06:48:40.000Z</updated>
+  <updated>2017-11-03T06:53:23.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://itjinkui.github.io/2017/11/03/happens-before/"/>
     <id>http://itjinkui.github.io/2017/11/03/happens-before/</id>
     <published>2017-11-03T05:28:14.000Z</published>
-    <updated>2017-11-03T06:48:40.000Z</updated>
+    <updated>2017-11-03T06:53:23.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Java内存模型之happens-before"><a href="#Java内存模型之happens-before" class="headerlink" title="Java内存模型之happens-before"></a>Java内存模型之happens-before</h1><p>从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。</p>
 <p><strong>在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。</strong></p>
@@ -30,14 +30,10 @@
 <p>下面是Java内存模型下一些“天然的“先行发生关系，可以再编码中直接使用。如果两个操作之间的关系不在此列，并且无法从下列规则推导出来的话，虚拟机可以对它们随意地进行重排序。</p>
 <p>（摘自《深入理解Java虚拟机第12章》）：</p>
 <ul>
-<li><p>程序次序规则（Program Order Rule）：在一个线程内，按照程序代码顺序，书写在前面的操作先行发生于书写在后面的操作。准确地说，应该是控制流顺序而不是程序代码顺序，因为要考虑分支、循环等结构。</p>
-</li>
-<li><p>锁定规则（Monitor Lock Rule）：一个unlock操作先行发生与后面同一个锁的lock操作。这里必须强调的是同一个锁，而”后面“是指时间上的先后顺序。</p>
-</li>
-<li><p>volatile变量规则（Volatile Variable Rule）：这是一条比较重要的规则，它标志着volatile保证了线程可见性。通俗点讲就是如果一个线程先去写一个volatile变量，然后一个线程去读这个变量，那么这个写操作一定是happens-before读操作的。</p>
-</li>
-<li><p>线程启动规则（Thread Start Rule）：Thread 对象的start()方法先行发生与此线程的每一个动作。</p>
-</li>
+<li>程序次序规则（Program Order Rule）：在一个线程内，按照程序代码顺序，书写在前面的操作先行发生于书写在后面的操作。准确地说，应该是控制流顺序而不是程序代码顺序，因为要考虑分支、循环等结构。</li>
+<li>锁定规则（Monitor Lock Rule）：一个unlock操作先行发生与后面同一个锁的lock操作。这里必须强调的是同一个锁，而”后面“是指时间上的先后顺序。</li>
+<li>volatile变量规则（Volatile Variable Rule）：这是一条比较重要的规则，它标志着volatile保证了线程可见性。通俗点讲就是如果一个线程先去写一个volatile变量，然后一个线程去读这个变量，那么这个写操作一定是happens-before读操作的。</li>
+<li>线程启动规则（Thread Start Rule）：Thread 对象的start()方法先行发生与此线程的每一个动作。</li>
 <li>线程终止规则（Thread Termination Rule）：线程中的所有操作都先行发生与对此线程的终止检测，我们可以通过Thread.join()方法结束、Thread.isAlive()的返回值等手段检测到线程已经终止执行。</li>
 <li>线程中断原则（Thread Interruption Rule）：对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生，可以通过Thread.interrupted()方法检测到是否有中段发生。</li>
 <li>对象终结规则（Finalizer Rule）：一个对象的初始化完成（构造函数执行结束）先行发生与它的finalize()方法的开始。</li>
