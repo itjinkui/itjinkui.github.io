@@ -73,7 +73,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,JMM," />
+  <meta name="keywords" content="Java,Java内存模型," />
 
 
 
@@ -91,23 +91,20 @@
 
 <meta name="description" content="Java内存模型之happens-before从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。
 在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。
-happens-before原则定义如下：
-1. 如果一个操作happens-before另一个操作，那么第一个操作的执行">
+happens-before原则定义如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java内存模型之happens-before">
 <meta property="og:url" content="http://itjinkui.github.io/2017/11/03/happens-before/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="Java内存模型之happens-before从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。
 在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。
-happens-before原则定义如下：
-1. 如果一个操作happens-before另一个操作，那么第一个操作的执行">
-<meta property="og:updated_time" content="2017-11-03T06:43:09.000Z">
+happens-before原则定义如下：">
+<meta property="og:updated_time" content="2017-11-03T06:48:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java内存模型之happens-before">
 <meta name="twitter:description" content="Java内存模型之happens-before从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。
 在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。
-happens-before原则定义如下：
-1. 如果一个操作happens-before另一个操作，那么第一个操作的执行">
+happens-before原则定义如下：">
 
 
 
@@ -411,6 +408,7 @@ happens-before原则定义如下：
         <h1 id="Java内存模型之happens-before"><a href="#Java内存模型之happens-before" class="headerlink" title="Java内存模型之happens-before"></a>Java内存模型之happens-before</h1><p>从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。</p>
 <p><strong>在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。</strong></p>
 <p>happens-before原则定义如下：</p>
+<a id="more"></a>
 <p><strong>1. 如果一个操作happens-before另一个操作，那么第一个操作的执行结果将对第二个操作可见，而且第一个操作的执行顺序排在第二个操作之前。</strong><br><strong>2. 两个操作之间存在happens-before关系，并不意味着一定要按照happens-before原则制定的顺序来执行。如果重排序之后的执行结果与按照happens-before关系来执行的结果一致，那么这种重排序并不非法。</strong></p>
 <p>下面是Java内存模型下一些“天然的“先行发生关系，可以再编码中直接使用。如果两个操作之间的关系不在此列，并且无法从下列规则推导出来的话，虚拟机可以对它们随意地进行重排序。</p>
 <p>（摘自《深入理解Java虚拟机第12章》）：</p>
@@ -469,7 +467,7 @@ happens-before原则定义如下：
           
             <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/JMM/" rel="tag"># JMM</a>
+            <a href="/tags/Java内存模型/" rel="tag"># Java内存模型</a>
           
         </div>
       
