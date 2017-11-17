@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://itjinkui.github.io/2017/11/17/jvm-tool/</loc>
+    
+    <lastmod>2017-11-17T08:37:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://itjinkui.github.io/2017/11/03/happens-before/</loc>
     
     <lastmod>2017-11-03T06:53:23.000Z</lastmod>
