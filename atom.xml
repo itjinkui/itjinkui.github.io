@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-11-17T08:37:04.000Z</updated>
+  <updated>2017-11-17T08:51:09.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -20,15 +20,39 @@
     <link href="http://itjinkui.github.io/2017/11/17/jvm-tool/"/>
     <id>http://itjinkui.github.io/2017/11/17/jvm-tool/</id>
     <published>2017-11-17T06:52:55.000Z</published>
-    <updated>2017-11-17T08:37:04.000Z</updated>
+    <updated>2017-11-17T08:51:09.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="jvm调优工具"><a href="#jvm调优工具" class="headerlink" title="jvm调优工具"></a>jvm调优工具</h1><h3 id="jdk的命令行工具"><a href="#jdk的命令行工具" class="headerlink" title="jdk的命令行工具"></a>jdk的命令行工具</h3><p>1.jps：虚拟机进程状况工具（jps -l）<br>2.jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）<br>    （Local Virtual Machine Identifier,LVMID）<br>3.jinfo：Java配置信息工具<br>    1）jinfo -flag +PrintGCDetails VMID<br>    2）jinfo -flag +PrintGC VMID<br>    3) jinfo -flag +PrintGCTimeStamps VMID<br>以上就可以在一个正在运行的JVM中动态开启GC日志功能。<br>4.jmap：Java内存映像工具<br>    1）jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。<br>5.jhat：虚拟机堆转储快照分析工具<br>6.jstack：Java堆栈跟踪工具<br>    1）jstack -l VMID</p>
+    <content type="html"><![CDATA[<h1 id="jvm调优工具"><a href="#jvm调优工具" class="headerlink" title="jvm调优工具"></a>jvm调优工具</h1><h2 id="jdk的命令行工具"><a href="#jdk的命令行工具" class="headerlink" title="jdk的命令行工具"></a>jdk的命令行工具</h2><ol>
+<li><p>jps：虚拟机进程状况工具（jps -l）</p>
+</li>
+<li><p>jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  </p>
+</li>
+<li><p>jinfo：Java配置信息工具</p>
+<ul>
+<li>jinfo -flag +PrintGCDetails VMID</li>
+<li>jinfo -flag +PrintGC VMID</li>
+<li>jinfo -flag +PrintGCTimeStamps VMID<br>以上就可以在一个正在运行的JVM中动态开启GC日志功能。</li>
+</ul>
+</li>
+<li><p>jmap：Java内存映像工具</p>
+<ul>
+<li>jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。</li>
+</ul>
+</li>
+<li><p>jhat：虚拟机堆转储快照分析工具</p>
+</li>
+<li><p>jstack：Java堆栈跟踪工具</p>
+<ul>
+<li>jstack -l VMID</li>
+</ul>
+</li>
+</ol>
 <a id="more"></a>
-<h3 id="jdk的可视化工具"><a href="#jdk的可视化工具" class="headerlink" title="jdk的可视化工具"></a>jdk的可视化工具</h3><h4 id="jconsole"><a href="#jconsole" class="headerlink" title="jconsole"></a>jconsole</h4><p>JDK中自带的java监控和管理控制台，用于对JVM中内存，线程和类等的监控，是一个基于JMX（java management extensions）的GUI性能监测工具。<br><img src="Java监视和管理控制台-启动.png" alt="Java监视和管理控制台-启动"><br><img src="Java监视和管理控制台.png" alt="内存"></p>
-<h4 id="VisualVM"><a href="#VisualVM" class="headerlink" title="VisualVM"></a>VisualVM</h4><p>VisualVM（All-in-One Java Troubleshooting Tool）强大的运行监视和故障处理程序，也能够进行性能分析，CPU、内存，在Profiler页签中能看到。<br>1.插件安装<br><img src="VisualVM插件1.png" alt="VisualVM插件1"><br><img src="VisualVM插件2.png" alt="VisualVM插件2"><br><img src="VisualVM插件3.png" alt="VisualVM插件3"></p>
+<h2 id="jdk的可视化工具"><a href="#jdk的可视化工具" class="headerlink" title="jdk的可视化工具"></a>jdk的可视化工具</h2><h3 id="jconsole"><a href="#jconsole" class="headerlink" title="jconsole"></a>jconsole</h3><p>JDK中自带的java监控和管理控制台，用于对JVM中内存，线程和类等的监控，是一个基于JMX（java management extensions）的GUI性能监测工具。<br><img src="Java监视和管理控制台-启动.png" alt="Java监视和管理控制台-启动"><br><img src="Java监视和管理控制台.png" alt="内存"></p>
+<h3 id="VisualVM"><a href="#VisualVM" class="headerlink" title="VisualVM"></a>VisualVM</h3><p>VisualVM（All-in-One Java Troubleshooting Tool）强大的运行监视和故障处理程序，也能够进行性能分析，CPU、内存，在Profiler页签中能看到。<br>1.插件安装<br><img src="VisualVM插件1.png" alt="VisualVM插件1"><br><img src="VisualVM插件2.png" alt="VisualVM插件2"><br><img src="VisualVM插件3.png" alt="VisualVM插件3"></p>
 <p>2.主界面<br><img src="VisualVM概述.png" alt="VisualVM概述"><br><img src="VisualVM监视.png" alt="VisualVM监视"></p>
 <p>因为VisualVM的插件太多，重点展示下Visual GC：<br><img src="VisualVM-Visual GC.png" alt="VisualVM-Visual GC"></p>
-<h3 id="第三方调优工具"><a href="#第三方调优工具" class="headerlink" title="第三方调优工具"></a>第三方调优工具</h3><blockquote>
+<h2 id="第三方调优工具"><a href="#第三方调优工具" class="headerlink" title="第三方调优工具"></a>第三方调优工具</h2><blockquote>
 <ul>
 <li>MAT(Memory Analyzer Tool)</li>
 <li><a href="http://gceasy.io" target="_blank" rel="external">GC Easy</a></li>
@@ -41,7 +65,31 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;jvm调优工具&quot;&gt;&lt;a href=&quot;#jvm调优工具&quot; class=&quot;headerlink&quot; title=&quot;jvm调优工具&quot;&gt;&lt;/a&gt;jvm调优工具&lt;/h1&gt;&lt;h3 id=&quot;jdk的命令行工具&quot;&gt;&lt;a href=&quot;#jdk的命令行工具&quot; class=&quot;headerlink&quot; title=&quot;jdk的命令行工具&quot;&gt;&lt;/a&gt;jdk的命令行工具&lt;/h3&gt;&lt;p&gt;1.jps：虚拟机进程状况工具（jps -l）&lt;br&gt;2.jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）&lt;br&gt;    （Local Virtual Machine Identifier,LVMID）&lt;br&gt;3.jinfo：Java配置信息工具&lt;br&gt;    1）jinfo -flag +PrintGCDetails VMID&lt;br&gt;    2）jinfo -flag +PrintGC VMID&lt;br&gt;    3) jinfo -flag +PrintGCTimeStamps VMID&lt;br&gt;以上就可以在一个正在运行的JVM中动态开启GC日志功能。&lt;br&gt;4.jmap：Java内存映像工具&lt;br&gt;    1）jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。&lt;br&gt;5.jhat：虚拟机堆转储快照分析工具&lt;br&gt;6.jstack：Java堆栈跟踪工具&lt;br&gt;    1）jstack -l VMID&lt;/p&gt;
+      &lt;h1 id=&quot;jvm调优工具&quot;&gt;&lt;a href=&quot;#jvm调优工具&quot; class=&quot;headerlink&quot; title=&quot;jvm调优工具&quot;&gt;&lt;/a&gt;jvm调优工具&lt;/h1&gt;&lt;h2 id=&quot;jdk的命令行工具&quot;&gt;&lt;a href=&quot;#jdk的命令行工具&quot; class=&quot;headerlink&quot; title=&quot;jdk的命令行工具&quot;&gt;&lt;/a&gt;jdk的命令行工具&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;jps：虚拟机进程状况工具（jps -l）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jinfo：Java配置信息工具&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;jinfo -flag +PrintGCDetails VMID&lt;/li&gt;
+&lt;li&gt;jinfo -flag +PrintGC VMID&lt;/li&gt;
+&lt;li&gt;jinfo -flag +PrintGCTimeStamps VMID&lt;br&gt;以上就可以在一个正在运行的JVM中动态开启GC日志功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jmap：Java内存映像工具&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jhat：虚拟机堆转储快照分析工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jstack：Java堆栈跟踪工具&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;jstack -l VMID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
