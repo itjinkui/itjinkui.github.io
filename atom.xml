@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itjinkui.github.io/"/>
-  <updated>2017-12-12T09:15:25.000Z</updated>
+  <updated>2017-12-13T05:26:49.000Z</updated>
   <id>http://itjinkui.github.io/</id>
   
   <author>
@@ -16,31 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://itjinkui.github.io/2017/12/12/2017-12-12/"/>
-    <id>http://itjinkui.github.io/2017/12/12/2017-12-12/</id>
-    <published>2017-12-12T09:15:25.000Z</published>
-    <updated>2017-12-12T09:15:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p># </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;# &lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>redis-articles</title>
+    <title>redis技术交流</title>
     <link href="http://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>http://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2017-12-13T05:18:28.000Z</updated>
+    <updated>2017-12-13T05:26:49.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>redis原理与实战，不定期更新</strong></p>
 <ul>
