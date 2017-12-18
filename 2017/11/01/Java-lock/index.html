@@ -90,19 +90,19 @@
 
 
 <meta name="description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
+什么是锁Java锁与Java内存管理先来了解下进程和线程的概念关于多进程和多线程，教科书上最经典的一句话是“进程是资源分配的最小单位，线程是CPU调度的最小单位”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java锁的种类">
 <meta property="og:url" content="https://itjinkui.github.io/2017/11/01/Java-lock/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
+什么是锁Java锁与Java内存管理先来了解下进程和线程的概念关于多进程和多线程，教科书上最经典的一句话是“进程是资源分配的最小单位，线程是CPU调度的最小单位”。">
 <meta property="og:image" content="https://itjinkui.github.io/JVM运行时数据区.png">
-<meta property="og:updated_time" content="2017-12-13T08:33:29.000Z">
+<meta property="og:updated_time" content="2017-12-18T05:45:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java锁的种类">
 <meta name="twitter:description" content="Java锁的种类,完整列表http://ifeve.com/java_lock_see/
-什么是锁Java锁与Java内存管理先来复习下进程与线程的概念：">
+什么是锁Java锁与Java内存管理先来了解下进程和线程的概念关于多进程和多线程，教科书上最经典的一句话是“进程是资源分配的最小单位，线程是CPU调度的最小单位”。">
 <meta name="twitter:image" content="https://itjinkui.github.io/JVM运行时数据区.png">
 
 
@@ -398,11 +398,9 @@
 
       
         <h1 id="Java锁的种类-完整列表"><a href="#Java锁的种类-完整列表" class="headerlink" title="Java锁的种类,完整列表"></a>Java锁的种类,完整列表</h1><p><a href="http://ifeve.com/java_lock_see/" target="_blank" rel="external">http://ifeve.com/java_lock_see/</a></p>
-<h2 id="什么是锁"><a href="#什么是锁" class="headerlink" title="什么是锁"></a>什么是锁</h2><h3 id="Java锁与Java内存管理"><a href="#Java锁与Java内存管理" class="headerlink" title="Java锁与Java内存管理"></a>Java锁与Java内存管理</h3><p>先来复习下进程与线程的概念：</p>
+<h2 id="什么是锁"><a href="#什么是锁" class="headerlink" title="什么是锁"></a>什么是锁</h2><h3 id="Java锁与Java内存管理"><a href="#Java锁与Java内存管理" class="headerlink" title="Java锁与Java内存管理"></a>Java锁与Java内存管理</h3><p>先来了解下进程和线程的概念<br>关于多进程和多线程，教科书上最经典的一句话是“进程是资源分配的最小单位，线程是CPU调度的最小单位”。</p>
 <a id="more"></a>
-<p>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位。</p>
-<p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源(如程序计数器，一组寄存器和栈)，但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。</p>
-<p>概念归类到此结束。</p>
+<p>详情参考：<a href="https://segmentfault.com/a/1190000005884656" target="_blank" rel="external">https://segmentfault.com/a/1190000005884656</a></p>
 <p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
 <p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
 <h3 id="Java对象锁"><a href="#Java对象锁" class="headerlink" title="Java对象锁"></a>Java对象锁</h3><p>1.类锁：在代码中的方法上加了static和synchronized的锁，或者synchronized(xxx.class）的代码段<br>2.对象锁：在代码中的方法上加了synchronized的锁，或者synchronized(this）的代码段<br>3.私有锁：在类内部声明一个私有属性如private Object lock，在需要加锁的代码段synchronized(lock）</p>
@@ -452,11 +450,49 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      千古不见一人闲
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://itjinkui.github.io/2017/11/01/Java-lock/" title="Java锁的种类">https://itjinkui.github.io/2017/11/01/Java-lock/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
 
     <footer class="post-footer">
+
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 千古不见一人闲 的个人博客">千古不见一人闲</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="https://itjinkui.github.io/2017/11/01/Java-lock/" title="Java锁的种类">Java锁的种类</a>
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 千古不见一人闲 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+
       
         <div class="post-tags">
           
@@ -612,6 +648,20 @@
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yezhwi.github.io/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         

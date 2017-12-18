@@ -91,26 +91,20 @@
 
 <meta name="description" content="jvm调优工具jdk的命令行工具
 jps：虚拟机进程状况工具（jps -l）
-
 jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  
-
 jinfo：Java配置信息工具
-
 jinfo -flag +PrintGCDetails VMID
-jinf">
+jinfo -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm调优">
 <meta property="og:url" content="https://itjinkui.github.io/2017/11/17/jvm-tool/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="jvm调优工具jdk的命令行工具
 jps：虚拟机进程状况工具（jps -l）
-
 jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  
-
 jinfo：Java配置信息工具
-
 jinfo -flag +PrintGCDetails VMID
-jinf">
+jinfo -">
 <meta property="og:image" content="https://itjinkui.github.io/Java监视和管理控制台-启动.png">
 <meta property="og:image" content="https://itjinkui.github.io/Java监视和管理控制台.png">
 <meta property="og:image" content="https://itjinkui.github.io/VisualVM插件1.png">
@@ -122,18 +116,15 @@ jinf">
 <meta property="og:image" content="https://itjinkui.github.io/Memory Analyzer.png">
 <meta property="og:image" content="https://itjinkui.github.io/Memory Analyzer-Overview.png">
 <meta property="og:image" content="https://itjinkui.github.io/Top Consumers.png">
-<meta property="og:updated_time" content="2017-11-17T08:51:09.000Z">
+<meta property="og:updated_time" content="2017-12-18T05:36:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jvm调优">
 <meta name="twitter:description" content="jvm调优工具jdk的命令行工具
 jps：虚拟机进程状况工具（jps -l）
-
 jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  
-
 jinfo：Java配置信息工具
-
 jinfo -flag +PrintGCDetails VMID
-jinf">
+jinfo -">
 <meta name="twitter:image" content="https://itjinkui.github.io/Java监视和管理控制台-启动.png">
 
 
@@ -429,26 +420,20 @@ jinf">
 
       
         <h1 id="jvm调优工具"><a href="#jvm调优工具" class="headerlink" title="jvm调优工具"></a>jvm调优工具</h1><h2 id="jdk的命令行工具"><a href="#jdk的命令行工具" class="headerlink" title="jdk的命令行工具"></a>jdk的命令行工具</h2><ol>
-<li><p>jps：虚拟机进程状况工具（jps -l）</p>
-</li>
-<li><p>jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  </p>
-</li>
-<li><p>jinfo：Java配置信息工具</p>
-<ul>
+<li>jps：虚拟机进程状况工具（jps -l）</li>
+<li>jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  </li>
+<li>jinfo：Java配置信息工具<ul>
 <li>jinfo -flag +PrintGCDetails VMID</li>
 <li>jinfo -flag +PrintGC VMID</li>
 <li>jinfo -flag +PrintGCTimeStamps VMID<br>以上就可以在一个正在运行的JVM中动态开启GC日志功能。</li>
 </ul>
 </li>
-<li><p>jmap：Java内存映像工具</p>
-<ul>
+<li>jmap：Java内存映像工具<ul>
 <li>jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。</li>
 </ul>
 </li>
-<li><p>jhat：虚拟机堆转储快照分析工具</p>
-</li>
-<li><p>jstack：Java堆栈跟踪工具</p>
-<ul>
+<li>jhat：虚拟机堆转储快照分析工具</li>
+<li>jstack：Java堆栈跟踪工具<ul>
 <li>jstack -l VMID</li>
 </ul>
 </li>
@@ -488,11 +473,49 @@ jinf">
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      千古不见一人闲
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://itjinkui.github.io/2017/11/17/jvm-tool/" title="jvm调优">https://itjinkui.github.io/2017/11/17/jvm-tool/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
 
     <footer class="post-footer">
+
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 千古不见一人闲 的个人博客">千古不见一人闲</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="https://itjinkui.github.io/2017/11/17/jvm-tool/" title="jvm调优">jvm调优</a>
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 千古不见一人闲 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+
       
         <div class="post-tags">
           
@@ -646,6 +669,20 @@ jinf">
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yezhwi.github.io/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         

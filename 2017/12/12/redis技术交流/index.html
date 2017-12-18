@@ -95,7 +95,7 @@
 <meta property="og:url" content="https://itjinkui.github.io/2017/12/12/redis技术交流/index.html">
 <meta property="og:site_name" content="闻道">
 <meta property="og:description" content="redis原理与实战，不定期更新Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。https://redis.io/">
-<meta property="og:updated_time" content="2017-12-13T08:12:31.000Z">
+<meta property="og:updated_time" content="2017-12-18T05:36:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis技术交流">
 <meta name="twitter:description" content="redis原理与实战，不定期更新Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。https://redis.io/">
@@ -397,8 +397,8 @@
 <p>系列文章有些是从Redis源码，有些是从数据结构、内存优化、持久化、Redis集群实现原理探讨开来。<br>总之，很是流行，有必要多方位了解一下啦。</p>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/3TU9qxHJyxHJgVDaYXoluA" target="_blank" rel="external">张铁蕾</a> </li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAwNjQwNzU2NQ==&amp;mid=2650342814&amp;idx=1&amp;sn=aba5c247a8c726cea3a86bac64d4a339&amp;scene=1&amp;srcid=0727YNxfwO2zzZlW7AVplGMN&amp;key=8dcebf9e179c9f3a7a34a51b0f07d506dbdf1c1ae28cc0442d989767a2f2950aa11e97ab9520b605645d5c50300a9a04&amp;ascene=0&amp;uin=MzM4Njg2NDU1" target="_blank" rel="external">Redis压缩列表原理与应用分析</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzYwNjQ3NA==&amp;mid=2651296996&amp;idx=2&amp;sn=5f4811d73e74e2a63b1cb0d3d532862a&amp;scene=1&amp;srcid=08093FVw9nBy03Mw6q8cQ2ve&amp;key=305bc10ec50ec19b181b6479be2fe231b9a856f8340733ac56e3be07b30620799c45272a9f52e6c215f0868e122e2517&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">深入浅出Redis Cluster原理</a>&amp;version=11020201&amp;pass_ticket=YBk2ujYh4XjbsRV4RktshkN5XvslbbH8Wmh6W%2FK0gNKZKoeFIXdjzh2JWQjMtYmI)</li>
+<li><a href="https://goo.gl/uBKGr1" target="_blank" rel="external">Redis压缩列表原理与应用分析</a></li>
+<li><a href="https://goo.gl/vTe1b5" target="_blank" rel="external">深入浅出Redis Cluster原理</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMTEyOTQ5OQ==&amp;mid=402004912&amp;idx=1&amp;sn=7517696a86f54262e60e1b5636d6cbe0&amp;scene=1&amp;srcid=0521HB3pYYfb5rwuUr19GmB5#rd" target="_blank" rel="external">Redis 集群的合纵与连横</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&amp;mid=2653547160&amp;idx=1&amp;sn=befd195e2aa788775aaf1cc3b6f6fab3&amp;scene=1&amp;srcid=051242VSB3OeDvn9GbmJ2QY0#rd" target="_blank" rel="external">360开源的类Redis存储系统:Pika</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712266&amp;idx=1&amp;sn=54d909d240eb701ae48467dc798ddc7f&amp;scene=1&amp;srcid=0506xZXTUptwNdQOqmeVNjjK#rd" target="_blank" rel="external">动态追踪技术（中） - Dtrace、SystemTap、火焰图</a></li>
@@ -411,62 +411,62 @@
 <li><a href="http://blog.jobbole.com/107084/" target="_blank" rel="external">由浅入深介绍 Redis LRU 策略的具体实现</a></li>
 <li><a href="http://gongfuxiang.com/post-98.html" target="_blank" rel="external">Nginx+Lua+Redis搭建高并发服务</a></li>
 <li><a href="https://neway6655.github.io/redis/2016/10/10/redis-hmget-deep-study.html" target="_blank" rel="external">Redis的hmget操作复杂度问题</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA3MTIyMzY4OQ==&amp;mid=2451880782&amp;idx=1&amp;sn=b4df0c48d8eca33c5e62f1d7dae51d59&amp;chksm=88e0cba8bf9742bec44ec4ca833638cab30544f38e7a589b1fb172522087bbc8f3430b1f17eb&amp;mpshare=1&amp;scene=1&amp;srcid=0122K8SAIqCcXYSBzhPqT8ns&amp;key=3c39151efb1819bded970cfff80248cde4a03c7b11ae25fb7d5799a23942c45bbd5779c0c153dccc4e2144f1f66da70763c183729975a0cebc7cdf0c3ad1a869b304b4649f2ad4d68acb9a3d13d3d6e1&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">Redis中BitMap的妙用</a>&amp;version=11020201&amp;pass_ticket=9lunQ8SqqrGnKaLWsr45Sk%2FFnwXhCKcMnV%2FUS3O6YrHLQ%2BoD4umZpFIP3vKN5Ufp)</li>
+<li><a href="https://goo.gl/H4afYW" target="_blank" rel="external">Redis中BitMap的妙用</a></li>
 <li><a href="https://cachecloud.github.io/2017/02/16/Redis内存优化/" target="_blank" rel="external">Redis的内存优化</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI2ODAwMzUwNA==&amp;mid=2649294899&amp;idx=1&amp;sn=2ff9e8f3cce96d9e2905824b25e88755&amp;chksm=f2eb99ecc59c10fa8020819b0b3fa615e55ccdd59da90462da014170afb9f2f5435b19e7612b&amp;mpshare=1&amp;scene=1&amp;srcid=0305PdxNBaitO7SroiW1500r&amp;key=ff79f90307db55eefd86d53ff042c24ed112014887030bd2df0f20adc78fa211e66eacfefbcb473cd5c28bb68031faafd1d012488ed8b8ff987b2f27e01f0c6c4dd82707e1c4d9e15ff6616e105dbae4&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">理解Redis的RESP协议</a>&amp;version=11020201&amp;pass_ticket=eoLz47Vqb%2FfYspKo69oeC249JLQFeg9c9ihsk9MIBdGZU9pJXHHsdJKQJyEv%2F1in)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5ODM5MDU3MA==&amp;mid=2650862627&amp;idx=1&amp;sn=8b679e68fdf954ebe506a1b0c68f9898&amp;chksm=8b661366bc119a70eab7fc547290e14afd614e281d11226cd700ad191f9a62d2b9033bb5c1c9&amp;mpshare=1&amp;scene=1&amp;srcid=0406U3od01SELpoubqm6D6WJ&amp;key=2ba8cc200107c8eeb80d3fa4e696b92318ec8ff2129ad47435dd8e9472fe7593496b71f6a4cce6e166edb63ad691c9d69200e163809db93ceb6b34ddbd6fdf44978d9ae5ea52d03731b7c5bf90e70b8e&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">深入学习 Redis：Redis API 的原子性分析</a>&amp;version=11020201&amp;pass_ticket=SRTXm%2BGFCVdDBsX8OggsWwJ0ZgR6EI1Yc9L0bZzPs6A37Ku019Xw3yPx4E%2BGUMGw)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA4Nzc4MjI4MQ==&amp;mid=2652402586&amp;idx=1&amp;sn=84625a0e7ccc3111c43ecc084d1e6b50&amp;chksm=8bd8f57cbcaf7c6a914df6065a9f14fc3e0c81534718a0e288f3b626d5fb417cd46fcab02220&amp;mpshare=1&amp;scene=1&amp;srcid=05282qa8jvAmJHHOPbPRSipC&amp;key=00676594f04bf18d3b570d2040d1cb3980299ed23272c1965af2e9862c98ec8c11ec2781a892dc0fc3a25c564cced08783af4fa63d6584c94ce344d0c84733a314cfbaf16a97314402314f733ab74dd3&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 实现接口访问频率限制</a>&amp;version=12020610&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=nbqw40atT1DTLuVNk2Eenui04NKoqZDgxhGgwrplLF42UCPXvbTJHCJ%2BB30KUvBI)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5ODM5MDU3MA==&amp;mid=2650862802&amp;idx=1&amp;sn=93cbfe7e90bd42394065327292a5dd1e&amp;chksm=8b661397bc119a811b53577ea8112c5736f49dcb561525274635ccf41e8cf333bfdee270ae67&amp;mpshare=1&amp;scene=1&amp;srcid=0611jqfd8rjxzBHwG9NgZ4lQ&amp;key=baf732038d89126bbd2d1e562d79d2132fe1ee24dec81de52034092643c3098458c3bfe882b253c332b0524f5952082ada2a32d1307fbcab214b34227f12040fa7e4d88e57ba3a5f3c26219f18c8e087&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 源码学习之事件驱动</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=J54R9SK0IjUh4%2FNwmvNBUK07In1gt9QI2QGxkNOKs%2BGVl0IQ49v%2BuNzGOitatkoO)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650072507&amp;idx=2&amp;sn=6c744547854ee5d3d2c3fba1c8cc8729&amp;chksm=bedb3ed589acb7c3b6d4cb6be70251e0e121c6bfb65ad7212940d0426271642c8e3071147f9d&amp;mpshare=1&amp;scene=1&amp;srcid=0625cjeLQlWFOCfGt3zBELoZ&amp;key=c969774f949c279bbb596d808265d8d49d3289a2219e678651d05cbeb804f1ed66a92d0efe641dfa30eadb4dded3b8b14e1ace73c8ce07618e436640078b450d96c7a5fa1f00e1e19d686a4e3607e6b6&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 通信协议 —— 了解 Redis 客户端实现原理</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=83koKC6GRzFn%2BILm3SmMC1396AFw6e884aXwqCxhagQOiH0jdXKpM6gJj5I%2F4AVB)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NTY0MTY1OQ==&amp;mid=2654510780&amp;idx=1&amp;sn=6f6dc70cac2f0abc388416ad2e9bcb3c&amp;chksm=bd395ee88a4ed7febd78f7b48be0a875ead05acd6bd31b26b7e53e0c054362af470eac506009&amp;mpshare=1&amp;scene=1&amp;srcid=0731BMIFmJr5ouULbqVqUuww&amp;key=50814c5812fb30a2ea645e981021ee80d93e5b4f8363ffde0a15c5e43b38a4534c15d0fc115147a138bbed71c22ef93f38fb7bb95f68f65cb8a7fa598e1711dbce54697cb9293a30e7a33fea01cb9c45&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">有赞延迟队列设计</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=bnK6fL4HgEcUv4nXERfwBEsdi7Lfs7zSRaSauTQDCIbVwPgIpRAvqMQGV4Xbk8W3)</li>
+<li><a href="https://goo.gl/g89ZXh" target="_blank" rel="external">理解Redis的RESP协议</a></li>
+<li><a href="https://goo.gl/cNCTGW" target="_blank" rel="external">深入学习 Redis：Redis API 的原子性分析</a></li>
+<li><a href="https://goo.gl/9fLJ7d" target="_blank" rel="external">Redis 实现接口访问频率限制</a></li>
+<li><a href="https://goo.gl/5qFP6L" target="_blank" rel="external">Redis 源码学习之事件驱动</a></li>
+<li><a href="https://goo.gl/ztG8TC" target="_blank" rel="external">Redis 通信协议 —— 了解 Redis 客户端实现原理</a></li>
+<li><a href="https://goo.gl/4mTRVX" target="_blank" rel="external">有赞延迟队列设计</a></li>
 <li><a href="https://yq.aliyun.com/articles/62899?spm=5176.154649.801568.9.UvJFm2" target="_blank" rel="external">Redis内存分析方法</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIxNzE4MDI5NA==&amp;mid=2651099970&amp;idx=2&amp;sn=2f7c46f6d3041292a176f00b99c6408d&amp;chksm=8c0d82abbb7a0bbd03d9c72b1a4ba3ecb5abbb835e580dc4df1c860526369fc279e27f0e317d&amp;mpshare=1&amp;scene=1&amp;srcid=0202sJs0UhC8tzmd4MYI6ipj&amp;key=5da53c472edd2f623d25c60d0ed0d6a2e3f05fdae84124c9d52311f13eb8bf3f3030b61d6532d8154f4376a8eede05d37772b88c84aac436a1c70de980d8e4750951a46d28a263c8af60b221e9be0dff&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">redis分布式内存锁：余量扣除示例(上)</a>&amp;version=11020201&amp;pass_ticket=DPEpDdiwlvmnNCQosWeoMLFj00%2B5WgWZy07ni0NWRDM4VW53ttzKH5HcRp3LvhIu)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIxNzE4MDI5NA==&amp;mid=2651099970&amp;idx=3&amp;sn=73e0a550f9a9721e7d5a860eccb7553a&amp;chksm=8c0d82abbb7a0bbd67aad3bf59c43c8c6b4592940591c5b1768ae401236f8e85199ec4f4e68f&amp;mpshare=1&amp;scene=1&amp;srcid=0203ZK9hcahgyu919awXn5kC&amp;key=4302ad2cc7b8d1b94b5c6187aafe7796f3d05a1232bf38da306fb53bd5087e480d5e731703d57b577159ce466c9d1ea5cbf34e46bb37690339ca87a69e801a71aa1e1c22dd4afabfaed880c198b9e68c&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">redis分布式内存锁：余量扣除示例(下)</a>&amp;version=11020201&amp;pass_ticket=qsyi4k62K4Mk8ckboJNhY9Suyux5VMJx7gLKAW%2BPsbnbTjrTCcr5OLZ5u2AF6VYA)</li>
+<li><a href="https://goo.gl/i5WhU8" target="_blank" rel="external">redis分布式内存锁：余量扣除示例(上)</a></li>
+<li><a href="https://goo.gl/iZTeCB" target="_blank" rel="external">redis分布式内存锁：余量扣除示例(下)</a></li>
 <li><a href="https://github.com/redisson/redisson/wiki/1.-%E6%A6%82%E8%BF%B0" target="_blank" rel="external">redisson</a></li>
 <li><a href="https://www.zybuluo.com/sambodhi/note/642230" target="_blank" rel="external">GitHub将持久数据从Redis迁出</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&amp;mid=2653548432&amp;idx=1&amp;sn=ac120e1ffca7c2007c0bc5df51e03d7b&amp;chksm=813a7e08b64df71ec7b8b6afc2a36a8ff1d780db54a395b58a9f18f084080c09de514e999834&amp;mpshare=1&amp;scene=1&amp;srcid=0324u7jGCykTaFZPCCIrwBwU&amp;key=8b1ec02b44dde3bc9a71dc40c489a145b0da63c71eaf9c1d9df4cf551f5896a6f3cab0a9797a85474ef4a63941b24a40f90bcef85195aab7fa0e3667f2ceda40b5d1758c9b33fed9d819a3ee7766bc62&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">Redis架构之防雪崩设计：网站不宕机背后的兵法</a>&amp;version=11020201&amp;pass_ticket=vKWb90vuWopMvZ8u8BmZrit4a4GPlHhnzGmcasQ3RnDZlOYPt0O9QqwIDnzcKArU)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIyNzUwMjM2MA==&amp;mid=2247484441&amp;idx=1&amp;sn=48440f228656b547929ed74ba85a7885&amp;chksm=e861746edf16fd786044354b1e361c795d58a6fc89b9c856ce7745b891fef2bf3646e40c827f&amp;scene=0&amp;pass_ticket=PWGGGfe6I2EqvdyEmHOA0RTt72D1z5ABnU2BOBKP1Jdh0uarcRrnQHhiRQouGjeE#rd" target="_blank" rel="external">千亿级高性能 KV 存储生态圈</a></li>
+<li><a href="https://goo.gl/z1TKdu" target="_blank" rel="external">Redis架构之防雪崩设计：网站不宕机背后的兵法</a></li>
+<li><a href="https://goo.gl/m3Bn6V" target="_blank" rel="external">千亿级高性能 KV 存储生态圈</a></li>
 <li><a href="https://yq.aliyun.com/articles/68350" target="_blank" rel="external">Redis内核基于时间点的备份恢复和基于AOF日志的增量同步机制设计</a></li>
 <li><a href="https://pingcap.com/blog-cn/ga-liuqi/" target="_blank" rel="external">TiDB技术内幕</a></li>
 <li><a href="http://beautyboss.farbox.com/post/redis/redisyuan-ma-xue-xi-zhi-shi-jian-qu-dong" target="_blank" rel="external">Redis源码学习之事件驱动</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5ODM5MDU3MA==&amp;mid=2650862806&amp;idx=1&amp;sn=16bf30fd5c64aad16930604daf208279&amp;chksm=8b661393bc119a856418d1c70bef181b78a7fa7150cb60d380c9e5c2a15821900e4d6c4623b5&amp;scene=0&amp;key=baf732038d89126bc5ab9aed3b44ecab8fa51604bee98d093ec38f19a4b6d2cff5fe916a5dcb1ad1a1c136ff2c483be55a5e693766d10b5ced4e38f0e33305a29f3bdb87f4a0af683cb8b438a2bdde52&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">揭秘 Reddit 愚人节项目的技术实现过程</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=l9wwDByihjfEQXBTAXA8ccuuK3oSFzjDJNRG9SZpJqRaH%2FgtnHaZ4l0lvUM2esF9)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650072507&amp;idx=2&amp;sn=6c744547854ee5d3d2c3fba1c8cc8729&amp;chksm=bedb3ed589acb7c3b6d4cb6be70251e0e121c6bfb65ad7212940d0426271642c8e3071147f9d&amp;mpshare=1&amp;scene=1&amp;srcid=0625cjeLQlWFOCfGt3zBELoZ&amp;key=c969774f949c279bbb596d808265d8d49d3289a2219e678651d05cbeb804f1ed66a92d0efe641dfa30eadb4dded3b8b14e1ace73c8ce07618e436640078b450d96c7a5fa1f00e1e19d686a4e3607e6b6&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 通信协议 —— 了解 Redis 客户端实现原理</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=83koKC6GRzFn%2BILm3SmMC1396AFw6e884aXwqCxhagQOiH0jdXKpM6gJj5I%2F4AVB)</li>
+<li><a href="https://goo.gl/eRgcAj" target="_blank" rel="external">揭秘 Reddit 愚人节项目的技术实现过程</a></li>
+<li><a href="https://goo.gl/7ZXVjP" target="_blank" rel="external">Redis 通信协议 —— 了解 Redis 客户端实现原理</a></li>
 <li><a href="http://blog.csdn.net/mr_smile2014/article/details/73849573" target="_blank" rel="external">redis哨兵模式使用lua脚本实现分布式锁</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjkxMjA1MA==&amp;mid=2247483746&amp;idx=1&amp;sn=9e9fe2e91f2566aac6227f93281dffc5&amp;chksm=a6e34fbf9194c6a9033270cff2535522904ca1929d95c5622e5a25603ea1b4995610a0fab373&amp;mpshare=1&amp;scene=1&amp;srcid=07046PzadWRRycnrcwjs82ut&amp;key=df6095916712388e6dfb106bdc6094ae7e3456b08613ca648eca028843d82428612d92db74de3e33fba6b7ad3301315ae79d9bfd149068405a497419e43e47880e286732d55a2722bb9062256d74e07a&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">CRUG | Redisson性能压测权威发布</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=iqAMbFo%2FIvxdIiTZGiBd%2F%2FdEf4wLij8x4w%2BtUhL%2BQD%2F1FKZ%2BLbfn4zwWKuwrgzrq)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjkxMjA1MA==&amp;mid=2247483772&amp;idx=1&amp;sn=51d93d22e1ed2efbff5596839d5b77df&amp;chksm=a6e34fa19194c6b7e4775eea10bfb5632458d04706ed1620dc0432f6911cc6a306b86dee26c8&amp;mpshare=1&amp;scene=1&amp;srcid=0705TBGOIAsdqlpsm3IvyoB5&amp;key=df6095916712388e5692fea773f1361740a200117ea47f983bb3c66a0975e614d1c70abd5e1c6dde416caba1a239852df63726075ac41c3259d278ed76c53f3d0b58ba3bcd8b7c6f66ca475d9db5295f&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">听滴滴大神给你讲Redis Cluster迁移遇到的坑</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=mYdTJugINDYt%2BrCxiF%2FYcu9ftJpYtOM%2BTmouv5L%2F%2BPgTiX7WRIRzN7%2BGzNwlrP9k)</li>
+<li><a href="https://goo.gl/dkyPck" target="_blank" rel="external">CRUG | Redisson性能压测权威发布</a></li>
+<li><a href="https://goo.gl/2bcHHi" target="_blank" rel="external">听滴滴大神给你讲Redis Cluster迁移遇到的坑</a></li>
 <li><a href="http://wangxin123.com/2017/05/27/" target="_blank" rel="external">Redis开启AOF导致的删库事件</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&amp;mid=2650762317&amp;idx=1&amp;sn=6b4efbbac812cadf2c71b1f01f4fad99&amp;chksm=f3f9d9d8c48e50cefb0f156ed38aa3ce0b09d0da75e7b1e554b8dfb2766ff28e62136235c5ae&amp;mpshare=1&amp;scene=1&amp;srcid=0717Af5ivhEcqVBmR9HOG3Te&amp;key=50814c5812fb30a2686167651785d69e98b619ac27360f7b4014b2e017f7c1b67a805e0ea5cf244a657fb92bf78b2aba38efdc2b4e2d7615b07d046ad7056d48ac419f8ae308b22c6fad5ddd6f12936c&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">唯品会海量实时OLAP分析技术升级之路</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=SbOSJ0zVKdVvlZHhx%2BUTV%2BEsc2HUNjPloRZEzd3BcM%2Bcxzs7BnsOyvF233QDYAML)</li>
+<li><a href="https://goo.gl/5jmgPZ" target="_blank" rel="external">唯品会海量实时OLAP分析技术升级之路</a></li>
 <li><a href="https://m.aliyun.com/yunqi/articles/236384" target="_blank" rel="external">Jedis常见异常汇总</a></li>
 <li><a href="http://www.jianshu.com/u/6df88dea0d41" target="_blank" rel="external">redis cluster 集群畅谈</a></li>
 <li><a href="https://logz.io/blog/redis-performance-monitoring-elk-stack/" target="_blank" rel="external">Redis Performance Monitoring with the ELK Stack</a></li>
 <li><a href="https://draveness.me/redis-io-multiplexing" target="_blank" rel="external">Redis 和 I/O 多路复用</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5ODM5MDU3MA==&amp;mid=2650863029&amp;idx=1&amp;sn=8fc43f9717ef1874a402f6c4ad777d91&amp;chksm=8b6612f0bc119be66421ff245bda2758ee603fec31020037545366ef737949f7075ccdf98386&amp;mpshare=1&amp;scene=1&amp;srcid=0904YAZ5qoO2tui27Nz7JcF2&amp;key=4dfb0b0c07ae45250e6cab821f6fdaa98793d5caf359be388b42f14bc011649a6de10084aee027baed1b3507a5e5c55d3d43c85698850afa06a8ef4abc2a28bbf23733cf549e1119acfb8f2059683ff4&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">使用 Redis 解决“树”形数据的复杂查询</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=bLBT7zfeccSIv5t%2Fl0ZTfXlyZpLYOBz7sJtpA0iFGzFykTNJzsk%2B1goU4quBhNZ6)</li>
+<li><a href="https://goo.gl/nYK3gx" target="_blank" rel="external">使用 Redis 解决“树”形数据的复杂查询</a></li>
 <li><a href="https://www.blazemeter.com/blog/jmeters-redis-data-set-an-introduction" target="_blank" rel="external">JMeter’s Redis Data Set - An Introduction</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIwMzg1ODcwMw==&amp;mid=2247486811&amp;idx=1&amp;sn=5f8dda70bb78f310342d38ae5921fbf8&amp;chksm=96c9bb3ba1be322d22f9e56fdb71e3946c12073037e616b2ca7f840e3aac44e42182a9352ba2&amp;scene=0&amp;key=bf02c64de891700b6aea54c5ff6bb16973e7b66a559d34a20f16202c9cf917f3d6def615c536f4020aa93509a027af8ec36fa34eb3d67073a3934e7beab929559b2d94466fe866c55dcd0df0becbfe07&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 如何分布式，来看京东金融的设计与实践</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=a4Xw7qDUjL%2BZDzskSoH9RR5JYxe8OLZCoGZUMzGNFNHNqwkw2Aw%2BOF%2B2MOfuqtgK)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA4Nzc4MjI4MQ==&amp;mid=2652402656&amp;idx=1&amp;sn=27fcf31cada1a477c8f119863abc7c22&amp;chksm=8bd8f506bcaf7c10ffa538ea1551cedefd2daf556624376aec7e9d97c3f4e94440d41a678eac&amp;mpshare=1&amp;scene=1&amp;srcid=1014UUDYbpMfN1CkkotvfRho&amp;key=60939f38b0632416606ec289c74c4381c49394c5eeb2029f6a9ce5d75b3bd23f16b6aec11ca5d0e4661133a59693ca6f8b3039721997b52a814b688de2bd98b8ccd5846f458ae298e80b8f9291f4da5c&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">Redis 新数据结构 - Streams</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=sTRZxoNbjps9Ydl2gVWHrzdNj%2B9kVDJ9H5kzqnBGlMhdUNlZundPWwa0XMi685bB)</li>
+<li><a href="https://goo.gl/vEyUUs" target="_blank" rel="external">Redis 如何分布式，来看京东金融的设计与实践</a></li>
+<li><a href="https://goo.gl/VapkrK" target="_blank" rel="external">Redis 新数据结构 - Streams</a></li>
 <li><a href="https://tech.youzan.com/redisji-qun-shi-xian-yuan-li-tan-tao/?sf=wx_sm" target="_blank" rel="external">Redis集群实现原理探讨</a></li>
 <li><a href="http://weakyon.com/2017/10/11/sentinel-does-not-trigger-failover-when-master-reboot-resulting-in-data-loss.html" target="_blank" rel="external">当主重启时sentinel没有切换导致数据丢失</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTM1MjExMg==&amp;mid=2247484638&amp;idx=1&amp;sn=b4076f8ceff2eb7a4c1c7b5538376f6c&amp;chksm=eb075b81dc70d297864ef4d131cb4373632e012fa472b0e99af8b26140f7e637657e5baa9406&amp;mpshare=1&amp;scene=1&amp;srcid=1030hKfNQt89lagUGbWbOLWB&amp;key=ffb08cd12e7af3b403842b936d8306fa9dc32475787ad08ac2a021ff6b16a0246c8331ea67dc25af5c97855ebdbe1a6eaa79c35874f0a4967b2705776f85745ad692fafad83de558b9c7db789bd203e7&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">大规模codis集群的治理与实践</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=sTRZxoNbjps9Ydl2gVWHrzdNj%2B9kVDJ9H5kzqnBGlMhdUNlZundPWwa0XMi685bB)</li>
+<li><a href="https://goo.gl/8hxsuc" target="_blank" rel="external">大规模codis集群的治理与实践</a></li>
 <li><a href="http://www.jianshu.com/p/b5a96142fdd9" target="_blank" rel="external">springboot中redis的使用和分布式session共享问题</a></li>
 <li><a href="http://www.baeldung.com/redis-redisson" target="_blank" rel="external">A Guide to Redis with Redisson</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&amp;mid=2650763383&amp;idx=1&amp;sn=348a84605a7cdefe4e075c9f0310f257&amp;chksm=f3f9c5e2c48e4cf41bd3f708bce3f9a1302a699cf7defe611e9aea120fcb424944119e079362&amp;mpshare=1&amp;scene=1&amp;srcid=0926zoiYASskdGnGTathAoZ0&amp;key=81c0e1f7847266b34a9b6e582d330887aa326b3de5b95757dd22afed130fe616bc41c88ad69b3072a92ab2ecc5b04590f2cd7c9e17f2ebeff7e336b1f84fa429d7429ab29208bca7b55dfb7051b16124&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.5+build(16F73" target="_blank" rel="external">直击Redis持久化磁盘IO痛点，让存储不再有负担！</a>&amp;version=12020710&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=IZjSWmUwPVxrb0RtShH0DIYneTbw4mpwFsTvQHESY8xl4BzeZr9LG3wTP8B2YbBl)</li>
+<li><a href="https://goo.gl/wzk7LU" target="_blank" rel="external">直击Redis持久化磁盘IO痛点，让存储不再有负担！</a></li>
 <li><a href="http://www.10tiao.com/html/496/201708/2652402631/1.html" target="_blank" rel="external">Redis Cluster 迁移案例</a></li>
 <li><a href="https://yemengying.com/2017/06/04/reddit-view-counting/" target="_blank" rel="external">【译】Reddit如何统计每个帖子的浏览量</a></li>
 <li><a href="http://liu-xin.me/2015/11/17/在Redis中进行分页排序查询/" target="_blank" rel="external">在Redis中进行分页排序查询</a></li>
 <li><a href="http://dbaplus.cn/news-21-1142-1.html" target="_blank" rel="external">一个小改进，解决Redis数据在线加载大痛点</a></li>
 <li><a href="https://quericy.me/blog/861/" target="_blank" rel="external">社区好友动态Feed流的Redis实现</a></li>
 <li><a href="http://yogoup.sinaapp.com/" target="_blank" rel="external">Redis 应用案例 - 在问题中不断成长</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMzc4Mzk1Mw==&amp;mid=2649836814&amp;idx=6&amp;sn=cdf46386187d9e62d0adae5080dbec32&amp;chksm=8398abf0b4ef22e6c73bed1d0c9f5a2a1ce7284f03f53e34c987b4a8b4c820ce7c3365230960&amp;mpshare=1&amp;scene=1&amp;srcid=0201W1e9y7hKwl9R03DwCDjs&amp;key=afc264f9418f0a9407f65329bec65aaae06477920e04ef5e4a5bdab7b39d8f4768f1399f364880c822c023ba6f5f28e8242292d2fd4bd3b976dd74fc51144f5b2f326e282d045e7646c8a92dc489ebda&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">国内外三个领域巨头告诉你Redis怎么用</a>&amp;version=11020201&amp;pass_ticket=DPEpDdiwlvmnNCQosWeoMLFj00%2B5WgWZy07ni0NWRDM4VW53ttzKH5HcRp3LvhIu)</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI1MzAzOTY3MA==&amp;mid=2651181087&amp;idx=1&amp;sn=f16a14159509bdcd95f0ea7e886efb47&amp;chksm=f22bf546c55c7c501313480b381398f5934e6c85003af3cf0ec55c83237aac331fe0e58171d0&amp;mpshare=1&amp;scene=1&amp;srcid=1206IWgbtQ3ObVVPCnH6iDDZ&amp;pass_ticket=rYGitFBtuXK2wcyGJQs%2BClGdv6r7mvJIbYXPs4%2FQIg9I63l6bxZnBD4%2BT0%2BMGqM1#rd" target="_blank" rel="external">Redis作为LRU Cache的实现</a></li>
+<li><a href="https://goo.gl/xHZMB9" target="_blank" rel="external">国内外三个领域巨头告诉你Redis怎么用</a></li>
+<li><a href="https://goo.gl/x4bj6C" target="_blank" rel="external">Redis作为LRU Cache的实现</a></li>
 <li><a href="https://zzyongx.github.io/blogs/index.html" target="_blank" rel="external">如何使用redis存储海量小数据</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzQ2NTY0OA==&amp;mid=2650796345&amp;idx=1&amp;sn=d57fc5b626f14ef8eb4630d8efca50cc&amp;chksm=88562c66bf21a570b4c365f62babfb8bb8bdcf5418151d78faeb577dd9c445cd59a70b956c8b&amp;mpshare=1&amp;scene=1&amp;srcid=1223KC0pQbSN0rqCTAthxfqD&amp;key=564c3e9811aee0abd74c6b41213f2a33cce39ed20703417be2edd62a951537154a70e48cb0e338f7b925faa97d7c9b91515105de411dd98782b750d000be219c60f0926688c263a320eca5260958a5c2&amp;ascene=0&amp;uin=MzM4Njg2NDU1&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.3+build(14D136" target="_blank" rel="external">Redis性能问题排查解决手册</a>&amp;version=11020201&amp;pass_ticket=WpW95huwolsbC3H%2BbMB9JBiKCmqSujwNFO1cf%2FeJ7qsI0svF4rR5oBn6wjmUdwsX)</li>
+<li><a href="https://goo.gl/KZnCcd" target="_blank" rel="external">Redis性能问题排查解决手册</a></li>
 <li><a href="https://www.tuicool.com/articles/jyINfin" target="_blank" rel="external">如何在Redis中实现事务</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIyMDA1MzgyNw==&amp;mid=2651968211&amp;idx=1&amp;sn=6ffddaf300a2effa53caae421ac9bf81&amp;mpshare=1&amp;scene=1&amp;srcid=0927epWUDcLtZyKdoMdzSM2r&amp;key=c3acc508db720376fc46012061b159aca31b695e132ba992b018535ff32b7a9783d3d273a0a98b02b82cff6ed6e9f4df&amp;ascene=0&amp;uin=MzM4Njg2NDU1" target="_blank" rel="external">ansible-playbook配置redis的sentinel高可用集群</a></li>
+<li><a href="https://goo.gl/cFfebR" target="_blank" rel="external">ansible-playbook配置redis的sentinel高可用集群</a></li>
 <li><a href="http://bg2bkk.github.io/post/redis过期清除机制及应用方法/" target="_blank" rel="external">redis过期清除机制及应用方法</a></li>
 <li><a href="https://ruby-china.org/topics/30720" target="_blank" rel="external">记一次 Redis 实战，实现答题系统</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTM1MjExMg==&amp;mid=2247483816&amp;idx=1&amp;sn=136d3da5f2a7cf546440fa8279cbaa47&amp;scene=1&amp;srcid=0823pmID5jdOnO0qQSz1g1ez#rd" target="_blank" rel="external">大规模排行榜系统实践及挑战</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIwODA4NjMwNA==&amp;mid=2652897841&amp;idx=1&amp;sn=6328c5011e6c66d9a10d714a9bda52d1&amp;scene=1&amp;srcid=0722ccc3LqYP5NnTChkybEBK&amp;key=77421cf58af4a653bbde6982be263b0a27a67e7340b54addaca64e61167575f415556c668e81a458634cc534efb6b8ea&amp;ascene=0&amp;uin=MzM4Njg2NDU1" target="_blank" rel="external">京东抢购服务高并发实践</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzQ2NTY0OA==&amp;mid=2650796336&amp;idx=1&amp;sn=7ecd39f47fe5a35cbb922fe823640aae&amp;chksm=88562c6fbf21a5798b16d43f726a2394cdd12e042c4357cd584fd83e3e6e13eec10b30f5d566&amp;mpshare=1&amp;scene=1&amp;srcid=1001D0L643UNm9TuvDG0NSMt&amp;pass_ticket=QRj3c3fe9lSk8WVW1On7YHi3%2B9PZ6fwFH7Vlvy%2FuyvNb9hXeJphbWSDHyNsLth1T#rd" target="_blank" rel="external">教你看懂redis配置系列</a></li>
+<li><a href="https://goo.gl/5q7TKn" target="_blank" rel="external">京东抢购服务高并发实践</a></li>
+<li><a href="https://goo.gl/yfpNuC" target="_blank" rel="external">教你看懂redis配置系列</a></li>
 <li><a href="https://leibnizhu.gitlab.io/2016/09/11/Netty+Redis开发高并发应用的一些思考(二" target="_blank" rel="external">Netty+Redis开发高并发应用的一些思考(二)</a>/)</li>
 <li><a href="http://sanyuesha.com/2016/08/20/distributed-lock-with-redis/" target="_blank" rel="external">如何用 redis 造一把分布式锁</a></li>
 <li><a href="https://www.qcloud.com/community/article/222" target="_blank" rel="external">Redis 设计思路学习与总结</a></li>
@@ -493,11 +493,49 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      千古不见一人闲
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://itjinkui.github.io/2017/12/12/redis技术交流/" title="redis技术交流">https://itjinkui.github.io/2017/12/12/redis技术交流/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
 
     <footer class="post-footer">
+
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 千古不见一人闲 的个人博客">千古不见一人闲</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="https://itjinkui.github.io/2017/12/12/redis技术交流/" title="redis技术交流">redis技术交流</a>
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 千古不见一人闲 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+
       
         <div class="post-tags">
           
@@ -638,6 +676,20 @@
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://yezhwi.github.io/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
