@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2017-12-18T05:36:02.000Z</updated>
+  <updated>2017-12-19T05:43:44.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一张通往计算机世界的地图</title>
+    <link href="https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/"/>
+    <id>https://itjinkui.github.io/2017/12/19/一张通往计算机世界的地图/</id>
+    <published>2017-12-19T05:25:09.000Z</published>
+    <updated>2017-12-19T05:43:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一张通往计算机世界的地图"><a href="#一张通往计算机世界的地图" class="headerlink" title="一张通往计算机世界的地图"></a>一张通往计算机世界的地图</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。</p>
+<a id="more"></a>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p>作者：Surmon<br>链接：<a href="https://surmon.me/article/75" target="_blank" rel="external">https://surmon.me/article/75</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一张通往计算机世界的地图&quot;&gt;&lt;a href=&quot;#一张通往计算机世界的地图&quot; class=&quot;headerlink&quot; title=&quot;一张通往计算机世界的地图&quot;&gt;&lt;/a&gt;一张通往计算机世界的地图&lt;/h1&gt;&lt;h2 id=&quot;引述&quot;&gt;&lt;a href=&quot;#引述&quot; class=&quot;headerlink&quot; title=&quot;引述&quot;&gt;&lt;/a&gt;引述&lt;/h2&gt;&lt;p&gt;我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
+    
+    
+      <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+    
+      <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>redis技术交流</title>
     <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2017-12-18T05:36:02.000Z</updated>
+    <updated>2017-12-19T05:34:42.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>redis原理与实战，不定期更新</strong><br>Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。<br><a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <a id="more"></a>
@@ -110,19 +141,19 @@
     
     </summary>
     
-      <category term="redis" scheme="https://itjinkui.github.io/categories/redis/"/>
+      <category term="Redis" scheme="https://itjinkui.github.io/categories/Redis/"/>
     
     
-      <category term="redis" scheme="https://itjinkui.github.io/tags/redis/"/>
+      <category term="Redis" scheme="https://itjinkui.github.io/tags/Redis/"/>
     
   </entry>
   
   <entry>
-    <title>jvm调优</title>
+    <title>JVM 优化经验</title>
     <link href="https://itjinkui.github.io/2017/11/17/jvm-tool/"/>
     <id>https://itjinkui.github.io/2017/11/17/jvm-tool/</id>
     <published>2017-11-17T06:52:55.000Z</published>
-    <updated>2017-12-18T05:36:38.000Z</updated>
+    <updated>2017-12-19T05:36:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="jvm调优工具"><a href="#jvm调优工具" class="headerlink" title="jvm调优工具"></a>jvm调优工具</h1><h2 id="jdk的命令行工具"><a href="#jdk的命令行工具" class="headerlink" title="jdk的命令行工具"></a>jdk的命令行工具</h2><ol>
 <li>jps：虚拟机进程状况工具（jps -l）</li>
@@ -183,10 +214,10 @@
     
     </summary>
     
-      <category term="jvm" scheme="https://itjinkui.github.io/categories/jvm/"/>
+      <category term="JVM" scheme="https://itjinkui.github.io/categories/JVM/"/>
     
     
-      <category term="jvm" scheme="https://itjinkui.github.io/tags/jvm/"/>
+      <category term="JVM" scheme="https://itjinkui.github.io/tags/JVM/"/>
     
   </entry>
   
@@ -709,7 +740,7 @@
     <link href="https://itjinkui.github.io/2017/05/11/git-how/"/>
     <id>https://itjinkui.github.io/2017/05/11/git-how/</id>
     <published>2017-05-11T09:57:29.000Z</published>
-    <updated>2017-06-19T07:21:07.000Z</updated>
+    <updated>2017-12-19T05:33:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>#Git 闲话</p>
 <blockquote>
@@ -778,10 +809,10 @@
     
     </summary>
     
-      <category term="git" scheme="https://itjinkui.github.io/categories/git/"/>
+      <category term="Git" scheme="https://itjinkui.github.io/categories/Git/"/>
     
     
-      <category term="git" scheme="https://itjinkui.github.io/tags/git/"/>
+      <category term="Git" scheme="https://itjinkui.github.io/tags/Git/"/>
     
   </entry>
   
