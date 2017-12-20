@@ -36,11 +36,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
@@ -51,7 +51,7 @@
     <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2017-12-19T05:34:42.000Z</updated>
+    <updated>2017-12-20T05:52:45.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>redis原理与实战，不定期更新</strong><br>Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。<br><a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <a id="more"></a>
@@ -131,6 +131,7 @@
 <li><a href="https://leibnizhu.gitlab.io/2016/09/11/Netty+Redis开发高并发应用的一些思考(二" target="_blank" rel="external">Netty+Redis开发高并发应用的一些思考(二)</a>/)</li>
 <li><a href="http://sanyuesha.com/2016/08/20/distributed-lock-with-redis/" target="_blank" rel="external">如何用 redis 造一把分布式锁</a></li>
 <li><a href="https://www.qcloud.com/community/article/222" target="_blank" rel="external">Redis 设计思路学习与总结</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7ituCSDrLCTo07ZgR66Oqw" target="_blank" rel="external">如何改变Redis用不好的误区</a></li>
 </ul>
 <p>参考在此：<br><a href="http://moelove.info/redis-articles/" target="_blank" rel="external">Redis技术交流群</a></p>
 ]]></content>
