@@ -9,7 +9,7 @@
       <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p>Sublime Text 拥有漂亮的用户界面和非凡的功能，而根据其官网介绍，Sublime Text的特点如下：拥有高效、没有干扰的界面，在编辑方面的多选、宏、代码片段等功能，以及很有特色的Minimap。<br>用户广受喜爱的众多功能之一GOTO ANYTHING<br>仅仅敲击几次键盘就能即刻jump to symbols, lines or words.<strong>Shortcuts:</strong>  <code>⌘ + P</code></p>
 <a id="more"></a>
 <p>要支持一把的官网购买啊<a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>啊不花钱看这里：<a href="http://xclient.info/s/sublime-text.html?_=854c5c4c70359873adbd147e3e8c9cf3" target="_blank" rel="external">Sublime Text 3 Build 3156</a></p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a><br>我自己的主题和字体配置：<br><img src="Sublime Text.png" alt="Sublime Text-color_scheme"></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a><br>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
 <thead>
 <tr>
@@ -19,27 +19,27 @@
 </thead>
 <tbody>
 <tr>
-<td><code>⌘</code></td>
+<td>⌘</td>
 <td>command</td>
 </tr>
 <tr>
-<td><code>⌃</code></td>
+<td>⌃</td>
 <td>control</td>
 </tr>
 <tr>
-<td><code>⌥</code></td>
+<td>⌥</td>
 <td>option</td>
 </tr>
 <tr>
-<td><code>⇧</code></td>
+<td>⇧</td>
 <td>shift</td>
 </tr>
 <tr>
-<td><code>↩</code></td>
+<td>↩</td>
 <td>enter</td>
 </tr>
 <tr>
-<td><code>⌫</code></td>
+<td> ⌫</td>
 <td>delete</td>
 </tr>
 </tbody>
@@ -159,12 +159,12 @@
 <td>Join line below to the end of the current line（⌘J）</td>
 </tr>
 <tr>
-<td>⌃⇧M</td>
-<td>选择括号的内容</td>
+<td>⌃ + ⇧ + M</td>
+<td>Select all contents of the current parentheses</td>
 </tr>
 <tr>
-<td>⌃M</td>
-<td>括号的内容光标跳转首尾</td>
+<td>⌃ + M</td>
+<td>Jump to closing parentheses Repeat to jump to opening parentheses</td>
 </tr>
 <tr>
 <td>⌘⇧↩</td>
@@ -215,11 +215,11 @@
 <td>向左缩进</td>
 </tr>
 <tr>
-<td>⌃⇧↑</td>
+<td>⌃ + ⇧ + ↑</td>
 <td>一个或多行向上移动</td>
 </tr>
 <tr>
-<td>⌃⇧↓</td>
+<td>⌃ + ⇧ + ↓</td>
 <td>一个或多行向下移动</td>
 </tr>
 </tbody>
