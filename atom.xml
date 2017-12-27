@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2017-12-27T10:50:15.000Z</updated>
+  <updated>2017-12-27T10:54:02.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://itjinkui.github.io/2017/12/27/Sublime%20Text/"/>
     <id>https://itjinkui.github.io/2017/12/27/Sublime Text/</id>
     <published>2017-12-27T06:01:44.000Z</published>
-    <updated>2017-12-27T10:50:15.000Z</updated>
+    <updated>2017-12-27T10:54:02.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p>Sublime Text 拥有漂亮的用户界面和非凡的功能，而根据其官网介绍，Sublime Text的特点如下：拥有高效、没有干扰的界面，在编辑方面的多选、宏、代码片段等功能，以及很有特色的Minimap。<br>用户广受喜爱的众多功能之一GOTO ANYTHING<br>仅仅敲击几次键盘就能即刻jump to symbols, lines or words.<strong>Shortcuts:</strong>  <code>⌘ + P</code></p>
 <a id="more"></a>
 <p>要支持一把的官网购买啊<a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>啊不花钱看这里：<a href="http://xclient.info/s/sublime-text.html?_=854c5c4c70359873adbd147e3e8c9cf3" target="_blank" rel="external">Sublime Text 3 Build 3156</a></p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a><br>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
+<h1 id="插件与配置"><a href="#插件与配置" class="headerlink" title="插件与配置"></a>插件与配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a><br>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
 <thead>
 <tr>
@@ -315,11 +315,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
