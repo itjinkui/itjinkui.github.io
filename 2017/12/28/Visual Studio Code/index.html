@@ -89,19 +89,19 @@
 
 
 
-<meta name="description" content="应用介绍https://code.visualstudio.com/我就是觉得界面美观大方，^_^">
+<meta name="description" content="应用介绍https://code.visualstudio.com/界面简洁大方，^_^">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探Visual Studio Code编写Vue">
 <meta property="og:url" content="https://itjinkui.github.io/2017/12/28/Visual Studio Code/index.html">
 <meta property="og:site_name" content="闻道">
-<meta property="og:description" content="应用介绍https://code.visualstudio.com/我就是觉得界面美观大方，^_^">
+<meta property="og:description" content="应用介绍https://code.visualstudio.com/界面简洁大方，^_^">
 <meta property="og:image" content="https://itjinkui.github.io/VSCode-Sublime.png">
 <meta property="og:image" content="https://itjinkui.github.io/VSCode-Ext.png">
 <meta property="og:image" content="https://itjinkui.github.io/VSCode-Vetur.png">
-<meta property="og:updated_time" content="2017-12-28T10:52:44.000Z">
+<meta property="og:updated_time" content="2017-12-28T10:55:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Visual Studio Code编写Vue">
-<meta name="twitter:description" content="应用介绍https://code.visualstudio.com/我就是觉得界面美观大方，^_^">
+<meta name="twitter:description" content="应用介绍https://code.visualstudio.com/界面简洁大方，^_^">
 <meta name="twitter:image" content="https://itjinkui.github.io/VSCode-Sublime.png">
 
 
@@ -407,7 +407,8 @@
       
 
       
-        <h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p><a href="https://code.visualstudio.com/" target="_blank" rel="external">https://code.visualstudio.com/</a><br>我就是觉得界面美观大方，^_^<br><a id="more"></a></p>
+        <h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p><a href="https://code.visualstudio.com/" target="_blank" rel="external">https://code.visualstudio.com/</a><br>界面简洁大方，^_^</p>
+<a id="more"></a>
 <h1 id="Vue插件安装"><a href="#Vue插件安装" class="headerlink" title="Vue插件安装"></a>Vue插件安装</h1><p>在 VSCode Marketplace <a href="https://marketplace.visualstudio.com/vscode" target="_blank" rel="external">https://marketplace.visualstudio.com/vscode</a> 搜素Vue 出现关于语法高亮的插件有 Vue 2 Snippets，vue-beautify，vue-color，Vetur等等。花花绿绿的，往下翻看，目前使用率最高的就是Vetur了。<br>安装插件：⌘P 然后输入 ext install vetur 然后回车点安装即可。<br>但是如果你使用惯了Vim/Sublime/Atom等，VSCode允许安装自己的键盘快捷方式。<br><img src="VSCode-Sublime.png" alt="VSCode-Sublime"><br>我个人选择了Sublime，设置后并激活，这时按下<code>command+shift+p</code><br><img src="VSCode-Ext.png" alt="VSCode-Ext"><br>输入 Vetur<br><img src="VSCode-Vetur.png" alt="VSCode-Vetur"></p>
 <h2 id="VS-Code-ESLint-extension"><a href="#VS-Code-ESLint-extension" class="headerlink" title="VS Code ESLint extension"></a>VS Code ESLint extension</h2><h3 id="安装插件和Vetur类似。"><a href="#安装插件和Vetur类似。" class="headerlink" title="安装插件和Vetur类似。"></a>安装插件和Vetur类似。</h3><p>ESLint 不是安装后就可以用的，还需要一些环境和配置：<br>eg：首先在自己的工作空间建立一个文件夹xmall-front，zsh中运行 <code>npm init</code><br>然后依次执行命令，快速体验下：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">~/VSCodeProjects/xmall-front npm install --save-dev eslint eslint-plugin-html</div><div class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</div><div class="line">npm WARN xmall-front@1.0.0 No repository field.</div><div class="line"></div><div class="line">+ eslint-plugin-html@4.0.1</div><div class="line">+ eslint@4.14.0</div><div class="line">added 146 packages <span class="keyword">in</span> 14.54s</div><div class="line">~/VSCodeProjects/xmall-front ./node_modules/.bin/eslint --init</div><div class="line">? How would you like to configure ESLint? Answer questions about your style</div><div class="line">? Are you using ECMAScript 6 features? Yes</div><div class="line">? Are you using ES6 modules? Yes</div><div class="line">? Where will your code run? Browser</div><div class="line">? Do you use CommonJS? Yes</div><div class="line">? Do you use JSX? Yes</div><div class="line">? Do you use React? No</div><div class="line">? What style of indentation <span class="keyword">do</span> you use? Tabs</div><div class="line">? What quotes <span class="keyword">do</span> you use <span class="keyword">for</span> strings? Single</div><div class="line">? What line endings <span class="keyword">do</span> you use? Unix</div><div class="line">? Do you require semicolons? No</div><div class="line">? What format <span class="keyword">do</span> you want your config file to be <span class="keyword">in</span>? JavaScript</div><div class="line">Successfully created .eslintrc.js file <span class="keyword">in</span> /Users/jinkui/VSCodeProjects/xmall-front</div><div class="line">~/VSCodeProjects/xmall-front la</div><div class="line">.                 ..                .eslintrc.js      node_modules      package-lock.json package.json</div></pre></td></tr></table></figure>
