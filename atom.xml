@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2017-12-28T02:39:38.000Z</updated>
+  <updated>2017-12-28T03:55:51.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -20,12 +20,20 @@
     <link href="https://itjinkui.github.io/2017/12/27/Sublime%20Text/"/>
     <id>https://itjinkui.github.io/2017/12/27/Sublime Text/</id>
     <published>2017-12-27T06:01:44.000Z</published>
-    <updated>2017-12-28T02:39:38.000Z</updated>
+    <updated>2017-12-28T03:55:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p>Sublime Text 拥有漂亮的用户界面和非凡的功能，而根据其官网介绍，Sublime Text的特点如下：拥有高效、没有干扰的界面，在编辑方面的多选、宏、代码片段等功能，以及很有特色的Minimap。<br>用户广受喜爱的众多功能之一GOTO ANYTHING<br>仅仅敲击几次键盘就能即刻jump to symbols, lines or words.<strong>Shortcuts:</strong>  <code>⌘ + P</code></p>
 <a id="more"></a>
 <p>要支持一把的官网购买啊<a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>啊不花钱看这里：<a href="http://xclient.info/s/sublime-text.html?_=854c5c4c70359873adbd147e3e8c9cf3" target="_blank" rel="external">Sublime Text 3 Build 3156</a></p>
-<h1 id="插件与配置"><a href="#插件与配置" class="headerlink" title="插件与配置"></a>插件与配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a><br>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
+<h1 id="主题插件安装"><a href="#主题插件安装" class="headerlink" title="主题插件安装"></a>主题插件安装</h1><p><a href="http://buymeasoda.github.io/soda-theme/" target="_blank" rel="external">soda-theme</a>该插件主要能够使sublime 兼容mac的retina屏幕<br>我采用Git安装最新版本，可以通过菜单 Preferences -&gt; Browse Packages….，定位到你的Sublime Text Packages文件夹，然后在这个文件夹下面 git clone就OK了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/buymeasoda/soda-theme/ &quot;Theme - Soda&quot;</div></pre></td></tr></table></figure>
+<p><strong> Configure Sublime Text 3 </strong></p>
+<ul>
+<li>打开配置文件： Sublime Text -&gt; Preferences -&gt; Settings - User</li>
+<li>添加主题：”theme”: “Soda Light 3.sublime-theme”</li>
+</ul>
+<p>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
+<h1 id="插件与配置"><a href="#插件与配置" class="headerlink" title="插件与配置"></a>插件与配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a></p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
 <thead>
 <tr>
