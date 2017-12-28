@@ -99,7 +99,21 @@
 
     <url>
         <loc>https://itjinkui.github.io/categories/Sublime-Text/</loc>
-        <lastmod>2017-12-28T03:55:51.000Z</lastmod>
+        <lastmod>2017-12-28T10:40:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://itjinkui.github.io/categories/Visual-Studio-Code/</loc>
+        <lastmod>2017-12-28T10:52:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://itjinkui.github.io/categories/Visual-Studio-Code/Vue/</loc>
+        <lastmod>2017-12-28T10:52:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

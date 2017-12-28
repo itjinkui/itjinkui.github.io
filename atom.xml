@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2017-12-28T03:55:51.000Z</updated>
+  <updated>2017-12-28T10:52:44.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初探Visual Studio Code编写Vue</title>
+    <link href="https://itjinkui.github.io/2017/12/28/Visual%20Studio%20Code/"/>
+    <id>https://itjinkui.github.io/2017/12/28/Visual Studio Code/</id>
+    <published>2017-12-28T08:12:15.000Z</published>
+    <updated>2017-12-28T10:52:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p><a href="https://code.visualstudio.com/" target="_blank" rel="external">https://code.visualstudio.com/</a><br>我就是觉得界面美观大方，^_^<br><a id="more"></a></p>
+<h1 id="Vue插件安装"><a href="#Vue插件安装" class="headerlink" title="Vue插件安装"></a>Vue插件安装</h1><p>在 VSCode Marketplace <a href="https://marketplace.visualstudio.com/vscode" target="_blank" rel="external">https://marketplace.visualstudio.com/vscode</a> 搜素Vue 出现关于语法高亮的插件有 Vue 2 Snippets，vue-beautify，vue-color，Vetur等等。花花绿绿的，往下翻看，目前使用率最高的就是Vetur了。<br>安装插件：⌘P 然后输入 ext install vetur 然后回车点安装即可。<br>但是如果你使用惯了Vim/Sublime/Atom等，VSCode允许安装自己的键盘快捷方式。<br><img src="VSCode-Sublime.png" alt="VSCode-Sublime"><br>我个人选择了Sublime，设置后并激活，这时按下<code>command+shift+p</code><br><img src="VSCode-Ext.png" alt="VSCode-Ext"><br>输入 Vetur<br><img src="VSCode-Vetur.png" alt="VSCode-Vetur"></p>
+<h2 id="VS-Code-ESLint-extension"><a href="#VS-Code-ESLint-extension" class="headerlink" title="VS Code ESLint extension"></a>VS Code ESLint extension</h2><h3 id="安装插件和Vetur类似。"><a href="#安装插件和Vetur类似。" class="headerlink" title="安装插件和Vetur类似。"></a>安装插件和Vetur类似。</h3><p>ESLint 不是安装后就可以用的，还需要一些环境和配置：<br>eg：首先在自己的工作空间建立一个文件夹xmall-front，zsh中运行 <code>npm init</code><br>然后依次执行命令，快速体验下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">~/VSCodeProjects/xmall-front npm install --save-dev eslint eslint-plugin-html</div><div class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</div><div class="line">npm WARN xmall-front@1.0.0 No repository field.</div><div class="line"></div><div class="line">+ eslint-plugin-html@4.0.1</div><div class="line">+ eslint@4.14.0</div><div class="line">added 146 packages <span class="keyword">in</span> 14.54s</div><div class="line">~/VSCodeProjects/xmall-front ./node_modules/.bin/eslint --init</div><div class="line">? How would you like to configure ESLint? Answer questions about your style</div><div class="line">? Are you using ECMAScript 6 features? Yes</div><div class="line">? Are you using ES6 modules? Yes</div><div class="line">? Where will your code run? Browser</div><div class="line">? Do you use CommonJS? Yes</div><div class="line">? Do you use JSX? Yes</div><div class="line">? Do you use React? No</div><div class="line">? What style of indentation <span class="keyword">do</span> you use? Tabs</div><div class="line">? What quotes <span class="keyword">do</span> you use <span class="keyword">for</span> strings? Single</div><div class="line">? What line endings <span class="keyword">do</span> you use? Unix</div><div class="line">? Do you require semicolons? No</div><div class="line">? What format <span class="keyword">do</span> you want your config file to be <span class="keyword">in</span>? JavaScript</div><div class="line">Successfully created .eslintrc.js file <span class="keyword">in</span> /Users/jinkui/VSCodeProjects/xmall-front</div><div class="line">~/VSCodeProjects/xmall-front la</div><div class="line">.                 ..                .eslintrc.js      node_modules      package-lock.json package.json</div></pre></td></tr></table></figure>
+<h3 id="在-vscode-中配置下-ESLint："><a href="#在-vscode-中配置下-ESLint：" class="headerlink" title="在 vscode 中配置下 ESLint："></a>在 vscode 中配置下 ESLint：</h3><p>eslint.validate - an array of language identifiers specify the files to be validated. Something like “eslint.validate”: [ “javascript”, “javascriptreact”, “html” ]. If the setting is missing, it defaults to [“javascript”, “javascriptreact”].<br>查看扩展：ESLint 的Settings Options，发现确实默认不支持vue文件啊。<br>所以说虽然安装了eslint-plugin-html还是需要配置一下的：On a Mac, click Code &gt; Preferences &gt; Settings</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// An array of language ids which should be validated by ESLint</div><div class="line">    "eslint.validate": [</div><div class="line">        "javascript",</div><div class="line">        "javascriptreact",</div><div class="line">        &#123;</div><div class="line">            "language": "html",</div><div class="line">            "autoFix": true</div><div class="line">        &#125;,</div><div class="line">        "vue"</div><div class="line">    ],</div></pre></td></tr></table></figure>
+<h2 id="安装插件-提高效率"><a href="#安装插件-提高效率" class="headerlink" title="安装插件-提高效率"></a>安装插件-提高效率</h2><p>所有插件都类似于Sublime使用Package Control安装，按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=SirTori.indenticator" target="_blank" rel="external">Indenticator</a>缩进高亮</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets" target="_blank" rel="external">JavaScript (ES6) code snippets</a>ES6语法代码段</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus" target="_blank" rel="external">language-stylus</a>Stylus语法高亮和提示</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=marclipovsky.string-manipulation" target="_blank" rel="external">String Manipulation</a>字符串转换处理（驼峰、大写开头、下划线等等）</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks" target="_blank" rel="external">Bookmarks</a>添加行书签</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=oysun.vuehelper" target="_blank" rel="external">VueHelper</a>Vue2代码段（包括Vue2 api、vue-router2、vuex2）</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>见官网。<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="external">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>开启一波Vue学习潮，干后端的也不能落伍啊</p>
+<p>参考在此：<a href="https://cloud.tencent.com/community/article/983896" target="_blank" rel="external">使用Visual Studio Code编写Vue的札记</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;应用介绍&quot;&gt;&lt;a href=&quot;#应用介绍&quot; class=&quot;headerlink&quot; title=&quot;应用介绍&quot;&gt;&lt;/a&gt;应用介绍&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;https://code.visualstudio.com/&lt;/a&gt;&lt;br&gt;我就是觉得界面美观大方，^_^&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Visual Studio Code" scheme="https://itjinkui.github.io/categories/Visual-Studio-Code/"/>
+    
+      <category term="Vue" scheme="https://itjinkui.github.io/categories/Visual-Studio-Code/Vue/"/>
+    
+    
+      <category term="Mac" scheme="https://itjinkui.github.io/tags/Mac/"/>
+    
+      <category term="Visual Studio Code" scheme="https://itjinkui.github.io/tags/Visual-Studio-Code/"/>
+    
+      <category term="Vue" scheme="https://itjinkui.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac下之Sublime Text的好用之处</title>
     <link href="https://itjinkui.github.io/2017/12/27/Sublime%20Text/"/>
     <id>https://itjinkui.github.io/2017/12/27/Sublime Text/</id>
     <published>2017-12-27T06:01:44.000Z</published>
-    <updated>2017-12-28T03:55:51.000Z</updated>
+    <updated>2017-12-28T10:40:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p>Sublime Text 拥有漂亮的用户界面和非凡的功能，而根据其官网介绍，Sublime Text的特点如下：拥有高效、没有干扰的界面，在编辑方面的多选、宏、代码片段等功能，以及很有特色的Minimap。<br>用户广受喜爱的众多功能之一GOTO ANYTHING<br>仅仅敲击几次键盘就能即刻jump to symbols, lines or words.<strong>Shortcuts:</strong>  <code>⌘ + P</code></p>
 <a id="more"></a>
@@ -33,7 +79,7 @@
 <li>添加主题：”theme”: “Soda Light 3.sublime-theme”</li>
 </ul>
 <p>我自己的主题和字体配置：<br><img src="Sublime Text-color_scheme.png" alt="Sublime Text-color_scheme"></p>
-<h1 id="插件与配置"><a href="#插件与配置" class="headerlink" title="插件与配置"></a>插件与配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，然后按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a></p>
+<h1 id="插件与配置"><a href="#插件与配置" class="headerlink" title="插件与配置"></a>插件与配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>所有插件都可以使用Package Control安装，按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。<br><a href="https://github.com/zhiqiang21/blog/issues/10" target="_blank" rel="external">前端开发 sublime text 常用插件和配置</a></p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><table>
 <thead>
 <tr>
