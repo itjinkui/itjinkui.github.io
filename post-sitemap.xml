@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/</loc>
+        <lastmod>2018-01-05T07:20:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itjinkui.github.io/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
+        <lastmod>2018-01-05T07:20:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itjinkui.github.io/2017/12/28/Visual%20Studio%20Code/</loc>
+        <lastmod>2017-12-29T10:30:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://itjinkui.github.io/2017/12/27/Sublime%20Text/</loc>
         <lastmod>2017-12-29T10:19:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,24 +39,8 @@
     </url>
 
     <url>
-        <loc>https://itjinkui.github.io/2017/12/28/Visual%20Studio%20Code/</loc>
-        <lastmod>2017-12-29T10:15:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/</loc>
         <lastmod>2017-12-29T08:04:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/</loc>
-        <lastmod>2017-12-19T05:43:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[如何搭建个人网站]]></title>
+      <url>https://itjinkui.github.io/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</url>
+      <content type="html"><![CDATA[<h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>有了个人网站，可能就又多了一些学(zhuang)习(bi)的动力吧！<br>所以，拥有自己的网站，算是迈出了第一步！</p>
+<p>好可惜最近才看到玉刚大神的文章，意识觉醒的晚了<a href="http://blog.csdn.net/singwhatiwanna/article/details/19174597" target="_blank" rel="external">树立个人品牌：让名企hr们主动来找你</a></p>
+<a id="more"></a>
+<h2 id="如何拥有自己的专属域名"><a href="#如何拥有自己的专属域名" class="headerlink" title="如何拥有自己的专属域名"></a>如何拥有自己的专属域名</h2><h3 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h3><p>作者：goileolee <a href="http://goileo.top/如何免费且快速的搭建个人网站" target="_blank" rel="external">http://goileo.top/如何免费且快速的搭建个人网站</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 阿里云域名注册 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 阿里云域名注册 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[初探Visual Studio Code编写Vue]]></title>
       <url>https://itjinkui.github.io/2017/12/28/Visual%20Studio%20Code/</url>
       <content type="html"><![CDATA[<h1 id="应用介绍"><a href="#应用介绍" class="headerlink" title="应用介绍"></a>应用介绍</h1><p><a href="https://code.visualstudio.com/" target="_blank" rel="external">https://code.visualstudio.com/</a><br>界面简洁大方，^_^</p>
@@ -368,7 +392,7 @@
       <url>https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/</url>
       <content type="html"><![CDATA[<h1 id="一张通往计算机世界的地图"><a href="#一张通往计算机世界的地图" class="headerlink" title="一张通往计算机世界的地图"></a>一张通往计算机世界的地图</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。</p>
 <a id="more"></a>
-<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p>作者：Surmon<br>链接：<a href="https://surmon.me/article/75" target="_blank" rel="external">https://surmon.me/article/75</a></p>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p>作者：Surmon <a href="https://surmon.me/article/75" target="_blank" rel="external">https://surmon.me/article/75</a></p>
 ]]></content>
       
         <categories>
@@ -380,11 +404,11 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 计算机 </tag>
             
             <tag> 网络 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> 软件工程 </tag>
             
