@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2018-01-23T06:08:57.000Z</updated>
+  <updated>2018-01-24T02:57:14.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://itjinkui.github.io/2018/01/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81%E7%A0%B4%E5%86%B0/"/>
     <id>https://itjinkui.github.io/2018/01/23/区块链与比特币破冰/</id>
     <published>2018-01-23T02:57:30.000Z</published>
-    <updated>2018-01-23T06:08:57.000Z</updated>
+    <updated>2018-01-24T02:57:14.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="大咖说"><a href="#大咖说" class="headerlink" title="大咖说"></a>大咖说</h1><p>池大大在<a href="https://goo.gl/a9KaZQ" target="_blank" rel="external">2018 年技术趋势预测</a>中写道：</p>
 <blockquote>
@@ -45,6 +45,7 @@
 <li><a href="https://mp.weixin.qq.com/s/qV9FaPdViRGkECTvPVkByA" target="_blank" rel="external">比特币和区块链(0)：骗局还是改变命运的科技</a></li>
 <li><a href="https://mp.weixin.qq.com/s/2CIh42Kd_vuYQpjYtb0pdw" target="_blank" rel="external">比特币和区块链(1)：真钱，电子货币以及区块链</a></li>
 <li><a href="https://mp.weixin.qq.com/s/fKlp5G5dBIX5YE56kgvDYw" target="_blank" rel="external">比特币和区块链(2)：比特币中区块链的实现</a></li>
+<li><a href="https://mp.weixin.qq.com/s/hDje9GjkZSRrG0IQFJf0kQ" target="_blank" rel="external">中国比特币矿机垄断全球：最被忽视的制造业样本</a></li>
 </ul>
 <p>未完待续…</p>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>2016年在接受《财经》杂志专访时，张一鸣说过的那段特别具有张一鸣色彩的话：</p>
@@ -483,11 +484,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
-    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
@@ -498,7 +499,7 @@
     <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2017-12-29T08:04:57.000Z</updated>
+    <updated>2018-01-24T03:33:22.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="redis原理与实战，不定期更新"><a href="#redis原理与实战，不定期更新" class="headerlink" title="redis原理与实战，不定期更新"></a>redis原理与实战，不定期更新</h2><p>Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。<br><a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <a id="more"></a>
@@ -593,6 +594,11 @@
 <li><a href="http://www.cnblogs.com/svan/p/7366397.html" target="_blank" rel="external">神奇的Redis延迟</a></li>
 <li><a href="https://mp.weixin.qq.com/s/GZeOs6K0XfQLopMWticYdw" target="_blank" rel="external">Spring Boot + Redis 缓存方案深度解读</a></li>
 <li><a href="https://mp.weixin.qq.com/s/2FEbkas_m1WnYUqjVpMkWw" target="_blank" rel="external">同程凤凰缓存系统基于Redis的设计与实践</a></li>
+</ul>
+<p><strong>2018-01-24更新</strong></p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/02NDtPI_CyDLDxAnf_OLdg" target="_blank" rel="external">不管你的Redis集群规模有多大，都是时候思考下如何提升资源利用率了</a></li>
+<li><a href="https://www.codeproject.com/Articles/1223882/Setting-Up-a-Redis-Test-Environment-using-Docker-C" target="_blank" rel="external">Setting Up a Redis Test Environment using Docker Compose</a></li>
 </ul>
 <p>参考在此：<br><a href="http://moelove.info/redis-articles/" target="_blank" rel="external">Redis技术交流群</a><br>Redis技术交流群2：微信群</p>
 ]]></content>
