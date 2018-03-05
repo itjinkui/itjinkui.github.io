@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2018-03-02T07:56:26.000Z</updated>
+  <updated>2018-03-05T07:30:54.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac之神兵利器</title>
+    <link href="https://itjinkui.github.io/2018/03/05/Mac%E4%B9%8B%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
+    <id>https://itjinkui.github.io/2018/03/05/Mac之神兵利器/</id>
+    <published>2018-03-05T03:18:28.000Z</published>
+    <updated>2018-03-05T07:30:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="接触Mac"><a href="#接触Mac" class="headerlink" title="接触Mac"></a>接触Mac</h1><p>我是2016年底买的Mac，原因是在那时候通读了《MacTalk 跨越边界》、《MacTalk 人生元编程》这两本书，顿觉打开了一扇大门。随即宣告了我的联想Y570正式退役。<br>先如今Mac上的开发利器、效率工具也装了不少，也该是从资料库整理一下的时机了。</p>
+<h2 id="搜集Mac"><a href="#搜集Mac" class="headerlink" title="搜集Mac"></a>搜集Mac</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/v8TqIVyuNW7zjyAFUYUMaA" target="_blank" rel="external">Mac使用 Alfred 提高你的工作效率</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzIyODI1OTA0OA==&amp;mid=2651851018&amp;idx=2&amp;sn=2a8861e073b0e4fc87fa0aea74a00fb0&amp;chksm=f3b00c8dc4c7859b2d8d9afad7acc24fe82b718bae401d06488da26c08ad3e160e5d5febdc76&amp;scene=38#wechat_redirect" target="_blank" rel="external">Parallels Desktop Business Edition 13.2.0虚拟机破解版</a></li>
+<li><a href="http://macshuo.com/?p=625" target="_blank" rel="external">神兵利器——Alfred</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712591&amp;idx=1&amp;sn=96347db5cefd051aa94cc57a7b130519&amp;scene=38#wechat_redirect" target="_blank" rel="external">推荐几款我最喜爱的 Mac 软件（非技术）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712374&amp;idx=1&amp;sn=c85519d3e4730603811120c453cac7c6&amp;scene=38#wechat_redirect" target="_blank" rel="external">从 Mac OS 到 macOS，一个新的轮回</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=203870218&amp;idx=1&amp;sn=6865ca1a61508815934812eb8f4701df&amp;scene=38#wechat_redirect" target="_blank" rel="external">Mac 与 Windows 的虚妄之争</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=100342903&amp;idx=1&amp;sn=73f7fa339be9dc7dd5771aacca92f555&amp;scene=38#wechat_redirect" target="_blank" rel="external">程序员最常用的十个 Mac 工具（上）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=100345605&amp;idx=1&amp;sn=79712e26aece94936ed3273757c07e9e&amp;scene=38#wechat_redirect" target="_blank" rel="external">程序员最常用的十个 Mac 工具（中）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=100351098&amp;idx=1&amp;sn=6c67d2d78d331e90d4c9adbf2d9350cf&amp;scene=38#wechat_redirect" target="_blank" rel="external">程序员最常用的十个 Mac 工具（下）</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=200805470&amp;idx=1&amp;sn=8e1aeac4238592291ba8135f95144613&amp;scene=38#wechat_redirect" target="_blank" rel="external">我在大学里学到的几件事</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;接触Mac&quot;&gt;&lt;a href=&quot;#接触Mac&quot; class=&quot;headerlink&quot; title=&quot;接触Mac&quot;&gt;&lt;/a&gt;接触Mac&lt;/h1&gt;&lt;p&gt;我是2016年底买的Mac，原因是在那时候通读了《MacTalk 跨越边界》、《MacTalk 人生元编程》这两本书
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://itjinkui.github.io/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="https://itjinkui.github.io/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>区块链与比特币破冰</title>
@@ -514,11 +549,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
-    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
@@ -529,7 +564,7 @@
     <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2018-02-24T10:47:31.000Z</updated>
+    <updated>2018-03-05T03:22:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="redis原理与实战，不定期更新"><a href="#redis原理与实战，不定期更新" class="headerlink" title="redis原理与实战，不定期更新"></a>redis原理与实战，不定期更新</h2><p>Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。<br><a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <a id="more"></a>
@@ -636,6 +671,18 @@
 <li><a href="https://mp.weixin.qq.com/s/e5FF2a5WJyuYrlVAWEqhNQ" target="_blank" rel="external">Jmeter Redis插件开发 – 读写数据</a></li>
 <li><a href="https://juejin.im/post/5a6873fcf265da3e3245a985" target="_blank" rel="external">线上redis迁移思路</a></li>
 <li><a href="https://my.oschina.net/giegie/blog/1525931" target="_blank" rel="external">基于Redis实现分布式应用限流</a></li>
+</ul>
+<p><strong>2018-03-05</strong></p>
+<ul>
+<li><a href="https://ningyu1.github.io/site/post/05-cache-design/?from=groupmessage" target="_blank" rel="external">Cache设计和使用上的套路</a></li>
+<li><a href="https://mp.weixin.qq.com/s/NBsIB4PBUSrOEmnBGipg2g" target="_blank" rel="external">Shiro安全框架基于Redis的分布式集群方案</a></li>
+<li><a href="https://mp.weixin.qq.com/s/reaVnCtF982Jqo45IKgjeg" target="_blank" rel="external">运用 Redis 构建分布式爬虫，抓妹子图</a></li>
+<li><a href="http://view.zsxq.com/view/5a9cb2a42540ed22f43a2014" target="_blank" rel="external">Redisson PRO</a></li>
+<li><a href="https://mp.weixin.qq.com/s/hfbTRWaGSZfed4I2Op0O-w" target="_blank" rel="external">Redis探索之路</a></li>
+<li><a href="https://opensource.com/article/18/2/building-bikesharing-application-open-source-tools" target="_blank" rel="external">Build a bikesharing app with Redis and Python</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7pvwWZun0KBN4jE14ViSlA" target="_blank" rel="external">借鉴Codis实现的两种不停机分库分表迁移方案</a></li>
+<li><a href="https://huoding.com/2012/02/29/146" target="_blank" rel="external">Redis消息通知系统的实现</a></li>
+<li><a href="https://dzone.com/articles/swarmweek-part-2-rescheduling-redis-with-swarm" target="_blank" rel="external">Docker Swarm Part II: Rescheduling Redis</a></li>
 </ul>
 <p>参考在此：<br><a href="http://moelove.info/redis-articles/" target="_blank" rel="external">Redis技术交流群</a><br>Redis技术交流群2：微信群</p>
 ]]></content>
