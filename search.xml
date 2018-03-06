@@ -532,11 +532,11 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 计算机 </tag>
             
             <tag> 网络 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> 软件工程 </tag>
             
@@ -661,7 +661,8 @@
 <li><a href="http://view.zsxq.com/view/5a9cb2a42540ed22f43a2014" target="_blank" rel="external">Redisson PRO</a></li>
 <li><a href="https://mp.weixin.qq.com/s/hfbTRWaGSZfed4I2Op0O-w" target="_blank" rel="external">Redis探索之路</a></li>
 <li><a href="https://opensource.com/article/18/2/building-bikesharing-application-open-source-tools" target="_blank" rel="external">Build a bikesharing app with Redis and Python</a></li>
-<li><a href="https://mp.weixin.qq.com/s/7pvwWZun0KBN4jE14ViSlA" target="_blank" rel="external">借鉴Codis实现的两种不停机分库分表迁移方案</a></li>
+<li><a href="https://mp.weixin.qq.com/s/uKGdK-1jP0q6xiJyczGwFw" target="_blank" rel="external">不停机分库分表迁移</a></li>
+<li><a href="http://blog.csdn.net/dc_726/article/details/47355989" target="_blank" rel="external">豌豆夹Redis解决方案Codis源码剖析：Dashboard</a></li>
 <li><a href="https://huoding.com/2012/02/29/146" target="_blank" rel="external">Redis消息通知系统的实现</a></li>
 <li><a href="https://dzone.com/articles/swarmweek-part-2-rescheduling-redis-with-swarm" target="_blank" rel="external">Docker Swarm Part II: Rescheduling Redis</a></li>
 </ul>

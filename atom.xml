@@ -562,11 +562,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
-    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
@@ -577,7 +577,7 @@
     <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
     <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
-    <updated>2018-03-06T04:01:00.000Z</updated>
+    <updated>2018-03-06T06:21:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="redis原理与实战，不定期更新"><a href="#redis原理与实战，不定期更新" class="headerlink" title="redis原理与实战，不定期更新"></a>redis原理与实战，不定期更新</h2><p>Redis是业界普遍应用的缓存组件，研究一个组件框架，就要探究它的设计哲学。<br><a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <a id="more"></a>
@@ -693,7 +693,8 @@
 <li><a href="http://view.zsxq.com/view/5a9cb2a42540ed22f43a2014" target="_blank" rel="external">Redisson PRO</a></li>
 <li><a href="https://mp.weixin.qq.com/s/hfbTRWaGSZfed4I2Op0O-w" target="_blank" rel="external">Redis探索之路</a></li>
 <li><a href="https://opensource.com/article/18/2/building-bikesharing-application-open-source-tools" target="_blank" rel="external">Build a bikesharing app with Redis and Python</a></li>
-<li><a href="https://mp.weixin.qq.com/s/7pvwWZun0KBN4jE14ViSlA" target="_blank" rel="external">借鉴Codis实现的两种不停机分库分表迁移方案</a></li>
+<li><a href="https://mp.weixin.qq.com/s/uKGdK-1jP0q6xiJyczGwFw" target="_blank" rel="external">不停机分库分表迁移</a></li>
+<li><a href="http://blog.csdn.net/dc_726/article/details/47355989" target="_blank" rel="external">豌豆夹Redis解决方案Codis源码剖析：Dashboard</a></li>
 <li><a href="https://huoding.com/2012/02/29/146" target="_blank" rel="external">Redis消息通知系统的实现</a></li>
 <li><a href="https://dzone.com/articles/swarmweek-part-2-rescheduling-redis-with-swarm" target="_blank" rel="external">Docker Swarm Part II: Rescheduling Redis</a></li>
 </ul>
