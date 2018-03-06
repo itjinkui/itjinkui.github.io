@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://itjinkui.github.io/"/>
-  <updated>2018-03-05T08:09:17.000Z</updated>
+  <updated>2018-03-06T10:19:53.000Z</updated>
   <id>https://itjinkui.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://itjinkui.github.io/2018/03/05/Mac%E4%B9%8B%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     <id>https://itjinkui.github.io/2018/03/05/Mac之神兵利器/</id>
     <published>2018-03-05T03:18:28.000Z</published>
-    <updated>2018-03-05T08:09:17.000Z</updated>
+    <updated>2018-03-06T10:19:53.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触Mac"><a href="#接触Mac" class="headerlink" title="接触Mac"></a>接触Mac</h1><p>我是2016年底买的Mac，原因是在那时候通读了《MacTalk 跨越边界》、《MacTalk 人生元编程》这两本书，顿觉打开了一扇大门。随即宣告了我的联想Y570正式退役。<br>现如今Mac上的开发利器、效率工具也装了不少，也该是从资料库整理一下的时机了。</p>
 <a id="more"></a>
@@ -39,6 +39,11 @@
 <li><a href="http://www.ntfsformac.cn/" target="_blank" rel="external">Paragon NTFS for Mac</a>付费购买</li>
 <li><a href="https://cleanmymac.com/" target="_blank" rel="external">CleanMyMac 3</a>付费购买</li>
 <li><a href="https://contexts.co/" target="_blank" rel="external">Contexts 3</a>花钱购买的</li>
+</ul>
+<h2 id="有思想的读物"><a href="#有思想的读物" class="headerlink" title="有思想的读物"></a>有思想的读物</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/bbbsbxHoryLtTfEwulzUJg" target="_blank" rel="external">普通程序员能实现财务自由吗？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/j16qYi2-WEELa_uFO1fPlw" target="_blank" rel="external">相信吗？你的英语，决定着你的收入和未来</a></li>
+<li><a href="https://mp.weixin.qq.com/s/AJSbHg1o7iYXy21TB1k48w" target="_blank" rel="external">罗永浩-酷玩实验室</a></li>
 </ul>
 <h3 id="终极搜寻"><a href="#终极搜寻" class="headerlink" title="终极搜寻"></a>终极搜寻</h3><ul>
 <li><a href="https://www.waitsun.com/" target="_blank" rel="external">爱情守望者</a></li>
@@ -64,7 +69,7 @@
     <link href="https://itjinkui.github.io/2018/01/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81%E7%A0%B4%E5%86%B0/"/>
     <id>https://itjinkui.github.io/2018/01/23/区块链与比特币破冰/</id>
     <published>2018-01-23T02:57:30.000Z</published>
-    <updated>2018-03-06T02:19:22.000Z</updated>
+    <updated>2018-03-06T10:15:55.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="大咖说"><a href="#大咖说" class="headerlink" title="大咖说"></a>大咖说</h1><p>池大大在<a href="https://goo.gl/a9KaZQ" target="_blank" rel="external">2018 年技术趋势预测</a>中写道：</p>
 <blockquote>
@@ -118,6 +123,10 @@
 <p><strong>2018-03-06</strong></p>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/Y_DxSPyMnJWDQD6S0S1NYw" target="_blank" rel="external">ICO裹挟区块链强势重来</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7F2-eLqIdSiNIHHJDzkwcg" target="_blank" rel="external">深入研究的套路之黑客与区块链</a></li>
+<li><a href="https://mp.weixin.qq.com/s/TbtpnHiZS8v1R_Udpun0xA" target="_blank" rel="external">5天钓到40枚以太币</a></li>
+<li><a href="https://mp.weixin.qq.com/s/d_4gUc3Ay_He4fintNXw6Q" target="_blank" rel="external">杂谈区块链生态里的前端黑</a></li>
+<li><a href="https://mp.weixin.qq.com/s/XK78b-qoPu5cu7rCPKXdEA" target="_blank" rel="external">区块链的十个吐槽</a></li>
 </ul>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>2016年在接受《财经》杂志专访时，张一鸣说过的那段特别具有张一鸣色彩的话：</p>
 <blockquote>
@@ -562,11 +571,11 @@
       <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
     
     
+      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+    
       <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
     
       <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
