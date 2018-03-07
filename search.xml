@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Spring Cloud构建微服务架构]]></title>
+      <url>%2F2018%2F03%2F07%2FSpring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%2F</url>
+      <content type="text"><![CDATA[接触Spring Boot2016年 Spring Boot 还没有被广泛使用，到了现在经过2年的发展，很多互联网公司已经将 Spring Boot 搬上了生产，而使用 Spring Boot 的开源项目在 Github/码云 上面已有不少，很有必要开启一波学习潮了。 听到了一句挺中肯的话，“离开场景和业务的修炼都是伪命题”。所以呢，有必要总结一下Spring Boot 相关的开源项目，选取一个感兴趣的，然后深入学习提交pr，真正的提高自己的技术能力。 搜集 Spring Boot干货系列总纲 Spring Boot 那些事 Spring Boot基础教程 江南一点雨（Spring Cloud教程合集） 有思想的博客站点 Vue作者尤雨溪 纯洁的微笑 程序猿DD 嘟嘟独立博客 泥瓦匠BYSocket 小柒2012 江南一点雨 周立 Aresn 花裤衩 老齐 Goileo Lee 许彬 stormzhang 简单之美 独孤求胜 任玉刚 终极搜寻 Spring Boot 中文索引 Spring Boot 开源软件都有哪些？ 结语朋友圈里看到了一句话，觉得特别好：不善于总结的人，就是在吃老本，吃惯性，吃你的智商和知识。所以呢建立博客，有的没的写一些技术、生活相关的东西，但愿不辜负青春，便想努力留下印记。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Mac之神兵利器]]></title>
       <url>%2F2018%2F03%2F05%2FMac%E4%B9%8B%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8%2F</url>
       <content type="text"><![CDATA[接触Mac我是2016年底买的Mac，原因是在那时候通读了《MacTalk 跨越边界》、《MacTalk 人生元编程》这两本书，顿觉打开了一扇大门。随即宣告了我的联想Y570正式退役。现如今Mac上的开发利器、效率工具也装了不少，也该是从资料库整理一下的时机了。 搜集Mac Mac使用 Alfred 提高你的工作效率 神兵利器——Alfred 推荐几款我最喜爱的 Mac 软件（非技术） 从 Mac OS 到 macOS，一个新的轮回 Mac 与 Windows 的虚妄之争 程序员最常用的十个 Mac 工具（上） 程序员最常用的十个 Mac 工具（中） 程序员最常用的十个 Mac 工具（下） 我在大学里学到的几件事 OmniFocus 2 Pro for Mac 2.10 序号版 - 最优秀的GTD效率工具 Parallels Desktop 13 for Mac 13.2.0.43213 破解版 - Mac上最优秀的虚拟机 Paragon NTFS for Mac付费购买 CleanMyMac 3付费购买 Contexts 3花钱购买的 有思想的读物 普通程序员能实现财务自由吗？ 罗永浩-酷玩实验室 终极搜寻 爱情守望者 爱范儿]]></content>
