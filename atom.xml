@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>闻道</title>
-  
+  <title>zeroto的博客</title>
+  <subtitle>追求卓越，成功自然而来</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://itjinkui.github.io/"/>
-  <updated>2018-03-09T03:30:34.000Z</updated>
-  <id>https://itjinkui.github.io/</id>
+  <link href="https://zeroto.tech/"/>
+  <updated>2018-03-09T05:22:57.000Z</updated>
+  <id>https://zeroto.tech/</id>
   
   <author>
     <name>千古不见一人闲</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Spring Cloud构建微服务架构</title>
-    <link href="https://itjinkui.github.io/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    <id>https://itjinkui.github.io/2018/03/07/Spring Boot构建微服务/</id>
+    <link href="https://zeroto.tech/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://zeroto.tech/2018/03/07/Spring Boot构建微服务/</id>
     <published>2018-03-07T06:45:37.000Z</published>
-    <updated>2018-03-09T03:30:34.000Z</updated>
+    <updated>2018-03-09T05:22:57.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触Spring-Boot"><a href="#接触Spring-Boot" class="headerlink" title="接触Spring Boot"></a>接触Spring Boot</h1><p>2016年 Spring Boot 还没有被广泛使用，到了现在经过2年的发展，很多互联网公司已经将 Spring Boot 搬上了生产，而使用 Spring Boot 的开源项目在 Github/码云 上面已有不少，很有必要开启一波学习潮了。</p>
 <p>听到了一句挺中肯的话，“离开场景和业务的修炼都是伪命题”。所以呢，有必要总结一下Spring Boot 相关的开源项目，选取一个感兴趣的，然后深入学习提交pr，真正的提高自己的技术能力。</p>
@@ -32,6 +32,7 @@
 <li><a href="http://blog.csdn.net/u012702547/article/details/78717512" target="_blank" rel="external">江南一点雨（Spring Cloud教程合集）</a></li>
 </ul>
 <h2 id="有思想的博客站点"><a href="#有思想的博客站点" class="headerlink" title="有思想的博客站点"></a>有思想的博客站点</h2><ul>
+<li><a href="http://www.spring4all.com/" target="_blank" rel="external">http://www.spring4all.com/</a></li>
 <li><a href="http://www.ityouknow.com/" target="_blank" rel="external">纯洁的微笑</a></li>
 <li><a href="http://blog.didispace.com/" target="_blank" rel="external">程序猿DD</a></li>
 <li><a href="http://tengj.top/" target="_blank" rel="external">嘟嘟独立博客</a></li>
@@ -74,19 +75,19 @@
     
     </summary>
     
-      <category term="Spring Cloud构建微服务架构" scheme="https://itjinkui.github.io/categories/Spring-Cloud%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/"/>
+      <category term="Spring Cloud构建微服务架构" scheme="https://zeroto.tech/categories/Spring-Cloud%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="Spring Boot" scheme="https://itjinkui.github.io/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="https://zeroto.tech/tags/Spring-Boot/"/>
     
-      <category term="Spring Cloud" scheme="https://itjinkui.github.io/tags/Spring-Cloud/"/>
+      <category term="Spring Cloud" scheme="https://zeroto.tech/tags/Spring-Cloud/"/>
     
   </entry>
   
   <entry>
     <title>Mac之神兵利器</title>
-    <link href="https://itjinkui.github.io/2018/03/05/Mac%E4%B9%8B%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
-    <id>https://itjinkui.github.io/2018/03/05/Mac之神兵利器/</id>
+    <link href="https://zeroto.tech/2018/03/05/Mac%E4%B9%8B%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
+    <id>https://zeroto.tech/2018/03/05/Mac之神兵利器/</id>
     <published>2018-03-05T03:18:28.000Z</published>
     <updated>2018-03-06T10:31:06.000Z</updated>
     
@@ -124,17 +125,17 @@
     
     </summary>
     
-      <category term="Mac" scheme="https://itjinkui.github.io/categories/Mac/"/>
+      <category term="Mac" scheme="https://zeroto.tech/categories/Mac/"/>
     
     
-      <category term="Mac" scheme="https://itjinkui.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://zeroto.tech/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>区块链与比特币破冰</title>
-    <link href="https://itjinkui.github.io/2018/01/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81%E7%A0%B4%E5%86%B0/"/>
-    <id>https://itjinkui.github.io/2018/01/23/区块链与比特币破冰/</id>
+    <link href="https://zeroto.tech/2018/01/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81%E7%A0%B4%E5%86%B0/"/>
+    <id>https://zeroto.tech/2018/01/23/区块链与比特币破冰/</id>
     <published>2018-01-23T02:57:30.000Z</published>
     <updated>2018-03-06T10:15:55.000Z</updated>
     
@@ -210,19 +211,19 @@
     
     </summary>
     
-      <category term="区块链与比特币" scheme="https://itjinkui.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+      <category term="区块链与比特币" scheme="https://zeroto.tech/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81/"/>
     
     
-      <category term="区块链" scheme="https://itjinkui.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://zeroto.tech/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-      <category term="比特币" scheme="https://itjinkui.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+      <category term="比特币" scheme="https://zeroto.tech/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
     
   </entry>
   
   <entry>
     <title>如何搭建个人网站</title>
-    <link href="https://itjinkui.github.io/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
-    <id>https://itjinkui.github.io/2018/01/05/如何搭建个人网站/</id>
+    <link href="https://zeroto.tech/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
+    <id>https://zeroto.tech/2018/01/05/如何搭建个人网站/</id>
     <published>2018-01-05T06:57:16.000Z</published>
     <updated>2018-03-09T04:34:52.000Z</updated>
     
@@ -241,17 +242,17 @@
     
     </summary>
     
-      <category term="阿里云域名注册" scheme="https://itjinkui.github.io/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C/"/>
+      <category term="阿里云域名注册" scheme="https://zeroto.tech/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C/"/>
     
     
-      <category term="阿里云域名注册" scheme="https://itjinkui.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C/"/>
+      <category term="阿里云域名注册" scheme="https://zeroto.tech/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C/"/>
     
   </entry>
   
   <entry>
     <title>初探Visual Studio Code编写Vue</title>
-    <link href="https://itjinkui.github.io/2017/12/28/Visual%20Studio%20Code/"/>
-    <id>https://itjinkui.github.io/2017/12/28/Visual Studio Code/</id>
+    <link href="https://zeroto.tech/2017/12/28/Visual%20Studio%20Code/"/>
+    <id>https://zeroto.tech/2017/12/28/Visual Studio Code/</id>
     <published>2017-12-28T08:12:15.000Z</published>
     <updated>2018-03-09T03:09:10.000Z</updated>
     
@@ -307,23 +308,23 @@
     
     </summary>
     
-      <category term="Visual Studio Code" scheme="https://itjinkui.github.io/categories/Visual-Studio-Code/"/>
+      <category term="Visual Studio Code" scheme="https://zeroto.tech/categories/Visual-Studio-Code/"/>
     
-      <category term="Vue" scheme="https://itjinkui.github.io/categories/Visual-Studio-Code/Vue/"/>
+      <category term="Vue" scheme="https://zeroto.tech/categories/Visual-Studio-Code/Vue/"/>
     
     
-      <category term="Mac" scheme="https://itjinkui.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://zeroto.tech/tags/Mac/"/>
     
-      <category term="Visual Studio Code" scheme="https://itjinkui.github.io/tags/Visual-Studio-Code/"/>
+      <category term="Visual Studio Code" scheme="https://zeroto.tech/tags/Visual-Studio-Code/"/>
     
-      <category term="Vue" scheme="https://itjinkui.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://zeroto.tech/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Mac下之Sublime Text的好用之处</title>
-    <link href="https://itjinkui.github.io/2017/12/27/Sublime%20Text/"/>
-    <id>https://itjinkui.github.io/2017/12/27/Sublime Text/</id>
+    <link href="https://zeroto.tech/2017/12/27/Sublime%20Text/"/>
+    <id>https://zeroto.tech/2017/12/27/Sublime Text/</id>
     <published>2017-12-27T06:01:44.000Z</published>
     <updated>2017-12-29T10:19:10.000Z</updated>
     
@@ -610,19 +611,19 @@
     
     </summary>
     
-      <category term="Sublime Text" scheme="https://itjinkui.github.io/categories/Sublime-Text/"/>
+      <category term="Sublime Text" scheme="https://zeroto.tech/categories/Sublime-Text/"/>
     
     
-      <category term="Mac" scheme="https://itjinkui.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="https://zeroto.tech/tags/Mac/"/>
     
-      <category term="Sublime Text" scheme="https://itjinkui.github.io/tags/Sublime-Text/"/>
+      <category term="Sublime Text" scheme="https://zeroto.tech/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
     <title>一张通往计算机世界的地图</title>
-    <link href="https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/"/>
-    <id>https://itjinkui.github.io/2017/12/19/一张通往计算机世界的地图/</id>
+    <link href="https://zeroto.tech/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/"/>
+    <id>https://zeroto.tech/2017/12/19/一张通往计算机世界的地图/</id>
     <published>2017-12-19T05:25:09.000Z</published>
     <updated>2018-01-05T07:20:33.000Z</updated>
     
@@ -637,23 +638,23 @@
     
     </summary>
     
-      <category term="Code" scheme="https://itjinkui.github.io/categories/Code/"/>
+      <category term="Code" scheme="https://zeroto.tech/categories/Code/"/>
     
     
-      <category term="计算机" scheme="https://itjinkui.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="Linux" scheme="https://zeroto.tech/tags/Linux/"/>
     
-      <category term="网络" scheme="https://itjinkui.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机" scheme="https://zeroto.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+      <category term="网络" scheme="https://zeroto.tech/tags/%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="软件工程" scheme="https://itjinkui.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+      <category term="软件工程" scheme="https://zeroto.tech/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>redis技术交流</title>
-    <link href="https://itjinkui.github.io/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
-    <id>https://itjinkui.github.io/2017/12/12/redis技术交流/</id>
+    <link href="https://zeroto.tech/2017/12/12/redis%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81/"/>
+    <id>https://zeroto.tech/2017/12/12/redis技术交流/</id>
     <published>2017-12-12T08:56:14.000Z</published>
     <updated>2018-03-07T09:40:39.000Z</updated>
     
@@ -786,17 +787,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="https://itjinkui.github.io/categories/Redis/"/>
+      <category term="Redis" scheme="https://zeroto.tech/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="https://itjinkui.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="https://zeroto.tech/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>JVM 优化经验</title>
-    <link href="https://itjinkui.github.io/2017/11/17/jvm-tool/"/>
-    <id>https://itjinkui.github.io/2017/11/17/jvm-tool/</id>
+    <link href="https://zeroto.tech/2017/11/17/jvm-tool/"/>
+    <id>https://zeroto.tech/2017/11/17/jvm-tool/</id>
     <published>2017-11-17T06:52:55.000Z</published>
     <updated>2017-12-19T05:36:21.000Z</updated>
     
@@ -859,17 +860,17 @@
     
     </summary>
     
-      <category term="JVM" scheme="https://itjinkui.github.io/categories/JVM/"/>
+      <category term="JVM" scheme="https://zeroto.tech/categories/JVM/"/>
     
     
-      <category term="JVM" scheme="https://itjinkui.github.io/tags/JVM/"/>
+      <category term="JVM" scheme="https://zeroto.tech/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>Java内存模型之happens-before</title>
-    <link href="https://itjinkui.github.io/2017/11/03/happens-before/"/>
-    <id>https://itjinkui.github.io/2017/11/03/happens-before/</id>
+    <link href="https://zeroto.tech/2017/11/03/happens-before/"/>
+    <id>https://zeroto.tech/2017/11/03/happens-before/</id>
     <published>2017-11-03T05:28:14.000Z</published>
     <updated>2017-11-03T06:53:23.000Z</updated>
     
@@ -910,19 +911,19 @@
     
     </summary>
     
-      <category term="Java内存模型" scheme="https://itjinkui.github.io/categories/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+      <category term="Java内存模型" scheme="https://zeroto.tech/categories/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
     
     
-      <category term="Java" scheme="https://itjinkui.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://zeroto.tech/tags/Java/"/>
     
-      <category term="Java内存模型" scheme="https://itjinkui.github.io/tags/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+      <category term="Java内存模型" scheme="https://zeroto.tech/tags/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
     <title>Java锁的种类</title>
-    <link href="https://itjinkui.github.io/2017/11/01/Java-lock/"/>
-    <id>https://itjinkui.github.io/2017/11/01/Java-lock/</id>
+    <link href="https://zeroto.tech/2017/11/01/Java-lock/"/>
+    <id>https://zeroto.tech/2017/11/01/Java-lock/</id>
     <published>2017-11-01T06:49:18.000Z</published>
     <updated>2017-12-18T05:45:27.000Z</updated>
     
@@ -967,19 +968,19 @@
     
     </summary>
     
-      <category term="J.U.C" scheme="https://itjinkui.github.io/categories/J-U-C/"/>
+      <category term="J.U.C" scheme="https://zeroto.tech/categories/J-U-C/"/>
     
     
-      <category term="Java" scheme="https://itjinkui.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://zeroto.tech/tags/Java/"/>
     
-      <category term="J.U.C" scheme="https://itjinkui.github.io/tags/J-U-C/"/>
+      <category term="J.U.C" scheme="https://zeroto.tech/tags/J-U-C/"/>
     
   </entry>
   
   <entry>
     <title>poi实现Excel文件导入、导出</title>
-    <link href="https://itjinkui.github.io/2017/10/23/Excel-poi-how/"/>
-    <id>https://itjinkui.github.io/2017/10/23/Excel-poi-how/</id>
+    <link href="https://zeroto.tech/2017/10/23/Excel-poi-how/"/>
+    <id>https://zeroto.tech/2017/10/23/Excel-poi-how/</id>
     <published>2017-10-23T02:33:07.000Z</published>
     <updated>2017-12-13T06:34:18.000Z</updated>
     
@@ -998,19 +999,19 @@
     
     </summary>
     
-      <category term="poi" scheme="https://itjinkui.github.io/categories/poi/"/>
+      <category term="poi" scheme="https://zeroto.tech/categories/poi/"/>
     
     
-      <category term="Excel" scheme="https://itjinkui.github.io/tags/Excel/"/>
+      <category term="Excel" scheme="https://zeroto.tech/tags/Excel/"/>
     
-      <category term="poi" scheme="https://itjinkui.github.io/tags/poi/"/>
+      <category term="poi" scheme="https://zeroto.tech/tags/poi/"/>
     
   </entry>
   
   <entry>
     <title>itext实现录取通知书、成绩单</title>
-    <link href="https://itjinkui.github.io/2017/07/03/itext-how/"/>
-    <id>https://itjinkui.github.io/2017/07/03/itext-how/</id>
+    <link href="https://zeroto.tech/2017/07/03/itext-how/"/>
+    <id>https://zeroto.tech/2017/07/03/itext-how/</id>
     <published>2017-07-03T07:21:25.000Z</published>
     <updated>2017-12-18T09:01:27.000Z</updated>
     
@@ -1037,21 +1038,21 @@
     
     </summary>
     
-      <category term="iText" scheme="https://itjinkui.github.io/categories/iText/"/>
+      <category term="iText" scheme="https://zeroto.tech/categories/iText/"/>
     
-      <category term="jfreechart" scheme="https://itjinkui.github.io/categories/iText/jfreechart/"/>
+      <category term="jfreechart" scheme="https://zeroto.tech/categories/iText/jfreechart/"/>
     
     
-      <category term="iText" scheme="https://itjinkui.github.io/tags/iText/"/>
+      <category term="iText" scheme="https://zeroto.tech/tags/iText/"/>
     
-      <category term="jfreechart" scheme="https://itjinkui.github.io/tags/jfreechart/"/>
+      <category term="jfreechart" scheme="https://zeroto.tech/tags/jfreechart/"/>
     
   </entry>
   
   <entry>
     <title>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</title>
-    <link href="https://itjinkui.github.io/2017/06/22/MySQL-how/"/>
-    <id>https://itjinkui.github.io/2017/06/22/MySQL-how/</id>
+    <link href="https://zeroto.tech/2017/06/22/MySQL-how/"/>
+    <id>https://zeroto.tech/2017/06/22/MySQL-how/</id>
     <published>2017-06-22T05:17:06.000Z</published>
     <updated>2017-06-30T02:30:39.000Z</updated>
     
@@ -1084,21 +1085,21 @@
     
     </summary>
     
-      <category term="Homebrew" scheme="https://itjinkui.github.io/categories/Homebrew/"/>
+      <category term="Homebrew" scheme="https://zeroto.tech/categories/Homebrew/"/>
     
-      <category term="MySQL" scheme="https://itjinkui.github.io/categories/Homebrew/MySQL/"/>
+      <category term="MySQL" scheme="https://zeroto.tech/categories/Homebrew/MySQL/"/>
     
     
-      <category term="Homebrew" scheme="https://itjinkui.github.io/tags/Homebrew/"/>
+      <category term="Homebrew" scheme="https://zeroto.tech/tags/Homebrew/"/>
     
-      <category term="MySQL" scheme="https://itjinkui.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://zeroto.tech/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Docker初探</title>
-    <link href="https://itjinkui.github.io/2017/06/16/docker-how-1/"/>
-    <id>https://itjinkui.github.io/2017/06/16/docker-how-1/</id>
+    <link href="https://zeroto.tech/2017/06/16/docker-how-1/"/>
+    <id>https://zeroto.tech/2017/06/16/docker-how-1/</id>
     <published>2017-06-16T06:04:53.000Z</published>
     <updated>2017-12-13T08:33:56.000Z</updated>
     
@@ -1188,17 +1189,17 @@
     
     </summary>
     
-      <category term="Docker" scheme="https://itjinkui.github.io/categories/Docker/"/>
+      <category term="Docker" scheme="https://zeroto.tech/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="https://itjinkui.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="https://zeroto.tech/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>Linux</title>
-    <link href="https://itjinkui.github.io/2017/05/25/systemd/"/>
-    <id>https://itjinkui.github.io/2017/05/25/systemd/</id>
+    <link href="https://zeroto.tech/2017/05/25/systemd/"/>
+    <id>https://zeroto.tech/2017/05/25/systemd/</id>
     <published>2017-05-25T09:59:57.000Z</published>
     <updated>2017-12-13T08:34:21.000Z</updated>
     
@@ -1373,17 +1374,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://itjinkui.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://zeroto.tech/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://itjinkui.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://zeroto.tech/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>git</title>
-    <link href="https://itjinkui.github.io/2017/05/11/git-how/"/>
-    <id>https://itjinkui.github.io/2017/05/11/git-how/</id>
+    <link href="https://zeroto.tech/2017/05/11/git-how/"/>
+    <id>https://zeroto.tech/2017/05/11/git-how/</id>
     <published>2017-05-11T09:57:29.000Z</published>
     <updated>2017-12-19T05:33:57.000Z</updated>
     
@@ -1454,17 +1455,17 @@
     
     </summary>
     
-      <category term="Git" scheme="https://itjinkui.github.io/categories/Git/"/>
+      <category term="Git" scheme="https://zeroto.tech/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://itjinkui.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://zeroto.tech/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://itjinkui.github.io/2017/03/28/hello-world/"/>
-    <id>https://itjinkui.github.io/2017/03/28/hello-world/</id>
+    <link href="https://zeroto.tech/2017/03/28/hello-world/"/>
+    <id>https://zeroto.tech/2017/03/28/hello-world/</id>
     <published>2017-03-28T10:29:41.000Z</published>
     <updated>2017-05-11T08:59:40.000Z</updated>
     
