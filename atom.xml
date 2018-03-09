@@ -2659,7 +2659,7 @@ $ <span class="token function">sudo</span> journalctl --vacuum-time<span class="
     <link href="https://zeroto.tech/2017/05/11/git-how/"/>
     <id>https://zeroto.tech/2017/05/11/git-how/</id>
     <published>2017-05-11T09:57:29.000Z</published>
-    <updated>2017-12-19T05:33:57.000Z</updated>
+    <updated>2018-03-09T09:37:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>#Git 闲话</p>
 <blockquote>
@@ -2796,7 +2796,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <h4 id="文件暂存"><a href="#文件暂存" class="headerlink" title="文件暂存"></a>文件暂存</h4><p>这里的暂存不是前面说的暂存区，而是只一次备份与恢复操作。<br>git stash<br>指令来将当前修改暂存，这样就可以切换到其他分支或者就在当前干净的分支上checkout了。<br>比如你checkout了一个issue分支，修改了bug，使用git merge合并到了master分支，删除issue分支，切换到dev分支，想继续之前的新功能开发。<br>这时候，就需要恢复现场了：</p>
 <p>git stash list<br>指令来查看当前暂存的内容记录。<br>然后，通过git stash apply或者git stash pop来进行恢复，它们的区别是，前者不会删除记录（当然你可以使用git stash drop来删除），而后者会。</p>
 <h4 id="远程仓库-amp-同步协作"><a href="#远程仓库-amp-同步协作" class="headerlink" title="远程仓库&amp;同步协作"></a>远程仓库&amp;同步协作</h4><p>现在你在本地建立了git仓库，想与远程git仓库同步。</p>
-<p>我们先在github上创建一个repo（仓库），<br>创建之后，github给我们提示：<br><img src="git.png" alt="git_createrepository"><br>可以看出，执行以下指令就和远程仓库建立关联了，自然也就可以多人同步协作开发了。</p>
+<p>我们先在github上创建一个repo（仓库），<br>创建之后，github给我们提示,按照提示执行以下指令<br>和远程仓库建立关联，自然也就可以多人同步协作开发了。</p>
 <pre class="line-numbers language-zsh"><code class="language-zsh">git remote add origin git@github.com:itjinkui/git_springboot.git
 git push -u origin master
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
