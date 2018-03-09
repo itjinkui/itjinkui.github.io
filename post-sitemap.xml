@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://itjinkui.github.io/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
+        <lastmod>2018-03-09T04:34:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://itjinkui.github.io/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
         <lastmod>2018-03-09T03:30:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
     <url>
         <loc>https://itjinkui.github.io/2017/12/19/%E4%B8%80%E5%BC%A0%E9%80%9A%E5%BE%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E7%9A%84%E5%9C%B0%E5%9B%BE/</loc>
         <lastmod>2018-01-05T07:20:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itjinkui.github.io/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
-        <lastmod>2018-01-05T07:20:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
