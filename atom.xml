@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2018-03-12T03:07:07.000Z</updated>
+  <updated>2018-03-12T09:54:18.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="//zeroto.tech/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     <id>//zeroto.tech/2018/03/07/Spring Boot构建微服务/</id>
     <published>2018-03-07T06:45:37.000Z</published>
-    <updated>2018-03-12T03:07:07.000Z</updated>
+    <updated>2018-03-12T09:54:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触Spring-Boot"><a href="#接触Spring-Boot" class="headerlink" title="接触Spring Boot"></a>接触Spring Boot</h1><p>2016年 Spring Boot 还没有被广泛使用，到了现在经过2年的发展，很多互联网公司已经将 Spring Boot 搬上了生产，而使用 Spring Boot 的开源项目在 Github/码云 上面已有不少，很有必要开启一波学习潮了。</p>
 <p>听到了一句挺中肯的话，“离开场景和业务的修炼都是伪命题”。所以呢，有必要总结一下Spring Boot 相关的开源项目，选取一个感兴趣的，然后深入学习提交pr，真正的提高自己的技术能力。</p>
@@ -62,6 +62,7 @@
 <li><a href="http://blog.csdn.net/eclipsexys" target="_blank" rel="external">eclipse_xu</a> 《Android群英传：神兵利器》,买了读过。有意思的人儿</li>
 <li><a href="http://lawlite.me/" target="_blank" rel="external">Lawlite</a></li>
 <li><a href="http://www.54tianzhisheng.cn/" target="_blank" rel="external">zhisheng</a></li>
+<li><a href="http://jumpbyte.cn/" target="_blank" rel="external">JumpByte</a></li>
 </ul>
 <h3 id="终极搜寻"><a href="#终极搜寻" class="headerlink" title="终极搜寻"></a>终极搜寻</h3><ul>
 <li><a href="http://springboot.fun/" target="_blank" rel="external">Spring Boot 中文索引</a></li>
@@ -258,14 +259,14 @@
 <a id="more"></a>
 <h1 id="Vue插件安装"><a href="#Vue插件安装" class="headerlink" title="Vue插件安装"></a>Vue插件安装</h1><p>在 VSCode Marketplace <a href="https://marketplace.visualstudio.com/vscode" target="_blank" rel="external">https://marketplace.visualstudio.com/vscode</a> 搜素Vue 出现关于语法高亮的插件有 Vue 2 Snippets，vue-beautify，vue-color，Vetur等等。花花绿绿的，往下翻看，目前使用率最高的就是Vetur了。<br>安装插件：⌘P 然后输入 ext install vetur 然后回车点安装即可。<br>但是如果你使用惯了Vim/Sublime/Atom等，VSCode允许安装自己的键盘快捷方式。<br><img src="VSCode-Sublime.png" alt="VSCode-Sublime"><br>我个人选择了Sublime，设置后并激活，这时按下<code>command+shift+p</code><br><img src="VSCode-Ext.png" alt="VSCode-Ext"><br>输入 Vetur<br><img src="VSCode-Vetur.png" alt="VSCode-Vetur"></p>
 <h2 id="VS-Code-ESLint-extension"><a href="#VS-Code-ESLint-extension" class="headerlink" title="VS Code ESLint extension"></a>VS Code ESLint extension</h2><h3 id="安装插件和Vetur类似。"><a href="#安装插件和Vetur类似。" class="headerlink" title="安装插件和Vetur类似。"></a>安装插件和Vetur类似。</h3><p>ESLint 不是安装后就可以用的，还需要一些环境和配置：<br>eg：首先在自己的工作空间建立一个文件夹xmall-front，zsh中运行 <code>npm init</code><br>然后依次执行命令，快速体验下：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">
-~/VSCodeProjects/xmall-front <span class="token function">npm</span> <span class="token function">install</span> --save-dev eslint eslint-plugin-html
-<span class="token function">npm</span> notice created a lockfile as package-lock.json. You should commit this file.
-<span class="token function">npm</span> WARN xmall-front@1.0.0 No repository field.
+<pre><code class="bash">
+~/VSCodeProjects/xmall-front npm install --save-dev eslint eslint-plugin-html
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN xmall-front@1.0.0 No repository field.
 
 + eslint-plugin-html@4.0.1
 + eslint@4.14.0
-added 146 packages <span class="token keyword">in</span> 14.54s
+added 146 packages in 14.54s
 ~/VSCodeProjects/xmall-front ./node_modules/.bin/eslint --init
 ? How would you like to configure ESLint? Answer questions about your style
 ? Are you using ECMAScript 6 features? Yes
@@ -274,28 +275,28 @@ added 146 packages <span class="token keyword">in</span> 14.54s
 ? Do you use CommonJS? Yes
 ? Do you use JSX? Yes
 ? Do you use React? No
-? What style of indentation <span class="token keyword">do</span> you use? Tabs
-? What quotes <span class="token keyword">do</span> you use <span class="token keyword">for</span> strings? Single
-? What line endings <span class="token keyword">do</span> you use? Unix
+? What style of indentation do you use? Tabs
+? What quotes do you use for strings? Single
+? What line endings do you use? Unix
 ? Do you require semicolons? No
-? What <span class="token function">format</span> <span class="token keyword">do</span> you want your config <span class="token function">file</span> to be in? JavaScript
-Successfully created .eslintrc.js <span class="token function">file</span> <span class="token keyword">in</span> /Users/jinkui/VSCodeProjects/xmall-front
+? What format do you want your config file to be in? JavaScript
+Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-front
 ~/VSCodeProjects/xmall-front la
-<span class="token keyword">.</span>                 <span class="token punctuation">..</span>                .eslintrc.js      node_modules      package-lock.json package.json
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+.                 ..                .eslintrc.js      node_modules      package-lock.json package.json
+</code></pre>
 <h3 id="在-vscode-中配置下-ESLint："><a href="#在-vscode-中配置下-ESLint：" class="headerlink" title="在 vscode 中配置下 ESLint："></a>在 vscode 中配置下 ESLint：</h3><p>eslint.validate - an array of language identifiers specify the files to be validated. Something like “eslint.validate”: [ “javascript”, “javascriptreact”, “html” ]. If the setting is missing, it defaults to [“javascript”, “javascriptreact”].<br>查看扩展：ESLint 的Settings Options，发现确实默认不支持vue文件啊。<br>所以说虽然安装了eslint-plugin-html还是需要配置一下的：On a Mac, click Code &gt; Preferences &gt; Settings</p>
-<pre class="line-numbers language-json"><code class="language-json">
+<pre><code class="json">
 // An array of language ids which should be validated by ESLint
-    <span class="token property">"eslint.validate"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token string">"javascript"</span><span class="token punctuation">,</span>
-        <span class="token string">"javascriptreact"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-            <span class="token property">"language"</span><span class="token operator">:</span> <span class="token string">"html"</span><span class="token punctuation">,</span>
-            <span class="token property">"autoFix"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token string">"vue"</span>
-    <span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    &quot;eslint.validate&quot;: [
+        &quot;javascript&quot;,
+        &quot;javascriptreact&quot;,
+        {
+            &quot;language&quot;: &quot;html&quot;,
+            &quot;autoFix&quot;: true
+        },
+        &quot;vue&quot;
+    ]
+</code></pre>
 <h2 id="安装插件-提高效率"><a href="#安装插件-提高效率" class="headerlink" title="安装插件-提高效率"></a>安装插件-提高效率</h2><p>所有插件都类似于Sublime使用Package Control安装，按下快捷键<code>⌘⇧P</code>，在命令提示框搜索插件即可。</p>
 <ul>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager" target="_blank" rel="external">Project Manager</a> 在多个项目之前快速切换的工具</li>
@@ -330,34 +331,34 @@ Successfully created .eslintrc.js <span class="token function">file</span> <span
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>见官网。<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="external">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a></p>
 <h3 id="修改默认快捷键"><a href="#修改默认快捷键" class="headerlink" title="修改默认快捷键"></a>修改默认快捷键</h3><p>打开默认键盘快捷方式设置：</p>
 <p>修改 keybindings.json：</p>
-<pre class="line-numbers language-json"><code class="language-json">
+<pre><code class="json">
 // 将键绑定放入此文件中以覆盖默认值
-<span class="token punctuation">[</span>
-  // '删除一行'
-  <span class="token punctuation">{</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+d"</span><span class="token punctuation">,</span>
-    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"editor.action.deleteLines"</span><span class="token punctuation">,</span>
-    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorTextFocus &amp;&amp; !editorReadonly"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  // 与'删除一行'的快捷键互换
-  <span class="token punctuation">{</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"shift+cmd+k"</span><span class="token punctuation">,</span>
-    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"editor.action.addSelectionToNextFindMatch"</span><span class="token punctuation">,</span>
-    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorFocus"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+[
+  // &#39;删除一行&#39;
+  {
+    &quot;key&quot;: &quot;cmd+d&quot;,
+    &quot;command&quot;: &quot;editor.action.deleteLines&quot;,
+    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; !editorReadonly&quot;
+  },
+  // 与&#39;删除一行&#39;的快捷键互换
+  {
+    &quot;key&quot;: &quot;shift+cmd+k&quot;,
+    &quot;command&quot;: &quot;editor.action.addSelectionToNextFindMatch&quot;,
+    &quot;when&quot;: &quot;editorFocus&quot;
+  },
   // 大小写转换快捷键，需安装 TextTransform 插件
-  <span class="token punctuation">{</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+shift+y"</span><span class="token punctuation">,</span>
-    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"editor.action.transformToUppercase"</span><span class="token punctuation">,</span>
-    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorTextFocus"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+shift+x"</span><span class="token punctuation">,</span>
-    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"editor.action.transformtolowercase"</span><span class="token punctuation">,</span>
-    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorTextFocus"</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  {
+    &quot;key&quot;: &quot;cmd+shift+y&quot;,
+    &quot;command&quot;: &quot;editor.action.transformToUppercase&quot;,
+    &quot;when&quot;: &quot;editorTextFocus&quot;
+  },
+  {
+    &quot;key&quot;: &quot;cmd+shift+x&quot;,
+    &quot;command&quot;: &quot;editor.action.transformtolowercase&quot;,
+    &quot;when&quot;: &quot;editorTextFocus&quot;
+  }
+]
+</code></pre>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>开启一波Vue学习潮，干后端的也不能落伍啊</p>
 <p>参考在此：<br><a href="https://cloud.tencent.com/community/article/983896" target="_blank" rel="external">使用Visual Studio Code编写Vue的札记</a><br><a href="http://www.silianpan.club/2017/05/18/tool1/" target="_blank" rel="external">vs code &amp; Atom 对比使用心得</a></p>
 ]]></content>
@@ -386,8 +387,8 @@ Successfully created .eslintrc.js <span class="token function">file</span> <span
 <a id="more"></a>
 <p>要支持一把的官网购买啊<a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>啊不花钱看这里：<a href="http://xclient.info/s/sublime-text.html?_=854c5c4c70359873adbd147e3e8c9cf3" target="_blank" rel="external">Sublime Text 3 Build 3156</a></p>
 <h1 id="主题插件安装"><a href="#主题插件安装" class="headerlink" title="主题插件安装"></a>主题插件安装</h1><p><a href="http://buymeasoda.github.io/soda-theme/" target="_blank" rel="external">soda-theme</a>该插件主要能够使sublime 兼容mac的retina屏幕<br>我采用Git安装最新版本，可以通过菜单 Preferences -&gt; Browse Packages….，定位到你的Sublime Text Packages文件夹，然后在这个文件夹下面 git clone就OK了。</p>
-<pre class="line-numbers language-git"><code class="language-git">git clone https://github.com/buymeasoda/soda-theme/ <span class="token string">"Theme - Soda"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="git">git clone https://github.com/buymeasoda/soda-theme/ &quot;Theme - Soda&quot;
+</code></pre>
 <p><strong> Configure Sublime Text 3 </strong></p>
 <ul>
 <li>打开配置文件： Sublime Text -&gt; Preferences -&gt; Settings - User</li>
@@ -656,17 +657,17 @@ Successfully created .eslintrc.js <span class="token function">file</span> <span
 </tbody>
 </table>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Preferences -&gt; Key Bindings,在-User文件里自定义快捷键：</p>
-<pre class="line-numbers language-json"><code class="language-json">
-<span class="token punctuation">[</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+shift+y"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"upper_case"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+shift+x"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"lower_case"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+j"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"expand_selection"</span><span class="token punctuation">,</span> <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"to"</span><span class="token operator">:</span> <span class="token string">"line"</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+j+l"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"join_lines"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+e+s+f+s"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"slurp_find_string"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+e"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"find_under_expand"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"super+d"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"run_macro_file"</span><span class="token punctuation">,</span> <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"file"</span><span class="token operator">:</span> <span class="token string">"res://Packages/Default/Delete Line.sublime-macro"</span><span class="token punctuation">}</span> <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="json">
+[
+    { &quot;keys&quot;: [&quot;super+shift+y&quot;], &quot;command&quot;: &quot;upper_case&quot; },
+    { &quot;keys&quot;: [&quot;super+shift+x&quot;], &quot;command&quot;: &quot;lower_case&quot; },
+    { &quot;keys&quot;: [&quot;super+j&quot;], &quot;command&quot;: &quot;expand_selection&quot;, &quot;args&quot;: {&quot;to&quot;: &quot;line&quot;} },
+    { &quot;keys&quot;: [&quot;super+j+l&quot;], &quot;command&quot;: &quot;join_lines&quot; },
+    { &quot;keys&quot;: [&quot;super+e+s+f+s&quot;], &quot;command&quot;: &quot;slurp_find_string&quot; },
+    { &quot;keys&quot;: [&quot;super+e&quot;], &quot;command&quot;: &quot;find_under_expand&quot; },
+    { &quot;keys&quot;: [&quot;super+d&quot;], &quot;command&quot;: &quot;run_macro_file&quot;, &quot;args&quot;: {&quot;file&quot;: &quot;res://Packages/Default/Delete Line.sublime-macro&quot;} }
+]
+</code></pre>
 <p>参考在此：<a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html" target="_blank" rel="external">Keyboard Shortcuts - OSX</a></p>
 ]]></content>
     
@@ -700,11 +701,11 @@ Successfully created .eslintrc.js <span class="token function">file</span> <span
     </summary>
     
     
+      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
+    
       <category term="计算机" scheme="//zeroto.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="//zeroto.tech/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
     
       <category term="软件工程" scheme="//zeroto.tech/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
@@ -978,18 +979,18 @@ Successfully created .eslintrc.js <span class="token function">file</span> <span
     <link href="//zeroto.tech/2017/11/01/Java-lock/"/>
     <id>//zeroto.tech/2017/11/01/Java-lock/</id>
     <published>2017-11-01T06:49:18.000Z</published>
-    <updated>2018-03-12T03:21:18.000Z</updated>
+    <updated>2018-03-12T06:41:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JVM的运行时数据区"><a href="#JVM的运行时数据区" class="headerlink" title="JVM的运行时数据区"></a>JVM的运行时数据区</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
 <p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
 <a id="more"></a>
-<h2 id="单例模式实现方式"><a href="#单例模式实现方式" class="headerlink" title="单例模式实现方式"></a>单例模式实现方式</h2><pre class="line-numbers language-Java"><code class="language-Java">/**   
+<h2 id="单例模式实现方式"><a href="#单例模式实现方式" class="headerlink" title="单例模式实现方式"></a>单例模式实现方式</h2><pre><code class="java">/**   
  * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
  * https://blankj.com/2016/04/21/really-use-singleton/
  * @ClassName: Singleton.java
- * @Description: 单例模式实现方式<br>
- * 1、双重锁检测<br>
- * 2、静态内部类<br>
+ * @Description: 单例模式实现方式&lt;br&gt;
+ * 1、双重锁检测&lt;br&gt;
+ * 2、静态内部类&lt;br&gt;
  * 3、枚举
  *
  * @author: zhangjk
@@ -1028,12 +1029,12 @@ public class Singleton {
 
 
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="并发工具类"><a href="#并发工具类" class="headerlink" title="并发工具类"></a>并发工具类</h2><p>CountDownLatch和CyclicBarrier是jdk concurrent包下非常有用的两个并发工具类，它们提供了一种控制并发流程的手段。</p>
 <p>CountDownLatch 允许一个或多个线程等待其他线程完成操作。<br>CyclicBarrier 让一组线程到达一个同步点后再一起继续运行，在其中任意一个线程未达到同步点，其他到达的线程均会被阻塞。</p>
 <h3 id="Semaphore（信号量）"><a href="#Semaphore（信号量）" class="headerlink" title="Semaphore（信号量）"></a>Semaphore（信号量）</h3><p>信号量(Semaphore)，有时被称为信号灯，是在多线程环境下使用的一种设施, 它负责协调各个线程, 以保证它们能够正确、合理的使用公共资源。</p>
 <p>一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个 acquire()，然后再获取该许可。<br>每个 release() 添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</p>
-<pre class="line-numbers language-Java"><code class="language-Java">/**
+<pre><code class="java">/**
  * 控制并发线程数
  */
 public class SemaphoreDemo {
@@ -1055,11 +1056,11 @@ public class SemaphoreDemo {
             try {
                 //获取信号量许可
                 semaphore.acquire();
-                System.out.println("用户【" + user + "】进入窗口，准备买票...");
+                System.out.println(&quot;用户【&quot; + user + &quot;】进入窗口，准备买票...&quot;);
                 Thread.sleep((long)(Math.random()*10000));
-                System.out.println("用户【" + user + "】买票完成，即将离开...");
+                System.out.println(&quot;用户【&quot; + user + &quot;】买票完成，即将离开...&quot;);
                 Thread.sleep((long)(Math.random()*10000));
-                System.out.println("用户【" + user + "】离开售票窗口...");
+                System.out.println(&quot;用户【&quot; + user + &quot;】离开售票窗口...&quot;);
                 //释放信号量许可
                 semaphore.release();
             } catch (InterruptedException e) {
@@ -1075,7 +1076,7 @@ public class SemaphoreDemo {
         //线程池
         ExecutorService threadPool = Executors.newCachedThreadPool();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i &lt; 10; i++) {
             threadPool.execute(new SemaphoreRunnable(semaphore,i + 1));
         }
         threadPool.shutdown();
@@ -1087,7 +1088,7 @@ public class SemaphoreDemo {
     }
 
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p>源码注释：<br>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.<br>（一个或者多个线程，等待其他多个线程完成某件事情之后才能执行）</p>
 <blockquote>
 <ul>
@@ -1097,7 +1098,7 @@ public class SemaphoreDemo {
 </ul>
 </blockquote>
 <p>网上有个经典例子，在此抄录一下帮助理解记忆。</p>
-<pre class="line-numbers language-Java"><code class="language-Java">/**
+<pre><code class="java">/**
  * F1赛车每次进站后，车队技师都需要在尽可能短的时间内对赛车做三个工作：加注燃油、更换轮胎、更换刹车片。
  * 当然，这三项工作都是同时进行的。只有当这三项工作完成，赛车才能驶出维修站。
  */
@@ -1115,7 +1116,7 @@ public class CountdownlatchDemo {
             try {
                 int random=new Random().nextInt(7);
                 TimeUnit.SECONDS.sleep(random);
-                System.out.println(Thread.currentThread().getName()+"--- "+work+" 完成，此组耗时："+random+"秒");
+                System.out.println(Thread.currentThread().getName()+&quot;--- &quot;+work+&quot; 完成，此组耗时：&quot;+random+&quot;秒&quot;);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }finally{
@@ -1130,12 +1131,12 @@ public class CountdownlatchDemo {
     public static void main(String[] args) {
         CountDownLatch cDownLatch=new CountDownLatch(3);//初始计数器值为3，对应3个维修组
          /*1、赛车进站*/
-        System.out.println("F1赛车进站，时间："+Calendar.getInstance().get(Calendar.SECOND));
+        System.out.println(&quot;F1赛车进站，时间：&quot;+Calendar.getInstance().get(Calendar.SECOND));
 
-        List<Mechanician> mechanician_team=new ArrayList<Mechanician>();
-        mechanician_team.add(new Mechanician("加注燃油", cDownLatch));
-        mechanician_team.add(new Mechanician("更换轮胎", cDownLatch));
-        mechanician_team.add(new Mechanician("更换刹车片", cDownLatch));
+        List&lt;Mechanician&gt; mechanician_team=new ArrayList&lt;Mechanician&gt;();
+        mechanician_team.add(new Mechanician(&quot;加注燃油&quot;, cDownLatch));
+        mechanician_team.add(new Mechanician(&quot;更换轮胎&quot;, cDownLatch));
+        mechanician_team.add(new Mechanician(&quot;更换刹车片&quot;, cDownLatch));
         for(Mechanician mechanician : mechanician_team){
             new Thread(mechanician).start();
         }
@@ -1147,12 +1148,12 @@ public class CountdownlatchDemo {
         }
 
         /*4、完成维护，出发*/
-        System.out.println("F1赛车维修完毕，出发！时间："+Calendar.getInstance().get(Calendar.SECOND));
+        System.out.println(&quot;F1赛车维修完毕，出发！时间：&quot;+Calendar.getInstance().get(Calendar.SECOND));
 
     }
 
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>Countdownlatch 是一个倒计数器锁。调用CountDownLatch对象的await()方法使线程处于等待状态，调用countDown()方法的线程会将计数器减1，当计数到达0时，所有等待线程（可多个，但通常的应用场景中只有一个等待者）开始继续执行。</p>
 <h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>源码注释：<br>A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.（多个线程互相等待，直到到达同一个同步点，再继续一起执行）</p>
 <blockquote>
@@ -1182,21 +1183,21 @@ public class CountdownlatchDemo {
     <link href="//zeroto.tech/2017/10/23/Excel-poi-how/"/>
     <id>//zeroto.tech/2017/10/23/Excel-poi-how/</id>
     <published>2017-10-23T02:33:07.000Z</published>
-    <updated>2018-03-12T03:21:47.000Z</updated>
+    <updated>2018-03-12T06:40:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="poi-是什么呢"><a href="#poi-是什么呢" class="headerlink" title="poi 是什么呢"></a>poi 是什么呢</h1><p>Apache POI 简介是用Java编写的免费开源的跨平台的 Java API，Apache POI提供API给Java程式对Microsoft Office（Excel、WORD、PowerPoint、Visio等）格式档案读和写的功能。POI为“Poor Obfuscation Implementation”的首字母缩写，意为“可怜的模糊实现”。</p>
 <a id="more"></a>
 <h1 id="与我而言"><a href="#与我而言" class="headerlink" title="与我而言"></a>与我而言</h1><p>使用于某项技术，来完成特定业务是最重要的。看下图最终要实现的功能：<br>考查、考试，在对应的中期（期中）考核形式、期末考试形式 相应位置处画 √<br>必修课补考形式 唯一必填。<br>难点在于 期中考试形式、期末考试形式、必修课补考形式（考试形式字典）是动态可增减的。</p>
 <p><img src="excel-poi.png" alt="考务：考试形式登记"></p>
-<h2 id="归纳总结Excel工具类"><a href="#归纳总结Excel工具类" class="headerlink" title="归纳总结Excel工具类"></a>归纳总结Excel工具类</h2><pre class="line-numbers language-Java"><code class="language-Java">
-public static Map<String,String>  getExcelHeaderString(String filePath) {
-//        You'd use HSSF if you needed to read or write an Excel file using Java (XLS). 
-//        You'd use XSSF if you need to read or write an OOXML Excel file using Java (XLSX).         
+<h2 id="归纳总结Excel工具类"><a href="#归纳总结Excel工具类" class="headerlink" title="归纳总结Excel工具类"></a>归纳总结Excel工具类</h2><pre><code class="java">
+public static Map&lt;String,String&gt;  getExcelHeaderString(String filePath) {
+//        You&#39;d use HSSF if you needed to read or write an Excel file using Java (XLS). 
+//        You&#39;d use XSSF if you need to read or write an OOXML Excel file using Java (XLSX).         
         boolean isE2007 = false;    //判断是否是excel2007格式
 
-        if(filePath.endsWith("xlsx")) isE2007 = true;
+        if(filePath.endsWith(&quot;xlsx&quot;)) isE2007 = true;
         //得到表头字段
-        Map<String, String> excelHeaderMap = new LinkedHashMap<String, String>();
+        Map&lt;String, String&gt; excelHeaderMap = new LinkedHashMap&lt;String, String&gt;();
         InputStream input = null;
         Workbook wb = null;
         try {
@@ -1210,7 +1211,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
             Row row = sheet.getRow(0);
             int columnNum = row.getLastCellNum();
 
-            for (short i = 0; i < columnNum; i++) {
+            for (short i = 0; i &lt; columnNum; i++) {
                 Cell cell = row.getCell(i);
                 String HeaderString = cell.getRichStringCellValue().getString().trim();
                 excelHeaderMap.put(HeaderString,HeaderString);
@@ -1230,18 +1231,18 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
     }
 
 
-    public static List<Map<String,Object>> getBeanList(String filePath) throws IOException{
+    public static List&lt;Map&lt;String,Object&gt;&gt; getBeanList(String filePath) throws IOException{
         return getBeanList(filePath, null);
     }
     /**
      * 解析excel 数据，每一行存为一个map， key为每列首行对应的文字
      */
-    public static List<Map<String,Object>> getBeanList(String filePath, Map<String, String> matchingResultMap) throws IOException{
-        List<Map<String,Object>> beanList = new ArrayList<Map<String,Object>>();
+    public static List&lt;Map&lt;String,Object&gt;&gt; getBeanList(String filePath, Map&lt;String, String&gt; matchingResultMap) throws IOException{
+        List&lt;Map&lt;String,Object&gt;&gt; beanList = new ArrayList&lt;Map&lt;String,Object&gt;&gt;();
 
         boolean isE2007 = false;    //判断是否是excel2007格式
 
-        if(filePath.endsWith("xlsx")) isE2007 = true;
+        if(filePath.endsWith(&quot;xlsx&quot;)) isE2007 = true;
         InputStream input = null;
         Workbook wb = null;
         try {
@@ -1252,21 +1253,21 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
             else wb = new HSSFWorkbook(input);
 
             Sheet sheet = wb.getSheetAt(0);
-            Map<Short, String> excelHeaderMap = new HashMap<Short, String>();
+            Map&lt;Short, String&gt; excelHeaderMap = new HashMap&lt;Short, String&gt;();
             int firstRowNum = sheet.getFirstRowNum();
             Row row = sheet.getRow(firstRowNum);
             int columnNum = row.getLastCellNum();
-            for (short i = 0; i < columnNum; i++) {
+            for (short i = 0; i &lt; columnNum; i++) {
                 Cell cell = row.getCell(i);
                 String HeaderString = cell.getRichStringCellValue().getString().trim();
                 excelHeaderMap.put(i,HeaderString);
             }
             int rowNum = sheet.getPhysicalNumberOfRows();// 获取第0个sheet的行的数量(1...n)
 
-            for (int i = firstRowNum+1; i < rowNum; i++) {
+            for (int i = firstRowNum+1; i &lt; rowNum; i++) {
                 Row xRow = sheet.getRow(i);
-                Map<String,Object> beanMap = new LinkedHashMap<String, Object>();
-                for(short j=0; j < columnNum; j++ ){
+                Map&lt;String,Object&gt; beanMap = new LinkedHashMap&lt;String, Object&gt;();
+                for(short j=0; j &lt; columnNum; j++ ){
                     String headerKey = null;
                     if ( matchingResultMap == null
                             || matchingResultMap.get(excelHeaderMap.get(j)) == null){
@@ -1281,13 +1282,13 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
                             beanMap.put(headerKey, headerValue);
                         }
                     }else{
-                        beanMap.put(headerKey, "");
+                        beanMap.put(headerKey, &quot;&quot;);
                     }
                 }
                 if(beanMap.containsKey(null)){
                     beanMap.remove(null);
                 }
-                beanMap.put("row_num", i + 1);//excel中的行号
+                beanMap.put(&quot;row_num&quot;, i + 1);//excel中的行号
                 beanList.add(beanMap);
             }
         }catch(IOException e){
@@ -1322,15 +1323,15 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
             Sheet sheet = wb.createSheet();
             Row row = sheet.createRow(0);
             int colLength = fieldNames.length;
-            for (int i = 0; i < colLength; i++) {
+            for (int i = 0; i &lt; colLength; i++) {
                 row.setHeightInPoints(25);
                 sheet.setColumnWidth(i, 256*16);
                 ExcelUtils.createCell(row, i, fieldNames[i],createHeadCell(wb));
             }
             int line = 0;
-            for (line = 0; line < data.length; line++) {
+            for (line = 0; line &lt; data.length; line++) {
                 Row rowtemp = sheet.createRow(line +1);
-                for (int col = 0; col < colLength; col++) {
+                for (int col = 0; col &lt; colLength; col++) {
                     createCell2(rowtemp, col,data[line][col],createCellStyle(font,cellStyle));
                 }
             }
@@ -1371,21 +1372,21 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
             CellStyle cellStyle = wb.createCellStyle();
             Sheet sheet = null;
             if(StringUtils.isBlank(sheetName)){
-                sheet = wb.createSheet("");
+                sheet = wb.createSheet(&quot;&quot;);
             }else{
                 sheet =  wb.createSheet(sheetName);
             }
             Row row = sheet.createRow(0);
             int colLength = fieldNames.length;
-            for (int i = 0; i < colLength; i++) {
+            for (int i = 0; i &lt; colLength; i++) {
                 row.setHeightInPoints(25);
                 sheet.setColumnWidth(i, 256*16);
                 ExcelUtils.createCell(row, i, fieldNames[i], createHeadCell(wb));
             }
             int line = 0;
-            for (line = 0; line < data.length; line++) {
+            for (line = 0; line &lt; data.length; line++) {
                 Row rowtemp = sheet.createRow(line +1);
-                for (int col = 0; col < colLength; col++) {
+                for (int col = 0; col &lt; colLength; col++) {
                     createCell2(rowtemp, col,data[line][col],createCellStyle(font,cellStyle));
                 }
             }
@@ -1443,7 +1444,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
      */
     public static void createCell(Row row, Integer column, String cellValue, CellStyle cellStyle) {
         Cell cell = row.createCell(column);
-        if(StringUtils.isEmpty(cellValue)) cellValue = "";
+        if(StringUtils.isEmpty(cellValue)) cellValue = &quot;&quot;;
         cell.setCellValue(cellValue);
         // 统一将单元格格式设置成字符串类型
         cell.setCellType(Cell.CELL_TYPE_STRING);
@@ -1452,7 +1453,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
 
     public static void createCell2(Row row, Integer column, Object cellValue, CellStyle cellStyle) {
         Cell cell = row.createCell(column);
-        if(StringUtils.isEmpty(String.valueOf(cellValue))) cellValue = "";
+        if(StringUtils.isEmpty(String.valueOf(cellValue))) cellValue = &quot;&quot;;
 
         try {
             if (isNumeric(String.valueOf(cellValue))){
@@ -1477,8 +1478,8 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
              }
              //http://blog.jobbole.com/96052/ 
              //非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$ 
-//            String reg = "^\\d+(\\.\\d+)?$";
-            String reg = "^(0|([1-9]\\d{0,6}))(\\.\\d+)?$";//避免长数字出现科学计数法
+//            String reg = &quot;^\\d+(\\.\\d+)?$&quot;;
+            String reg = &quot;^(0|([1-9]\\d{0,6}))(\\.\\d+)?$&quot;;//避免长数字出现科学计数法
             return Pattern.compile(reg).matcher(value).find();
         }
 
@@ -1490,7 +1491,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
      */
     public static void createCell(Row row, Integer column, String cellValue) {
         Cell cell = row.createCell(column);
-        if(StringUtils.isEmpty(cellValue)) cellValue = "";
+        if(StringUtils.isEmpty(cellValue)) cellValue = &quot;&quot;;
         cell.setCellValue(cellValue);
         // 统一将单元格格式设置成字符串类型
         cell.setCellType(Cell.CELL_TYPE_STRING);
@@ -1504,7 +1505,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
      */
     public static void createCell(Row row, Integer column, Object cellValue) {
         Cell cell = row.createCell(column);
-        if(StringUtils.isEmpty(String.valueOf(cellValue))) cellValue = "";
+        if(StringUtils.isEmpty(String.valueOf(cellValue))) cellValue = &quot;&quot;;
         cell.setCellValue(String.valueOf(cellValue));
         // 统一将单元格格式设置成字符串类型
         cell.setCellType(Cell.CELL_TYPE_STRING);
@@ -1524,7 +1525,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
             if (DateUtil.isCellDateFormatted(cell)) {
                 return String.valueOf(cell.getDateCellValue());
             } else {
-                DecimalFormat df = new DecimalFormat("0");
+                DecimalFormat df = new DecimalFormat(&quot;0&quot;);
                 return  df.format(cell.getNumericCellValue());
             }
         case Cell.CELL_TYPE_BOOLEAN:
@@ -1551,7 +1552,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
         // 设置字体颜色 (黑色)
         font.setColor(HSSFColor.BLACK.index);
         // 设置字体
-        font.setFontName("宋体");
+        font.setFontName(&quot;宋体&quot;);
         // 设置粗体
         font.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);
         // 设置字体大小
@@ -1576,7 +1577,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
         // 设置字体颜色 (黑色)
         font.setColor(HSSFColor.BLACK.index);
         // 设置字体
-        font.setFontName("宋体");
+        font.setFontName(&quot;宋体&quot;);
         // 设置粗体
         font.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);
         // 设置字体大小
@@ -1605,7 +1606,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
         // 设置字体颜色 (黑色)
         font.setColor(HSSFColor.BLACK.index);
         // 设置字体
-        font.setFontName("宋体");
+        font.setFontName(&quot;宋体&quot;);
         // 设置粗体
         font.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);
         // 设置字体大小
@@ -1634,7 +1635,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
         CellStyle cellStyle = wb.createCellStyle();
         // 设置字体颜色 (黑色)
         font.setColor(HSSFColor.BLACK.index);
-        font.setFontName("宋体");
+        font.setFontName(&quot;宋体&quot;);
         // 设置粗体
         font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
         // 设置字体大小
@@ -1663,7 +1664,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
         // 设置字体颜色 (黑色)
         font.setColor(HSSFColor.BLACK.index);
         // 设置字体
-        font.setFontName("宋体");
+        font.setFontName(&quot;宋体&quot;);
         // 设置粗体
         font.setBoldweight(boldweight);
         // 设置字体大小
@@ -1688,16 +1689,16 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
     public static String getMergedRegionValue(Sheet sheet, int row, int column) {
         int sheetMergeCount = sheet.getNumMergedRegions();
 
-        for (int i = 0; i < sheetMergeCount; i++) {
+        for (int i = 0; i &lt; sheetMergeCount; i++) {
             CellRangeAddress ca = sheet.getMergedRegion(i);
             int firstColumn = ca.getFirstColumn();
             int lastColumn = ca.getLastColumn();
             int firstRow = ca.getFirstRow();
             int lastRow = ca.getLastRow();
 
-            if (row >= firstRow && row <= lastRow) {
+            if (row &gt;= firstRow &amp;&amp; row &lt;= lastRow) {
 
-                if (column >= firstColumn && column <= lastColumn) {
+                if (column &gt;= firstColumn &amp;&amp; column &lt;= lastColumn) {
                     Row fRow = sheet.getRow(firstRow);
                     Cell fCell = fRow.getCell(firstColumn);
                     return ExcelUtils.getCellContent(fCell);
@@ -1719,15 +1720,15 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
     public static CellRangeAddress getMergedRegion(Sheet sheet, int row, int column) {
         int sheetMergeCount = sheet.getNumMergedRegions();
 
-        for (int i = 0; i < sheetMergeCount; i++) {
+        for (int i = 0; i &lt; sheetMergeCount; i++) {
             CellRangeAddress region = sheet.getMergedRegion(i);
             int firstColumn = region.getFirstColumn();
             int lastColumn = region.getLastColumn();
             int firstRow = region.getFirstRow();
             int lastRow = region.getLastRow();
 
-            if (row >= firstRow && row <= lastRow) {
-                if (column >= firstColumn && column <= lastColumn) {
+            if (row &gt;= firstRow &amp;&amp; row &lt;= lastRow) {
+                if (column &gt;= firstColumn &amp;&amp; column &lt;= lastColumn) {
                     return region;
                 }
             }
@@ -1745,14 +1746,14 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
      */
     public static boolean isMergedRow(Sheet sheet, int row, int column) {
         int sheetMergeCount = sheet.getNumMergedRegions();
-        for (int i = 0; i < sheetMergeCount; i++) {
+        for (int i = 0; i &lt; sheetMergeCount; i++) {
             CellRangeAddress range = sheet.getMergedRegion(i);
             int firstColumn = range.getFirstColumn();
             int lastColumn = range.getLastColumn();
             int firstRow = range.getFirstRow();
             int lastRow = range.getLastRow();
-            if (row == firstRow && row == lastRow) {
-                if (column >= firstColumn && column <= lastColumn) {
+            if (row == firstRow &amp;&amp; row == lastRow) {
+                if (column &gt;= firstColumn &amp;&amp; column &lt;= lastColumn) {
                     return true;
                 }
             }
@@ -1773,21 +1774,21 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
      */
     public static boolean isMergedRegion(Sheet sheet, int row, int column) {
         int sheetMergeCount = sheet.getNumMergedRegions();
-        for (int i = 0; i < sheetMergeCount; i++) {
+        for (int i = 0; i &lt; sheetMergeCount; i++) {
             CellRangeAddress range = sheet.getMergedRegion(i);
             int firstColumn = range.getFirstColumn();
             int lastColumn = range.getLastColumn();
             int firstRow = range.getFirstRow();
             int lastRow = range.getLastRow();
-            if (row >= firstRow && row <= lastRow) {
-                if (column >= firstColumn && column <= lastColumn) {
+            if (row &gt;= firstRow &amp;&amp; row &lt;= lastRow) {
+                if (column &gt;= firstColumn &amp;&amp; column &lt;= lastColumn) {
                     return true;
                 }
             }
         }
         return false;
     }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>页面部分分为三步：<br>1、上传文件<br><img src="excel-upload-1.png" alt="导入第一步"><br>2、设置数据更新方式<br><img src="excel-upload-2.png" alt="导入第二步"><br>3、提示（比如说Excel中有重复记录，也需要提示出来，让用户修改后重新导入）<br><img src="excel-upload-3.png" alt="导入第三步"></p>
 <p>#结语<br>记录备忘之。</p>
 ]]></content>
@@ -1810,70 +1811,72 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
     <link href="//zeroto.tech/2017/07/03/itext-how/"/>
     <id>//zeroto.tech/2017/07/03/itext-how/</id>
     <published>2017-07-03T07:21:25.000Z</published>
-    <updated>2018-03-12T03:57:00.000Z</updated>
+    <updated>2018-03-12T06:46:06.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"><a href="#itext5、jfreechart生成成绩分析图表，并写入成绩单pdf" class="headerlink" title="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"></a>itext5、jfreechart生成成绩分析图表，并写入成绩单pdf</h2><p>浏览器中展示图表，一般都是用百度的<a href="http://echarts.baidu.com/" target="_blank" rel="external">ECharts</a>来展现。<br>但是后台导出成绩单，必须要绕过浏览器才最方便。<br>在maven中引入itext5、jfreechart、ssj</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itextpdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>itextpdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.5.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <content type="html"><![CDATA[<h2 id="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"><a href="#itext5、jfreechart生成成绩分析图表，并写入成绩单pdf" class="headerlink" title="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"></a>itext5、jfreechart生成成绩分析图表，并写入成绩单pdf</h2><p>浏览器中展示图表，一般都是用百度的<a href="http://echarts.baidu.com/" target="_blank" rel="external">ECharts</a>来展现。<br>但是后台导出成绩单，必须要绕过浏览器才最方便。</p>
+<a id="more"></a>
+<p>在maven中引入itext5、jfreechart、ssj</p>
+<pre><code class="xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+  &lt;artifactId&gt;itextpdf&lt;/artifactId&gt;
+  &lt;version&gt;5.5.10&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itextpdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>itext-pdfa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.5.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+  &lt;artifactId&gt;itext-pdfa&lt;/artifactId&gt;
+  &lt;version&gt;5.5.10&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itextpdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>itext-xtra<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.5.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+  &lt;artifactId&gt;itext-xtra&lt;/artifactId&gt;
+  &lt;version&gt;5.5.10&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itextpdf.tool<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>xmlworker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.5.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf.tool&lt;/groupId&gt;
+  &lt;artifactId&gt;xmlworker&lt;/artifactId&gt;
+  &lt;version&gt;5.5.10&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.itextpdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>itext-asian<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+    &lt;artifactId&gt;itext-asian&lt;/artifactId&gt;
+    &lt;version&gt;5.2.0&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.commons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>commons-math3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+ &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+ &lt;artifactId&gt;commons-math3&lt;/artifactId&gt;
+ &lt;version&gt;3.0&lt;/version&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.jfree<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jfreechart<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.lowagie<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>itext<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+&lt;dependency&gt;
+    &lt;groupId&gt;org.jfree&lt;/groupId&gt;
+    &lt;artifactId&gt;jfreechart&lt;/artifactId&gt;
+    &lt;version&gt;1.0.14&lt;/version&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+           &lt;groupId&gt;com.lowagie&lt;/groupId&gt;
+           &lt;artifactId&gt;itext&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>ca.umontreal.iro.simul<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>ssj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.2.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>jfree<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jfreechart<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>示例如图：<br><img src="itext5_1.png" alt="itext5_1"></p>
+&lt;dependency&gt;
+    &lt;groupId&gt;ca.umontreal.iro.simul&lt;/groupId&gt;
+    &lt;artifactId&gt;ssj&lt;/artifactId&gt;
+    &lt;version&gt;3.2.1&lt;/version&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+             &lt;groupId&gt;jfree&lt;/groupId&gt;
+             &lt;artifactId&gt;jfreechart&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>示例如图：<br><img src="/assets/blogImg/itext5_1.png" alt="itext5_1"></p>
 <p>中位数、标准差、峰度、偏度等使用 org.apache.commons.math3.analysis.function.*<br>直接函数调用，很方便。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>菜头叔每篇公号文章都有个 <strong>禅定时刻</strong>，很是喜欢。在此有样学样吧。</p>
 <p>一个酒鬼的自述<br>“一个人活得拧巴是值得理解的，甚至是值得赞美的，这证明他内心还有冲突，并不甘于和人生妥协。但是，通过酒来发泄显得太过脆弱而虚伪，且对不起那瓶好酒。酒带给人们的应该是被压抑的快乐，而不是被压抑的痛苦。”</p>
@@ -1882,7 +1885,7 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
     
     <summary type="html">
     
-      &lt;h2 id=&quot;itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&quot;&gt;&lt;a href=&quot;#itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&quot; class=&quot;headerlink&quot; title=&quot;itext5、jfreechart生成成绩分
+      &lt;h2 id=&quot;itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&quot;&gt;&lt;a href=&quot;#itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&quot; class=&quot;headerlink&quot; title=&quot;itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&quot;&gt;&lt;/a&gt;itext5、jfreechart生成成绩分析图表，并写入成绩单pdf&lt;/h2&gt;&lt;p&gt;浏览器中展示图表，一般都是用百度的&lt;a href=&quot;http://echarts.baidu.com/&quot;&gt;ECharts&lt;/a&gt;来展现。&lt;br&gt;但是后台导出成绩单，必须要绕过浏览器才最方便。&lt;/p&gt;
     
     </summary>
     
@@ -1904,23 +1907,23 @@ public static Map<String,String>  getExcelHeaderString(String filePath) {
 <blockquote>
 <p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1<br><a id="more"></a><br><strong>homebrew 卸载</strong></p>
 </blockquote>
-<pre class="line-numbers language-bash"><code class="language-bash">$ brew remove mysql@5.6
+<pre><code class="bash">$ brew remove mysql@5.6
 $ brew cleanup
 $ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><strong>删除文件</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">rm</span> -f /etc/my.cnf
-$ <span class="token function">sudo</span> <span class="token function">rm</span> -rf /usr/local/var/mysql
-$ <span class="token function">sudo</span> <span class="token function">rm</span> ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code class="bash">$ sudo rm -f /etc/my.cnf
+$ sudo rm -rf /usr/local/var/mysql
+$ sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
+</code></pre>
 <h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><p>$ brew install mysql@5.6</p>
-<h3 id="让-MySQL-开机自行启动"><a href="#让-MySQL-开机自行启动" class="headerlink" title="让 MySQL 开机自行启动"></a>让 MySQL 开机自行启动</h3><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">ln</span> -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents
-$ <span class="token function">sudo</span> <span class="token function">find</span> /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name <span class="token string">"homebrew.mxcl.mysql@5.6.plist"</span> -exec <span class="token function">cp</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> ~/Library/LaunchAgents/ \<span class="token punctuation">;</span>
+<h3 id="让-MySQL-开机自行启动"><a href="#让-MySQL-开机自行启动" class="headerlink" title="让 MySQL 开机自行启动"></a>让 MySQL 开机自行启动</h3><pre><code class="bash">$ ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents
+$ sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name &quot;homebrew.mxcl.mysql@5.6.plist&quot; -exec cp {} ~/Library/LaunchAgents/ \;
 $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3><pre class="line-numbers language-bash"><code class="language-bash">$ mysql_install_db --verbose --user<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">whoami</span><span class="token variable">`</span></span> --basedir<span class="token operator">=</span><span class="token string">"/usr/local/Cellar/mysql@5.6/5.6.36_1"</span> --datadir<span class="token operator">=</span>/usr/local/var/mysql --tmpdir<span class="token operator">=</span>/tmp
-$ <span class="token function">cd</span> <span class="token keyword">.</span> <span class="token punctuation">;</span> /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe <span class="token operator">&amp;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
+<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3><pre><code class="bash">$ mysql_install_db --verbose --user=`whoami` --basedir=&quot;/usr/local/Cellar/mysql@5.6/5.6.36_1&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp
+$ cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;
+</code></pre>
 <h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><pre><code># For advice on how to change settings please see
 # http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html
 
@@ -1949,39 +1952,39 @@ datadir=/usr/local/var/mysql
 </code></pre><h3 id="将mysql加入系统环境变量"><a href="#将mysql加入系统环境变量" class="headerlink" title="将mysql加入系统环境变量"></a>将mysql加入系统环境变量</h3><p>执行vim ~/.bash_profile<br>在该文件中添加如下语句，完成后，按esc，然后输入wq保存。<br>export PATH=/usr/local/opt/mysql@5.6/bin:$PATH<br>最后在命令行输入source ~/.bash_profile</p>
 <p>ok ,可以启动MySQL了。<br>$ mysql.server start<br>权限配置参见官网：<br><a href="https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html</a></p>
 <h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>默认是没有密码的，进去mysql后，执行语句：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">set</span> password <span class="token keyword">for</span> <span class="token string">'root'</span>@<span class="token string">'localhost'</span><span class="token operator">=</span>password<span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Query OK, 0 rows affected <span class="token punctuation">(</span>0.01 sec<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code class="bash">mysql&gt; set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;root&#39;);
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
 <p>接下来使用密码登录MySQL：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ mysql -uroot -p
+<pre><code class="bash">$ mysql -uroot -p
 Enter password:
-Welcome to the MySQL monitor.  Commands end with <span class="token punctuation">;</span> or \g.
-Your MySQL connection <span class="token function">id</span> is 395
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 395
 Server version: 5.6.36 Homebrew
 
-Copyright <span class="token punctuation">(</span>c<span class="token punctuation">)</span> 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
 
 Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
 owners.
 
-Type <span class="token string">'help;'</span> or <span class="token string">'\h'</span> <span class="token keyword">for</span> help. Type <span class="token string">'\c'</span> to <span class="token function">clear</span> the current input statement.
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
 
-mysql<span class="token operator">></span> show variables like <span class="token string">'character%'</span><span class="token punctuation">;</span>
+mysql&gt; show variables like &#39;character%&#39;;
 +--------------------------+------------------------------------------------------------+
-<span class="token operator">|</span> Variable_name            <span class="token operator">|</span> Value                                                      <span class="token operator">|</span>
+| Variable_name            | Value                                                      |
 +--------------------------+------------------------------------------------------------+
-<span class="token operator">|</span> character_set_client     <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_connection <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_database   <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_filesystem <span class="token operator">|</span> binary                                                     <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_results    <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_server     <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_set_system     <span class="token operator">|</span> utf8                                                       <span class="token operator">|</span>
-<span class="token operator">|</span> character_sets_dir       <span class="token operator">|</span> /usr/local/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ <span class="token operator">|</span>
+| character_set_client     | utf8                                                       |
+| character_set_connection | utf8                                                       |
+| character_set_database   | utf8                                                       |
+| character_set_filesystem | binary                                                     |
+| character_set_results    | utf8                                                       |
+| character_set_server     | utf8                                                       |
+| character_set_system     | utf8                                                       |
+| character_sets_dir       | /usr/local/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ |
 +--------------------------+------------------------------------------------------------+
-8 rows <span class="token keyword">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span>0.04 sec<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+8 rows in set (0.04 sec)
+</code></pre>
 <p>看到utf8，编码就不会出问题了。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>之所以写这篇，原因是从Windows转到Mac环境搞开发，碰到了乱码问题，各种配置都试了也没解决。卸载重装妥妥的。</p>
 ]]></content>
@@ -2017,7 +2020,7 @@ mysql<span class="token operator">></span> show variables like <span class="toke
 <p>ps:镜像自身是只读的。容器从镜像启动的时候，会在镜像的最上层创建一个可写层。<br>2.Docker容器<br>在功能上，Docker通过Libcontainer实现对容器生命周期的管理、信息的设置和查询，以及监控和通信等功能。而容器也是对镜像的完美诠释，容器以镜像为基础，同时又为镜像提供了一个标准的和隔离的执行环境。<br>在概念上，容器则很好地诠释了Docker集装箱的理念，集装箱可以存放任何货物，可以通过邮轮将货物运输到世界各地。运输集装箱的邮轮和装载卸载集装箱的码头都不用关心集装箱里的货物，这是一种标准的集装和运输方式。类似的，Docker的容器就是“软件界的集装箱”，它可以安装任意的软件和库文件，做任意的运行环境配置。</p>
 <p>3.Docker仓库<br>是Docker集中存放镜像文件的场所。</p>
 <h2 id="Install-Docker-for-Mac"><a href="#Install-Docker-for-Mac" class="headerlink" title="Install Docker for Mac"></a>Install Docker for Mac</h2><p><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="external">https://docs.docker.com/docker-for-mac/install/</a></p>
-<pre class="line-numbers language-bash"><code class="language-bash">~ docker version
+<pre><code class="bash">~ docker version
 Client:
  Version:      17.03.1-ce
  API version:  1.27
@@ -2028,43 +2031,43 @@ Client:
 
 Server:
  Version:      17.03.1-ce
- API version:  1.27 <span class="token punctuation">(</span>minimum version 1.12<span class="token punctuation">)</span>
+ API version:  1.27 (minimum version 1.12)
  Go version:   go1.7.5
  Git commit:   c6d412e
  Built:        Fri Mar 24 00:00:50 2017
  OS/Arch:      linux/amd64
- Experimental: <span class="token boolean">true</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ Experimental: true
+</code></pre>
 <p>我们看到Client和Server均有输出，则说明Docker for Mac已经正常启动。</p>
 <h2 id="CentOS环境下安装Docker"><a href="#CentOS环境下安装Docker" class="headerlink" title="CentOS环境下安装Docker"></a>CentOS环境下安装Docker</h2><p>OS requirements<br>To install Docker, you need the 64-bit version of CentOS 7.<br>我是在Mac上安装的VirtualBox，然后装上CentOS 7镜像。</p>
 <p>对于CentOS 7系统，CentOS-Extras源中已内置Docker</p>
-<h3 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker yum.repos.d<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'</span>
-<span class="token operator">></span> <span class="token punctuation">[</span>dockerrepo<span class="token punctuation">]</span>
-<span class="token operator">></span> name<span class="token operator">=</span>Docker Repository
-<span class="token operator">></span> baseurl<span class="token operator">=</span>https://yum.dockerproject.org/repo/main/centos/<span class="token variable">$releasever</span>/
-<span class="token operator">></span> enabled<span class="token operator">=</span>1
-<span class="token operator">></span> gpgcheck<span class="token operator">=</span>1
-<span class="token operator">></span> gpgkey<span class="token operator">=</span>https://yum.dockerproject.org/gpg
-<span class="token operator">></span> EOF
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h3><pre><code class="bash">[root@centos-docker yum.repos.d]# sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-&#39;EOF&#39;
+&gt; [dockerrepo]
+&gt; name=Docker Repository
+&gt; baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+&gt; enabled=1
+&gt; gpgcheck=1
+&gt; gpgkey=https://yum.dockerproject.org/gpg
+&gt; EOF
+</code></pre>
 <p>之后更新yum软件源缓存，并安装docker-engine 即可。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> yum <span class="token function">install</span> -y yum-utils
-$ <span class="token function">sudo</span> yum update
-$ <span class="token function">sudo</span> yum makecache fast
-$ <span class="token function">sudo</span> yum <span class="token function">install</span> docker-engine
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="bash">$ sudo yum install -y yum-utils
+$ sudo yum update
+$ sudo yum makecache fast
+$ sudo yum install docker-engine
+</code></pre>
 <p>这是最新的版本。要想随意指定要安装的版本，如下命令，官网上如下。<br>1.List the available versions:</p>
 <p>$ yum list docker-engine.x86_64  –showduplicates |sort -r</p>
 <p>2.Install a specific version by adding the version after docker-engine, separated by a hyphen (-):<br>$ sudo yum install docker-engine-version</p>
 <h3 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h3><p>1.更新系统包到最新。<br>$ yum -y update</p>
 <p>2.执行Docker安装脚本</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ curl -fsSL https://get.docker.com/ <span class="token operator">|</span> sh
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ curl -fsSL https://get.docker.com/ | sh
+</code></pre>
 <h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>Docker Hub 镜像站点</p>
 <p>安装／升级你的Docker客户端<br>您可以通过阿里云的镜像仓库下载：mirrors.aliyun.com/help/docker-engine</p>
 <p>或执行以下命令：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet <span class="token operator">|</span> sh -
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+</code></pre>
 <p>如何使用Docker加速器<br>针对Docker客户端版本大于1.10的用户</p>
 <p>您可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器：</p>
 <p>sudo mkdir -p /etc/docker<br>sudo tee /etc/docker/daemon.json &lt;&lt;-‘EOF’<br>{<br>  “registry-mirrors”: [“<a href="https://wgqgbfsb.mirror.aliyuncs.com" target="_blank" rel="external">https://wgqgbfsb.mirror.aliyuncs.com</a>“]<br>}<br>EOF<br>sudo systemctl daemon-reload<br>sudo systemctl restart docker</p>
@@ -2079,52 +2082,52 @@ $ docker search -f stars=25 centos
 <h4 id="基于已有镜像的容器创建"><a href="#基于已有镜像的容器创建" class="headerlink" title="基于已有镜像的容器创建"></a>基于已有镜像的容器创建</h4><p>该方法主要是使用docker commit命令。命令格式为docker commit[OPTIONS]CONTAINER[REPOSITORY[：TAG]]，主要选项包括：<br>·-a，–author=””：作者信息；<br>·-c，–change=[]：提交的时候执行Dockerfile指令，包括CMD|ENTRYPOINT|ENV|EXPOSE|LABEL|ONBUILD|USER|VOLUME|WORKDIR等；<br>·-m，–message=””：提交消息；<br>·-p，–pause=true：提交时暂停容器运行。</p>
 <h4 id="基于本地模板导入"><a href="#基于本地模板导入" class="headerlink" title="基于本地模板导入"></a>基于本地模板导入</h4><p>要直接导入一个镜像，可以使用OpenVZ提供的模板来创建，或者用其他已导出的镜像模板来创建。OPENVZ模板的下载地址为<a href="http://openvz.org/Download/templates/precreated" target="_blank" rel="external">http://openvz.org/Download/templates/precreated</a></p>
 <h4 id="存出和载入镜像"><a href="#存出和载入镜像" class="headerlink" title="存出和载入镜像"></a>存出和载入镜像</h4><p>1.存出镜像</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker save -o centos_7.tar.gz daocloud.io/centos:7</span>
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
+<pre><code class="bash">[root@centos-docker docker]# docker save -o centos_7.tar.gz daocloud.io/centos:7
+[root@centos-docker docker]# ls
 centos_7.tar.gz  certs.d  daemon.json  key.json
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>2.载入镜像</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker load --input centos_7.tar.gz</span>
+<pre><code class="bash">[root@centos-docker docker]# docker load --input centos_7.tar.gz
 Loaded image: daocloud.io/centos:7
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>或者<br>$ docker load &lt; centos_7.tar.gz<br>这将导入镜像及其相关的元数据信息（包括标签等）。</p>
-<h3 id="创建-amp-启动一个容器："><a href="#创建-amp-启动一个容器：" class="headerlink" title="创建&amp;启动一个容器："></a>创建&amp;启动一个容器：</h3><pre class="line-numbers language-bash"><code class="language-bash">$ docker run -d -p 10022:22 -v /dfile/:/dfile/ -h <span class="token string">"centos-d"</span> --name centos-d centos-ssh /usr/sbin/sshd -D
+<h3 id="创建-amp-启动一个容器："><a href="#创建-amp-启动一个容器：" class="headerlink" title="创建&amp;启动一个容器："></a>创建&amp;启动一个容器：</h3><pre><code class="bash">$ docker run -d -p 10022:22 -v /dfile/:/dfile/ -h &quot;centos-d&quot; --name centos-d centos-ssh /usr/sbin/sshd -D
 
-$ <span class="token function">mount</span> -t vboxsf docker_files /docker
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-d /<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># netstat -tunlp</span>
-Active Internet connections <span class="token punctuation">(</span>only servers<span class="token punctuation">)</span>
+$ mount -t vboxsf docker_files /docker
+</code></pre>
+<pre><code class="bash">[root@centos-d /]# netstat -tunlp
+Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1/sshd
 tcp6       0      0 :::22                   :::*                    LISTEN      1/sshd
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>其中10022是宿主主机的端口，22是容器的SSH服务监听端口：<br>-p 10022:22<br>使用HostPort：ContainerPort格式将本地的10022端口映射到容器的22端口。</p>
 <p>在宿主主机或其他主机上，可以通过SSH访问10022端口来登录容器。</p>
 <p>使用docker inspect来查看容器的基础信息。<br>参见：<a href="https://docs.docker.com/engine/reference/commandline/inspect/" target="_blank" rel="external">https://docs.docker.com/engine/reference/commandline/inspect/</a></p>
 <p>-v /dfile(主机):/dfile(容器):ro<br>上面的命令加载主机的/dfile目录到容器的/dfile目录。<br>ps：本地目录的路径必须是绝对路径，如果目录不存在，Docker会自动创建。</p>
 <p>Docker挂载数据卷的默认权限是读写（rw），用户也可以通过ro指定为只读。</p>
 <p>mount -t vboxsf the_share_name /a_folder_name<br>ps:VirtualBox与Mac共享文件夹为：docker_files<br><img src="VirtualBoxformac.png" alt="VirtualBoxformac"><br>ps: $ docker ps -a<br>查看容器。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker start centos-d</span>
+<pre><code class="bash">[root@centos-docker docker]# docker start centos-d
 centos-d
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker ps -a</span>
+[root@centos-docker docker]# docker ps -a
 CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS                   PORTS                   NAMES
-0ffb8ab3f777        centos-ssh          <span class="token string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Up 12 seconds            0.0.0.0:10022-<span class="token operator">></span>22/tcp   centos-d
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+0ffb8ab3f777        centos-ssh          &quot;/usr/sbin/sshd -D&quot;   11 weeks ago        Up 12 seconds            0.0.0.0:10022-&gt;22/tcp   centos-d
+</code></pre>
 <p>$ docker-enter centos-d 进入容器。<br>可以按Ctrl+d或输入exit命令来退出容器，<br>通过exit命令或Ctrl+d来退出终端时，所创建的容器立刻终止，处于stopped状态。</p>
 <h4 id="利用ssh进入到docker中的centos里"><a href="#利用ssh进入到docker中的centos里" class="headerlink" title="利用ssh进入到docker中的centos里"></a>利用ssh进入到docker中的centos里</h4><p>然后 我们试着从宿主机直接进入到docker中的centos里：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">ssh</span> root@192.168.99.100 -p 10022
-root@192.168.99.100's password:
+<pre><code class="bash">~ ssh root@192.168.99.100 -p 10022
+root@192.168.99.100&#39;s password:
 Last login: Thu Jun 29 09:03:57 2017 from 192.168.99.1
-<span class="token punctuation">[</span>root@centos-d ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+[root@centos-d ~]#
+</code></pre>
 <p>避免了先进入虚拟机系统，然后再进入docker中的centos里：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">ssh</span> root@192.168.99.100 -p 22
-root@192.168.99.100's password:
+<pre><code class="bash">~ ssh root@192.168.99.100 -p 22
+root@192.168.99.100&#39;s password:
 Last login: Thu Jun 29 17:11:29 2017 from 192.168.99.1
-<span class="token punctuation">[</span>root@centos-docker ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker-enter centos-d</span>
+[root@centos-docker ~]# docker-enter centos-d
 Last login: Thu Jun 29 09:21:21 UTC 2017 from 192.168.99.1 on pts/0
-<span class="token punctuation">[</span>root@centos-d ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+[root@centos-d ~]#
+</code></pre>
 <h4 id="create命令与容器运行模式相关的选项"><a href="#create命令与容器运行模式相关的选项" class="headerlink" title="create命令与容器运行模式相关的选项"></a>create命令与容器运行模式相关的选项</h4><p>-d, –detach=true|false (是否在后台运行容器，默认为否)<br>-P, –publish-all=true|false (通过NAT机制将容器标记暴露的端口自动映射到本地主机的临时端口)<br>-p, –publish=[] (指定如何映射到本地主机端口)<br>–rm=true|false （容器退出后是否自动删除，不能跟-d同时使用）<br>-i, –interactive=true|false (保持标准输入打开，默认为false)<br>-t, –tty=true|false (是否分配一个伪终端，默认是false)<br>–expose=[] (指定容器会暴露出来的端口或端口范围)<br>–group-add=[] (运行容器的用户组)<br>-v|–volume[=[[HOST-DIR:]CONTAINER-DIR[:OPTIONS]]] (挂载主机上的文件卷到容器内)<br>-w, –workdir=”” (容器内的默认工作目录)</p>
 <h4 id="create命令与容器环境和配置相关的选项"><a href="#create命令与容器环境和配置相关的选项" class="headerlink" title="create命令与容器环境和配置相关的选项"></a>create命令与容器环境和配置相关的选项</h4><p>–add-host=[] (在容器内添加一个主机名到IP地址的映射关系（通过/etc/hosts文件）)<br>-h, –hostname=”” (指定容器内的主机名)<br>–name=”” (指定容器的别名)</p>
 <h4 id="create命令与容器资源限制和安全保护相关的选项"><a href="#create命令与容器资源限制和安全保护相关的选项" class="headerlink" title="create命令与容器资源限制和安全保护相关的选项"></a>create命令与容器资源限制和安全保护相关的选项</h4><p>–privileged=true|false (是否给容器以高权限，这意味着容器内应用将不受权限下限制，一般不推荐)<br>–read-only=true|false (是否让容器内的文件系统只读)</p>
@@ -2135,35 +2138,35 @@ Last login: Thu Jun 29 09:21:21 UTC 2017 from 192.168.99.1 on pts/0
 <h4 id="attach命令"><a href="#attach命令" class="headerlink" title="attach命令"></a>attach命令</h4><p>attach是Docker自带的命令，命令格式为：</p>
 <p>支持三个主要选项：<br>·–detach-keys[=[]]：指定退出attach模式的快捷键序列，默认是CTRL-p CTRL-q；<br>·–no-stdin=true|false：是否关闭标准输入，默认是保持打开；<br>·–sig-proxy=true|false：是否代理收到的系统信号给应用进程，默认为true。<br>ps:当多个窗口同时用attach命令连到同一个容器的时候，所有窗口都会同步显示。不常用。</p>
 <h4 id="exec命令"><a href="#exec命令" class="headerlink" title="exec命令"></a>exec命令</h4><p>Docker从1.3.0版本起提供了一个更加方便的exec命令，可以在容器内直接执行任意命令。<br>比较重要的参数有：<br>·-i，–interactive=true|false：打开标准输入接受用户输入命令，默认为false；<br>·–privileged=true|false：是否给执行命令以高权限，默认为false；<br>·-t，–tty=true|false：分配伪终端，默认为false；<br>·-u，–user=””：执行命令的用户名或ID。<br>例如进入到刚创建的容器中，并启动一个bash：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker exec -it centos-d /bin/bash</span>
-<span class="token punctuation">[</span>root@centos-d /<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># pwd</span>
+<pre><code class="bash">[root@centos-docker docker]# docker exec -it centos-d /bin/bash
+[root@centos-d /]# pwd
 /
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>可以看到，一个bash终端打开了，在不影响容器内其他应用的前提下，用户可以很容易与容器进行交互。<br>注意<br>通过指定-it参数来保持标准输入打开，并且分配一个伪终端。通过exec命令对容器执行操作是最为推荐的方式。</p>
 <h4 id="nsenter工具"><a href="#nsenter工具" class="headerlink" title="nsenter工具"></a>nsenter工具</h4><p>在util-linux软件包版本2.23+中包含nsenter工具。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker start centos-d</span>
+<pre><code class="bash">[root@centos-docker docker]# docker start centos-d
 centos-d
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker ps</span>
+[root@centos-docker docker]# docker ps
 CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS              PORTS                   NAMES
-0ffb8ab3f777        centos-ssh          <span class="token string">"/usr/sbin/sshd -D"</span>   11 weeks ago        Up 6 seconds        0.0.0.0:10022-<span class="token operator">></span>22/tcp   centos-d
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># PID=$(docker inspect --format "{{ .State.Pid }}" centos-d)</span>
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># nsenter --target $PID --mount --uts --ipc --net --pid</span>
-<span class="token punctuation">[</span>root@centos-d /<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ps -ef</span>
+0ffb8ab3f777        centos-ssh          &quot;/usr/sbin/sshd -D&quot;   11 weeks ago        Up 6 seconds        0.0.0.0:10022-&gt;22/tcp   centos-d
+[root@centos-docker docker]# PID=$(docker inspect --format &quot;{{ .State.Pid }}&quot; centos-d)
+[root@centos-docker docker]# nsenter --target $PID --mount --uts --ipc --net --pid
+[root@centos-d /]# ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 06:04 ?        00:00:00 /usr/sbin/sshd -D
 root         5     0  0 06:07 ?        00:00:00 -bash
-root        19     5  0 06:09 ?        00:00:00 <span class="token function">ps</span> -ef
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+root        19     5  0 06:09 ?        00:00:00 ps -ef
+</code></pre>
 <h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><p>可以使用docker rm命令来删除处于终止或退出状态的容器，命令格式为docker rm[-f|–force][-l|–link][-v|–volumes]CONTAINER[CONTAINER…]。<br>主要支持的选项包括：<br>·-f，–force=false：是否强行终止并删除一个运行中的容器；<br>·-l，–link=false：删除容器的连接，但保留容器；<br>·-v，–volumes=false：删除容器挂载的数据卷。</p>
 <h3 id="导入和导出容器"><a href="#导入和导出容器" class="headerlink" title="导入和导出容器"></a>导入和导出容器</h3><p>某些时候，需要将容器从一个系统迁移到另外一个系统，此时可以使用Docker的导入和导出功能。这也是Docker自身提供的一个重要特性。</p>
 <h4 id="导出容器"><a href="#导出容器" class="headerlink" title="导出容器"></a>导出容器</h4><p>导出容器是指导出一个已经创建的容器到一个文件，不管此时这个容器是否处于运行状态，可以使用docker export命令，该命令的格式为docker export[-o|–output[=””]]CONTAINER。其中，可以通过-o选项来指定导出的tar文件名，也可以直接通过重定向来实现。<br>ps:实现容器的迁移</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker export -o test_centos-d.tar.gz centos-d</span>
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
+<pre><code class="bash">[root@centos-docker docker]# docker export -o test_centos-d.tar.gz centos-d
+[root@centos-docker docker]# ls
 a.txt  b.txt  c.txt  epel-release-7-9.noarch.rpm  test_centos-d.tar.gz
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># docker export centos-d >test2_centos-d.tar.gz</span>
-<span class="token punctuation">[</span>root@centos-docker docker<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
+[root@centos-docker docker]# docker export centos-d &gt;test2_centos-d.tar.gz
+[root@centos-docker docker]# ls
 a.txt  b.txt  c.txt  epel-release-7-9.noarch.rpm  test2_centos-d.tar.gz  test_centos-d.tar.gz
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>实际上，既可以使用docker load命令来导入镜像存储文件到本地镜像库，也可以使用docker import命令来导入一个容器快照到本地镜像库。<br>这两者的区别在于容器快照文件将丢弃所有的历史记录和元数据信息（即仅保存容器当时的快照状态），而镜像存储文件将保存完整记录，体积也更大。此外，从容器快照文件导入时可以重新指定标签等元数据信息。</p>
 <p>参考在此：<a href="https://read.douban.com/reader/ebook/30546100/" target="_blank" rel="external">Docker技术入门与实践</a><br><a href="https://read.douban.com/reader/ebook/17825949/" target="_blank" rel="external">Docker进阶与实战</a> 作者：华为Docker实践小组</p>
 ]]></content>
@@ -2193,9 +2196,9 @@ a.txt  b.txt  c.txt  epel-release-7-9.noarch.rpm  test2_centos-d.tar.gz  test_ce
 <a id="more"></a>
 <h2 id="一、由来"><a href="#一、由来" class="headerlink" title="一、由来"></a>一、由来</h2><p>历史上，<a href="http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html" target="_blank" rel="external">Linux 的启动</a>一直采用<a href="https://en.wikipedia.org/wiki/Init" target="_blank" rel="external"><code>init</code></a>进程。</p>
 <p>下面的命令用来启动服务。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># service httpd start</span>
+<pre><code class="bash">[root@localhost /]# service httpd start
 Redirecting to /bin/systemctl start  httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>ps:Centos7已经不支持了喔！</p>
 <p>这种方法有两个缺点。</p>
 <p>一是启动时间长。<code>init</code>进程是串行启动，只有前一个进程启动完，才会启动下一个进程。</p>
@@ -2205,83 +2208,83 @@ Redirecting to /bin/systemctl start  httpd.service
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030702.jpg" alt=""></p>
 <p>（上图为 Systemd 作者 <a href="https://en.wikipedia.org/wiki/Lennart_Poettering" target="_blank" rel="external">Lennart Poettering</a>）</p>
 <p>使用了 Systemd，就不需要再用<code>init</code>了。Systemd 取代了<code>initd</code>，成为系统的第一个进程（PID 等于 1），其他进程都是它的子进程。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ systemctl --version
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ systemctl --version
+</code></pre>
 <p>上面的命令查看 Systemd 的版本。</p>
 <p>Systemd 的优点是功能强大，使用方便，缺点是系统庞大，非常复杂。事实上，现在还有很多人反对使用 Systemd，理由就是它过于复杂，与操作系统的其他部分强耦合，违反“keep simple, keep stupid”的<a href="http://www.ruanyifeng.com/blog/2009/06/unix_philosophy.html" target="_blank" rel="external">Unix 哲学</a>。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016030703.png" alt=""></p>
 <p>（上图为 Systemd 架构图）</p>
 <h2 id="三、系统管理"><a href="#三、系统管理" class="headerlink" title="三、系统管理"></a>三、系统管理</h2><p>Systemd 并不是一个命令，而是一组命令，涉及到系统管理的方方面面。</p>
 <h3 id="3-1-systemctl"><a href="#3-1-systemctl" class="headerlink" title="3.1 systemctl"></a>3.1 systemctl</h3><p><code>systemctl</code>是 Systemd 的主命令，用于管理系统。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 重启系统</span>
-$ <span class="token function">sudo</span> systemctl <span class="token function">reboot</span>
+<pre><code class="bash"># 重启系统
+$ sudo systemctl reboot
 
-<span class="token comment" spellcheck="true"># 关闭系统，切断电源</span>
-$ <span class="token function">sudo</span> systemctl poweroff
+# 关闭系统，切断电源
+$ sudo systemctl poweroff
 
-<span class="token comment" spellcheck="true"># CPU停止工作</span>
-$ <span class="token function">sudo</span> systemctl halt
+# CPU停止工作
+$ sudo systemctl halt
 
-<span class="token comment" spellcheck="true"># 暂停系统</span>
-$ <span class="token function">sudo</span> systemctl <span class="token function">suspend</span>
+# 暂停系统
+$ sudo systemctl suspend
 
-<span class="token comment" spellcheck="true"># 让系统进入冬眠状态</span>
-$ <span class="token function">sudo</span> systemctl hibernate
+# 让系统进入冬眠状态
+$ sudo systemctl hibernate
 
-<span class="token comment" spellcheck="true"># 让系统进入交互式休眠状态</span>
-$ <span class="token function">sudo</span> systemctl hybrid-sleep
+# 让系统进入交互式休眠状态
+$ sudo systemctl hybrid-sleep
 
-<span class="token comment" spellcheck="true"># 启动进入救援状态（单用户状态）</span>
-$ <span class="token function">sudo</span> systemctl rescue
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 启动进入救援状态（单用户状态）
+$ sudo systemctl rescue
+</code></pre>
 <h3 id="3-2-systemd-analyze"><a href="#3-2-systemd-analyze" class="headerlink" title="3.2 systemd-analyze"></a>3.2 systemd-analyze</h3><p><code>systemd-analyze</code>命令用于查看启动耗时。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看启动耗时</span>
+<pre><code class="bash"># 查看启动耗时
 $ systemd-analyze                                                                                       
 
-<span class="token comment" spellcheck="true"># 查看每个服务的启动耗时</span>
+# 查看每个服务的启动耗时
 $ systemd-analyze blame
 
-<span class="token comment" spellcheck="true"># 显示瀑布状的启动过程流</span>
+# 显示瀑布状的启动过程流
 $ systemd-analyze critical-chain
 
-<span class="token comment" spellcheck="true"># 显示指定服务的启动流(eg:sshd.service)</span>
+# 显示指定服务的启动流(eg:sshd.service)
 $ systemd-analyze critical-chain sshd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="3-3-hostnamectl"><a href="#3-3-hostnamectl" class="headerlink" title="3.3 hostnamectl"></a>3.3 hostnamectl</h3><p><code>hostnamectl</code>命令用于查看当前主机的信息。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示当前主机的信息</span>
+<pre><code class="bash"># 显示当前主机的信息
 $ hostnamectl
 
-<span class="token comment" spellcheck="true"># 设置主机名。</span>
-$ <span class="token function">sudo</span> hostnamectl set-hostname CentOS-Docker
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 设置主机名。
+$ sudo hostnamectl set-hostname CentOS-Docker
+</code></pre>
 <h3 id="3-4-localectl"><a href="#3-4-localectl" class="headerlink" title="3.4 localectl"></a>3.4 localectl</h3><p><code>localectl</code>命令用于查看本地化设置。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看本地化设置</span>
+<pre><code class="bash"># 查看本地化设置
 $ localectl
 
-<span class="token comment" spellcheck="true"># 设置本地化参数。</span>
-$ <span class="token function">sudo</span> localectl set-locale LANG<span class="token operator">=</span>zh_CN.UTF-8
-$ <span class="token function">sudo</span> localectl set-keymap cn
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 设置本地化参数。
+$ sudo localectl set-locale LANG=zh_CN.UTF-8
+$ sudo localectl set-keymap cn
+</code></pre>
 <h3 id="3-5-timedatectl"><a href="#3-5-timedatectl" class="headerlink" title="3.5 timedatectl"></a>3.5 timedatectl</h3><p><code>timedatectl</code>命令用于查看当前时区设置。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看当前时区设置</span>
+<pre><code class="bash"># 查看当前时区设置
 $ timedatectl
 
-<span class="token comment" spellcheck="true"># 显示所有可用的时区</span>
+# 显示所有可用的时区
 $ timedatectl list-timezones                                                                                   
 
-<span class="token comment" spellcheck="true"># 设置当前时区</span>
-$ <span class="token function">sudo</span> timedatectl set-timezone America/New_York
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 设置当前时区
+$ sudo timedatectl set-timezone America/New_York
+</code></pre>
 <h3 id="3-6-loginctl"><a href="#3-6-loginctl" class="headerlink" title="3.6 loginctl"></a>3.6 loginctl</h3><p><code>loginctl</code>命令用于查看当前登录的用户。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 列出当前session</span>
+<pre><code class="bash"># 列出当前session
 $ loginctl list-sessions
 
-<span class="token comment" spellcheck="true"># 列出当前登录用户</span>
+# 列出当前登录用户
 $ loginctl list-users
 
-<span class="token comment" spellcheck="true"># 列出显示指定用户的信息</span>
+# 列出显示指定用户的信息
 $ loginctl show-user root
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="四、Unit"><a href="#四、Unit" class="headerlink" title="四、Unit"></a>四、Unit</h2><h3 id="4-1-含义"><a href="#4-1-含义" class="headerlink" title="4.1 含义"></a>4.1 含义</h3><p>Systemd 可以管理所有系统资源。不同的资源统称为 Unit（单位）。</p>
 <p>Unit 一共分成12种。</p>
 <blockquote>
@@ -2301,95 +2304,95 @@ $ loginctl show-user root
 </ul>
 </blockquote>
 <p><code>systemctl list-units</code>命令可以查看当前系统的所有 Unit 。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 列出正在运行的 Unit</span>
+<pre><code class="bash"># 列出正在运行的 Unit
 $ systemctl list-units
 
-<span class="token comment" spellcheck="true"># 列出所有Unit，包括没有找到配置文件的或者启动失败的</span>
+# 列出所有Unit，包括没有找到配置文件的或者启动失败的
 $ systemctl list-units --all
 
-<span class="token comment" spellcheck="true"># 列出所有没有运行的 Unit</span>
-$ systemctl list-units --all --state<span class="token operator">=</span>inactive
+# 列出所有没有运行的 Unit
+$ systemctl list-units --all --state=inactive
 
-<span class="token comment" spellcheck="true"># 列出所有加载失败的 Unit</span>
+# 列出所有加载失败的 Unit
 $ systemctl list-units --failed
 
-<span class="token comment" spellcheck="true"># 列出所有正在运行的、类型为 service 的 Unit</span>
-$ systemctl list-units --type<span class="token operator">=</span>service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 列出所有正在运行的、类型为 service 的 Unit
+$ systemctl list-units --type=service
+</code></pre>
 <h3 id="4-2-Unit-的状态"><a href="#4-2-Unit-的状态" class="headerlink" title="4.2 Unit 的状态"></a>4.2 Unit 的状态</h3><p><code>systemctl status</code>命令用于查看系统状态和单个 Unit 的状态。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示系统状态</span>
+<pre><code class="bash"># 显示系统状态
 $ systemctl status
 
-<span class="token comment" spellcheck="true"># 显示单个 Unit 的状态</span>
+# 显示单个 Unit 的状态
 $ sysystemctl status httpd.service
 
-<span class="token comment" spellcheck="true"># 显示远程主机的某个 Unit 的状态</span>
+# 显示远程主机的某个 Unit 的状态
 $ systemctl -H root@rhel7.example.com status httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>除了<code>status</code>命令，<code>systemctl</code>还提供了三个查询状态的简单方法，主要供脚本内部的判断语句使用。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示某个 Unit 是否正在运行</span>
+<pre><code class="bash"># 显示某个 Unit 是否正在运行
 $ systemctl is-active httpd.service
 
-<span class="token comment" spellcheck="true"># 显示某个 Unit 是否处于启动失败状态</span>
+# 显示某个 Unit 是否处于启动失败状态
 $ systemctl is-failed httpd.service
 
-<span class="token comment" spellcheck="true"># 显示某个 Unit 服务是否建立了启动链接</span>
+# 显示某个 Unit 服务是否建立了启动链接
 $ systemctl is-enabled httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="4-3-Unit-管理"><a href="#4-3-Unit-管理" class="headerlink" title="4.3 Unit 管理"></a>4.3 Unit 管理</h3><p>对于用户来说，最常用的是下面这些命令，用于启动和停止 Unit（主要是 service）。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 立即启动一个服务</span>
-$ <span class="token function">sudo</span> systemctl start httpd.service
-<span class="token comment" spellcheck="true"># 立即停止一个服务</span>
-$ <span class="token function">sudo</span> systemctl stop httpd.service
-<span class="token comment" spellcheck="true"># 重启一个服务</span>
-$ <span class="token function">sudo</span> systemctl restart httpd.service
-<span class="token comment" spellcheck="true"># 杀死一个服务的所有子进程</span>
-$ <span class="token function">sudo</span> systemctl <span class="token function">kill</span> httpd.service
-<span class="token comment" spellcheck="true"># 重新加载一个服务的配置文件</span>
-$ <span class="token function">sudo</span> systemctl reload httpd.service
-<span class="token comment" spellcheck="true"># 重载所有修改过的配置文件</span>
-$ <span class="token function">sudo</span> systemctl daemon-reload
+<pre><code class="bash"># 立即启动一个服务
+$ sudo systemctl start httpd.service
+# 立即停止一个服务
+$ sudo systemctl stop httpd.service
+# 重启一个服务
+$ sudo systemctl restart httpd.service
+# 杀死一个服务的所有子进程
+$ sudo systemctl kill httpd.service
+# 重新加载一个服务的配置文件
+$ sudo systemctl reload httpd.service
+# 重载所有修改过的配置文件
+$ sudo systemctl daemon-reload
 
-<span class="token comment" spellcheck="true"># 显示某个 Unit 的所有底层参数</span>
+# 显示某个 Unit 的所有底层参数
 $ systemctl show httpd.service
 
-<span class="token comment" spellcheck="true"># 显示某个 Unit 的指定属性的值</span>
+# 显示某个 Unit 的指定属性的值
 $ systemctl show -p CPUShares httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="4-4-依赖关系"><a href="#4-4-依赖关系" class="headerlink" title="4.4 依赖关系"></a>4.4 依赖关系</h3><p>Unit 之间存在依赖关系：A 依赖于 B，就意味着 Systemd 在启动 A 的时候，同时会去启动 B。</p>
 <p><code>systemctl list-dependencies</code>命令列出一个 Unit 的所有依赖。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ systemctl list-dependencies nginx.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ systemctl list-dependencies nginx.service
+</code></pre>
 <p>上面命令的输出结果之中，有些依赖是 Target 类型（详见下文），默认不会展开显示。如果要展开 Target，就需要使用<code>--all</code>参数。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ systemctl list-dependencies --all nginx.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ systemctl list-dependencies --all nginx.service
+</code></pre>
 <h2 id="五、Unit-的配置文件"><a href="#五、Unit-的配置文件" class="headerlink" title="五、Unit 的配置文件"></a>五、Unit 的配置文件</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><p>每一个 Unit 都有一个配置文件，告诉 Systemd 怎么启动这个 Unit 。</p>
 <p>Systemd 默认从目录<code>/etc/systemd/system/</code>读取配置文件。但是，里面存放的大部分文件都是符号链接，指向目录<code>/usr/lib/systemd/system/</code>，真正的配置文件存放在这个目录。</p>
 <p><code>systemctl enable</code>命令用于在上面两个目录之间，建立符号链接关系。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> systemctl <span class="token function">enable</span> sshd.service
-<span class="token comment" spellcheck="true"># 等同于</span>
-$ <span class="token function">sudo</span> <span class="token function">ln</span> -s <span class="token string">'/usr/lib/systemd/system/sshd.service'</span> <span class="token string">'/etc/systemd/system/multi-user.target.wants/sshd.service'</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code class="bash">$ sudo systemctl enable sshd.service
+# 等同于
+$ sudo ln -s &#39;/usr/lib/systemd/system/sshd.service&#39; &#39;/etc/systemd/system/multi-user.target.wants/sshd.service&#39;
+</code></pre>
 <p>如果配置文件里面设置了开机启动，<code>systemctl enable</code>命令相当于激活开机启动。</p>
 <p>与之对应的，<code>systemctl disable</code>命令用于在两个目录之间，撤销符号链接关系，相当于撤销开机启动。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> systemctl disable sshd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ sudo systemctl disable sshd.service
+</code></pre>
 <p>配置文件的后缀名，就是该 Unit 的种类，比如<code>sshd.socket</code>。如果省略，Systemd 默认后缀名为<code>.service</code>，所以<code>sshd</code>会被理解成<code>sshd.service</code>。</p>
 <h3 id="5-2-配置文件的状态"><a href="#5-2-配置文件的状态" class="headerlink" title="5.2 配置文件的状态"></a>5.2 配置文件的状态</h3><p><code>systemctl list-unit-files</code>命令用于列出所有配置文件。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 列出所有配置文件</span>
+<pre><code class="bash"># 列出所有配置文件
 $ systemctl list-unit-files
 
-<span class="token comment" spellcheck="true"># 列出指定类型的配置文件</span>
-$ systemctl list-unit-files --type<span class="token operator">=</span>service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 列出指定类型的配置文件
+$ systemctl list-unit-files --type=service
+</code></pre>
 <p>这个命令会输出一个列表。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ systemctl list-unit-files
+<pre><code class="bash">$ systemctl list-unit-files
 
 UNIT FILE              STATE
 chronyd.service        enabled
 clamd@.service         static
 sshd.service     disabled
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>这个列表显示每个配置文件的状态，一共有四种。</p>
 <blockquote>
 <ul>
@@ -2400,21 +2403,21 @@ sshd.service     disabled
 </ul>
 </blockquote>
 <p>注意，从配置文件的状态无法看出，该 Unit 是否正在运行。这必须执行前面提到的<code>systemctl status</code>命令。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ systemctl status httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="bash">$ systemctl status httpd.service
+</code></pre>
 <p>一旦修改配置文件，就要让 Systemd 重新加载配置文件，然后重新启动，否则修改不会生效。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> systemctl daemon-reload
-$ <span class="token function">sudo</span> systemctl restart httpd.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code class="bash">$ sudo systemctl daemon-reload
+$ sudo systemctl restart httpd.service
+</code></pre>
 <h3 id="5-3-配置文件的格式"><a href="#5-3-配置文件的格式" class="headerlink" title="5.3 配置文件的格式"></a>5.3 配置文件的格式</h3><p>配置文件就是普通的文本文件，可以用文本编辑器打开。</p>
 <p><code>systemctl cat</code>命令可以查看配置文件的内容。<br>注意，配置文件的区块名和字段名，都是大小写敏感的。</p>
 <p>每个区块内部是一些等号连接的键值对。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>Section<span class="token punctuation">]</span>
-Directive1<span class="token operator">=</span>value
-Directive2<span class="token operator">=</span>value
+<pre><code class="bash">[Section]
+Directive1=value
+Directive2=value
 
-<span class="token keyword">.</span> <span class="token keyword">.</span> <span class="token keyword">.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+. . .
+</code></pre>
 <p>注意，键值对的等号两侧不能有空格。</p>
 <h3 id="5-4-配置文件的区块"><a href="#5-4-配置文件的区块" class="headerlink" title="5.4 配置文件的区块"></a>5.4 配置文件的区块</h3><p><code>[Unit]</code>区块通常是配置文件的第一个区块，用来定义 Unit 的元数据，以及配置与其他 Unit 的关系。它的主要字段如下。</p>
 <blockquote>
@@ -2467,34 +2470,34 @@ Directive2<span class="token operator">=</span>value
 <p>Unit 配置文件的完整字段清单，请参考<a href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html" target="_blank" rel="external">官方文档</a>。</p>
 <h2 id="六、Target"><a href="#六、Target" class="headerlink" title="六、Target"></a>六、Target</h2><p>简单说，Target 就是一个 Unit 组，包含许多相关的 Unit 。启动某个 Target 的时候，Systemd 就会启动里面所有的 Unit。从这个意义上说，Target 这个概念类似于“状态点”，启动某个 Target 就好比启动到某种状态。</p>
 <p>传统的<code>init</code>启动模式里面，有 RunLevel 的概念，跟 Target 的作用很类似。不同的是，RunLevel 是互斥的，不可能多个 RunLevel 同时启动，但是多个 Target 可以同时启动。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看当前系统的所有 Target</span>
-$ systemctl list-unit-files --type<span class="token operator">=</span>target
+<pre><code class="bash"># 查看当前系统的所有 Target
+$ systemctl list-unit-files --type=target
 
-<span class="token comment" spellcheck="true"># 查看一个 Target 包含的所有 Unit</span>
+# 查看一个 Target 包含的所有 Unit
 $ systemctl list-dependencies multi-user.target
 
-<span class="token comment" spellcheck="true"># 查看启动时的默认 Target</span>
+# 查看启动时的默认 Target
 $ systemctl get-default
 
-<span class="token comment" spellcheck="true"># 设置启动时的默认 Target</span>
-$ <span class="token function">sudo</span> systemctl set-default multi-user.target
+# 设置启动时的默认 Target
+$ sudo systemctl set-default multi-user.target
 
-<span class="token comment" spellcheck="true"># 切换 Target 时，默认不关闭前一个 Target 启动的进程，</span>
-<span class="token comment" spellcheck="true"># systemctl isolate 命令改变这种行为，</span>
-<span class="token comment" spellcheck="true"># 关闭前一个 Target 里面所有不属于后一个 Target 的进程</span>
-$ <span class="token function">sudo</span> systemctl isolate multi-user.target
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 切换 Target 时，默认不关闭前一个 Target 启动的进程，
+# systemctl isolate 命令改变这种行为，
+# 关闭前一个 Target 里面所有不属于后一个 Target 的进程
+$ sudo systemctl isolate multi-user.target
+</code></pre>
 <p>Target 与 传统 RunLevel 的对应关系如下。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">Traditional runlevel      New target name     Symbolically linked to<span class="token punctuation">..</span>.
+<pre><code class="bash">Traditional runlevel      New target name     Symbolically linked to...
 
-Runlevel 0           <span class="token operator">|</span>    runlevel0.target -<span class="token operator">></span> poweroff.target
-Runlevel 1           <span class="token operator">|</span>    runlevel1.target -<span class="token operator">></span> rescue.target
-Runlevel 2           <span class="token operator">|</span>    runlevel2.target -<span class="token operator">></span> multi-user.target
-Runlevel 3           <span class="token operator">|</span>    runlevel3.target -<span class="token operator">></span> multi-user.target
-Runlevel 4           <span class="token operator">|</span>    runlevel4.target -<span class="token operator">></span> multi-user.target
-Runlevel 5           <span class="token operator">|</span>    runlevel5.target -<span class="token operator">></span> graphical.target
-Runlevel 6           <span class="token operator">|</span>    runlevel6.target -<span class="token operator">></span> reboot.target
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Runlevel 0           |    runlevel0.target -&gt; poweroff.target
+Runlevel 1           |    runlevel1.target -&gt; rescue.target
+Runlevel 2           |    runlevel2.target -&gt; multi-user.target
+Runlevel 3           |    runlevel3.target -&gt; multi-user.target
+Runlevel 4           |    runlevel4.target -&gt; multi-user.target
+Runlevel 5           |    runlevel5.target -&gt; graphical.target
+Runlevel 6           |    runlevel6.target -&gt; reboot.target
+</code></pre>
 <p>它与<code>init</code>进程的主要差别如下。</p>
 <blockquote>
 <p><strong>（1）默认的 RunLevel</strong>（在<code>/etc/inittab</code>文件设置）现在被默认的 Target 取代，位置是<code>/etc/systemd/system/default.target</code>，通常符号链接到<code>graphical.target</code>（图形界面）或者<code>multi-user.target</code>（多用户命令行）。</p>
@@ -2503,85 +2506,85 @@ Runlevel 6           <span class="token operator">|</span>    runlevel6.target -
 </blockquote>
 <h2 id="七、日志管理"><a href="#七、日志管理" class="headerlink" title="七、日志管理"></a>七、日志管理</h2><p>Systemd 统一管理所有 Unit 的启动日志。带来的好处就是，可以只用<code>journalctl</code>一个命令，查看所有日志（内核日志和应用日志）。日志的配置文件是<code>/etc/systemd/journald.conf</code>。</p>
 <p><code>journalctl</code>功能强大，用法非常多。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看所有日志（默认情况下 ，只保存本次启动的日志）</span>
-$ <span class="token function">sudo</span> journalctl
+<pre><code class="bash"># 查看所有日志（默认情况下 ，只保存本次启动的日志）
+$ sudo journalctl
 
-<span class="token comment" spellcheck="true"># 查看内核日志（不显示应用日志）</span>
-$ <span class="token function">sudo</span> journalctl -k
+# 查看内核日志（不显示应用日志）
+$ sudo journalctl -k
 
-<span class="token comment" spellcheck="true"># 查看系统本次启动的日志</span>
-$ <span class="token function">sudo</span> journalctl -b
-$ <span class="token function">sudo</span> journalctl -b -0
+# 查看系统本次启动的日志
+$ sudo journalctl -b
+$ sudo journalctl -b -0
 
-<span class="token comment" spellcheck="true"># 查看上一次启动的日志（需更改设置）</span>
-$ <span class="token function">sudo</span> journalctl -b -1
+# 查看上一次启动的日志（需更改设置）
+$ sudo journalctl -b -1
 
-<span class="token comment" spellcheck="true"># 查看指定时间的日志</span>
-$ <span class="token function">sudo</span> journalctl --since<span class="token operator">=</span><span class="token string">"2012-10-30 18:17:16"</span>
-$ <span class="token function">sudo</span> journalctl --since <span class="token string">"20 min ago"</span>
-$ <span class="token function">sudo</span> journalctl --since yesterday
-$ <span class="token function">sudo</span> journalctl --since 09:00 --until <span class="token string">"1 hour ago"</span>
+# 查看指定时间的日志
+$ sudo journalctl --since=&quot;2012-10-30 18:17:16&quot;
+$ sudo journalctl --since &quot;20 min ago&quot;
+$ sudo journalctl --since yesterday
+$ sudo journalctl --since 09:00 --until &quot;1 hour ago&quot;
 
-<span class="token comment" spellcheck="true"># 显示尾部的最新10行日志</span>
-$ <span class="token function">sudo</span> journalctl -n
+# 显示尾部的最新10行日志
+$ sudo journalctl -n
 
-<span class="token comment" spellcheck="true"># 显示尾部指定行数的日志</span>
-$ <span class="token function">sudo</span> journalctl -n 20
+# 显示尾部指定行数的日志
+$ sudo journalctl -n 20
 
-<span class="token comment" spellcheck="true"># 实时滚动显示最新日志</span>
-$ <span class="token function">sudo</span> journalctl -f
+# 实时滚动显示最新日志
+$ sudo journalctl -f
 
-<span class="token comment" spellcheck="true"># 查看指定服务的日志</span>
-$ <span class="token function">sudo</span> journalctl /usr/lib/systemd/systemd
+# 查看指定服务的日志
+$ sudo journalctl /usr/lib/systemd/systemd
 
-<span class="token comment" spellcheck="true"># 查看指定进程的日志</span>
-$ <span class="token function">sudo</span> journalctl _PID<span class="token operator">=</span>1
+# 查看指定进程的日志
+$ sudo journalctl _PID=1
 
-<span class="token comment" spellcheck="true"># 查看某个路径的脚本的日志</span>
-$ <span class="token function">sudo</span> journalctl /usr/bin/bash
+# 查看某个路径的脚本的日志
+$ sudo journalctl /usr/bin/bash
 
-<span class="token comment" spellcheck="true"># 查看指定用户的日志</span>
-$ <span class="token function">sudo</span> journalctl _UID<span class="token operator">=</span>33 --since today
+# 查看指定用户的日志
+$ sudo journalctl _UID=33 --since today
 
-<span class="token comment" spellcheck="true"># 查看某个 Unit 的日志</span>
-$ <span class="token function">sudo</span> journalctl -u nginx.service
-$ <span class="token function">sudo</span> journalctl -u nginx.service --since today
+# 查看某个 Unit 的日志
+$ sudo journalctl -u nginx.service
+$ sudo journalctl -u nginx.service --since today
 
-<span class="token comment" spellcheck="true"># 实时滚动显示某个 Unit 的最新日志</span>
-$ <span class="token function">sudo</span> journalctl -u nginx.service -f
+# 实时滚动显示某个 Unit 的最新日志
+$ sudo journalctl -u nginx.service -f
 
-<span class="token comment" spellcheck="true"># 合并显示多个 Unit 的日志</span>
+# 合并显示多个 Unit 的日志
 $ journalctl -u nginx.service -u php-fpm.service --since today
 
-<span class="token comment" spellcheck="true"># 查看指定优先级（及其以上级别）的日志，共有8级</span>
-<span class="token comment" spellcheck="true"># 0: emerg</span>
-<span class="token comment" spellcheck="true"># 1: alert</span>
-<span class="token comment" spellcheck="true"># 2: crit</span>
-<span class="token comment" spellcheck="true"># 3: err</span>
-<span class="token comment" spellcheck="true"># 4: warning</span>
-<span class="token comment" spellcheck="true"># 5: notice</span>
-<span class="token comment" spellcheck="true"># 6: info</span>
-<span class="token comment" spellcheck="true"># 7: debug</span>
-$ <span class="token function">sudo</span> journalctl -p err -b
+# 查看指定优先级（及其以上级别）的日志，共有8级
+# 0: emerg
+# 1: alert
+# 2: crit
+# 3: err
+# 4: warning
+# 5: notice
+# 6: info
+# 7: debug
+$ sudo journalctl -p err -b
 
-<span class="token comment" spellcheck="true"># 日志默认分页输出，--no-pager 改为正常的标准输出</span>
-$ <span class="token function">sudo</span> journalctl --no-pager
+# 日志默认分页输出，--no-pager 改为正常的标准输出
+$ sudo journalctl --no-pager
 
-<span class="token comment" spellcheck="true"># 以 JSON 格式（单行）输出</span>
-$ <span class="token function">sudo</span> journalctl -b -u nginx.service -o json
+# 以 JSON 格式（单行）输出
+$ sudo journalctl -b -u nginx.service -o json
 
-<span class="token comment" spellcheck="true"># 以 JSON 格式（多行）输出，可读性更好</span>
-$ <span class="token function">sudo</span> journalctl -b -u nginx.service -o json-pretty
+# 以 JSON 格式（多行）输出，可读性更好
+$ sudo journalctl -b -u nginx.service -o json-pretty
 
-<span class="token comment" spellcheck="true"># 显示日志占据的硬盘空间</span>
-$ <span class="token function">sudo</span> journalctl --disk-usage
+# 显示日志占据的硬盘空间
+$ sudo journalctl --disk-usage
 
-<span class="token comment" spellcheck="true"># 指定日志文件占据的最大空间</span>
-$ <span class="token function">sudo</span> journalctl --vacuum-size<span class="token operator">=</span>1G
+# 指定日志文件占据的最大空间
+$ sudo journalctl --vacuum-size=1G
 
-<span class="token comment" spellcheck="true"># 指定日志文件保存多久</span>
-$ <span class="token function">sudo</span> journalctl --vacuum-time<span class="token operator">=</span>1years
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 指定日志文件保存多久
+$ sudo journalctl --vacuum-time=1years
+</code></pre>
 <h2 id="八、结语"><a href="#八、结语" class="headerlink" title="八、结语"></a>八、结语</h2><p>转载于<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></p>
 <p>引申阅读：</p>
 <ul>
@@ -2616,61 +2619,61 @@ $ <span class="token function">sudo</span> journalctl --vacuum-time<span class="
 </blockquote>
 <a id="more"></a>
 <h2 id="Git安装与配置"><a href="#Git安装与配置" class="headerlink" title="Git安装与配置"></a>Git安装与配置</h2><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>Mac 上brew安装算是最便捷的了</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~ brew install git 
+<pre><code class="zsh">~ brew install git 
 ~ brew --version
 Homebrew 1.1.13
 Homebrew/homebrew-core (git revision ea163; last commit 2017-04-20)
 ~ git --version
 git version 2.11.0
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>可以通过 git config –list –global 命令来查看：</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~ git config --list --global
+<pre><code class="zsh">~ git config --list --global
 user.email=1250114609@qq.com
 user.name=千古不见一人闲
 color.ui=auto
 alias.st=status
-alias.lg=log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+alias.lg=log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit
+</code></pre>
 <p>可以看到有两个alias出现，这里使用了别名。</p>
 <p>配置别名</p>
 <p>这个功能在shell中是很常用的。我们可以做一些别名来取代比较复杂的指令。<br>比如上面就是使用了以下两个配置</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~ git config --global alias.st status
+<pre><code class="zsh">~ git config --global alias.st status
 
-~ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+~ git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;
+</code></pre>
 <h4 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h4><p>当本地git仓库与git远程仓库通信的时候，需要进行SSH身份认证。<br>打开根目录下的.ssh目录：</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~/.ssh la
+<pre><code class="zsh">~/.ssh la
 .              ..             config         github_rsa     github_rsa.pub id_rsa         id_rsa.pub     known_hosts
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>如果没有id_rsa和id_rsa.pub这两个文件，就通过如下的命令生成：</p>
 <p>ssh-keygen -t rsa -C “youremail@example.com”<br>id_rsa和id_rsa.pub这两个文件，就是SSH Key的秘钥对，id_rsa是私钥，id_rsa.pub是公钥，用在github上表明身份。<br>在GitHub上的SSH keys中添加刚刚生成的key。(id_rsa.pub)</p>
 <h4 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h4><p>创建一个目录，并cd到目录下，通过调用git init来将现有目录初始化为git仓库，或者直接在git init后面跟上目录名，同样也可以创建一个新的仓库。</p>
 <p>git clone 直接clone一个远程仓库也是可以的。</p>
-<h4 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h4><pre class="line-numbers language-zsh"><code class="language-zsh">~/Documents/workspace git_springboot
+<h4 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h4><pre><code class="zsh">~/Documents/workspace git_springboot
 ~/Documents/workspace/git_springboot(master ✔) la
 .    ..   .git
 ~/Documents/workspace/git_springboot(master ✔) touch README.md
 ~/Documents/workspace/git_springboot(master ✗) vim README.md
 ~/Documents/workspace/git_springboot(master ✗) git add README.md
-~/Documents/workspace/git_springboot(master ✗) git commit -m "add README.md"
+~/Documents/workspace/git_springboot(master ✗) git commit -m &quot;add README.md&quot;
 [master be9081a] add README.md
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ~/Documents/workspace/git_springboot(master ✔)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="查看修改"><a href="#查看修改" class="headerlink" title="查看修改"></a>查看修改</h4><p>修改README.md文件，git st查看修改</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~/Documents/workspace/git_springboot(master ✗) git st
+<pre><code class="zsh">~/Documents/workspace/git_springboot(master ✗) git st
 On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
+Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
         modified:   README.md
 
-no changes added to commit (use "git add" and/or "git commit -a")
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
 <p>Git 比较不同版本文件差异的常用命令格式：</p>
 <blockquote>
 <p>git diff  查看尚未暂存的文件更新了哪些部分      </p>
@@ -2683,27 +2686,27 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <p>diff –git a/README.md b/README.md<br>index e8281cd..f1729fb 100644<br>— a/README.md<br>+++ b/README.md<br>@@ -1 +1 @@<br>-this’s ok.<br>+this’s ok,modify.</p>
 </blockquote>
 <p>add和commit之后，我们都使用status来查看下状态，可以发现，在commit之后，git提示我们，工作区是干净的。</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~/Documents/workspace/git_springboot(master ✗) git st
+<pre><code class="zsh">~/Documents/workspace/git_springboot(master ✗) git st
 On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
+Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
         modified:   README.md
 
-no changes added to commit (use "git add" and/or "git commit -a")
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
 ~/Documents/workspace/git_springboot(master ✗) git add README.md
-~/Documents/workspace/git_springboot(master ✗) git commit -m "modify README.md"
+~/Documents/workspace/git_springboot(master ✗) git commit -m &quot;modify README.md&quot;
 [master a77107b] modify README.md
  1 file changed, 1 insertion(+), 1 deletion(-)
 ~/Documents/workspace/git_springboot(master ✔) git st
 On branch master
-Your branch is ahead of 'origin/master' by 2 commits.
-  (use "git push" to publish your local commits)
+Your branch is ahead of &#39;origin/master&#39; by 2 commits.
+  (use &quot;git push&quot; to publish your local commits)
 nothing to commit, working tree clean
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="版本记录"><a href="#版本记录" class="headerlink" title="版本记录"></a>版本记录</h4><p>使用git lg 命令来查看<br>也可以使用gitk命令来查看图形化的log记录</p>
 <h4 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h4><p>Git通常是工作在三个区域上：</p>
 <p>工作区<br>暂存区<br>历史区<br>其中工作区就是我们平时工作、修改代码的区域；而历史区，用来保存各个版本；而暂存区，则是Git的核心所在。<br><a href="https://git-scm.com/" target="_blank" rel="external">Git官网</a><br><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">图解Git</a></p>
@@ -2716,12 +2719,12 @@ nothing to commit, working tree clean
 </ol>
 <p>分别执行以下操作：</p>
 <p>➜git checkout – README.md<br>修改被删除，完全还原到上次commit的状态，也就是服务器版本(1.)<br>最后的修改被删除，还原到上次add的状态，也就是修改前的暂存区状态(2.)<br>➜git reset HEAD README.md(3.)</p>
-<pre class="line-numbers language-zsh"><code class="language-zsh">~/Documents/workspace/git_springboot(master ✗) git st
+<pre><code class="zsh">~/Documents/workspace/git_springboot(master ✗) git st
 On branch master
-Your branch is ahead of 'origin/master' by 2 commits.
-  (use "git push" to publish your local commits)
+Your branch is ahead of &#39;origin/master&#39; by 2 commits.
+  (use &quot;git push&quot; to publish your local commits)
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 
         modified:   README.md
 
@@ -2730,16 +2733,16 @@ Unstaged changes after reset:
 M       README.md
 ~/Documents/workspace/git_springboot(master ✗) git st
 On branch master
-Your branch is ahead of 'origin/master' by 2 commits.
-  (use "git push" to publish your local commits)
+Your branch is ahead of &#39;origin/master&#39; by 2 commits.
+  (use &quot;git push&quot; to publish your local commits)
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
         modified:   README.md
 
-no changes added to commit (use "git add" and/or "git commit -a")
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
 <p>通过git reset HEAD README.md，我们就把暂存区的文件清除了。这样，在本地就是add前的状态，通过checkout操作，就可以进行修改回退了。<br>在Git中，用HEAD表示当前版本，上一个版本就是<code>HEAD^</code>，<br>上上一个版本就是<code>HEAD^^</code>。（git reset –hard HEAD）<br>要回退到哪个版本，也可以写commit id。</p>
 <h4 id="前进版本"><a href="#前进版本" class="headerlink" title="前进版本"></a>前进版本</h4><p>如果我们回退到了旧的版本，但是却后悔了想回到后面某个新的版本,git reflog 查看操作历史。找到 commit id。<br>版本号没必要写全，前7位就可以了，Git会自动去找。</p>
 <h4 id="文件暂存"><a href="#文件暂存" class="headerlink" title="文件暂存"></a>文件暂存</h4><p>这里的暂存不是前面说的暂存区，而是只一次备份与恢复操作。<br>git stash<br>指令来将当前修改暂存，这样就可以切换到其他分支或者就在当前干净的分支上checkout了。<br>比如你checkout了一个issue分支，修改了bug，使用git merge合并到了master分支，删除issue分支，切换到dev分支，想继续之前的新功能开发。<br>这时候，就需要恢复现场了：</p>
