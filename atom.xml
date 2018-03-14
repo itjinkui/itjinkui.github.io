@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2018-03-14T08:31:07.000Z</updated>
+  <updated>2018-03-14T09:31:22.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="//zeroto.tech/2018/03/14/recommend-books/"/>
     <id>//zeroto.tech/2018/03/14/recommend-books/</id>
     <published>2018-03-14T05:42:13.000Z</published>
-    <updated>2018-03-14T08:31:07.000Z</updated>
+    <updated>2018-03-14T09:31:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h1><a id="more"></a>
+    <content type="html"><![CDATA[<a id="more"></a>
+<h1 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h1><p><img src="/assets/blogImg/In-the-Grass.jpg" alt="In-the-Grass"></p>
 <h2 id="技术书籍推荐"><a href="#技术书籍推荐" class="headerlink" title="技术书籍推荐"></a>技术书籍推荐</h2><p>大部门都是京东上购买的书籍、还有在异步社区上购买的、还有就是<br>1、 《Java 核心技术》卷一 、卷二 两本书，算是入门比较好的书籍了<br>2、 《Effective Java》中文版 第二版 算是 Java 的进阶书籍了，面试好多问题也是从这出来的<br>3、 《Java 并发编程实战》<br>4、 《Java 并发编程的艺术》<br>5、 《深入理解 Java 虚拟机——JVM高级特性与最佳实践》第二版 这算是国内讲 JVM 最清楚的书了吧，目前还是只看了一遍<br>6、 《Spring实战（第4版）》<br>7、 《Spring揭秘》<br>8、 《设计模式之禅（第2版）》<br>9、 《Redis实战》<br>10、《MyBatis从入门到精通__刘增辉(著)》<br>11、《Android群英传：神兵利器》<br>12、《图解HTTP》对互联网基盘-HTTP协议进行了全面系统的介绍<br>13、《图解TCP/IP(第5版)》</p>
 <h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>1、《数据结构与算法分析-Java语言描述 第3版》木有坚持读下来<br>2、《算法 第4版》木有坚持读下来<br>3、《程序员的数学1》<br>4、《程序员的数学2：概率统计》<br>5、《程序员的数学3：线性代数》</p>
 <h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>1、《大型网站技术架构：核心原理与案例分析》<br>2、《淘宝技术这十年》<br>3、《亿级流量网站架构核心技术(跟开涛学搭建高可用高并发系统)》还没认真研究，糗大了<br>4、《架构探险：轻量级微服务架构（上）》黄勇。由此加入了勇哥建立的微信群，让我思维更活泛了些<br>5、《分布式服务框架原理与实践》</p>
@@ -38,7 +39,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;开头&quot;&gt;&lt;a href=&quot;#开头&quot; class=&quot;headerlink&quot; title=&quot;开头&quot;&gt;&lt;/a&gt;开头&lt;/h1&gt;
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;开头&quot;&gt;&lt;a href=&quot;#开头&quot; class=&quot;headerlink&quot; title=&quot;开头&quot;&gt;&lt;/a&gt;开头&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/assets/blogImg/In-the-Grass.jpg&quot; alt=&quot;In-
     
     </summary>
     
