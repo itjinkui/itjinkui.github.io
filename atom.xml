@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2018-03-12T09:54:18.000Z</updated>
+  <updated>2018-03-14T05:34:18.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="//zeroto.tech/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     <id>//zeroto.tech/2018/03/07/Spring Boot构建微服务/</id>
     <published>2018-03-07T06:45:37.000Z</published>
-    <updated>2018-03-12T09:54:18.000Z</updated>
+    <updated>2018-03-14T05:34:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触Spring-Boot"><a href="#接触Spring-Boot" class="headerlink" title="接触Spring Boot"></a>接触Spring Boot</h1><p>2016年 Spring Boot 还没有被广泛使用，到了现在经过2年的发展，很多互联网公司已经将 Spring Boot 搬上了生产，而使用 Spring Boot 的开源项目在 Github/码云 上面已有不少，很有必要开启一波学习潮了。</p>
 <p>听到了一句挺中肯的话，“离开场景和业务的修炼都是伪命题”。所以呢，有必要总结一下Spring Boot 相关的开源项目，选取一个感兴趣的，然后深入学习提交pr，真正的提高自己的技术能力。</p>
@@ -63,6 +63,11 @@
 <li><a href="http://lawlite.me/" target="_blank" rel="external">Lawlite</a></li>
 <li><a href="http://www.54tianzhisheng.cn/" target="_blank" rel="external">zhisheng</a></li>
 <li><a href="http://jumpbyte.cn/" target="_blank" rel="external">JumpByte</a></li>
+<li><a href="http://blog.csdn.net/v_july_v" target="_blank" rel="external">结构之法 算法之道</a></li>
+<li><a href="https://coolshell.cn/" target="_blank" rel="external">酷壳-陈皓</a> 很早就关注耗子叔叔了</li>
+<li><a href="http://calvin1978.blogcn.com/" target="_blank" rel="external">江南白衣 </a> 老司机</li>
+<li><a href="http://www.iocoder.cn/?vip" target="_blank" rel="external">芋道源码的博客</a> 好。还没咋看过</li>
+<li><a href="http://lovestblog.cn/" target="_blank" rel="external">你假笨@JVM</a></li>
 </ul>
 <h3 id="终极搜寻"><a href="#终极搜寻" class="headerlink" title="终极搜寻"></a>终极搜寻</h3><ul>
 <li><a href="http://springboot.fun/" target="_blank" rel="external">Spring Boot 中文索引</a></li>
@@ -979,32 +984,32 @@ Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-fro
     <link href="//zeroto.tech/2017/11/01/Java-lock/"/>
     <id>//zeroto.tech/2017/11/01/Java-lock/</id>
     <published>2017-11-01T06:49:18.000Z</published>
-    <updated>2018-03-12T06:41:51.000Z</updated>
+    <updated>2018-03-13T06:25:47.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="JVM的运行时数据区"><a href="#JVM的运行时数据区" class="headerlink" title="JVM的运行时数据区"></a>JVM的运行时数据区</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
+    <content type="html"><![CDATA[<h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
 <p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
 <a id="more"></a>
-<h2 id="单例模式实现方式"><a href="#单例模式实现方式" class="headerlink" title="单例模式实现方式"></a>单例模式实现方式</h2><pre><code class="java">/**   
+<h2 id="你真的会写单例吗"><a href="#你真的会写单例吗" class="headerlink" title="你真的会写单例吗"></a>你真的会写单例吗</h2><pre><code class="java">/**   
  * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
  * https://blankj.com/2016/04/21/really-use-singleton/
  * @ClassName: Singleton.java
  * @Description: 单例模式实现方式&lt;br&gt;
  * 1、双重锁检测&lt;br&gt;
  * 2、静态内部类&lt;br&gt;
- * 3、枚举
+ * 3、饿汉式
  *
  * @author: zhangjk
  * @date: 2018年3月7日 下午2:05:53 
  */
 public class Singleton {
 
-    // 一、懒汉类
-//    private Singleton() {} //私有构造函数
+    //一、双检查锁（DCL，即 double-checked locking）
+    //描述：这种方式称为双重检查锁(Double-Check Locking)，需要注意的是，如果使用双重检查锁定来实现懒汉式单例类
+//    private Singleton() {}
 //    private volatile static Singleton instance = null; //单例对象;volatile 修饰符阻止了变量访问前后的指令重排序，保证了指令执行顺序。
-//    // 静态工厂方法
 //    public static Singleton getInstance() {
-//        if (instance == null) { //双重检测机制
-//            synchronized (Singleton.class) { //同步锁
+//        if (instance == null) {
+//            synchronized (Singleton.class) {
 //                if(instance == null) {
 //                    instance = new Singleton();
 //                }
@@ -1014,19 +1019,27 @@ public class Singleton {
 //    }
 
 
-    // 用静态内部类实现单例模式：
+    // 二、用静态内部类实现单例模式：
     // 1.从外部无法访问静态内部类LazyHolder，只有当调用Singleton.getInstance方法的时候，才能得到单例对象INSTANCE。
     // 2.INSTANCE对象初始化的时机并不是在单例类Singleton被加载的时候，而是在调用getInstance方法，使得静态内部类LazyHolder被加载的时候。
+    //描述：饿汉式单例类不能实现延迟加载，不管将来用不用始终占据内存；懒汉式单例类线程安全控制繁琐，而且性能受影响。
+//    private static class LazyHolder {
+//        private static final Singleton INSTANCE = new Singleton();
+//    }
+//    
+//    private Singleton() {}
+//    public static Singleton getInstance() {
+//        return LazyHolder.INSTANCE;
+//    }
 
-    private static class LazyHolder {
-        private static final Singleton INSTANCE = new Singleton();
-    }
-
+    //三、饿汉式
+    //优点：没有加锁，执行效率会提高。
+    //缺点：类加载时就初始化，浪费内存。
+    private static Singleton instance = new Singleton();
     private Singleton() {}
-    public static Singleton getInstance() {
-        return LazyHolder.INSTANCE;
+    public static Singleton getIntance() {
+        return instance;
     }
-
 
 }
 </code></pre>
@@ -1163,12 +1176,13 @@ public class CountdownlatchDemo {
 <li>创建CyclicBarrier后，每个线程调用await方法告诉CyclicBarrier自己已经到达同步点，然后当前线程被阻塞。</li>
 </ul>
 </blockquote>
-<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="http://lovestblog.cn/blog/2015/10/21/deadlock/" target="_blank" rel="external">消失的死锁</a> 作者：你假笨@JVM<br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在Java语言内部，java.lang.Runtime对象就是一个使用单例模式的例子。在每一个Java应用程序里面，都有唯一的一个Runtime对象，应用程序可以与其运行环境发生相互作用。</p>
+<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="https://blankj.com/2016/04/21/really-use-singleton/" target="_blank" rel="external">你真的会写单例吗</a><br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JVM的运行时数据区&quot;&gt;&lt;a href=&quot;#JVM的运行时数据区&quot; class=&quot;headerlink&quot; title=&quot;JVM的运行时数据区&quot;&gt;&lt;/a&gt;JVM的运行时数据区&lt;/h1&gt;&lt;p&gt;JVM的运行时数据区，一图知晓。&lt;br&gt;&lt;img src=&quot;JVM运行时数据区.png&quot; alt=&quot;JVM运行时数据区&quot;&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;闲谈&quot;&gt;&lt;a href=&quot;#闲谈&quot; class=&quot;headerlink&quot; title=&quot;闲谈&quot;&gt;&lt;/a&gt;闲谈&lt;/h1&gt;&lt;p&gt;JVM的运行时数据区，一图知晓。&lt;br&gt;&lt;img src=&quot;JVM运行时数据区.png&quot; alt=&quot;JVM运行时数据区&quot;&gt;&lt;/p&gt;
 &lt;p&gt;可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。&lt;/p&gt;
     
     </summary>

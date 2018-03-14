@@ -10,19 +10,19 @@
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
   <title>聊一聊跟并发相关的话题 | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVM的运行时数据区JVM的运行时数据区，一图知晓。
+  <meta name="description" content="闲谈JVM的运行时数据区，一图知晓。
 可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊一聊跟并发相关的话题">
 <meta property="og:url" content="//zeroto.tech/2017/11/01/Java-lock/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="JVM的运行时数据区JVM的运行时数据区，一图知晓。
+<meta property="og:description" content="闲谈JVM的运行时数据区，一图知晓。
 可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
 <meta property="og:image" content="//zeroto.tech/JVM运行时数据区.png">
-<meta property="og:updated_time" content="2018-03-12T06:41:51.000Z">
+<meta property="og:updated_time" content="2018-03-13T06:25:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊一聊跟并发相关的话题">
-<meta name="twitter:description" content="JVM的运行时数据区JVM的运行时数据区，一图知晓。
+<meta name="twitter:description" content="闲谈JVM的运行时数据区，一图知晓。
 可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
 <meta name="twitter:image" content="//zeroto.tech/JVM运行时数据区.png">
   
@@ -189,30 +189,30 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JVM的运行时数据区"><a href="#JVM的运行时数据区" class="headerlink" title="JVM的运行时数据区"></a>JVM的运行时数据区</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
+        <h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
 <p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
 <a id="more"></a>
-<h2 id="单例模式实现方式"><a href="#单例模式实现方式" class="headerlink" title="单例模式实现方式"></a>单例模式实现方式</h2><pre><code class="java">/**   
+<h2 id="你真的会写单例吗"><a href="#你真的会写单例吗" class="headerlink" title="你真的会写单例吗"></a>你真的会写单例吗</h2><pre><code class="java">/**   
  * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
  * https://blankj.com/2016/04/21/really-use-singleton/
  * @ClassName: Singleton.java
  * @Description: 单例模式实现方式&lt;br&gt;
  * 1、双重锁检测&lt;br&gt;
  * 2、静态内部类&lt;br&gt;
- * 3、枚举
+ * 3、饿汉式
  *
  * @author: zhangjk
  * @date: 2018年3月7日 下午2:05:53 
  */
 public class Singleton {
 
-    // 一、懒汉类
-//    private Singleton() {} //私有构造函数
+    //一、双检查锁（DCL，即 double-checked locking）
+    //描述：这种方式称为双重检查锁(Double-Check Locking)，需要注意的是，如果使用双重检查锁定来实现懒汉式单例类
+//    private Singleton() {}
 //    private volatile static Singleton instance = null; //单例对象;volatile 修饰符阻止了变量访问前后的指令重排序，保证了指令执行顺序。
-//    // 静态工厂方法
 //    public static Singleton getInstance() {
-//        if (instance == null) { //双重检测机制
-//            synchronized (Singleton.class) { //同步锁
+//        if (instance == null) {
+//            synchronized (Singleton.class) {
 //                if(instance == null) {
 //                    instance = new Singleton();
 //                }
@@ -222,19 +222,27 @@ public class Singleton {
 //    }
 
 
-    // 用静态内部类实现单例模式：
+    // 二、用静态内部类实现单例模式：
     // 1.从外部无法访问静态内部类LazyHolder，只有当调用Singleton.getInstance方法的时候，才能得到单例对象INSTANCE。
     // 2.INSTANCE对象初始化的时机并不是在单例类Singleton被加载的时候，而是在调用getInstance方法，使得静态内部类LazyHolder被加载的时候。
+    //描述：饿汉式单例类不能实现延迟加载，不管将来用不用始终占据内存；懒汉式单例类线程安全控制繁琐，而且性能受影响。
+//    private static class LazyHolder {
+//        private static final Singleton INSTANCE = new Singleton();
+//    }
+//    
+//    private Singleton() {}
+//    public static Singleton getInstance() {
+//        return LazyHolder.INSTANCE;
+//    }
 
-    private static class LazyHolder {
-        private static final Singleton INSTANCE = new Singleton();
-    }
-
+    //三、饿汉式
+    //优点：没有加锁，执行效率会提高。
+    //缺点：类加载时就初始化，浪费内存。
+    private static Singleton instance = new Singleton();
     private Singleton() {}
-    public static Singleton getInstance() {
-        return LazyHolder.INSTANCE;
+    public static Singleton getIntance() {
+        return instance;
     }
-
 
 }
 </code></pre>
@@ -371,7 +379,8 @@ public class CountdownlatchDemo {
 <li>创建CyclicBarrier后，每个线程调用await方法告诉CyclicBarrier自己已经到达同步点，然后当前线程被阻塞。</li>
 </ul>
 </blockquote>
-<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="http://lovestblog.cn/blog/2015/10/21/deadlock/" target="_blank" rel="external">消失的死锁</a> 作者：你假笨@JVM<br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在Java语言内部，java.lang.Runtime对象就是一个使用单例模式的例子。在每一个Java应用程序里面，都有唯一的一个Runtime对象，应用程序可以与其运行环境发生相互作用。</p>
+<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="https://blankj.com/2016/04/21/really-use-singleton/" target="_blank" rel="external">你真的会写单例吗</a><br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
 
       
 
@@ -606,19 +615,19 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,10 +643,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Visual Studio Code</a>
               </li>
              
@@ -646,15 +651,19 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Java内存模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,6 +680,18 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">阿里云域名注册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CloudFlare</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,18 +712,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">阿里云域名注册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CloudFlare</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
