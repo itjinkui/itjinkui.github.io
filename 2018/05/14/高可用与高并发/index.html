@@ -8,18 +8,24 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>一张通往计算机世界的地图 | zeroto的博客</title>
+  <title>亿级流量网站架构核心技术 | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一张通往计算机世界的地图引述我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。">
+  <meta name="description" content="跟开涛学搭建高可用高并发系统本书将介绍缓存、异步并发、连接池、线程池、如何扩容、消息队列、分布式任务等高并发原则来提升系统吞吐量。
+通过负载均衡和反向代理实现分流，通过限流 保护服务免受雪崩之灾，通过降级实现部分可用、有损服务，通过隔离实现故障隔离，通过设置合理的超时与重试机制避免请求堆积造成雪崩，通过回滚机制快速修复错误版本；使得系统高可用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一张通往计算机世界的地图">
-<meta property="og:url" content="//zeroto.tech/2017/12/19/一张通往计算机世界的地图/index.html">
+<meta property="og:title" content="亿级流量网站架构核心技术">
+<meta property="og:url" content="//zeroto.tech/2018/05/14/高可用与高并发/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="一张通往计算机世界的地图引述我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。">
-<meta property="og:updated_time" content="2018-03-12T03:42:26.000Z">
+<meta property="og:description" content="跟开涛学搭建高可用高并发系统本书将介绍缓存、异步并发、连接池、线程池、如何扩容、消息队列、分布式任务等高并发原则来提升系统吞吐量。
+通过负载均衡和反向代理实现分流，通过限流 保护服务免受雪崩之灾，通过降级实现部分可用、有损服务，通过隔离实现故障隔离，通过设置合理的超时与重试机制避免请求堆积造成雪崩，通过回滚机制快速修复错误版本；使得系统高可用。">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/高可用.png">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/高并发.png">
+<meta property="og:updated_time" content="2018-05-14T08:20:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一张通往计算机世界的地图">
-<meta name="twitter:description" content="一张通往计算机世界的地图引述我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。">
+<meta name="twitter:title" content="亿级流量网站架构核心技术">
+<meta name="twitter:description" content="跟开涛学搭建高可用高并发系统本书将介绍缓存、异步并发、连接池、线程池、如何扩容、消息队列、分布式任务等高并发原则来提升系统吞吐量。
+通过负载均衡和反向代理实现分流，通过限流 保护服务免受雪崩之灾，通过降级实现部分可用、有损服务，通过隔离实现故障隔离，通过设置合理的超时与重试机制避免请求堆积造成雪崩，通过回滚机制快速修复错误版本；使得系统高可用。">
+<meta name="twitter:image" content="//zeroto.tech/assets/blogImg/高可用.png">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
   
@@ -164,29 +170,31 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-一张通往计算机世界的地图" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-高可用与高并发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一张通往计算机世界的地图
+      亿级流量网站架构核心技术
     </h1>
   
 
         
-        <a href="/2017/12/19/一张通往计算机世界的地图/" class="archive-article-date">
-  	<time datetime="2017-12-19T05:25:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/05/14/高可用与高并发/" class="archive-article-date">
+  	<time datetime="2018-05-14T08:01:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一张通往计算机世界的地图"><a href="#一张通往计算机世界的地图" class="headerlink" title="一张通往计算机世界的地图"></a>一张通往计算机世界的地图</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>我们通过计算机来拓展我们自己的大脑。最开始计算机被用来解决和算数有关的问题，但其自身的价值很快地延伸到了各个领域。 像是运行互联网络，处理实时图像，制造人工智能，以及模拟整个宇宙等等。 而其神奇的地方就在于这一切强大功能的背后，竟然仅是 0 和 1 的来回变化。</p>
+        <h1 id="跟开涛学搭建高可用高并发系统"><a href="#跟开涛学搭建高可用高并发系统" class="headerlink" title="跟开涛学搭建高可用高并发系统"></a>跟开涛学搭建高可用高并发系统</h1><p>本书将介绍缓存、异步并发、连接池、线程池、如何扩容、消息队列、分布式任务等高并发原则来提升系统吞吐量。</p>
+<p>通过负载均衡和反向代理实现分流，通过限流 保护服务免受雪崩之灾，<br>通过降级实现部分可用、有损服务，通过隔离实现故障隔离，<br>通过设置合理的超时与重试机制避免请求堆积造成雪崩，通过回滚机制快速修复错误版本；<br>使得系统高可用。</p>
 <a id="more"></a>
-<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p>作者：Surmon <a href="https://surmon.me/article/75" target="_blank" rel="external">https://surmon.me/article/75</a></p>
+<p><img src="/assets/blogImg/高可用.png" alt="高可用"></p>
+<p><img src="/assets/blogImg/高并发.png" alt="高并发"></p>
 
       
 
@@ -200,19 +208,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">高可用</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件工程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">高并发</a>
         		</li>
       		
 		</ul>
@@ -268,7 +268,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2017/12/19/一张通往计算机世界的地图/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2018/05/14/高可用与高并发/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +282,9 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/2017/12/27/Sublime Text/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mac下之Sublime Text的好用之处
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/12/redis技术交流/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Redis技术交流</div>
+    <a href="/2018/03/14/recommend-books/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">那些年我看过的书</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +323,7 @@ ga('send', 'pageview');
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//zeroto.tech/2017/12/19/一张通往计算机世界的地图/",
+  id: "//zeroto.tech/2018/05/14/高可用与高并发/",
   owner: 'itjinkui',
   repo: 'itjinkui.github.io',
   oauth: {
