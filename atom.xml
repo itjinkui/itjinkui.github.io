@@ -82,7 +82,7 @@
     <link href="//zeroto.tech/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     <id>//zeroto.tech/2018/03/07/Spring Boot构建微服务/</id>
     <published>2018-03-07T06:45:37.000Z</published>
-    <updated>2018-05-22T03:09:32.000Z</updated>
+    <updated>2018-05-22T03:16:28.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触Spring-Boot"><a href="#接触Spring-Boot" class="headerlink" title="接触Spring Boot"></a>接触Spring Boot</h1><p>2016年 Spring Boot 还没有被广泛使用，到了现在经过2年的发展，很多互联网公司已经将 Spring Boot 搬上了生产，而使用 Spring Boot 的开源项目在 Github/码云 上面已有不少，很有必要开启一波学习潮了。</p>
 <p>听到了一句挺中肯的话，“离开场景和业务的修炼都是伪命题”。所以呢，有必要总结一下Spring Boot 相关的开源项目，选取一个感兴趣的，然后深入学习提交pr，真正的提高自己的技术能力。</p>
@@ -93,7 +93,7 @@
 <li><a href="http://blog.didispace.com/Spring-Boot基础教程/" target="_blank" rel="external">Spring Boot基础教程</a></li>
 <li>[江南一点雨（Spring Cloud教程合集）]作者参考了程序员DD一书《Spring Cloud微服务实战》，可用来作为辩证学习的素材。</li>
 <li>[江南一点雨] <a href="https://github.com/lenve" target="_blank" rel="external">https://github.com/lenve</a></li>
-<li><a href="http://xujin.org/" target="_blank" rel="external">沉思录</a>Spring Cloud中国社区创始人，业余主要研究Spring Cloud。我们微信群猪的博客，强力推荐。</li>
+<li><a href="http://xujin.org/" target="_blank" rel="external">沉思录</a> Spring Cloud中国社区创始人，业余主要研究Spring Cloud。我们微信群猪的博客，强力推荐。</li>
 </ul>
 <h2 id="有思想的博客站点"><a href="#有思想的博客站点" class="headerlink" title="有思想的博客站点"></a>有思想的博客站点</h2><ul>
 <li><a href="http://www.spring4all.com/" target="_blank" rel="external">http://www.spring4all.com/</a></li>
@@ -129,7 +129,7 @@
 <li><a href="http://blog.csdn.net/v_july_v" target="_blank" rel="external">结构之法 算法之道</a></li>
 <li><a href="https://coolshell.cn/" target="_blank" rel="external">酷壳-陈皓</a></li>
 <li><a href="http://calvin1978.blogcn.com/" target="_blank" rel="external">江南白衣 </a> 老司机</li>
-<li><a href="http://www.iocoder.cn/?vip" target="_blank" rel="external">芋道源码的博客</a> 好。还没咋看过</li>
+<li><a href="http://www.iocoder.cn/?vip" target="_blank" rel="external">芋道源码的博客</a> 文斌兄的地盘，另外也有知识星球，可以加入我们。</li>
 <li><a href="http://lovestblog.cn/" target="_blank" rel="external">你假笨@JVM</a></li>
 <li><a href="https://blog.iwannarun.cn/" target="_blank" rel="external">I WANNA RUN</a></li>
 <li><a href="http://moxfive.xyz/" target="_blank" rel="external">MOxFIVE</a> Yelee主题开发者，很美观。</li>
