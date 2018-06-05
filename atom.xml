@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2018-05-14T08:20:33.000Z</updated>
+  <updated>2018-06-05T09:55:26.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网线接口转换器 苹果Mac集线器HUB接硬盘</title>
+    <link href="//zeroto.tech/2018/06/05/Mac%20%E7%BD%91%E7%BA%BF%E6%8E%A5%E5%8F%A3%E8%BD%AC%E6%8D%A2%E5%99%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>//zeroto.tech/2018/06/05/Mac 网线接口转换器的正确使用方法/</id>
+    <published>2018-06-05T09:38:55.000Z</published>
+    <updated>2018-06-05T09:55:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac-连接网线"><a href="#Mac-连接网线" class="headerlink" title="Mac 连接网线"></a>Mac 连接网线</h1><p>以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例：</p>
+<pre><code class="sh">~ csrutil status
+System Integrity Protection status: enabled (Custom Configuration).
+
+Configuration:
+    Apple Internal: disabled
+    Kext Signing: enabled
+    Filesystem Protections: enabled
+    Debugging Restrictions: disabled
+    DTrace Restrictions: enabled
+    NVRAM Protections: enabled
+    BaseSystem Verification: enabled
+
+This is an unsupported configuration, likely to break in the future and leave your machine in an unknown state.
+~
+</code></pre>
+<p>首先，SIP status 必须是 disabled 状态才行，可以通过以下步骤设置：<br>1、重启电脑<br>2、按住command+r进入恢复模式<br>3、点击顶部菜单栏实用工具中的终端，（可以输入csrutil status检查状态）<br>4、然后输入csrutil disable</p>
+<p>其次，<a href="http://www.realtek.com/downloads/downloadsView.aspx?Langid=3&amp;PNid=56&amp;PFid=56&amp;Level=5&amp;Conn=4&amp;DownTypeID=3&amp;GetDown=false#7" target="_blank" rel="external">下载驱动</a>,选择 MAC OS 10.6 to 10.13 版本，下载安装。</p>
+<p>最后，重启电脑。此时，关闭Wi-Fi 网络，试试网络吧。公司网络应该是用网线连接上了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mac-连接网线&quot;&gt;&lt;a href=&quot;#Mac-连接网线&quot; class=&quot;headerlink&quot; title=&quot;Mac 连接网线&quot;&gt;&lt;/a&gt;Mac 连接网线&lt;/h1&gt;&lt;p&gt;以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45
+    
+    </summary>
+    
+    
+      <category term="Mac 网线接口转换器" scheme="//zeroto.tech/tags/Mac-%E7%BD%91%E7%BA%BF%E6%8E%A5%E5%8F%A3%E8%BD%AC%E6%8D%A2%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>亿级流量网站架构核心技术</title>

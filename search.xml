@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[网线接口转换器 苹果Mac集线器HUB接硬盘]]></title>
+      <url>%2F2018%2F06%2F05%2FMac%20%E7%BD%91%E7%BA%BF%E6%8E%A5%E5%8F%A3%E8%BD%AC%E6%8D%A2%E5%99%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
+      <content type="text"><![CDATA[Mac 连接网线以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例： ~ csrutil status System Integrity Protection status: enabled (Custom Configuration). Configuration: Apple Internal: disabled Kext Signing: enabled Filesystem Protections: enabled Debugging Restrictions: disabled DTrace Restrictions: enabled NVRAM Protections: enabled BaseSystem Verification: enabled This is an unsupported configuration, likely to break in the future and leave your machine in an unknown state. ~ 首先，SIP status 必须是 disabled 状态才行，可以通过以下步骤设置：1、重启电脑2、按住command+r进入恢复模式3、点击顶部菜单栏实用工具中的终端，（可以输入csrutil status检查状态）4、然后输入csrutil disable 其次，下载驱动,选择 MAC OS 10.6 to 10.13 版本，下载安装。 最后，重启电脑。此时，关闭Wi-Fi 网络，试试网络吧。公司网络应该是用网线连接上了。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[亿级流量网站架构核心技术]]></title>
       <url>%2F2018%2F05%2F14%2F%E9%AB%98%E5%8F%AF%E7%94%A8%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91%2F</url>
       <content type="text"><![CDATA[跟开涛学搭建高可用高并发系统本书将介绍缓存、异步并发、连接池、线程池、如何扩容、消息队列、分布式任务等高并发原则来提升系统吞吐量。 通过负载均衡和反向代理实现分流，通过限流 保护服务免受雪崩之灾，通过降级实现部分可用、有损服务，通过隔离实现故障隔离，通过设置合理的超时与重试机制避免请求堆积造成雪崩，通过回滚机制快速修复错误版本；使得系统高可用。]]></content>

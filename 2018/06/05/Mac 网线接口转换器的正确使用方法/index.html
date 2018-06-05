@@ -8,17 +8,33 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>Archives: 2017/12 | zeroto的博客</title>
+  <title>网线接口转换器 苹果Mac集线器HUB接硬盘 | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zeroto的博客">
-<meta property="og:url" content="//zeroto.tech/archives/2017/12/index.html">
+  <meta name="description" content="Mac 连接网线以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例：
+~ csrutil status
+System Integrity Protection status: enabled (Custom Configuration).
+
+Configuration:
+    Apple">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网线接口转换器 苹果Mac集线器HUB接硬盘">
+<meta property="og:url" content="//zeroto.tech/2018/06/05/Mac 网线接口转换器的正确使用方法/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
+<meta property="og:description" content="Mac 连接网线以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例：
+~ csrutil status
+System Integrity Protection status: enabled (Custom Configuration).
+
+Configuration:
+    Apple">
+<meta property="og:updated_time" content="2018-06-05T09:55:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zeroto的博客">
-<meta name="twitter:description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
+<meta name="twitter:title" content="网线接口转换器 苹果Mac集线器HUB接硬盘">
+<meta name="twitter:description" content="Mac 连接网线以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例：
+~ csrutil status
+System Integrity Protection status: enabled (Custom Configuration).
+
+Configuration:
+    Apple">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
   
@@ -163,190 +179,180 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Mac 网线接口转换器的正确使用方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网线接口转换器 苹果Mac集线器HUB接硬盘
+    </h1>
+  
+
+        
+        <a href="/2018/06/05/Mac 网线接口转换器的正确使用方法/" class="archive-article-date">
+  	<time datetime="2018-06-05T09:38:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac-连接网线"><a href="#Mac-连接网线" class="headerlink" title="Mac 连接网线"></a>Mac 连接网线</h1><p>以我在京东上购买的 毕亚兹(biaze) USB分线器3.0 千兆有线网卡 USB转RJ45网线接口转换器 苹果Mac集线器HUB接硬盘 ZH17-金属银 为例：</p>
+<pre><code class="sh">~ csrutil status
+System Integrity Protection status: enabled (Custom Configuration).
+
+Configuration:
+    Apple Internal: disabled
+    Kext Signing: enabled
+    Filesystem Protections: enabled
+    Debugging Restrictions: disabled
+    DTrace Restrictions: enabled
+    NVRAM Protections: enabled
+    BaseSystem Verification: enabled
+
+This is an unsupported configuration, likely to break in the future and leave your machine in an unknown state.
+~
+</code></pre>
+<p>首先，SIP status 必须是 disabled 状态才行，可以通过以下步骤设置：<br>1、重启电脑<br>2、按住command+r进入恢复模式<br>3、点击顶部菜单栏实用工具中的终端，（可以输入csrutil status检查状态）<br>4、然后输入csrutil disable</p>
+<p>其次，<a href="http://www.realtek.com/downloads/downloadsView.aspx?Langid=3&amp;PNid=56&amp;PFid=56&amp;Level=5&amp;Conn=4&amp;DownTypeID=3&amp;GetDown=false#7" target="_blank" rel="external">下载驱动</a>,选择 MAC OS 10.6 to 10.13 版本，下载安装。</p>
+<p>最后，重启电脑。此时，关闭Wi-Fi 网络，试试网络吧。公司网络应该是用网线连接上了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/28/Visual Studio Code/" class="archive-article-date">
-  	<time datetime="2017-12-28T08:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/28/Visual Studio Code/">初探Visual Studio Code编写Vue</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Visual Studio Code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mac 网线接口转换器</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2018/06/05/Mac 网线接口转换器的正确使用方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/27/Sublime Text/" class="archive-article-date">
-  	<time datetime="2017-12-27T06:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/14/高可用与高并发/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">亿级流量网站架构核心技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/27/Sublime Text/">Mac下之Sublime Text的好用之处</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Sublime Text</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/19/一张通往计算机世界的地图/" class="archive-article-date">
-  	<time datetime="2017-12-19T05:25:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/19/一张通往计算机世界的地图/">一张通往计算机世界的地图</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件工程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/12/redis技术交流/" class="archive-article-date">
-  	<time datetime="2017-12-12T08:56:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/12/redis技术交流/">Redis技术交流</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//zeroto.tech/2018/06/05/Mac 网线接口转换器的正确使用方法/",
+  owner: 'itjinkui',
+  repo: 'itjinkui.github.io',
+  oauth: {
+    client_id: '7bd6bb303c1bc647b9a4',
+    client_secret: '6ba1c2941b85d6d1a4f6c4e2ea955fe8c36a3a27',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -378,8 +384,8 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
 	var yiliaConfig = {
 		mathjax: undefined,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
