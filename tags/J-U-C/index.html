@@ -8,23 +8,17 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>聊一聊跟并发相关的话题 | zeroto的博客</title>
+  <title>Tag: J.U.C | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闲谈JVM的运行时数据区，一图知晓。
-可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="聊一聊跟并发相关的话题">
-<meta property="og:url" content="//zeroto.tech/2017/11/01/Java-lock/index.html">
+  <meta name="description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zeroto的博客">
+<meta property="og:url" content="//zeroto.tech/tags/J-U-C/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="闲谈JVM的运行时数据区，一图知晓。
-可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
-<meta property="og:image" content="//zeroto.tech/JVM运行时数据区.png">
-<meta property="og:updated_time" content="2018-03-13T06:25:47.000Z">
+<meta property="og:description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊一聊跟并发相关的话题">
-<meta name="twitter:description" content="闲谈JVM的运行时数据区，一图知晓。
-可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。">
-<meta name="twitter:image" content="//zeroto.tech/JVM运行时数据区.png">
+<meta name="twitter:title" content="zeroto的博客">
+<meta name="twitter:description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
   
@@ -169,368 +163,64 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-lock" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      聊一聊跟并发相关的话题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/01/JVM-1/" class="archive-article-date">
+  	<time datetime="2017-11-01T06:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/01/JVM-1/">Java内存模型看并发（一）</a>
     </h1>
   
 
-        
-        <a href="/2017/11/01/Java-lock/" class="archive-article-date">
-  	<time datetime="2017-11-01T06:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-        
-          <span class="archive-article-date">
-            阅读量
-            <span id="busuanzi_value_page_pv"></span>
-          </span>
+        <div class="article-info info-on-right">
           
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
-<p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
-<a id="more"></a>
-<h2 id="你真的会写单例吗"><a href="#你真的会写单例吗" class="headerlink" title="你真的会写单例吗"></a>你真的会写单例吗</h2><pre><code class="java">/**   
- * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
- * https://blankj.com/2016/04/21/really-use-singleton/
- * @ClassName: Singleton.java
- * @Description: 单例模式实现方式&lt;br&gt;
- * 1、双重锁检测&lt;br&gt;
- * 2、静态内部类&lt;br&gt;
- * 3、饿汉式
- *
- * @author: zhangjk
- * @date: 2018年3月7日 下午2:05:53 
- */
-public class Singleton {
-
-    //一、双检查锁（DCL，即 double-checked locking）
-    //描述：这种方式称为双重检查锁(Double-Check Locking)，需要注意的是，如果使用双重检查锁定来实现懒汉式单例类
-//    private Singleton() {}
-//    private volatile static Singleton instance = null; //单例对象;volatile 修饰符阻止了变量访问前后的指令重排序，保证了指令执行顺序。
-//    public static Singleton getInstance() {
-//        if (instance == null) {
-//            synchronized (Singleton.class) {
-//                if(instance == null) {
-//                    instance = new Singleton();
-//                }
-//            }
-//        }
-//        return instance;
-//    }
-
-
-    // 二、用静态内部类实现单例模式：
-    // 1.从外部无法访问静态内部类LazyHolder，只有当调用Singleton.getInstance方法的时候，才能得到单例对象INSTANCE。
-    // 2.INSTANCE对象初始化的时机并不是在单例类Singleton被加载的时候，而是在调用getInstance方法，使得静态内部类LazyHolder被加载的时候。
-    //描述：饿汉式单例类不能实现延迟加载，不管将来用不用始终占据内存；懒汉式单例类线程安全控制繁琐，而且性能受影响。
-//    private static class LazyHolder {
-//        private static final Singleton INSTANCE = new Singleton();
-//    }
-//    
-//    private Singleton() {}
-//    public static Singleton getInstance() {
-//        return LazyHolder.INSTANCE;
-//    }
-
-    //三、饿汉式
-    //优点：没有加锁，执行效率会提高。
-    //缺点：类加载时就初始化，浪费内存。
-    private static Singleton instance = new Singleton();
-    private Singleton() {}
-    public static Singleton getIntance() {
-        return instance;
-    }
-
-}
-</code></pre>
-<h2 id="并发工具类"><a href="#并发工具类" class="headerlink" title="并发工具类"></a>并发工具类</h2><p>CountDownLatch和CyclicBarrier是jdk concurrent包下非常有用的两个并发工具类，它们提供了一种控制并发流程的手段。</p>
-<p>CountDownLatch 允许一个或多个线程等待其他线程完成操作。<br>CyclicBarrier 让一组线程到达一个同步点后再一起继续运行，在其中任意一个线程未达到同步点，其他到达的线程均会被阻塞。</p>
-<h3 id="Semaphore（信号量）"><a href="#Semaphore（信号量）" class="headerlink" title="Semaphore（信号量）"></a>Semaphore（信号量）</h3><p>信号量(Semaphore)，有时被称为信号灯，是在多线程环境下使用的一种设施, 它负责协调各个线程, 以保证它们能够正确、合理的使用公共资源。</p>
-<p>一个计数信号量。从概念上讲，信号量维护了一个许可集。如有必要，在许可可用前会阻塞每一个 acquire()，然后再获取该许可。<br>每个 release() 添加一个许可，从而可能释放一个正在阻塞的获取者。但是，不使用实际的许可对象，Semaphore 只对可用许可的号码进行计数，并采取相应的行动。拿到信号量的线程可以进入代码，否则就等待。通过acquire()和release()获取和释放访问许可。</p>
-<pre><code class="java">/**
- * 控制并发线程数
- */
-public class SemaphoreDemo {
-
-    /**
-     *执行任务类，获取信号量
-     */
-    class SemaphoreRunnable implements Runnable{
-        private Semaphore semaphore;
-        private int user;
-
-        public SemaphoreRunnable(Semaphore semaphore, int user) {
-            this.semaphore = semaphore;
-            this.user = user;
-        }
-
-        @Override
-        public void run() {
-            try {
-                //获取信号量许可
-                semaphore.acquire();
-                System.out.println(&quot;用户【&quot; + user + &quot;】进入窗口，准备买票...&quot;);
-                Thread.sleep((long)(Math.random()*10000));
-                System.out.println(&quot;用户【&quot; + user + &quot;】买票完成，即将离开...&quot;);
-                Thread.sleep((long)(Math.random()*10000));
-                System.out.println(&quot;用户【&quot; + user + &quot;】离开售票窗口...&quot;);
-                //释放信号量许可
-                semaphore.release();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    private void execute(){
-        //定义窗口个数
-        final Semaphore semaphore = new Semaphore(3);
-        //线程池
-        ExecutorService threadPool = Executors.newCachedThreadPool();
-
-        for (int i = 0; i &lt; 10; i++) {
-            threadPool.execute(new SemaphoreRunnable(semaphore,i + 1));
-        }
-        threadPool.shutdown();
-    }
-
-    public static void main(String[] args) {
-        SemaphoreDemo semaphoreDemo = new SemaphoreDemo();
-        semaphoreDemo.execute();
-    }
-
-}
-</code></pre>
-<h3 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h3><p>源码注释：<br>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.<br>（一个或者多个线程，等待其他多个线程完成某件事情之后才能执行）</p>
-<blockquote>
-<ul>
-<li>CountDownLatch声明： </li>
-<li>CountDownLatch的构造函数接受int型参数作为它的计数器，如果想等待N个点完成，就传入N；</li>
-<li>调用CountDownLatch的countDown方法时，N会减1，CountDownLatch的await方法会阻塞主线程直到N减少到0。</li>
-</ul>
-</blockquote>
-<p>网上有个经典例子，在此抄录一下帮助理解记忆。</p>
-<pre><code class="java">/**
- * F1赛车每次进站后，车队技师都需要在尽可能短的时间内对赛车做三个工作：加注燃油、更换轮胎、更换刹车片。
- * 当然，这三项工作都是同时进行的。只有当这三项工作完成，赛车才能驶出维修站。
- */
-public class CountdownlatchDemo {
-
-    static class Mechanician implements Runnable{
-        String work;
-        CountDownLatch cDownLatch ;
-        public Mechanician(String work,CountDownLatch cDownLatch) {
-            this.work = work;
-            this.cDownLatch = cDownLatch;
-        }
-        @Override
-        public void run() {
-            try {
-                int random=new Random().nextInt(7);
-                TimeUnit.SECONDS.sleep(random);
-                System.out.println(Thread.currentThread().getName()+&quot;--- &quot;+work+&quot; 完成，此组耗时：&quot;+random+&quot;秒&quot;);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }finally{
-                /*当前技师的任务完成,cDownLatch计算器减1
-                 *通常countDown放在finally里中使用*/
-                cDownLatch.countDown();
-            }
-        }
-    }
-
-
-    public static void main(String[] args) {
-        CountDownLatch cDownLatch=new CountDownLatch(3);//初始计数器值为3，对应3个维修组
-         /*1、赛车进站*/
-        System.out.println(&quot;F1赛车进站，时间：&quot;+Calendar.getInstance().get(Calendar.SECOND));
-
-        List&lt;Mechanician&gt; mechanician_team=new ArrayList&lt;Mechanician&gt;();
-        mechanician_team.add(new Mechanician(&quot;加注燃油&quot;, cDownLatch));
-        mechanician_team.add(new Mechanician(&quot;更换轮胎&quot;, cDownLatch));
-        mechanician_team.add(new Mechanician(&quot;更换刹车片&quot;, cDownLatch));
-        for(Mechanician mechanician : mechanician_team){
-            new Thread(mechanician).start();
-        }
-        /*3、等待技师完成三项工作。实际就是等待cDownLatch计数器变成0*/
-        try {
-            cDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        /*4、完成维护，出发*/
-        System.out.println(&quot;F1赛车维修完毕，出发！时间：&quot;+Calendar.getInstance().get(Calendar.SECOND));
-
-    }
-
-}
-</code></pre>
-<p>Countdownlatch 是一个倒计数器锁。调用CountDownLatch对象的await()方法使线程处于等待状态，调用countDown()方法的线程会将计数器减1，当计数到达0时，所有等待线程（可多个，但通常的应用场景中只有一个等待者）开始继续执行。</p>
-<h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h3><p>源码注释：<br>A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.（多个线程互相等待，直到到达同一个同步点，再继续一起执行）</p>
-<blockquote>
-<ul>
-<li>CyclicBarrier(int parties) 默认构造方法，参数表示拦截的线程数量。</li>
-<li>CyclicBarrier(int parties, Runnable barrierAction)<br>由于线程之前的调度是由CPU决定的，所以默认的构造方法无法设置线程执行优先级，CyclicBarrier提供一个更高级的构造函数(int parties, Runnable barrierAction)，用于在线程到达同步点时，优先执行线程barrierAction，这样可以更加方便的处理一些复杂的业务场景。</li>
-<li>创建CyclicBarrier后，每个线程调用await方法告诉CyclicBarrier自己已经到达同步点，然后当前线程被阻塞。</li>
-</ul>
-</blockquote>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在Java语言内部，java.lang.Runtime对象就是一个使用单例模式的例子。在每一个Java应用程序里面，都有唯一的一个Runtime对象，应用程序可以与其运行环境发生相互作用。</p>
-<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="https://blankj.com/2016/04/21/really-use-singleton/" target="_blank" rel="external">你真的会写单例吗</a><br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">J.U.C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">单例</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2017/11/01/Java-lock/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/11/03/happens-before/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java内存模型之happens-before
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/10/23/Excel-poi-how/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">poi实现Excel文件导入、导出</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "//zeroto.tech/2017/11/01/Java-lock/",
-  owner: 'itjinkui',
-  repo: 'itjinkui.github.io',
-  oauth: {
-    client_id: '7bd6bb303c1bc647b9a4',
-    client_secret: '6ba1c2941b85d6d1a4f6c4e2ea955fe8c36a3a27',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -567,9 +257,9 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
 	var yiliaConfig = {
 		mathjax: undefined,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -642,23 +332,19 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">J.U.C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">单例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Mac 网线接口转换器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,6 +353,14 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,19 +376,19 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java内存模型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java内存模型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,6 +401,14 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,15 +428,15 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,14 +449,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
              
               <li class="article-tag-list-item">

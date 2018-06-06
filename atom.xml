@@ -1085,15 +1085,21 @@ Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-fro
   </entry>
   
   <entry>
-    <title>聊一聊跟并发相关的话题</title>
-    <link href="//zeroto.tech/2017/11/01/Java-lock/"/>
-    <id>//zeroto.tech/2017/11/01/Java-lock/</id>
+    <title>Java内存模型看并发（一）</title>
+    <link href="//zeroto.tech/2017/11/01/JVM-1/"/>
+    <id>//zeroto.tech/2017/11/01/JVM-1/</id>
     <published>2017-11-01T06:49:18.000Z</published>
-    <updated>2018-03-13T06:25:47.000Z</updated>
+    <updated>2018-06-06T06:41:46.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h1><p>JVM的运行时数据区，一图知晓。<br><img src="JVM运行时数据区.png" alt="JVM运行时数据区"></p>
-<p>可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。</p>
+    <content type="html"><![CDATA[<h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><p>所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？</p>
 <a id="more"></a>
+<p>对象和类的数据存储在3个不同的内存区域：堆（heap space）、方法区（method area）、本地区（native area）。</p>
+<p>堆内存存放对象以及数组的数据，方法区存放类的信息（包括类名、方法、字段）、静态变量、编译器编译后的代码，本地区包含线程栈、本地方法栈等存放线程</p>
+<p><img src="/assets/blogImg/JUtH_20121024_RuntimeDataAreas_1_MemoryModel-1.png" alt="RuntimeDataAreas_1_MemoryModel-1"></p>
+<p>方法区有时被称为持久代（PermGen）。</p>
+<p><img src="/assets/blogImg/JUtH_20121024_RuntimeDataAreas_2_MemoryModel-1.png" alt="RuntimeDataAreas_2_MemoryModel-1"></p>
+<p>所有的对象在实例化后的整个运行周期内，都被存放在堆内存中。堆内存又被划分成不同的部分：伊甸区(Eden)，幸存者区域(Survivor Sapce)，老年代（Old Generation Space）。</p>
+<p>方法的执行都是伴随着线程的。原始类型的本地变量以及引用都存放在线程栈中。而引用关联的对象比如String，都存在在堆中。</p>
 <h2 id="你真的会写单例吗"><a href="#你真的会写单例吗" class="headerlink" title="你真的会写单例吗"></a>你真的会写单例吗</h2><pre><code class="java">/**   
  * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
  * https://blankj.com/2016/04/21/really-use-singleton/
@@ -1287,13 +1293,14 @@ public class CountdownlatchDemo {
     
     <summary type="html">
     
-      &lt;h1 id=&quot;闲谈&quot;&gt;&lt;a href=&quot;#闲谈&quot; class=&quot;headerlink&quot; title=&quot;闲谈&quot;&gt;&lt;/a&gt;闲谈&lt;/h1&gt;&lt;p&gt;JVM的运行时数据区，一图知晓。&lt;br&gt;&lt;img src=&quot;JVM运行时数据区.png&quot; alt=&quot;JVM运行时数据区&quot;&gt;&lt;/p&gt;
-&lt;p&gt;可知，锁就作用在 线程隔离的数据区，因为线程之间需要同步、共享数据。&lt;/p&gt;
+      &lt;h1 id=&quot;Java内存模型&quot;&gt;&lt;a href=&quot;#Java内存模型&quot; class=&quot;headerlink&quot; title=&quot;Java内存模型&quot;&gt;&lt;/a&gt;Java内存模型&lt;/h1&gt;&lt;p&gt;所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？&lt;/p&gt;
     
     </summary>
     
     
-      <category term="并发" scheme="//zeroto.tech/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="J.U.C" scheme="//zeroto.tech/tags/J-U-C/"/>
+    
+      <category term="单例" scheme="//zeroto.tech/tags/%E5%8D%95%E4%BE%8B/"/>
     
   </entry>
   
