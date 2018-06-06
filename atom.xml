@@ -1089,7 +1089,7 @@ Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-fro
     <link href="//zeroto.tech/2017/11/01/JVM-1/"/>
     <id>//zeroto.tech/2017/11/01/JVM-1/</id>
     <published>2017-11-01T06:49:18.000Z</published>
-    <updated>2018-06-06T06:41:46.000Z</updated>
+    <updated>2018-06-06T07:25:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><p>所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？</p>
 <a id="more"></a>
@@ -1288,7 +1288,7 @@ public class CountdownlatchDemo {
 </ul>
 </blockquote>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在Java语言内部，java.lang.Runtime对象就是一个使用单例模式的例子。在每一个Java应用程序里面，都有唯一的一个Runtime对象，应用程序可以与其运行环境发生相互作用。</p>
-<p>参考在此：<a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="https://blankj.com/2016/04/21/really-use-singleton/" target="_blank" rel="external">你真的会写单例吗</a><br><a href="http://blog.csdn.net/u013142781/article/details/50830754" target="_blank" rel="external">Java内存管理</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
+<p>参考在此：<br>深入理解Java虚拟机 第2版（第2章 Java 内存区域与内存溢出异常）<br><a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/" target="_blank" rel="external">JAVA的内存模型及结构</a><br><a href="https://blankj.com/2016/04/21/really-use-singleton/" target="_blank" rel="external">你真的会写单例吗</a><br><a href="http://cmsblogs.com/?p=2253" target="_blank" rel="external">J.U.C之并发工具类：CountDownLatch</a></p>
 ]]></content>
     
     <summary type="html">
