@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//zeroto.tech/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2018-06-06T06:09:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>//zeroto.tech/2018/06/05/Mac%20%E7%BD%91%E7%BA%BF%E6%8E%A5%E5%8F%A3%E8%BD%AC%E6%8D%A2%E5%99%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-06-05T09:55:26.000Z</lastmod>
@@ -114,13 +121,6 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/2018/01/05/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2018-03-12T03:42:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>//zeroto.tech/2018/01/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%8E%E6%AF%94%E7%89%B9%E5%B8%81%E7%A0%B4%E5%86%B0/</loc>
     
     <lastmod>2018-03-12T03:42:03.000Z</lastmod>
@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/photos/index.html</loc>
+    <loc>//zeroto.tech/photos/ins.json</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>//zeroto.tech/photos/ins.css</loc>
+    <loc>//zeroto.tech/photos/index.html</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/photos/ins.json</loc>
+    <loc>//zeroto.tech/photos/ins.css</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     
