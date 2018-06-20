@@ -8,24 +8,42 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码 | zeroto的博客</title>
+  <title>Quartz Best Practices | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
+  <meta name="description" content="最佳实践
+Production System Tips
+JobDataMap Tips
+Trigger Tips
+JDBC JobStore
+Daylight Savings Time
+Jobs
+Listeners (TriggerListener, JobListener, SchedulerListener
+Exposing Scheduler Functionality Through Ap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码">
-<meta property="og:url" content="//zeroto.tech/2017/06/22/MySQL-how/index.html">
+<meta property="og:title" content="Quartz Best Practices">
+<meta property="og:url" content="//zeroto.tech/2018/06/20/Quartz Best Practices/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
-<meta property="og:updated_time" content="2018-03-12T03:44:56.000Z">
+<meta property="og:description" content="最佳实践
+Production System Tips
+JobDataMap Tips
+Trigger Tips
+JDBC JobStore
+Daylight Savings Time
+Jobs
+Listeners (TriggerListener, JobListener, SchedulerListener
+Exposing Scheduler Functionality Through Ap">
+<meta property="og:updated_time" content="2018-06-20T09:49:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码">
-<meta name="twitter:description" content="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码Mac上使用Homebrew进行MySQL卸载系统环境
-
-Mac 10.12Homebrew 1.2.3MySQL 5.6.36_1">
+<meta name="twitter:title" content="Quartz Best Practices">
+<meta name="twitter:description" content="最佳实践
+Production System Tips
+JobDataMap Tips
+Trigger Tips
+JDBC JobStore
+Daylight Savings Time
+Jobs
+Listeners (TriggerListener, JobListener, SchedulerListener
+Exposing Scheduler Functionality Through Ap">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
   
@@ -170,20 +188,20 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MySQL-how" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Quartz Best Practices" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Mac上使用Homebrew进行MySQL卸载、安装，解决乱码
+      Quartz Best Practices
     </h1>
   
 
         
-        <a href="/2017/06/22/MySQL-how/" class="archive-article-date">
-  	<time datetime="2017-06-22T05:17:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
+        <a href="/2018/06/20/Quartz Best Practices/" class="archive-article-date">
+  	<time datetime="2018-06-20T08:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
 </a>
         
         
@@ -196,90 +214,62 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
-<blockquote>
-<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1<br><a id="more"></a><br><strong>homebrew 卸载</strong></p>
-</blockquote>
-<pre><code class="bash">$ brew remove mysql@5.6
-$ brew cleanup
-$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-</code></pre>
-<p><strong>删除文件</strong></p>
-<pre><code class="bash">$ sudo rm -f /etc/my.cnf
-$ sudo rm -rf /usr/local/var/mysql
-$ sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-</code></pre>
-<h2 id="Mac上使用Homebrew安装MySQL"><a href="#Mac上使用Homebrew安装MySQL" class="headerlink" title="Mac上使用Homebrew安装MySQL"></a>Mac上使用Homebrew安装MySQL</h2><p>$ brew install mysql@5.6</p>
-<h3 id="让-MySQL-开机自行启动"><a href="#让-MySQL-开机自行启动" class="headerlink" title="让 MySQL 开机自行启动"></a>让 MySQL 开机自行启动</h3><pre><code class="bash">$ ln -sfv /usr/local/opt/mysql@5.6/*.plist ~/Library/LaunchAgents
-$ sudo find /usr/local/Cellar/mysql@5.6/5.6.36_1/ -name &quot;homebrew.mxcl.mysql@5.6.plist&quot; -exec cp {} ~/Library/LaunchAgents/ \;
-$ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.6.plist
-</code></pre>
-<h3 id="指定MySQL数据存放路径"><a href="#指定MySQL数据存放路径" class="headerlink" title="指定MySQL数据存放路径"></a>指定MySQL数据存放路径</h3><pre><code class="bash">$ mysql_install_db --verbose --user=`whoami` --basedir=&quot;/usr/local/Cellar/mysql@5.6/5.6.36_1&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp
-$ cd . ; /usr/local/Cellar/mysql@5.6/5.6.36_1/bin/mysqld_safe &amp;
-</code></pre>
-<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><h3 id="修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。"><a href="#修改-etc-my-cnf，没有就从MySQL安装目录拷贝一个模板过来。" class="headerlink" title="修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。"></a>修改 /etc/my.cnf，没有就从MySQL安装目录拷贝一个模板过来。</h3><pre><code># For advice on how to change settings please see
-# http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html
-
-
-[mysqld]
-port=3306
-datadir=/usr/local/var/mysql
-
-
-# Remove leading # and set to the amount of RAM for the most important data
-# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
-# innodb_buffer_pool_size = 128M
-
-# Remove leading # to turn on a very important data integrity option: logging
-# changes to the binary log between backups.
-# log_bin
-
-# These are commonly set, remove the # and set as required.
-# basedir = .....
-# datadir = .....
-# port = .....
-# server_id = .....
-# socket = .....
-
-# Remove leading # to set options mainly useful for reporting servers.
-</code></pre><h3 id="将mysql加入系统环境变量"><a href="#将mysql加入系统环境变量" class="headerlink" title="将mysql加入系统环境变量"></a>将mysql加入系统环境变量</h3><p>执行vim ~/.bash_profile<br>在该文件中添加如下语句，完成后，按esc，然后输入wq保存。<br>export PATH=/usr/local/opt/mysql@5.6/bin:$PATH<br>最后在命令行输入source ~/.bash_profile</p>
-<p>ok ,可以启动MySQL了。<br>$ mysql.server start<br>权限配置参见官网：<br><a href="https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html</a></p>
-<h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>默认是没有密码的，进去mysql后，执行语句：</p>
-<pre><code class="bash">mysql&gt; set password for &#39;root&#39;@&#39;localhost&#39;=password(&#39;root&#39;);
-Query OK, 0 rows affected (0.01 sec)
-</code></pre>
-<p>接下来使用密码登录MySQL：</p>
-<pre><code class="bash">$ mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 395
-Server version: 5.6.36 Homebrew
-
-Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-mysql&gt; show variables like &#39;character%&#39;;
-+--------------------------+------------------------------------------------------------+
-| Variable_name            | Value                                                      |
-+--------------------------+------------------------------------------------------------+
-| character_set_client     | utf8                                                       |
-| character_set_connection | utf8                                                       |
-| character_set_database   | utf8                                                       |
-| character_set_filesystem | binary                                                     |
-| character_set_results    | utf8                                                       |
-| character_set_server     | utf8                                                       |
-| character_set_system     | utf8                                                       |
-| character_sets_dir       | /usr/local/Cellar/mysql@5.6/5.6.36_1/share/mysql/charsets/ |
-+--------------------------+------------------------------------------------------------+
-8 rows in set (0.04 sec)
-</code></pre>
-<p>看到utf8，编码就不会出问题了。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>之所以写这篇，原因是从Windows转到Mac环境搞开发，碰到了乱码问题，各种配置都试了也没解决。卸载重装妥妥的。</p>
+        <h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><ul>
+<li>Production System Tips</li>
+<li>JobDataMap Tips</li>
+<li>Trigger Tips</li>
+<li>JDBC JobStore</li>
+<li>Daylight Savings Time</li>
+<li>Jobs</li>
+<li>Listeners (TriggerListener, JobListener, SchedulerListener</li>
+<li>Exposing Scheduler Functionality Through Applications</li>
+</ul>
+<a id="more"></a>
+<h2 id="生产环境中的建议"><a href="#生产环境中的建议" class="headerlink" title="生产环境中的建议"></a>生产环境中的建议</h2><p><strong>跳过检查更新</strong><br>通过配置 “org.quartz.scheduler.skipUpdateCheck: true” 属性，你能够取消检查更新。</p>
+<h2 id="JobDataMap-建议"><a href="#JobDataMap-建议" class="headerlink" title="JobDataMap 建议"></a>JobDataMap 建议</h2><p><strong>Only Store Primitive Data Types (including Strings) In the JobDataMap，避免序列化问题</strong></p>
+<p><strong>Use the Merged JobDataMap</strong><br>在任务执行的时候，JobExecutionContext中的JobDataMap作为一个convenience。它是通过在JobDetail中的JobDataMap和Trigger中的JobDataMap合并而来，后者中的值会覆盖前面一个中同名变量的值。</p>
+<p>当你有一个任务在scheduler中，而且这个任务又会被多个Triggers重复使用，那么你最好把值存在Trigger的JobDataMap中，这样对于每次独立的任务触发时，你就可以为Job提供不同的数据输入啦。</p>
+<p>根据以上所述，我们提出了如下的最佳实践：在调用Job.execute(…)方法时，一般来说应该从JobExecutionContext中的JobDataMap中解析变量的值，而不是直接从JobDetail的JobDataMap中解析。</p>
+<h2 id="Trigger-建议"><a href="#Trigger-建议" class="headerlink" title="Trigger 建议"></a>Trigger 建议</h2><p><strong>Use TriggerUtils</strong></p>
+<ul>
+<li>提供了一个简单的方法来创建triggers（schedules）</li>
+<li>有很多不同的方法通过schedules来创建triggers以满足特定的描述，这个要比直接实例化特定类型的triggers（SimpleTrigger，CronTrigger等）然后调用不同的setter方法来配置它们方便许多</li>
+<li>提供了一个简单的方法来创建日期（比如start/end日期）</li>
+<li>提供了分析triggers的助手（e.g. calculating future fire times）</li>
+</ul>
+<h2 id="JDBC-JobStore"><a href="#JDBC-JobStore" class="headerlink" title="JDBC JobStore"></a>JDBC JobStore</h2><p><strong>永远都不要直接往Quartz的表中写数据</strong><br>Writing scheduling data directly to the database (via SQL) rather than using scheduling API:<br><strong>永远不要在同一个Database将一个Non-Clustered Scheduler 指向另一个相同名字的Scheduler Name</strong><br>If you point more than one scheduler instance at the same set of database tables, and one or more of those instances is not configured for clustering, any of the following may occur:</p>
+<ul>
+<li>会造成数据腐化（被删除的数据，混乱的数据）</li>
+<li>会造成任务在到达执行点的时候像没有执行就消失了</li>
+<li>会造成当触发时间到来时，而任务还未执行</li>
+<li>可能会造成死锁</li>
+</ul>
+<p><strong>Ensure Adequate Datasource Connection Size</strong><br>建议将你的数据源连接数配置为配置为线程池中工作线程数加3。如果你的应用还要经常调用scheduler的API，那么你还需要增加额外的connections。If you are using JobStoreCMT, the “non managed” datasource should have a max connection size of at least four.</p>
+<h2 id="Daylight-Savings-Time"><a href="#Daylight-Savings-Time" class="headerlink" title="Daylight Savings Time"></a>Daylight Savings Time</h2><p><strong>Avoid Scheduling Jobs Near the Transition Hours of Daylight Savings Time</strong><br>注意：本地的时钟向前或者向后转移时和总的时间的细节可以在如下链接中找到：<br><a href="https://en.wikipedia.org/wiki/Daylight_saving_time_by_country" target="_blank" rel="external">https://en.wikipedia.org/wiki/Daylight_saving_time_by_country</a>.</p>
+<p>SimpleTriggers不受夏令时的影响，这是因为它们总是在毫秒时刻被精确地触发，并且在进过了精确的毫秒数之后会再次被触发。</p>
+<p>由于CronTriggers会在给定的时/分/秒被触发，当夏令时转移时到来的时候，它们会受到这些怪事的影响。</p>
+<p>举一个可能发生的例子，在夏令时的美国时区/位置进行调度的时候，如果使用CronTrigger并且调度的触发时间是在1:00 AM和2:00 AM之间时会发生下列的问题：</p>
+<ul>
+<li>1:05 AM may occur twice! - duplicate firings on CronTrigger possible</li>
+<li>2:05 AM may never occur! - missed firings on CronTrigger possible</li>
+</ul>
+<p>Again, specifics of time and amount of adjustment varies by locale.</p>
+<p>其他的触发器类型是根据日历的移动而不是根据确切的时间量来进行的，例如CalenderIntervalTrigger，将会同样地受影响，但不是错过触发或者触发两次，而是将它的触发时间偏移一个小时。</p>
+<h2 id="Jobs"><a href="#Jobs" class="headerlink" title="Jobs"></a>Jobs</h2><p><strong>等待条件来到</strong><br>长时间运行的任务会阻止其他任务的运行（如果在线程池中所有的线程都繁忙）。</p>
+<p>如果你认为需要调用 Thread.sleep() 这个方法来停止工作线程执行任务，这是一个典型的信号，任务不会完成其余的任务，因它必须等待某些条件的到来（比如某些数据可读）。</p>
+<p>一个更好的方法是释放线程 (exit the job) 并且允许其他任务在这个线程执行。任务可以重新调度自己，或者在它退出之前其他任务。</p>
+<p><strong>抛出异常</strong><br>一个任务的执行方法应该包含在try-catch块中，以此处理可能发生的异常。</p>
+<p>如果一个任务抛出一个异常，Quartz一般会马上再执行它（可能会抛出相同的异常）。最好是任务捕获所有它可能遇到的异常并处理它们，然后重新调度自己或其他的任务。</p>
+<p><strong>可恢复性和幂等性</strong><br>In-progress Jobs marked “recoverable” are automatically re-executed after a scheduler fails. This means some of the job’s “work” will be executed twice.</p>
+<p>This means the job should be coded in such a way that its work is idempotent.</p>
+<h2 id="监听器（TriggerListener-JobListener-SchedulerListener）"><a href="#监听器（TriggerListener-JobListener-SchedulerListener）" class="headerlink" title="监听器（TriggerListener, JobListener, SchedulerListener）"></a>监听器（TriggerListener, JobListener, SchedulerListener）</h2><p><strong>Keep Code In Listeners Concise And Efficient</strong><br>Keep Code In Listeners Concise And Efficient<br>Performing large amounts of work is discouraged, as the thread that would be executing the job (or completing the trigger and moving on to firing another job, etc.) will be tied up within the listener.</p>
+<p><strong>处理异常</strong><br>每个监听器的方法都应该在try-catch块中处理所有可能的异常。</p>
+<p>如果一个监听器抛出了一个异常，可能会造成其他的监听器无法被通知到或阻止其他任务的执行等。</p>
+<h2 id="通过应用来暴露调度器的功能"><a href="#通过应用来暴露调度器的功能" class="headerlink" title="通过应用来暴露调度器的功能"></a>通过应用来暴露调度器的功能</h2><p><strong>Be Careful of Security!</strong><br>有的用户通过应用程序接口来暴露Quartz的调度功能。这会非常有用，虽它可能会造成极度的危险。</p>
+<p>确保你没有错误地允许用户定义他们想要的任何参数和任何类型的任务。例如，Quartz会带有一个预定的任务org.quartz.jobs.NativeJob，这个任务将会在它们定义的任意的本地系统上执行命令。恶意的用户可能会使用这个来控制或者摧毁你的系统。</p>
+<p>同样的像 SendEmailJob 之类的任务，并且事实上任何其他的任务都可以被当作恶意用途。</p>
+<p>如果允许用户定义任意他们想要的任务将会是你的系统遭受各种可能的危害，等同于 OWASP 和 MITRE 定义的命令注入攻击等。</p>
+<h1 id="参考在此："><a href="#参考在此：" class="headerlink" title="参考在此："></a>参考在此：</h1><p><a href="http://www.quartz-scheduler.org/documentation/best-practices.html" target="_blank" rel="external">Quartz Best Practices(http://www.quartz-scheduler.org/documentation/best-practices.html)</a></p>
 
       
 
@@ -293,11 +283,7 @@ mysql&gt; show variables like &#39;character%&#39;;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Homebrew</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Quartz</a>
         		</li>
       		
 		</ul>
@@ -353,7 +339,7 @@ mysql&gt; show variables like &#39;character%&#39;;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2017/06/22/MySQL-how/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zeroto.tech/2018/06/20/Quartz Best Practices/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -367,18 +353,9 @@ mysql&gt; show variables like &#39;character%&#39;;
   
 <nav id="article-nav">
   
-    <a href="/2017/07/03/itext-how/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          itext实现录取通知书、成绩单
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/16/docker-how-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Docker初探</div>
+    <a href="/2018/06/05/Mac 网线接口转换器的正确使用方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网线接口转换器 苹果Mac集线器HUB接硬盘</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -417,7 +394,7 @@ mysql&gt; show variables like &#39;character%&#39;;
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//zeroto.tech/2017/06/22/MySQL-how/",
+  id: "//zeroto.tech/2018/06/20/Quartz Best Practices/",
   owner: 'itjinkui',
   repo: 'itjinkui.github.io',
   oauth: {
