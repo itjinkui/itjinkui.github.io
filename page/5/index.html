@@ -165,1137 +165,31 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-CentOS-Virtual-Machine-Copy-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="VMware-克隆-CentOS-后网卡信息修改"><a href="#VMware-克隆-CentOS-后网卡信息修改" class="headerlink" title="VMware 克隆 CentOS 后网卡信息修改"></a>VMware 克隆 CentOS 后网卡信息修改</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>在我们需要多台 CentOS 虚拟机的时候，对已有虚拟机的系统进行克隆或是复制。但是这样做又有一个问题，克隆出来的虚拟机启动的时候你输入命令：<code>ifconfig</code>，eth0 网卡信息没了，只有一个 eth1。 对于处女座的人来讲这是不允许的。所以我们需要改动下。</li>
-<li>复制虚拟机后，首次打开该会提示如下内容，一般选择 copy 这个配置。<ul>
-<li><img src="images/CentOS-Virtual-Machine-Copy-Settings-a-1.png" alt="vim"></li>
-</ul>
-</li>
-</ul>
-<h2 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h2><ul>
-<li><p>命令：<code>sudo vim /etc/udev/rules.d/70-persistent-net.rules</code></p>
-<ul>
-<li>该文件中正常此时应该有两行信息</li>
-<li>在文件中把 NAME=”eth0″ 的这一行注释掉</li>
-<li>对于另一行，把 NAME=”eth1″ 的这一行，把 NAME=”eth1″ 改为 NAME=”eth0″，并且把该行：ATTRS{address}==”00:0c:29:4c:46:01″ 这个属性信息记下来，每台机子都不一样，我这段信息只是例子，你不要直接复制我的。</li>
-</ul>
-</li>
-<li><p>命令：<code>sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
-<ul>
-<li>修改 IP 地址</li>
-<li>把 HWADDR 的值改为上面要求记下来的：00:0c:29:4c:46:01</li>
-</ul>
-</li>
-<li><p>命令：<code>nmcli con</code></p>
-<ul>
-<li>如果显示两行 UUID 的信息的话，复制不是 System eth0 的那个 UUID 值，下面有用。</li>
-<li>编辑：<code>sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></li>
-<li>把文件中的 UUID 值 改为上面要求复制的 UUID 值。</li>
-<li>保存配置文件，重启系统，正常应该是可以了。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java-程序员眼中的-Linux"><a href="#Java-程序员眼中的-Linux" class="headerlink" title="Java 程序员眼中的 Linux"></a>Java 程序员眼中的 Linux</h1><h2 id="初衷-Original-Intention"><a href="#初衷-Original-Intention" class="headerlink" title="初衷(Original Intention)"></a>初衷(Original Intention)</h2><ul>
-<li>整理下自己所学</li>
-<li>带动更多的人进入 Linux 世界，特别是做 Java 开发的人</li>
-<li>Github 项目地址，欢迎 <code>Fork</code>、<code>Star</code>：<a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="external">https://github.com/judasn/Linux-Tutorial</a></li>
-<li>文章中用到的一些安装包归纳整理：<a href="http://pan.baidu.com/s/1skAwrFn" target="_blank" rel="external">http://pan.baidu.com/s/1skAwrFn</a></li>
-<li><strong>学得越多越是明白一个人的力量是不够的，我只是起了一个引子，希望你能一起参与，真心希望！！！（鞠躬）</strong></li>
-<li>2016-06，这段期间自己在写一个项目，教程暂时无法继续更新，后面写好项目会再继续完善。</li>
-</ul>
-<h2 id="目录-Contents"><a href="#目录-Contents" class="headerlink" title="目录(Contents)"></a>目录(Contents)</h2><ul>
-<li><a href="Linux.md">Linux 介绍</a></li>
-<li><a href="Ubuntu.md">Ubuntu 介绍</a></li>
-<li><a href="Ubuntu-Install.md">Ubuntu 安装</a></li>
-<li><a href="ubuntu-settings/ubuntu-settings-toc.md">Ubuntu 设置（目录）</a></li>
-<li><a href="CentOS.md">CentOS 介绍</a></li>
-<li><a href="CentOS-Install.md">CentOS 安装</a></li>
-<li><a href="centos-settings/centos-settings-toc.md">CentOS 设置（目录）</a></li>
-<li><a href="Ubuntu-Install-VMware.md">Ubuntu 安装 VMware</a></li>
-<li><a href="CentOS-Virtual-Machine-Copy-Settings.md">VMware 克隆 CentOS 后网卡信息修改</a></li>
-<li><a href="Vim-Install-And-Settings.md">Vim 安装、配置、快捷键列表</a></li>
-<li><a href="Bash.md">Bash 命令</a></li>
-<li><a href="Bash-Other-Bash.md">Bash 其他常用命令</a></li>
-<li><a href="File-Extract-Compress.md">Linux 下常用压缩文件的解压、压缩</a></li>
-<li><a href="Off-line-Yum-Install.md">Yum 下载安装包及对应依赖包</a></li>
-<li><a href="Zsh.md">Zsh 入门</a></li>
-<li><a href="Nmon.md">nmon 系统性能监控工具</a></li>
-<li><a href="SSH.md">SSH（Secure Shell）介绍</a></li>
-<li><a href="FTP.md">FTP（File Transfer Protocol）介绍</a></li>
-<li><a href="VPN.md">VPN（Virtual Private Network）介绍</a></li>
-<li><a href="NFS.md">NFS（Network FileSystem）介绍</a></li>
-<li><a href="NTP.md">NTP（Network Time Protocol）介绍</a></li>
-<li><a href="Samba.md">Samba 介绍</a></li>
-<li><a href="Crontab.md">Crontab 介绍</a></li>
-<li><a href="Iptables.md">Iptables 介绍</a></li>
-<li><a href="Hsk-Install.md">花生壳-安装介绍</a></li>
-<li><a href="JDK-Install.md">JDK 安装</a></li>
-<li><a href="SVN-Install-And-Settings.md">SVN 安装和配置</a></li>
-<li><a href="Tomcat-Install-And-Settings.md">Tomcat 安装和配置、优化</a></li>
-<li><a href="Jenkins-Install-And-Settings.md">Jenkins 安装和配置</a></li>
-<li><a href="Maven-Install-And-Settings.md">Maven 安装和配置</a></li>
-<li><a href="Nexus-Install-And-Settings.md">Nexus 安装和配置</a></li>
-<li><a href="Mysql-Install-And-Settings.md">MySQL 安装和配置</a></li>
-<li><a href="Mysql-Optimize.md">MySQL 优化</a></li>
-<li><a href="Mysql-Tutorial.md">MySQL 教程</a></li>
-<li><a href="Redis-Install-And-Settings.md">Redis 安装和配置</a></li>
-<li><a href="Solr-Install-And-Settings.md">Solr 安装和配置</a></li>
-<li><a href="Jira-Install-And-Settings.md">Jira 安装和配置</a></li>
-<li><a href="Jenkins-Install-And-Settings.md">Jenkins 安装和配置</a></li>
-<li><a href="TeamCity-Install-And-Settings.md">TeamCity 安装和配置</a></li>
-<li><a href="Nginx-Install-And-Settings.md">Nginx 安装和配置</a></li>
-<li><a href="FastDFS-Install-And-Settings.md">FastDFS 安装和配置</a></li>
-<li><a href="FastDFS-Nginx-Lua-GraphicsMagick.md">FastDFS 结合 GraphicsMagick</a></li>
-<li><a href="RabbitMQ-Install-And-Settings.md">RabbitMQ 安装和配置</a></li>
-<li><a href="Openfire-Install-And-Settings.md">Openfire 安装和配置</a></li>
-<li><a href="Rap-Install-And-Settings.md">Rap 安装和配置</a></li>
-<li><a href="Nginx-Keepalived-Install-And-Settings.md">Nginx + Keepalived 高可用</a></li>
-<li><a href="Was-Hacked.md">黑客入侵检查</a></li>
-</ul>
-<h2 id="下一步-Next"><a href="#下一步-Next" class="headerlink" title="下一步(Next)"></a>下一步(Next)</h2><ul>
-<li>Apache 安装和配置</li>
-<li>LVS + Keepalived 高可用</li>
-<li>MySQL + Keepalived 高可用</li>
-<li>Zookeeper 安装和配置</li>
-<li>ActiveMQ 服务安装和配置</li>
-<li>GitLab 安装和配置</li>
-<li>Zabbix 安装和配置</li>
-<li>Nagios 安装和配置</li>
-<li>Docker 安装和配置</li>
-<li>ShadowSocks 安装和配置</li>
-<li>Tmux 安装和配置</li>
-<li>sed 学习</li>
-<li>常用脚本</li>
-</ul>
-<h2 id="联系-Contact"><a href="#联系-Contact" class="headerlink" title="联系(Contact)"></a>联系(Contact)</h2><ul>
-<li>Email：judas.n@qq.com（常用） or admin@youmeek.com（备用）</li>
-<li>Blog：<a href="http://code.YouMeek.com" target="_blank" rel="external">http://code.YouMeek.com</a></li>
-<li>QQ 群交流，入群请看：<a href="https://github.com/judasn/IntelliJ-IDEA-Java-Conversation" target="_blank" rel="external">https://github.com/judasn/IntelliJ-IDEA-Java-Conversation</a></li>
-<li>欢迎捐赠 ^_^：<a href="http://www.youmeek.com/donate" target="_blank" rel="external">http://www.youmeek.com/donate</a></li>
-</ul>
-<h2 id="Github-协同视频教程-Participate"><a href="#Github-协同视频教程-Participate" class="headerlink" title="Github 协同视频教程(Participate)"></a>Github 协同视频教程(Participate)</h2><ul>
-<li>如果您不会使用 Git 或是 Github 也没关系，请认真学习下面视频教程：</li>
-<li>Judas.n 录制<ul>
-<li>视频格式：MP4</li>
-<li>分辨率：1920 X 1080</li>
-<li>片长：16 min</li>
-<li>文件大小：62 M</li>
-</ul>
-</li>
-<li>下载<ul>
-<li>百度云盘：<a href="http://pan.baidu.com/s/1bogmTLd" target="_blank" rel="external">http://pan.baidu.com/s/1bogmTLd</a></li>
-<li>360 网盘（2fb5）：<a href="https://yunpan.cn/cYez7W9xnHs3c" target="_blank" rel="external">https://yunpan.cn/cYez7W9xnHs3c</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Github-常用按钮说明"><a href="#Github-常用按钮说明" class="headerlink" title="Github 常用按钮说明"></a>Github 常用按钮说明</h2><ul>
-<li>Watch：关注该项目，作者有更新的时候，会在你的 Github 主页有通知消息。</li>
-<li>Star：收藏该项目，在你的头像上有一个“Your stars”链接，可以看到你的收藏列表。</li>
-<li>Fork：复制一份项目到的Github空间上，你可以自己开发自己的这个地址项目，然后 Pull Request 给项目原主人。 </li>
-</ul>
-<h2 id="参与作者汇总-Author"><a href="#参与作者汇总-Author" class="headerlink" title="参与作者汇总(Author)"></a>参与作者汇总(Author)</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">作者(按参与时间排序)</th>
-<th style="text-align:left">地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Judas.n</td>
-<td style="text-align:left"><a href="http://code.YouMeek.com" target="_blank" rel="external">http://code.YouMeek.com</a></td>
-</tr>
-</tbody>
-</table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/README/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-RabbitMQ-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="RabbitMQ-安装和配置"><a href="#RabbitMQ-安装和配置" class="headerlink" title="RabbitMQ 安装和配置"></a>RabbitMQ 安装和配置</h1><h2 id="RabbitMQ-说明"><a href="#RabbitMQ-说明" class="headerlink" title="RabbitMQ 说明"></a>RabbitMQ 说明</h2><ul>
-<li>MQ 全称为 Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。<ul>
-<li>RabbitMQ 是一个在 AMQP 基础上完整的，可复用的企业消息系统。他遵循 Mozilla Public License 开源协议。</li>
-</ul>
-</li>
-<li>RabbitMQ WIKI：<a href="https://zh.wikipedia.org/zh/RabbitMQ" target="_blank" rel="external">https://zh.wikipedia.org/zh/RabbitMQ</a></li>
-<li>RabbitMQ 百科：<a href="http://baike.baidu.com/view/4095865.htm" target="_blank" rel="external">http://baike.baidu.com/view/4095865.htm</a></li>
-<li>RabbitMQ 官网：<a href="http://www.rabbitmq.com/" target="_blank" rel="external">http://www.rabbitmq.com/</a></li>
-<li>RabbitMQ 官网下载：<a href="http://www.rabbitmq.com/download.html" target="_blank" rel="external">http://www.rabbitmq.com/download.html</a></li>
-<li>RabbitMQ 官网安装文档：<a href="http://www.rabbitmq.com/install-rpm.html" target="_blank" rel="external">http://www.rabbitmq.com/install-rpm.html</a></li>
-<li>RabbitMQ 文档：<ul>
-<li>优先：<a href="http://www.rabbitmq.com/getstarted.html" target="_blank" rel="external">http://www.rabbitmq.com/getstarted.html</a></li>
-<li>次要：<a href="http://www.rabbitmq.com/documentation.html" target="_blank" rel="external">http://www.rabbitmq.com/documentation.html</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="先安装-Erlang"><a href="#先安装-Erlang" class="headerlink" title="先安装 Erlang"></a>先安装 Erlang</h2><ul>
-<li>有 EPEL 源的情况（需要安装的内容较多，宽带要能跟上）：<code>sudo yum install erlang</code></li>
-<li>RabbitMQ 官网提供 Erlang 安装包：<ul>
-<li>下载地址：<a href="http://www.rabbitmq.com/releases/erlang/" target="_blank" rel="external">http://www.rabbitmq.com/releases/erlang/</a></li>
-<li>下载好之后，安装下面两个文件：<ul>
-<li><code>sudo yum localinstall -y esl-erlang_18.1-1~centos~6_amd64.rpm</code></li>
-<li><code>sudo yum localinstall -y esl-erlang-compat-18.1-1.noarch.rpm</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="安装-RabbitMQ"><a href="#安装-RabbitMQ" class="headerlink" title="安装 RabbitMQ"></a>安装 RabbitMQ</h2><ul>
-<li>此时（2016-04），最新版：<strong>3.6.1</strong></li>
-<li>安装：<code>rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc</code></li>
-<li>安装：<code>sudo yum install -y rabbitmq-server-3.6.1-1.noarch.rpm</code></li>
-<li>启动服务：<ul>
-<li>先看下自己的主机名：<code>hostname</code>，我的主机名是：<strong>judasnHost2</strong></li>
-<li>先修改一下 host 文件：<code>vim /etc/hosts</code>，添加一行：<code>127.0.0.1 judasnHost2</code>（必须这样做）</li>
-<li>启动：<code>service rabbitmq-server start</code>，启动一般都比较慢，所以别急</li>
-<li>停止：<code>service rabbitmq-server stop</code></li>
-<li>重启：<code>service rabbitmq-server restart</code></li>
-<li>设置开机启动：<code>chkconfig rabbitmq-server on</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
-<li>查找默认配置位置：<code>find / -name &quot;rabbitmq.config.example&quot;</code>，我这边搜索结果是：<code>/usr/share/doc/rabbitmq-server-3.6.1/rabbitmq.config.example</code></li>
-<li>复制默认配置：<code>cp /usr/share/doc/rabbitmq-server-3.6.1/rabbitmq.config.example /etc/rabbitmq/</code></li>
-<li>修改配置文件名：<code>cd /etc/rabbitmq ; mv rabbitmq.config.example rabbitmq.config</code></li>
-<li>编辑配置文件，开启用户远程访问：<code>vim rabbitmq.config</code><ul>
-<li>在 64 行，默认有这样一句话：<code>%% {loopback_users, []},</code>，注意，该语句最后有一个逗号，等下是要去掉的</li>
-<li>我们需要改为：<code>{loopback_users, []}</code>，</li>
-</ul>
-</li>
-<li>开启 Web 界面管理：<code>rabbitmq-plugins enable rabbitmq_management</code></li>
-<li>重启 RabbitMQ 服务：<code>service rabbitmq-server restart</code></li>
-<li>开放防火墙端口：<ul>
-<li><code>sudo iptables -I INPUT -p tcp -m tcp --dport 15672 -j ACCEPT</code></li>
-<li><code>sudo iptables -I INPUT -p tcp -m tcp --dport 5672 -j ACCEPT</code></li>
-<li><code>sudo service iptables save</code></li>
-<li><code>sudo service iptables restart</code></li>
-</ul>
-</li>
-<li>浏览器访问：<code>http://192.168.1.114:15672</code><br>  默认管理员账号：<strong>guest</strong><br>  默认管理员密码：<strong>guest</strong></li>
-<li>添加新授权用户（如下图所示）：<ul>
-<li><img src="images/RabbitMQ-Add-User-a-1.jpg" alt="RabbitMQ-Add-User"></li>
-</ul>
-</li>
-<li>添加 Host（如下图所示）：<ul>
-<li><img src="images/RabbitMQ-Add-User-a-2.jpg" alt="RabbitMQ-Add-User"></li>
-</ul>
-</li>
-<li>给添加的 Host 设置权限（如下图所示）：<ul>
-<li><img src="images/RabbitMQ-Add-User-a-3.gif" alt="RabbitMQ-Add-User"></li>
-</ul>
-</li>
-<li>交换机绑定队列（如下图所示）：<ul>
-<li><img src="images/RabbitMQ-Bindings-Queue-a-1.gif" alt="RabbitMQ-Bindings-Queue"></li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/RabbitMQ-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Rap-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Rap-安装和配置"><a href="#Rap-安装和配置" class="headerlink" title="Rap 安装和配置"></a>Rap 安装和配置</h1><h2 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h2><ul>
-<li>系统：CentOS 6.7 64 位</li>
-<li>MySQL 5.6</li>
-<li>JDK 1.8</li>
-<li>Tomcat 8</li>
-<li>Redis 3.0.7</li>
-<li>Rap 0.14.1</li>
-</ul>
-<h2 id="Rap-说明"><a href="#Rap-说明" class="headerlink" title="Rap 说明"></a>Rap 说明</h2><ul>
-<li>官网：<a href="https://github.com/thx/RAP" target="_blank" rel="external">https://github.com/thx/RAP</a></li>
-<li>在线版：<a href="http://rap.taobao.org/" target="_blank" rel="external">http://rap.taobao.org/</a></li>
-<li>官网 Wiki：<a href="https://github.com/thx/RAP/wiki/home_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/home_cn</a></li>
-<li>官网部署手册：<a href="https://github.com/thx/RAP/wiki/deploy_manual_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/deploy_manual_cn</a></li>
-<li>用户手册：<a href="https://github.com/thx/RAP/wiki/user_manual_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/user_manual_cn</a></li>
-</ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
-<li>官网下载：<a href="https://github.com/thx/RAP/releases" target="_blank" rel="external">https://github.com/thx/RAP/releases</a></li>
-<li>当前最新版本：<strong>0.14.1</strong></li>
-<li>下载 war 部署包：<a href="https://github.com/thx/RAP/releases" target="_blank" rel="external">https://github.com/thx/RAP/releases</a></li>
-</ul>
-<h2 id="安装-MySQL、JDK、Tomcat、Redis"><a href="#安装-MySQL、JDK、Tomcat、Redis" class="headerlink" title="安装 MySQL、JDK、Tomcat、Redis"></a>安装 MySQL、JDK、Tomcat、Redis</h2><ul>
-<li><a href="Mysql-Install-And-Settings.md">MySQL 安装和配置</a></li>
-<li><a href="JDK-Install.md">JDK 安装</a></li>
-<li><a href="Tomcat-Install-And-Settings.md">Tomcat 安装和配置、优化</a></li>
-<li><a href="Redis-Install-And-Settings.md">Redis 安装和配置</a></li>
-</ul>
-<h2 id="安装-Rap"><a href="#安装-Rap" class="headerlink" title="安装 Rap"></a>安装 Rap</h2><ul>
-<li>创建数据库，并创建权限用户</li>
-</ul>
-<pre><code class="sql">CREATE DATABASE `rap_db` CHARACTER SET utf8;
-CREATE USER &#39;rap&#39;@&#39;%&#39; IDENTIFIED BY &#39;123456&#39;;
-GRANT ALL PRIVILEGES ON rap_db.* TO &#39;rap&#39;@&#39;%&#39;;
-FLUSH PRIVILEGES;
-</code></pre>
-<ul>
-<li>把 RAP-0.14.1-SNAPSHOT.war 移动到 tomcat 的 webapp 目录下，删除其他多余的文件夹</li>
-<li>解压：<code>unzip -x RAP-0.14.1-SNAPSHOT.war -d ROOT</code></li>
-<li>初始化数据库：<code>mysql -u rap -p rap_db &lt; /usr/program/tomcat8/webapps/ROOT/WEB-INF/classes/database/initialize.sql</code></li>
-<li>修改连接数据库的配置信息：<code>vim /usr/program/tomcat8/webapps/ROOT/WEB-INF/classes/config.properties</code></li>
-<li>停掉防火墙：<code>service iptables stop</code></li>
-<li>启动 Redis：<code>/usr/local/bin/redis-server /etc/redis.conf</code></li>
-<li>启动 Tomcat：<code>sh /usr/program/tomcat8/bin/startup.sh ; tail -200f /usr/program/tomcat8/logs/catalina.out</code></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Rap-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Redis-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Redis-安装和配置"><a href="#Redis-安装和配置" class="headerlink" title="Redis 安装和配置"></a>Redis 安装和配置</h2><h2 id="Redis-安装"><a href="#Redis-安装" class="headerlink" title="Redis 安装"></a>Redis 安装</h2><ul>
-<li>Redis 安装<ul>
-<li>官网：<a href="http://redis.io/" target="_blank" rel="external">http://redis.io/</a></li>
-<li>官网下载：<a href="http://redis.io/download" target="_blank" rel="external">http://redis.io/download</a></li>
-<li>官网 Github 地址：<a href="https://github.com/redis" target="_blank" rel="external">https://github.com/redis</a></li>
-<li>此时（20160212） Redis 最新稳定版本为：<strong>3.0.7</strong></li>
-<li>官网帮助中心：<a href="http://redis.io/documentation" target="_blank" rel="external">http://redis.io/documentation</a></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>Redis 下载：<code>wget http://download.redis.io/releases/redis-3.0.7.tar.gz</code> （大小：1.4 M）<ul>
-<li>安装依赖包：<code>yum install -y gcc-c++ tcl</code></li>
-<li>解压：<code>tar zxvf redis-3.0.7.tar.gz</code></li>
-<li>移动到我个人安装目录：<code>mv redis-3.0.7/ /usr/program/</code></li>
-<li>进入解压后目录：<code>cd /usr/program/redis-3.0.7/</code></li>
-<li>编译：<code>make</code></li>
-<li>编译安装：<code>make install</code><ul>
-<li>安装完之后会在：<code>/usr/local/bin</code> 目录下生成好几个 redis 相关的文件</li>
-</ul>
-</li>
-<li>复制配置文件：<code>cp /usr/program/redis-3.0.7/redis.conf /etc/</code></li>
-<li>修改配置：<code>vim /etc/redis.conf</code><ul>
-<li>把旧值：<code>daemonize no</code> </li>
-<li>改为新值：<code>daemonize yes</code> </li>
-</ul>
-</li>
-<li>启动：<code>/usr/local/bin/redis-server /etc/redis.conf</code></li>
-<li>查看是否启动：<code>ps -ef | grep redis</code></li>
-<li>进入客户端：<code>redis-cli</code></li>
-<li>关闭客户端：<code>redis-cli shutdown</code></li>
-<li>开机启动配置：<code>echo &quot;/usr/local/bin/redis-server /etc/redis.conf&quot; &gt;&gt; /etc/rc.local</code></li>
-<li>开放防火墙端口：<ul>
-<li>添加规则：<code>sudo iptables -I INPUT -p tcp -m tcp --dport 6379 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo /etc/rc.d/init.d/iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h2><ul>
-<li>编辑配置文件：<code>vim /usr/program/redis-3.0.7/redis.conf</code></li>
-<li>Redis 默认的配置文件内容：</li>
-</ul>
-<pre><code class="ini"># 是否以后台daemon方式运行，默认是 no，一般我们会改为 yes
-daemonize no
-pidfile /var/run/redis.pid
-port 6379
-tcp-backlog 511
-timeout 0
-tcp-keepalive 0
-loglevel notice
-logfile &quot;&quot;
-# 开启数据库的数量，Redis 是有数据库概念的，默认是 16 个，数字从 0 ~ 15
-databases 16
-save 900 1
-save 300 10
-save 60 10000
-stop-writes-on-bgsave-error yes
-rdbcompression yes
-rdbchecksum yes
-dbfilename dump.rdb
-dir ./
-slave-serve-stale-data yes
-slave-read-only yes
-repl-diskless-sync no
-repl-diskless-sync-delay 5
-repl-disable-tcp-nodelay no
-slave-priority 100
-appendonly no
-appendfilename &quot;appendonly.aof&quot;
-appendfsync everysec
-no-appendfsync-on-rewrite no
-auto-aof-rewrite-percentage 100
-auto-aof-rewrite-min-size 64mb
-aof-load-truncated yes
-lua-time-limit 5000
-slowlog-log-slower-than 10000
-slowlog-max-len 128
-latency-monitor-threshold 0
-notify-keyspace-events &quot;&quot;
-hash-max-ziplist-entries 512
-hash-max-ziplist-value 64
-list-max-ziplist-entries 512
-list-max-ziplist-value 64
-set-max-intset-entries 512
-zset-max-ziplist-entries 128
-zset-max-ziplist-value 64
-hll-sparse-max-bytes 3000
-activerehashing yes
-client-output-buffer-limit normal 0 0 0
-client-output-buffer-limit slave 256mb 64mb 60
-client-output-buffer-limit pubsub 32mb 8mb 60
-hz 10
-aof-rewrite-incremental-fsync yes
-</code></pre>
-<h2 id="Redis-常用命令"><a href="#Redis-常用命令" class="headerlink" title="Redis 常用命令"></a>Redis 常用命令</h2><ul>
-<li>命令是不区分大小写的，但是这里为了方便和后面的 key value 进行区分所以我全部写大写，你也可以用小写。<ul>
-<li>但是需要注意的是：key 是完全区分大小写的，比如 key=codeBlog 和 key=codeblog 是两个键值</li>
-</ul>
-</li>
-<li>官网命令列表：<a href="http://redis.io/commands" target="_blank" rel="external">http://redis.io/commands</a></li>
-<li><code>SET key value</code>，设值。eg：<code>SET myblog www.youmeek.com</code></li>
-<li><code>GET key</code>，取值</li>
-<li><code>INCR key</code>，递增数字</li>
-<li><code>DECR key</code>，递减数字</li>
-<li><code>KEYS *</code>，查看当前数据库下所有的 key</li>
-<li><code>APPEND key value</code>，给尾部追加内容，如果要追加的 key 不存在，则相当于 SET key value</li>
-<li><code>STRLEN key</code>，返回键值的长度，如果键不存在则返回 0</li>
-<li><code>MSET key1 value1 key2 value2</code>，同时设置多值</li>
-<li><code>MGET key1 value1 key2 value2</code>，同时取多值</li>
-<li><code>EXPIRE key 27</code>，设置指定键的生存时间，27 的单位是秒</li>
-<li><code>TTL key</code>，查看键的剩余生存时间<ul>
-<li>返回 -2，表示不存在，过了生存时间后被删除</li>
-<li>返回 -1，表示没有生存时间，永久存储</li>
-<li>返回正整数，表示还剩下对应的生存时间</li>
-</ul>
-</li>
-<li><code>PERSIST key</code>，清除生成时间，重新变成永久存储（重新设置 key 的值也可以起到清除生存时间的效果）</li>
-<li><code>FLUSHDB</code>，清空当前数据库所有键值</li>
-<li><code>FLUSHALL</code>，清空所有数据库的所有键值</li>
-</ul>
-<h2 id="Redis-客户端"><a href="#Redis-客户端" class="headerlink" title="Redis 客户端"></a>Redis 客户端</h2><ul>
-<li>Java：<a href="http://redis.io/clients#java" target="_blank" rel="external">http://redis.io/clients#java</a><ul>
-<li>Jedis 官网：<a href="https://github.com/xetorthio/jedis" target="_blank" rel="external">https://github.com/xetorthio/jedis</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Redis-GUI-管理工具"><a href="#Redis-GUI-管理工具" class="headerlink" title="Redis GUI 管理工具"></a>Redis GUI 管理工具</h2><ul>
-<li>Redis Desktop Manager<ul>
-<li>官网：<a href="http://redisdesktop.com/" target="_blank" rel="external">http://redisdesktop.com/</a></li>
-<li>官网下载：<a href="http://redisdesktop.com/download" target="_blank" rel="external">http://redisdesktop.com/download</a></li>
-<li>效果如下图：</li>
-<li><img src="images/Redis-GUI-a-1.jpg" alt="Redis Desktop Manager"></li>
-</ul>
-</li>
-</ul>
-<h2 id="Redis-主从（主从从）配置"><a href="#Redis-主从（主从从）配置" class="headerlink" title="Redis 主从（主从从）配置"></a>Redis 主从（主从从）配置</h2><h3 id="Redis-主从架构"><a href="#Redis-主从架构" class="headerlink" title="Redis 主从架构"></a>Redis 主从架构</h3><ul>
-<li>假设有两台服务器，一台做主，一台做从<ul>
-<li>Redis 主信息：<ul>
-<li>IP：<strong>12.168.1.114</strong>=</li>
-<li>端口：<strong>6379</strong></li>
-</ul>
-</li>
-<li>Redis 从信息：<ul>
-<li>IP：<strong>12.168.1.115</strong></li>
-<li>端口：<strong>6379</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>编辑从机的 Redis 配置文件，找到 210 行（大概），默认这一行应该是注释的：<code># slaveof &lt;masterip&gt; &lt;masterport&gt;</code></li>
-<li>我们需要去掉该注释，并且填写我们自己的主机的 IP 和 端口，比如：<code>slaveof 192.168.1.114 6379</code></li>
-<li>配置完成后重启从机 Redis 服务</li>
-<li>重启完之后，进入主机的 redis-cli 状态下，输入：<code>INFO replication</code><ul>
-<li>可以查询到当前主机的 redis 处于什么角色，有哪些从机已经连上主机。</li>
-</ul>
-</li>
-<li>此时已经完成了主从配置，我们可以测试下：<ul>
-<li>我们进入主机的 redis-cli 状态，然后 set 某个值，比如：<code>set myblog YouMeek.com</code></li>
-</ul>
-</li>
-<li>我们切换进入从机的 redis-cli 的状态下，获取刚刚设置的值看是否存在：<code>get myblog</code>，此时，我们可以发现是可以获取到值的。</li>
-<li>但是有一个需要注意的：从库不具备写入数据能力，不然会报错。 从库只有只读能力。</li>
-</ul>
-<h3 id="Redis主从从架构"><a href="#Redis主从从架构" class="headerlink" title="Redis主从从架构"></a>Redis主从从架构</h3><ul>
-<li>Redis 主从从的意思：看桌面上的截图。</li>
-<li>优点，除了减少主库连接的压力，还有可以关掉主库的持久化功能，把持久化的功能交给从库进行处理。</li>
-<li>第一个从库配置的信息是连上主库，后面的第二个从库配置的连接信息是连上第一个从库， 假如还有第三个从库的话，我们可以把第三个从库的配置信息连上第二个从库上，以此类推。</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://yanshisan.blog.51cto.com/7879234/1377992" target="_blank" rel="external">http://yanshisan.blog.51cto.com/7879234/1377992</a></li>
-<li><a href="https://segmentfault.com/a/1190000002685224" target="_blank" rel="external">https://segmentfault.com/a/1190000002685224</a></li>
-<li><a href="http://itbilu.com/linux/management/4kB2ninp.html" target="_blank" rel="external">http://itbilu.com/linux/management/4kB2ninp.html</a></li>
-<li><a href="http://keenwon.com/1335.html" target="_blank" rel="external">http://keenwon.com/1335.html</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Redis-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SSH" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SSH（Secure-Shell）介绍"><a href="#SSH（Secure-Shell）介绍" class="headerlink" title="SSH（Secure Shell）介绍"></a>SSH（Secure Shell）介绍</h1><h2 id="SSH-安装"><a href="#SSH-安装" class="headerlink" title="SSH 安装"></a>SSH 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep openssh</code></li>
-<li>Ubuntu：<code>dpkg -l | grep openssh</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum install -y openssh-server openssh-clients</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y openssh-server openssh-client</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="SSH-配置文件常用参数"><a href="#SSH-配置文件常用参数" class="headerlink" title="SSH 配置文件常用参数"></a>SSH 配置文件常用参数</h2><ul>
-<li>配置文件介绍（记得先备份）：<code>sudo vim /etc/ssh/sshd_config</code><ul>
-<li>Port 22 #默认指定 22 端口，可以自己修改</li>
-<li>Protocol 2,1 #指定了 SSH 协议版本，目前 SSH 只有两个版本 2 和 1</li>
-<li>PasswordAuthentication yes #是否开启密码验证，因为 SSH 也可以设置秘钥类授权登录的方式，如果用这种方式我们可以考虑关掉密码登录的方式。</li>
-<li>PermitEmptyPasswords no #是否允许密码为空，与上面参数配合用。</li>
-</ul>
-</li>
-</ul>
-<h2 id="SSH-允许-root-账户登录"><a href="#SSH-允许-root-账户登录" class="headerlink" title="SSH 允许 root 账户登录"></a>SSH 允许 root 账户登录</h2><ul>
-<li>编辑配置文件（记得先备份）：<code>sudo vim /etc/ssh/sshd_config</code><ul>
-<li>允许 root 账号登录<ul>
-<li>注释掉：<code>PermitRootLogin without-password</code></li>
-<li>新增一行：<code>PermitRootLogin yes</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="SSH-密钥登录"><a href="#SSH-密钥登录" class="headerlink" title="SSH 密钥登录"></a>SSH 密钥登录</h2><ul>
-<li>生成秘钥和公钥文件，命令：<code>sudo ssh-keygen</code>，在交互提示中连续按三次回车，如果看得懂交互的表达，那就根据你自己需求来。默认生成密钥和公钥文件是在：/root/.ssh。</li>
-<li>进入生成目录：<code>cd /root/.ssh</code>，可以看到有两个文件：id_rsa (私钥) 和 id_rsa.pub (公钥)</li>
-<li>在 .ssh 目录下创建 SSH 认证文件，命令：<code>touch /root/.ssh/authorized_keys</code></li>
-<li>将公钥内容写到SSH认证文件里面，命令：<code>cat /root/.ssh/id_rsa.pub &gt;&gt; /root/.ssh/authorized_keys</code></li>
-<li>修改SSH认证文件权限，命令：<ul>
-<li><code>sudo chmod 700 /root/.ssh</code></li>
-<li><code>sudo chmod 600 /root/.ssh/authorized_keys</code></li>
-</ul>
-</li>
-<li>重启服务：<code>sudo service ssh restart</code></li>
-<li>设置 SSH 服务默认启动：<code>sudo sysv-rc-conf ssh on</code></li>
-</ul>
-<p>现在 SSH 客户端可以去拿着 SSH 服务器端上的 id_rsa，在客户端指定秘钥文件地址即可，这个一般由于你使用的客户端决定的，我这里推荐的是 Xshell 软件。</p>
-<h2 id="SSH-资料"><a href="#SSH-资料" class="headerlink" title="SSH 资料"></a>SSH 资料</h2><ul>
-<li><a href="http://www.jikexueyuan.com/course/861_1.html?ss=1" target="_blank" rel="external">http://www.jikexueyuan.com/course/861_1.html?ss=1</a> </li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/SSH/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SVN-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Subversion-1-8-安装"><a href="#Subversion-1-8-安装" class="headerlink" title="Subversion 1.8 安装"></a>Subversion 1.8 安装</h1><h2 id="RPM-安装（推荐）"><a href="#RPM-安装（推荐）" class="headerlink" title="RPM 安装（推荐）"></a>RPM 安装（推荐）</h2><ul>
-<li>wandisco 整理的 RPM 文件官网：<a href="http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/" target="_blank" rel="external">http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/</a></li>
-<li>下载下面几个 RPM 文件：<ul>
-<li>创建目录来保存下载的 RPM：<code>sudo mkdir -p /opt/setups/subversion/ ; cd /opt/setups/subversion/</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/mod_dav_svn-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/serf-1.3.7-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-gnome-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-javahl-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-perl-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-python-1.8.15-1.x86_64.rpm</code></li>
-<li><code>wget http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/x86_64/subversion-tools-1.8.15-1.x86_64.rpm</code></li>
-<li>如果上面的 RPM 链接失效，你也可以考虑下载我提供的百度云盘地址：<a href="http://pan.baidu.com/s/1pKnGia3" target="_blank" rel="external">http://pan.baidu.com/s/1pKnGia3</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>安装下载的 RPM 文件：<ul>
-<li><code>sudo rpm -ivh *.rpm</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>检查安装后的版本：<ul>
-<li><code>svn --version</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="编译安装（不推荐）"><a href="#编译安装（不推荐）" class="headerlink" title="编译安装（不推荐）"></a>编译安装（不推荐）</h2><ul>
-<li>subversion 1.8 编译安装（本人没有尝试成功，所以不推荐，下面内容只供参考）<ul>
-<li>官网安装说明（查找关键字 <code>Dependency Overview</code>）：<a href="http://svn.apache.org/repos/asf/subversion/trunk/INSTALL" target="_blank" rel="external">http://svn.apache.org/repos/asf/subversion/trunk/INSTALL</a></li>
-<li>此时 1.8 最新版本为：<code>subversion-1.8.15.tar.gz</code></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>安装编译所需工具：<ul>
-<li><code>sudo yum install -y gcc gcc-c++ autoconf libtool</code></li>
-</ul>
-</li>
-<li>所需依赖包说明：<ul>
-<li>（必要包）apr 和 apr-util 官网地址：<a href="http://archive.apache.org/dist/apr/" target="_blank" rel="external">http://archive.apache.org/dist/apr/</a></li>
-<li>（必要包）zlib 官网地址：<a href="ttp://www.zlib.net/" target="_blank" rel="external">ttp://www.zlib.net/</a></li>
-<li>（必要包）SQLite 官网地址：<a href="http://www.sqlite.org/download.html" target="_blank" rel="external">http://www.sqlite.org/download.html</a></li>
-<li>（必要包）Subversion 官网地址：<a href="https://subversion.apache.org/download.cgi" target="_blank" rel="external">https://subversion.apache.org/download.cgi</a></li>
-</ul>
-</li>
-<li>所需依赖包下载：<ul>
-<li>apr 下载：<code>wget http://archive.apache.org/dist/apr/apr-1.5.2.tar.gz</code></li>
-<li>apr-util 下载：<code>wget http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz</code></li>
-<li>zlib 下载：<code>wget http://zlib.net/zlib-1.2.8.tar.gz</code></li>
-<li>SQLite 下载：<code>wget http://www.sqlite.org/2016/sqlite-amalgamation-3100200.zip</code></li>
-<li>Subversion 下载：<code>wget http://apache.fayea.com/subversion/subversion-1.8.15.tar.gz</code></li>
-</ul>
-</li>
-<li>安装依赖包：    <ul>
-<li>apr 安装：<ul>
-<li>解压：<code>tar -zxvf apr-1.5.2.tar.gz</code></li>
-<li>移动到我个人习惯的安装目录下：<code>mv apr-1.5.2/ /usr/program/</code></li>
-<li>标准的 GNU 源码安装方式：<ul>
-<li><code>cd /usr/program/apr-1.5.2</code></li>
-<li><code>./configure</code></li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-</ul>
-</li>
-<li>安装完得到安装的配置路径：<code>/usr/local/apr/bin/apr-1-config</code>，这个需要记下来，下面会用到</li>
-</ul>
-</li>
-<li>apr-util 安装：<ul>
-<li>解压：<code>tar -zxvf apr-util-1.5.4.tar.gz</code></li>
-<li>移动到我个人习惯的安装目录下：<code>mv apr-util-1.5.4/ /usr/program/</code></li>
-<li>标准的 GNU 源码安装方式：<ul>
-<li><code>cd /usr/program/apr-util-1.5.4/</code></li>
-<li><code>./configure  --with-apr=/usr/local/apr/bin/apr-1-config</code></li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-</ul>
-</li>
-<li>安装完得到安装的配置路径：<code>/usr/local/apr/bin/apu-1-config</code>，这个需要记下来，下面会用到</li>
-</ul>
-</li>
-<li>zlib 安装：<ul>
-<li>解压：<code>tar -zxvf zlib-1.2.8.tar.gz</code></li>
-<li>移动到我个人习惯的安装目录下：<code>mv zlib-1.2.8/ /usr/program/</code></li>
-<li>标准的 GNU 源码安装方式：<ul>
-<li><code>cd /usr/program/zlib-1.2.8/</code></li>
-<li><code>./configure</code></li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Subversion 解压：<ul>
-<li>解压：<code>tar -zxvf subversion-1.8.15.tar.gz</code></li>
-<li>移动到我个人习惯的安装目录下：<code>mv subversion-1.8.15/ /usr/program/</code></li>
-</ul>
-</li>
-<li>SQLite 安装：<ul>
-<li>解压：<code>unzip sqlite-amalgamation-3100200.zip</code></li>
-<li>移动到 subversion 目录下：<code>mv sqlite-amalgamation-3100200/ /usr/program/subversion-1.8.15/</code></li>
-</ul>
-</li>
-<li>Subversion 安装：<ul>
-<li>标准的 GNU 源码安装方式：<ul>
-<li><code>cd /usr/program/subversion-1.8.15/</code></li>
-<li><code>./configure --prefix=/usr/local/subversion --with-apr=/usr/local/apr/bin/apr-1-config  --with-apr-util=/usr/local/apr/bin/apu-1-config</code></li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ul>
-<li>在系统上创建一个目录用来存储所有的 SVN 文件：<code>mkdir -p /opt/svn/repo/</code></li>
-<li>新建一个版本仓库：<code>svnadmin create /opt/svn/repo/</code><ul>
-<li>生成如下目录和文件：<ul>
-<li>目录：<code>locks</code></li>
-<li>目录：<code>hooks</code></li>
-<li>目录：<code>db</code></li>
-<li>目录：<code>conf</code></li>
-<li>文件：<code>format</code></li>
-<li>文件：<code>README.txt</code></li>
-</ul>
-</li>
-<li>其中，目录 <code>conf</code> 最为重要，常用的配置文件都在里面<ul>
-<li><code>svnserve.conf</code> 是 svn 服务综合配置文件</li>
-<li><code>passwd</code> 是用户名和密码配置文件</li>
-<li><code>authz</code> 是权限配置文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>设置配置文件<ul>
-<li>编辑配置文件：<code>vim /opt/svn/repo/conf/svnserve.conf</code></li>
-<li><img src="images/SVN-Install-And-Settings-a-1.jpg" alt="设置配置文件"></li>
-<li>配置文件中下面几个参数（默认是注释的）：<ul>
-<li><code>anon-access</code>： 对不在授权名单中的用户访问仓库的权限控制，有三个可选性：<code>write、read、none</code><ul>
-<li><code>none</code> 表示没有任何权限</li>
-<li><code>read</code> 表示只有只读权限</li>
-<li><code>write</code> 表示有读写权限</li>
-</ul>
-</li>
-<li><code>auth-access</code>：对在授权名单中的用户访问仓库的权限控制，有三个可选性：<code>write、read、none</code><ul>
-<li><code>none</code> 表示没有任何权限</li>
-<li><code>read</code> 表示只有只读权限</li>
-<li><code>write</code> 表示有读写权限</li>
-</ul>
-</li>
-<li><code>password-db</code>：指定用户数据配置文件</li>
-<li><code>authz-db</code>：指定用户权限配置文件</li>
-<li><code>realm</code>：指定版本库的认证域，即在登录时提示的认证域名称。若两个版本库的认证域相同，建议使用相同的用户名口令数据文件<ul>
-<li>当前实例的配置内容：<code>realm = myrepo</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>添加用户<ul>
-<li>编辑配置文件：<code>vim /opt/svn/repo/conf/passwd</code></li>
-<li><img src="images/SVN-Install-And-Settings-a-2.jpg" alt="添加用户"></li>
-<li>添加用户很简答，如上图所示在配置文中添加一个格式为：<code>用户名 = 密码</code>  的即可</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>设置用户权限<ul>
-<li>编辑配置文件：<code>vim /opt/svn/repo/conf/authz</code></li>
-<li><img src="images/SVN-Install-And-Settings-a-3.jpg" alt="设置用户权限"></li>
-<li>配置文件中几个参数解释：<ul>
-<li><code>r</code> 表示可写</li>
-<li><code>w</code> 表示可读</li>
-<li><code>rw</code> 表示可读可写</li>
-<li><code>* =</code> 表示除了上面设置的权限用户组以外，其他所有用户都设置空权限，空权限表示禁止访问本目录，这很重要一定要加上</li>
-<li><code>[groups]</code> 表示下面创建的是用户组，实际应用中一般我们对使用者都是进行分组的，然后把权限控制在组上，这样比较方便。使用组权限方式：<code>@组名 = rw</code> </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>启动服务</p>
-<ul>
-<li><code>svnserve -d -r /opt/svn/repo/ --listen-port 3690</code><ul>
-<li><code>-d</code> 表示后台运行</li>
-<li><code>-r /opt/svn/repo/</code> 表示指定根目录</li>
-<li><code>--listen-port 3690</code> 表示指定端口，默认就是 3690，所以如果要用默认端口这个也是可以省略掉的</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>停止服务</p>
-<ul>
-<li><code>killall svnserve</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>测试<ul>
-<li>iptables 处理<ul>
-<li>一种方式：先关闭 iptables，防止出现拦截问题而测试不了：<code>service iptables stop</code></li>
-<li>一种方式：在 iptables 中添加允许规则（svn 默认端口是 3690）：<ul>
-<li>添加规则：<code>sudo iptables -I INPUT -p tcp -m tcp --dport 3690 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo /etc/rc.d/init.d/iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>在 Windows 的 svn 客户端上访问:<code>svn://192.168.0.110</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="SVN-设置提交之后可修改提交的-Message-信息"><a href="#SVN-设置提交之后可修改提交的-Message-信息" class="headerlink" title="SVN 设置提交之后可修改提交的 Message 信息"></a>SVN 设置提交之后可修改提交的 Message 信息</h2><ul>
-<li>默认的 SVN 是无法修改提交后的 Message 信息的，修改会报如下错误：</li>
-<li><img src="images/SVN-Install-And-Settings-a-4.jpg" alt="SVN 设置提交之后可修改提交的 Message 信息"></li>
-<li>解决办法：<ul>
-<li>下载我 hooks 文件：<a href="http://pan.baidu.com/s/1c1jtlmw" target="_blank" rel="external">http://pan.baidu.com/s/1c1jtlmw</a></li>
-<li>把 pre-revprop-change 文件放在你的仓库下，比如我仓库地址是：<code>/opt/svn/repo/hooks</code><ul>
-<li>编辑该文件：<code>vim /opt/svn/repo/hooks/pre-revprop-change</code></li>
-<li>把文件尾巴的这句脚本：<code>echo &quot;$1 $2 $3 $4 $5&quot; &gt;&gt; /opt/svn/repo/logchanges.log</code>，改为：<code>echo &quot;$1 $2 $3 $4 $5&quot; &gt;&gt; /你的仓库地址/logchanges.log</code></li>
-<li>你在该目录下也可以看到一个文件 <code>pre-revprop-change.tmpl</code>，这个其实就是 svn 提供给你模板，其他的那些你有兴趣也可以研究下</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://tecadmin.net/install-subversion-1-8-on-centos-rhel/" target="_blank" rel="external">http://tecadmin.net/install-subversion-1-8-on-centos-rhel/</a></li>
-<li><a href="http://svn.apache.org/repos/asf/subversion/trunk/INSTALL" target="_blank" rel="external">http://svn.apache.org/repos/asf/subversion/trunk/INSTALL</a></li>
-<li><a href="http://chenpipi.blog.51cto.com/8563610/1613007" target="_blank" rel="external">http://chenpipi.blog.51cto.com/8563610/1613007</a></li>
-<li><a href="https://blog.linuxeye.com/348.html" target="_blank" rel="external">https://blog.linuxeye.com/348.html</a></li>
-<li><a href="http://jingyan.baidu.com/article/046a7b3efb6a5df9c27fa991.html" target="_blank" rel="external">http://jingyan.baidu.com/article/046a7b3efb6a5df9c27fa991.html</a></li>
-<li><a href="http://www.ha97.com/4467.html" target="_blank" rel="external">http://www.ha97.com/4467.html</a></li>
-<li><a href="http://blog.feehi.com/linux/7.html" target="_blank" rel="external">http://blog.feehi.com/linux/7.html</a></li>
-<li><a href="http://my.oschina.net/lionel45/blog/298305?fromerr=1NdIndN0" target="_blank" rel="external">http://my.oschina.net/lionel45/blog/298305?fromerr=1NdIndN0</a></li>
-<li><a href="http://www.centoscn.com/CentosServer/ftp/2015/0622/5708.html" target="_blank" rel="external">http://www.centoscn.com/CentosServer/ftp/2015/0622/5708.html</a></li>
-<li><a href="http://blog.csdn.net/tianlesoftware/article/details/6119231" target="_blank" rel="external">http://blog.csdn.net/tianlesoftware/article/details/6119231</a></li>
-<li><a href="http://www.scmeye.com/thread-419-1-1.html" target="_blank" rel="external">http://www.scmeye.com/thread-419-1-1.html</a></li>
-<li><a href="http://m.blog.csdn.net/article/details?id=7908907" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=7908907</a></li>
-<li>设置可编辑提交信息：<a href="http://stackoverflow.com/questions/692851/can-i-go-back-and-edit-comments-on-an-svn-checkin" target="_blank" rel="external">http://stackoverflow.com/questions/692851/can-i-go-back-and-edit-comments-on-an-svn-checkin</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/SVN-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Samba" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Samba/">iptables</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Samba/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Samba-介绍"><a href="#Samba-介绍" class="headerlink" title="Samba 介绍"></a>Samba 介绍</h1><h2 id="Samba-安装"><a href="#Samba-安装" class="headerlink" title="Samba 安装"></a>Samba 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep samba</code></li>
-<li>Ubuntu：<code>dpkg -l | grep samba</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y samba samba-client</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Samba-服务器配置文件常用参数"><a href="#Samba-服务器配置文件常用参数" class="headerlink" title="Samba 服务器配置文件常用参数"></a>Samba 服务器配置文件常用参数</h2><ul>
-<li>配置文件介绍（记得先备份）：<code>sudo vim /etc/samba/smb.conf</code><ul>
-<li>该配置解释：<ul>
-<li>在 [globle] 区域<ul>
-<li>workgroup = WORKGROUP #WORKGROUP表示Windows默认的工作组名称，一般共享给windows是设置为WORKGROUP</li>
-<li>security = user #ubuntu下配置文件默认没有这句,这个是自己填上去的。表示指定samba的安全等级，安全等级分别有四种：share（其他人不需要账号密码即可访问共享目录）、user（检查账号密码）、server（表示检查密码由另外一台服务器负责）、domain（指定Windows域控制服务器来验证用户的账号和密码）</li>
-</ul>
-</li>
-<li>在新区域区域<ul>
-<li>当 security = share 使用下面这段，这段自己添加的，其中myshare这个名字表示其他机子访问该分享地址时用：file://该服务机IP/myshare<pre><code>[myshare]
-comment = share all
-path = /opt/mysamba #分享的目录，其中这个目录需要chmod 777 /opt/mysamba权限
-browseable = yes
-writable = yes
-public =yes
-</code></pre></li>
-<li>当 security = user 使用下面这段，这段自己添加的，其中 myshare2 这个名字表示其他机子访问该分享地址时用：file://该服务机IP/myshare2</li>
-<li>可以返回的账号必须是系统已经存在的账号。先给系统添加账号：<code>useradd user1</code>，再用samba的设置添加账号：<code>pdbedit -a user1</code>，会让你设立该samba账号密码。列出账号：<code>pdbedit -L</code><pre><code>[myshare2]
-comment = share for users
-path = /opt/mysamba2  #分享的目录，其中这个目录需要chmod 777 /opt/mysamba权限
-browseable = yes
-writable = yes
-public = no
-</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>启动服务：<ul>
-<li><code>sudo service samba restart</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Samba-资料"><a href="#Samba-资料" class="headerlink" title="Samba 资料"></a>Samba 资料</h2><ul>
-<li><a href="http://www.lvtao.net/linux/555.html" target="_blank" rel="external">http://www.lvtao.net/linux/555.html</a> </li>
-<li><a href="https://www.centos.bz/2011/07/centos5-install-samba-windows-linux-fileshare/" target="_blank" rel="external">https://www.centos.bz/2011/07/centos5-install-samba-windows-linux-fileshare/</a> </li>
-<li><a href="https://wsgzao.github.io/post/samba/" target="_blank" rel="external">https://wsgzao.github.io/post/samba/</a> </li>
-<li><a href="http://linux.vbird.org/linux_server/0370samba.php" target="_blank" rel="external">http://linux.vbird.org/linux_server/0370samba.php</a> </li>
-</ul>
-
+        <h1 id="Samba-介绍"><a href="#Samba-介绍" class="headerlink" title="Samba 介绍"></a>Samba 介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Samba/#more">more >></a>
+        
       
 
       
@@ -1303,6 +197,17 @@ public = no
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1337,9 +242,900 @@ public = no
 
 
   
+    <article id="post-Redis-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Redis-Install-And-Settings/">Redis 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Redis-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis-安装和配置"><a href="#Redis-安装和配置" class="headerlink" title="Redis 安装和配置"></a>Redis 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Redis-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Redis-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SVN-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/SVN-Install-And-Settings/">Subversion 1.8 安装</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/SVN-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Subversion-1-8-安装"><a href="#Subversion-1-8-安装" class="headerlink" title="Subversion 1.8 安装"></a>Subversion 1.8 安装</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/SVN-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/SVN-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-FTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/FTP/">FTP</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/FTP/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FTP（File-Transfer-Protocol）介绍"><a href="#FTP（File-Transfer-Protocol）介绍" class="headerlink" title="FTP（File Transfer Protocol）介绍"></a>FTP（File Transfer Protocol）介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/FTP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/FTP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-VPN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/VPN/">VPN</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/VPN/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="VPN（Virtual-Private-Network）介绍"><a href="#VPN（Virtual-Private-Network）介绍" class="headerlink" title="VPN（Virtual Private Network）介绍"></a>VPN（Virtual Private Network）介绍</h1><h2 id="VPN-介绍"><a href="#VPN-介绍" class="headerlink" title="VPN 介绍"></a>VPN 介绍</h2><p>VPN 分类有很多，这里主要讲 PPTPD 和 L2TPD、OpenVPN</p>
+<h2 id="PPTPD-安装"><a href="#PPTPD-安装" class="headerlink" title="PPTPD 安装"></a>PPTPD 安装</h2><ul>
+<li><p>查看是否已安装：</p>
+<ul>
+<li>CentOS：<code>rpm -qa | grep pptpd</code></li>
+<li>Ubuntu：<code>dpkg -l | grep pptpd</code></li>
+</ul>
+</li>
+<li><p>先安装依赖包：</p>
+<ul>
+<li>CentOS 6：<code>sudo yum -y install ppp</code></li>
+<li>Ubuntu：<code>sudo apt-get install -y ppp</code></li>
+</ul>
+</li>
+<li><p>安装：</p>
+<ul>
+<li>CentOS 6：<code>sudo yum -y install pptpd</code></li>
+<li>Ubuntu：<code>sudo apt-get install -y pptpd</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="PPTPD-服务配置"><a href="#PPTPD-服务配置" class="headerlink" title="PPTPD 服务配置"></a>PPTPD 服务配置</h2><ul>
+<li>注意：PPTPD 默认端口是 1723，所以防火墙要取消对其限制，查看 1723 端口是否开启：<code>sudo netstat -apnl | grep 1723</code></li>
+<li>编辑 PPTPD 配置文件介绍（记得先备份）：<code>sudo vim /etc/pptpd.conf</code><ul>
+<li>修改配置信息：<ul>
+<li><code>option /etc/ppp/options.pptpd</code>  #配置文件中有一行这样的参数，如果没有自己添加上去，正常默认是有的。同时也有可能是这样的一句话：<code>option /etc/ppp/pptpd-options</code>，具体你自己看下你的配置文件里面是什么内容。</li>
+<li><code>logwtmp</code>  #默认这个是没有被注释的，这里要进行注释</li>
+<li><code>localip 172.31.0.1</code>  #本机服务器的内网IP地址，建议你的内网IP一般不要用常见网段，默认这个被注释，取消注释</li>
+<li><code>remoteip 192.168.0.10-200</code>   #客户端的IP地址范围，默认这个被注释，取消注释</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编辑 PPP 配置文件介绍（记得先备份）：<code>sudo vim /etc/ppp/options.pptpd</code> 或是 <code>sudo vim /etc/ppp/pptpd-options</code><ul>
+<li>在文件尾巴添加如下配置信息（默认配置文件应该有，只是被注释了）：<ul>
+<li><code>ms-dns 8.8.8.8</code>           #配置DNS，如果是境外服务器最好改为google的，国内的看情况</li>
+<li><code>ms-dns 8.8.4.4</code>           #配置DNS，如果是境外服务器最好改为google的，国内的看情况</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>开启系统转发（记得先备份）：<code>sudo vim /etc/sysctl.conf</code><ul>
+<li>修改配置信息该值改为 1：<ul>
+<li><code>net.ipv4.ip_forward=1</code> # 默认是注释掉的，要取消注释，也有出现是没有注释，但是默认是0：<code>net.ipv4.ip_forward=0</code></li>
+</ul>
+</li>
+<li>刷新配置：<code>sudo sysctl -p</code></li>
+</ul>
+</li>
+<li>设置 iptables 转发：<ul>
+<li>追加 iptables 规则：<code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
+<li>设置默认启动使用该规则：<code>sudo vim /etc/rc.local</code><ul>
+<li>在配置文件中添加：<code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>添加登录账号（记得先备份）：<code>sudo vim /etc/ppp/chap-secrets</code><ul>
+<li>在文件尾巴添加如下配置信息：<ul>
+<li><code>mytest1 pptpd 123456 *</code> #该格式分别表示：登录名、登录协议、密码、该连接上的客户端用什么 IP（* 表示随机一个 IP）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重启服务：<code>sudo service pptpd restart</code></li>
+<li>Windows 连接 VPN 方法：<a href="http://www.cnblogs.com/yuzeren48/p/4123879.html" target="_blank" rel="external">http://www.cnblogs.com/yuzeren48/p/4123879.html</a></li>
+</ul>
+<h2 id="L2TPD-安装"><a href="#L2TPD-安装" class="headerlink" title="L2TPD 安装"></a>L2TPD 安装</h2><ul>
+<li><p>查看是否已安装：</p>
+<ul>
+<li>CentOS：<code>rpm -qa | grep xl2tpd</code></li>
+<li>Ubuntu：<code>dpkg -l | grep xl2tpd</code></li>
+</ul>
+</li>
+<li><p>安装：</p>
+<ul>
+<li>CentOS 6：<code>XXXXXXXXXXXXXXXXXXXXXXXX</code></li>
+<li>Ubuntu：<code>sudo apt-get install -y xl2tpd ppp openswan</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="L2TPD-服务配置"><a href="#L2TPD-服务配置" class="headerlink" title="L2TPD 服务配置"></a>L2TPD 服务配置</h2><ul>
+<li>注意：L2TPD 默认端口是 1701，所以防火墙要取消对其限制，查看 1701 端口是否开启：<code>sudo netstat -apnl | grep 1701</code></li>
+<li>编辑 Openswan 配置文件介绍（记得先备份）：<code>sudo vim /etc/ipsec.conf</code><ul>
+<li>left=172.31.201.255  #其中这里的IP地址改为本机的内网IP，文件中有两处，都进行修改</li>
+</ul>
+</li>
+<li>编辑 IPsec-based 配置文件介绍（记得先备份）：<code>sudo vim /etc/ipsec.secrets</code><ul>
+<li>172.31.201.255 %any:    PSK”adc123456”  #在文件最后一行补充：（格式是：本机内网IP，后面是配置密钥。密钥不配置也可以但是建议配上去）</li>
+</ul>
+</li>
+<li>编辑 L2TPD 配置文件介绍（记得先备份）：<code>sudo vim /etc/xl2tpd/xl2tpd.conf</code><ul>
+<li>修改配置信息：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="bash">ipsec saref = yes           
+require chap = yes   
+refuse pap = yes   
+require authentication = yes  
+ppp debug = yes  
+length bit = yes
+ip range = 192.168.1.10-192.168.1.200              #这是客户端连接本机的IP端限制
+local ip = 172.31.201.255        #这是本机服务器端的内网 IP
+pppoptfile = /etc/ppp/options.xl2tpd        #指定本机的 PPP 配置文件地址，如果你的 PPP 配置文件地址不是这里那就改下
+</code></pre>
+<ul>
+<li>编辑 PPP 配置文件介绍（记得先备份）：<code>sudo vim /etc/ppp/options.xl2tpd</code> (如果没有这个文件自己创建)<ul>
+<li>在文件尾巴添加如下配置信息：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="bash">refuse-mschap-v2           
+refuse-mschap           
+ms-dns 8.8.8.8           #配置DNS，如果是境外服务器最好改为google的，国内的看情况
+ms-dns 8.8.4.4           #配置DNS，如果是境外服务器最好改为google的，国内的看情况
+asyncmap 0           
+auth           
+lock           
+hide-password           
+local           
+name l2tpd           
+proxyarp           
+lcp-echo-interval 30           
+lcp-echo-failure 4           
+refuse           
+refuse           
+refuse
+</code></pre>
+<ul>
+<li>在终端输入命令：sudo sh -c ‘for each in /proc/sys/net/ipv4/conf/* do echo 0 &gt; $each/accept_redirects echo 0 &gt; $each/send_redirects done’</li>
+<li>开启系统转发（记得先备份）：<code>sudo vim /etc/sysctl.conf</code><ul>
+<li>修改配置信息：<ul>
+<li>net.ipv4.ip_forward=1 #默认是注释掉的，要取消注释</li>
+</ul>
+</li>
+<li>刷新配置：<code>sudo sysctl -p</code></li>
+</ul>
+</li>
+<li>设置 iptables 转发：<ul>
+<li>追加 iptables 规则：<code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
+<li>设置默认启动使用该规则：<code>sudo vim /etc/rc.local</code><ul>
+<li>在配置文件中添加：iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>添加登录账号（记得先备份）：<code>sudo vim /etc/ppp/chap-secrets</code><ul>
+<li>在文件尾巴添加如下配置信息：<ul>
+<li>mytest1 l2tpd 123456 <em> #该格式分别表示：登录名、登录协议、密码、该连接上的客户端用什么 IP（</em> 表示随机一个 IP）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重启服务：<code>sudo service l2tpd restart</code></li>
+<li>Windows 连接 VPN 方法：<a href="http://www.cnblogs.com/yuzeren48/p/4123879.html" target="_blank" rel="external">http://www.cnblogs.com/yuzeren48/p/4123879.html</a></li>
+</ul>
+<h2 id="OpenVPN-安装"><a href="#OpenVPN-安装" class="headerlink" title="OpenVPN 安装"></a>OpenVPN 安装</h2><ul>
+<li>主要软件版本信息：<ul>
+<li>OpenVPN：2.3.11-1.el6</li>
+<li>EasyRsa：2.2.2-1.el6</li>
+</ul>
+</li>
+<li>检查系统环境是否支持：<code>cat /dev/net/tun</code>，如果出现：<code>cat: /dev/net/tun: File descriptor in bad state</code>，则表示支持。如果现实的是：<code>cat: /dev/net/tun: No such device</code>，则不支持</li>
+<li>需要先安装 EPEL 源，具体可以看这篇文章：<a href="https://github.com/judasn/Linux-Tutorial/blob/master/centos-settings/CentOS-Extra-Packages.md" target="_blank" rel="external">CentOS 源设置</a></li>
+<li>安装：<ul>
+<li>安装依赖包：<ul>
+<li><code>yum install -y gcc make rpm-build autoconf.noarch openssl openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig</code></li>
+</ul>
+</li>
+<li>安装 OpenVPN：<ul>
+<li><code>yum install -y openvpn easy-rsa</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="OpenVPN-服务配置"><a href="#OpenVPN-服务配置" class="headerlink" title="OpenVPN 服务配置"></a>OpenVPN 服务配置</h2><h3 id="禁用-selinux"><a href="#禁用-selinux" class="headerlink" title="禁用 selinux"></a>禁用 selinux</h3><ul>
+<li>编辑配置文件：<code>vim /etc/selinux/config</code></li>
+<li>把 <code>SELINUX=enforcing</code> 改为 <code>SELINUX=disabled</code></li>
+</ul>
+<h3 id="生成OpenVPN需要的服务器、客户端证书"><a href="#生成OpenVPN需要的服务器、客户端证书" class="headerlink" title="生成OpenVPN需要的服务器、客户端证书"></a>生成OpenVPN需要的服务器、客户端证书</h3><ul>
+<li><p>使用 easy-rsa 的脚本产生证书</p>
+</li>
+<li><p>修改vars文件</p>
+<ul>
+<li><code>cd /usr/share/easy-rsa/2.0</code>，后面关于证书的操作都是在这个目录下</li>
+<li><code>vim vars</code><ul>
+<li>需要修改的内容主要有下面这些信息（在文件 64 行）：注册信息，比如公司地址、公司名称、部门名称等。<ul>
+<li><code>export KEY_COUNTRY=&quot;CN&quot;</code></li>
+<li><code>export KEY_PROVINCE=&quot;GuangDong&quot;</code></li>
+<li><code>export KEY_CITY=&quot;GuangZhou&quot;</code></li>
+<li><code>export KEY_ORG=&quot;YouMeekOrganization&quot;</code></li>
+<li><code>export KEY_EMAIL=&quot;admin@youmeek.com&quot;</code></li>
+<li><code>export KEY_OU=&quot;YouMeekOrganizationalUnit&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>初始化环境变量</p>
+<ul>
+<li><code>source vars</code></li>
+</ul>
+</li>
+<li><p>清除keys目录下所有与证书相关的文件，下面步骤生成的证书和密钥都在 /usr/share/easy-rsa/2.0/keys 目录里</p>
+<ul>
+<li><code>./clean-all</code></li>
+</ul>
+</li>
+<li><p>生成根证书 ca.crt 和根密钥 ca.key（会有好几个提示，你都不需要输入什么内容，一路按回车即可，除非你懂原理）</p>
+<ul>
+<li><code>./build-ca</code></li>
+</ul>
+</li>
+<li><p>为服务端生成证书和密钥（也会有好几个提示，你都不需要输入什么内容，一路按回车即可，直到提示需要输入y/n时，输入y再按回车继续走）</p>
+<ul>
+<li>其中：server，这个名字别改，照着来，等下那些就可以直接使用。</li>
+<li><code>./build-key-server server</code></li>
+</ul>
+</li>
+<li><p>每一个登陆的VPN客户端需要有一个证书，每个证书在同一时刻只能供一个客户端连接，下面语句是建立2份demo，你可以只输入第一个即可。</p>
+</li>
+<li><p>为客户端生成证书和密钥（一路按回车，直到提示需要输入y/n时，输入y再按回车，一共两次）</p>
+<ul>
+<li>其中：client1，这个名字别改，照着来，等下那些就可以直接使用，除非你会。</li>
+<li><code>./build-key client1</code></li>
+<li><code>./build-key client2</code></li>
+</ul>
+</li>
+<li><p>创建迪菲·赫尔曼密钥，会在 keys 目录里面生成dh2048.pem文件（生成过程比较慢，在此期间不要去中断它，我这边花的时间是：2分钟）</p>
+<ul>
+<li><code>./build-dh</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="设置OpenVPN服务端配置文件"><a href="#设置OpenVPN服务端配置文件" class="headerlink" title="设置OpenVPN服务端配置文件"></a>设置OpenVPN服务端配置文件</h3><ul>
+<li>复制一份服务器端配置文件模板server.conf到/etc/openvpn/</li>
+<li><p>其中，我这边现在的版本是：2.3.11，所以我这边是填这个，你的不一定就跟我一样，所以你先到 doc 目录下，看下你具体是哪个版本，改下下面这句命令即可。</p>
+<ul>
+<li><code>cp /usr/share/doc/openvpn-2.3.11/sample/sample-config-files/server.conf /etc/openvpn/</code></li>
+</ul>
+</li>
+<li><p>编辑 server.conf，把下面的内容替换到已有的文件中，记得去掉后面的注释，我这样写只是为了方便解释对应的内容含义：</p>
+<ul>
+<li><code>vim /etc/openvpn/server.conf</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="bash">port 1194 # 端口一般我们不改
+proto udp # 默认使用udp，如果使用HTTP Proxy，改成tcp，必须使用tcp协议，还需要注意的是：需要与客户端配置保持一致，等下客户端配置会说道
+dev tun
+ca /usr/share/easy-rsa/2.0/keys/ca.crt # 这一行默认值为：ca ca.crt
+cert /usr/share/easy-rsa/2.0/keys/server.crt # 这一行默认值为：cert server.crt
+key /usr/share/easy-rsa/2.0/keys/server.key  # 这一行默认值为：key server.key
+dh /usr/share/easy-rsa/2.0/keys/dh2048.pem  # 这一行默认值为：dh dh2048.pem
+server 10.192.170.0 255.255.255.0  # 给客户的分配的局域网IP段，默认虚拟局域网网段，不要和实际的局域网冲突即可，这个10.192.170.0跟下面还有一个地方配置也有关联，需要注意
+ifconfig-pool-persist ipp.txt # 启用了ipp.txt作为客户端和virtual IP的对应表，以方便客户端重新连接可以获得同样的IP；
+keepalive 10 120
+comp-lzo
+persist-key
+persist-tun
+status openvpn-status.log  # OpenVPN的状态日志，默认为/etc/openvpn/openvpn-status.log
+log openvpn.log # OpenVPN的运行日志，默认为/etc/openvpn/openvpn.log 
+log-append openvpn.log
+verb 3
+
+push &quot;redirect-gateway def1 bypass-dhcp&quot;
+push &quot;dhcp-option DNS 8.8.8.8&quot;
+push &quot;dhcp-option DOMAIN-SEARCH ap-northeast-1.compute.internal&quot;
+push &quot;dhcp-option DOMAIN-SEARCH ec2.drawbrid.ge&quot;
+</code></pre>
+<h3 id="配置内核和防火墙，开启nat功能，启动服务"><a href="#配置内核和防火墙，开启nat功能，启动服务" class="headerlink" title="配置内核和防火墙，开启nat功能，启动服务"></a>配置内核和防火墙，开启nat功能，启动服务</h3><ul>
+<li>开启路由转发功能<ul>
+<li><code>sed -i &#39;/net.ipv4.ip_forward/s/0/1/&#39; /etc/sysctl.conf</code></li>
+<li>刷新配置：<code>sudo sysctl -p</code></li>
+</ul>
+</li>
+</ul>
+<p>辨别你的 VPS 是属于那种虚拟方式，主流有：Xen KVM OpenVZ，方法：</p>
+<ul>
+<li><p><code>sudo yum install -y virt-what</code>，virt-what是一个判断当前环境所使用的虚拟技术的脚本，常见的虚拟技术基本上都能正常识别出来</p>
+<ul>
+<li><code>sudo virt-what</code>，我这边 Vultr 输出的结果是：KVM</li>
+</ul>
+</li>
+<li><p>配置防火墙</p>
+<ul>
+<li><code>iptables -A INPUT -p udp --dport 1194 -j ACCEPT</code></li>
+<li><code>iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</code></li>
+</ul>
+</li>
+<li><p>设置IP转发，若你的 VPS 虚拟方案是：Xen 或 KVM的请输入：（eth0要根据具体的网卡标示来，可以通过ifconfig查看），其中：10.192.170.0/16 表示客户端连接上去后从这个区间中分配给客户端的IP地址</p>
+<ul>
+<li><code>iptables -t nat -A POSTROUTING -s 10.192.170.0/16 -o eth0 -j MASQUERADE</code></li>
+</ul>
+</li>
+<li><p>若你的 VPS 虚拟方案是：OpenVZ 的请输入：（45.32.90.22是你VPS的IP）</p>
+<ul>
+<li><code>iptables -t nat -A POSTROUTING -s 10.192.170.0/16 -j SNAT --to-source 45.32.90.22</code></li>
+</ul>
+</li>
+<li>保存防火墙配置<ul>
+<li><code>service iptables save</code></li>
+<li><code>service iptables restart</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="启动openvpn并设置为开机启动"><a href="#启动openvpn并设置为开机启动" class="headerlink" title="启动openvpn并设置为开机启动"></a>启动openvpn并设置为开机启动</h3><ul>
+<li><code>service openvpn start</code></li>
+<li><code>chkconfig openvpn on</code></li>
+</ul>
+<h3 id="OpenVPN客户端配置"><a href="#OpenVPN客户端配置" class="headerlink" title="OpenVPN客户端配置"></a>OpenVPN客户端配置</h3><p>下载 Windows 客户端：<br><a href="https://openvpn.net/index.php/download/community-downloads.html" target="_blank" rel="external">https://openvpn.net/index.php/download/community-downloads.html</a></p>
+<p>Mac 用户下载这个 tunnelblick（该地址需要开穿越）：<br><a href="http://code.google.com/p/tunnelblick/" target="_blank" rel="external">http://code.google.com/p/tunnelblick/</a></p>
+<ul>
+<li>从服务器上下载证书文件到本地：<ul>
+<li><code>/usr/share/easy-rsa/2.0/keys/ca.crt</code></li>
+<li><code>/usr/share/easy-rsa/2.0/keys/client1.crt</code></li>
+<li><code>/usr/share/easy-rsa/2.0/keys/client1.key</code></li>
+</ul>
+</li>
+</ul>
+<p>到你本地的电脑上（window电脑在安装好OpenVPN软件后可以把如上证书拷贝到如下文件夹里：C:\Program Files\OpenVPN\config ）</p>
+<p>从服务器找到这个文件：/usr/share/doc/openvpn-2.3.11/sample/sample-windows/sample.ovpn，下载到本地电脑这个目录下：C:\Program Files\OpenVPN\config<br>然后把这个文件改名字为：client1.ovpn 文件内如如下, 其他不用改只要把SERVER-IP 改成你服务器的 IP  </p>
+<pre><code class="bash">client        #这个client不是自定义名称 不能更改
+dev tun       #要与前面server.conf中的配置一致。
+proto udp              #要与前面server.conf中的配置一致。
+remote 45.32.90.22 1194    #将45.32.90.22替换为你VPS的IP，端口也与前面的server.conf中配置一致。
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ca ca.crt              #具体名称以刚下载的为准
+cert client1.crt              #具体名称以刚下载的为准
+key client1.key              #具体名称以刚下载的为准
+comp-lzo
+verb 3
+</code></pre>
+<ul>
+<li>打开 OpenVPN 客户端，连接试试看。</li>
+</ul>
+<h2 id="VPN-资料"><a href="#VPN-资料" class="headerlink" title="VPN 资料"></a>VPN 资料</h2><ul>
+<li><a href="http://www.jikexueyuan.com/course/1692_2.html?ss=1" target="_blank" rel="external">http://www.jikexueyuan.com/course/1692_2.html?ss=1</a></li>
+<li><a href="http://gnailuy.com/linux/2011/07/04/pptp-vpn/" target="_blank" rel="external">http://gnailuy.com/linux/2011/07/04/pptp-vpn/</a></li>
+<li><a href="http://www.centoscn.com/CentosServer/test/2014/1120/4153.html" target="_blank" rel="external">http://www.centoscn.com/CentosServer/test/2014/1120/4153.html</a></li>
+<li><a href="https://linux.cn/article-3706-1.html" target="_blank" rel="external">https://linux.cn/article-3706-1.html</a></li>
+<li><a href="http://www.bkjia.com/yjs/1041400.html" target="_blank" rel="external">http://www.bkjia.com/yjs/1041400.html</a></li>
+<li><a href="http://blog.liujason.com/1663.html" target="_blank" rel="external">http://blog.liujason.com/1663.html</a></li>
+<li><a href="http://shit.name/openvpn-on-centos/" target="_blank" rel="external">http://shit.name/openvpn-on-centos/</a></li>
+<li><a href="http://kunsland.github.io/blogs/2015/03/22/vps-openvpn/" target="_blank" rel="external">http://kunsland.github.io/blogs/2015/03/22/vps-openvpn/</a></li>
+<li><a href="http://neolee.com/web/centos-openvz-vps-configuration-openvpn/" target="_blank" rel="external">http://neolee.com/web/centos-openvz-vps-configuration-openvpn/</a></li>
+<li><a href="http://www.jikexueyuan.com/course/1692_4.html?ss=2" target="_blank" rel="external">Freeradius 服务（用于账号认证管理的工具，可以扩展到VPN的账号管理）</a></li>
+</ul>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p><a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="external">judasn</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/VPN/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vim-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Vim-Install-And-Settings/">Vim 安装和配置、优化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Vim-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vim-安装和配置、优化"><a href="#Vim-安装和配置、优化" class="headerlink" title="Vim 安装和配置、优化"></a>Vim 安装和配置、优化</h1><h2 id="Vim-介绍"><a href="#Vim-介绍" class="headerlink" title="Vim 介绍"></a>Vim 介绍</h2>
+        
+          <a class="article-more-a" href="/2017/11/22/Vim-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Vim-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-GitLab-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/GitLab-Install-And-Settings/">GitLab 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/GitLab-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="GitLab-安装和配置"><a href="#GitLab-安装和配置" class="headerlink" title="GitLab 安装和配置"></a>GitLab 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/GitLab-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/GitLab-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Tomcat-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Tomcat-Install-And-Settings/">Tomcat 8 安装和配置、优化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Tomcat-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tomcat-8-安装和配置、优化"><a href="#Tomcat-8-安装和配置、优化" class="headerlink" title="Tomcat 8 安装和配置、优化"></a>Tomcat 8 安装和配置、优化</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Tomcat-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Tomcat-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -1445,6 +1241,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1505,7 +1305,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,34 +1317,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -1553,15 +1325,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1577,11 +1357,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

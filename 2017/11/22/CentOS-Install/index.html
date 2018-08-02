@@ -8,24 +8,20 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>zeroto的博客</title>
+  <title>iptables | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="CentOS 安装概括
 本教程中主要演示了 VirtualBox 和 VMware Workstation 下安装 CentOS 6.6 的过程。
 VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机
-VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。
-
-VirtualBox 下安装 CentOS">
+VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zeroto的博客">
+<meta property="og:title" content="iptables">
 <meta property="og:url" content="//zeroto.tech/2017/11/22/CentOS-Install/index.html">
 <meta property="og:site_name" content="zeroto的博客">
 <meta property="og:description" content="CentOS 安装概括
 本教程中主要演示了 VirtualBox 和 VMware Workstation 下安装 CentOS 6.6 的过程。
 VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机
-VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。
-
-VirtualBox 下安装 CentOS">
+VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-Install-VirtualBox-a-1.jpg">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-Install-VirtualBox-a-2.jpg">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-Install-VirtualBox-a-3.jpg">
@@ -77,15 +73,13 @@ VirtualBox 下安装 CentOS">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-install-VMware-a-23.jpg">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-install-VMware-a-24.jpg">
 <meta property="og:image" content="//zeroto.tech/images/CentOS-install-VMware-a-25.jpg">
-<meta property="og:updated_time" content="2017-11-22T09:32:19.000Z">
+<meta property="og:updated_time" content="2018-08-02T06:28:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zeroto的博客">
+<meta name="twitter:title" content="iptables">
 <meta name="twitter:description" content="CentOS 安装概括
 本教程中主要演示了 VirtualBox 和 VMware Workstation 下安装 CentOS 6.6 的过程。
 VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机
-VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。
-
-VirtualBox 下安装 CentOS">
+VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。">
 <meta name="twitter:image" content="//zeroto.tech/images/CentOS-Install-VirtualBox-a-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
@@ -234,6 +228,27 @@ ga('send', 'pageview');
             <article id="post-CentOS-Install" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iptables
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/CentOS-Install/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+            阅读量
+            <span id="busuanzi_value_page_pv"></span>
+          </span>
+          
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="CentOS-安装"><a href="#CentOS-安装" class="headerlink" title="CentOS 安装"></a>CentOS 安装</h1><h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><ul>
@@ -241,6 +256,7 @@ ga('send', 'pageview');
 <li>VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机</li>
 <li>VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。</li>
 </ul>
+<a id="more"></a>
 <h2 id="VirtualBox-下安装-CentOS-过程"><a href="#VirtualBox-下安装-CentOS-过程" class="headerlink" title="VirtualBox 下安装 CentOS 过程"></a>VirtualBox 下安装 CentOS 过程</h2><ul>
 <li>VirtualBox 的介绍和下载<ul>
 <li>官网：<a href="https://www.virtualbox.org/" target="_blank" rel="external">https://www.virtualbox.org/</a></li>
@@ -403,6 +419,7 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p><a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="external">judasn</a></p>
 
       
 
@@ -411,6 +428,17 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -475,18 +503,18 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/2017/11/22/Bash-Other-Bash/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/22/SSH/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          SSH
         
       </div>
     </a>
   
   
-    <a href="/2017/11/22/Maven-Install-And-Settings/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMware 克隆 CentOS 后网卡信息修改</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -639,6 +667,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -699,7 +731,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,34 +743,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -747,15 +751,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -771,11 +783,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

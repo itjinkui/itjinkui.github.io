@@ -165,35 +165,26 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Ubuntu-Popular-Software" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-centos-settings/Clear-Cache" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-常用的软件"><a href="#Ubuntu-常用的软件" class="headerlink" title="Ubuntu 常用的软件"></a>Ubuntu 常用的软件</h1><h2 id="安装软件基础"><a href="#安装软件基础" class="headerlink" title="安装软件基础"></a>安装软件基础</h2><ul>
-<li>取回更新的软件包列表信息：<code>sudo apt-get update</code></li>
-<li>查看已经安装了哪些包：<code>sudo dpkg -l</code></li>
-<li>查看已安装列表中是否有 Vim 软件，没有安装则没有数据显示：<code>sudo dpkg -l | grep vim</code></li>
-<li>查看 Vim 软件安装位置：<code>sudo dpkg -L vim</code></li>
-<li>安装名为 Vim 的软件：<code>sudo apt-get install vim</code></li>
-<li>卸载名为 Vim 的软件（保留配置文档）：<code>sudo apt-get remove vim</code></li>
-<li>卸载名为 Vim 的软件（删除配置文档）：<code>sudo apt-get –purge remove vim</code></li>
-<li>升级系统所有有新版本的软件：<code>sudo apt-get upgrade</code></li>
-<li>删除已下载的旧包文件：<code>sudo apt-get autoclean</code></li>
-<li>删除所有已下载的包文件：<code>sudo apt-get clean</code></li>
-<li>卸载所有自动安装且不再使用的软件包：<code>sudo apt-get autoremove</code></li>
+        <h2 id="清除系统缓存"><a href="#清除系统缓存" class="headerlink" title="清除系统缓存"></a>清除系统缓存</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
+<li>本身 Linux 有比较成熟的内存管理机制，但是不免也是会抽风的，有些程序在被 kill 掉之后系统内存依然没有大的变化，这时候就需要手动清除。</li>
 </ul>
-<h2 id="安装常用系统软件"><a href="#安装常用系统软件" class="headerlink" title="安装常用系统软件"></a>安装常用系统软件</h2><ul>
-<li>sysv-rc-conf<ul>
-<li>介绍：管理启动项，一般是用在 Ubuntu 系统上的，CentOS 一般用的 chkconfig，两者用法差不多</li>
-<li>安装：<code>sudo apt-get install -y sysv-rc-conf</code></li>
-<li>资料：<ul>
-<li>图文资料：<a href="http://blog.csdn.net/gatieme/article/details/45251389" target="_blank" rel="external">http://blog.csdn.net/gatieme/article/details/45251389</a></li>
-<li>图文资料：<a href="http://gm100861.blog.51cto.com/1930562/950066" target="_blank" rel="external">http://gm100861.blog.51cto.com/1930562/950066</a></li>
+<h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><ul>
+<li>官网说明：<a href="http://www.kernel.org/doc/Documentation/sysctl/vm.txt" target="_blank" rel="external">http://www.kernel.org/doc/Documentation/sysctl/vm.txt</a></li>
+<li>先查看目前系统内存使用情况：<code>free -m</code></li>
+<li>同步缓存数据到硬盘：<code>sync</code></li>
+<li>开始清理：<code>echo 3 &gt; /proc/sys/vm/drop_caches</code><ul>
+<li>0：不清除</li>
+<li>1：清除页缓存</li>
+<li>2：清除目录项缓存与文件结点缓存</li>
+<li>3：清除所有缓存（常用）</li>
 </ul>
 </li>
-</ul>
-</li>
+<li>再查看清除后效果：<code>free -m</code></li>
 </ul>
 
       
@@ -207,7 +198,7 @@ ga('send', 'pageview');
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Ubuntu-Popular-Software/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/centos-settings/Clear-Cache/">展开全文 >></a>
         </p>
       
 
@@ -237,24 +228,31 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Ubuntu-Specific-Command" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Jenkins-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Jenkins-Install-And-Settings/">Jenkins 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Jenkins-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-特殊命令"><a href="#Ubuntu-特殊命令" class="headerlink" title="Ubuntu 特殊命令"></a>Ubuntu 特殊命令</h1><ul>
-<li><code>lsb_release -a</code>，查看发行代号 </li>
-<li><code>cat /etc/issue</code>，查看 Ubuntu 发行版本</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-<li>``</li>
-</ul>
-
+        <h1 id="Jenkins-安装和配置"><a href="#Jenkins-安装和配置" class="headerlink" title="Jenkins 安装和配置"></a>Jenkins 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Jenkins-Install-And-Settings/#more">more >></a>
+        
       
 
       
@@ -262,11 +260,22 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Ubuntu-Specific-Command/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Jenkins-Install-And-Settings/">展开全文 >></a>
         </p>
       
 
@@ -296,50 +305,31 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Jira-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Jira-Install-And-Settings/">Jira 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Jira-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-介绍"><a href="#Ubuntu-介绍" class="headerlink" title="Ubuntu 介绍"></a>Ubuntu 介绍</h1><ul>
-<li>Ubuntu 母公司 Canonical：<a href="http://www.canonical.com/" target="_blank" rel="external">http://www.canonical.com/</a></li>
-<li>Ubuntu 百科：<a href="http://baike.baidu.com/item/ubuntu" target="_blank" rel="external">http://baike.baidu.com/item/ubuntu</a></li>
-<li>Ubuntu Wiki：<a href="http://zh.wikipedia.org/zh/Ubuntu" target="_blank" rel="external">http://zh.wikipedia.org/zh/Ubuntu</a></li>
-<li>Ubuntu 英文官网：<a href="http://www.ubuntu.com" target="_blank" rel="external">http://www.ubuntu.com</a></li>
-<li>Ubuntu 中文官网：<a href="http://www.ubuntu.org.cn" target="_blank" rel="external">http://www.ubuntu.org.cn</a></li>
-<li>Ubuntu kylin 官网：<a href="http://cn.Ubuntu.com/desktop" target="_blank" rel="external">http://cn.Ubuntu.com/desktop</a></li>
-<li>Ubuntu 标准桌面版下载：<a href="http://www.ubuntu.org.cn/download/desktop" target="_blank" rel="external">http://www.ubuntu.org.cn/download/desktop</a></li>
-<li>Ubuntu 官网回答社区：<a href="http://askubuntu.com/" target="_blank" rel="external">http://askubuntu.com/</a></li>
-<li>Ubuntu 正式衍生版本：<a href="https://zh.wikipedia.org/zh/Ubuntu#.E5.88.86.E6.94.AF.E7.89.88.E6.9C.AC" target="_blank" rel="external">https://zh.wikipedia.org/zh/Ubuntu#.E5.88.86.E6.94.AF.E7.89.88.E6.9C.AC</a></li>
-<li>Ubuntu 非正式衍生版本：<a href="https://zh.wikipedia.org/zh/Ubuntu#.E9.9D.9E.E6.AD.A3.E5.BC.8F.E8.A1.8D.E7.94.9F.E7.89.88.E6.9C.AC" target="_blank" rel="external">https://zh.wikipedia.org/zh/Ubuntu#.E9.9D.9E.E6.AD.A3.E5.BC.8F.E8.A1.8D.E7.94.9F.E7.89.88.E6.9C.AC</a></li>
-<li>Unity 桌面介绍：<a href="https://zh.wikipedia.org/wiki/Unity_(使用者介面)" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Unity_(使用者介面)</a></li>
-<li>GNOME 桌面介绍：<a href="https://zh.wikipedia.org/wiki/GNOME" target="_blank" rel="external">https://zh.wikipedia.org/wiki/GNOME</a></li>
-<li>KDE 桌面介绍：<a href="https://zh.wikipedia.org/wiki/KDE" target="_blank" rel="external">https://zh.wikipedia.org/wiki/KDE</a></li>
-</ul>
-<h1 id="Ubuntu-原型系统：Debian"><a href="#Ubuntu-原型系统：Debian" class="headerlink" title="Ubuntu 原型系统：Debian"></a>Ubuntu 原型系统：Debian</h1><ul>
-<li>Debian Wiki：<a href="http://zh.wikipedia.org/zh/Debian" target="_blank" rel="external">http://zh.wikipedia.org/zh/Debian</a></li>
-<li>Debian 百科：<a href="http://baike.baidu.com/view/40687.htm" target="_blank" rel="external">http://baike.baidu.com/view/40687.htm</a></li>
-<li>Debian 官网：<a href="http://www.debian.org/index.zh-cn.html" target="_blank" rel="external">http://www.debian.org/index.zh-cn.html</a></li>
-<li>Debian 自我介绍：<a href="https://www.debian.org/intro/about" target="_blank" rel="external">https://www.debian.org/intro/about</a><ul>
-<li>关键字：<ul>
-<li><a href="https://www.debian.org/social_contract" target="_blank" rel="external">Debian 社群契约</a></li>
-<li><a href="https://www.debian.org/intro/free" target="_blank" rel="external">何谓自由 (Free)？ 或者说，何谓自由软件 (Free Software)？</a></li>
-<li><a href="http://www.gnu.org/philosophy/free-sw" target="_blank" rel="external">什么是自由软件？</a></li>
-<li><a href="https://www.debian.org/doc/manuals/project-history/" target="_blank" rel="external">Debian 历史</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Debian 的发行版介绍：<a href="https://www.debian.org/releases/" target="_blank" rel="external">https://www.debian.org/releases/</a></li>
-<li>Debian 官网稳定版下载 1：<a href="https://www.debian.org/distrib/" target="_blank" rel="external">https://www.debian.org/distrib/</a></li>
-<li>Debian 官网稳定版下载 2：<a href="https://www.debian.org/CD/http-ftp/#stable" target="_blank" rel="external">https://www.debian.org/CD/http-ftp/#stable</a></li>
-<li>Debian 中国镜像 1：<a href="http://mirrors.hust.edu.cn/debian-cd/" target="_blank" rel="external">http://mirrors.hust.edu.cn/debian-cd/</a></li>
-<li>Debian 中国镜像 2：<a href="ftp://mirrors.sohu.com/debian-cd/" target="_blank" rel="external">ftp://mirrors.sohu.com/debian-cd/</a></li>
-<li>Debian 中国镜像 3：<a href="ftp://debian.ustc.edu.cn/debian-cd/" target="_blank" rel="external">ftp://debian.ustc.edu.cn/debian-cd/</a></li>
-<li>Debian 中文安装手册：<a href="https://www.debian.org/releases/stable/amd64/" target="_blank" rel="external">https://www.debian.org/releases/stable/amd64/</a></li>
-<li>Debian 软件列表：<a href="https://packages.debian.org/stable/" target="_blank" rel="external">https://packages.debian.org/stable/</a></li>
-</ul>
-
+        <h1 id="Jira-安装和配置"><a href="#Jira-安装和配置" class="headerlink" title="Jira 安装和配置"></a>Jira 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Jira-Install-And-Settings/#more">more >></a>
+        
       
 
       
@@ -347,11 +337,22 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Ubuntu/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Jira-Install-And-Settings/">展开全文 >></a>
         </p>
       
 
@@ -381,366 +382,31 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-VPN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Iptables" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Iptables/">iptables</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Iptables/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="VPN（Virtual-Private-Network）介绍"><a href="#VPN（Virtual-Private-Network）介绍" class="headerlink" title="VPN（Virtual Private Network）介绍"></a>VPN（Virtual Private Network）介绍</h1><h2 id="VPN-介绍"><a href="#VPN-介绍" class="headerlink" title="VPN 介绍"></a>VPN 介绍</h2><p>VPN 分类有很多，这里主要讲 PPTPD 和 L2TPD、OpenVPN</p>
-<h2 id="PPTPD-安装"><a href="#PPTPD-安装" class="headerlink" title="PPTPD 安装"></a>PPTPD 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep pptpd</code></li>
-<li>Ubuntu：<code>dpkg -l | grep pptpd</code></li>
-</ul>
-</li>
-<li><p>先安装依赖包：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum -y install ppp</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y ppp</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum -y install pptpd</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y pptpd</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="PPTPD-服务配置"><a href="#PPTPD-服务配置" class="headerlink" title="PPTPD 服务配置"></a>PPTPD 服务配置</h2><ul>
-<li>注意：PPTPD 默认端口是 1723，所以防火墙要取消对其限制，查看 1723 端口是否开启：<code>sudo netstat -apnl | grep 1723</code></li>
-<li>编辑 PPTPD 配置文件介绍（记得先备份）：<code>sudo vim /etc/pptpd.conf</code><ul>
-<li>修改配置信息：<ul>
-<li><code>option /etc/ppp/options.pptpd</code>  #配置文件中有一行这样的参数，如果没有自己添加上去，正常默认是有的。同时也有可能是这样的一句话：<code>option /etc/ppp/pptpd-options</code>，具体你自己看下你的配置文件里面是什么内容。</li>
-<li><code>logwtmp</code>  #默认这个是没有被注释的，这里要进行注释</li>
-<li><code>localip 172.31.0.1</code>  #本机服务器的内网IP地址，建议你的内网IP一般不要用常见网段，默认这个被注释，取消注释</li>
-<li><code>remoteip 192.168.0.10-200</code>   #客户端的IP地址范围，默认这个被注释，取消注释</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>编辑 PPP 配置文件介绍（记得先备份）：<code>sudo vim /etc/ppp/options.pptpd</code> 或是 <code>sudo vim /etc/ppp/pptpd-options</code><ul>
-<li>在文件尾巴添加如下配置信息（默认配置文件应该有，只是被注释了）：<ul>
-<li><code>ms-dns 8.8.8.8</code>           #配置DNS，如果是境外服务器最好改为google的，国内的看情况</li>
-<li><code>ms-dns 8.8.4.4</code>           #配置DNS，如果是境外服务器最好改为google的，国内的看情况</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>开启系统转发（记得先备份）：<code>sudo vim /etc/sysctl.conf</code><ul>
-<li>修改配置信息该值改为 1：<ul>
-<li><code>net.ipv4.ip_forward=1</code> # 默认是注释掉的，要取消注释，也有出现是没有注释，但是默认是0：<code>net.ipv4.ip_forward=0</code></li>
-</ul>
-</li>
-<li>刷新配置：<code>sudo sysctl -p</code></li>
-</ul>
-</li>
-<li>设置 iptables 转发：<ul>
-<li>追加 iptables 规则：<code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
-<li>设置默认启动使用该规则：<code>sudo vim /etc/rc.local</code><ul>
-<li>在配置文件中添加：<code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>添加登录账号（记得先备份）：<code>sudo vim /etc/ppp/chap-secrets</code><ul>
-<li>在文件尾巴添加如下配置信息：<ul>
-<li><code>mytest1 pptpd 123456 *</code> #该格式分别表示：登录名、登录协议、密码、该连接上的客户端用什么 IP（* 表示随机一个 IP）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>重启服务：<code>sudo service pptpd restart</code></li>
-<li>Windows 连接 VPN 方法：<a href="http://www.cnblogs.com/yuzeren48/p/4123879.html" target="_blank" rel="external">http://www.cnblogs.com/yuzeren48/p/4123879.html</a></li>
-</ul>
-<h2 id="L2TPD-安装"><a href="#L2TPD-安装" class="headerlink" title="L2TPD 安装"></a>L2TPD 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep xl2tpd</code></li>
-<li>Ubuntu：<code>dpkg -l | grep xl2tpd</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>XXXXXXXXXXXXXXXXXXXXXXXX</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y xl2tpd ppp openswan</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="L2TPD-服务配置"><a href="#L2TPD-服务配置" class="headerlink" title="L2TPD 服务配置"></a>L2TPD 服务配置</h2><ul>
-<li>注意：L2TPD 默认端口是 1701，所以防火墙要取消对其限制，查看 1701 端口是否开启：<code>sudo netstat -apnl | grep 1701</code></li>
-<li>编辑 Openswan 配置文件介绍（记得先备份）：<code>sudo vim /etc/ipsec.conf</code><ul>
-<li>left=172.31.201.255  #其中这里的IP地址改为本机的内网IP，文件中有两处，都进行修改</li>
-</ul>
-</li>
-<li>编辑 IPsec-based 配置文件介绍（记得先备份）：<code>sudo vim /etc/ipsec.secrets</code><ul>
-<li>172.31.201.255 %any:    PSK”adc123456”  #在文件最后一行补充：（格式是：本机内网IP，后面是配置密钥。密钥不配置也可以但是建议配上去）</li>
-</ul>
-</li>
-<li>编辑 L2TPD 配置文件介绍（记得先备份）：<code>sudo vim /etc/xl2tpd/xl2tpd.conf</code><ul>
-<li>修改配置信息：</li>
-</ul>
-</li>
-</ul>
-<pre><code class="bash">ipsec saref = yes           
-require chap = yes   
-refuse pap = yes   
-require authentication = yes  
-ppp debug = yes  
-length bit = yes
-ip range = 192.168.1.10-192.168.1.200              #这是客户端连接本机的IP端限制
-local ip = 172.31.201.255        #这是本机服务器端的内网 IP
-pppoptfile = /etc/ppp/options.xl2tpd        #指定本机的 PPP 配置文件地址，如果你的 PPP 配置文件地址不是这里那就改下
-</code></pre>
-<ul>
-<li>编辑 PPP 配置文件介绍（记得先备份）：<code>sudo vim /etc/ppp/options.xl2tpd</code> (如果没有这个文件自己创建)<ul>
-<li>在文件尾巴添加如下配置信息：</li>
-</ul>
-</li>
-</ul>
-<pre><code class="bash">refuse-mschap-v2           
-refuse-mschap           
-ms-dns 8.8.8.8           #配置DNS，如果是境外服务器最好改为google的，国内的看情况
-ms-dns 8.8.4.4           #配置DNS，如果是境外服务器最好改为google的，国内的看情况
-asyncmap 0           
-auth           
-lock           
-hide-password           
-local           
-name l2tpd           
-proxyarp           
-lcp-echo-interval 30           
-lcp-echo-failure 4           
-refuse           
-refuse           
-refuse
-</code></pre>
-<ul>
-<li>在终端输入命令：sudo sh -c ‘for each in /proc/sys/net/ipv4/conf/* do echo 0 &gt; $each/accept_redirects echo 0 &gt; $each/send_redirects done’</li>
-<li>开启系统转发（记得先备份）：<code>sudo vim /etc/sysctl.conf</code><ul>
-<li>修改配置信息：<ul>
-<li>net.ipv4.ip_forward=1 #默认是注释掉的，要取消注释</li>
-</ul>
-</li>
-<li>刷新配置：<code>sudo sysctl -p</code></li>
-</ul>
-</li>
-<li>设置 iptables 转发：<ul>
-<li>追加 iptables 规则：<code>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
-<li>设置默认启动使用该规则：<code>sudo vim /etc/rc.local</code><ul>
-<li>在配置文件中添加：iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>添加登录账号（记得先备份）：<code>sudo vim /etc/ppp/chap-secrets</code><ul>
-<li>在文件尾巴添加如下配置信息：<ul>
-<li>mytest1 l2tpd 123456 <em> #该格式分别表示：登录名、登录协议、密码、该连接上的客户端用什么 IP（</em> 表示随机一个 IP）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>重启服务：<code>sudo service l2tpd restart</code></li>
-<li>Windows 连接 VPN 方法：<a href="http://www.cnblogs.com/yuzeren48/p/4123879.html" target="_blank" rel="external">http://www.cnblogs.com/yuzeren48/p/4123879.html</a></li>
-</ul>
-<h2 id="OpenVPN-安装"><a href="#OpenVPN-安装" class="headerlink" title="OpenVPN 安装"></a>OpenVPN 安装</h2><ul>
-<li>主要软件版本信息：<ul>
-<li>OpenVPN：2.3.11-1.el6</li>
-<li>EasyRsa：2.2.2-1.el6</li>
-</ul>
-</li>
-<li>检查系统环境是否支持：<code>cat /dev/net/tun</code>，如果出现：<code>cat: /dev/net/tun: File descriptor in bad state</code>，则表示支持。如果现实的是：<code>cat: /dev/net/tun: No such device</code>，则不支持</li>
-<li>需要先安装 EPEL 源，具体可以看这篇文章：<a href="https://github.com/judasn/Linux-Tutorial/blob/master/centos-settings/CentOS-Extra-Packages.md" target="_blank" rel="external">CentOS 源设置</a></li>
-<li>安装：<ul>
-<li>安装依赖包：<ul>
-<li><code>yum install -y gcc make rpm-build autoconf.noarch openssl openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig</code></li>
-</ul>
-</li>
-<li>安装 OpenVPN：<ul>
-<li><code>yum install -y openvpn easy-rsa</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="OpenVPN-服务配置"><a href="#OpenVPN-服务配置" class="headerlink" title="OpenVPN 服务配置"></a>OpenVPN 服务配置</h2><h3 id="禁用-selinux"><a href="#禁用-selinux" class="headerlink" title="禁用 selinux"></a>禁用 selinux</h3><ul>
-<li>编辑配置文件：<code>vim /etc/selinux/config</code></li>
-<li>把 <code>SELINUX=enforcing</code> 改为 <code>SELINUX=disabled</code></li>
-</ul>
-<h3 id="生成OpenVPN需要的服务器、客户端证书"><a href="#生成OpenVPN需要的服务器、客户端证书" class="headerlink" title="生成OpenVPN需要的服务器、客户端证书"></a>生成OpenVPN需要的服务器、客户端证书</h3><ul>
-<li><p>使用 easy-rsa 的脚本产生证书</p>
-</li>
-<li><p>修改vars文件</p>
-<ul>
-<li><code>cd /usr/share/easy-rsa/2.0</code>，后面关于证书的操作都是在这个目录下</li>
-<li><code>vim vars</code><ul>
-<li>需要修改的内容主要有下面这些信息（在文件 64 行）：注册信息，比如公司地址、公司名称、部门名称等。<ul>
-<li><code>export KEY_COUNTRY=&quot;CN&quot;</code></li>
-<li><code>export KEY_PROVINCE=&quot;GuangDong&quot;</code></li>
-<li><code>export KEY_CITY=&quot;GuangZhou&quot;</code></li>
-<li><code>export KEY_ORG=&quot;YouMeekOrganization&quot;</code></li>
-<li><code>export KEY_EMAIL=&quot;admin@youmeek.com&quot;</code></li>
-<li><code>export KEY_OU=&quot;YouMeekOrganizationalUnit&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>初始化环境变量</p>
-<ul>
-<li><code>source vars</code></li>
-</ul>
-</li>
-<li><p>清除keys目录下所有与证书相关的文件，下面步骤生成的证书和密钥都在 /usr/share/easy-rsa/2.0/keys 目录里</p>
-<ul>
-<li><code>./clean-all</code></li>
-</ul>
-</li>
-<li><p>生成根证书 ca.crt 和根密钥 ca.key（会有好几个提示，你都不需要输入什么内容，一路按回车即可，除非你懂原理）</p>
-<ul>
-<li><code>./build-ca</code></li>
-</ul>
-</li>
-<li><p>为服务端生成证书和密钥（也会有好几个提示，你都不需要输入什么内容，一路按回车即可，直到提示需要输入y/n时，输入y再按回车继续走）</p>
-<ul>
-<li>其中：server，这个名字别改，照着来，等下那些就可以直接使用。</li>
-<li><code>./build-key-server server</code></li>
-</ul>
-</li>
-<li><p>每一个登陆的VPN客户端需要有一个证书，每个证书在同一时刻只能供一个客户端连接，下面语句是建立2份demo，你可以只输入第一个即可。</p>
-</li>
-<li><p>为客户端生成证书和密钥（一路按回车，直到提示需要输入y/n时，输入y再按回车，一共两次）</p>
-<ul>
-<li>其中：client1，这个名字别改，照着来，等下那些就可以直接使用，除非你会。</li>
-<li><code>./build-key client1</code></li>
-<li><code>./build-key client2</code></li>
-</ul>
-</li>
-<li><p>创建迪菲·赫尔曼密钥，会在 keys 目录里面生成dh2048.pem文件（生成过程比较慢，在此期间不要去中断它，我这边花的时间是：2分钟）</p>
-<ul>
-<li><code>./build-dh</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="设置OpenVPN服务端配置文件"><a href="#设置OpenVPN服务端配置文件" class="headerlink" title="设置OpenVPN服务端配置文件"></a>设置OpenVPN服务端配置文件</h3><ul>
-<li>复制一份服务器端配置文件模板server.conf到/etc/openvpn/</li>
-<li><p>其中，我这边现在的版本是：2.3.11，所以我这边是填这个，你的不一定就跟我一样，所以你先到 doc 目录下，看下你具体是哪个版本，改下下面这句命令即可。</p>
-<ul>
-<li><code>cp /usr/share/doc/openvpn-2.3.11/sample/sample-config-files/server.conf /etc/openvpn/</code></li>
-</ul>
-</li>
-<li><p>编辑 server.conf，把下面的内容替换到已有的文件中，记得去掉后面的注释，我这样写只是为了方便解释对应的内容含义：</p>
-<ul>
-<li><code>vim /etc/openvpn/server.conf</code></li>
-</ul>
-</li>
-</ul>
-<pre><code class="bash">port 1194 # 端口一般我们不改
-proto udp # 默认使用udp，如果使用HTTP Proxy，改成tcp，必须使用tcp协议，还需要注意的是：需要与客户端配置保持一致，等下客户端配置会说道
-dev tun
-ca /usr/share/easy-rsa/2.0/keys/ca.crt # 这一行默认值为：ca ca.crt
-cert /usr/share/easy-rsa/2.0/keys/server.crt # 这一行默认值为：cert server.crt
-key /usr/share/easy-rsa/2.0/keys/server.key  # 这一行默认值为：key server.key
-dh /usr/share/easy-rsa/2.0/keys/dh2048.pem  # 这一行默认值为：dh dh2048.pem
-server 10.192.170.0 255.255.255.0  # 给客户的分配的局域网IP段，默认虚拟局域网网段，不要和实际的局域网冲突即可，这个10.192.170.0跟下面还有一个地方配置也有关联，需要注意
-ifconfig-pool-persist ipp.txt # 启用了ipp.txt作为客户端和virtual IP的对应表，以方便客户端重新连接可以获得同样的IP；
-keepalive 10 120
-comp-lzo
-persist-key
-persist-tun
-status openvpn-status.log  # OpenVPN的状态日志，默认为/etc/openvpn/openvpn-status.log
-log openvpn.log # OpenVPN的运行日志，默认为/etc/openvpn/openvpn.log 
-log-append openvpn.log
-verb 3
-
-push &quot;redirect-gateway def1 bypass-dhcp&quot;
-push &quot;dhcp-option DNS 8.8.8.8&quot;
-push &quot;dhcp-option DOMAIN-SEARCH ap-northeast-1.compute.internal&quot;
-push &quot;dhcp-option DOMAIN-SEARCH ec2.drawbrid.ge&quot;
-</code></pre>
-<h3 id="配置内核和防火墙，开启nat功能，启动服务"><a href="#配置内核和防火墙，开启nat功能，启动服务" class="headerlink" title="配置内核和防火墙，开启nat功能，启动服务"></a>配置内核和防火墙，开启nat功能，启动服务</h3><ul>
-<li>开启路由转发功能<ul>
-<li><code>sed -i &#39;/net.ipv4.ip_forward/s/0/1/&#39; /etc/sysctl.conf</code></li>
-<li>刷新配置：<code>sudo sysctl -p</code></li>
-</ul>
-</li>
-</ul>
-<p>辨别你的 VPS 是属于那种虚拟方式，主流有：Xen KVM OpenVZ，方法：</p>
-<ul>
-<li><p><code>sudo yum install -y virt-what</code>，virt-what是一个判断当前环境所使用的虚拟技术的脚本，常见的虚拟技术基本上都能正常识别出来</p>
-<ul>
-<li><code>sudo virt-what</code>，我这边 Vultr 输出的结果是：KVM</li>
-</ul>
-</li>
-<li><p>配置防火墙</p>
-<ul>
-<li><code>iptables -A INPUT -p udp --dport 1194 -j ACCEPT</code></li>
-<li><code>iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</code></li>
-</ul>
-</li>
-<li><p>设置IP转发，若你的 VPS 虚拟方案是：Xen 或 KVM的请输入：（eth0要根据具体的网卡标示来，可以通过ifconfig查看），其中：10.192.170.0/16 表示客户端连接上去后从这个区间中分配给客户端的IP地址</p>
-<ul>
-<li><code>iptables -t nat -A POSTROUTING -s 10.192.170.0/16 -o eth0 -j MASQUERADE</code></li>
-</ul>
-</li>
-<li><p>若你的 VPS 虚拟方案是：OpenVZ 的请输入：（45.32.90.22是你VPS的IP）</p>
-<ul>
-<li><code>iptables -t nat -A POSTROUTING -s 10.192.170.0/16 -j SNAT --to-source 45.32.90.22</code></li>
-</ul>
-</li>
-<li>保存防火墙配置<ul>
-<li><code>service iptables save</code></li>
-<li><code>service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="启动openvpn并设置为开机启动"><a href="#启动openvpn并设置为开机启动" class="headerlink" title="启动openvpn并设置为开机启动"></a>启动openvpn并设置为开机启动</h3><ul>
-<li><code>service openvpn start</code></li>
-<li><code>chkconfig openvpn on</code></li>
-</ul>
-<h3 id="OpenVPN客户端配置"><a href="#OpenVPN客户端配置" class="headerlink" title="OpenVPN客户端配置"></a>OpenVPN客户端配置</h3><p>下载 Windows 客户端：<br><a href="https://openvpn.net/index.php/download/community-downloads.html" target="_blank" rel="external">https://openvpn.net/index.php/download/community-downloads.html</a></p>
-<p>Mac 用户下载这个 tunnelblick（该地址需要开穿越）：<br><a href="http://code.google.com/p/tunnelblick/" target="_blank" rel="external">http://code.google.com/p/tunnelblick/</a></p>
-<ul>
-<li>从服务器上下载证书文件到本地：<ul>
-<li><code>/usr/share/easy-rsa/2.0/keys/ca.crt</code></li>
-<li><code>/usr/share/easy-rsa/2.0/keys/client1.crt</code></li>
-<li><code>/usr/share/easy-rsa/2.0/keys/client1.key</code></li>
-</ul>
-</li>
-</ul>
-<p>到你本地的电脑上（window电脑在安装好OpenVPN软件后可以把如上证书拷贝到如下文件夹里：C:\Program Files\OpenVPN\config ）</p>
-<p>从服务器找到这个文件：/usr/share/doc/openvpn-2.3.11/sample/sample-windows/sample.ovpn，下载到本地电脑这个目录下：C:\Program Files\OpenVPN\config<br>然后把这个文件改名字为：client1.ovpn 文件内如如下, 其他不用改只要把SERVER-IP 改成你服务器的 IP  </p>
-<pre><code class="bash">client        #这个client不是自定义名称 不能更改
-dev tun       #要与前面server.conf中的配置一致。
-proto udp              #要与前面server.conf中的配置一致。
-remote 45.32.90.22 1194    #将45.32.90.22替换为你VPS的IP，端口也与前面的server.conf中配置一致。
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-ca ca.crt              #具体名称以刚下载的为准
-cert client1.crt              #具体名称以刚下载的为准
-key client1.key              #具体名称以刚下载的为准
-comp-lzo
-verb 3
-</code></pre>
-<ul>
-<li>打开 OpenVPN 客户端，连接试试看。</li>
-</ul>
-<h2 id="VPN-资料"><a href="#VPN-资料" class="headerlink" title="VPN 资料"></a>VPN 资料</h2><ul>
-<li><a href="http://www.jikexueyuan.com/course/1692_2.html?ss=1" target="_blank" rel="external">http://www.jikexueyuan.com/course/1692_2.html?ss=1</a></li>
-<li><a href="http://gnailuy.com/linux/2011/07/04/pptp-vpn/" target="_blank" rel="external">http://gnailuy.com/linux/2011/07/04/pptp-vpn/</a></li>
-<li><a href="http://www.centoscn.com/CentosServer/test/2014/1120/4153.html" target="_blank" rel="external">http://www.centoscn.com/CentosServer/test/2014/1120/4153.html</a></li>
-<li><a href="https://linux.cn/article-3706-1.html" target="_blank" rel="external">https://linux.cn/article-3706-1.html</a></li>
-<li><a href="http://www.bkjia.com/yjs/1041400.html" target="_blank" rel="external">http://www.bkjia.com/yjs/1041400.html</a></li>
-<li><a href="http://blog.liujason.com/1663.html" target="_blank" rel="external">http://blog.liujason.com/1663.html</a></li>
-<li><a href="http://shit.name/openvpn-on-centos/" target="_blank" rel="external">http://shit.name/openvpn-on-centos/</a></li>
-<li><a href="http://kunsland.github.io/blogs/2015/03/22/vps-openvpn/" target="_blank" rel="external">http://kunsland.github.io/blogs/2015/03/22/vps-openvpn/</a></li>
-<li><a href="http://neolee.com/web/centos-openvz-vps-configuration-openvpn/" target="_blank" rel="external">http://neolee.com/web/centos-openvz-vps-configuration-openvpn/</a></li>
-<li><a href="http://www.jikexueyuan.com/course/1692_4.html?ss=2" target="_blank" rel="external">Freeradius 服务（用于账号认证管理的工具，可以扩展到VPN的账号管理）</a></li>
-</ul>
-
+        <h1 id="Iptables-介绍"><a href="#Iptables-介绍" class="headerlink" title="Iptables 介绍"></a>Iptables 介绍</h1><h2 id="前提说明"><a href="#前提说明" class="headerlink" title="前提说明"></a>前提说明</h2><p>iptables 的设置在 CentOS 和 Ubuntu 下有些细节不一样，Ubuntu 这里不讲，文章底下贴的资料有部分关于 Ubuntu 的，有需要的可以自己看。一般大家会用到 iptables 都是服务器，而一般服务器大家普遍是用 CentOS）</p>
+        
+          <a class="article-more-a" href="/2017/11/22/Iptables/#more">more >></a>
+        
       
 
       
@@ -748,11 +414,22 @@ verb 3
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/VPN/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Iptables/">展开全文 >></a>
         </p>
       
 
@@ -782,144 +459,33 @@ verb 3
 
 
   
-    <article id="post-Vim-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-centos-settings/Cpu-Info" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vim-安装和配置、优化"><a href="#Vim-安装和配置、优化" class="headerlink" title="Vim 安装和配置、优化"></a>Vim 安装和配置、优化</h1><h2 id="Vim-介绍"><a href="#Vim-介绍" class="headerlink" title="Vim 介绍"></a>Vim 介绍</h2><ul>
-<li>Vim 官网：<a href="http://www.vim.org/" target="_blank" rel="external">http://www.vim.org/</a></li>
+        <h2 id="CPU-信息分析"><a href="#CPU-信息分析" class="headerlink" title="CPU 信息分析"></a>CPU 信息分析</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
+<li>了解服务器的性能，以方便我们如何更好地对程序进行部署</li>
 </ul>
-<h2 id="Vim-安装"><a href="#Vim-安装" class="headerlink" title="Vim 安装"></a>Vim 安装</h2><ul>
-<li>CentOS：<code>sudo yum install -y vim</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y vim</code></li>
-<li>Windows GVim 下载：<a href="http://www.xiazaiba.com/html/3347.html" target="_blank" rel="external">http://www.xiazaiba.com/html/3347.html</a></li>
-</ul>
-<h2 id="Vim-配置（CentOS-环境）"><a href="#Vim-配置（CentOS-环境）" class="headerlink" title="Vim 配置（CentOS 环境）"></a>Vim 配置（CentOS 环境）</h2><ul>
-<li>编辑配置文件是：<code>sudo vim /etc/vimrc</code></li>
-</ul>
-<h2 id="Vim-基础快捷键"><a href="#Vim-基础快捷键" class="headerlink" title="Vim 基础快捷键"></a>Vim 基础快捷键</h2><ul>
-<li>注意<ul>
-<li>严格区分字母大小写</li>
-<li>含有 <code>Ctrl</code> 字眼都表示 Ctrl 键盘按钮</li>
-<li>特定符号需要配合 Shift 键，比如字母键盘区上面的数字区：!@#%%^&amp;*()</li>
-<li>要按出冒号键 <code>:</code> 也是需要 Shift 的</li>
+<h2 id="CPU-信息"><a href="#CPU-信息" class="headerlink" title="CPU 信息"></a>CPU 信息</h2><ul>
+<li>Demo CPU 型号：<a href="http://ark.intel.com/products/75789/Intel-Xeon-Processor-E5-2620-v2-15M-Cache-2_10-GHz" target="_blank" rel="external">Intel® Xeon® Processor E5-2620 v2(15M Cache, 2.10 GHz)</a></li>
+<li>该 CPU 显示的数据中有一项这个要注意：<code>Intel® Hyper-Threading Technology</code> 是 <code>Yes</code>。表示该 CPU 支持超线程</li>
+<li><code>cat /proc/cpuinfo</code>，查看 CPU 总体信息</li>
+<li><code>grep &#39;physical id&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看物理 CPU 个数<ul>
+<li>结果：2</li>
+<li>物理 CPU：物理 CPU 也就是机器外面就能看到的一个个 CPU，每个物理 CPU 还带有单独的风扇</li>
 </ul>
 </li>
-<li>移动<ul>
-<li><code>j</code>，下</li>
-<li><code>k</code>，上</li>
-<li><code>h</code>，左</li>
-<li><code>l</code>，右</li>
-<li><code>v</code>，按 v 之后按方向键可以选中你要选中的文字</li>
-<li><code>gg</code>，跳到第 1 行</li>
-<li><code>G</code>，跳到第最后行</li>
-<li><code>16G</code> 或 <code>:16</code>，跳到第 16 行</li>
-<li><code>$</code>，到本行 <strong>行尾</strong></li>
-<li><code>0</code>，到本行 <strong>行头</strong></li>
-<li><code>w</code>，到下一个单词的 <strong>开头</strong></li>
-<li><code>e</code>，到下一个单词的 <strong>结尾</strong></li>
-<li><code>Ctrl + u</code>，向文件 <strong>首翻</strong> 半屏</li>
-<li><code>Ctrl + d</code>，向文件 <strong>尾翻</strong> 半屏</li>
-<li><code>Ctrl + f</code>，向文件 <strong>尾翻</strong> 一屏</li>
-<li><code>Ctrl + b</code>，向文件 <strong>首翻</strong> 一屏 </li>
-<li><code>*</code>，匹配光标当前所在的单词，移动光标到 <strong>下一个</strong> 匹配单词</li>
-<li><code>#</code>，匹配光标当前所在的单词，移动光标到 <strong>上一个</strong> 匹配单词</li>
-<li><code>^</code>，到本行第一个单词头</li>
-<li><code>g_</code>，到本行最后一个单词尾巴</li>
-<li><code>%</code>，匹配括号移动，包括 <strong>(、{、[</strong></li>
+<li><code>grep &#39;core id&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看每个物理 CPU 的核心数量<ul>
+<li>结果：6，因为每个物理 CPU 是 6，所有 2 个物理 CPU 的总核心数量应该是：12</li>
+<li>核心数：一个核心就是一个物理线程，英特尔有个超线程技术可以把一个物理线程模拟出两个线程来用，充分发挥 CPU 性能，意思是一个核心可以有多个线程。</li>
 </ul>
 </li>
-<li>插入<ul>
-<li><code>I</code>，在当前 <strong>行首</strong> 插入</li>
-<li><code>A</code>，在当前 <strong>行尾</strong> 插入</li>
-<li><code>i</code>，在当前字符的 <strong>左边</strong> 插入</li>
-<li><code>a</code>，在当前字符的 <strong>右边</strong> 插入</li>
-<li><code>o</code>，在当前行 <strong>下面</strong> 插入一个新行</li>
-<li><code>O</code>，在当前行 <strong>上面</strong> 插入一个新行</li>
+<li><code>grep &#39;processor&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看 CPU 总的线程数，一般也叫做：逻辑 CPU 数量<ul>
+<li>结果：24，正常情况下：CPU 的总核心数量 == CPU 线程数，但是如果该 CPU 支持超线程，那结果是：CPU 的总核心数量 X 2 == CPU 线程数</li>
+<li>线程数：线程数是一种逻辑的概念，简单地说，就是模拟出的 CPU 核心数。比如，可以通过一个 CPU 核心数模拟出 2 线程的 CPU，也就是说，这个单核心的 CPU 被模拟成了一个类似双核心 CPU 的功能。</li>
 </ul>
 </li>
-<li>编辑<ul>
-<li>删除<ul>
-<li><code>x</code>，删除 <strong>光标后</strong> 的 1 个字符</li>
-<li><code>2x</code>，删除 <strong>光标后</strong> 的 2 个字符</li>
-<li><code>X</code>，删除 <strong>光标前</strong> 的 1 个字符</li>
-<li><code>2X</code>，删除 <strong>光标前</strong> 的 2 个字符</li>
-<li><code>dd</code>，删除当前行</li>
-<li><code>cc</code>，删除当前行后进入 insert 模式</li>
-<li><code>dw</code>，删除当前光标下的单词/空格</li>
-<li><code>d$</code>，删除光标至 <strong>行尾</strong> 所有字符</li>
-<li><code>dG</code>，删除光标至 <strong>文件尾</strong> 所有字符</li>
-<li><code>3dd</code>，从当前光标开始，删掉 3 行</li>
-</ul>
-</li>
-<li>复制<ul>
-<li><code>y</code>，复制光标所选字符</li>
-<li><code>yw</code>，复制光标后单词</li>
-<li><code>yy</code>，复制当前行</li>
-<li><code>4yy</code>，复制当前行及下面 4 行</li>
-<li><code>y$</code>，复制光标位置至 <strong>行尾</strong> 的内容</li>
-<li><code>y^</code>，复制光标位置至 <strong>行首</strong> 的内容</li>
-</ul>
-</li>
-<li>粘贴<ul>
-<li><code>p</code>，将粘贴板中内容复制到 <strong>光标之后</strong></li>
-<li><code>P</code>，将粘贴板中内容复制到 <strong>光标之前</strong></li>
-</ul>
-</li>
-<li>其他<ul>
-<li><code>ddp</code>，交换当前光标所在行和下一行的位置</li>
-<li><code>u</code>，撤销</li>
-<li><code>:wq</code>，退出并 <strong>保存</strong></li>
-<li><code>:q!</code>，退出并 <strong>不保存</strong></li>
-<li><code>Ctrl + v</code>，进入 Vim 列编辑</li>
-<li><code>guu</code>，把当前行的字母全部转换成 <strong>小写</strong></li>
-<li><code>gUU</code>，把当前行的字母全部转换成 <strong>大写</strong></li>
-<li><code>g~~</code>，把当前行的字母是大写的转换成小写，是小写的转换成大写</li>
-<li><code>:saveas /opt/setups/text.txt</code>，另存到 /opt/setups/text.txt</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>搜索<ul>
-<li><code>/YouMeek</code>，从光标开始处向文件尾搜索 YouMeek 字符，按 <code>n</code> 继续向下找，按 <code>N</code> 继续向上找</li>
-<li><code>?YouMeek</code>，从光标开始处向文件首搜索 YouMeek 字符，按 <code>n</code> 继续向下找，按 <code>N</code> 继续向上找</li>
-</ul>
-</li>
-<li>替换<ul>
-<li><code>:%s/YouMeek/Judasn/g</code>，把文件中所有 YouMeek 替换为：Judasn</li>
-<li><code>:%s/YouMeek/Judasn/</code>，把文件中所有行中第一个 YouMeek 替换为：Judasn</li>
-<li><code>:s/YouMeek/Judasn/</code>，把光标当前行第一个 YouMeek 替换为 Judasn</li>
-<li><code>:s/YouMeek/Judasn/g</code>，把光标当前行所有 YouMeek 替换为 Judasn</li>
-<li><code>:s#YouMeek/#Judasn/#</code>，除了使用斜杠作为分隔符之外，还可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符，该命令表示：把光标当前行第一个 YouMeek/ 替换为 Judasn/</li>
-<li><code>:10,31s/YouMeek/Judasng</code>，把第 10 行到 31 行之间所有 YouMeek 替换为 Judasn</li>
-</ul>
-</li>
-</ul>
-<h2 id="Vim-的特殊复制、黏贴"><a href="#Vim-的特殊复制、黏贴" class="headerlink" title="Vim 的特殊复制、黏贴"></a>Vim 的特殊复制、黏贴</h2><ul>
-<li>Vim 提供了 12 个剪贴板，分别是：<code>0,1,2,3,4,5,6,7,8,9,a,&quot;</code>，默认采用的是 <code>&quot;</code>，也就是双引号，可能你初读感觉很奇怪。你可以用 Vim 编辑某个文件，然后输入：<code>:reg</code>。你可以看到如下内容：<ul>
-<li><img src="images/Vim-Cut-And-Paste-a-1.png" alt="vim"></li>
-</ul>
-</li>
-<li>复制到某个剪切板的命令：<code>&quot;7y</code>，表示使用 7 号剪切板。</li>
-<li>黏贴某个剪切板内容：<code>&quot;7p</code>，表示使用 7 号剪切板内容进行黏贴</li>
-</ul>
-<h2 id="Vim-配置"><a href="#Vim-配置" class="headerlink" title="Vim 配置"></a>Vim 配置</h2><ul>
-<li>我个人本地不使用 Vim 的，基本上都是在操作服务器的时候使用，所以这里推荐这个配置文件<ul>
-<li><a href="https://github.com/wklken/vim-for-server" target="_blank" rel="external">vim-for-server</a></li>
-<li>在假设你已经备份好你的 Vim 配置文件后，使用该配置文件：<code>curl https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc &gt; ~/.vimrc</code></li>
-<li>效果如下：<ul>
-<li><img src="https://raw.githubusercontent.com/wklken/gallery/master/vim/vim-for-server.png" alt="vim-for-server"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://blogread.cn/it/article/1010?f=sa" target="_blank" rel="external">vim几个小技巧（批量替换，列编辑）</a></li>
-<li><a href="http://www.2maomao.com/blog/wp-content/uploads/vim_tips.txt" target="_blank" rel="external">最佳vim技巧</a></li>
-<li><a href="http://coolshell.cn/articles/5426.html" target="_blank" rel="external">简明 Vim 练级攻略</a></li>
-<li><a href="http://blog.csdn.net/wangchong0/article/details/6801956" target="_blank" rel="external">vim 批量查找替换</a></li>
 </ul>
 
       
@@ -933,7 +499,7 @@ verb 3
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Vim-Install-And-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/centos-settings/Cpu-Info/">展开全文 >></a>
         </p>
       
 
@@ -963,51 +529,49 @@ verb 3
 
 
   
-    <article id="post-Crontab" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-jvm-tool" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/17/jvm-tool/">深入理解Java虚拟机-学习</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/17/jvm-tool/" class="archive-article-date">
+  	<time datetime="2017-11-17T06:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Crontab-介绍"><a href="#Crontab-介绍" class="headerlink" title="Crontab 介绍"></a>Crontab 介绍</h1><h2 id="Crontab-安装"><a href="#Crontab-安装" class="headerlink" title="Crontab 安装"></a>Crontab 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep cron</code></li>
-<li>Ubuntu：<code>dpkg -l | grep cron</code></li>
+        <h1 id="jvm调优工具"><a href="#jvm调优工具" class="headerlink" title="jvm调优工具"></a>jvm调优工具</h1><h2 id="jdk的命令行工具"><a href="#jdk的命令行工具" class="headerlink" title="jdk的命令行工具"></a>jdk的命令行工具</h2><ol>
+<li>jps：虚拟机进程状况工具（jps -l）</li>
+<li>jstat：虚拟机统计信息监视工具（jstat -gcutil VMID，stat -gccapacity VMID）  （Local Virtual Machine Identifier,LVMID）  </li>
+<li>jinfo：Java配置信息工具<ul>
+<li>jinfo -flag +PrintGCDetails VMID</li>
+<li>jinfo -flag +PrintGC VMID</li>
+<li>jinfo -flag +PrintGCTimeStamps VMID<br>以上就可以在一个正在运行的JVM中动态开启GC日志功能。</li>
 </ul>
 </li>
-<li><p>安装（一般系统是集成的）：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum install -y vixie-cron crontabs</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y cron</code></li>
+<li>jmap：Java内存映像工具<ul>
+<li>jmap -heap VMID 显示Java堆详细信息，例如使用哪种回收器、参数配置、分代状况等。</li>
 </ul>
 </li>
-</ul>
-<h2 id="Crontab-服务器配置文件常用参数"><a href="#Crontab-服务器配置文件常用参数" class="headerlink" title="Crontab 服务器配置文件常用参数"></a>Crontab 服务器配置文件常用参数</h2><ul>
-<li>配置文件介绍（记得先备份）：<code>sudo vim /etc/crontab</code><ul>
-<li>该配置格式解释：<ul>
-<li><img src="images/Crontab-a-1.jpg" alt="Crontab 服务器配置文件常用参数"></li>
+<li>jhat：虚拟机堆转储快照分析工具</li>
+<li>jstack：Java堆栈跟踪工具<ul>
+<li>jstack -l VMID</li>
 </ul>
 </li>
-<li>常用例子介绍：<ul>
-<li>30 21 <em> </em> * service httpd restart         #每晚的 21:30 重启 apache</li>
-<li>45 4 1,10,22 <em> </em> service httpd restart    #每月的 1、10、22 日的 4:45 重启 apache</li>
-<li>45 4 1-10 <em> </em> service httpd restart       #每月的 1 到 10 日的 4:45 重启 apache</li>
-<li><em>/2 </em> <em> </em> * service httpd restart         #每隔两分钟重启 apache</li>
-<li>1-59/2 <em> </em> <em> </em> service httpd restart      #每隔两分钟重启 apache（这个比较特殊：1-59/2 这个表示过掉0分，从 1 分开始算，每隔两分执行，所以 1 分执行了，3 分执行了，5 分执行了….都是奇数进行执行。默认的 */2 都是偶数执行。）</li>
-<li>0 23-7/2 <em> </em> * service httpd restart      #晚上 11 点到早上 7 点之间，每隔 2 个小时重启 apache</li>
-<li>0-59/30 18-23 <em> </em> * service httpd restart #每天 18:00 到 23：00 之间，每隔 30 分钟重启 apache（方法一）</li>
-<li>0,30 18-23 <em> </em> * service httpd restart    #每天 18:00 到 23：00 之间，每隔 30 分钟重启 apache（方法二）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>执行记录日志：<code>cd /var/log/cron</code></li>
-</ul>
-<h2 id="Crontab-资料"><a href="#Crontab-资料" class="headerlink" title="Crontab 资料"></a>Crontab 资料</h2><ul>
-<li><a href="http://www.imooc.com/video/4498" target="_blank" rel="external">http://www.imooc.com/video/4498</a> </li>
-<li><a href="http://www.centoscn.com/image-text/config/2015/0901/6096.html" target="_blank" rel="external">http://www.centoscn.com/image-text/config/2015/0901/6096.html</a> </li>
-</ul>
-
+</ol>
+        
+          <a class="article-more-a" href="/2017/11/17/jvm-tool/#more">more >></a>
+        
       
 
       
@@ -1015,11 +579,22 @@ verb 3
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Crontab/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/17/jvm-tool/">展开全文 >></a>
         </p>
       
 
@@ -1049,120 +624,33 @@ verb 3
 
 
   
-    <article id="post-Was-Hacked" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-happens-before" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/03/happens-before/">Java内存模型之happens-before</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/03/happens-before/" class="archive-article-date">
+  	<time datetime="2017-11-03T05:28:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="黑客入侵检查"><a href="#黑客入侵检查" class="headerlink" title="黑客入侵检查"></a>黑客入侵检查</h1><hr>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>扫描木马工具：<code>clamAV</code><ul>
-<li>官网：<a href="http://pkgs.repoforge.org/clamav/" target="_blank" rel="external">http://pkgs.repoforge.org/clamav/</a></li>
-</ul>
-</li>
-<li>CentOS 安装：<code>yum install -y clamav*</code></li>
-<li>启动 clamAV 服务：<code>service clamd restart</code> </li>
-<li>更新病毒库：<code>freshclam</code>  </li>
-<li>扫描方法：<ul>
-<li>扫描 /etc 目录，并把扫描结果放在 /root 目录下：<code>clamscan -r /etc --max-dir-recursion=5 -l /root/etcclamav.log</code></li>
-<li>扫描 /bin 目录，并把扫描结果放在 /root 目录下：<code>clamscan -r /bin --max-dir-recursion=5 -l /root/binclamav.log</code></li>
-<li>扫描 /usr 目录，并把扫描结果放在 /root 目录下：<code>clamscan -r /usr --max-dir-recursion=5 -l /root/usrclamav.log</code></li>
-</ul>
-</li>
-<li>如果日志有类似内容，表示有木马病毒：<ul>
-<li><code>/usr/bin/.sshd: Linux.Trojan.Agent FOUND</code></li>
-<li><code>/usr/sbin/ss: Linux.Trojan.Agent FOUND</code></li>
-<li><code>/usr/sbin/lsof: Linux.Trojan.Agent FOUND</code></li>
-</ul>
-</li>
-<li>看下当前有多少登录者：<code>who</code></li>
-<li>看下最近有哪些登录者：<code>last</code></li>
-<li>查看最近尝试登录的账号信息：<code>grep &quot;sshd&quot; /var/log/secure</code><ul>
-<li>很多这种信息就表示有人在不断地尝试用 root 登录：<code>Failed password for root from 222.186.56.168 port 4080 ssh2</code></li>
-</ul>
-</li>
-<li>查看最近登录成功的账号信息：<code>grep &quot;Accepted&quot; /var/log/secure</code>，可以看到：pop3, ssh, telnet, ftp 类型</li>
-<li>看下查看系统资源占用有无异常：<code>top</code></li>
-<li>看下所有进程：<code>ps aux</code></li>
-<li>查看当前系统登录者有哪些，及其登录记录：<code>last | more</code></li>
-<li>把最近执行的所有命令输出到一个文件，然后下载下来细细研究：<code>history &gt;&gt; /opt/test.txt</code></li>
-<li>查看当前系统所有用户有哪些：<code>cat /etc/passwd |awk -F \: &#39;{print $1}&#39;</code><ul>
-<li>更多详细可以用：<code>cat /etc/passwd</code></li>
-</ul>
-</li>
-<li>查看开放的端口，比如常用的80,22,8009，后面的箭头表示端口对应占用的程序：<code>netstat -lnp</code></li>
-<li>检查某个端口的具体信息：<code>lsof -i :18954</code></li>
-<li>检查启动项：<code>chkconfig</code></li>
-<li>检查定时器：<code>cat /etc/crontab</code></li>
-<li>检查其他系统重要文件：<ul>
-<li><code>cat /etc/rc.local</code></li>
-<li><code>cd /etc/init.d;ll</code></li>
-</ul>
-</li>
-<li>检查文件：<ul>
-<li><code>find / -uid 0 –perm -4000 –print</code></li>
-<li><code>find / -size +10000k –print</code></li>
-<li><code>find / -name &quot;…&quot; –print</code></li>
-<li><code>find / -name &quot;.. &quot; –print</code></li>
-<li><code>find / -name &quot;. &quot; –print</code></li>
-<li><code>find / -name &quot; &quot; –print</code></li>
-</ul>
-</li>
-<li>下载 iftop 分析流量，查看是否被黑客当做肉鸡使用</li>
-<li>安装 iftop<ul>
-<li>官网：<a href="http://www.ex-parrot.com/~pdw/iftop/" target="_blank" rel="external">http://www.ex-parrot.com/~pdw/iftop/</a></li>
-<li>使用文章：<a href="https://linux.cn/article-1843-1.html" target="_blank" rel="external">https://linux.cn/article-1843-1.html</a></li>
-<li>没有安装第三方源的情况：<ul>
-<li>安装依赖包：<code>yum install -y flex byacc  libpcap ncurses ncurses-devel libpcap-devel</code></li>
-<li>下载源码包：<code>wget http://www.ex-parrot.com/pdw/iftop/download/iftop-0.17.tar.gz</code></li>
-<li>解压：<code>tar zxf iftop-0.17.tar.gz</code></li>
-<li>进入解压目录：<code>cd iftop-0.17/</code></li>
-<li>编译：<code>./configure</code></li>
-<li>安装：<code>make &amp;&amp; make install</code></li>
-</ul>
-</li>
-<li>有第三方源的情况（eg：EPEL）：<ul>
-<li><code>yum install -y iftop</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>运行：<code>iftop</code><ul>
-<li>显示端口与 IP 信息：<code>iftop -nP</code></li>
-</ul>
-</li>
-</ul>
-<pre><code class="nginx">中间部分：外部连接列表，即记录了哪些ip正在和本机的网络连接
-
-右边部分：实时参数分别是该访问 ip 连接到本机 2 秒，10 秒和 40 秒的平均流量
-
-=&gt; 代表发送数据，&lt;= 代表接收数据
-
-底部会显示一些全局的统计数据，peek 是指峰值情况，cumm 是从 iftop 运行至今的累计情况，而 rates 表示最近 2 秒、10 秒、40 秒内总共接收或者发送的平均网络流量。
-
-TX:（发送流量）  cumm:   143MB   peak:   10.5Mb    rates:   1.03Mb  1.54Mb  2.10Mb
-RX:（接收流量）          12.7GB          228Mb              189Mb   191Mb   183Mb
-TOTAL:（总的流量）       12.9GB          229Mb              190Mb   193Mb   185MbW
-</code></pre>
-<ul>
-<li>禁用 root 账号登录：<code>vim /etc/ssh/sshd_config</code><ul>
-<li>把 PermitRootLogin 属性 yes 改为 no</li>
-</ul>
-</li>
-<li>如果安全度要更高，可以考虑禁用口令登录，采用私钥/公钥方式：<code>vim /etc/ssh/sshd_config</code><ul>
-<li>设置属性：PasswordAuthentication 为 no</li>
-</ul>
-</li>
-<li>如果还要限制指定 IP 登录，可以考虑编辑：hosts.allow 和 hosts.deny 两个文件</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.jianshu.com/p/97b9dc47b88c" target="_blank" rel="external">http://www.jianshu.com/p/97b9dc47b88c</a> </li>
-<li><a href="http://monklof.com/post/10/" target="_blank" rel="external">http://monklof.com/post/10/</a> </li>
-<li><a href="http://yafeilee.me/blogs/54be6e876c69341430050000" target="_blank" rel="external">http://yafeilee.me/blogs/54be6e876c69341430050000</a> </li>
-<li><a href="http://coolnull.com/4174.html" target="_blank" rel="external">http://coolnull.com/4174.html</a> </li>
-<li><a href="http://www.oicqzone.com/pc/2014110420118.html" target="_blank" rel="external">http://www.oicqzone.com/pc/2014110420118.html</a> </li>
-</ul>
-
+        <h1 id="Java内存模型之happens-before"><a href="#Java内存模型之happens-before" class="headerlink" title="Java内存模型之happens-before"></a>Java内存模型之happens-before</h1><p>从JDK 5 开始，JMM就使用happens-before(先行发生原则)的概念来阐述多线程之间的内存可见性。</p>
+<p><strong>在JMM中，如果一个操作执行的结果需要对另一个操作可见，那么这两个操作之间必须存在happens-before关系。</strong></p>
+<p>happens-before原则定义如下：</p>
+        
+          <a class="article-more-a" href="/2017/11/03/happens-before/#more">more >></a>
+        
       
 
       
@@ -1170,11 +658,26 @@ TOTAL:（总的流量）       12.9GB          229Mb              190Mb   193Mb 
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java内存模型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Was-Hacked/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/03/happens-before/">展开全文 >></a>
         </p>
       
 
@@ -1204,127 +707,31 @@ TOTAL:（总的流量）       12.9GB          229Mb              190Mb   193Mb 
 
 
   
-    <article id="post-Zsh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JVM-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/01/JVM-1/">Java内存模型看并发（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/01/JVM-1/" class="archive-article-date">
+  	<time datetime="2017-11-01T06:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Zsh-入门"><a href="#Zsh-入门" class="headerlink" title="Zsh 入门"></a>Zsh 入门</h1><h2 id="本文前提"><a href="#本文前提" class="headerlink" title="本文前提"></a>本文前提</h2><ul>
-<li>CentOS 6.7 64 bit</li>
-<li>root 用户</li>
-</ul>
-<h2 id="Zsh-介绍"><a href="#Zsh-介绍" class="headerlink" title="Zsh 介绍"></a>Zsh 介绍</h2><ul>
-<li>Zsh 兼容 Bash，据传说 99% 的 Bash 操作 和 Zsh 是相同的</li>
-<li>Zsh 官网：<a href="http://www.zsh.org/" target="_blank" rel="external">http://www.zsh.org/</a></li>
-<li>先看下你的 CentOS 支持哪些 shell：<code>cat /etc/shells</code>，正常结果应该是这样的：</li>
-</ul>
-<pre><code class="bash">/bin/sh
-/bin/bash
-/sbin/nologin
-/bin/dash
-/bin/tcsh
-/bin/csh
-</code></pre>
-<ul>
-<li>默认 CentOS / Ubuntu / Mac 系统用的是 Bash，倒也不是说 Bash 不好，而是说我们有更好的选择。</li>
-</ul>
-<h2 id="Zsh-安装"><a href="#Zsh-安装" class="headerlink" title="Zsh 安装"></a>Zsh 安装</h2><ul>
-<li>CentOS 安装：<code>sudo yum install -y zsh</code></li>
-<li>Ubuntu 安装：<code>sudo apt-get install -y zsh</code></li>
-<li>在检查下系统的 shell：<code>cat /etc/shells</code>，你会发现多了一个：<code>/bin/zsh</code></li>
-</ul>
-<h2 id="使用-Zsh-扩展集合：oh-my-zsh"><a href="#使用-Zsh-扩展集合：oh-my-zsh" class="headerlink" title="使用 Zsh 扩展集合：oh-my-zsh"></a>使用 Zsh 扩展集合：oh-my-zsh</h2><ul>
-<li>oh-my-zsh 帮我们整理了一些常用的 Zsh 扩展功能和主题：<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a></li>
-<li>我们无需自己去捣搞 Zsh，直接用 oh-my-zsh 就足够了，如果你想继续深造的话那再去弄。</li>
-<li>先安装 git：<code>sudo yum install -y git</code></li>
-<li>安装 oh-my-zsh：<code>wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh</code></li>
-<li>整个过程效果如下图：<ul>
-<li><img src="images/Zsh-a-1.jpg" alt="oh-my-zsh 安装"></li>
-</ul>
-</li>
-<li>在以 root 用户为前提下，oh-my-zsh 的安装目录：<strong>/root/.oh-my-zsh</strong></li>
-<li>在以 root 用户为前提下，Zsh 的配置文件位置：<strong>/root/.zshrc</strong></li>
-<li>为 root 用户设置 zsh 为系统默认 shell：<code>chsh -s /bin/zsh root</code></li>
-<li>如果你要重新恢复到 bash：<code>chsh -s /bin/bash root</code></li>
-<li>现在你关掉终端或是重新连上 shell，现在开头是一个箭头了，如下图：<ul>
-<li><img src="images/Zsh-b-1.jpg" alt="oh-my-zsh 安装"></li>
-</ul>
-</li>
-</ul>
-<h2 id="Zsh-配置"><a href="#Zsh-配置" class="headerlink" title="Zsh 配置"></a>Zsh 配置</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ul>
-<li>启用 oh-my-zsh 中自带的插件。</li>
-<li>oh-my-zsh 的插件列表介绍（太长了，用源码不精准地统计下有 149 个）：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></li>
-<li>我们看下安装 oh-my-zsh 的时候自带有多少个插件：<code>ls -l /root/.oh-my-zsh/plugins |grep &quot;^d&quot;|wc -l</code>，我这边得到的结果是：211</li>
-<li>编辑配置文件：<code>vim /root/.zshrc</code>，找到下图的地方，怎么安装，原作者注释写得很清楚了，别装太多了，默认 git 是安装的。<ul>
-<li><img src="images/Zsh-c-1.jpg" alt="oh-my-zsh 安装"></li>
-</ul>
-</li>
-<li>插件推荐：<ul>
-<li><code>wd</code><ul>
-<li>简单地讲就是给指定目录映射一个全局的名字，以后方便直接跳转到这个目录，比如：</li>
-<li>编辑配置文件，添加上 wd 的名字：<code>vim /root/.zshrc</code></li>
-<li>我常去目录：<strong>/opt/setups</strong>，每次进入该目录下都需要这样：<code>cd /opt/setups</code></li>
-<li>现在用 wd 给他映射一个快捷方式：<code>cd /opt/setups ; wd add setups</code></li>
-<li>以后我在任何目录下只要运行：<code>wd setups</code> 就自动跑到 /opt/setups 目录下了</li>
-<li>插件官网：<a href="https://github.com/mfaerevaag/wd" target="_blank" rel="external">https://github.com/mfaerevaag/wd</a></li>
-</ul>
-</li>
-<li><code>autojump</code><ul>
-<li>这个插件会记录你常去的那些目录，然后做一下权重记录，你可以用这个命令看到你的习惯：<code>j --stat</code>，如果这个里面有你的记录，那你就只要敲最后一个文件夹名字即可进入，比如我个人习惯的 program：<code>j program</code>，就可以直接到：<code>/usr/program</code></li>
-<li>插件官网：<a href="https://github.com/wting/autojump" target="_blank" rel="external">https://github.com/wting/autojump</a></li>
-<li>官网插件下载地址：<a href="https://github.com/wting/autojump/downloads" target="_blank" rel="external">https://github.com/wting/autojump/downloads</a></li>
-<li>插件下载：<code>wget https://github.com/downloads/wting/autojump/autojump_v21.1.2.tar.gz</code></li>
-<li>解压：<code>tar zxvf autojump_v21.1.2.tar.gz</code></li>
-<li>进入解压后目录并安装：<code>cd autojump_v21.1.2/ ; ./install.sh</code></li>
-<li>再执行下这个：<code>source /etc/profile.d/autojump.sh</code></li>
-<li>编辑配置文件，添加上 autojump 的名字：<code>vim /root/.zshrc</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ul>
-<li>很多人喜欢捣搞这个 ╮(￣▽￣)╭</li>
-<li>捣搞主题和插件思路一样</li>
-<li>oh-my-zsh 的主题列表介绍（还是太长了）：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</a></li>
-<li>我们看下安装 oh-my-zsh 的时候，自带有多少个：<code>ls -l /root/.oh-my-zsh/themes |grep &quot;^-&quot;|wc -l</code>，我这边得到的结果是：140</li>
-<li>我个人品味地推荐的是（排名有先后）：<ul>
-<li><code>ys</code></li>
-<li><code>agnoster</code></li>
-<li><code>avit</code></li>
-<li><code>blinks</code></li>
-</ul>
-</li>
-<li>编辑配置文件：<code>vim /root/.zshrc</code>，找到下图的地方，怎么安装，原作者注释写得很清楚了，如果你没特别的喜欢那就选择随机吧。<ul>
-<li><img src="images/Zsh-d-1.jpg" alt="oh-my-zsh 安装"></li>
-</ul>
-</li>
-<li>配置好新主题需要重新连接 shell 才能看到效果</li>
-</ul>
-<h2 id="一些人性化功能"><a href="#一些人性化功能" class="headerlink" title="一些人性化功能"></a>一些人性化功能</h2><ul>
-<li>呃，这个其实可以不用讲的，你自己用的时候你自己会发现的，各种便捷，特别是用 Tab 多的人一定会有各种惊喜的。</li>
-</ul>
-<h2 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h2><ul>
-<li>我们现在增加系统变量在：/etc/profile 后，输入命令：source /etc/profile 之后，重启服务器发现刚刚的系统变量现在没效果。<ul>
-<li>解决办法：<code>vim ~/.zshrc</code>，在该配置文件里面增加一行：<code>source /etc/profile</code>，然后刷新 zsh 的配置：<code>source ~/.zshrc</code>。</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://macshuo.com/?p=676" target="_blank" rel="external">http://macshuo.com/?p=676</a></li>
-<li><a href="https://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/zsh.html" target="_blank" rel="external">https://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/zsh.html</a></li>
-<li><a href="http://hackerxu.com/2014/11/19/ZSH.html" target="_blank" rel="external">http://hackerxu.com/2014/11/19/ZSH.html</a></li>
-<li><a href="https://blog.phpgao.com/oh-my-zsh.html" target="_blank" rel="external">https://blog.phpgao.com/oh-my-zsh.html</a></li>
-<li><a href="http://www.bkjia.com/Linuxjc/1033947.html" target="_blank" rel="external">http://www.bkjia.com/Linuxjc/1033947.html</a></li>
-<li><a href="http://swiftcafe.io/2015/10/31/cafe-time-omz/" target="_blank" rel="external">http://swiftcafe.io/2015/10/31/cafe-time-omz/</a></li>
-<li><a href="http://swiftcafe.io/2015/12/04/omz-plugin/" target="_blank" rel="external">http://swiftcafe.io/2015/12/04/omz-plugin/</a></li>
-<li><a href="http://www.hackbase.com/article-206940-1.html" target="_blank" rel="external">http://www.hackbase.com/article-206940-1.html</a></li>
-<li><a href="http://hahack.com/wiki/shell-zsh.html" target="_blank" rel="external">http://hahack.com/wiki/shell-zsh.html</a></li>
-<li><a href="http://blog.jobbole.com/86820/" target="_blank" rel="external">http://blog.jobbole.com/86820/</a></li>
-<li><a href="http://uecss.com/zsh-brew-autojump-plugins-shell-for-mac.html" target="_blank" rel="external">http://uecss.com/zsh-brew-autojump-plugins-shell-for-mac.html</a></li>
-<li><a href="http://www.cnblogs.com/westfly/p/3283525.html" target="_blank" rel="external">http://www.cnblogs.com/westfly/p/3283525.html</a></li>
-</ul>
-
+        <h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><p>所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？</p>
+        
+          <a class="article-more-a" href="/2017/11/01/JVM-1/#more">more >></a>
+        
       
 
       
@@ -1332,11 +739,26 @@ TOTAL:（总的流量）       12.9GB          229Mb              190Mb   193Mb 
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">J.U.C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">单例</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Zsh/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/01/JVM-1/">展开全文 >></a>
         </p>
       
 
@@ -1368,7 +790,7 @@ TOTAL:（总的流量）       12.9GB          229Mb              190Mb   193Mb 
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -1474,6 +896,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1534,7 +960,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1546,34 +972,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -1582,15 +980,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1606,11 +1012,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

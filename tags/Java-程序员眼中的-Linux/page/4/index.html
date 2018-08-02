@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>zeroto的博客</title>
+  <title>Tag: Java 程序员眼中的 Linux | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="zeroto的博客">
-<meta property="og:url" content="//zeroto.tech/page/9/index.html">
+<meta property="og:url" content="//zeroto.tech/tags/Java-程序员眼中的-Linux/page/4/index.html">
 <meta property="og:site_name" content="zeroto的博客">
 <meta property="og:description" content="前端不太擅长，有志于研究移动端开发及后端开发。此为博客一枚。">
 <meta name="twitter:card" content="summary">
@@ -165,1437 +165,326 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-FTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-    <div class="article-entry" itemprop="articleBody">
+    
       
-        <h1 id="FTP（File-Transfer-Protocol）介绍"><a href="#FTP（File-Transfer-Protocol）介绍" class="headerlink" title="FTP（File Transfer Protocol）介绍"></a>FTP（File Transfer Protocol）介绍</h1><h2 id="FTP-安装"><a href="#FTP-安装" class="headerlink" title="FTP 安装"></a>FTP 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep vsftpd</code></li>
-<li>Ubuntu：<code>dpkg -l | grep vsftpd</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum install -y vsftpd</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y vsftpd</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="FTP-使用之前要点"><a href="#FTP-使用之前要点" class="headerlink" title="FTP 使用之前要点"></a>FTP 使用之前要点</h2><ul>
-<li>关闭 CentOS 上的 SELinux 组件（Ubuntu 体系是没有这东西的）。<ul>
-<li>查看 SELinux 开启状态：<code>sudo getenforce</code><ul>
-<li>有如下三种状态，默认是 Enforcing<ul>
-<li>Enforcing（开启）</li>
-<li>Permissive（开启，但是只起到警告作用，属于比较轻的开启）</li>
-<li>Disabled（关闭）</li>
-</ul>
-</li>
-<li>临时关闭：<ul>
-<li>命令：<code>sudo setenforce 0</code></li>
-</ul>
-</li>
-<li>临时开启：<ul>
-<li>命令：<code>sudo setenforce 1</code></li>
-</ul>
-</li>
-<li>永久关闭：<ul>
-<li>命令：<code>sudo vim /etc/selinux/config</code></li>
-<li>将：<code>SELINUX=enforcing</code> 改为 <code>SELINUX=disbaled</code>，配置好之后需要重启系统。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="FTP-服务器配置文件常用参数"><a href="#FTP-服务器配置文件常用参数" class="headerlink" title="FTP 服务器配置文件常用参数"></a>FTP 服务器配置文件常用参数</h2><ul>
-<li>vsftpd 默认是支持使用 Linux 系统里的账号进行登录的（登录上去可以看到自己的 home 目录内容），权限跟 Linux 的账号权限一样。但是建议使用软件提供的虚拟账号管理体系功能，用虚拟账号登录。</li>
-<li>配置文件介绍（记得先备份）：<code>sudo vim /etc/vsftpd/vsftpd.conf</code>，比较旧的系统版本是：<code>vim /etc/vsftpd.conf</code><ul>
-<li>该配置主要参数解释：<ul>
-<li>anonymous_enable=NO           #不允许匿名访问，改为YES即表示可以匿名登录</li>
-<li>anon_upload_enable=YES        #是否允许匿名用户上传</li>
-<li>anon_mkdir_write_enable=YES   #是否允许匿名用户创建目录</li>
-<li>local_enable=YES              #是否允许本地用户，也就是linux系统的已有账号，如果你要FTP的虚拟账号，那可以改为NO</li>
-<li>write_enable=YES              #是否允许本地用户具有写权限</li>
-<li>local_umask=022               #本地用户掩码</li>
-<li>chroot_list_enable=YES        #不锁定用户在自己的家目录，默认是注释，建议这个一定要开，比如本地用户judasn，我们只能看到/home/judasn，没办法看到/home目录</li>
-<li>chroot_list_file=/etc/vsftpd/chroot_list   #该选项是配合上面选项使用的。此文件中的用户将启用 chroot，如果上面的功能开启是不够的还要把用户名加到这个文件里面。配置好后，登录的用户，默认登录上去看到的根目录就是自己的home目录。</li>
-<li>listen=YES                    #独立模式</li>
-<li>userlist_enable=YES           #用户访问控制，如果是YES，则表示启用vsftp的虚拟账号功能，虚拟账号配置文件是/etc/vsftpd/user_list</li>
-<li>userlist_deny=NO              #这个属性在配置文件是没有的，当userlist_enable=YES，这个值也为YES，则user_list文件中的用户不能登录FTP，列表外的用户可以登录，也可以起到一个黑名单的作用。当userlist_enable=YES，这个值为NO，则user_list文件中的用户能登录FTP，列表外的用户不可以登录，也可以起到一个白名单的作用。如果同一个用户即在白名单中又在ftpusers黑名单文件中，那还是会以黑名单为前提，对应账号没法登录。</li>
-<li>tcp_wrappers=YES              #是否启用TCPWrappers管理服务</li>
-</ul>
-</li>
-<li>FTP用户黑名单配置文件：<code>sudo vim /etc/vsftpd/ftpusers</code>，默认root用户也在黑名单中</li>
-<li>控制FTP用户登录配置文件：<code>sudo vim /etc/vsftpd/user_list</code></li>
-</ul>
-</li>
-<li>启动服务：<ul>
-<li><code>service vsftpd restart</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="vsftpd-的两种传输模式"><a href="#vsftpd-的两种传输模式" class="headerlink" title="vsftpd 的两种传输模式"></a>vsftpd 的两种传输模式</h2><ul>
-<li>分为：主动模式（PORT）和被动模式（PASV）。这两个模式会涉及到一些端口问题，也就涉及到防火墙问题，所以要特别注意。主动模式比较简单，只要在防火墙上放开放开 21 和 20 端口即可。被动模式则要根据情况放开一个端口段。<ul>
-<li><img src="images/FTP-a-1.jpg" alt="vsftpd 的两种传输模式"></li>
-<li>上图箭头：xftp 新建连接默认都是勾选被动模式的，所以如果要使用主动模式，在该连接的属性中是要去掉勾选。</li>
-</ul>
-</li>
-</ul>
-<h2 id="vsftpd-的两种运行模式"><a href="#vsftpd-的两种运行模式" class="headerlink" title="vsftpd 的两种运行模式"></a>vsftpd 的两种运行模式</h2><ul>
-<li>分为：xinetd 模式和 standalone 模式<ul>
-<li>xinetd 模式：由 xinetd 作为 FTP 的守护进程，负责 21 端口的监听，一旦外部发起对 21 端口的连接，则调用 FTP 的主程序处理，连接完成后，则关闭 FTP 主程序，释放内存资源。好处是资源占用少，适合 FTP 连接数较少的场合。</li>
-<li>standalone 模式：直接使用 FTP 主程序作为 FTP 的守护进程，负责 21 端口的监听，由于无需经过 xinetd 的前端代理，响应速度快，适合连接数 较大的情况，但由于 FTP 主程序长期驻留内存，故较耗资源。</li>
-<li>standalone 一次性启动，运行期间一直驻留在内存中，优点是对接入信号反应快，缺点是损耗了一定的系统资源，因此经常应用于对实时反应要求较高的 专业 FTP 服务器。</li>
-<li>xinetd 恰恰相反，由于只在外部连接发送请求时才调用 FTP 进程，因此不适合应用在同时连接数量较多的系统。此外，xinetd 模式不占用系统资源。除了反应速度和占用资源两方面的影响外，vsftpd 还提供了一些额外的高级功能，如 xinetd 模式支持 per_IP (单一 IP)限制，而 standalone 模式则更有利于 PAM 验证功能的应用。<ul>
-<li>配置 xinetd 模式：  <ul>
-<li>编辑配置文件：<code>sudo vim /etc/xinetd.d/vsftpd</code></li>
-<li>属性信息改为如下信息：<ul>
-<li>disable = no</li>
-<li>socket_type = stream</li>
-<li>wait = no     #这表示设备是激活的，它正在使用标准的TCP Sockets </li>
-</ul>
-</li>
-<li>编辑配置文件：<code>sudo vim /etc/vsftpd/vsftpd.conf</code></li>
-<li>如果该配置选项中的有 <code>listen=YES</code>，则要注释掉</li>
-</ul>
-</li>
-<li>重启 xinetd 服务，命令：<code>sudo /etc/rc.d/init.d/xinetd restart</code></li>
-<li>配置 standalone 模式：<ul>
-<li>编辑配置文件：<code>sudo vim /etc/xinetd.d/vsftpd</code></li>
-<li>属性信息改为如下信息：<ul>
-<li>disable = yes</li>
-</ul>
-</li>
-<li>编辑配置文件：<code>sudo vim /etc/vsftpd/vsftpd.conf</code></li>
-<li>属性信息改为如下信息：<ul>
-<li>Listen=YES（如果是注释掉则要打开注释）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>重启服务：<code>sudo service vsftpd restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="FTP-资料"><a href="#FTP-资料" class="headerlink" title="FTP 资料"></a>FTP 资料</h2><ul>
-<li><a href="http://www.jikexueyuan.com/course/994.html" target="_blank" rel="external">http://www.jikexueyuan.com/course/994.html</a></li>
-<li><a href="http://www.while0.com/36.html" target="_blank" rel="external">http://www.while0.com/36.html</a></li>
-<li><a href="http://www.cnblogs.com/CSGrandeur/p/3754126.html" target="_blank" rel="external">http://www.cnblogs.com/CSGrandeur/p/3754126.html</a></li>
-<li><a href="http://www.centoscn.com/image-text/config/2015/0613/5651.html" target="_blank" rel="external">http://www.centoscn.com/image-text/config/2015/0613/5651.html</a></li>
-<li><a href="http://wiki.ubuntu.org.cn/Vsftpd" target="_blank" rel="external">http://wiki.ubuntu.org.cn/Vsftpd</a></li>
-</ul>
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/SSH/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/SSH/">SSH</a>
+    </h1>
+  
 
-      
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/FTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-centos-settings/CentOS-Network-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="networkSettings0">CentOS 网络设置</h1>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/Nginx-Keepalived-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/Nginx-Keepalived-Install-And-Settings/">Nginx + Keepalived 高可用</a>
+    </h1>
+  
 
-<hr>
-<ul>
-<li><a href="#networkSettings0">CentOS 安装</a><ul>
-<li><a href="#networkSettings1">界面化下设置网络</a></li>
-<li><a href="#networkSettings2">命令行下设置网络</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>由于前面虚拟机中安装 CentOS 使用的是桥接模式，为了让虚拟机中的系统能上网，我们需要进行网络设置。</li>
-</ul>
-<h2 id="networkSettings1">界面化下设置网络（新手推荐使用这种）</h2>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-<ul>
-<li><img src="../images/CentOS-Network-Settings-a-1.jpg" alt="界面化设置"><ul>
-<li>选择上图箭头所示</li>
-</ul>
-</li>
-<li><img src="../images/CentOS-Network-Settings-a-2.jpg" alt="界面化设置"><ul>
-<li>如上图标注 3 所示：选择 <code>手动</code> 模式</li>
-<li>如上图标注 4 所示：填写自己局域网内的子网掩码、默认网关，以及你要分配的内网 IP 地址。这三个参数你可以参考你当前使用的主机信息，在 Windows 系统上使用：<code>cmd --- ipconfig</code>，查看你当前连接的网卡信息。如果你是无线网卡则读取对应的无线网卡信息，如果你是本地连接，则读取对应的本地连接信息。 </li>
-<li>如上图标注 5 所示：填写你当前地区合适的 DNS 地址，我这边地区使用 360 测试出来的结果显示 114 的适合我，所以我这里填写该值</li>
-</ul>
-</li>
-</ul>
-<h2 id="networkSettings2">命令行下设置网络</h2>
+          
 
-<ul>
-<li>编辑网卡信息：<ul>
-<li>备份：<code>cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0-20160205Back</code></li>
-<li>把备份文件移动到其他目录：<code>mv /etc/sysconfig/network-scripts/ifcfg-eth0-20160205Back /opt/myBack</code></li>
-<li>编辑网卡文件：<code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></li>
-<li>把网卡中信息改为下面对应内容：<pre><code>DEVICE=eth0  (系统默认值)
-TYPE=Ethernet  (系统默认值)
-UUID=a2c17f0c-a224-43d5-a203-48af1f0d9113  (系统默认值)
-ONBOOT=yes  (系统默认值是 no,我改为 yes)
-NM_CONTROLLED=yes  (系统默认值)
-BOOTPROTO=none   (系统默认值是 dhcp,我改为 none,代表手动)
-USERCTL=no   (自己补充的)
-IPV6INIT=no   (自己补充的)
-NETMASK=255.255.255.0  (自己补充的)
-IPADDR=192.168.0.110   (自己补充的)
-GATEWAY=192.168.0.1   (自己补充的)
-DNS1=114.114.114.114  (自己补充的)
-PREFIX=24  (使用图形界面设置后生成的)
-DEFROUTE=yes  (使用图形界面设置后生成的)
-IPV4_FAILURE_FATAL=yes  (使用图形界面设置后生成的) 
-NAME=&quot;System eth0&quot;    (使用图形界面设置后生成的) 
-HWADDR=00:0C:29:A9:37:D4    (使用图形界面设置后生成的) 
-LAST_CONNECT=1454626679   (使用图形界面设置后生成的)
-</code></pre></li>
-<li>重启网络配置：<code>service network restart</code></li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Network-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-FastDFS-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="FastDFS-安装和配置"><a href="#FastDFS-安装和配置" class="headerlink" title="FastDFS 安装和配置"></a>FastDFS 安装和配置</h1><h2 id="它是什么"><a href="#它是什么" class="headerlink" title="它是什么"></a>它是什么</h2><ul>
-<li>FastDFS 介绍：<a href="http://www.oschina.net/p/fastdfs" target="_blank" rel="external">http://www.oschina.net/p/fastdfs</a></li>
-<li>官网下载 1：<a href="https://github.com/happyfish100/fastdfs/releases" target="_blank" rel="external">https://github.com/happyfish100/fastdfs/releases</a></li>
-<li>官网下载 2：<a href="https://sourceforge.net/projects/fastdfs/files/" target="_blank" rel="external">https://sourceforge.net/projects/fastdfs/files/</a></li>
-<li>官网下载 3：<a href="http://code.google.com/p/fastdfs/downloads/list" target="_blank" rel="external">http://code.google.com/p/fastdfs/downloads/list</a></li>
-</ul>
-<h2 id="为什么会出现"><a href="#为什么会出现" class="headerlink" title="为什么会出现"></a>为什么会出现</h2><h2 id="哪些人喜欢它"><a href="#哪些人喜欢它" class="headerlink" title="哪些人喜欢它"></a>哪些人喜欢它</h2><h2 id="哪些人不喜欢它"><a href="#哪些人不喜欢它" class="headerlink" title="哪些人不喜欢它"></a>哪些人不喜欢它</h2><h2 id="为什么学习它"><a href="#为什么学习它" class="headerlink" title="为什么学习它"></a>为什么学习它</h2><h2 id="同类工具"><a href="#同类工具" class="headerlink" title="同类工具"></a>同类工具</h2><h3 id="单机安装部署（CentOS-6-7-环境）"><a href="#单机安装部署（CentOS-6-7-环境）" class="headerlink" title="单机安装部署（CentOS 6.7 环境）"></a>单机安装部署（CentOS 6.7 环境）</h3><ul>
-<li>环境准备：<ul>
-<li>已经安装好 Nginx</li>
-</ul>
-</li>
-<li>软件准备：<ul>
-<li><strong>FastDFS_v5.05.tar.gz</strong></li>
-<li><strong>fastdfs-nginx-module_v1.16.tar.gz</strong></li>
-<li><strong>libfastcommon-1.0.7.tar.gz</strong></li>
-</ul>
-</li>
-<li>安装依赖包：<code>yum install -y libevent</code></li>
-<li>安装 <strong>libfastcommon-1.0.7.tar.gz</strong><ul>
-<li>解压：<code>tar zxvf libfastcommon-1.0.7.tar.gz</code></li>
-<li>进入解压后目录：<code>cd libfastcommon-1.0.7/</code></li>
-<li>编译：<code>./make.sh</code></li>
-<li>安装：<code>./make.sh install</code></li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so</code> </li>
-</ul>
-</li>
-<li>安装 tracker （跟踪器）服务 <strong>FastDFS_v5.08.tar.gz</strong><ul>
-<li>解压：<code>tar zxvf FastDFS_v5.05.tar.gz</code></li>
-<li>进入解压后目录：<code>cd FastDFS/</code></li>
-<li>编译：<code>./make.sh</code></li>
-<li>安装：<code>./make.sh install</code></li>
-<li>安装结果：<pre><code class="ini">/usr/bin 存放有编译出来的文件
-/etc/fdfs 存放有配置文件
-</code></pre>
-</li>
-</ul>
-</li>
-<li>配置 tracker 服务<ul>
-<li>复制一份配置文件：<code>cp /etc/fdfs/tracker.conf.sample /etc/fdfs/tracker.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/tracker.conf</code>，编辑内容看下面中文注释<pre><code class="ini">disabled=false
-bind_addr=
-port=22122
-connect_timeout=30
-network_timeout=60
-# 下面这个路径是保存 store data 和 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/tracker/data-and-log
-base_path=/opt/fastdfs/tracker/data-and-log
-max_connections=256
-accept_threads=1
-work_threads=4
-store_lookup=2
-store_group=group2
-store_server=0
-store_path=0
-download_server=0
-reserved_storage_space = 10%
-log_level=info
-run_by_group=
-run_by_user=
-allow_hosts=*
-sync_log_buff_interval = 10
-check_active_interval = 120
-thread_stack_size = 64KB
-storage_ip_changed_auto_adjust = true
-storage_sync_file_max_delay = 86400
-storage_sync_file_max_time = 300
-use_trunk_file = false 
-slot_min_size = 256
-slot_max_size = 16MB
-trunk_file_size = 64MB
-trunk_create_file_advance = false
-trunk_create_file_time_base = 02:00
-trunk_create_file_interval = 86400
-trunk_create_file_space_threshold = 20G
-trunk_init_check_occupying = false
-trunk_init_reload_from_binlog = false
-trunk_compress_binlog_min_interval = 0
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-id_type_in_filename = ip
-store_slave_file_use_link = false
-rotate_error_log = false
-error_log_rotate_time=00:00
-rotate_error_log_size = 0
-log_file_keep_days = 0
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-http.server_port=8080
-http.check_alive_interval=30
-http.check_alive_type=tcp
-http.check_alive_uri=/status.html
-</code></pre>
-</li>
-<li>启动 tracker 服务：<code>/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf</code></li>
-<li>重启 tracker 服务：<code>/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart</code></li>
-<li>查看是否有 tracker 进程：<code>ps aux | grep tracker</code></li>
-</ul>
-</li>
-<li>storage （存储节点）服务部署<ul>
-<li>一般 storage 服务我们会单独装一台机子，但是这里为了方便我们安装在同一台。</li>
-<li>如果 storage 单独安装的话，那上面安装的步骤都要在走一遍，只是到了编辑配置文件的时候，编辑的是 storage.conf 而已</li>
-<li>复制一份配置文件：<code>cp /etc/fdfs/storage.conf.sample /etc/fdfs/storage.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/storage.conf</code>，编辑内容看下面中文注释<pre><code class="ini">disabled=false
-group_name=group1
-bind_addr=
-client_bind=true
-port=23000
-connect_timeout=30
-network_timeout=60
-heart_beat_interval=30
-stat_report_interval=60
-# 下面这个路径是保存 store data 和 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/storage/data-and-log
-base_path=/opt/fastdfs/storage/data-and-log
-max_connections=256
-buff_size = 256KB
-accept_threads=1
-work_threads=4
-disk_rw_separated = true
-disk_reader_threads = 1
-disk_writer_threads = 1
-sync_wait_msec=50
-sync_interval=0
-sync_start_time=00:00
-sync_end_time=23:59
-write_mark_file_freq=500
-store_path_count=1
-# 图片实际存放路径，如果有多个，这里可以有多行：
-# store_path0=/opt/fastdfs/storage/images-data0
-# store_path1=/opt/fastdfs/storage/images-data1
-# store_path2=/opt/fastdfs/storage/images-data2
-# 创建目录：mkdir -p /opt/fastdfs/storage/images-data
-store_path0=/opt/fastdfs/storage/images-data
-subdir_count_per_path=256
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-log_level=info
-run_by_group=
-run_by_user=
-allow_hosts=*
-file_distribute_path_mode=0
-file_distribute_rotate_count=100
-fsync_after_written_bytes=0
-sync_log_buff_interval=10
-sync_binlog_buff_interval=10
-sync_stat_file_interval=300
-thread_stack_size=512KB
-upload_priority=10
-if_alias_prefix=
-check_file_duplicate=0
-file_signature_method=hash
-key_namespace=FastDFS
-keep_alive=0
-use_access_log = false
-rotate_access_log = false
-access_log_rotate_time=00:00
-rotate_error_log = false
-error_log_rotate_time=00:00
-rotate_access_log_size = 0
-rotate_error_log_size = 0
-log_file_keep_days = 0
-file_sync_skip_invalid_record=false
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-http.domain_name=
-http.server_port=8888
-</code></pre>
-</li>
-<li>启动 storage 服务：<code>/usr/bin/fdfs_storaged /etc/fdfs/storage.conf</code>，首次启动会很慢，因为它在创建预设存储文件的目录</li>
-<li>重启 storage 服务：<code>/usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart</code></li>
-<li>查看是否有 storage 进程：<code>ps aux | grep storage</code></li>
-</ul>
-</li>
-<li>测试是否部署成功<ul>
-<li>利用自带的 client 进行测试</li>
-<li>复制一份配置文件：<code>cp /etc/fdfs/client.conf.sample /etc/fdfs/client.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/client.conf</code>，编辑内容看下面中文注释<pre><code class="ini">connect_timeout=30
-network_timeout=60
-# 下面这个路径是保存 store log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/client/data-and-log
-base_path=/opt/fastdfs/client/data-and-log
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-log_level=info
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-load_fdfs_parameters_from_tracker=false
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-http.tracker_server_port=80
-</code></pre>
-</li>
-<li>在终端中通过 shell 上传 opt 目录下的一张图片：<code>/usr/bin/fdfs_test /etc/fdfs/client.conf upload /opt/test.jpg</code></li>
-<li>如下图箭头所示，生成的图片地址为：<code>http://192.168.1.114/group1/M00/00/00/wKgBclb0aqWAbVNrAAAjn7_h9gM813_big.jpg</code><ul>
-<li><img src="images/FastDFS-a-1.jpg" alt="FastDFS"></li>
-</ul>
-</li>
-<li>即使我们现在知道图片的访问地址我们也访问不了，因为我们还没装 FastDFS 的 Nginx 模块</li>
-</ul>
-</li>
-<li>安装 <strong>fastdfs-nginx-module_v1.16.tar.gz</strong>，安装 Nginx 第三方模块相当于这个 Nginx 都是要重新安装一遍的<ul>
-<li>解压 Nginx 模块：<code>tar zxvf fastdfs-nginx-module_v1.16.tar.gz</code>，得到目录地址：<strong>/opt/setups/FastDFS/fastdfs-nginx-module</strong></li>
-<li>编辑 Nginx 模块的配置文件：<code>vim /opt/setups/FastDFS/fastdfs-nginx-module/src/config</code></li>
-<li>找到下面一行包含有 <code>local</code> 字眼去掉，因为这三个路径根本不是在 local 目录下的。<pre><code class="nginx">CORE_INCS=&quot;$CORE_INCS /usr/local/include/fastdfs /usr/local/include/fastcommon/&quot;
-</code></pre>
-</li>
-<li>改为如下：<pre><code class="nginx">CORE_INCS=&quot;$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/&quot;
-</code></pre>
-</li>
-<li>复制文件：<code>cp /opt/setups/FastDFS/FastDFS/conf/http.conf /etc/fdfs</code></li>
-<li>复制文件：<code>cp /opt/setups/FastDFS/FastDFS/conf/mime.types /etc/fdfs</code></li>
-</ul>
-</li>
-<li><p>安装 Nginx 和 Nginx 第三方模块</p>
-<ul>
-<li>安装 Nginx 依赖包：<code>yum install -y gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel</code></li>
-<li>预设几个文件夹，方便等下安装的时候有些文件可以进行存放：<ul>
-<li><code>mkdir -p /usr/local/nginx /var/log/nginx /var/temp/nginx /var/lock/nginx</code></li>
-</ul>
-</li>
-<li>解压 Nginx：<code>tar zxvf /opt/setups/nginx-1.8.1.tar.gz</code></li>
-<li>进入解压后目录：<code>cd /opt/setups/nginx-1.8.1/</code></li>
-<li>编译配置：（注意最后一行）<pre><code class="ini">./configure \
---prefix=/usr/local/nginx \
---pid-path=/var/local/nginx/nginx.pid \
---lock-path=/var/lock/nginx/nginx.lock \
---error-log-path=/var/log/nginx/error.log \
---http-log-path=/var/log/nginx/access.log \
---with-http_gzip_static_module \
---http-client-body-temp-path=/var/temp/nginx/client \
---http-proxy-temp-path=/var/temp/nginx/proxy \
---http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
---http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
---http-scgi-temp-path=/var/temp/nginx/scgi \
---add-module=/opt/setups/FastDFS/fastdfs-nginx-module/src
-</code></pre>
-</li>
-<li>编译：<code>make</code></li>
-<li>安装：<code>make install</code></li>
-<li>复制 Nginx 模块的配置文件：<code>cp /opt/setups/FastDFS/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs</code></li>
-<li>编辑 Nginx 模块的配置文件：<code>vim /etc/fdfs/mod_fastdfs.conf</code>，编辑内容看下面中文注释</li>
-<li><p>如果在已经启动 Nginx 的情况下修改下面内容记得要重启 Nginx。</p>
-<pre><code class="ini">connect_timeout=2
-network_timeout=30
-# 下面这个路径是保存 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/fastdfs-nginx-module/data-and-log
-base_path=/opt/fastdfs/fastdfs-nginx-module/data-and-log
-load_fdfs_parameters_from_tracker=true
-storage_sync_file_max_delay = 86400
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-storage_server_port=23000
-group_name=group1
-# 因为我们访问图片的地址是：http://192.168.1.114/group1/M00/00/00/wKgBclb0aqWAbVNrAAAjn7_h9gM813_big.jpg
-# 该地址前面是带有 /group1/M00，所以我们这里要使用 true，不然访问不到（原值是 false）
-url_have_group_name = true
-store_path_count=1
-# 图片实际存放路径，如果有多个，这里可以有多行：
-# store_path0=/opt/fastdfs/storage/images-data0
-# store_path1=/opt/fastdfs/storage/images-data1
-# store_path2=/opt/fastdfs/storage/images-data2
-store_path0=/opt/fastdfs/storage/images-data
-log_level=info
-log_filename=
-response_mode=proxy
-if_alias_prefix=
-flv_support = true
-flv_extension = flv
-group_count = 0
-</code></pre>
-</li>
-<li><p>编辑 Nginx 配置文件</p>
-<pre><code class="nginx"># 注意这一行行，我特别加上了使用 root 用户去执行，不然有些日记目录没有权限访问
-user  root;
-worker_processes  1;
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/Samba/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/Samba/">iptables</a>
+    </h1>
+  
 
-events {
-  worker_connections  1024;
-}
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-http {
-  include       mime.types;
-  default_type  application/octet-stream;
+          
 
-  sendfile        on;
-  keepalive_timeout  65;
-
-  server {
-      listen       80;
-      # 访问本机
-      server_name  192.168.1.114;
-
-      # 拦截包含 /group1/M00 请求，使用 fastdfs 这个 Nginx 模块进行转发
-      location /group1/M00 {
-          ngx_fastdfs_module;
-      }
-    }
-}
-</code></pre>
-</li>
-<li>启动 Nginx<ul>
-<li>停掉防火墙：<code>service iptables stop</code></li>
-<li>启动：<code>/usr/local/nginx/sbin/nginx</code>，启动完成 shell 是不会有输出的</li>
-<li>访问：<code>192.168.1.114</code>，如果能看到：<code>Welcome to nginx!</code>，即可表示安装成功</li>
-<li>检查 时候有 Nginx 进程：<code>ps aux | grep nginx</code>，正常是显示 3 个结果出来 </li>
-<li>刷新 Nginx 配置后重启：<code>/usr/local/nginx/sbin/nginx -s reload</code></li>
-<li>停止 Nginx：<code>/usr/local/nginx/sbin/nginx -s stop</code></li>
-<li>如果访问不了，或是出现其他信息看下错误立即：<code>vim /var/log/nginx/error.log</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="多机安装部署（CentOS-6-7-环境）"><a href="#多机安装部署（CentOS-6-7-环境）" class="headerlink" title="多机安装部署（CentOS 6.7 环境）"></a>多机安装部署（CentOS 6.7 环境）</h3><p><a href="http://blog.csdn.net/ricciozhang/article/details/49402273" target="_blank" rel="external">http://blog.csdn.net/ricciozhang/article/details/49402273</a></p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://blog.csdn.net/ricciozhang/article/details/49402273" target="_blank" rel="external">fastdfs+nginx安装配置</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/FastDFS-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-GitLab-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GitLab-安装和配置"><a href="#GitLab-安装和配置" class="headerlink" title="GitLab 安装和配置"></a>GitLab 安装和配置</h1><h2 id="GitLab-介绍"><a href="#GitLab-介绍" class="headerlink" title="GitLab 介绍"></a>GitLab 介绍</h2><ul>
-<li>官网：&lt;&gt;</li>
-<li>官网下载：<a href="https://www.gitlab.cc/downloads" target="_blank" rel="external">https://www.gitlab.cc/downloads</a></li>
-<li>官网安装说明：<a href="https://doc.gitlab.cc/ce/install/requirements.html" target="_blank" rel="external">https://doc.gitlab.cc/ce/install/requirements.html</a></li>
-<li>开源版本和企业版本对比：<a href="https://www.gitlab.cc/features/#enterprise" target="_blank" rel="external">https://www.gitlab.cc/features/#enterprise</a></li>
-</ul>
-<h2 id="GitLab-安装（CentOS-6）"><a href="#GitLab-安装（CentOS-6）" class="headerlink" title="GitLab 安装（CentOS 6）"></a>GitLab 安装（CentOS 6）</h2><ul>
-<li>安装并开放 HTTP 和 SSH、邮件相关服务和端口<ul>
-<li>命令：<code>sudo yum install -y curl openssh-server openssh-clients postfix cronie</code></li>
-<li>命令：<code>sudo service postfix start</code></li>
-<li>命令：<code>sudo chkconfig postfix on</code></li>
-<li>命令：<code>sudo lokkit -s http -s ssh</code></li>
-</ul>
-</li>
-<li>添加 GitLab 仓库，并安装到服务器上（8.8.4 安装包有：261M）：<ul>
-<li><code>curl -sS http://packages.gitlab.cc/install/gitlab-ce/script.rpm.sh | sudo bash</code></li>
-<li><code>sudo yum install -y gitlab-ce</code></li>
-</ul>
-</li>
-<li>启动 GitLab：<code>sudo gitlab-ctl reconfigure</code>，使用这个命令会输出一堆的日志出来，整个启动过程需要耗时 20 秒左右</li>
-</ul>
-<h2 id="GitLab-配置"><a href="#GitLab-配置" class="headerlink" title="GitLab 配置"></a>GitLab 配置</h2><ul>
-<li>用浏览器访问服务器 IP，比如我的是：<a href="http://192.168.1.113，就可以直接看到" target="_blank" rel="external">http://192.168.1.113，就可以直接看到</a> GitLab 配置初始化界面，让你先重置管理员密码，因为密码不能太简单，所以我改为：<a href="http://192.168.1.113，这样比较好记又复杂" target="_blank" rel="external">http://192.168.1.113，这样比较好记又复杂</a></li>
-<li>重新访问：<a href="http://192.168.1.113，输入账号密码：root、http://192.168.1.113" target="_blank" rel="external">http://192.168.1.113，输入账号密码：root、http://192.168.1.113</a></li>
-<li>访问管理员控制台，添加用户：<a href="http://192.168.1.113/admin/users" target="_blank" rel="external">http://192.168.1.113/admin/users</a></li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>
-      
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/Redis-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/Redis-Install-And-Settings/">Redis 安装和配置</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/GitLab-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
+          
 
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-FastDFS-Nginx-Lua-GraphicsMagick" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="FastDFS-结合-GraphicsMagick"><a href="#FastDFS-结合-GraphicsMagick" class="headerlink" title="FastDFS 结合 GraphicsMagick"></a>FastDFS 结合 GraphicsMagick</h1><h2 id="单机安装部署（CentOS-6-7-环境）"><a href="#单机安装部署（CentOS-6-7-环境）" class="headerlink" title="单机安装部署（CentOS 6.7 环境）"></a>单机安装部署（CentOS 6.7 环境）</h2><h3 id="先安装-FastDFS"><a href="#先安装-FastDFS" class="headerlink" title="先安装 FastDFS"></a>先安装 FastDFS</h3><ul>
-<li>软件准备：<ul>
-<li>我这边统一提供了一个压缩包，方便使用。<ul>
-<li>下载地址：<a href="http://pan.baidu.com/s/1hsg2brA" target="_blank" rel="external">http://pan.baidu.com/s/1hsg2brA</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>安装依赖包：<code>yum install -y gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel libevent</code></li>
-<li>安装 <strong>libfastcommon-1.0.7.tar.gz</strong><ul>
-<li>解压：<code>tar zxvf libfastcommon-1.0.7.tar.gz</code></li>
-<li>进入解压后目录：<code>cd libfastcommon-1.0.7/</code></li>
-<li>编译：<code>./make.sh</code></li>
-<li>安装：<code>./make.sh install</code></li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so</code>  </li>
-<li>设置几个软链接：<code>ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so</code> </li>
-</ul>
-</li>
-<li>安装 tracker （跟踪器）服务 <strong>FastDFS_v5.08.tar.gz</strong><ul>
-<li>解压：<code>tar zxvf FastDFS_v5.05.tar.gz</code></li>
-<li>进入解压后目录：<code>cd FastDFS/</code></li>
-<li>编译：<code>./make.sh</code></li>
-<li>安装：<code>./make.sh install</code></li>
-</ul>
-</li>
-<li>配置 tracker 服务<ul>
-<li>复制一份配置文件：<code>cp /etc/fdfs/tracker.conf.sample /etc/fdfs/tracker.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/tracker.conf</code>，编辑内容看下面中文注释<pre><code class="ini">disabled=false
-bind_addr=
-port=22122
-connect_timeout=30
-network_timeout=60
-# 下面这个路径是保存 store data 和 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/tracker/data-and-log
-base_path=/opt/fastdfs/tracker/data-and-log
-max_connections=256
-accept_threads=1
-work_threads=4
-store_lookup=2
-store_group=group2
-store_server=0
-store_path=0
-download_server=0
-reserved_storage_space = 10%
-log_level=info
-run_by_group=
-run_by_user=
-allow_hosts=*
-sync_log_buff_interval = 10
-check_active_interval = 120
-thread_stack_size = 64KB
-storage_ip_changed_auto_adjust = true
-storage_sync_file_max_delay = 86400
-storage_sync_file_max_time = 300
-use_trunk_file = false 
-slot_min_size = 256
-slot_max_size = 16MB
-trunk_file_size = 64MB
-trunk_create_file_advance = false
-trunk_create_file_time_base = 02:00
-trunk_create_file_interval = 86400
-trunk_create_file_space_threshold = 20G
-trunk_init_check_occupying = false
-trunk_init_reload_from_binlog = false
-trunk_compress_binlog_min_interval = 0
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-id_type_in_filename = ip
-store_slave_file_use_link = false
-rotate_error_log = false
-error_log_rotate_time=00:00
-rotate_error_log_size = 0
-log_file_keep_days = 0
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-http.server_port=8080
-http.check_alive_interval=30
-http.check_alive_type=tcp
-http.check_alive_uri=/status.html
-</code></pre>
-</li>
-<li>启动 tracker 服务：<code>/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf</code></li>
-<li>重启 tracker 服务：<code>/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart</code></li>
-<li>查看是否有 tracker 进程：<code>ps aux | grep tracker</code></li>
-</ul>
-</li>
-<li>storage （存储节点）服务部署<ul>
-<li>一般 storage 服务我们会单独装一台机子，但是这里为了方便我们安装在同一台。</li>
-<li>如果 storage 单独安装的话，那上面安装的步骤都要在走一遍，只是到了编辑配置文件的时候，编辑的是 storage.conf 而已</li>
-<li>复制一份配置文件：<code>cp /etc/fdfs/storage.conf.sample /etc/fdfs/storage.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/storage.conf</code>，编辑内容看下面中文注释<pre><code class="ini">disabled=false
-group_name=group1
-bind_addr=
-client_bind=true
-port=23000
-connect_timeout=30
-network_timeout=60
-heart_beat_interval=30
-stat_report_interval=60
-# 下面这个路径是保存 store data 和 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/storage/data-and-log
-base_path=/opt/fastdfs/storage/data-and-log
-max_connections=256
-buff_size = 256KB
-accept_threads=1
-work_threads=4
-disk_rw_separated = true
-disk_reader_threads = 1
-disk_writer_threads = 1
-sync_wait_msec=50
-sync_interval=0
-sync_start_time=00:00
-sync_end_time=23:59
-write_mark_file_freq=500
-store_path_count=1
-# 图片实际存放路径，如果有多个，这里可以有多行：
-# store_path0=/opt/fastdfs/storage/images-data0
-# store_path1=/opt/fastdfs/storage/images-data1
-# store_path2=/opt/fastdfs/storage/images-data2
-# 创建目录：mkdir -p /opt/fastdfs/storage/images-data
-store_path0=/opt/fastdfs/storage/images-data
-subdir_count_per_path=256
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-log_level=info
-run_by_group=
-run_by_user=
-allow_hosts=*
-file_distribute_path_mode=0
-file_distribute_rotate_count=100
-fsync_after_written_bytes=0
-sync_log_buff_interval=10
-sync_binlog_buff_interval=10
-sync_stat_file_interval=300
-thread_stack_size=512KB
-upload_priority=10
-if_alias_prefix=
-check_file_duplicate=0
-file_signature_method=hash
-key_namespace=FastDFS
-keep_alive=0
-use_access_log = false
-rotate_access_log = false
-access_log_rotate_time=00:00
-rotate_error_log = false
-error_log_rotate_time=00:00
-rotate_access_log_size = 0
-rotate_error_log_size = 0
-log_file_keep_days = 0
-file_sync_skip_invalid_record=false
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-http.domain_name=
-http.server_port=8888
-</code></pre>
-</li>
-<li>启动 storage 服务：<code>/usr/bin/fdfs_storaged /etc/fdfs/storage.conf</code>，首次启动会很慢，因为它在创建预设存储文件的目录</li>
-<li>重启 storage 服务：<code>/usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart</code></li>
-<li>查看是否有 storage 进程：<code>ps aux | grep storage</code></li>
-</ul>
-</li>
-<li>测试是否部署成功<ul>
-<li>利用自带的 client 进行测试</li>
-<li>复制一份配置文件：<code>cp /etc/fdfs/client.conf.sample /etc/fdfs/client.conf</code></li>
-<li>编辑：<code>vim /etc/fdfs/client.conf</code>，编辑内容看下面中文注释<pre><code class="ini">connect_timeout=30
-network_timeout=60
-# 下面这个路径是保存 store log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/client/data-and-log
-base_path=/opt/fastdfs/client/data-and-log
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-log_level=info
-use_connection_pool = false
-connection_pool_max_idle_time = 3600
-load_fdfs_parameters_from_tracker=false
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-http.tracker_server_port=80
-</code></pre>
-</li>
-<li>在终端中通过 shell 上传 opt 目录下的一张图片：<code>/usr/bin/fdfs_test /etc/fdfs/client.conf upload /opt/test.jpg</code></li>
-<li>如下图箭头所示，生成的图片地址为：<code>http://192.168.1.114/group1/M00/00/00/wKgBclb0aqWAbVNrAAAjn7_h9gM813_big.jpg</code><ul>
-<li><img src="images/FastDFS-a-1.jpg" alt="FastDFS"></li>
-</ul>
-</li>
-<li>即使我们现在知道图片的访问地址我们也访问不了，因为我们还没装 FastDFS 的 Nginx 模块</li>
-</ul>
-</li>
-</ul>
-<h3 id="安装-nginx-lua-GraphicsMagick"><a href="#安装-nginx-lua-GraphicsMagick" class="headerlink" title="安装 nginx-lua-GraphicsMagick"></a>安装 nginx-lua-GraphicsMagick</h3><ul>
-<li>来源：<a href="https://github.com/yanue/nginx-lua-GraphicsMagick/blob/master/nginx-install.md" target="_blank" rel="external">https://github.com/yanue/nginx-lua-GraphicsMagick/blob/master/nginx-install.md</a></li>
-<li>添加专用用户，后面有用<ul>
-<li><code>groupadd www</code></li>
-<li><code>useradd -g www www -s /bin/false</code></li>
-</ul>
-</li>
-<li>安装依赖包<ul>
-<li><code>yum install -y gcc gcc-c++ zlib zlib-devel openssl openssl-devel pcre pcre-devel</code></li>
-<li><code>yum install -y libpng libjpeg libpng-devel libjpeg-devel ghostscript libtiff libtiff-devel freetype freetype-devel</code></li>
-<li><code>yum install -y GraphicsMagick GraphicsMagick-devel</code></li>
-</ul>
-</li>
-<li>下面的这些软件都在本文在开头的那个压缩包里面。现在我们需要解压这些压缩包<ul>
-<li><code>cd /opt/setups</code></li>
-<li><code>tar -zxvf nginx-1.8.0.tar.gz</code></li>
-<li><code>tar -zxvf LuaJIT-2.0.4.tar.gz</code></li>
-<li><code>tar -zxvf GraphicsMagick-1.3.21.tar.gz</code></li>
-<li><code>tar -zxvf zlib-1.2.8.tar.gz</code></li>
-</ul>
-</li>
-<li>安装 LuaJIT<ul>
-<li><code>cd /opt/setups/LuaJIT-2.0.4</code></li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-<li><code>export LUAJIT_LIB=/usr/local/lib</code></li>
-<li><code>export LUAJIT_INC=/usr/local/include/luajit-2.0</code></li>
-<li><code>ln -s /usr/local/lib/libluajit-5.1.so.2 /lib64/libluajit-5.1.so.2</code></li>
-</ul>
-</li>
-<li>修改一些配置文件<ul>
-<li>编辑 Nginx 模块的配置文件：<code>vim /opt/setups/fastdfs-nginx-module/src/config</code></li>
-<li>找到下面一行包含有 <code>local</code> 字眼去掉，因为这三个路径根本不是在 local 目录下的。（如果你的配置文件没有这个 local，那这一步跳过）<pre><code class="nginx">CORE_INCS=&quot;$CORE_INCS /usr/local/include/fastdfs /usr/local/include/fastcommon/&quot;
-</code></pre>
-</li>
-<li>改为如下：<pre><code class="nginx">CORE_INCS=&quot;$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/&quot;
-</code></pre>
-</li>
-<li>复制文件：<code>cp /opt/setups/FastDFS/conf/http.conf /etc/fdfs</code></li>
-<li>复制文件：<code>cp /opt/setups/FastDFS/conf/mime.types /etc/fdfs</code></li>
-</ul>
-</li>
-<li>开始安装 Nginx<ul>
-<li><code>cd /opt/setups/nginx-1.8.0</code></li>
-<li><code>mkdir -p /usr/local/nginx /var/log/nginx /var/temp/nginx /var/lock/nginx</code></li>
-<li>执行下面编译语句：<pre><code class="nginx">./configure --prefix=/usr/local/nginx \
---user=www \
---group=www \
---pid-path=/var/local/nginx/nginx.pid  \
---lock-path=/var/lock/nginx/nginx.lock \
---error-log-path=/var/log/nginx/error.log \
---http-log-path=/var/log/nginx/access.log \
---http-client-body-temp-path=/var/temp/nginx/client \
---http-proxy-temp-path=/var/temp/nginx/proxy \
---http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
---http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
---http-scgi-temp-path=/var/temp/nginx/scgi \
---sbin-path=/usr/local/nginx/sbin/nginx \
---with-http_ssl_module \
---with-http_realip_module \
---with-http_sub_module \
---with-http_flv_module \
---with-http_dav_module \
---with-http_gzip_static_module \
---with-http_stub_status_module \
---with-http_addition_module \
---with-http_spdy_module \
---with-pcre \
---with-zlib=/opt/setups/zlib-1.2.8 \
---add-module=/opt/setups/nginx-http-concat \
---add-module=/opt/setups/lua-nginx-module \
---add-module=/opt/setups/ngx_devel_kit \
---add-module=/opt/setups/fastdfs-nginx-module/src
-</code></pre>
-</li>
-<li><code>make</code></li>
-<li><code>make install</code></li>
-</ul>
-</li>
-<li>修改一下配置<ul>
-<li>复制 Nginx 模块的配置文件：<code>cp /opt/setups/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs</code></li>
-<li>编辑 Nginx 模块的配置文件：<code>vim /etc/fdfs/mod_fastdfs.conf</code>，编辑内容看下面中文注释</li>
-<li>如果在已经启动 Nginx 的情况下修改下面内容记得要重启 Nginx。<pre><code class="ini">connect_timeout=2
-network_timeout=30
-# 下面这个路径是保存 log 的地方，需要我们改下，指向我们一个存在的目录
-# 创建目录：mkdir -p /opt/fastdfs/fastdfs-nginx-module/data-and-log
-base_path=/opt/fastdfs/fastdfs-nginx-module/data-and-log
-load_fdfs_parameters_from_tracker=true
-storage_sync_file_max_delay = 86400
-use_storage_id = false
-storage_ids_filename = storage_ids.conf
-# 指定 tracker 服务器的 IP 和端口
-tracker_server=192.168.1.114:22122
-storage_server_port=23000
-group_name=group1
-# 因为我们访问图片的地址是：http://192.168.1.114/group1/M00/00/00/wKgBclb0aqWAbVNrAAAjn7_h9gM813_big.jpg
-# 该地址前面是带有 /group1/M00，所以我们这里要使用 true，不然访问不到（原值是 false）
-url_have_group_name = true
-store_path_count=1
-# 图片实际存放路径，如果有多个，这里可以有多行：
-# store_path0=/opt/fastdfs/storage/images-data0
-# store_path1=/opt/fastdfs/storage/images-data1
-# store_path2=/opt/fastdfs/storage/images-data2
-store_path0=/opt/fastdfs/storage/images-data
-log_level=info
-log_filename=
-response_mode=proxy
-if_alias_prefix=
-flv_support = true
-flv_extension = flv
-group_count = 0
-</code></pre>
-</li>
-<li>创建文件夹：<code>mkdir -p /opt/fastdfs/thumb</code></li>
-<li>编辑 Nginx 配置文件</li>
-<li><code>vim /usr/local/nginx/conf/nginx.conf</code><br>``` nginx<h1 id="注意这一行行，我特别加上了使用-root-用户去执行，不然有些日记目录没有权限访问"><a href="#注意这一行行，我特别加上了使用-root-用户去执行，不然有些日记目录没有权限访问" class="headerlink" title="注意这一行行，我特别加上了使用 root 用户去执行，不然有些日记目录没有权限访问"></a>注意这一行行，我特别加上了使用 root 用户去执行，不然有些日记目录没有权限访问</h1>user  root;<br>worker_processes  1;</li>
-</ul>
-</li>
-</ul>
-<pre><code>events {
-    worker_connections  1024;
-}
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/SVN-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/SVN-Install-And-Settings/">Subversion 1.8 安装</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
+          
 
-    sendfile        on;
-
-    keepalive_timeout  65;
-
-
-    server{
-        listen      80;
-        server_name 192.168.1.112;
-
-        set $img_thumbnail_root /opt/fastdfs/thumb; 
-        set $img_file $img_thumbnail_root$uri;  
-
-        # like：/pic/M00/xx/xx/xx.jpg_200x100.jpg
-        # /group1/M00
-        location ~* ^(\/(\w+)(\/M00)(.+\.(jpg|jpeg|gif|png))_(\d+)+x(\d+)+\.(jpg|jpeg|gif|png))$ {
-                root $img_thumbnail_root;    
-                set $fdfs_group_root /opt/fastdfs/storage/images-data/data; 
-
-                # 如果缩略图不存在
-                if (!-f $img_file) {   
-                        add_header X-Powered-By &#39;Nginx+Lua+GraphicsMagick By Yanue&#39;;  
-                        add_header file-path $request_filename;
-
-                        set $request_filepath $fdfs_group_root$4;    
-                        set $img_width $6;    
-                        set $img_height $7;    
-                        set $img_ext $5;     
-                        content_by_lua_file /opt/setups/lua/cropSize.lua;   
-                }
-        }
-
-        location /group1/M00 {
-                alias /opt/fastdfs/storage/images-data/data;
-                ngx_fastdfs_module;
-        }
-
-    }
-}
-```
-- 启动 Nginx
-    - 停掉防火墙：`service iptables stop`
-    - 启动：`/usr/local/nginx/sbin/nginx`，启动完成 shell 是不会有输出的
-    - 访问：`192.168.1.114`，如果能看到：`Welcome to nginx!`，即可表示安装成功
-    - 检查 时候有 Nginx 进程：`ps aux | grep nginx`，正常是显示 3 个结果出来 
-    - 刷新 Nginx 配置后重启：`/usr/local/nginx/sbin/nginx -s reload`
-    - 停止 Nginx：`/usr/local/nginx/sbin/nginx -s stop`
-    - 如果访问不了，或是出现其他信息看下错误立即：`vim /var/log/nginx/error.log`
-</code></pre><h3 id="多机安装部署（CentOS-6-7-环境）"><a href="#多机安装部署（CentOS-6-7-环境）" class="headerlink" title="多机安装部署（CentOS 6.7 环境）"></a>多机安装部署（CentOS 6.7 环境）</h3><ul>
-<li>多机部署的情况，对生成大小图的 Nginx 也有地方要修改。</li>
-<li>资料：<a href="http://blog.csdn.net/ricciozhang/article/details/49402273" target="_blank" rel="external">http://blog.csdn.net/ricciozhang/article/details/49402273</a></li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://blog.csdn.net/ricciozhang/article/details/49402273" target="_blank" rel="external">fastdfs+nginx安装配置</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/FastDFS-Nginx-Lua-GraphicsMagick/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Hsk-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="花生壳-安装"><a href="#花生壳-安装" class="headerlink" title="花生壳 安装"></a>花生壳 安装</h1><h2 id="CentOS-下过程"><a href="#CentOS-下过程" class="headerlink" title="CentOS 下过程"></a>CentOS 下过程</h2><ul>
-<li>官网：<a href="http://hsk.oray.com/" target="_blank" rel="external">http://hsk.oray.com/</a> </li>
-<li>官网下载：<a href="http://hsk.oray.com/download/#type=linux" target="_blank" rel="external">http://hsk.oray.com/download/#type=linux</a></li>
-<li>官网安装说明：<a href="http://service.oray.com/question/1890.html" target="_blank" rel="external">http://service.oray.com/question/1890.html</a></li>
-<li>软件包下载：<code>wget http://download.oray.com/peanuthull/linux/phddns-2.0.6.el6.x86_64.rpm</code></li>
-<li>安装：<code>sudo yum localinstall -y phddns-2.0.6.el6.x86_64.rpm</code></li>
-<li>配置：<ul>
-<li>安装完毕后，在终端下运行：<code>phddns</code></li>
-<li>第一步：：Enter server address(press ENTER use phddns60.oray.net)，这是提示您输入花生壳服务器的域名，如果网站上没有更新域名的公告说明，这一步直接回车即可，会使用默认的 phddns60.oray.net 域名。</li>
-<li>第二步：Enter your Oray account:这是提示您输入在花生壳官网注册的用户名，请根据实际情况输入。</li>
-<li>第三步：Password：这是提示您输入在花生壳官网注册的用户名所对应的密码，请根据实际情况输入。</li>
-<li>第四步：Network interface(s): 这是要配置您这台服务器的网络参数，花生壳（公网版）软件会自动检查，并输出您的网络情况。eth0部分可能和上面的不一样，是您的实际网络设置。如果您有两块网卡，eth0 和eth1 ,而您希望用eth1来绑定花生壳，请在这里输入 eth1 ，然后回车。如果您只有一块网卡，或者您希望使用 eth0来绑定花生壳，在这里直接回车即可。</li>
-<li>第五步：Log to use(default /var/log/phddns.log):这是提示您输入花生壳（公网版）软件日志的保存位置，请使用绝对路径指定日志文件名。如果直接回车，会使用 /var/log/phddns.log 来保存日志。</li>
-<li>第六步： Save to configuration file (/etc/phlinux.conf)?(yes/no/other): 这是提示您输入上述配置的保存文件名。如果输入yes 或直接回车，将会使用/etc/phlinux.conf 来作为配置的保存文件名。如果输入other ，将会提示您自行指定文件名，请使用绝对路径来指定这个配置文件名。如果输入no ,不对上述配置进行保存,下次重新使用花生壳（公网版）时,需要手动指定配置文件或再次通过交互模式进行设置.</li>
-<li>第六步执行完毕后，屏幕上会依次出现：defOnStatusChanged ok，DomainsRegistered，UserType，表示安装、配置完成了</li>
-</ul>
-</li>
-<li>启动服务：<code>/usr/bin/phddns -c /etc/phlinux.conf -d</code></li>
-<li>设置开机启动：<code>echo &quot;/usr/bin/phddns -c /etc/phlinux.conf -d&quot; &gt;&gt; /etc/rc.local</code></li>
-<li>查看进程：<code>ps -ef | grep phddns</code></li>
-<li>卸载：<ul>
-<li><code>rpm -qa|grep phddns</code></li>
-<li><code>sudo rpm -e phddns-2.0.6-1.el6.x86_64</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://service.oray.com/question/1890.html" target="_blank" rel="external">http://service.oray.com/question/1890.html</a></li>
-</ul>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/VPN/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/VPN/">VPN</a>
+    </h1>
+  
 
-      
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Hsk-Install/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-centos-settings/CentOS-Extra-Packages" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CentOS-源设置"><a href="#CentOS-源设置" class="headerlink" title="CentOS 源设置"></a>CentOS 源设置</h1><h2 id="ubuntu">修改官方源</h2>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/Vim-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/Vim-Install-And-Settings/">Vim 安装和配置、优化</a>
+    </h1>
+  
 
-<ul>
-<li>下面内容的一个简易集合版本脚本：<a href="http://pan.baidu.com/s/1hrdnbi0" target="_blank" rel="external">http://pan.baidu.com/s/1hrdnbi0</a></li>
-</ul>
-<h2 id="ubuntu22">修改官方源</h2>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-<blockquote>
-<p>国内常用源配置方法（该源和官方源是一样的，只是因为服务器在国内会起到加速作用而已）：</p>
-</blockquote>
-<ul>
-<li>163 源：<a href="http://mirrors.163.com/.help/centos.html" target="_blank" rel="external">http://mirrors.163.com/.help/centos.html</a> </li>
-<li>阿里源：<a href="http://mirrors.aliyun.com/help/centos" target="_blank" rel="external">http://mirrors.aliyun.com/help/centos</a></li>
-<li>sohu：<a href="http://mirrors.sohu.com/help/centos.html" target="_blank" rel="external">http://mirrors.sohu.com/help/centos.html</a></li>
-</ul>
-<blockquote>
-<p>替换过程（这里以 163 源为例，系统 CentOS 6.7）：</p>
-</blockquote>
-<ul>
-<li>备份官网源：<code>sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.20151219.backup</code></li>
-<li><code>cd /etc/yum.repos.d/</code></li>
-<li>下载对应版本 repo 文件, 放入 <strong>/etc/yum.repos.d/</strong><ul>
-<li>下载源文件：<ul>
-<li>CentOS7：<code>sudo wget http://mirrors.163.com/.help/CentOS7-Base-163.repo</code></li>
-<li>CentOS6：<code>sudo wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</code></li>
-<li>CentOS5：<code>sudo wget http://mirrors.163.com/.help/CentOS5-Base-163.repo</code></li>
-</ul>
-</li>
-<li><code>sudo mv CentOS6-Base-163.repo CentOS-Base.repo</code></li>
-<li>导入key：<code>rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</code></li>
-<li><code>sudo yum clean all</code></li>
-<li><code>sudo yum makecache</code></li>
-<li><code>sudo yum update -y</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="ubuntu33">第三方源</h2>
+          
 
-<blockquote>
-<p>加入第三方源主要是为了 yum 下载到官方没有提供的软件，在其他社区、第三方源里面有很多的软件包，有些软件是很好用的。CentOS 可以加入多个源，所以就存在一个源的优先级问题了，设置优先级的可以使用 yum-plugin-priorities 工具。一般我是建议官方的优先级是最高的，然后才是第三方的。</p>
-</blockquote>
-<ul>
-<li>安装 yum-plugin-priorities：<ul>
-<li>CentOS 4 或 CentOS 6：<code>sudo yum install -y yum-plugin-priorities</code></li>
-<li>CentOS 5：<code>sudo yum install -y yum-priorities</code></li>
-</ul>
-</li>
-<li><p>安装完 yum-plugin-priorities 插件后，默认是开启的，如果要关闭可以这样设置：</p>
-<ul>
-<li><code>sudo vim /etc/yum/pluginconf.d/priorities.conf</code></li>
-<li>把 enabled=1 改为 enabled=0 即可</li>
-<li>设置默认源的优先级：</li>
-<li>一般默认的源配置里面 [base], [updates], [extras]，[centosplus] 的 priority=1， [contrib] 的 priority=2，其他第三的软件源为：priority=N （推荐 N &gt; 10，N 可以为1到99的正整数，数值越小越优先）</li>
-<li><code>sudo vim /etc/yum.repos.d/CentOS-Base.repo</code></li>
-<li>配置内容如下图</li>
-<li><img src="../images/CentOS-Extra-Packages-a-1.jpg" alt="CentOS 默认源的级别设置"></li>
-</ul>
-</li>
-<li><p>安装 EPEL 源：</p>
-<ul>
-<li>官网中文材料：<a href="https://fedoraproject.org/wiki/EPEL/zh-cn" target="_blank" rel="external">https://fedoraproject.org/wiki/EPEL/zh-cn</a></li>
-<li>安装命令：<code>sudo yum install -y epel-release</code></li>
-<li>导入 KEY：<code>rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</code></li>
-<li>设置 EPEL 源的级别：<code>vim  /etc/yum.repos.d/epel.repo</code>，追加：priority=11</li>
-</ul>
-</li>
-<li><p>卸载 EPEL 源</p>
-<ul>
-<li>如果你暂时不想使用 EPEL 源的话，把 epel.repo 里的 enabled=1 改成 enabled=0 即可，如果你完全不需要了，那就直接卸载掉 <code>sudo rpm -e epel-release</code></li>
-</ul>
-</li>
-<li><p>安装 RepoForge 源：（旧的名字为 rpmforge）</p>
-<ul>
-<li>官网下载 RPM包：<a href="http://repoforge.org/use/" target="_blank" rel="external">http://repoforge.org/use/</a></li>
-<li>我是 CentOS 6.7 64 位，所以下载 EL 6 x86_64，下载 RMP 安装文件大小：12.3 KB</li>
-<li>下载命令：<code>wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm</code>（我这边 wget 不下来，需要开 VPN，所以你最好有这个心理准备）</li>
-<li>安装 RPM 文件：<code>sudo rpm -ivh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm</code></li>
-<li>导入 KEY：<code>sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmforge-dag</code></li>
-<li>设置 RepoForge 源的级别：<code>vim  /etc/yum.repos.d/rpmforge.repo</code>，设置如下图</li>
-<li><img src="../images/CentOS-Extra-Packages-a-2.jpg" alt="RepoForge 源的级别设置"></li>
-</ul>
-</li>
-<li><p>更新包信息：</p>
-<ul>
-<li><code>sudo yum clean all</code></li>
-<li><code>sudo yum makecache</code></li>
-<li><code>sudo yum update -y</code></li>
-</ul>
-</li>
-<li><p>测试：</p>
-<ul>
-<li>命令：<code>sudo yum check-update</code></li>
-<li>看到显示的结果中包括 rpmforge 和 epel 的列表表示成功。</li>
-<li><code>sudo yum install -y htop</code>（htop 官方源是没有的，所以如果能下载下来就表示已经使用了第三方源）</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>资料：</p>
-</blockquote>
-<ul>
-<li><a href="https://wiki.centos.org/zh/PackageManagement/Yum/Priorities" target="_blank" rel="external">https://wiki.centos.org/zh/PackageManagement/Yum/Priorities</a></li>
-<li><a href="http://www.cnblogs.com/Security-Darren/p/3947952.html" target="_blank" rel="external">http://www.cnblogs.com/Security-Darren/p/3947952.html</a></li>
-<li><a href="http://freeloda.blog.51cto.com/2033581/1260824" target="_blank" rel="external">http://freeloda.blog.51cto.com/2033581/1260824</a></li>
-<li><a href="http://www.centoscn.com/CentOS/config/2014/0920/3793.html" target="_blank" rel="external">http://www.centoscn.com/CentOS/config/2014/0920/3793.html</a>  </li>
-<li><a href="http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html" target="_blank" rel="external">http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html</a></li>
-<li><a href="http://www.ha97.com/2626.html" target="_blank" rel="external">http://www.ha97.com/2626.html</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Extra-Packages/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-centos-settings/Clear-Cache" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="清除系统缓存"><a href="#清除系统缓存" class="headerlink" title="清除系统缓存"></a>清除系统缓存</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
-<li>本身 Linux 有比较成熟的内存管理机制，但是不免也是会抽风的，有些程序在被 kill 掉之后系统内存依然没有大的变化，这时候就需要手动清除。</li>
-</ul>
-<h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><ul>
-<li>官网说明：<a href="http://www.kernel.org/doc/Documentation/sysctl/vm.txt" target="_blank" rel="external">http://www.kernel.org/doc/Documentation/sysctl/vm.txt</a></li>
-<li>先查看目前系统内存使用情况：<code>free -m</code></li>
-<li>同步缓存数据到硬盘：<code>sync</code></li>
-<li>开始清理：<code>echo 3 &gt; /proc/sys/vm/drop_caches</code><ul>
-<li>0：不清除</li>
-<li>1：清除页缓存</li>
-<li>2：清除目录项缓存与文件结点缓存</li>
-<li>3：清除所有缓存（常用）</li>
-</ul>
-</li>
-<li>再查看清除后效果：<code>free -m</code></li>
-</ul>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/22/Tomcat-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/22/Tomcat-Install-And-Settings/">Tomcat 8 安装和配置、优化</a>
+    </h1>
+  
 
-      
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/Clear-Cache/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/tags/Java-程序员眼中的-Linux/page/3/">&laquo; Prev</a><a class="page-number" href="/tags/Java-程序员眼中的-Linux/">1</a><a class="page-number" href="/tags/Java-程序员眼中的-Linux/page/2/">2</a><a class="page-number" href="/tags/Java-程序员眼中的-Linux/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/tags/Java-程序员眼中的-Linux/page/5/">5</a><a class="extend next" rel="next" href="/tags/Java-程序员眼中的-Linux/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1633,10 +522,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
 <script>
 	var yiliaConfig = {
 		mathjax: undefined,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -1701,6 +590,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1761,7 +654,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1773,34 +666,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -1809,15 +674,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1833,11 +706,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

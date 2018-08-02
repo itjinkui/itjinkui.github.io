@@ -165,563 +165,31 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Solr-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Was-Hacked" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Was-Hacked/">黑客入侵检查</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Was-Hacked/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Solr-安装和配置"><a href="#Solr-安装和配置" class="headerlink" title="Solr 安装和配置"></a>Solr 安装和配置</h2><h2 id="Solr-安装"><a href="#Solr-安装" class="headerlink" title="Solr 安装"></a>Solr 安装</h2><ul>
-<li>官网：<a href="https://lucene.apache.org/solr/" target="_blank" rel="external">https://lucene.apache.org/solr/</a></li>
-<li>此时（20160329） Solr 最新稳定版本为：<strong>5.5.0</strong></li>
-<li>官网下载：<a href="http://www.apache.org/dyn/closer.lua/lucene/solr/5.5.0" target="_blank" rel="external">http://www.apache.org/dyn/closer.lua/lucene/solr/5.5.0</a></li>
-<li>官网新手入门：<a href="https://lucene.apache.org/solr/quickstart.html" target="_blank" rel="external">https://lucene.apache.org/solr/quickstart.html</a></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>必须先装有 JDK，我这里安装的是 JDK 7</li>
-<li>先开放防火墙端口：<ul>
-<li>添加规则：<code>sudo iptables -A INPUT -p tcp -m tcp --dport 8983 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo service iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-<li>我这里使用 solr-4.10.2.zip：（大小：148 M）<ul>
-<li>解压：<code>unzip solr-4.10.2.zip</code></li>
-<li>移动到我个人安装目录：<code>mv solr-4.10.2/ /usr/program/</code></li>
-<li>进入解压后目录：<code>cd /usr/program/solr-4.10.2/example/</code></li>
-<li>启动 Solr 自带测试案例：<code>java -jar start.jar</code></li>
-<li>打开浏览器，访问：<code>http://192.168.1.115:8983/solr/</code>，可以看到 Solr 相关页面就表示成功了</li>
-<li>给 Solr 这个默认测试案例添加数据：<code>cd /usr/program/solr-4.10.2/example/exampledocs ; java -jar post.jar solr.xml monitor.xml</code></li>
-<li>此时，你在 Solr 的默认测试 Core 为 collection1 的 query 下查询就可以看到一些数据。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Solr-新建-Core"><a href="#Solr-新建-Core" class="headerlink" title="Solr 新建 Core"></a>Solr 新建 Core</h2><ul>
-<li>进入目录：<code>cd /usr/program/solr-4.10.2/example</code></li>
-<li>创建项目目录：<code>mkdir ssm-solr</code></li>
-<li>复制配置文件：<code>cp /usr/program/solr-4.10.2/example/solr/solr.xml /usr/program/solr-4.10.2/example/ssm-solr</code></li>
-<li>创建一个 Core 目录及两个配置和数据目录：<code>mkdir -p /usr/program/solr-4.10.2/example/ssm-solr/user/conf /usr/program/solr-4.10.2/example/ssm-solr/user/data</code></li>
-<li>复制配置文件：<code>cp /usr/program/solr-4.10.2/example/solr/collection1/core.properties /usr/program/solr-4.10.2/example/ssm-solr/user/</code></li>
-<li>编辑配置文件：<code>vim /usr/program/solr-4.10.2/example/ssm-solr/user/core.properties</code><ul>
-<li>把：<code>name=collection1</code>，改为：<code>name=user</code>。这个名字就是你的新 Core 的命名，因为我测试的跟会员有关系，所以这里命名为 user</li>
-</ul>
-</li>
-<li>配置 IK 分词器<ul>
-<li>IKAnalyzer-2012-4x.jar 放在 /usr/program/solr-4.10.2/example/solr-webapp/webapp/WEB-INF/lib 目录下</li>
-</ul>
-</li>
-<li>复制配置文件：<code>cp /usr/program/solr-4.10.2/example/solr/collection1/conf/schema.xml /usr/program/solr-4.10.2/example/ssm-solr/user/conf/</code> </li>
-<li>复制配置文件：<code>cp /usr/program/solr-4.10.2/example/solr/collection1/conf/solrconfig.xml /usr/program/solr-4.10.2/example/ssm-solr/user/conf/</code></li>
-<li>编辑配置文件：<code>vim /usr/program/solr-4.10.2/example/ssm-solr/user/conf/schema.xml</code>，内容改为如下：</li>
-</ul>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-
-&lt;schema name=&quot;example&quot; version=&quot;1.5&quot;&gt;
-
-    &lt;field name=&quot;_version_&quot; type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-    &lt;field name=&quot;_root_&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;false&quot;/&gt;
-
-
-    &lt;field name=&quot;sysUserId&quot; type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot; required=&quot;true&quot; multiValued=&quot;false&quot; /&gt; 
-    &lt;field name=&quot;sysUserLoginName&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-    &lt;field name=&quot;sysUserRealName&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-    &lt;field name=&quot;sysUserEmail&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-    &lt;field name=&quot;sysUserMobile&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-    &lt;field name=&quot;sysUserRegisterDatetime&quot; type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
-
-
-    &lt;uniqueKey&gt;sysUserId&lt;/uniqueKey&gt;
-
-
-
-    &lt;!--IK分词器--&gt;
-    &lt;!--把 indexed=&quot;true&quot; 适合做搜索的，并且需要分词的，type改为text_ik--&gt;
-    &lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;
-        &lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;
-    &lt;/fieldType&gt;
-
-    &lt;!-- solrQueryParser 可以指定搜索时多个词之间的关系，可以是 (AND|OR) 两种，默认是 OR，表示或的关系。--&gt;
-    &lt;!-- 假设在 OR 的情况，我们搜索：小米 手机。则只要含有：小米 或者是：手机的内容都会出现，比如出现：小米手环--&gt;
-    &lt;!-- 假设在 OR 的情况，我们搜索：小米 手机。则必须含有：小米 和 手机，两个关键字的内容--&gt;
-    &lt;solrQueryParser defaultOperator=&quot;AND&quot;/&gt;
-
-
-    &lt;fieldType name=&quot;string&quot; class=&quot;solr.StrField&quot; sortMissingLast=&quot;true&quot; /&gt;
-    &lt;fieldType name=&quot;long&quot; class=&quot;solr.TrieLongField&quot; precisionStep=&quot;0&quot; positionIncrementGap=&quot;0&quot;/&gt;
-    &lt;!--&lt;fieldType name=&quot;boolean&quot; class=&quot;solr.BoolField&quot; sortMissingLast=&quot;true&quot;/&gt;--&gt;
-    &lt;!--&lt;fieldType name=&quot;int&quot; class=&quot;solr.TrieIntField&quot; precisionStep=&quot;0&quot; positionIncrementGap=&quot;0&quot;/&gt;--&gt;
-    &lt;!--&lt;fieldType name=&quot;float&quot; class=&quot;solr.TrieFloatField&quot; precisionStep=&quot;0&quot; positionIncrementGap=&quot;0&quot;/&gt;--&gt;
-    &lt;!--&lt;fieldType name=&quot;double&quot; class=&quot;solr.TrieDoubleField&quot; precisionStep=&quot;0&quot; positionIncrementGap=&quot;0&quot;/&gt;--&gt;
-    &lt;!--&lt;fieldType name=&quot;date&quot; class=&quot;solr.TrieDateField&quot; precisionStep=&quot;0&quot; positionIncrementGap=&quot;0&quot;/&gt;--&gt;
-
-&lt;/schema&gt;
-</code></pre>
-<ul>
-<li>编辑配置文件：<code>vim /usr/program/solr-4.10.2/example/ssm-solr/user/conf/solrconfig.xml</code>，内容改为如下：<ul>
-<li>需要修改的内容有：<ul>
-<li>将所有的 <code>&lt;lib&gt;</code> 标签注释掉，如我中文注释内容</li>
-<li>把所有的 <code>&lt;str name=&quot;df&quot;&gt;text&lt;/str&gt;</code> 替换成 <code>&lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;</code>，这个 sysUserLoginName 是我在 schema.xm 定义的其中一个字段名字。df 是代表默认 field。</li>
-<li>注释掉：<code>&lt;searchComponent name=&quot;elevator&quot; class=&quot;solr.QueryElevationComponent&quot;&gt;</code> 的内容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;config&gt;
-    &lt;luceneMatchVersion&gt;4.10.2&lt;/luceneMatchVersion&gt;
-    &lt;!--
-      注释掉这一段
-      &lt;lib dir=&quot;../../../contrib/extraction/lib&quot; regex=&quot;.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../dist/&quot; regex=&quot;solr-cell-\d.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../contrib/clustering/lib/&quot; regex=&quot;.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../dist/&quot; regex=&quot;solr-clustering-\d.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../contrib/langid/lib/&quot; regex=&quot;.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../dist/&quot; regex=&quot;solr-langid-\d.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../contrib/velocity/lib&quot; regex=&quot;.*\.jar&quot; /&gt;
-      &lt;lib dir=&quot;../../../dist/&quot; regex=&quot;solr-velocity-\d.*\.jar&quot; /&gt;
-    --&gt;
-
-    &lt;dataDir&gt;${solr.data.dir:}&lt;/dataDir&gt;
-    &lt;directoryFactory name=&quot;DirectoryFactory&quot;
-                      class=&quot;${solr.directoryFactory:solr.NRTCachingDirectoryFactory}&quot;&gt;
-        &lt;str name=&quot;solr.hdfs.home&quot;&gt;${solr.hdfs.home:}&lt;/str&gt;
-        &lt;str name=&quot;solr.hdfs.confdir&quot;&gt;${solr.hdfs.confdir:}&lt;/str&gt;
-        &lt;str name=&quot;solr.hdfs.blockcache.enabled&quot;&gt;${solr.hdfs.blockcache.enabled:true}&lt;/str&gt;
-        &lt;str name=&quot;solr.hdfs.blockcache.global&quot;&gt;${solr.hdfs.blockcache.global:true}&lt;/str&gt;
-    &lt;/directoryFactory&gt;
-    &lt;codecFactory class=&quot;solr.SchemaCodecFactory&quot;/&gt;
-    &lt;schemaFactory class=&quot;ClassicIndexSchemaFactory&quot;/&gt;
-    &lt;indexConfig&gt;
-        &lt;lockType&gt;${solr.lock.type:native}&lt;/lockType&gt;
-        &lt;infoStream&gt;true&lt;/infoStream&gt;
-        &lt;checkIntegrityAtMerge&gt;false&lt;/checkIntegrityAtMerge&gt;
-    &lt;/indexConfig&gt;
-    &lt;jmx/&gt;
-    &lt;updateHandler class=&quot;solr.DirectUpdateHandler2&quot;&gt;
-        &lt;updateLog&gt;
-            &lt;str name=&quot;dir&quot;&gt;${solr.ulog.dir:}&lt;/str&gt;
-        &lt;/updateLog&gt;
-        &lt;autoCommit&gt;
-            &lt;maxTime&gt;${solr.autoCommit.maxTime:15000}&lt;/maxTime&gt;
-            &lt;openSearcher&gt;false&lt;/openSearcher&gt;
-        &lt;/autoCommit&gt;
-        &lt;autoSoftCommit&gt;
-            &lt;maxTime&gt;${solr.autoSoftCommit.maxTime:-1}&lt;/maxTime&gt;
-        &lt;/autoSoftCommit&gt;
-    &lt;/updateHandler&gt;
-    &lt;query&gt;
-        &lt;maxBooleanClauses&gt;1024&lt;/maxBooleanClauses&gt;
-        &lt;filterCache class=&quot;solr.FastLRUCache&quot;
-                     size=&quot;512&quot;
-                     initialSize=&quot;512&quot;
-                     autowarmCount=&quot;0&quot;/&gt;
-        &lt;queryResultCache class=&quot;solr.LRUCache&quot;
-                          size=&quot;512&quot;
-                          initialSize=&quot;512&quot;
-                          autowarmCount=&quot;0&quot;/&gt;
-        &lt;documentCache class=&quot;solr.LRUCache&quot;
-                       size=&quot;512&quot;
-                       initialSize=&quot;512&quot;
-                       autowarmCount=&quot;0&quot;/&gt;
-        &lt;cache name=&quot;perSegFilter&quot;
-               class=&quot;solr.search.LRUCache&quot;
-               size=&quot;10&quot;
-               initialSize=&quot;0&quot;
-               autowarmCount=&quot;10&quot;
-               regenerator=&quot;solr.NoOpRegenerator&quot;/&gt;
-        &lt;enableLazyFieldLoading&gt;true&lt;/enableLazyFieldLoading&gt;
-        &lt;queryResultWindowSize&gt;20&lt;/queryResultWindowSize&gt;
-        &lt;queryResultMaxDocsCached&gt;200&lt;/queryResultMaxDocsCached&gt;
-        &lt;listener event=&quot;newSearcher&quot; class=&quot;solr.QuerySenderListener&quot;&gt;
-            &lt;arr name=&quot;queries&quot;&gt;
-            &lt;/arr&gt;
-        &lt;/listener&gt;
-        &lt;listener event=&quot;firstSearcher&quot; class=&quot;solr.QuerySenderListener&quot;&gt;
-            &lt;arr name=&quot;queries&quot;&gt;
-                &lt;lst&gt;
-                    &lt;str name=&quot;q&quot;&gt;static firstSearcher warming in solrconfig.xml&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/arr&gt;
-        &lt;/listener&gt;
-        &lt;useColdSearcher&gt;false&lt;/useColdSearcher&gt;
-        &lt;maxWarmingSearchers&gt;2&lt;/maxWarmingSearchers&gt;
-    &lt;/query&gt;
-    &lt;requestDispatcher handleSelect=&quot;false&quot;&gt;
-        &lt;requestParsers enableRemoteStreaming=&quot;true&quot;
-                        multipartUploadLimitInKB=&quot;2048000&quot;
-                        formdataUploadLimitInKB=&quot;2048&quot;
-                        addHttpRequestToContext=&quot;false&quot;/&gt;
-        &lt;httpCaching never304=&quot;true&quot;/&gt;
-    &lt;/requestDispatcher&gt;
-    &lt;requestHandler name=&quot;/select&quot; class=&quot;solr.SearchHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;explicit&lt;/str&gt;
-            &lt;int name=&quot;rows&quot;&gt;10&lt;/int&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/query&quot; class=&quot;solr.SearchHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;explicit&lt;/str&gt;
-            &lt;str name=&quot;wt&quot;&gt;json&lt;/str&gt;
-            &lt;str name=&quot;indent&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/get&quot; class=&quot;solr.RealTimeGetHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;omitHeader&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;wt&quot;&gt;json&lt;/str&gt;
-            &lt;str name=&quot;indent&quot;&gt;true&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/export&quot; class=&quot;solr.SearchHandler&quot;&gt;
-        &lt;lst name=&quot;invariants&quot;&gt;
-            &lt;str name=&quot;rq&quot;&gt;{!xport}&lt;/str&gt;
-            &lt;str name=&quot;wt&quot;&gt;xsort&lt;/str&gt;
-            &lt;str name=&quot;distrib&quot;&gt;false&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;components&quot;&gt;
-            &lt;str&gt;query&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/browse&quot; class=&quot;solr.SearchHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;explicit&lt;/str&gt;
-            &lt;str name=&quot;wt&quot;&gt;velocity&lt;/str&gt;
-            &lt;str name=&quot;v.template&quot;&gt;browse&lt;/str&gt;
-            &lt;str name=&quot;v.layout&quot;&gt;layout&lt;/str&gt;
-            &lt;str name=&quot;title&quot;&gt;Solritas&lt;/str&gt;
-            &lt;str name=&quot;defType&quot;&gt;edismax&lt;/str&gt;
-            &lt;str name=&quot;qf&quot;&gt;
-                text^0.5 features^1.0 name^1.2 sku^1.5 id^10.0 manu^1.1 cat^1.4
-                title^10.0 description^5.0 keywords^5.0 author^2.0 resourcename^1.0
-            &lt;/str&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-            &lt;str name=&quot;mm&quot;&gt;100%&lt;/str&gt;
-            &lt;str name=&quot;q.alt&quot;&gt;*:*&lt;/str&gt;
-            &lt;str name=&quot;rows&quot;&gt;10&lt;/str&gt;
-            &lt;str name=&quot;fl&quot;&gt;*,score&lt;/str&gt;
-            &lt;str name=&quot;mlt.qf&quot;&gt;
-                text^0.5 features^1.0 name^1.2 sku^1.5 id^10.0 manu^1.1 cat^1.4
-                title^10.0 description^5.0 keywords^5.0 author^2.0 resourcename^1.0
-            &lt;/str&gt;
-            &lt;str name=&quot;mlt.fl&quot;&gt;text,features,name,sku,id,manu,cat,title,description,keywords,author,resourcename&lt;/str&gt;
-            &lt;int name=&quot;mlt.count&quot;&gt;3&lt;/int&gt;
-            &lt;str name=&quot;facet&quot;&gt;on&lt;/str&gt;
-            &lt;str name=&quot;facet.missing&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;facet.field&quot;&gt;cat&lt;/str&gt;
-            &lt;str name=&quot;facet.field&quot;&gt;manu_exact&lt;/str&gt;
-            &lt;str name=&quot;facet.field&quot;&gt;content_type&lt;/str&gt;
-            &lt;str name=&quot;facet.field&quot;&gt;author_s&lt;/str&gt;
-            &lt;str name=&quot;facet.query&quot;&gt;ipod&lt;/str&gt;
-            &lt;str name=&quot;facet.query&quot;&gt;GB&lt;/str&gt;
-            &lt;str name=&quot;facet.mincount&quot;&gt;1&lt;/str&gt;
-            &lt;str name=&quot;facet.pivot&quot;&gt;cat,inStock&lt;/str&gt;
-            &lt;str name=&quot;facet.range.other&quot;&gt;after&lt;/str&gt;
-            &lt;str name=&quot;facet.range&quot;&gt;price&lt;/str&gt;
-            &lt;int name=&quot;f.price.facet.range.start&quot;&gt;0&lt;/int&gt;
-            &lt;int name=&quot;f.price.facet.range.end&quot;&gt;600&lt;/int&gt;
-            &lt;int name=&quot;f.price.facet.range.gap&quot;&gt;50&lt;/int&gt;
-            &lt;str name=&quot;facet.range&quot;&gt;popularity&lt;/str&gt;
-            &lt;int name=&quot;f.popularity.facet.range.start&quot;&gt;0&lt;/int&gt;
-            &lt;int name=&quot;f.popularity.facet.range.end&quot;&gt;10&lt;/int&gt;
-            &lt;int name=&quot;f.popularity.facet.range.gap&quot;&gt;3&lt;/int&gt;
-            &lt;str name=&quot;facet.range&quot;&gt;manufacturedate_dt&lt;/str&gt;
-            &lt;str name=&quot;f.manufacturedate_dt.facet.range.start&quot;&gt;NOW/YEAR-10YEARS&lt;/str&gt;
-            &lt;str name=&quot;f.manufacturedate_dt.facet.range.end&quot;&gt;NOW&lt;/str&gt;
-            &lt;str name=&quot;f.manufacturedate_dt.facet.range.gap&quot;&gt;+1YEAR&lt;/str&gt;
-            &lt;str name=&quot;f.manufacturedate_dt.facet.range.other&quot;&gt;before&lt;/str&gt;
-            &lt;str name=&quot;f.manufacturedate_dt.facet.range.other&quot;&gt;after&lt;/str&gt;
-            &lt;str name=&quot;hl&quot;&gt;on&lt;/str&gt;
-            &lt;str name=&quot;hl.fl&quot;&gt;content features title name&lt;/str&gt;
-            &lt;str name=&quot;hl.preserveMulti&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;hl.encoder&quot;&gt;html&lt;/str&gt;
-            &lt;str name=&quot;hl.simple.pre&quot;&gt;&amp;lt;b&amp;gt;&lt;/str&gt;
-            &lt;str name=&quot;hl.simple.post&quot;&gt;&amp;lt;/b&amp;gt;&lt;/str&gt;
-            &lt;str name=&quot;f.title.hl.fragsize&quot;&gt;0&lt;/str&gt;
-            &lt;str name=&quot;f.title.hl.alternateField&quot;&gt;title&lt;/str&gt;
-            &lt;str name=&quot;f.name.hl.fragsize&quot;&gt;0&lt;/str&gt;
-            &lt;str name=&quot;f.name.hl.alternateField&quot;&gt;name&lt;/str&gt;
-            &lt;str name=&quot;f.content.hl.snippets&quot;&gt;3&lt;/str&gt;
-            &lt;str name=&quot;f.content.hl.fragsize&quot;&gt;200&lt;/str&gt;
-            &lt;str name=&quot;f.content.hl.alternateField&quot;&gt;content&lt;/str&gt;
-            &lt;str name=&quot;f.content.hl.maxAlternateFieldLength&quot;&gt;750&lt;/str&gt;
-            &lt;str name=&quot;spellcheck&quot;&gt;on&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.extendedResults&quot;&gt;false&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.count&quot;&gt;5&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.alternativeTermCount&quot;&gt;2&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxResultsForSuggest&quot;&gt;5&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.collate&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.collateExtendedResults&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxCollationTries&quot;&gt;5&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxCollations&quot;&gt;3&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;last-components&quot;&gt;
-            &lt;str&gt;spellcheck&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/update&quot; class=&quot;solr.UpdateRequestHandler&quot;&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/update/extract&quot;
-                    startup=&quot;lazy&quot;
-                    class=&quot;solr.extraction.ExtractingRequestHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;lowernames&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;uprefix&quot;&gt;ignored_&lt;/str&gt;
-            &lt;str name=&quot;captureAttr&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;fmap.a&quot;&gt;links&lt;/str&gt;
-            &lt;str name=&quot;fmap.div&quot;&gt;ignored_&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/analysis/field&quot;
-                    startup=&quot;lazy&quot;
-                    class=&quot;solr.FieldAnalysisRequestHandler&quot;/&gt;
-    &lt;requestHandler name=&quot;/analysis/document&quot;
-                    class=&quot;solr.DocumentAnalysisRequestHandler&quot;
-                    startup=&quot;lazy&quot;/&gt;
-    &lt;requestHandler name=&quot;/admin/&quot;
-                    class=&quot;solr.admin.AdminHandlers&quot;/&gt;
-    &lt;requestHandler name=&quot;/admin/ping&quot; class=&quot;solr.PingRequestHandler&quot;&gt;
-        &lt;lst name=&quot;invariants&quot;&gt;
-            &lt;str name=&quot;q&quot;&gt;solrpingquery&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;all&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/debug/dump&quot; class=&quot;solr.DumpRequestHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;explicit&lt;/str&gt;
-            &lt;str name=&quot;echoHandler&quot;&gt;true&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/requestHandler&gt;
-    &lt;requestHandler name=&quot;/replication&quot; class=&quot;solr.ReplicationHandler&quot;&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent name=&quot;spellcheck&quot; class=&quot;solr.SpellCheckComponent&quot;&gt;
-        &lt;str name=&quot;queryAnalyzerFieldType&quot;&gt;text_general&lt;/str&gt;
-        &lt;lst name=&quot;spellchecker&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;default&lt;/str&gt;
-            &lt;str name=&quot;field&quot;&gt;text&lt;/str&gt;
-            &lt;str name=&quot;classname&quot;&gt;solr.DirectSolrSpellChecker&lt;/str&gt;
-            &lt;str name=&quot;distanceMeasure&quot;&gt;internal&lt;/str&gt;
-            &lt;float name=&quot;accuracy&quot;&gt;0.5&lt;/float&gt;
-            &lt;int name=&quot;maxEdits&quot;&gt;2&lt;/int&gt;
-            &lt;int name=&quot;minPrefix&quot;&gt;1&lt;/int&gt;
-            &lt;int name=&quot;maxInspections&quot;&gt;5&lt;/int&gt;
-            &lt;int name=&quot;minQueryLength&quot;&gt;4&lt;/int&gt;
-            &lt;float name=&quot;maxQueryFrequency&quot;&gt;0.01&lt;/float&gt;
-        &lt;/lst&gt;
-        &lt;lst name=&quot;spellchecker&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;wordbreak&lt;/str&gt;
-            &lt;str name=&quot;classname&quot;&gt;solr.WordBreakSolrSpellChecker&lt;/str&gt;
-            &lt;str name=&quot;field&quot;&gt;name&lt;/str&gt;
-            &lt;str name=&quot;combineWords&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;breakWords&quot;&gt;true&lt;/str&gt;
-            &lt;int name=&quot;maxChanges&quot;&gt;10&lt;/int&gt;
-        &lt;/lst&gt;
-    &lt;/searchComponent&gt;
-    &lt;requestHandler name=&quot;/spell&quot; class=&quot;solr.SearchHandler&quot; startup=&quot;lazy&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.dictionary&quot;&gt;default&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.dictionary&quot;&gt;wordbreak&lt;/str&gt;
-            &lt;str name=&quot;spellcheck&quot;&gt;on&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.extendedResults&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.count&quot;&gt;10&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.alternativeTermCount&quot;&gt;5&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxResultsForSuggest&quot;&gt;5&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.collate&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.collateExtendedResults&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxCollationTries&quot;&gt;10&lt;/str&gt;
-            &lt;str name=&quot;spellcheck.maxCollations&quot;&gt;5&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;last-components&quot;&gt;
-            &lt;str&gt;spellcheck&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent name=&quot;suggest&quot; class=&quot;solr.SuggestComponent&quot;&gt;
-        &lt;lst name=&quot;suggester&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;mySuggester&lt;/str&gt;
-            &lt;str name=&quot;lookupImpl&quot;&gt;FuzzyLookupFactory&lt;/str&gt;
-            &lt;str name=&quot;dictionaryImpl&quot;&gt;DocumentDictionaryFactory&lt;/str&gt;
-            &lt;str name=&quot;field&quot;&gt;cat&lt;/str&gt;
-            &lt;str name=&quot;weightField&quot;&gt;price&lt;/str&gt;
-            &lt;str name=&quot;suggestAnalyzerFieldType&quot;&gt;string&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/searchComponent&gt;
-    &lt;requestHandler name=&quot;/suggest&quot; class=&quot;solr.SearchHandler&quot; startup=&quot;lazy&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;suggest&quot;&gt;true&lt;/str&gt;
-            &lt;str name=&quot;suggest.count&quot;&gt;10&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;components&quot;&gt;
-            &lt;str&gt;suggest&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent name=&quot;tvComponent&quot; class=&quot;solr.TermVectorComponent&quot;/&gt;
-    &lt;requestHandler name=&quot;/tvrh&quot; class=&quot;solr.SearchHandler&quot; startup=&quot;lazy&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-            &lt;bool name=&quot;tv&quot;&gt;true&lt;/bool&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;last-components&quot;&gt;
-            &lt;str&gt;tvComponent&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent name=&quot;clustering&quot;
-                     enable=&quot;${solr.clustering.enabled:false}&quot;
-                     class=&quot;solr.clustering.ClusteringComponent&quot;&gt;
-        &lt;lst name=&quot;engine&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;lingo&lt;/str&gt;
-            &lt;str name=&quot;carrot.algorithm&quot;&gt;org.carrot2.clustering.lingo.LingoClusteringAlgorithm&lt;/str&gt;
-            &lt;str name=&quot;carrot.resourcesDir&quot;&gt;clustering/carrot2&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;lst name=&quot;engine&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;stc&lt;/str&gt;
-            &lt;str name=&quot;carrot.algorithm&quot;&gt;org.carrot2.clustering.stc.STCClusteringAlgorithm&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;lst name=&quot;engine&quot;&gt;
-            &lt;str name=&quot;name&quot;&gt;kmeans&lt;/str&gt;
-            &lt;str name=&quot;carrot.algorithm&quot;&gt;org.carrot2.clustering.kmeans.BisectingKMeansClusteringAlgorithm&lt;/str&gt;
-        &lt;/lst&gt;
-    &lt;/searchComponent&gt;
-    &lt;requestHandler name=&quot;/clustering&quot;
-                    startup=&quot;lazy&quot;
-                    enable=&quot;${solr.clustering.enabled:false}&quot;
-                    class=&quot;solr.SearchHandler&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;bool name=&quot;clustering&quot;&gt;true&lt;/bool&gt;
-            &lt;bool name=&quot;clustering.results&quot;&gt;true&lt;/bool&gt;
-            &lt;str name=&quot;carrot.title&quot;&gt;name&lt;/str&gt;
-            &lt;str name=&quot;carrot.url&quot;&gt;id&lt;/str&gt;
-            &lt;str name=&quot;carrot.snippet&quot;&gt;features&lt;/str&gt;
-            &lt;bool name=&quot;carrot.produceSummary&quot;&gt;true&lt;/bool&gt;
-            &lt;bool name=&quot;carrot.outputSubClusters&quot;&gt;false&lt;/bool&gt;
-            &lt;str name=&quot;defType&quot;&gt;edismax&lt;/str&gt;
-            &lt;str name=&quot;qf&quot;&gt;
-                text^0.5 features^1.0 name^1.2 sku^1.5 id^10.0 manu^1.1 cat^1.4
-            &lt;/str&gt;
-            &lt;str name=&quot;q.alt&quot;&gt;*:*&lt;/str&gt;
-            &lt;str name=&quot;rows&quot;&gt;10&lt;/str&gt;
-            &lt;str name=&quot;fl&quot;&gt;*,score&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;last-components&quot;&gt;
-            &lt;str&gt;clustering&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent name=&quot;terms&quot; class=&quot;solr.TermsComponent&quot;/&gt;
-    &lt;requestHandler name=&quot;/terms&quot; class=&quot;solr.SearchHandler&quot; startup=&quot;lazy&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;bool name=&quot;terms&quot;&gt;true&lt;/bool&gt;
-            &lt;bool name=&quot;distrib&quot;&gt;false&lt;/bool&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;components&quot;&gt;
-            &lt;str&gt;terms&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-
-    &lt;!--  
-      &lt;searchComponent name=&quot;elevator&quot; class=&quot;solr.QueryElevationComponent&quot; &gt;
-        &lt;str name=&quot;queryFieldType&quot;&gt;string&lt;/str&gt;
-        &lt;str name=&quot;config-file&quot;&gt;elevate.xml&lt;/str&gt;
-      &lt;/searchComponent&gt;
-      --&gt;
-    &lt;requestHandler name=&quot;/elevate&quot; class=&quot;solr.SearchHandler&quot; startup=&quot;lazy&quot;&gt;
-        &lt;lst name=&quot;defaults&quot;&gt;
-            &lt;str name=&quot;echoParams&quot;&gt;explicit&lt;/str&gt;
-            &lt;str name=&quot;df&quot;&gt;sysUserLoginName&lt;/str&gt;
-        &lt;/lst&gt;
-        &lt;arr name=&quot;last-components&quot;&gt;
-            &lt;str&gt;elevator&lt;/str&gt;
-        &lt;/arr&gt;
-    &lt;/requestHandler&gt;
-    &lt;searchComponent class=&quot;solr.HighlightComponent&quot; name=&quot;highlight&quot;&gt;
-        &lt;highlighting&gt;
-            &lt;fragmenter name=&quot;gap&quot;
-                        default=&quot;true&quot;
-                        class=&quot;solr.highlight.GapFragmenter&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;int name=&quot;hl.fragsize&quot;&gt;100&lt;/int&gt;
-                &lt;/lst&gt;
-            &lt;/fragmenter&gt;
-            &lt;fragmenter name=&quot;regex&quot;
-                        class=&quot;solr.highlight.RegexFragmenter&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;int name=&quot;hl.fragsize&quot;&gt;70&lt;/int&gt;
-                    &lt;float name=&quot;hl.regex.slop&quot;&gt;0.5&lt;/float&gt;
-                    &lt;str name=&quot;hl.regex.pattern&quot;&gt;[-\w ,/\n\&amp;quot;&amp;apos;]{20,200}&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/fragmenter&gt;
-            &lt;formatter name=&quot;html&quot;
-                       default=&quot;true&quot;
-                       class=&quot;solr.highlight.HtmlFormatter&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;str name=&quot;hl.simple.pre&quot;&gt;&lt;![CDATA[&lt;em&gt;]]&gt;&lt;/str&gt;
-                    &lt;str name=&quot;hl.simple.post&quot;&gt;&lt;![CDATA[&lt;/em&gt;]]&gt;&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/formatter&gt;
-            &lt;encoder name=&quot;html&quot;
-                     class=&quot;solr.highlight.HtmlEncoder&quot;/&gt;
-            &lt;fragListBuilder name=&quot;simple&quot;
-                             class=&quot;solr.highlight.SimpleFragListBuilder&quot;/&gt;
-            &lt;fragListBuilder name=&quot;single&quot;
-                             class=&quot;solr.highlight.SingleFragListBuilder&quot;/&gt;
-            &lt;fragListBuilder name=&quot;weighted&quot;
-                             default=&quot;true&quot;
-                             class=&quot;solr.highlight.WeightedFragListBuilder&quot;/&gt;
-            &lt;fragmentsBuilder name=&quot;default&quot;
-                              default=&quot;true&quot;
-                              class=&quot;solr.highlight.ScoreOrderFragmentsBuilder&quot;&gt;
-            &lt;/fragmentsBuilder&gt;
-            &lt;fragmentsBuilder name=&quot;colored&quot;
-                              class=&quot;solr.highlight.ScoreOrderFragmentsBuilder&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;str name=&quot;hl.tag.pre&quot;&gt;&lt;![CDATA[
-               &lt;b style=&quot;background:yellow&quot;&gt;,&lt;b style=&quot;background:lawgreen&quot;&gt;,
-               &lt;b style=&quot;background:aquamarine&quot;&gt;,&lt;b style=&quot;background:magenta&quot;&gt;,
-               &lt;b style=&quot;background:palegreen&quot;&gt;,&lt;b style=&quot;background:coral&quot;&gt;,
-               &lt;b style=&quot;background:wheat&quot;&gt;,&lt;b style=&quot;background:khaki&quot;&gt;,
-               &lt;b style=&quot;background:lime&quot;&gt;,&lt;b style=&quot;background:deepskyblue&quot;&gt;]]&gt;&lt;/str&gt;
-                    &lt;str name=&quot;hl.tag.post&quot;&gt;&lt;![CDATA[&lt;/b&gt;]]&gt;&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/fragmentsBuilder&gt;
-            &lt;boundaryScanner name=&quot;default&quot;
-                             default=&quot;true&quot;
-                             class=&quot;solr.highlight.SimpleBoundaryScanner&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;str name=&quot;hl.bs.maxScan&quot;&gt;10&lt;/str&gt;
-                    &lt;str name=&quot;hl.bs.chars&quot;&gt;.,!? &amp;#9;&amp;#10;&amp;#13;&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/boundaryScanner&gt;
-            &lt;boundaryScanner name=&quot;breakIterator&quot;
-                             class=&quot;solr.highlight.BreakIteratorBoundaryScanner&quot;&gt;
-                &lt;lst name=&quot;defaults&quot;&gt;
-                    &lt;str name=&quot;hl.bs.type&quot;&gt;WORD&lt;/str&gt;
-                    &lt;str name=&quot;hl.bs.language&quot;&gt;en&lt;/str&gt;
-                    &lt;str name=&quot;hl.bs.country&quot;&gt;US&lt;/str&gt;
-                &lt;/lst&gt;
-            &lt;/boundaryScanner&gt;
-        &lt;/highlighting&gt;
-    &lt;/searchComponent&gt;
-    &lt;queryResponseWriter name=&quot;json&quot; class=&quot;solr.JSONResponseWriter&quot;&gt;
-        &lt;str name=&quot;content-type&quot;&gt;text/plain; charset=UTF-8&lt;/str&gt;
-    &lt;/queryResponseWriter&gt;
-    &lt;queryResponseWriter name=&quot;velocity&quot; class=&quot;solr.VelocityResponseWriter&quot; startup=&quot;lazy&quot;/&gt;
-    &lt;queryResponseWriter name=&quot;xslt&quot; class=&quot;solr.XSLTResponseWriter&quot;&gt;
-        &lt;int name=&quot;xsltCacheLifetimeSeconds&quot;&gt;5&lt;/int&gt;
-    &lt;/queryResponseWriter&gt;
-    &lt;admin&gt;
-        &lt;defaultQuery&gt;*:*&lt;/defaultQuery&gt;
-    &lt;/admin&gt;
-&lt;/config&gt;
-</code></pre>
-<ul>
-<li>先按 Ctrl + C 停掉刚刚启动做测试的 solr 程序</li>
-<li>重启：<code>cd /usr/program/solr-4.10.2/example/ ; java -Dsolr.solr.home=ssm-solr -jar start.jar</code></li>
-<li>重新访问，我们可以看到新的 Core 已经可以用了。</li>
-</ul>
-
+        <h1 id="黑客入侵检查"><a href="#黑客入侵检查" class="headerlink" title="黑客入侵检查"></a>黑客入侵检查</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Was-Hacked/#more">more >></a>
+        
       
 
       
@@ -729,11 +197,22 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Solr-Install-And-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Was-Hacked/">展开全文 >></a>
         </p>
       
 
@@ -763,938 +242,143 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Bash" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Zsh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Bash-常用命令"><a href="#Bash-常用命令" class="headerlink" title="Bash 常用命令"></a>Bash 常用命令</h1><h2 id="基础常用命令"><a href="#基础常用命令" class="headerlink" title="基础常用命令"></a>基础常用命令</h2><ul>
-<li><code>某个命令 --h</code>，对这个命令进行解释</li>
-<li><code>某个命令 --help</code>，解释这个命令(更详细)</li>
-<li><code>man某个命令</code>，文档式解释这个命令(更更详细)(执行该命令后,还可以按/+关键字进行查询结果的搜索)</li>
-<li><code>Ctrl + c</code>，结束命令</li>
-<li><code>TAB键</code>，自动补全命令（按一次自动补全，连续按两次，提示所有以输入开头字母的所有命令）</li>
-<li><code>键盘上下键</code>，输入临近的历史命令</li>
-<li><code>history</code>，查看所有的历史命令</li>
-<li><code>Ctrl + r</code>，进入历史命令的搜索功能模式</li>
-<li><code>clear</code>，清除屏幕里面的所有命令</li>
-<li><code>pwd</code>，显示当前目录路径（常用）</li>
-<li><code>firefox&amp;</code>，最后后面的 <strong>&amp;</strong> 符号，表示使用后台方式打开 Firefox，然后显示该进程的 PID 值</li>
-<li><code>jobs</code>，查看后台运行的程序列表</li>
-<li><code>ifconfig</code>，查看 IP 等信息（常用）</li>
-<li><code>locate 搜索关键字</code>，快速搜索系统文件/文件夹（类似 Windows 上的 everything 索引式搜索）（常用）<ul>
-<li><code>updatedb</code>，配合上面的 locate，给 locate 的索引更新（locate 默认是一天更新一次索引）（常用）</li>
-</ul>
-</li>
-<li><code>date</code>，查看系统时间（常用）<ul>
-<li><code>date -s20080103</code>，设置日期（常用）</li>
-<li><code>date -s18:24</code>，设置时间，如果要同时更改 BIOS 时间，再执行 <code>hwclock --systohc</code>（常用）</li>
-</ul>
-</li>
-<li><code>cal</code>，在终端中查看日历，肯定没有农历显示的</li>
-<li><code>uptime</code>，查看系统已经运行了多久，当前有几个用户等信息（常用）</li>
-<li><code>echo &quot;字符串内容&quot;</code>，输出 “字符串内容”</li>
-<li><code>cat 文件路名</code>，显示文件内容（属于打印语句）</li>
-<li><code>cat -n 文件名</code>，显示文件，并每一行内容都编号</li>
-<li><code>more 文件名</code>，用分页的方式查看文件内容（按 space 翻下一页，按 <em>Ctrl + B</em> 返回上页）</li>
-<li><code>less</code>文件名，用分页的方式查看文件内容（带上下翻页）<ul>
-<li>按 <strong>j</strong> 向下移动，按 <strong>k</strong> 向上移动</li>
-<li>按 <strong>/</strong> 后，输入要查找的字符串内容，可以对文件进行向下查询，如果存在多个结果可以按 <strong>n</strong> 调到下一个结果出</li>
-<li>按 <strong>？</strong> 后，输入要查找的字符串内容，可以对文件进行向上查询，如果存在多个结果可以按 <strong>n</strong> 调到下一个结果出</li>
-</ul>
-</li>
-<li><code>tail -200f 文件名</code>，查看文件被更新的新内容尾 200 行，如果文件还有在新增可以动态查看到（一般用于查看日记文件）</li>
-<li><code>shutdown</code><ul>
-<li><code>shutdown -hnow</code>，立即关机</li>
-<li><code>shutdown -h+10</code>，10 分钟后关机</li>
-<li><code>shutdown -h23:30</code>，23:30 关机</li>
-<li><code>shutdown -rnew</code>，立即重启</li>
-</ul>
-</li>
-<li><code>poweroff</code>，立即关机（常用）</li>
-<li><code>reboot</code>，立即重启（常用）</li>
-<li><code>zip mytest.zip /opt/test/</code>，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件<ul>
-<li><code>unzip mytest.zip</code>，对 mytest.zip 这个文件进行解压，解压到当前所在目录</li>
-<li><code>unzip mytest.zip -d /opt/setups/</code>，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下</li>
-</ul>
-</li>
-<li><code>tar -cvf mytest.tar mytest/</code>，对 mytest/ 目录进行归档处理（归档和压缩不一样）</li>
-<li><code>tar -xvf mytest.tar</code>，释放 mytest.tar 这个归档文件，释放到当前目录<ul>
-<li><code>tar -xvf mytest.tar -C /opt/setups/</code>，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下</li>
-</ul>
-</li>
-<li><code>last</code>，显示最近登录的帐户及时间</li>
-<li><code>lastlog</code>，显示系统所有用户各自在最近登录的记录，如果没有登录过的用户会显示 <strong>从未登陆过</strong></li>
-<li><p><code>ls</code>，列出当前目录下的所有没有隐藏的文件 / 文件夹。</p>
-<ul>
-<li><code>ls -a</code>，列出包括以．号开头的隐藏文件 / 文件夹（也就是所有文件）</li>
-<li><code>ls -R</code>，显示出目录下以及其所有子目录的文件 / 文件夹（递归地方式，不显示隐藏的文件）</li>
-<li><code>ls -a -R</code>，显示出目录下以及其所有子目录的文件 / 文件夹（递归地方式，显示隐藏的文件）</li>
-<li><p><code>ls -l</code>，列出目录下所有文件的权限、所有者、文件大小、修改时间及名称（也就是显示详细信息，不显示隐藏文件）。显示出来的效果如下：</p>
-<pre><code class="nginx">  -rwxr-xr-x. 1 root root 4096 3月 26 10:57，其中最前面的 - 表示这是一个普通文件
-  lrwxrwxrwx. 1 root root 4096 3月 26 10:57，其中最前面的 l 表示这是一个链接文件，类似 Windows 的快捷方式
-  drwxr-xr-x. 5 root root 4096 3月 26 10:57，其中最前面的 d 表示这是一个目录
-</code></pre>
-</li>
-<li><p><code>ls -ld 目录名</code>，显示该目录的基本信息</p>
-</li>
-<li><code>ls -t</code>，依照文件最后修改时间的顺序列出文件名。</li>
-<li><code>ls -F</code>，列出当前目录下的文件名及其类型。以 <strong>/</strong> 结尾表示为目录名，以 <strong>*</strong> 结尾表示为可执行文件，以 <strong>@</strong> 结尾表示为符号连接</li>
-<li><code>ls -lg</code>，同上，并显示出文件的所有者工作组名。</li>
-<li><code>ls -lh</code>，查看文件夹类文件详细信息，文件大小，文件修改时间</li>
-<li><code>ls /opt | head -5</code>，显示 opt 目录下前 5 条记录</li>
-<li><code>ls -l /opt |grep &quot;^-&quot;|wc -l</code>，统计 opt 目录下文件的个数，不会递归统计</li>
-<li><code>ls -lR /opt |grep &quot;^-&quot;|wc -l</code>，统计 opt 目录下文件的个数，会递归统计</li>
-<li><code>ls -l /opt |grep &quot;^d&quot;|wc -l</code>，统计 opt 目录下目录的个数，不会递归统计</li>
-<li><code>ls -lR /opt |grep &quot;^d&quot;|wc -l</code>，统计 opt 目录下目录的个数，会递归统计</li>
-<li><code>ls -lR /opt |grep &quot;js&quot;|wc -l</code>，统计 opt 目录下 js 文件的个数，会递归统计</li>
-</ul>
-</li>
-<li><code>cd</code>，目录切换<ul>
-<li><code>cd ..</code>，改变目录位置至当前目录的父目录(上级目录)。</li>
-<li><code>cd ~</code>，改变目录位置至用户登录时的工作目录。</li>
-<li><code>cd 回车</code>，回到家目录</li>
-<li><code>cd -</code>，上一个工作目录</li>
-<li><code>cd dir1/</code>，改变目录位置至 dir1 目录下。</li>
-<li><code>cd ~user</code>，改变目录位置至用户的工作目录。</li>
-<li><code>cd ../user</code>，改变目录位置至相对路径user的目录下。</li>
-<li><code>cd /../..</code>，改变目录位置至绝对路径的目录位置下。</li>
-</ul>
-</li>
-<li><code>cp 源文件 目标文件</code>，复制文件<ul>
-<li><code>cp -r 源文件夹 目标文件夹</code>，复制文件夹</li>
-<li><code>cp -r -v 源文件夹 目标文件夹</code>，复制文件夹(显示详细信息，一般用于文件夹很大，需要查看复制进度的时候)</li>
-<li><code>cp /usr/share/easy-rsa/2.0/keys/{ca.crt,server.{crt,key},dh2048.pem,ta.key} /etc/openvpn/keys/</code>，复制同目录下花括号中的文件</li>
-</ul>
-</li>
-<li><code>tar cpf - . | tar xpf - -C /opt</code>，复制当前所有文件到 /opt 目录下，一般如果文件夹文件多的情况下用这个更好，用 cp 比较容易出问题</li>
-<li><code>mv 文件 目标文件夹</code>，移动文件到目标文件夹<ul>
-<li><code>mv 文件</code>，不指定目录重命名后的名字，用来重命名文件</li>
-</ul>
-</li>
-<li><code>touch 文件名</code>，创建一个空白文件/更新已有文件的时间(后者少用)</li>
-<li><code>mkdir 文件夹名</code>，创建文件夹</li>
-<li><code>mkdir -p /opt/setups/nginx/conf/</code>，创建一个名为 conf 文件夹，如果它的上级目录 nginx 没有也会跟着一起生成，如果有则跳过</li>
-<li><code>rmdir 文件夹名</code>，删除文件夹(只能删除文件夹里面是没有东西的文件夹)</li>
-<li><code>rm 文件</code>，删除文件<ul>
-<li><code>rm -r 文件夹</code>，删除文件夹</li>
-<li><code>rm -r -i 文件夹</code>，在删除文件夹里的文件会提示(要的话,在提示后面输入yes)</li>
-<li><code>rm -r -f 文件夹</code>，强制删除</li>
-<li><code>rm -r -f 文件夹1/ 文件夹2/ 文件夹3/</code>删除多个</li>
-</ul>
-</li>
-<li><code>find</code>，高级查找<ul>
-<li><code>find . -name *lin*</code>，其中 . 代表在当前目录找，-name 表示匹配文件名 / 文件夹名，*lin* 用通配符搜索含有lin的文件或是文件夹</li>
-<li><code>find . -iname *lin*</code>，其中 . 代表在当前目录找，-iname 表示匹配文件名 / 文件夹名（忽略大小写差异），*lin* 用通配符搜索含有lin的文件或是文件夹</li>
-<li><code>find / -name *.conf</code>，其中 / 代表根目录查找，*.conf代表搜索后缀会.conf的文件</li>
-<li><code>find /opt -name .oh-my-zsh</code>，其中 /opt 代表目录名，.oh-my-zsh 代表搜索的是隐藏文件 / 文件夹名字为 oh-my-zsh 的</li>
-<li><code>find /opt -type f -iname .oh-my-zsh</code>，其中 /opt 代表目录名，-type f 代表只找文件，.oh-my-zsh 代表搜索的是隐藏文件名字为 oh-my-zsh 的</li>
-<li><code>find /opt -type d -iname .oh-my-zsh</code>，其中 /opt 代表目录名，-type d 代表只找目录，.oh-my-zsh 代表搜索的是隐藏文件夹名字为 oh-my-zsh 的</li>
-<li><code>find . -name &quot;lin*&quot; -execls -l{}\;</code>，当前目录搜索lin开头的文件，然后用其搜索后的结果集，再执行ls -l的命令（这个命令可变，其他命令也可以），其中 -exec 和 {}\; 都是固定格式</li>
-</ul>
-</li>
-<li><code>cat /etc/resolv.conf</code>，查看 DNS 设置</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-<li>``，</li>
-</ul>
-<h2 id="用户、权限-相关命令"><a href="#用户、权限-相关命令" class="headerlink" title="用户、权限-相关命令"></a>用户、权限-相关命令</h2><ul>
-<li><code>hostname</code>，查看当前登陆用户全名</li>
-<li><code>cat /etc/group</code>，查看所有组</li>
-<li><code>cat /etc/passwd</code>，查看所有用户</li>
-<li><code>useradd youmeek -p 123456</code>，添加一个名为 youmeek 的用户，还有一个同名的组</li>
-<li><code>userdel -r youmeek</code>，删除名字为 youmeek 的用户<ul>
-<li>参数：<code>-r</code>，表示删除用户的时候连同用户的家目录一起删除</li>
-</ul>
-</li>
-<li><p>修改普通用户 youmeek 的权限跟 root 权限一样：</p>
-<ul>
-<li><p>常用方法（原理是把该用户加到可以直接使用 sudo 的一个权限状态而已）：</p>
-<ul>
-<li>编辑配置文件：``</li>
-<li><p>找到 98 行（预估），有一个：<code>root    ALL=(ALL)   ALL</code>，在这一行下面再增加一行，效果如下：</p>
-<pre><code class="nginx">root    ALL=(ALL)   ALL
-youmeek    ALL=(ALL)   ALL
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>另一种方法：</p>
-<ul>
-<li>编辑系统用户的配置文件：<code>vim /etc/passwd</code>，找到 <strong>root</strong> 和 <strong>youmeek</strong> 各自开头的那一行，比如 root 是：<code>root:x:0:0:root:/root:/bin/zsh</code>，这个代表的含义为：<em>用户名:密码:UserId:GroupId:描述:家目录:登录使用的 shell</em></li>
-<li>通过这两行对比，我们可以直接修改 youmeek 所在行的 UserId 值 和 GroupId 值，都改为 0。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>groupadd judasn</code>，添加一个名为 judasn 的用户组</li>
-<li><code>groupdel judasn</code>，删除一个名为 judasn 的用户组（前提：先删除组下面的所有用户）</li>
-<li><code>passwd youmeek</code>，修改 youmeek 用户的密码（前提：只有 root 用户才有修改其他用户的权限，其他用户只能修改自己的）</li>
-<li><code>chmod 777 文件名/目录</code>，给指定文件增加最高权限，系统中的所有人都可以进行读写。<ul>
-<li>linux 的权限分为 rwx。r 代表：可读，w 代表：可写，x 代表：可执行</li>
-<li>这三个权限都可以转换成数值表示，r = 4，w = 2，x = 1，- = 0，所以总和是 7，也就是最大权限。第一个 7 是所属主（user）的权限，第二个 7 是所属组（group）的权限，最后一位 7 是非本群组用户（others）的权限。</li>
-</ul>
-</li>
-<li><code>su</code>：切换到 root 用户，终端目录还是原来的地方（常用）<ul>
-<li><code>su -</code>：切换到 root 用户，其中 <strong>-</strong> 号另起一个终端并切换账号</li>
-<li><code>su 用户名</code>，切换指定用户帐号登陆，终端目录还是原来地方。</li>
-<li><code>su - 用户名</code>，切换到指定用户帐号登陆，其中 <strong>-</strong> 号另起一个终端并切换账号</li>
-</ul>
-</li>
-<li><code>exit</code>，注销当前用户（常用）</li>
-<li><code>sudo 某个命令</code>，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。（常用）</li>
-<li><code>passwd</code>，修改当前用户密码（常用）</li>
-</ul>
-<h2 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h2><ul>
-<li><code>df -h</code>，自动以合适的磁盘容量单位查看磁盘大小和使用空间<ul>
-<li><code>df -k</code>，以磁盘容量单位 K 为数值结果查看磁盘使用情况</li>
-<li><code>df -m</code>，以磁盘容量单位 M 为数值结果查看磁盘使用情况</li>
-</ul>
-</li>
-<li><code>du -sh /opt</code>，查看 opt 这个文件夹大小 （h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位）</li>
-<li><code>du -sh ./*</code>，查看当前目录下所有文件夹大小 （h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位）</li>
-<li><code>du -sh /opt/setups/</code>，显示 /opt/setups/ 目录所占硬盘空间大小（s 表示 –summarize 仅显示总计，即当前目录的大小。h 表示 –human-readable 以 KB，MB，GB 为单位，提高信息的可读性）</li>
-<li><code>mount /dev/sdb5 /newDir/</code>，把分区 sdb5 挂载在根目录下的一个名为 newDir 的空目录下，需要注意的是：这个目录最好为空，不然已有的那些文件将看不到，除非卸载挂载。<ul>
-<li>挂载好之后，通过：<code>df -h</code>，查看挂载情况。</li>
-</ul>
-</li>
-<li><code>umount /newDir/</code>，卸载挂载，用目录名<ul>
-<li>如果这样卸载不了可以使用：<code>umount -l /newDir/</code></li>
-</ul>
-</li>
-<li><code>umount /dev/sdb5</code>，卸载挂载，用分区名</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://wenku.baidu.com/view/1ad19bd226fff705cc170af3.html" target="_blank" rel="external">http://wenku.baidu.com/view/1ad19bd226fff705cc170af3.html</a></li>
-<li><a href="http://blog.csdn.net/nzing/article/details/9166057" target="_blank" rel="external">http://blog.csdn.net/nzing/article/details/9166057</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Bash/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-CentOS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CentOS-介绍"><a href="#CentOS-介绍" class="headerlink" title="CentOS 介绍"></a>CentOS 介绍</h1><ul>
-<li>CentOS Wiki：<a href="https://zh.wikipedia.org/zh/CentOS" target="_blank" rel="external">https://zh.wikipedia.org/zh/CentOS</a></li>
-<li>CentOS 百科：<a href="http://baike.baidu.com/item/centos" target="_blank" rel="external">http://baike.baidu.com/item/centos</a></li>
-<li>CentOS 官网：<a href="https://www.centos.org/" target="_blank" rel="external">https://www.centos.org/</a></li>
-<li>CentOS 的自我介绍：<a href="https://wiki.centos.org/zh/About" target="_blank" rel="external">https://wiki.centos.org/zh/About</a></li>
-<li>CentOS 官网下载：<a href="https://www.centos.org/download/" target="_blank" rel="external">https://www.centos.org/download/</a></li>
-<li>CentOS 官网下载（含有旧版本）：<a href="https://wiki.centos.org/Download" target="_blank" rel="external">https://wiki.centos.org/Download</a></li>
-<li>CentOS 国内镜像下载：<a href="http://isoredirect.centos.org/centos/6/isos/x86_64/" target="_blank" rel="external">http://isoredirect.centos.org/centos/6/isos/x86_64/</a></li>
-<li>版本更新记录：<a href="https://wiki.centos.org/Manuals/ReleaseNotes" target="_blank" rel="external">https://wiki.centos.org/Manuals/ReleaseNotes</a></li>
-</ul>
-<h1 id="CentOS-原型系统：Red-Hat-Enterprise-Linux"><a href="#CentOS-原型系统：Red-Hat-Enterprise-Linux" class="headerlink" title="CentOS 原型系统：Red Hat Enterprise Linux"></a>CentOS 原型系统：Red Hat Enterprise Linux</h1><ul>
-<li>Red Hat Enterprise Linux Wiki：<a href="https://zh.wikipedia.org/wiki/Red_Hat_Enterprise_Linux" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Red_Hat_Enterprise_Linux</a></li>
-<li>Red Hat Enterprise Linux 百科：<a href="http://baike.baidu.com/view/1139590.htm" target="_blank" rel="external">http://baike.baidu.com/view/1139590.htm</a></li>
-<li>衍生版本：<a href="https://zh.wikipedia.org/wiki/Red_Hat_Enterprise_Linux衍生版本" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Red_Hat_Enterprise_Linux衍生版本</a></li>
-</ul>
-<h1 id="Red-Hat-Enterprise-Linux-后花园系统：Fedora"><a href="#Red-Hat-Enterprise-Linux-后花园系统：Fedora" class="headerlink" title="Red Hat Enterprise Linux 后花园系统：Fedora"></a>Red Hat Enterprise Linux 后花园系统：Fedora</h1><ul>
-<li>Fedora Wiki：<a href="https://zh.wikipedia.org/wiki/Fedora" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Fedora</a></li>
-<li>Fedora 百科：<a href="http://baike.baidu.com/view/182182.htm" target="_blank" rel="external">http://baike.baidu.com/view/182182.htm</a></li>
-<li>Fedora 官网：<a href="https://fedoraproject.org" target="_blank" rel="external">https://fedoraproject.org</a></li>
-<li>Fedora 官网桌面版下载：<a href="https://getfedora.org/zh_CN/workstation/download/" target="_blank" rel="external">https://getfedora.org/zh_CN/workstation/download/</a></li>
-<li>Fedora 官网文档：<a href="https://docs.fedoraproject.org/zh-CN/index.html" target="_blank" rel="external">https://docs.fedoraproject.org/zh-CN/index.html</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/CentOS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Zsh/">Zsh入门</a>
+    </h1>
   
-    <article id="post-TOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2017/11/22/Zsh/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><a href="Linux.md">Linux 介绍</a></li>
-<li><a href="Ubuntu.md">Ubuntu 介绍</a></li>
-<li><a href="Ubuntu-Install.md">Ubuntu 安装</a></li>
-<li><a href="ubuntu-settings/ubuntu-settings-toc.md">Ubuntu 设置（目录）</a></li>
-<li><a href="CentOS.md">CentOS 介绍</a></li>
-<li><a href="CentOS-Install.md">CentOS 安装</a></li>
-<li><a href="centos-settings/centos-settings-toc.md">CentOS 设置（目录）</a></li>
-<li><a href="Ubuntu-Install-VMware.md">Ubuntu 安装 VMware</a></li>
-<li><a href="CentOS-Virtual-Machine-Copy-Settings.md">VMware 克隆 CentOS 后网卡信息修改</a></li>
-<li><a href="Vim-Install-And-Settings.md">Vim 安装、配置、快捷键列表</a></li>
-<li><a href="Bash.md">Bash 命令</a></li>
-<li><a href="Bash-Other-Bash.md">Bash 其他常用命令</a></li>
-<li><a href="File-Extract-Compress.md">Linux 下常用压缩文件的解压、压缩</a></li>
-<li><a href="Off-line-Yum-Install.md">Yum 下载安装包及对应依赖包</a></li>
-<li><a href="Zsh.md">Zsh 入门</a></li>
-<li><a href="Nmon.md">nmon 系统性能监控工具</a></li>
-<li><a href="SSH.md">SSH（Secure Shell）介绍</a></li>
-<li><a href="FTP.md">FTP（File Transfer Protocol）介绍</a></li>
-<li><a href="VPN.md">VPN（Virtual Private Network）介绍</a></li>
-<li><a href="NFS.md">NFS（Network FileSystem）介绍</a></li>
-<li><a href="NTP.md">NTP（Network Time Protocol）介绍</a></li>
-<li><a href="Samba.md">Samba 介绍</a></li>
-<li><a href="Crontab.md">Crontab 介绍</a></li>
-<li><a href="Iptables.md">Iptables 介绍</a></li>
-<li><a href="Hsk-Install.md">花生壳-安装介绍</a></li>
-<li><a href="JDK-Install.md">JDK 安装</a></li>
-<li><a href="SVN-Install-And-Settings.md">SVN 安装和配置</a></li>
-<li><a href="Tomcat-Install-And-Settings.md">Tomcat 安装和配置、优化</a></li>
-<li><a href="Jenkins-Install-And-Settings.md">Jenkins 安装和配置</a></li>
-<li><a href="Maven-Install-And-Settings.md">Maven 安装和配置</a></li>
-<li><a href="Nexus-Install-And-Settings.md">Nexus 安装和配置</a></li>
-<li><a href="Mysql-Install-And-Settings.md">MySQL 安装和配置</a></li>
-<li><a href="Mysql-Optimize.md">MySQL 优化</a></li>
-<li><a href="Mysql-Tutorial.md">MySQL 教程</a></li>
-<li><a href="Redis-Install-And-Settings.md">Redis 安装和配置</a></li>
-<li><a href="Solr-Install-And-Settings.md">Solr 安装和配置</a></li>
-<li><a href="Jira-Install-And-Settings.md">Jira 安装和配置</a></li>
-<li><a href="Jenkins-Install-And-Settings.md">Jenkins 安装和配置</a></li>
-<li><a href="TeamCity-Install-And-Settings.md">TeamCity 安装和配置</a></li>
-<li><a href="Nginx-Install-And-Settings.md">Nginx 安装和配置</a></li>
-<li><a href="FastDFS-Install-And-Settings.md">FastDFS 安装和配置</a></li>
-<li><a href="FastDFS-Nginx-Lua-GraphicsMagick.md">FastDFS 结合 GraphicsMagick</a></li>
-<li><a href="RabbitMQ-Install-And-Settings.md">RabbitMQ 安装和配置</a></li>
-<li><a href="Openfire-Install-And-Settings.md">Openfire 安装和配置</a></li>
-<li><a href="Rap-Install-And-Settings.md">Rap 安装和配置</a></li>
-<li><a href="Nginx-Keepalived-Install-And-Settings.md">Nginx + Keepalived 高可用</a></li>
-<li><a href="Was-Hacked.md">黑客入侵检查</a></li>
+        <h1 id="Zsh-入门"><a href="#Zsh-入门" class="headerlink" title="Zsh 入门"></a>Zsh 入门</h1><h2 id="本文前提"><a href="#本文前提" class="headerlink" title="本文前提"></a>本文前提</h2><ul>
+<li>CentOS 6.7 64 bit</li>
+<li>root 用户</li>
 </ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/TOC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-TeamCity-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TeamCity-安装和配置"><a href="#TeamCity-安装和配置" class="headerlink" title="TeamCity 安装和配置"></a>TeamCity 安装和配置</h1><ul>
-<li><img src="http://img.youmeek.com/2016/TeamCity.jpg" alt="TeamCity"></li>
+<h2 id="Zsh-介绍"><a href="#Zsh-介绍" class="headerlink" title="Zsh 介绍"></a>Zsh 介绍</h2><ul>
+<li>Zsh 兼容 Bash，据传说 99% 的 Bash 操作 和 Zsh 是相同的</li>
+<li>Zsh 官网：<a href="http://www.zsh.org/" target="_blank" rel="external">http://www.zsh.org/</a></li>
+<li>先看下你的 CentOS 支持哪些 shell：<code>cat /etc/shells</code>，正常结果应该是这样的：</li>
 </ul>
-<h2 id="本文初衷"><a href="#本文初衷" class="headerlink" title="本文初衷"></a>本文初衷</h2><ul>
-<li>让大家了解持续集成（CI），以及入门了解 JetBrains 家的 TeamCity 的一些简单实用。</li>
-<li>TeamCity 的一些复杂使用我暂时也不会，一样也是要看文档的，所以不管怎样你都要养成看官网文档的习惯。</li>
-<li>TeamCity 和 Jenkins、Hudson 其实是非常一样的，基本流程都是差不多的，所以如果你会其他的几个 CI 工具的话，学习起来很快。</li>
-<li>Docker 已经开始在引入到 CI、CD（持续交付）过程中，可以大大简化整体的过程，也许这是未来的一个方向，有兴趣的可以了解更多。</li>
-</ul>
-<h2 id="它是什么"><a href="#它是什么" class="headerlink" title="它是什么"></a>它是什么</h2><ul>
-<li>官网定义（就一句话）：<code>Powerful Continuous Integration out of the box</code></li>
-<li>官网首页：<a href="https://www.jetbrains.com/teamcity/" target="_blank" rel="external">https://www.jetbrains.com/teamcity/</a></li>
-<li>官网特性总结：<a href="https://www.jetbrains.com/teamcity/features/" target="_blank" rel="external">https://www.jetbrains.com/teamcity/features/</a></li>
-<li>百度百科：<a href="http://baike.baidu.com/view/3703414.htm" target="_blank" rel="external">http://baike.baidu.com/view/3703414.htm</a></li>
-<li>官网文档：<a href="https://confluence.jetbrains.com/display/TCD9/TeamCity+Documentation" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/TeamCity+Documentation</a></li>
-<li>支持的平台、环境如下图（看不懂也没关系，只要知道它最友好的是 Java 开发即可）：</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-Supported-Platforms-and-Environments.png" alt="TeamCity"></li>
-<li>对上图的具体讲解可以看（<strong>很重要</strong>）：<a href="https://confluence.jetbrains.com/display/TCD9/Supported+Platforms+and+Environments" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Supported+Platforms+and+Environments</a></li>
-</ul>
-<h2 id="为什么会出现"><a href="#为什么会出现" class="headerlink" title="为什么会出现"></a>为什么会出现</h2><ul>
-<li>TeamCity 的出现需要了解这个概念：持续集成（Continuous Integration）</li>
-<li>百科定义：<a href="http://baike.baidu.com/view/5253255.htm" target="_blank" rel="external">http://baike.baidu.com/view/5253255.htm</a></li>
-<li>网络文章：<a href="http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html</a></li>
-</ul>
-<h2 id="哪些人喜欢它"><a href="#哪些人喜欢它" class="headerlink" title="哪些人喜欢它"></a>哪些人喜欢它</h2><ul>
-<li><a href="http://blog.csdn.net/leijiantian/article/details/7916483" target="_blank" rel="external">持续集成学习笔记－入门篇（1）持续集成基本概念</a></li>
-<li><a href="https://about.gitlab.com/2015/02/03/7-reasons-why-you-should-be-using-ci/" target="_blank" rel="external">7 reasons why you should be using Continuous Integration</a></li>
-<li><a href="https://blog.rainforestqa.com/2014-07-17-what-is-CI-and-why-use-it/" target="_blank" rel="external">What is CI and why use it?</a></li>
-</ul>
-<h2 id="哪些人不喜欢它"><a href="#哪些人不喜欢它" class="headerlink" title="哪些人不喜欢它"></a>哪些人不喜欢它</h2><ul>
-<li>Google 不到结果，应该是没人不喜欢，只是有些人用不惯</li>
-</ul>
-<h2 id="为什么学习它"><a href="#为什么学习它" class="headerlink" title="为什么学习它"></a>为什么学习它</h2><ul>
-<li>更好地保证项目质量</li>
-</ul>
-<h2 id="同类工具"><a href="#同类工具" class="headerlink" title="同类工具"></a>同类工具</h2><ul>
-<li>Jenkins：<a href="http://jenkins-ci.org/" target="_blank" rel="external">http://jenkins-ci.org/</a></li>
-<li>Travis CI：<a href="http://travis-ci.org/" target="_blank" rel="external">http://travis-ci.org/</a></li>
-<li>Bamboo：<a href="http://www.atlassian.com/software/bamboo" target="_blank" rel="external">http://www.atlassian.com/software/bamboo</a></li>
-<li>Hudson：<a href="http://hudson-ci.org/" target="_blank" rel="external">http://hudson-ci.org/</a></li>
-<li>QuickBuild：<a href="http://www.pmease.com/" target="_blank" rel="external">http://www.pmease.com/</a></li>
-<li>其他：<a href="http://www.oschina.net/project/tag/344/ci?lang=0&amp;os=0&amp;sort=view&amp;p=1" target="_blank" rel="external">http://www.oschina.net/project/tag/344/ci?lang=0&amp;os=0&amp;sort=view&amp;p=1</a></li>
-<li>好的网络文章介绍：<ul>
-<li><a href="http://cristal.iteye.com/blog/482658" target="_blank" rel="external">持续集成工具的选择</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="TeamCity-入门"><a href="#TeamCity-入门" class="headerlink" title="TeamCity 入门"></a>TeamCity 入门</h2><ul>
-<li>先来看一段官网的介绍视频</li>
-<li>这个视频其实已经很清楚地说明了一个整理流程是怎样的，我今天只是做一个更加清晰的细节讲解而已</li>
-<li>你需要穿越：<a href="https://www.youtube.com/watch?v=J-iYMMG6jmc#action=share" target="_blank" rel="external">https://www.youtube.com/watch?v=J-iYMMG6jmc#action=share</a></li>
-</ul>
-<h3 id="TeamCity-安装部署（Linux-环境）"><a href="#TeamCity-安装部署（Linux-环境）" class="headerlink" title="TeamCity 安装部署（Linux 环境）"></a>TeamCity 安装部署（Linux 环境）</h3><ul>
-<li>在我讲之前，如果你英文还可以，就到官网这里看下：</li>
-<li><a href="https://confluence.jetbrains.com/display/TCD9/Installation+Quick+Start#InstallationQuickStart-onLinuxandOSX" target="_blank" rel="external">Installation Quick Start</a></li>
-<li>安装环境要求：<ul>
-<li>JDK 1.7 以上，如果你要使用的是 2016 最新的 TeamCity 9.1 的话，JDK 官网推荐的 1.8</li>
-</ul>
-</li>
-<li>安装包下载：<a href="https://www.jetbrains.com/teamcity/download/#section=linux-version" target="_blank" rel="external">https://www.jetbrains.com/teamcity/download/#section=linux-version</a></li>
-<li>开始安装（eg：TeamCity-9.1.6.tar.gz）：<ul>
-<li>解压压缩包（解压速度有点慢）：<code>tar zxf TeamCity-9.1.6.tar.gz</code></li>
-<li>解压完的目录结构讲解：<a href="https://confluence.jetbrains.com/display/TCD9/TeamCity+Home+Directory" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/TeamCity+Home+Directory</a></li>
-<li>下载的 tar.gz 的本质是已经里面捆绑了一个 Tomcat，所以如果你会 Tomcat 的话，有些东西你可以自己改的。</li>
-<li>按我个人习惯，把解压缩的目录放在 usr 目录下：<code>mv TeamCity/ /usr/program/</code></li>
-<li>进入解压目录：<code>cd /usr/program/TeamCity/</code></li>
-<li>启动程序：<code>/usr/program/TeamCity/bin/runAll.sh start</code></li>
-<li>停止程序：<code>/usr/program/TeamCity/bin/runAll.sh stop</code></li>
-<li>启动需要点时间，最好能给它一两分钟吧</li>
-</ul>
-</li>
-</ul>
-<h3 id="首次进入"><a href="#首次进入" class="headerlink" title="首次进入"></a>首次进入</h3><ul>
-<li>假设我们已经启动了 TeamCity</li>
-<li>访问（TeamCity 默认端口是：8111）：<a href="http://192.168.1.113:8111/" target="_blank" rel="external">http://192.168.1.113:8111/</a></li>
-<li>如果访问不了，请先关闭防火墙：<code>service iptables stop</code></li>
-<li>你也可以选择把端口加入白名单中：<ul>
-<li><code>sudo iptables -I INPUT -p tcp -m tcp --dport 8111 -j ACCEPT</code></li>
-<li><code>sudo /etc/rc.d/init.d/iptables save</code></li>
-<li><code>sudo service iptables restart</code></li>
-</ul>
-</li>
-<li>如果你要改变端口，找到下面这个 8111 位置：<code>vim /usr/program/TeamCity/conf/server.xml</code></li>
-</ul>
-<pre><code class="nginx">&lt;Connector port=&quot;8111&quot; ...
+<pre><code class="bash">/bin/sh
+/bin/bash
+/sbin/nologin
+/bin/dash
+/bin/tcsh
+/bin/csh
 </code></pre>
 <ul>
-<li>在假设你已经可以访问的情况，我们开始进入 TeamCity 的设置向导：</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-a-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图英文所示，TeamCity 的一些软件安装的配置、服务的配置默认都会放在：<code>/root/.BuildServer</code></li>
-<li>如果你要了解更多 TeamCity Data Directory 目录，你可以看：<a href="https://confluence.jetbrains.com/display/TCD9/TeamCity+Data+Directory" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/TeamCity+Data+Directory</a></li>
+<li>默认 CentOS / Ubuntu / Mac 系统用的是 Bash，倒也不是说 Bash 不好，而是说我们有更好的选择。</li>
+</ul>
+<h2 id="Zsh-安装"><a href="#Zsh-安装" class="headerlink" title="Zsh 安装"></a>Zsh 安装</h2><ul>
+<li>CentOS 安装：<code>sudo yum install -y zsh</code></li>
+<li>Ubuntu 安装：<code>sudo apt-get install -y zsh</code></li>
+<li>在检查下系统的 shell：<code>cat /etc/shells</code>，你会发现多了一个：<code>/bin/zsh</code></li>
+</ul>
+<h2 id="使用-Zsh-扩展集合：oh-my-zsh"><a href="#使用-Zsh-扩展集合：oh-my-zsh" class="headerlink" title="使用 Zsh 扩展集合：oh-my-zsh"></a>使用 Zsh 扩展集合：oh-my-zsh</h2><ul>
+<li>oh-my-zsh 帮我们整理了一些常用的 Zsh 扩展功能和主题：<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a></li>
+<li>我们无需自己去捣搞 Zsh，直接用 oh-my-zsh 就足够了，如果你想继续深造的话那再去弄。</li>
+<li>先安装 git：<code>sudo yum install -y git</code></li>
+<li>安装 oh-my-zsh：<code>wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh</code></li>
+<li>整个过程效果如下图：<ul>
+<li><img src="images/Zsh-a-1.jpg" alt="oh-my-zsh 安装"></li>
 </ul>
 </li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-a-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图英文所示，TeamCity 的一些构建历史、用户信息、构建结果等这类数据是需要放在关系型数据库上的，而默认它给我们内置了一个。</li>
-<li>如果你要了解更多 TeamCity External Database，你可以看：<a href="https://confluence.jetbrains.com/display/TCD9/Setting+up+an+External+Database" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Setting+up+an+External+Database</a></li>
-<li>首次使用，官网是建议使用默认的：<code>Internal(HSQLDB)</code>，这样我们无需在一开始使用的就考虑数据库迁移或安装的问题，我们只要好好感受 TeamCity 给我们的，等我们决定要使用了，后续再更换数据也是可以的。但是内置的有一个注意点：’TeamCity with the native MSSQL external database driver is not compatible with Oracle Java 6 Update 29, due to a bug in Java itself. You can use earlier or later versions of Oracle Java.’</li>
-<li>假设我们就选 <code>Internal(HSQLDB)</code> ，则在创建初始化数据库的过程稍微需要点时间，我这边是几分钟。</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-a-3.jpg" alt="TeamCity 向导"><ul>
-<li>如上图所示，接受下协议</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-b-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图所示，我们要创建一个顶级管理员账号，我个人习惯测试的账号是：<code>admin</code>，<code>123456</code></li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-b-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图所示，安装完首次进来地址：<a href="http://192.168.1.113:8111/profile.html?tab=userGeneralSettings" target="_blank" rel="external">http://192.168.1.113:8111/profile.html?tab=userGeneralSettings</a></li>
-<li>我们可以完善一些管理员信息和基础配置信息，这些配置不配置都无所谓了，只是完善了可以更加好用而已</li>
-<li>如果你有 SMTP 的邮箱，你可以来这里开启邮件通知功能：<a href="http://192.168.1.113:8111/admin/admin.html?item=email" target="_blank" rel="external">http://192.168.1.113:8111/admin/admin.html?item=email</a></li>
-<li>如果你要开启通知功能那肯定下一步就是考虑通知内容的模板要如何设定：<a href="https://confluence.jetbrains.com/display/TCD9//Customizing+Notifications" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9//Customizing+Notifications</a></li>
-<li>模板存放路径在：<code>/root/.BuildServer/config/_notifications</code>，用的是 FreeMarker 的语法</li>
+<li>在以 root 用户为前提下，oh-my-zsh 的安装目录：<strong>/root/.oh-my-zsh</strong></li>
+<li>在以 root 用户为前提下，Zsh 的配置文件位置：<strong>/root/.zshrc</strong></li>
+<li>为 root 用户设置 zsh 为系统默认 shell：<code>chsh -s /bin/zsh root</code></li>
+<li>如果你要重新恢复到 bash：<code>chsh -s /bin/bash root</code></li>
+<li>现在你关掉终端或是重新连上 shell，现在开头是一个箭头了，如下图：<ul>
+<li><img src="images/Zsh-b-1.jpg" alt="oh-my-zsh 安装"></li>
 </ul>
 </li>
 </ul>
-<h3 id="项目的构建、管理"><a href="#项目的构建、管理" class="headerlink" title="项目的构建、管理"></a>项目的构建、管理</h3><ul>
-<li>建议可以看下官网：<a href="https://confluence.jetbrains.com/display/TCD9/Configure+and+Run+Your+First+Build" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Configure+and+Run+Your+First+Build</a></li>
-<li>现在让我们开始创建一个项目进行构建</li>
-<li>项目管理地址：<http: 192.168.1.113:8111="" admin="" admin.html?item="projects"></http:></li>
-<li>假设我现在有一个项目的结构是这样的：<ul>
-<li>Youshop-Parent，输出是 pom<ul>
-<li>Youshop-manage，输出是 pom<ul>
-<li>Youshop-pojo，输出 jar</li>
+<h2 id="Zsh-配置"><a href="#Zsh-配置" class="headerlink" title="Zsh 配置"></a>Zsh 配置</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ul>
+<li>启用 oh-my-zsh 中自带的插件。</li>
+<li>oh-my-zsh 的插件列表介绍（太长了，用源码不精准地统计下有 149 个）：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></li>
+<li>我们看下安装 oh-my-zsh 的时候自带有多少个插件：<code>ls -l /root/.oh-my-zsh/plugins |grep &quot;^d&quot;|wc -l</code>，我这边得到的结果是：211</li>
+<li>编辑配置文件：<code>vim /root/.zshrc</code>，找到下图的地方，怎么安装，原作者注释写得很清楚了，别装太多了，默认 git 是安装的。<ul>
+<li><img src="images/Zsh-c-1.jpg" alt="oh-my-zsh 安装"></li>
 </ul>
 </li>
+<li>插件推荐：<ul>
+<li><code>wd</code><ul>
+<li>简单地讲就是给指定目录映射一个全局的名字，以后方便直接跳转到这个目录，比如：</li>
+<li>编辑配置文件，添加上 wd 的名字：<code>vim /root/.zshrc</code></li>
+<li>我常去目录：<strong>/opt/setups</strong>，每次进入该目录下都需要这样：<code>cd /opt/setups</code></li>
+<li>现在用 wd 给他映射一个快捷方式：<code>cd /opt/setups ; wd add setups</code></li>
+<li>以后我在任何目录下只要运行：<code>wd setups</code> 就自动跑到 /opt/setups 目录下了</li>
+<li>插件官网：<a href="https://github.com/mfaerevaag/wd" target="_blank" rel="external">https://github.com/mfaerevaag/wd</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>我们现在以 Youshop-pojo 为例，让它自动构建并发布到 Nexus 中，其他项目道理是一样的，这里就不多说。</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-1.jpg" alt="TeamCity 向导"></li>
-<li>如上图，由于目前只要是公司的项目都应该是在版本控制的，所以这里我们选择：<strong>Create project from URL</strong></li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-2.jpg" alt="TeamCity 向导"></li>
-<li>如上图，我们可以看出 TeamCity 也支持 HTTP、SVN、Git 等链接方式。</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-3.jpg" alt="TeamCity 向导"></li>
-<li>输入你项目托管商的账号密码，我这里用的是 oschina 的。</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-4.jpg" alt="TeamCity 向导"></li>
-<li>账号、密码验证通过，现在可以给这个项目配置一个项目基本信息。</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-5.jpg" alt="TeamCity 向导"></li>
-<li>在从版本控制中下载文件和扫描文件</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-6.jpg" alt="TeamCity 向导"></li>
-<li>TeamCity 自动扫描到我是用 Maven 构建的项目，所以把 POM 文件找出来了，如果你一个项目有多种构建方式，有对应的配置文件的话，这里都会显示出来的。</li>
-<li>我们勾选 Maven 前面的复选框，点击：<code>Use Selected</code></li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-7.jpg" alt="TeamCity 向导"></li>
-<li>由于我们的目标是构建完自动发布到 Nexus，所以我们的 <strong>Maven Goals</strong> 应该是：<code>clean install deploy</code>，这里我们应该点击：<code>Edit</code>，进行编辑。</li>
-<li>如果你不懂 <strong>Maven Goals</strong>，那你需要学习下，这个很重要。<ul>
-<li>官网：<a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html" target="_blank" rel="external">http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html</a></li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-8.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，这台服务器必须装有 Maven、JDK</li>
-<li>如上图，<code>Goals</code> 我们的目标是 <code>clean install deploy</code></li>
-<li>如上图，<code>Maven Home</code> 我建议是自己自定义路径，这样肯定不会有问题。所以你服务器上的 Maven 安装路径是什么你就在这里填写上去。Maven 目前支持的最高版本是：3.2.5<ul>
-<li>下载 Maven 3.2.5：<a href="http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/" target="_blank" rel="external">http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/</a></li>
-</ul>
-</li>
-<li>如上图，<code>Java Parameters</code> 我建议也是自己自定义路径，别选择其他选项。</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-9.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，点击 <code>run</code>，开始手动构建该项目</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-10.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，我们看到简略的构建日志</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-11.jpg" alt="TeamCity 向导"></li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-c-12.jpg" alt="TeamCity 向导"><ul>
-<li>如上 2 张图，我们看到详细的构建内容</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-d-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，当我们版本控制中有提交的时候，TeamCity 会识别到记录</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-d-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，我们可以看到提交的 Commit Message 信息。</li>
-<li>如上图，右边红圈的三个按钮是用来处理这次提交的，常用的是第一次按钮，点击对此次版本进行构建</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-d-3.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，如果你要看所有的提交记录，可以在 Change Log 看到并且指定版本构建</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-e-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，如果在你不想要这个项目的时候可以进行删除</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-e-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，因为 Goals 里面有 deploy 命令，所以构建完成会发布到 Nexus 中，这样团队的人就可以用到最新的代码了</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-e-3.gif" alt="TeamCity 向导"><ul>
-<li>如上 gif 图演示，项目常去的几个配置地方就是这样些了</li>
-</ul>
-</li>
-</ul>
-<h3 id="配置自动构建触发行为"><a href="#配置自动构建触发行为" class="headerlink" title="配置自动构建触发行为"></a>配置自动构建触发行为</h3><ul>
-<li>官网提供的触发行为有：<a href="https://confluence.jetbrains.com/display/TCD9/Configuring+Build+Triggers" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Configuring+Build+Triggers</a></li>
-<li>下面我们举例说常见的：<code>VCS Trigger</code>、<code>Schedule Trigger</code></li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-f-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，点击 <code>Add new trigger</code> 添加触发器</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-f-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，常见的触发器就这些了</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-f-3.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，配置好 <code>VCS Trigger</code> 效果是，当我们有代码提交的时候，TeamCity 检查到新版本之后自动构建，这个最常用 </li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-f-4.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，<code>Schedule Trigger</code> 的作用就是定时构建，除了常用的几个输入框设置定时外，TeamCity 还可以使用 Cron 语法进行设置</li>
-<li>TeamCity 采用的 Cron 语法是 Quartz，具体你可以看：<a href="http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger#CronTriggersTutorial-Specialcharacters" target="_blank" rel="external">Quartz CronTrigger Tutorial</a></li>
-<li>如果你不懂 Cron 语法那就算了，但是我想做 Java 这个应该要会的</li>
-</ul>
-</li>
-</ul>
-<h3 id="集成-IntelliJ-IDEA"><a href="#集成-IntelliJ-IDEA" class="headerlink" title="集成 IntelliJ IDEA"></a>集成 IntelliJ IDEA</h3><ul>
-<li>安装 IntelliJ IDEA：<a href="https://confluence.jetbrains.com/display/TCD9/IntelliJ+Platform+Plugin" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/IntelliJ+Platform+Plugin</a></li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-g-1.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，我们可以直接连上 TeamCity 服务器，这里的用户名密码是 TeamCity 的账号系统。</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-g-2.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，连上去的效果是这里会打钩</li>
-</ul>
-</li>
-<li><img src="http://img.youmeek.com/2016/TeamCity-guide-g-3.jpg" alt="TeamCity 向导"><ul>
-<li>如上图，我们可以直接把别人提交的内容做 patch 直接用 IntelliJ IDEA 进行整合</li>
-<li>还有其他很多结合玩法大家可以自己去尝试下</li>
-</ul>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>TeamCity 的插件列表：<a href="https://confluence.jetbrains.com/display/TW/TeamCity+Plugins" target="_blank" rel="external">https://confluence.jetbrains.com/display/TW/TeamCity+Plugins</a></li>
-<li>使用外部数据库：<ul>
-<li>使用外部数据库：<a href="https://confluence.jetbrains.com/display/TCD9/Setting+up+an+External+Database" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Setting+up+an+External+Database</a></li>
-<li>迁移到外部数据库：<a href="https://confluence.jetbrains.com/display/TCD9/Migrating+to+an+External+Database" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Migrating+to+an+External+Database</a></li>
-</ul>
-</li>
-<li>数据备份：<a href="https://confluence.jetbrains.com/display/TCD9/TeamCity+Data+Backup" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/TeamCity+Data+Backup</a></li>
-<li>代码检查功能：<ul>
-<li><a href="https://confluence.jetbrains.com/display/TCD9/Code+Quality+Tools" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Code+Quality+Tools</a></li>
-<li><a href="https://confluence.jetbrains.com/display/TCD9/Code+Quality+Tools#CodeQualityTools-IntelliJIDEA-poweredCodeAnalysisTools" target="_blank" rel="external">https://confluence.jetbrains.com/display/TCD9/Code+Quality+Tools#CodeQualityTools-IntelliJIDEA-poweredCodeAnalysisTools</a>  </li>
-<li><a href="https://confluence.jetbrains.com/pages/viewpage.action?pageId=74847276" target="_blank" rel="external">https://confluence.jetbrains.com/pages/viewpage.action?pageId=74847276</a></li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/TeamCity-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tomcat-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Tomcat-8-安装和配置、优化"><a href="#Tomcat-8-安装和配置、优化" class="headerlink" title="Tomcat 8 安装和配置、优化"></a>Tomcat 8 安装和配置、优化</h1><h2 id="Tomcat-8-安装"><a href="#Tomcat-8-安装" class="headerlink" title="Tomcat 8 安装"></a>Tomcat 8 安装</h2><ul>
-<li>Tomcat 8 安装<ul>
-<li>官网：<a href="http://tomcat.apache.org/" target="_blank" rel="external">http://tomcat.apache.org/</a></li>
-<li>Tomcat 8 官网下载：<a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-80.cgi</a></li>
-<li>此时（20160207） Tomcat 8 最新版本为：<code>apache-tomcat-8.0.32.tar.gz</code></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>Tomcat 8 下载：<code>wget http://apache.fayea.com/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz</code></li>
-<li>压缩包解压：<code>tar -zxvf apache-tomcat-8.0.32.tar.gz</code></li>
-<li>移到解压出来文件夹到 /usr 下：<code>mv apache-tomcat-8.0.32/ /usr/program/</code></li>
-<li>为了方便，修改解压目录的名字：<code>mv /usr/program/apache-tomcat-8.0.32/ /usr/program/tomcat8/</code></li>
-</ul>
-</li>
-<li>设置 Iptables 规则（这一步是必须设置的）：<ul>
-<li>一种方式：先关闭 iptables，防止出现拦截问题而测试不了：<code>service iptables stop</code></li>
-<li>一种方式：在 iptables 中添加允许规则（Tomcat 默认端口是 8080）：<ul>
-<li>添加规则：<code>sudo iptables -I INPUT -p tcp -m tcp --dport 8080 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo /etc/rc.d/init.d/iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>测试安装好后的 Tomcat：<ul>
-<li>启动 Tomcat：<code>sh /usr/program/tomcat8/bin/startup.sh ; tail -200f /usr/program/tomcat8/logs/catalina.out</code></li>
-<li>访问：<code>http://服务器 IP 地址:8080/</code></li>
-<li>停止 Tomcat：<code>sh /usr/program/tomcat8/bin/shutdown.sh</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Tomcat-8-配置"><a href="#Tomcat-8-配置" class="headerlink" title="Tomcat 8 配置"></a>Tomcat 8 配置</h2><ul>
-<li>设置 Tomcat 相关变量：<ul>
-<li><code>sudo vim /usr/program/tomcat8/bin/catalina.sh</code></li>
-<li>在配置文件的可编辑内容最上面（98 行开始），加上如下内容（具体参数根据你服务器情况自行修改）：<pre><code class="ini">JAVA_HOME=/usr/program/jdk1.8.0_72
-CATALINA_HOME=/usr/program/tomcat8
-CATALINA_OPTS=&quot;-server -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot;
-CATALINA_PID=$CATALINA_HOME/catalina.pid
-</code></pre>
-</li>
-</ul>
-</li>
-<li>如果使用 <code>shutdown.sh</code> 还无法停止 tomcat，可以修改其配置：<code>vim /usr/program/tomcat8/bin/shutdown.sh</code><ul>
-<li>把最尾巴这一行：<code>exec &quot;$PRGDIR&quot;/&quot;$EXECUTABLE&quot; stop &quot;$@&quot;</code></li>
-<li>改为：<code>exec &quot;$PRGDIR&quot;/&quot;$EXECUTABLE&quot; stop 10 -force</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Tomcat-8-优化"><a href="#Tomcat-8-优化" class="headerlink" title="Tomcat 8 优化"></a>Tomcat 8 优化</h2><ul>
-<li>Tomcat 6/7/8 的优化参数有点不一样，最好按下面的方式看一下官网这个文档是否还保留着这个参数</li>
-<li>启动tomcat，访问该地址，下面要讲解的一些配置信息，在该文档下都有说明的：<ul>
-<li>文档：<a href="http://127.0.0.1:8080/docs/config" target="_blank" rel="external">http://127.0.0.1:8080/docs/config</a></li>
-<li>你也可以直接看网络版本：<ul>
-<li>Tomcat 6 文档：<a href="https://tomcat.apache.org/tomcat-6.0-doc/config" target="_blank" rel="external">https://tomcat.apache.org/tomcat-6.0-doc/config</a></li>
-<li>Tomcat 7 文档：<a href="https://tomcat.apache.org/tomcat-7.0-doc/config/" target="_blank" rel="external">https://tomcat.apache.org/tomcat-7.0-doc/config/</a></li>
-<li>Tomcat 8 文档：<a href="https://tomcat.apache.org/tomcat-8.0-doc/config/" target="_blank" rel="external">https://tomcat.apache.org/tomcat-8.0-doc/config/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>如果你需要查看 Tomcat 的运行状态可以配置tomcat管理员账户，然后登陆 Tomcat 后台进行查看</li>
-<li>编辑 /opt/tomcat7/bin/conf/tomcat-users.xml 文件，在里面添加下面信息：<pre><code class="xml">&lt;role rolename=&quot;manager&quot;/&gt;
-&lt;role rolename=&quot;manager-gui&quot;/&gt;
-&lt;role rolename=&quot;admin&quot;/&gt;
-&lt;role rolename=&quot;admin-gui&quot;/&gt;
-&lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;admin-gui,admin,manager-gui,manager&quot;/&gt;
-</code></pre>
-</li>
-<li>编辑配置文件：<code>vim /usr/program/tomcat7/conf/server.xml</code><ul>
-<li>打开默认被注释的连接池配置：<ul>
-<li>默认值：<pre><code class="xml">&lt;!--
-&lt;Executor name=&quot;tomcatThreadPool&quot; namePrefix=&quot;catalina-exec-&quot;
-  maxThreads=&quot;150&quot; minSpareThreads=&quot;4&quot;/&gt;
---&gt;
-</code></pre>
-</li>
-<li>修改为：<pre><code class="xml">&lt;Executor 
-  name=&quot;tomcatThreadPool&quot; 
-  namePrefix=&quot;catalina-exec-&quot;
-  maxThreads=&quot;500&quot; 
-  minSpareThreads=&quot;100&quot; 
-  prestartminSpareThreads = &quot;true&quot;
-  maxQueueSize = &quot;100&quot;
-/&gt;
-</code></pre>
-</li>
-<li>重点参数解释：<ul>
-<li>maxThreads，最大并发数，默认设置 200，一般建议在 500 ~ 800，根据硬件设施和业务来判断</li>
-<li>minSpareThreads，Tomcat 初始化时创建的线程数，默认设置 25</li>
-<li>prestartminSpareThreads，在 Tomcat 初始化的时候就初始化 minSpareThreads 的参数值，如果不等于 true，minSpareThreads 的值就没啥效果了</li>
-<li>maxQueueSize，最大的等待队列数，超过则拒绝请求</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>修改默认的链接参数配置：<ul>
-<li>默认值：<pre><code class="xml">&lt;Connector 
-  port=&quot;8080&quot; 
-  protocol=&quot;HTTP/1.1&quot; 
-  connectionTimeout=&quot;20000&quot; 
-  redirectPort=&quot;8443&quot; 
-/&gt;
-</code></pre>
-</li>
-<li>修改为：<pre><code class="xml">&lt;Connector 
- executor=&quot;tomcatThreadPool&quot;
- port=&quot;8080&quot; 
- protocol=&quot;org.apache.coyote.http11.Http11Nio2Protocol&quot; 
- connectionTimeout=&quot;20000&quot; 
- maxConnections=&quot;10000&quot; 
- redirectPort=&quot;8443&quot; 
- enableLookups=&quot;false&quot; 
- acceptCount=&quot;100&quot; 
- maxPostSize=&quot;10485760&quot; 
- compression=&quot;on&quot; 
- disableUploadTimeout=&quot;true&quot; 
- compressionMinSize=&quot;2048&quot; 
- acceptorThreadCount=&quot;2&quot; 
- compressableMimeType=&quot;text/html,text/xml,text/plain,text/css,text/javascript,application/javascript&quot; 
- URIEncoding=&quot;utf-8&quot;
-/&gt;
-</code></pre>
-</li>
-<li>重点参数解释：<ul>
-<li>protocol，Tomcat 8 设置 nio2 更好：org.apache.coyote.http11.Http11Nio2Protocol（如果这个用不了，就用下面那个）</li>
-<li>protocol，Tomcat 6、7 设置 nio 更好：org.apache.coyote.http11.Http11NioProtocol</li>
-<li>enableLookups，禁用DNS查询</li>
-<li>acceptCount，指定当所有可以使用的处理请求的线程数都被使用时，可以放到处理队列中的请求数，超过这个数的请求将不予处理，默认设置 100</li>
-<li>maxPostSize，以 FORM URL 参数方式的 POST 提交方式，限制提交最大的大小，默认是 2097152(2兆)，它使用的单位是字节。10485760 为 10M。如果要禁用限制，则可以设置为 -1。</li>
-<li>acceptorThreadCount，用于接收连接的线程的数量，默认值是1。一般这个指需要改动的时候是因为该服务器是一个多核CPU，如果是多核 CPU 一般配置为 2.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>禁用 AJP（如果你服务器没有使用 Apache） <ul>
-<li>把下面这一行注释掉，默认 Tomcat 是开启的。<pre><code class="xml">&lt;!-- &lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt; --&gt;
-</code></pre>
-</li>
+<li><code>autojump</code><ul>
+<li>这个插件会记录你常去的那些目录，然后做一下权重记录，你可以用这个命令看到你的习惯：<code>j --stat</code>，如果这个里面有你的记录，那你就只要敲最后一个文件夹名字即可进入，比如我个人习惯的 program：<code>j program</code>，就可以直接到：<code>/usr/program</code></li>
+<li>插件官网：<a href="https://github.com/wting/autojump" target="_blank" rel="external">https://github.com/wting/autojump</a></li>
+<li>官网插件下载地址：<a href="https://github.com/wting/autojump/downloads" target="_blank" rel="external">https://github.com/wting/autojump/downloads</a></li>
+<li>插件下载：<code>wget https://github.com/downloads/wting/autojump/autojump_v21.1.2.tar.gz</code></li>
+<li>解压：<code>tar zxvf autojump_v21.1.2.tar.gz</code></li>
+<li>进入解压后目录并安装：<code>cd autojump_v21.1.2/ ; ./install.sh</code></li>
+<li>再执行下这个：<code>source /etc/profile.d/autojump.sh</code></li>
+<li>编辑配置文件，添加上 autojump 的名字：<code>vim /root/.zshrc</code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="JVM-优化"><a href="#JVM-优化" class="headerlink" title="JVM 优化"></a>JVM 优化</h2><ul>
-<li>模型资料来源：<a href="http://xmuzyq.iteye.com/blog/599750" target="_blank" rel="external">http://xmuzyq.iteye.com/blog/599750</a></li>
-<li>Java 的内存模型分为：<ul>
-<li>Young，年轻代（易被 GC）。Young 区被划分为三部分，Eden 区和两个大小严格相同的 Survivor 区，其中 Survivor 区间中，某一时刻只有其中一个是被使用的，另外一个留做垃圾收集时复制对象用，在 Young 区间变满的时候，minor GC 就会将存活的对象移到空闲的Survivor 区间中，根据 JVM 的策略，在经过几次垃圾收集后，任然存活于 Survivor 的对象将被移动到 Tenured  区间。</li>
-<li>Tenured，终身代。Tenured 区主要保存生命周期长的对象，一般是一些老的对象，当一些对象在 Young 复制转移一定的次数以后，对象就会被转移到 Tenured 区，一般如果系统中用了 application 级别的缓存，缓存中的对象往往会被转移到这一区间。</li>
-<li>Perm，永久代。主要保存 class,method,filed 对象，这部门的空间一般不会溢出，除非一次性加载了很多的类，不过在涉及到热部署的应用服务器的时候，有时候会遇到 java.lang.OutOfMemoryError : PermGen space 的错误，造成这个错误的很大原因就有可能是每次都重新部署，但是重新部署后，类的 class 没有被卸载掉，这样就造成了大量的 class 对象保存在了 perm 中，这种情况下，一般重新启动应用服务器可以解决问题。</li>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ul>
+<li>很多人喜欢捣搞这个 ╮(￣▽￣)╭</li>
+<li>捣搞主题和插件思路一样</li>
+<li>oh-my-zsh 的主题列表介绍（还是太长了）：<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</a></li>
+<li>我们看下安装 oh-my-zsh 的时候，自带有多少个：<code>ls -l /root/.oh-my-zsh/themes |grep &quot;^-&quot;|wc -l</code>，我这边得到的结果是：140</li>
+<li>我个人品味地推荐的是（排名有先后）：<ul>
+<li><code>ys</code></li>
+<li><code>agnoster</code></li>
+<li><code>avit</code></li>
+<li><code>blinks</code></li>
 </ul>
 </li>
-<li>Linux 修改 /usr/program/tomcat7/bin/catalina.sh 文件，把下面信息添加到文件第一行。Windows 和 Linux 有点不一样的地方在于，在 Linux 下，下面的的参数值是被引号包围的，而 Windows 不需要引号包围。<ul>
-<li>如果服务器只运行一个 Tomcat<ul>
-<li>机子内存如果是 8G，一般 PermSize 配置是主要保证系统能稳定起来就行：<ul>
-<li><code>JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -server -Xms6144m -Xmx6144m -XX:NewSize=1024m -XX:MaxNewSize=2048m -XX:PermSize=512m -XX:MaxPermSize=512m -XX:MaxTenuringThreshold=10 -XX:NewRatio=2 -XX:+DisableExplicitGC&quot;</code></li>
+<li>编辑配置文件：<code>vim /root/.zshrc</code>，找到下图的地方，怎么安装，原作者注释写得很清楚了，如果你没特别的喜欢那就选择随机吧。<ul>
+<li><img src="images/Zsh-d-1.jpg" alt="oh-my-zsh 安装"></li>
 </ul>
 </li>
-<li>机子内存如果是 16G，一般 PermSize 配置是主要保证系统能稳定起来就行：<ul>
-<li><code>JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -server -Xms13312m -Xmx13312m -XX:NewSize=3072m -XX:MaxNewSize=4096m -XX:PermSize=512m -XX:MaxPermSize=512m -XX:MaxTenuringThreshold=10 -XX:NewRatio=2 -XX:+DisableExplicitGC&quot;</code></li>
+<li>配置好新主题需要重新连接 shell 才能看到效果</li>
 </ul>
-</li>
-<li>机子内存如果是 32G，一般 PermSize 配置是主要保证系统能稳定起来就行：<ul>
-<li><code>JAVA_OPTS=&quot;-Dfile.encoding=UTF-8 -server -Xms29696m -Xmx29696m -XX:NewSize=6144m -XX:MaxNewSize=9216m -XX:PermSize=1024m -XX:MaxPermSize=1024m -XX:MaxTenuringThreshold=10 -XX:NewRatio=2 -XX:+DisableExplicitGC&quot;</code></li>
+<h2 id="一些人性化功能"><a href="#一些人性化功能" class="headerlink" title="一些人性化功能"></a>一些人性化功能</h2><ul>
+<li>呃，这个其实可以不用讲的，你自己用的时候你自己会发现的，各种便捷，特别是用 Tab 多的人一定会有各种惊喜的。</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>如果是开发机<ul>
-<li><code>-Xms550m -Xmx1250m -XX:PermSize=550m -XX:MaxPermSize=1250m</code></li>
-</ul>
-</li>
-<li>参数说明：<pre><code class="nginx">-Dfile.encoding：默认文件编码
--server：表示这是应用于服务器的配置，JVM 内部会有特殊处理的
--Xmx1024m：设置JVM最大可用内存为1024MB
--Xms1024m：设置JVM最小内存为1024m。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。
--XX:NewSize：设置年轻代大小
--XX:MaxNewSize：设置最大的年轻代大小
--XX:PermSize：设置永久代大小
--XX:MaxPermSize：设置最大永久代大小
--XX:NewRatio=4：设置年轻代（包括 Eden 和两个 Survivor 区）与终身代的比值（除去永久代）。设置为 4，则年轻代与终身代所占比值为 1：4，年轻代占整个堆栈的 1/5
--XX:MaxTenuringThreshold=10：设置垃圾最大年龄，默认为：15。如果设置为 0 的话，则年轻代对象不经过 Survivor 区，直接进入年老代。对于年老代比较多的应用，可以提高效率。如果将此值设置为一个较大值，则年轻代对象会在 Survivor 区进行多次复制，这样可以增加对象再年轻代的存活时间，增加在年轻代即被回收的概论。
--XX:+DisableExplicitGC：这个将会忽略手动调用 GC 的代码使得 System.gc() 的调用就会变成一个空调用，完全不会触发任何 GC
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li>Tomcat 历史版本下载地址整理（不间断更新）：<ul>
-<li><strong>Tomcat 9.0.0.M4</strong>：<code>wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.0.M4/bin/apache-tomcat-9.0.0.M4.tar.gz</code></li>
-<li><strong>Tomcat 8.0.32</strong>：<code>wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz</code></li>
-<li><strong>Tomcat 7.0.68</strong>：<code>wget http://apache.fayea.com/tomcat/tomcat-7/v7.0.68/bin/apache-tomcat-7.0.68.tar.gz</code></li>
-<li><strong>Tomcat 6.0.45</strong>：<code>wget http://mirrors.cnnic.cn/apache/tomcat/tomcat-6/v6.0.45/bin/apache-tomcat-6.0.45.tar.gz</code></li>
+<h2 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h2><ul>
+<li>我们现在增加系统变量在：/etc/profile 后，输入命令：source /etc/profile 之后，重启服务器发现刚刚的系统变量现在没效果。<ul>
+<li>解决办法：<code>vim ~/.zshrc</code>，在该配置文件里面增加一行：<code>source /etc/profile</code>，然后刷新 zsh 的配置：<code>source ~/.zshrc</code>。</li>
 </ul>
 </li>
 </ul>
 <h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.jikexueyuan.com/course/2064_3.html?ss=1" target="_blank" rel="external">http://www.jikexueyuan.com/course/2064_3.html?ss=1</a></li>
-<li><a href="http://www.wellho.net/mouth/2163_CATALINA-OPTS-v-JAVA-OPTS-What-is-the-difference-.html" target="_blank" rel="external">http://www.wellho.net/mouth/2163_CATALINA-OPTS-v-JAVA-OPTS-What-is-the-difference-.html</a></li>
-<li><a href="http://blog.csdn.net/sunlovefly2012/article/details/47395165" target="_blank" rel="external">http://blog.csdn.net/sunlovefly2012/article/details/47395165</a></li>
-<li><a href="http://blog.csdn.net/lifetragedy/article/details/7708724" target="_blank" rel="external">http://blog.csdn.net/lifetragedy/article/details/7708724</a></li>
-<li><a href="http://ihuangweiwei.iteye.com/blog/1233941" target="_blank" rel="external">http://ihuangweiwei.iteye.com/blog/1233941</a></li>
-<li><a href="http://www.cnblogs.com/ggjucheng/archive/2013/04/16/3024731.html" target="_blank" rel="external">http://www.cnblogs.com/ggjucheng/archive/2013/04/16/3024731.html</a></li>
-<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/config/http.html#Connector_Comparison" target="_blank" rel="external">https://tomcat.apache.org/tomcat-8.0-doc/config/http.html#Connector_Comparison</a></li>
-<li><a href="http://www.apelearn.com/study_v2/chapter23.html" target="_blank" rel="external">http://www.apelearn.com/study_v2/chapter23.html</a></li>
+<li><a href="http://macshuo.com/?p=676" target="_blank" rel="external">http://macshuo.com/?p=676</a></li>
+<li><a href="https://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/zsh.html" target="_blank" rel="external">https://aaaaaashu.gitbooks.io/mac-dev-setup/content/iTerm/zsh.html</a></li>
+<li><a href="http://hackerxu.com/2014/11/19/ZSH.html" target="_blank" rel="external">http://hackerxu.com/2014/11/19/ZSH.html</a></li>
+<li><a href="https://blog.phpgao.com/oh-my-zsh.html" target="_blank" rel="external">https://blog.phpgao.com/oh-my-zsh.html</a></li>
+<li><a href="http://www.bkjia.com/Linuxjc/1033947.html" target="_blank" rel="external">http://www.bkjia.com/Linuxjc/1033947.html</a></li>
+<li><a href="http://swiftcafe.io/2015/10/31/cafe-time-omz/" target="_blank" rel="external">http://swiftcafe.io/2015/10/31/cafe-time-omz/</a></li>
+<li><a href="http://swiftcafe.io/2015/12/04/omz-plugin/" target="_blank" rel="external">http://swiftcafe.io/2015/12/04/omz-plugin/</a></li>
+<li><a href="http://www.hackbase.com/article-206940-1.html" target="_blank" rel="external">http://www.hackbase.com/article-206940-1.html</a></li>
+<li><a href="http://hahack.com/wiki/shell-zsh.html" target="_blank" rel="external">http://hahack.com/wiki/shell-zsh.html</a></li>
+<li><a href="http://blog.jobbole.com/86820/" target="_blank" rel="external">http://blog.jobbole.com/86820/</a></li>
+<li><a href="http://uecss.com/zsh-brew-autojump-plugins-shell-for-mac.html" target="_blank" rel="external">http://uecss.com/zsh-brew-autojump-plugins-shell-for-mac.html</a></li>
+<li><a href="http://www.cnblogs.com/westfly/p/3283525.html" target="_blank" rel="external">http://www.cnblogs.com/westfly/p/3283525.html</a></li>
 </ul>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p><a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="external">judasn</a></p>
 
       
 
@@ -1703,11 +387,22 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Tomcat-Install-And-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Zsh/">展开全文 >></a>
         </p>
       
 
@@ -1737,33 +432,20 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
 
 
   
-    <article id="post-Ubuntu-Install-VMware" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-centos-settings/Close-XWindow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-安装-VMware"><a href="#Ubuntu-安装-VMware" class="headerlink" title="Ubuntu 安装 VMware"></a>Ubuntu 安装 VMware</h1><ul>
-<li>我个人习惯使用 VMware，在一些个性化和兼容性上，我觉得 VMware 比 box 好很多</li>
+        <h2 id="CentOS-图形界面的关闭与开启"><a href="#CentOS-图形界面的关闭与开启" class="headerlink" title="CentOS 图形界面的关闭与开启"></a>CentOS 图形界面的关闭与开启</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
+<li>本地开多个虚拟机搞集群测试，为了节省资源，关掉图形界面更好点</li>
 </ul>
-<h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><ul>
-<li>下载：VMware-Workstation-Full-10.0.4-2249910.x86_64.bundle<ul>
-<li>下载地址（rzb0）：<a href="http://pan.baidu.com/s/1dFuLD2D" target="_blank" rel="external">http://pan.baidu.com/s/1dFuLD2D</a> </li>
-</ul>
-</li>
-<li>安装组件：<pre><code class="nginx">命令：sudo apt-get update
-命令：sudo apt-get install build-essential linux-headers-`uname -r`
-</code></pre>
-</li>
-<li>进入软件下载后目录，比如我在 /opt/setups 下<ul>
-<li><code>cd /opt/setups</code></li>
-<li><code>chmod +x VMware*.bundle</code></li>
-<li><code>sudo ./VMware*.bundle</code></li>
-</ul>
-</li>
-<li>接下来会弹出图形界面，则效果跟 Windows 一样，那就没啥好说了。</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="https://www.liberiangeek.net/2014/12/install-vmware-workstation-11-ubuntu-14-10/" target="_blank" rel="external">How To Install VMware Workstation 11 On Ubuntu 14.10</a></li>
+<h2 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h2><ul>
+<li>编辑配置文件：<code>vim /etc/inittab</code></li>
+<li>把默认值：<code>id:5:initdefault:</code>，改为：<code>id:3:initdefault:</code></li>
+<li>重启系统：<code>reboot</code>，重启后就只有 shell 界面了。</li>
+<li>在 shell 界面中如果你还希望临时开启图形界面可以输入：<code>init 5</code></li>
+<li>在图形界面中如果你希望临时关闭图形界面可以输入：<code>init 3</code></li>
 </ul>
 
       
@@ -1777,7 +459,7 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Ubuntu-Install-VMware/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/centos-settings/Close-XWindow/">展开全文 >></a>
         </p>
       
 
@@ -1807,57 +489,89 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
 
 
   
-    <article id="post-Ubuntu-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-centos-settings/CentOS-Extra-Packages" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/centos-settings/CentOS-Extra-Packages/">CentOS 源设置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/centos-settings/CentOS-Extra-Packages/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CentOS-源设置"><a href="#CentOS-源设置" class="headerlink" title="CentOS 源设置"></a>CentOS 源设置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Extra-Packages/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Extra-Packages/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-config" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-安装和分区"><a href="#Ubuntu-安装和分区" class="headerlink" title="Ubuntu 安装和分区"></a>Ubuntu 安装和分区</h1><ul>
-<li>先下载该系列教程：<a href="http://pan.baidu.com/s/1gdw7CuJ" target="_blank" rel="external">http://pan.baidu.com/s/1gdw7CuJ</a></li>
-</ul>
-<p><img src="images/Ubuntu-a-1.jpg" alt="Ubuntu 安装和分区视频"></p>
-<ul>
-<li><p>找到如图箭头目录上的两个视频，并看完，你对 Ubuntu 的安装就有了一个大概的了解，视频中 Ubuntu 虽然版本较早 13.04 的， 但是没关系，对于 Ubuntu 来讲新旧版本安装基本都一样的，所以别担心，驱动的问题也别担心，我们不是要在 Ubuntu 打游戏的，所以常见驱动系统是已经帮我们集成的不会影响使用。但是分区这一块的话，我个人建议是手工分区，视频中没有最终执行手动分区，只是演示了一下又返回了。 我个人是要求你手动分区的。</p>
-</li>
-<li><p>但是再讲分区之前，用什么设备安装是第一前提，我这里推荐用 U 盘，你准备一个 4 G 以上的 U 盘，把 Ubuntu 系统进行格式化到里面，用这个 U 盘作为安装盘进行安装。这个过程不难，具体看如下文章：</p>
-<ul>
-<li><a href="http://www.Ubuntukylin.com/ask/index.php?qa=jc_1" target="_blank" rel="external">http://www.Ubuntukylin.com/ask/index.php?qa=jc_1</a></li>
-<li><a href="http://www.wubantu.com/36bc2075036fab76.html" target="_blank" rel="external">http://www.wubantu.com/36bc2075036fab76.html</a></li>
-<li><a href="http://tieba.baidu.com/p/2795415868" target="_blank" rel="external">http://tieba.baidu.com/p/2795415868</a></li>
-<li><a href="http://www.Ubuntukylin.com/public/pdf/UK1410install.pdf" target="_blank" rel="external">http://www.Ubuntukylin.com/public/pdf/UK1410install.pdf</a></li>
-</ul>
-</li>
-<li><p>好了假设你现在已经格式化好 U 盘，现在可以开始讲分区了。这里特别说明的是有多个硬盘的，多块硬盘分区方案就没视频中那么简单，特别是 Linux 的盘符不了解的就更加难了，所以看下图：</p>
-</li>
-</ul>
-<p><img src="images/Ubuntu-a-2.jpg" alt="Ubuntu 安装和分区视频"></p>
-<ul>
-<li><p>以我这边为例：我这边机子的硬盘是：一个 128 G 固态 + 500 G 的机械，我给一个分区方案给你们参考。下面的内容需要你先看过视频才能看懂：</p>
-</li>
-<li><p>Linux 一般可分 3 个分区，分别是 <code>boot 分区</code>、<code>swap 分区</code> 和 <code>根分区</code>（根分区也就是斜杠/） boot 是主分区类型，swap 是是逻辑分区，/ 是逻辑分区，其他如果你还想划分的也都是逻辑分区。 最近年代生产的的主板，可能还需要分出一个 EFI 分区启动。EFI 的选择和 swap 一样，都在那个下拉菜单中。 怎么判断你要不要分出一个 EFI 呢？如果你根据我的要求分了 boot，swap，根之后，点击下一步报错，有提示 EFI 相关的错误信息，那就分一个给它，我这边就是有报错的。</p>
-</li>
-<li><p><strong>120 G 固态硬盘：</strong></p>
-<ul>
-<li><code>/boot</code> == 1G（主分区），这里为boot单独挂载是有必要的。系统崩溃的时候，损坏的是这个分区。我们重装系统之后，其他分区我们保留下来，重新挂载上去就可以用了。</li>
-<li><code>/EFI</code> == 100M（主分区）（我有提示报错需要分这个，我就分了）</li>
-<li><code>/swap</code> == 12G（逻辑分区）一般大家的说法这个大小是跟你机子的内存大小相关的，也有说法内存大不需要这个，但是还是建议分，我内存是12G，所以我分12G。</li>
-<li><code>/</code> == 100G（逻辑分区）</li>
-</ul>
-</li>
-<li><p><strong>500 G 机械硬盘：</strong></p>
-<ul>
-<li><code>/home</code> == 500G（逻辑分区）</li>
-</ul>
-</li>
-<li><p>分区后的安装都是下一步的，而且 Ubuntu kylin 还是中文的说明，所以没啥难度。 到此假设你给自己的电脑安装了 Ubuntu，那下一讲我将讲 Ubuntu 的相关设置。</p>
-</li>
-<li><p>如果你想用 VMware 虚拟机安装，这个教程推荐给你，讲得很详细。</p>
-<ul>
-<li><a href="http://www.jikexueyuan.com/course/1583.html" target="_blank" rel="external">http://www.jikexueyuan.com/course/1583.html</a> </li>
-</ul>
-</li>
-</ul>
-
+        {"name":"Java 程序员眼中的 Linux","introduction":"笔者从 Java 开发角度，全方位讲解各种环境搭建及常用工具详解，是一部适合程序员的百科全书。"}
       
 
       
@@ -1869,7 +583,240 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Ubuntu-Install/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/config/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-centos-settings/CentOS-Network-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/centos-settings/CentOS-Network-Settings/">CentOS 网络设置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/centos-settings/CentOS-Network-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CentOS-网络设置"><a href="#CentOS-网络设置" class="headerlink" title="CentOS 网络设置"></a>CentOS 网络设置</h1><ul>
+<li>由于前面虚拟机中安装 CentOS 使用的是桥接模式，为了让虚拟机中的系统能上网，我们需要进行网络设置。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Network-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/centos-settings/CentOS-Network-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Hsk-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Hsk-Install/">花生壳</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Hsk-Install/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="花生壳-安装"><a href="#花生壳-安装" class="headerlink" title="花生壳 安装"></a>花生壳 安装</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Hsk-Install/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Hsk-Install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JDK-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/JDK-Install/">JDK 安装</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/JDK-Install/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JDK-安装"><a href="#JDK-安装" class="headerlink" title="JDK 安装"></a>JDK 安装</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/JDK-Install/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/JDK-Install/">展开全文 >></a>
         </p>
       
 
@@ -1901,7 +848,7 @@ CATALINA_PID=$CATALINA_HOME/catalina.pid
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -2007,6 +954,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -2067,7 +1018,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2079,34 +1030,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -2115,15 +1038,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2139,11 +1070,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

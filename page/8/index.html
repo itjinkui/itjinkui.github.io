@@ -165,12 +165,31 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-config" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Excel-poi-how" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/Excel-poi-how/">poi实现Excel文件导入、导出</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/23/Excel-poi-how/" class="archive-article-date">
+  	<time datetime="2017-10-23T02:33:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        {"name":"Java 程序员眼中的 Linux","introduction":"笔者从 Java 开发角度，全方位讲解各种环境搭建及常用工具详解，是一部适合程序员的百科全书。"}
+        <h1 id="poi-是什么呢"><a href="#poi-是什么呢" class="headerlink" title="poi 是什么呢"></a>poi 是什么呢</h1><p>Apache POI 简介是用Java编写的免费开源的跨平台的 Java API，Apache POI提供API给Java程式对Microsoft Office（Excel、WORD、PowerPoint、Visio等）格式档案读和写的功能。POI为“Poor Obfuscation Implementation”的首字母缩写，意为“可怜的模糊实现”。</p>
+        
+          <a class="article-more-a" href="/2017/10/23/Excel-poi-how/#more">more >></a>
+        
       
 
       
@@ -178,11 +197,26 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Excel</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">poi</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/config/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/23/Excel-poi-how/">展开全文 >></a>
         </p>
       
 
@@ -212,66 +246,31 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-ubuntu-settings/Network-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-itext-how" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/03/itext-how/">itext实现录取通知书、成绩单</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/03/itext-how/" class="archive-article-date">
+  	<time datetime="2017-07-03T07:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-网络相关设置问题"><a href="#Ubuntu-网络相关设置问题" class="headerlink" title="Ubuntu 网络相关设置问题"></a>Ubuntu 网络相关设置问题</h1><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><ul>
-<li>现在大家默认家里都是有路由器来着，所以如果只是为了联网，基本这些都不需要配置，直接插上网线一般就可以用了。 比较特殊的可能就是有的家里没路由器，而且还是 PPPOE 拨号上网的，那这个也有对应的设置可以参考：<ul>
-<li><a href="http://wiki.ubuntu.org.cn/ADSL%EF%BC%88PPPOE…….8D%97" target="_blank" rel="external">http://wiki.ubuntu.org.cn/ADSL%EF%BC%88PPPOE…….8D%97</a></li>
-<li><a href="http://wiki.debian.org.hk/w/Connect_Internet_with_PPPoEConf" target="_blank" rel="external">http://wiki.debian.org.hk/w/Connect_Internet_with_PPPoEConf</a></li>
-<li><a href="http://wiki.debian.org.hk/w/Connect_Internet_with_NetworkManager_via_PPPoE" target="_blank" rel="external">http://wiki.debian.org.hk/w/Connect_Internet_with_NetworkManager_via_PPPoE</a></li>
-<li><a href="http://tfeng.org/?p=4171" target="_blank" rel="external">http://tfeng.org/?p=4171</a></li>
-</ul>
-</li>
-<li>上面四篇文章讲了很多方法，我个人平时是喜好用进入DOS的图形界面进行设置方式，命令：<code>sudo pppoeconf</code></li>
-<li>如果你在 Ubuntu 网络连接的时候出现这种情况：未找到合法的活动链接 可以编辑 <strong>/etc/NetworkManager/NetworkManager.conf</strong>，把文件里的 <code>managed=false</code> 改成 <code>managed=true</code>，重启电脑后应该就可以了。<ul>
-<li>具体可以看：<a href="http://blog.sina.cn/dpool/blog/s/blog_81b02feb0102uwkn.html" target="_blank" rel="external">http://blog.sina.cn/dpool/blog/s/blog_81b02feb0102uwkn.html</a></li>
-</ul>
-</li>
-<li>如果你是某个高校的学生，学校联网有自己的独立客户端的话，那你就关注下是否有linux系统的客户端了，这里我就帮不上了。</li>
-<li>你有可能跟我一样还需要不时穿越，通用设置VPN的方法我也准备好了，你只要根据下面图片设置即可，但是需要注意的是，配置好后，最好重启电脑，不然可能没办法连接上，这点很重要。</li>
-</ul>
-<h2 id="设置局域网静态-IP（固定-IP）"><a href="#设置局域网静态-IP（固定-IP）" class="headerlink" title="设置局域网静态 IP（固定 IP）"></a>设置局域网静态 IP（固定 IP）</h2><ul>
-<li>我目前有一台 Windows，一台 Ubuntu，Ubuntu 有时候是直接在 Windows 上直接 SSH 连接上去的，所以如果自动分配 IP 的话就比较麻烦。</li>
-<li>编辑配置文件：<code>sudo vim /etc/network/interfaces</code></li>
-<li>配置文件内容中，部分信息改为如下：</li>
-</ul>
-<pre><code class="nginx">auto eth0
-# iface eth0 inet dhcp
-# 注释上面默认配置的 DHCP 设置,改为下面这个 static
-iface eth0 inet static 
-address 192.168.1.103 # IP 地址
-netmask 255.255.255.0 # 子网掩码
-gateway 192.168.1.1 # 网关
-</code></pre>
-<h2 id="设置DNS服务器"><a href="#设置DNS服务器" class="headerlink" title="设置DNS服务器"></a>设置DNS服务器</h2><ul>
-<li>编辑配置文件：<code>sudo vim /etc/resolvconf/resolv.conf.d/base</code></li>
-<li>如果里面没内容，则新增下面两个：（我是广州电信，这两个 DNS 是我根据 360 安全卫士 DNS 优选功能自动筛选出来的，每个地区的人得到结果可能都不一样）<pre><code class="nginx">nameserver 123.125.81.6
-nameserver 8.8.8.8
-</code></pre>
-</li>
-<li>更新 resolv.conf 文件：<code>sudo resolvconf -u</code></li>
-<li>重启服务：<code>sudo /etc/init.d/networking restart</code>，如果重启服务没效果那就重启系统试试看。</li>
-</ul>
-<h2 id="配置-VPN（作为开发者经常用）："><a href="#配置-VPN（作为开发者经常用）：" class="headerlink" title="配置 VPN（作为开发者经常用）："></a>配置 VPN（作为开发者经常用）：</h2><ul>
-<li><img src="../images/Ubuntu-a-3.jpg" alt="Ubuntu VPN 配置"></li>
-<li><img src="../images/Ubuntu-a-4.jpg" alt="Ubuntu VPN 配置"></li>
-<li><img src="../images/Ubuntu-a-5.jpg" alt="Ubuntu VPN 配置"></li>
-<li><img src="../images/Ubuntu-a-6.jpg" alt="Ubuntu VPN 配置"></li>
-</ul>
-<h2 id="其他常见问题"><a href="#其他常见问题" class="headerlink" title="其他常见问题"></a>其他常见问题</h2><ul>
-<li>如果你的 Ubuntu 设置固定 IP 后网络图标消失且无法查看 IP：<code>sudo vim /etc/NetworkManager/NetworkManager.conf</code><ul>
-<li>修改该值为：<code>managed=true</code> （原值为 false）</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料："><a href="#资料：" class="headerlink" title="资料："></a>资料：</h2><ul>
-<li><a href="http://www.ha97.com/4895.html" target="_blank" rel="external">http://www.ha97.com/4895.html</a></li>
-<li><a href="http://blog.csdn.net/big2chris/article/details/9970127" target="_blank" rel="external">http://blog.csdn.net/big2chris/article/details/9970127</a></li>
-</ul>
-
+        <h2 id="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"><a href="#itext5、jfreechart生成成绩分析图表，并写入成绩单pdf" class="headerlink" title="itext5、jfreechart生成成绩分析图表，并写入成绩单pdf"></a>itext5、jfreechart生成成绩分析图表，并写入成绩单pdf</h2><p>浏览器中展示图表，一般都是用百度的<a href="http://echarts.baidu.com/">ECharts</a>来展现。<br>但是后台导出成绩单，必须要绕过浏览器才最方便。</p>
+        
+          <a class="article-more-a" href="/2017/07/03/itext-how/#more">more >></a>
+        
       
 
       
@@ -279,11 +278,26 @@ nameserver 8.8.8.8
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">iText</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jfreechart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/ubuntu-settings/Network-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/03/itext-how/">展开全文 >></a>
         </p>
       
 
@@ -313,20 +327,33 @@ nameserver 8.8.8.8
 
 
   
-    <article id="post-centos-settings/centos-settings-toc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MySQL-how" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/MySQL-how/">Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/22/MySQL-how/" class="archive-article-date">
+  	<time datetime="2017-06-22T05:17:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><a href="CentOS-Network-Settings.md">CentOS 网络设置</a></li>
-<li><a href="CentOS-Extra-Packages.md">CentOS 源设置</a></li>
-<li><a href="Close-XWindow.md">CentOS 图形界面的关闭与开启</a></li>
-<li><a href="Cpu-Info.md">CPU 信息分析</a></li>
-<li><a href="Clear-Cache.md">清除系统缓存</a></li>
-<li><a href="Clear-Tmp-Directory.md">修改定时清理 /tmp 目录下的文件</a></li>
-</ul>
-
+        <h1 id="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"><a href="#Mac上使用Homebrew进行MySQL卸载、安装，解决乱码" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载、安装，解决乱码"></a>Mac上使用Homebrew进行MySQL卸载、安装，解决乱码</h1><h2 id="Mac上使用Homebrew进行MySQL卸载"><a href="#Mac上使用Homebrew进行MySQL卸载" class="headerlink" title="Mac上使用Homebrew进行MySQL卸载"></a>Mac上使用Homebrew进行MySQL卸载</h2><p><strong>系统环境</strong></p>
+<blockquote>
+<p>Mac 10.12<br>Homebrew 1.2.3<br>MySQL 5.6.36_1<br>
+        
+          <a class="article-more-a" href="/2017/06/22/MySQL-how/#more">more >></a>
+        
       
 
       
@@ -334,11 +361,26 @@ nameserver 8.8.8.8
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Homebrew</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/centos-settings-toc/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/22/MySQL-how/">展开全文 >></a>
         </p>
       
 
@@ -368,35 +410,33 @@ nameserver 8.8.8.8
 
 
   
-    <article id="post-centos-settings/Cpu-Info" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-docker-how-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/docker-how-1/">Docker初探</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/16/docker-how-1/" class="archive-article-date">
+  	<time datetime="2017-06-16T06:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-16</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CPU-信息分析"><a href="#CPU-信息分析" class="headerlink" title="CPU 信息分析"></a>CPU 信息分析</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
-<li>了解服务器的性能，以方便我们如何更好地对程序进行部署</li>
-</ul>
-<h2 id="CPU-信息"><a href="#CPU-信息" class="headerlink" title="CPU 信息"></a>CPU 信息</h2><ul>
-<li>Demo CPU 型号：<a href="http://ark.intel.com/products/75789/Intel-Xeon-Processor-E5-2620-v2-15M-Cache-2_10-GHz" target="_blank" rel="external">Intel® Xeon® Processor E5-2620 v2(15M Cache, 2.10 GHz)</a></li>
-<li>该 CPU 显示的数据中有一项这个要注意：<code>Intel® Hyper-Threading Technology</code> 是 <code>Yes</code>。表示该 CPU 支持超线程</li>
-<li><code>cat /proc/cpuinfo</code>，查看 CPU 总体信息</li>
-<li><code>grep &#39;physical id&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看物理 CPU 个数<ul>
-<li>结果：2</li>
-<li>物理 CPU：物理 CPU 也就是机器外面就能看到的一个个 CPU，每个物理 CPU 还带有单独的风扇</li>
-</ul>
-</li>
-<li><code>grep &#39;core id&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看每个物理 CPU 的核心数量<ul>
-<li>结果：6，因为每个物理 CPU 是 6，所有 2 个物理 CPU 的总核心数量应该是：12</li>
-<li>核心数：一个核心就是一个物理线程，英特尔有个超线程技术可以把一个物理线程模拟出两个线程来用，充分发挥 CPU 性能，意思是一个核心可以有多个线程。</li>
-</ul>
-</li>
-<li><code>grep &#39;processor&#39; /proc/cpuinfo | sort -u | wc -l</code>，查看 CPU 总的线程数，一般也叫做：逻辑 CPU 数量<ul>
-<li>结果：24，正常情况下：CPU 的总核心数量 == CPU 线程数，但是如果该 CPU 支持超线程，那结果是：CPU 的总核心数量 X 2 == CPU 线程数</li>
-<li>线程数：线程数是一种逻辑的概念，简单地说，就是模拟出的 CPU 核心数。比如，可以通过一个 CPU 核心数模拟出 2 线程的 CPU，也就是说，这个单核心的 CPU 被模拟成了一个类似双核心 CPU 的功能。</li>
-</ul>
-</li>
-</ul>
-
+        <h1 id="初始容器与Docker"><a href="#初始容器与Docker" class="headerlink" title="初始容器与Docker"></a>初始容器与Docker</h1><p><a href="https://docs.docker.com/engine/docker-overview/">https://docs.docker.com/engine/docker-overview/</a></p>
+<h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><h3 id="Docker开源项目背景"><a href="#Docker开源项目背景" class="headerlink" title="Docker开源项目背景"></a>Docker开源项目背景</h3><p>Docker是基于Go语言实现的开源容器项目，诞生于2013年年初，最初发起者是dotCloud公司。Docker自开源后受到广泛的关注和讨论，目前已有多个相关项目（包括Docker三剑客、Kubernetes等），逐渐形成了围绕Docker容器的生态体系。<br>由于Docker在业界造成的影响力实在太大，dotCloud公司后来也直接改名为Docker Inc，并专注于Docker相关技术和产品的开发。</p>
+<p>对于Docker，目前的定义是一个开源的容器引擎，可以方便地对容器（关于容器，将在第2章详细介绍）进行管理。其对镜像的打包封装，以及引入的Docker Registry对镜像的统一管理，构建了方便快捷的“Build，Ship and Run”流程，它可以统一整个开发、测试和部署的环境和流程，极大地减少运维成本。<br>
+        
+          <a class="article-more-a" href="/2017/06/16/docker-how-1/#more">more >></a>
+        
       
 
       
@@ -404,11 +444,22 @@ nameserver 8.8.8.8
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/Cpu-Info/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/16/docker-how-1/">展开全文 >></a>
         </p>
       
 
@@ -438,22 +489,32 @@ nameserver 8.8.8.8
 
 
   
-    <article id="post-centos-settings/Close-XWindow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-systemd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/25/systemd/">Systemd 入门教程：命令篇</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/25/systemd/" class="archive-article-date">
+  	<time datetime="2017-05-25T09:59:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-25</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CentOS-图形界面的关闭与开启"><a href="#CentOS-图形界面的关闭与开启" class="headerlink" title="CentOS 图形界面的关闭与开启"></a>CentOS 图形界面的关闭与开启</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
-<li>本地开多个虚拟机搞集群测试，为了节省资源，关掉图形界面更好点</li>
-</ul>
-<h2 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h2><ul>
-<li>编辑配置文件：<code>vim /etc/inittab</code></li>
-<li>把默认值：<code>id:5:initdefault:</code>，改为：<code>id:3:initdefault:</code></li>
-<li>重启系统：<code>reboot</code>，重启后就只有 shell 界面了。</li>
-<li>在 shell 界面中如果你还希望临时开启图形界面可以输入：<code>init 5</code></li>
-<li>在图形界面中如果你希望临时关闭图形界面可以输入：<code>init 3</code></li>
-</ul>
-
+        <h1 id="Systemd-入门教程：命令篇"><a href="#Systemd-入门教程：命令篇" class="headerlink" title="Systemd 入门教程：命令篇"></a>Systemd 入门教程：命令篇</h1><p>Systemd 是 Linux 系统工具，用来启动<a href="http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html">守护进程</a>，已成为大多数发行版的标准配置。</p>
+<p>本文介绍它的基本用法，分为上下两篇。今天介绍它的主要命令，下一篇介绍如何用于实战。</p>
+        
+          <a class="article-more-a" href="/2017/05/25/systemd/#more">more >></a>
+        
       
 
       
@@ -461,11 +522,26 @@ nameserver 8.8.8.8
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Systemd</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/Close-XWindow/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/25/systemd/">展开全文 >></a>
         </p>
       
 
@@ -495,164 +571,34 @@ nameserver 8.8.8.8
 
 
   
-    <article id="post-centos-settings/Clear-Tmp-Directory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git-how" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="修改定时清理-tmp-目录下的文件"><a href="#修改定时清理-tmp-目录下的文件" class="headerlink" title="修改定时清理 /tmp 目录下的文件"></a>修改定时清理 /tmp 目录下的文件</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
-<li>默认系统是超过 30 天不访问的文件自动清除的，但是有时候硬盘用得紧可以考虑修改周期</li>
-</ul>
-<h2 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h2><ul>
-<li>编辑配置文件：<code>vim /etc/cron.daily/tmpwatch</code></li>
-</ul>
-<pre><code class="nginx">#! /bin/sh
-flags=-umc
-/usr/sbin/tmpwatch &quot;$flags&quot; -x /tmp/.X11-unix -x /tmp/.XIM-unix \
-        -x /tmp/.font-unix -x /tmp/.ICE-unix -x /tmp/.Test-unix \
-        -X &#39;/tmp/hsperfdata_*&#39; 10d /tmp
-/usr/sbin/tmpwatch &quot;$flags&quot; 30d /var/tmp
-for d in /var/{cache/man,catman}/{cat?,X11R6/cat?,local/cat?}; do
-    if [ -d &quot;$d&quot; ]; then
-        /usr/sbin/tmpwatch &quot;$flags&quot; -f 30d &quot;$d&quot;
-    fi
-done
-</code></pre>
-<ul>
-<li>上面这句话：<code>/usr/sbin/tmpwatch &quot;$flags&quot; -f 30d &quot;$d&quot;</code>，其中 <strong>30d</strong> 表示 30 天表示要备删除的周期文件，该值最低为 1。</li>
-<li>一般数据建议不要放在这个目录下，以免被系统误删</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/centos-settings/Clear-Tmp-Directory/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-other" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Linux-Tutorial"><a href="#Linux-Tutorial" class="headerlink" title="Linux-Tutorial"></a>Linux-Tutorial</h1><p>在线常见命令整理：<br><a href="http://man.linuxde.net" target="_blank" rel="external">http://man.linuxde.net</a><br><a href="https://www.centos.bz/linux-basic-knowledge/" target="_blank" rel="external">https://www.centos.bz/linux-basic-knowledge/</a><br><a href="http://itlab.idcquan.com/linux/special/linuxcom/Index.html" target="_blank" rel="external">http://itlab.idcquan.com/linux/special/linuxcom/Index.html</a><br><a href="http://ganquan.info/linux/" target="_blank" rel="external">http://ganquan.info/linux/</a><br><a href="http://wiki.open.qq.com/wiki/faq/linux……BB%A4" target="_blank" rel="external">http://wiki.open.qq.com/wiki/faq/linux……BB%A4</a><br><a href="http://i.linuxtoy.org/files/pdf/fwunixref.pdf" target="_blank" rel="external">http://i.linuxtoy.org/files/pdf/fwunixref.pdf</a><br><a href="http://waterlab.whu.edu.cn/hpc/upload/2010/6/LinuxCommand.pdf" target="_blank" rel="external">http://waterlab.whu.edu.cn/hpc/upload/2010/6/LinuxCommand.pdf</a><br><a href="http://www.linux265.com/download/linux_cmd.pdf" target="_blank" rel="external">http://www.linux265.com/download/linux_cmd.pdf</a></p>
-<p>CHM文件常用命令整理：<br><a href="http://www.centoscn.com/CentosSoft/pdf/2013/0413/277.html" target="_blank" rel="external">http://www.centoscn.com/CentosSoft/pdf/2013/0413/277.html</a></p>
-<p>常见快捷键（在Ubuntu桌面上，常按win键也可以调用出系统快捷键目录列表说明）：<br><a href="http://blog.csdn.net/xiaojianpitt/article/details/7393058" target="_blank" rel="external">http://blog.csdn.net/xiaojianpitt/article/details/7393058</a><br><a href="http://www.ubuntukylin.com/ask/index.php?qa=jc_4" target="_blank" rel="external">http://www.ubuntukylin.com/ask/index.php?qa=jc_4</a></p>
-<p>不错的ubuntu社区，可以在上面找资料和问题：<br><a href="http://www.wikihow.com/Category:Ubuntu" target="_blank" rel="external">http://www.wikihow.com/Category:Ubuntu</a></p>
-<p>源列表推荐：<br><a href="http://wiki.ubuntu.org.cn/Qref/Source" target="_blank" rel="external">http://wiki.ubuntu.org.cn/Qref/Source</a><br><a href="http://www.zhihu.com/question/19816319" target="_blank" rel="external">http://www.zhihu.com/question/19816319</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/other/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/11/git-how/">Git 学习笔记 - 基本操作</a>
+    </h1>
   
-    <article id="post-ubuntu-settings/Ubuntu-Extra-Packages" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2017/05/11/git-how/" class="archive-article-date">
+  	<time datetime="2017-05-11T09:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-源设置"><a href="#Ubuntu-源设置" class="headerlink" title="Ubuntu 源设置"></a>Ubuntu 源设置</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>简单地讲：修改资源源地址主要是为了加快下载速度，默认的资源源地址在是境外，速度肯定没有境内速度快。</li>
-<li>了解源这东西：<a href="http://wiki.ubuntu.org.cn/%E6%BA%90%E5%88%97%E8%A1%A8" target="_blank" rel="external">http://wiki.ubuntu.org.cn/%E6%BA%90%E5%88%97%E8%A1%A8</a></li>
-<li>文章的重点是页面最下面，每个版本的源地址都是不一样的，所以要懂得替换对应的版本英文名称，各个版本的英文名称大家自己找下，然后进行修改。</li>
-</ul>
-<h2 id="修改源"><a href="#修改源" class="headerlink" title="修改源"></a>修改源</h2><ul>
-<li>国内常用源配置方法：<ul>
-<li>163 源：<a href="http://mirrors.163.com/.help/ubuntu.html" target="_blank" rel="external">http://mirrors.163.com/.help/ubuntu.html</a> </li>
-<li>阿里源：<a href="http://mirrors.aliyun.com/help/ubuntu" target="_blank" rel="external">http://mirrors.aliyun.com/help/ubuntu</a></li>
-<li>sohu：<a href="http://mirrors.sohu.com/help/ubuntu.html" target="_blank" rel="external">http://mirrors.sohu.com/help/ubuntu.html</a></li>
-</ul>
-</li>
-<li>替换过程（更换之前最好备份一下 sources.list 配置文件）：</li>
-<li>我以 Ubuntu 14.04 为例，使用网易源：<ul>
-<li>备份下：<code>sudo cp /etc/apt/sources.list /etc/apt/sources_20151128_back.list</code></li>
-<li>用 gedit 编辑器打开配置文件：<code>sudo gedit /etc/apt/sources.list</code>，替换里面所有内容为下面这些内容：<pre><code class="ini">deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
-</code></pre>
-</li>
-<li>更换源之后，需要在终端中执行：<code>sudo apt-get update</code>，这是必须做的，不然你后面可能会遇到 apt-get 安装会提示：未发现软件包。</li>
-</ul>
-</li>
-</ul>
-
+        <p>#Git 闲话</p>
+<blockquote>
+<p>1、最近阅读《数学之美》、《浪潮之巅》惊叹于大神的眼界、文化功底，所以就在得到专栏上订阅了吴军博士的硅谷来信。总之，就是膜拜了。想了解一个人，就先了解一个的思想对不对，所谓见贤与之思齐就是这样了。<br>2、接下来说一说我心目中的另一位大神 林纳斯•托瓦兹，编程界公认的啊。<br>“我不是个有远见的人，我是一名工程师，”托瓦兹说，“我非常乐意跟梦想家在一起，他们行走四方，仰望苍穹……但我是低头看路的那种人，我只想填好眼前这个坑，不让自己掉进去。“<br>只干了两件事啊，毫不夸张的说：惊天地泣鬼神。<br>第一件是开发出Linux内核，驱动了因特网，第二件是开发出Git，一种源代码管理系统，被全世界开发者广泛使用。<br>再接下来，Git 就是我们的主题了，记录以备忘。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/05/11/git-how/#more">more >></a>
+        
       
 
       
@@ -660,11 +606,22 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/ubuntu-settings/Ubuntu-Extra-Packages/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/11/git-how/">展开全文 >></a>
         </p>
       
 
@@ -696,7 +653,7 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
     </nav>
   
 
@@ -802,6 +759,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -862,7 +823,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,34 +835,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -910,15 +843,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +875,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

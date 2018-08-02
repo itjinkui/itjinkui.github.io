@@ -165,339 +165,34 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Mysql-Tutorial" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Mysql-Optimize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Mysql-教程"><a href="#Mysql-教程" class="headerlink" title="Mysql 教程"></a>Mysql 教程</h1><h2 id="Mysql-常用命令"><a href="#Mysql-常用命令" class="headerlink" title="Mysql 常用命令"></a>Mysql 常用命令</h2><h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.tutorialspoint.com/mysql/" target="_blank" rel="external">MySQL Tutorial-1</a></li>
-<li><a href="http://www.mysqltutorial.org/" target="_blank" rel="external">MySQL Tutorial-2</a></li>
-<li><a href="http://zetcode.com/databases/mysqltutorial/" target="_blank" rel="external">MySQL Tutorial-3</a></li>
-<li><a href="http://www.runoob.com/mysql/mysql-connection.html" target="_blank" rel="external">MySQL 教程-1</a></li>
-<li><a href="http://www.w3school.com.cn/sql/" target="_blank" rel="external">MySQL 教程-2</a></li>
-<li><a href="https://wizardforcel.gitbooks.io/w3school-sql/content/part7.html" target="_blank" rel="external">MySQL 教程-3</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Mysql-Tutorial/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-NTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="NTP（Network-Time-Protocol）介绍"><a href="#NTP（Network-Time-Protocol）介绍" class="headerlink" title="NTP（Network Time Protocol）介绍"></a>NTP（Network Time Protocol）介绍</h2><h2 id="NTP-安装"><a href="#NTP-安装" class="headerlink" title="NTP 安装"></a>NTP 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep ntp-*</code></li>
-<li>Ubuntu：<code>dpkg -l | grep ntp-*</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 6：<code>sudo yum install -y ntp</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y ntp</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="NTP-服务器配置文件常用参数"><a href="#NTP-服务器配置文件常用参数" class="headerlink" title="NTP 服务器配置文件常用参数"></a>NTP 服务器配置文件常用参数</h2><ul>
-<li>世界上可以校对时间节点：<a href="http://www.pool.ntp.org/zh" target="_blank" rel="external">http://www.pool.ntp.org/zh</a> </li>
-<li>中国时间校对服务器节点：<a href="http://www.pool.ntp.org/zone/cn" target="_blank" rel="external">http://www.pool.ntp.org/zone/cn</a> </li>
-<li>配置文件介绍（记得先备份）：<code>sudo vim /etc/ntp.conf</code><ul>
-<li><img src="images/NTP-a-1.jpg" alt="NTP 服务器配置文件常用参数"></li>
-<li>该配置解释：<ul>
-<li>标注 1 是默认内容，我们这里进行了注释。</li>
-<li>标注 2 是新增内容，表示使用中国时间校对服务器节点地址。<pre><code class="nginx">server 0.asia.pool.ntp.org
-server 1.asia.pool.ntp.org
-server 2.asia.pool.ntp.org
-server 3.asia.pool.ntp.org
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>启动服务：<ul>
-<li><code>sudo service ntpd start</code></li>
-</ul>
-</li>
-<li>服务加到启动项<ul>
-<li>CentOS 系统<ul>
-<li><code>sudo chkconfig ntpd on</code></li>
-</ul>
-</li>
-<li>Ubuntu 系统<ul>
-<li><code>sudo apt-get install -y sysv-rc-conf</code></li>
-<li><code>sudo sysv-rc-conf ntpd on</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="NTP-资料"><a href="#NTP-资料" class="headerlink" title="NTP 资料"></a>NTP 资料</h2><ul>
-<li><a href="http://www.jikexueyuan.com/course/1710.html" target="_blank" rel="external">http://www.jikexueyuan.com/course/1710.html</a> </li>
-<li><a href="http://www.pool.ntp.org/zh" target="_blank" rel="external">http://www.pool.ntp.org/zh</a> </li>
-<li><a href="http://blog.kissdata.com/2014/10/28/ubuntu-ntp.html" target="_blank" rel="external">http://blog.kissdata.com/2014/10/28/ubuntu-ntp.html</a> </li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/NTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Mysql-Optimize/">MySQL 优化</a>
+    </h1>
   
-    <article id="post-Nexus-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2017/11/22/Mysql-Optimize/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Nexus-安装和配置"><a href="#Nexus-安装和配置" class="headerlink" title="Nexus 安装和配置"></a>Nexus 安装和配置</h1><h2 id="Nexus-安装"><a href="#Nexus-安装" class="headerlink" title="Nexus 安装"></a>Nexus 安装</h2><ul>
-<li><p>Nexus 安装</p>
-<ul>
-<li>官网：<a href="http://www.sonatype.org/nexus/" target="_blank" rel="external">http://www.sonatype.org/nexus/</a></li>
-<li>官网下载：<a href="http://www.sonatype.org/nexus/archived/" target="_blank" rel="external">http://www.sonatype.org/nexus/archived/</a></li>
-<li>此时（20160207） Nexus 最新版本为：<strong>2.12.0-01</strong></li>
-<li>JDK 要求是 JDK 7，官网要求 7u6 或之后版本，包括 JDK 8</li>
-<li>官网帮助说明 1：<a href="http://books.sonatype.com/nexus-book/2.11/reference/install.html" target="_blank" rel="external">http://books.sonatype.com/nexus-book/2.11/reference/install.html</a></li>
-<li>官网帮助说明 2：<a href="http://books.sonatype.com/sonatype-clm-book/html/clm-book/installation-configuration.html" target="_blank" rel="external">http://books.sonatype.com/sonatype-clm-book/html/clm-book/installation-configuration.html</a></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>压缩包下载（由于国内网络的原因不排除你下载不了）：<code>wget http://download.sonatype.com/nexus/oss/nexus-2.12.0-01-bundle.tar.gz</code></li>
-<li><p>如果地址下载不了，那是因为你需要开 VPN，你也可以选择降低要求下载 2.11.4-01 版本：<a href="http://pan.baidu.com/s/1mgSNJtA" target="_blank" rel="external">http://pan.baidu.com/s/1mgSNJtA</a></p>
-<ul>
-<li>解压压缩包：<code>tar zxvf nexus-2.11.4-01-bundle.tar.gz</code><ul>
-<li>解压出来有两个文件夹：</li>
-<li>这是程序目录：<code>nexus-2.11.4-01</code></li>
-<li>这是仓库目录：<code>sonatype-work</code></li>
+        <h1 id="MySQL-优化"><a href="#MySQL-优化" class="headerlink" title="MySQL 优化"></a>MySQL 优化</h1><ul>
+<li>下面说的优化基于 MySQL 5.6，理论上 5.5 之后的都算试用，具体还是要看官网</li>
 </ul>
-</li>
-<li>移到目录到我的安装目录下：<code>mv nexus-2.11.4-01/ /usr/program/</code></li>
-<li>进入安装目录：<code>cd /usr/program/</code></li>
-<li>把目录名字改为更好看点：<code>mv nexus-2.11.4-01/ nexus2.11.4/</code></li>
-<li>编辑系统配置文件：<code>vim /etc/profile</code></li>
-<li><p>在文件的尾巴增加下面内容：</p>
-<pre><code class="ini"># Nexus
-NEXUS_HOME=/usr/program/nexus2.11.4
-export NEXUS_HOME
-RUN_AS_USER=root
-export RUN_AS_USER
-</code></pre>
-</li>
-<li><p>刷新配置：<code>source /etc/profile</code></p>
-</li>
-<li>由于目录 <code>sonatype-work</code> 以后是做仓库用的，会存储很多 jar，所以这个目录一定要放在磁盘空间大的区内，目前我们还没第一次启动 Nexus，所以这里还是空文件<ul>
-<li>我个人习惯把这类目录放在 <code>/opt</code> 下，所以你要特别注意，下面有内容对这个文件夹进行操作的都是基于 opt 目录的：<code>mv /opt/setup/sonatype-work/ /opt/</code></li>
-<li>设置配置文件：<code>vim /usr/program/nexus2.11.4/conf/nexus.properties</code><ul>
-<li>把文件中该值：<code>nexus-work=${bundleBasedir}/../sonatype-work/nexus</code></li>
-<li>改为：<code>nexus-work=/opt/sonatype-work/nexus</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>默认情况下如果你的 JDK 等系统变量设置好的是无需编辑 Nexus 的配置文件，但是这里还是给大家一下配置文件路径：<code>vim /usr/program/nexus2.11.4/bin/jsw/conf/wrapper.conf</code></li>
-<li>开放防火墙端口：<ul>
-<li>添加规则：<code>sudo iptables -I INPUT -p tcp -m tcp --dport 8081 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo /etc/rc.d/init.d/iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>测试安装结果：<ul>
-<li>启动 Nexus：<code>/usr/program/nexus2.11.4/bin/nexus start</code></li>
-<li>查看启动日志：<code>tail -200f /usr/program/nexus2.11.4/logs/wrapper.log</code></li>
-<li>关闭 Nexus：<code>/usr/program/nexus2.11.4/bin/nexus stop</code></li>
-<li>访问：<a href="http://192.168.0.110:8081/nexus" target="_blank" rel="external">http://192.168.0.110:8081/nexus</a></li>
-<li>登录账号密码：<ul>
-<li>账号密码：<strong>admin</strong></li>
-<li>密码：<strong>admin123</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Nexus-配置"><a href="#Nexus-配置" class="headerlink" title="Nexus 配置"></a>Nexus 配置</h2><ul>
-<li>修改默认端口：<code>vim /usr/program/nexus2.11.4/conf/nexus.properties</code>，修改该值：application-port=8081</li>
-<li>下载远程中央库的索引到服务器<ul>
-<li><img src="images/Nexus-Install-And-Settings-a-1.jpg" alt="Nexus 配置"></li>
-<li>如上图标注 4 所示，把默认是 <code>False</code> 改为 <code>True</code></li>
-<li><img src="images/Nexus-Install-And-Settings-a-2.gif" alt="Nexus 配置"></li>
-<li>如上图 gif 所示，创建任务开始进行索引下载。需要特别提醒的是，如果你的私服是虚拟机，那得保证你分配的硬盘足够大，别像我一样吝啬只给 10 G（现在还剩下 1.9 G），结果报：<strong>设备上没有空间</strong></li>
-</ul>
-</li>
-<li>项目上配置链接连接私服（下面内容涉及到 maven 的基础知识，请自行私下学习）：<ul>
-<li>对项目独立设置：<ul>
-<li>打开项目的 pom.xml 文件：</li>
-<li>添加下面内容：<pre><code class="xml">&lt;repositories&gt;
-  &lt;repository&gt;
-      &lt;id&gt;Nexus&lt;/id&gt;
-      &lt;name&gt;虚拟机-192.168.0.110-Nexus&lt;/name&gt;
-      &lt;url&gt;http://192.168.0.110:8081/nexus/content/groups/public/&lt;/url&gt;
-  &lt;/repository&gt;
-&lt;/repositories&gt;
-</code></pre>
-</li>
-</ul>
-</li>
-<li>对全局配置进行设置：<ul>
-<li>打开 maven 的 settings.xml 文件：</li>
-<li>添加下面内容：<pre><code class="xml">&lt;mirrors&gt;
-  &lt;mirror&gt;
-      &lt;id&gt;YouMeekNexus&lt;/id&gt;
-      &lt;name&gt;YouMeek Nexus&lt;/name&gt;
-      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-      &lt;url&gt;http://192.168.0.110:8081/nexus/content/groups/public/&lt;/url&gt;
-  &lt;/mirror&gt;
-&lt;/mirrors&gt;
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="持续集成自动构建后发布到-Nexus-上"><a href="#持续集成自动构建后发布到-Nexus-上" class="headerlink" title="持续集成自动构建后发布到 Nexus 上"></a>持续集成自动构建后发布到 Nexus 上</h2><ul>
-<li>在 Maven 的 settings.xml 加上连接服务器信息：</li>
-</ul>
-<pre><code class="xml">&lt;!--设置私库认证信息，用户名和密码我就用默认的，如果你们有权限控制的需求可以创建对应的一些账号--&gt;  
-&lt;servers&gt;  
-    &lt;server&gt;  
-        &lt;id&gt;nexus-releases&lt;/id&gt;  
-        &lt;username&gt;admin&lt;/username&gt;  
-        &lt;password&gt;admin123&lt;/password&gt;  
-    &lt;/server&gt;  
-    &lt;server&gt;  
-        &lt;id&gt;nexus-snapshots&lt;/id&gt;  
-        &lt;username&gt;admin&lt;/username&gt;  
-        &lt;password&gt;admin123&lt;/password&gt;  
-    &lt;/server&gt;  
-&lt;/servers&gt;
-</code></pre>
-<ul>
-<li>在项目的 pom.xml 文件加上：</li>
-</ul>
-<pre><code class="xml">&lt;!-- nexus-releases nexus-snapshots 与 Maven 的配置文件 settings.xml 中 server 下的 id 对应 --&gt;  
-&lt;distributionManagement&gt;  
-    &lt;repository&gt;  
-        &lt;id&gt;nexus-releases&lt;/id&gt;  
-        &lt;name&gt;Nexus Releases Repository&lt;/name&gt;  
-        &lt;url&gt;http://192.168.0.110:8081/nexus/content/repositories/releases/&lt;/url&gt;  
-    &lt;/repository&gt;  
-    &lt;snapshotRepository&gt;  
-        &lt;id&gt;nexus-snapshots&lt;/id&gt;  
-        &lt;name&gt;Nexus Snapshots Repository&lt;/name&gt;  
-        &lt;url&gt;http://192.168.0.110:8081/nexus/content/repositories/snapshots/&lt;/url&gt;  
-    &lt;/snapshotRepository&gt;  
-&lt;/distributionManagement&gt;
-</code></pre>
-<h2 id="Nexus-手动更新索引文件"><a href="#Nexus-手动更新索引文件" class="headerlink" title="Nexus 手动更新索引文件"></a>Nexus 手动更新索引文件</h2><ul>
-<li>手动更新索引<ul>
-<li>关闭 Nexus：<code>/usr/program/nexus2.11.4/bin/nexus stop</code></li>
-<li>命令：<code>cd  /opt/sonatype-work/nexus/indexer/central-ctx</code><ul>
-<li>删除里面默认的文件：<code>rm -rf *</code></li>
-</ul>
-</li>
-<li>访问官网索引：<a href="http://repo.maven.apache.org/maven2/.index/" target="_blank" rel="external">http://repo.maven.apache.org/maven2/.index/</a><ul>
-<li>下载文件：<strong>nexus-maven-repository-index.gz</strong>：<code>wget http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.gz</code></li>
-<li>下载文件：<strong>nexus-maven-repository-index.properties</strong>：<code>wget http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties</code></li>
-<li>下载索引解压工具：<code>wget https://repo1.maven.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar</code></li>
-<li>执行解压命令（该命令执行需要4分钟左右）：<code>java -jar indexer-cli-5.1.0.jar -u nexus-maven-repository-index.gz -d ./</code></li>
-<li>删除解压前文件：<code>rm -rf indexer-cli-5.1.0.jar nexus-maven-repository-index.gz nexus-maven-repository-index.properties</code></li>
-<li>重启服务：<code>/usr/program/nexus2.11.4/bin/nexus start</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.cnblogs.com/leefreeman/p/4211530.html" target="_blank" rel="external">http://www.cnblogs.com/leefreeman/p/4211530.html</a></li>
-<li><a href="http://www.itdadao.com/article/89071/" target="_blank" rel="external">http://www.itdadao.com/article/89071/</a></li>
-<li><a href="http://blog.zhaojunling.me/p/17" target="_blank" rel="external">http://blog.zhaojunling.me/p/17</a></li>
-<li><a href="http://m.blog.csdn.net/article/details?id=49228873" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=49228873</a></li>
-<li><a href="http://mritd.me/2015/12/29/Nexus-2-11-CentOS%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" target="_blank" rel="external">http://mritd.me/2015/12/29/Nexus-2-11-CentOS%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</a></li>
-<li><a href="http://mritd.me/2015/12/28/Nexus-%E7%A7%81%E6%9C%8D%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="external">http://mritd.me/2015/12/28/Nexus-%E7%A7%81%E6%9C%8D%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</a></li>
-<li><a href="http://my.oschina.net/liangbo/blog/195739" target="_blank" rel="external">http://my.oschina.net/liangbo/blog/195739</a></li>
-<li><a href="http://www.mamicode.com/info-detail-1016489.html" target="_blank" rel="external">http://www.mamicode.com/info-detail-1016489.html</a></li>
-<li><a href="http://blog.csdn.net/shawyeok/article/details/23564681" target="_blank" rel="external">http://blog.csdn.net/shawyeok/article/details/23564681</a></li>
-<li><a href="http://zyjustin9.iteye.com/blog/2017321" target="_blank" rel="external">http://zyjustin9.iteye.com/blog/2017321</a></li>
-</ul>
-
+<h2 id="服务状态查询"><a href="#服务状态查询" class="headerlink" title="服务状态查询"></a>服务状态查询</h2>
+        
+          <a class="article-more-a" href="/2017/11/22/Mysql-Optimize/#more">more >></a>
+        
       
 
       
@@ -505,873 +200,22 @@ export RUN_AS_USER
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Nexus-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nginx-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Nginx-安装和配置"><a href="#Nginx-安装和配置" class="headerlink" title="Nginx 安装和配置"></a>Nginx 安装和配置</h1><h2 id="Nginx-说明"><a href="#Nginx-说明" class="headerlink" title="Nginx 说明"></a>Nginx 说明</h2><ul>
-<li>Nginx 是一个很强大的高性能 Web 和反向代理服务器，常被我们用作负载均衡服务器，也可以作为邮件代理服务器</li>
-<li>Nginx WIKI：<a href="https://zh.wikipedia.org/zh/Nginx" target="_blank" rel="external">https://zh.wikipedia.org/zh/Nginx</a></li>
-<li>Nginx 百科：<a href="http://baike.baidu.com/item/nginx" target="_blank" rel="external">http://baike.baidu.com/item/nginx</a></li>
-<li>Nginx 官网：<a href="http://nginx.org/en/" target="_blank" rel="external">http://nginx.org/en/</a></li>
-<li>Nginx 官网下载：<a href="http://nginx.org/en/download.html" target="_blank" rel="external">http://nginx.org/en/download.html</a><ul>
-<li>源码包方式下载：<a href="http://nginx.org/en/download.html" target="_blank" rel="external">http://nginx.org/en/download.html</a>，注意该页面的：<code>Stable version</code>，这个表示稳定版本，2016-03-22 最新版本是：<code>nginx-1.8.1</code>，这是一个  <strong>tar.gz</strong> 的文件链接。</li>
-<li>构建包方式下载：<a href="http://nginx.org/en/linux_packages.html#stable" target="_blank" rel="external">http://nginx.org/en/linux_packages.html#stable</a></li>
-</ul>
-</li>
-<li>Nginx 文档：<ul>
-<li>优先：<a href="https://www.nginx.com/resources/wiki/" target="_blank" rel="external">https://www.nginx.com/resources/wiki/</a></li>
-<li>次要：<a href="http://nginx.org/en/docs/" target="_blank" rel="external">http://nginx.org/en/docs/</a></li>
-</ul>
-</li>
-<li>Nginx 模块地址：<a href="https://www.nginx.com/resources/wiki/modules/" target="_blank" rel="external">https://www.nginx.com/resources/wiki/modules/</a></li>
-</ul>
-<h2 id="来自网络上的一个好介绍"><a href="#来自网络上的一个好介绍" class="headerlink" title="来自网络上的一个好介绍"></a>来自网络上的一个好介绍</h2><ul>
-<li>来源：<a href="https://help.aliyun.com/knowledge_detail/6703521.html?spm=5176.788314854.2.2.CdMGlB" target="_blank" rel="external">https://help.aliyun.com/knowledge_detail/6703521.html?spm=5176.788314854.2.2.CdMGlB</a></li>
-</ul>
-<blockquote>
-<ul>
-<li>传统上基于进程或线程模型架构的 Web 服务通过每进程或每线程处理并发连接请求，这势必会在网络和 I/O 操作时产生阻塞，其另一个必然结果则是对内存或 CPU 的利用率低下。生成一个新的进程/线程需要事先备好其运行时环境，这包括为其分配堆内存和栈内存，以及为其创建新的执行上下文等。这些操作都需要占用 CPU，而且过多的进程/线程还会带来线程抖动或频繁的上下文切换，系统性能也会由此进一步下降。</li>
-<li>在设计的最初阶段，Nginx 的主要着眼点就是其高性能以及对物理计算资源的高密度利用，因此其采用了不同的架构模型。受启发于多种操作系统设计中基于“事件”的高级处理机制，nginx采用了模块化、事件驱动、异步、单线程及非阻塞的架构，并大量采用了多路复用及事件通知机制。在 Nginx 中，连接请求由为数不多的几个仅包含一个线程的进程 Worker 以高效的回环(run-loop)机制进行处理，而每个 Worker 可以并行处理数千个的并发连接及请求。</li>
-<li>如果负载以 CPU 密集型应用为主，如 SSL 或压缩应用，则 Worker 数应与 CPU 数相同；如果负载以 IO 密集型为主，如响应大量内容给客户端，则 Worker 数应该为 CPU 个数的 1.5 或 2 倍。</li>
-<li>Nginx会按需同时运行多个进程：一个主进程(Master)和几个工作进程(Worker)，配置了缓存时还会有缓存加载器进程(Cache Loader)和缓存管理器进程(Cache Manager)等。所有进程均是仅含有一个线程，并主要通过“共享内存”的机制实现进程间通信。主进程以root用户身份运行，而 Worker、Cache Loader 和 Cache manager 均应以非特权用户身份运行。</li>
-<li>主进程主要完成如下工作：<ul>
-<li>1.读取并验正配置信息；</li>
-<li>2.创建、绑定及关闭套接字；</li>
-<li>3.启动、终止及维护worker进程的个数；</li>
-<li>4.无须中止服务而重新配置工作特性；</li>
-<li>5.控制非中断式程序升级，启用新的二进制程序并在需要时回滚至老版本；</li>
-<li>6.重新打开日志文件，实现日志滚动；</li>
-<li>7.编译嵌入式perl脚本；</li>
-</ul>
-</li>
-<li>Worker 进程主要完成的任务包括：<ul>
-<li>1.接收、传入并处理来自客户端的连接；</li>
-<li>2.提供反向代理及过滤功能；</li>
-<li>3.nginx任何能完成的其它任务；</li>
-</ul>
-</li>
-<li>Cache Loader 进程主要完成的任务包括：<ul>
-<li>1.检查缓存存储中的缓存对象；</li>
-<li>2.使用缓存元数据建立内存数据库；</li>
-</ul>
-</li>
-<li>Cache Manager 进程的主要任务：<ul>
-<li>1.缓存的失效及过期检验；</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="Nginx-源码编译安装"><a href="#Nginx-源码编译安装" class="headerlink" title="Nginx 源码编译安装"></a>Nginx 源码编译安装</h2><ul>
-<li>官网下载最新稳定版本 <strong>1.8.1</strong>，大小：814K</li>
-<li>官网安装说明：<a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/" target="_blank" rel="external">https://www.nginx.com/resources/wiki/start/topics/tutorials/install/</a></li>
-<li>源码编译配置参数说明：<ul>
-<li><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/" target="_blank" rel="external">https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/</a></li>
-<li><a href="http://nginx.org/en/docs/configure.html" target="_blank" rel="external">http://nginx.org/en/docs/configure.html</a></li>
-</ul>
-</li>
-<li><p>开始安装：</p>
-<ul>
-<li>安装依赖包：<code>yum install -y gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel</code></li>
-<li>预设几个文件夹，方便等下安装的时候有些文件可以进行存放：<ul>
-<li><code>mkdir -p /usr/local/nginx /var/log/nginx /var/temp/nginx /var/lock/nginx</code></li>
-</ul>
-</li>
-<li>下载源码包：<code>`wget http://nginx.org/download/nginx-1.8.1.tar.gz</code></li>
-<li>解压：<code>tar zxvf nginx-1.8.1.tar.gz</code></li>
-<li>进入解压后目录：<code>cd nginx-1.8.1/</code></li>
-<li><p>编译配置：</p>
-<pre><code class="ini">./configure \
---prefix=/usr/local/nginx \
---pid-path=/var/local/nginx/nginx.pid \
---lock-path=/var/lock/nginx/nginx.lock \
---error-log-path=/var/log/nginx/error.log \
---http-log-path=/var/log/nginx/access.log \
---with-http_gzip_static_module \
---http-client-body-temp-path=/var/temp/nginx/client \
---http-proxy-temp-path=/var/temp/nginx/proxy \
---http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
---http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
---http-scgi-temp-path=/var/temp/nginx/scgi
-</code></pre>
-</li>
-<li><p>编译：<code>make</code></p>
-</li>
-<li>安装：<code>make install</code></li>
-</ul>
-</li>
-<li><p>启动 Nginx</p>
-<ul>
-<li><p>先检查是否在 /usr/local 目录下生成了 Nginx 等相关文件：<code>cd /usr/local/nginx;ll</code>，正常的效果应该是显示这样的：</p>
-<pre><code class="nginx">drwxr-xr-x. 2 root root 4096 3月  22 16:21 conf
-drwxr-xr-x. 2 root root 4096 3月  22 16:21 html
-drwxr-xr-x. 2 root root 4096 3月  22 16:21 sbin
-</code></pre>
-</li>
-<li><p>停止防火墙：<code>service iptables stop</code></p>
-<ul>
-<li>或是把 80 端口加入到的排除列表：</li>
-<li><code>sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT</code></li>
-<li><code>sudo service iptables save</code></li>
-<li><code>sudo service iptables restart</code></li>
-</ul>
-</li>
-<li>启动：<code>/usr/local/nginx/sbin/nginx</code>，启动完成 shell 是不会有输出的</li>
-<li>检查 时候有 Nginx 进程：<code>ps aux | grep nginx</code>，正常是显示 3 个结果出来 </li>
-<li>检查 Nginx 是否启动并监听了 80 端口：<code>netstat -ntulp | grep 80</code> </li>
-<li>访问：<code>192.168.1.114</code>，如果能看到：<code>Welcome to nginx!</code>，即可表示安装成功</li>
-<li>检查 Nginx 启用的配置文件是哪个：<code>/usr/local/nginx/sbin/nginx -t</code></li>
-<li>刷新 Nginx 配置后重启：<code>/usr/local/nginx/sbin/nginx -s reload</code></li>
-<li>停止 Nginx：<code>/usr/local/nginx/sbin/nginx -s stop</code></li>
-<li>如果访问不了，或是出现其他信息看下错误立即：<code>vim /var/log/nginx/error.log</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="把-Nginx-添加到系统服务中"><a href="#把-Nginx-添加到系统服务中" class="headerlink" title="把 Nginx 添加到系统服务中"></a>把 Nginx 添加到系统服务中</h2><ul>
-<li>新建文件：<code>vim /etc/init.d/nginx</code></li>
-<li>添加如下内容：</li>
-</ul>
-<pre><code class="nginx">#!/bin/bash
-
-
-#nginx执行程序路径需要修改
-nginxd=/usr/local/nginx/sbin/nginx
-
-# nginx配置文件路径需要修改
-nginx_config=/usr/local/nginx/conf/nginx.conf
-
-# pid 地址需要修改
-nginx_pid=/var/local/nginx/nginx.pid
-
-
-RETVAL=0
-prog=&quot;nginx&quot;
-
-# Source function library.
-. /etc/rc.d/init.d/functions
-# Source networking configuration.
-. /etc/sysconfig/network
-# Check that networking is up.
-[ ${NETWORKING} = &quot;no&quot; ] &amp;&amp; exit 0
-[ -x $nginxd ] || exit 0
-
-# Start nginx daemons functions.
-start() {
-if [ -e $nginx_pid ];then
-   echo &quot;nginx already running....&quot;
-   exit 1
-fi
-
-echo -n $&quot;Starting $prog: &quot;
-daemon $nginxd -c ${nginx_config}
-RETVAL=$?
-echo
-[ $RETVAL = 0 ] &amp;&amp; touch /var/lock/subsys/nginx
-return $RETVAL
-}
-
-# Stop nginx daemons functions.
-# pid 地址需要修改
-stop() {
-    echo -n $&quot;Stopping $prog: &quot;
-    killproc $nginxd
-    RETVAL=$?
-    echo
-    [ $RETVAL = 0 ] &amp;&amp; rm -f /var/lock/subsys/nginx /var/local/nginx/nginx.pid
-}
-
-# reload nginx service functions.
-reload() {
-    echo -n $&quot;Reloading $prog: &quot;
-    #kill -HUP `cat ${nginx_pid}`
-    killproc $nginxd -HUP
-    RETVAL=$?
-    echo
-}
-
-# See how we were called.
-case &quot;$1&quot; in
-    start)
-        start
-        ;;
-    stop)
-        stop
-        ;;
-    reload)
-        reload
-        ;;
-    restart)
-        stop
-        start
-        ;;
-    status)
-        status $prog
-        RETVAL=$?
-        ;;
-    *)
-
-    echo $&quot;Usage: $prog {start|stop|restart|reload|status|help}&quot;
-    exit 1
-
-esac
-exit $RETVAL
-</code></pre>
-<ul>
-<li>修改权限：<code>chmod 755 /etc/init.d/nginx</code></li>
-<li>启动服务：<code>service nginx start</code></li>
-<li>停止服务：<code>service nginx stop</code></li>
-<li>重启服务：<code>service nginx restart</code></li>
-</ul>
-<h2 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h2><ul>
-<li>Nginx 默认配置文件：<code>vim /usr/local/nginx/conf/nginx.conf</code></li>
-</ul>
-<h3 id="Nginx-在-1-8-1-版本下的默认配置（去掉注释）"><a href="#Nginx-在-1-8-1-版本下的默认配置（去掉注释）" class="headerlink" title="Nginx 在 1.8.1 版本下的默认配置（去掉注释）"></a>Nginx 在 1.8.1 版本下的默认配置（去掉注释）</h3><pre><code class="nginx">worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    server {
-        listen       80;
-        server_name  localhost;
-
-        location / {
-            root   html;
-            index  index.html index.htm;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
-}
-</code></pre>
-<h3 id="HTTP-服务，虚拟主机"><a href="#HTTP-服务，虚拟主机" class="headerlink" title="HTTP 服务，虚拟主机"></a>HTTP 服务，虚拟主机</h3><ul>
-<li>停止防火墙：<code>service iptables stop</code>，防止出现特别干扰</li>
-<li>编辑默认的配置文件：<code>vim /usr/local/nginx/conf/nginx.conf</code></li>
-<li>设置两个虚拟主机（通过<strong>端口</strong>来区分开）</li>
-</ul>
-<pre><code class="nginx">worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    # 一个 server 代表一个虚拟主机
-    server {
-        listen       80;
-        server_name  localhost;
-
-        location / {
-            # 虚拟机根目录是 /usr/local/nginx/html 目录
-            root   html;
-            # 虚拟机首页是 /usr/local/nginx/html 目录下这两个文件
-            index  index.html index.htm;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
-
-    server {
-        # 第二个虚拟机的端口是 90，服务地址还是本地
-        listen       90;
-        server_name  localhost;
-
-        location / {
-            root   html90;
-            index  index.html index.htm;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
-}
-</code></pre>
-<ul>
-<li>设置两个虚拟主机（通过<strong>域名</strong>来区分开）</li>
-</ul>
-<pre><code class="nginx">worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    # 一个 server 代表一个虚拟主机
-    server {
-        listen       80;
-        # 两个虚拟主机都使用 80 端口，设置不同域名
-        server_name  code.youmeek.com;
-
-        location / {
-            # 虚拟机根目录是 /usr/local/nginx/html 目录
-            root   html;
-            # 虚拟机首页是 /usr/local/nginx/html 目录下这两个文件
-            index  index.html index.htm;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
-
-    server {
-        listen       80;
-        # 两个虚拟主机都使用 80 端口，设置不同域名
-        server_name  i.youmeek.com;
-
-        location / {
-            root   html-i;
-            index  index.html index.htm;
-        }
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
-}
-</code></pre>
-<h3 id="反向代理和负载均衡"><a href="#反向代理和负载均衡" class="headerlink" title="反向代理和负载均衡"></a>反向代理和负载均衡</h3><ul>
-<li><p>最精简的环境：一台虚拟机</p>
-<ul>
-<li>1 个 JDK</li>
-<li>1 个 Nginx</li>
-<li>2 个 Tomcat</li>
-</ul>
-</li>
-<li><p>Nginx 配置：</p>
-</li>
-</ul>
-<pre><code class="nginx">worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    # 自己定义的两个 tomcat 请求地址和端口
-    # 也就是当浏览器请求：tomcat.youmeek.com 的时候从下面这两个 tomcat 中去找一个进行转发
-    upstream tomcatCluster {
-        server 192.168.1.114:8080;
-        server 192.168.1.114:8081;
-
-        # 添加 weight 字段可以表示权重，值越高权重越大，默认值是 1，最大值官网没说，一般如果设置也就设置 3,5,7 这样的数
-        # 官网：https://www.nginx.com/resources/admin-guide/load-balancer/#weight
-        # server 192.168.1.114:8080 weight=2;
-        # server 192.168.1.114:8081 weight=1;
-    }
-
-    server {
-        listen       80;
-        server_name  tomcat.youmeek.com;
-
-        location / {
-            proxy_pass   http://tomcatCluster;
-            index  index.html index.htm;
-        }
-    }
-}
-</code></pre>
-<h3 id="HTTP-服务，绑定多个域名"><a href="#HTTP-服务，绑定多个域名" class="headerlink" title="HTTP 服务，绑定多个域名"></a>HTTP 服务，绑定多个域名</h3><ul>
-<li><a href="https://www.ttlsa.com/nginx/use-nginx-proxy/" target="_blank" rel="external">https://www.ttlsa.com/nginx/use-nginx-proxy/</a></li>
-</ul>
-<h3 id="安装第三方模块"><a href="#安装第三方模块" class="headerlink" title="安装第三方模块"></a>安装第三方模块</h3><h3 id="生成规格图"><a href="#生成规格图" class="headerlink" title="生成规格图"></a>生成规格图</h3><h3 id="启用-Gzip-压缩"><a href="#启用-Gzip-压缩" class="headerlink" title="启用 Gzip 压缩"></a>启用 Gzip 压缩</h3><h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><ul>
-<li><a href="https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra" target="_blank" rel="external">https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra</a></li>
-</ul>
-<h3 id="Nginx-禁止特定用户代理（User-Agents）访问，静止指定-IP-访问"><a href="#Nginx-禁止特定用户代理（User-Agents）访问，静止指定-IP-访问" class="headerlink" title="Nginx 禁止特定用户代理（User Agents）访问，静止指定 IP 访问"></a>Nginx 禁止特定用户代理（User Agents）访问，静止指定 IP 访问</h3><ul>
-<li><a href="https://www.ttlsa.com/nginx/how-to-block-user-agents-using-nginx/" target="_blank" rel="external">https://www.ttlsa.com/nginx/how-to-block-user-agents-using-nginx/</a></li>
-<li><a href="https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra" target="_blank" rel="external">https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra</a></li>
-<li>&lt;&gt;</li>
-<li>&lt;&gt;</li>
-<li>&lt;&gt;</li>
-</ul>
-<h3 id="Nginx-缓存"><a href="#Nginx-缓存" class="headerlink" title="Nginx 缓存"></a>Nginx 缓存</h3><h3 id="Nginx-自动分割日志文件"><a href="#Nginx-自动分割日志文件" class="headerlink" title="Nginx 自动分割日志文件"></a>Nginx 自动分割日志文件</h3><h3 id="Nginx-处理跨域请求"><a href="#Nginx-处理跨域请求" class="headerlink" title="Nginx 处理跨域请求"></a>Nginx 处理跨域请求</h3><h3 id="安全相预防"><a href="#安全相预防" class="headerlink" title="安全相预防"></a>安全相预防</h3><p>在配置文件中设置自定义缓存以限制缓冲区溢出攻击的可能性<br>client_body_buffer_size 1K;<br>client_header_buffer_size 1k;<br>client_max_body_size 1k;<br>large_client_header_buffers 2 1k;</p>
-<ol>
-<li>将timeout设低来防止DOS攻击<br>所有这些声明都可以放到主配置文件中。<br>client_body_timeout 10;<br>client_header_timeout 10;<br>keepalive_timeout 5 5;<br>send_timeout 10;</li>
-</ol>
-<ol>
-<li>限制用户连接数来预防DOS攻击<br>limit_zone slimits $binary_remote_addr 5m;<br>limit_conn slimits 5;</li>
-</ol>
-<h3 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h3><ul>
-<li><a href="https://www.ttlsa.com/nginx/nginx-modules-ngx_set_cconv/" target="_blank" rel="external">nginx实现简体繁体字互转以及中文转拼音</a></li>
-<li><a href="https://www.ttlsa.com/nginx/nginx-modules-ngx_http_log_request_speed/" target="_blank" rel="external">nginx记录分析网站响应慢的请求(ngx_http_log_request_speed)</a></li>
-<li><a href="https://www.ttlsa.com/nginx/nginx-modules-empty_gif/" target="_blank" rel="external">nginx空白图片(empty_gif模块)</a></li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra" target="_blank" rel="external">https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra</a></li>
-<li><a href="http://www.ydcss.com/archives/466" target="_blank" rel="external">http://www.ydcss.com/archives/466</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Nginx-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nginx-Keepalived-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Nginx-Keepalived-高可用"><a href="#Nginx-Keepalived-高可用" class="headerlink" title="Nginx + Keepalived 高可用"></a>Nginx + Keepalived 高可用</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>高可用 HA（High Availability），简单讲就是：我某个应用挂了，自动有另外应用起来接着扛着，致使整个服务对外来看是没有中断过的。这里的重点就是不中断，致使公司整个业务能不断进行中，把影响减到最小，赚得更多。</li>
-<li>因为要不中断，所以我们就需要用到了 Keepalived。Keepalived 一般不会单独使用，基本都是跟负载均衡软件（LVS、HAProxy、Nginx）一起工作来达到集群的高可用效果。</li>
-<li>Keepalived 有双主、主备方案</li>
-<li>常用词：<ul>
-<li>心跳：Master 会主动给 Backup 发送心跳检测包以及对外的网络功能，而 Backup 负责接收 Master 的心跳检测包，随时准备接管主机。为什么叫心跳不知道，但是挺形象的，心跳同步。</li>
-<li>选举：Keepalived 配置的时候可以指定各台主机优先级，Master 挂了，各台 Backup 要选举出一个新的 Master。</li>
-</ul>
-</li>
-<li>Keepalived<ul>
-<li>官网：<a href="http://www.keepalived.org/" target="_blank" rel="external">http://www.keepalived.org/</a></li>
-<li>官网下载：<a href="http://www.keepalived.org/download.html" target="_blank" rel="external">http://www.keepalived.org/download.html</a></li>
-<li>官网文档：<a href="http://www.keepalived.org/documentation.html" target="_blank" rel="external">http://www.keepalived.org/documentation.html</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><ul>
-<li>软件版本：<ul>
-<li>Nginx：<strong>1.8.1</strong></li>
-<li>Keepalived：<strong>1.2.20</strong></li>
-<li>JDK：<strong>8u72</strong></li>
-<li>Tomcat：<strong>8.0.32</strong></li>
-</ul>
-</li>
-<li>部署环境（下文中以第几台来代表这些主机）：<ul>
-<li>虚拟 IP（VIP）：192.168.1.50</li>
-<li>第一台主机：Nginx 1 + Keepalived 1 == 192.168.1.120（Master）</li>
-<li>第二台主机：Nginx 2 + Keepalived 2 == 192.168.1.121（Backup）</li>
-<li>第三台主机：Tomcat 1 == 192.168.1.122（Web 1）</li>
-<li>第四台主机：Tomcat 2 == 192.168.1.123（Web 2）</li>
-</ul>
-</li>
-<li>所有机子进行时间校准：<a href="NTP.md">NTP（Network Time Protocol）介绍</a></li>
-<li>第三、第四台主机部署：<ul>
-<li>JDK 的安装：<a href="JDK-Install.md">JDK 安装</a></li>
-<li>Tomcat 的安装：<a href="Tomcat-Install-And-Settings.md">Tomcat 安装和配置、优化</a></li>
-</ul>
-</li>
-<li>第一、二台主机部署（两台部署内容一样）：<ul>
-<li>Nginx 的安装：<a href="Nginx-Install-And-Settings.md">Nginx 安装和配置</a></li>
-<li>添加虚拟 IP：<ul>
-<li>复制一个网卡信息：<code>sudo cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0:0</code></li>
-<li>编辑配置文件：<code>sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0:0</code></li>
-<li>修改内容为如下信息：<pre><code class="nginx">DEVICE=eth0:0    &gt;&gt;&gt; 这个需要修改
-TYPE=Ethernet
-UUID=8ddbb256-caab-4ddf-8e9a-6527b4ac5a26
-ONBOOT=yes 
-NM_CONTROLLED=yes
-BOOTPROTO=none
-IPADDR=192.168.1.50    &gt;&gt;&gt; 这个需要修改
-PREFIX=24  
-GATEWAY=192.168.1.1
-DNS1=101.226.4.6
-DEFROUTE=yes
-IPV4_FAILURE_FATAL=yes
-IPV6INIT=no
-NAME=&quot;System eth0:0&quot;    &gt;&gt;&gt; 这个需要修改
-HWADDR=00:0c:29:f4:17:db
-LAST_CONNECT=1460213205
-</code></pre>
-</li>
-<li>重启网卡服务：<code>service network restart</code></li>
-<li>如果你要绑定更多虚拟 IP，则多复制几个网卡配置出来，命名如下：ifcfg-eth0:0，ifcfg-eth0:1，ifcfg-eth0:2 ……</li>
-</ul>
-</li>
-<li>Keepalived 开始安装<ul>
-<li>安装依赖：<code>sudo yum install -y gcc openssl-devel popt-devel</code></li>
-<li>解压包：<code>cd /opt/setups/ ; tar zxvf keepalived-1.2.20.tar.gz</code></li>
-<li>编译：<code>cd /opt/setups/keepalived-1.2.20 ; ./configure --prefix=/usr/program/keepalived</code></li>
-<li>编译安装：<code>make &amp;&amp; make install</code></li>
-</ul>
-</li>
-<li>Keepalived 设置服务和随机启动<ul>
-<li>复制配置文件到启动脚本目录：<code>cp /usr/program/keepalived/etc/rc.d/init.d/keepalived /etc/init.d/keepalived</code></li>
-<li>增加权限：<code>chmod +x /etc/init.d/keepalived</code></li>
-<li>编辑配置文件：<code>vim /etc/init.d/keepalived</code><pre><code class="nginx">把 15 行的：. /etc/sysconfig/keepalived，改为：
-. /usr/program/keepalived/etc/sysconfig/keepalived（注意：前面有一个点和空格需要注意）
-</code></pre>
-</li>
-<li>添加环境变量：<code>vim /etc/profile</code><pre><code class="nginx"># Keepalived 配置
-KEEPALIVED_HOME=/usr/program/keepalived
-PATH=$PATH:$KEEPALIVED_HOME/sbin
-export KEEPALIVED_HOME
-export PATH
-</code></pre>
-</li>
-<li>刷新环境变量：<code>source /etc/profile</code></li>
-<li>检测环境变量：<code>keepalived -v</code></li>
-<li><code>ln -s /usr/program/keepalived/sbin/keepalived /usr/sbin/</code></li>
-<li><code>vim /usr/program/keepalived/etc/sysconfig/keepalived</code><pre><code class="nginx">把 14 行的：KEEPALIVED_OPTIONS=&quot;-D&quot;，改为：
-KEEPALIVED_OPTIONS=&quot;-D -f /usr/program/keepalived/etc/keepalived/keepalived.conf&quot;
-</code></pre>
-</li>
-<li>加入随机启动：<code>chkconfig keepalived on</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>第一、二台主机配置（两台在 Keepalived 配置上稍微有不一样）：</p>
-<ul>
-<li>健康监测脚本（我个人放在：/opt/bash 目录下）：<a href="Keepalived-Settings/nginx_check.sh">nginx_check.sh</a></li>
-<li>健康监测脚本添加执行权限：<code>chmod 755 /opt/bash/nginx_check.sh</code></li>
-<li>运行监测脚本，看下是否有问题：<code>sh /opt/bash/nginx_check.sh</code>，如果没有报错，则表示改脚本没有问题<ul>
-<li>这个脚本很重要，如果脚本没法用，在启用 Keepalived 的时候可能会报：<code>Keepalived_vrrp[5684]: pid 5959 exited with status 1</code></li>
-</ul>
-</li>
-<li><p>nginx 配置（两台一样配置）：</p>
-<pre><code class="nginx">worker_processes  1;
-
-events {
-  worker_connections  1024;
-}
-
-http {
-  include       mime.types;
-  default_type  application/octet-stream;
-
-  sendfile        on;
-  keepalive_timeout  65;
-
-  # （重点）
-  upstream tomcatCluster {
-      server 192.168.1.122:8080 weight=1;
-      server 192.168.1.123:8080 weight=1;
-  }
-
-  # （重点）
-  server {
-      listen       80;
-      server_name  192.168.1.50;
-
-      location / {
-          proxy_pass   http://tomcatCluster;
-          index  index.html index.htm;
-      }
-  }
-}
-</code></pre>
-</li>
-<li><p>Keepalived 配置文件编辑（第一、二台配置稍微不同，不同点具体看下面重点说明）</p>
-<ul>
-<li>编辑：<code>vim /usr/program/keepalived/etc/keepalived/keepalived.conf</code></li>
-</ul>
-<p>``` nginx<br>! Configuration File for keepalived</p>
-<h1 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h1><p>global_defs {</p>
-<h1 id="邮箱通知配置，keepalived-在发生切换时需要发送-email-到的对象，一行一个"><a href="#邮箱通知配置，keepalived-在发生切换时需要发送-email-到的对象，一行一个" class="headerlink" title="邮箱通知配置，keepalived 在发生切换时需要发送 email 到的对象，一行一个"></a>邮箱通知配置，keepalived 在发生切换时需要发送 email 到的对象，一行一个</h1><p>  notification_email {</p>
-<pre><code>  #acassen@firewall.loc
-  #failover@firewall.loc
-  #sysadmin@firewall.loc
-</code></pre><p>  }</p>
-<h1 id="指定发件人"><a href="#指定发件人" class="headerlink" title="指定发件人"></a>指定发件人</h1><p>  #notification_email_from Alexandre.Cassen@firewall.loc</p>
-<h1 id="指定smtp服务器地址"><a href="#指定smtp服务器地址" class="headerlink" title="指定smtp服务器地址"></a>指定smtp服务器地址</h1><p>  #smtp_server 192.168.200.1</p>
-<h1 id="指定smtp连接超时时间，单位秒"><a href="#指定smtp连接超时时间，单位秒" class="headerlink" title="指定smtp连接超时时间，单位秒"></a>指定smtp连接超时时间，单位秒</h1><p>  #smtp_connect_timeout 30</p>
-<p>  router_id LVS_DEVEL<br>  vrrp_skip_check_adv_addr<br>  vrrp_strict<br>}</p>
-<h1 id="（重点）脚本监控实现"><a href="#（重点）脚本监控实现" class="headerlink" title="（重点）脚本监控实现"></a>（重点）脚本监控实现</h1><p>vrrp_script check_nginx {</p>
-<h1 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h1><p>  script “/opt/bash/nginx_check.sh”</p>
-<h1 id="时间间隔，2秒"><a href="#时间间隔，2秒" class="headerlink" title="时间间隔，2秒"></a>时间间隔，2秒</h1><p>  interval 2</p>
-<h1 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h1><p>  weight 2<br>}</p>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>vrrp_instance VI_1 {
-    # （重点）Backup 机子这里是设置为：BACKUP
-    state MASTER
-    interface eth0
-    virtual_router_id 51
-    # （重点）Backup 机子要小于当前 Master 设置的 100，建议设置为 99
-    priority 100
-    # Master 与 Backup 负载均衡器之间同步检查的时间间隔，单位是秒
-    advert_int 1
-    authentication {
-        auth_type PASS
-        auth_pass 1111
-    }
-
-    # （重点）配置虚拟 IP 地址，如果有多个则一行一个
-    virtual_ipaddress {
-        192.168.1.50
-    }
-
-    # （重点）脚本监控调用
-    track_script {
-        check_nginx
-    }
-}
-```
-</code></pre><h3 id="启动各自服务"><a href="#启动各自服务" class="headerlink" title="启动各自服务"></a>启动各自服务</h3><ul>
-<li>四台机子都停掉防火墙：<code>service iptables stop</code></li>
-<li>先启动两台 Tomcat：<code>sh /usr/program/tomcat8/bin/startup.sh ; tail -200f /usr/program/tomcat8/logs/catalina.out</code><ul>
-<li>检查两台 Tomcat 是否可以单独访问，最好给首页加上不同标识，好方便等下确认是否有负载<ul>
-<li><code>http://192.168.1.122:8080</code></li>
-<li><code>http://192.168.1.123:8080</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>启动两台 Nginx 服务：<code>/usr/local/nginx/sbin/nginx</code></li>
-<li>启动两台 Keepalived 服务：<code>service keepalived start</code></li>
-<li>查看 Master 和 Backup 两台主机的对应日志：<code>tail -f /var/log/messages</code></li>
-</ul>
-<h3 id="高可用测试"><a href="#高可用测试" class="headerlink" title="高可用测试"></a>高可用测试</h3><ul>
-<li>模拟 Keepalived 挂掉<ul>
-<li>关闭 Master 主机的 Keepalived，查看 Master 和 Backup 两台主机的对应日志：<code>tail -f /var/log/messages</code><ul>
-<li>关闭服务：<code>service keepalived stop</code></li>
-<li>如果第二台机接管了，则表示成功</li>
-</ul>
-</li>
-<li>重新开启 Master 主机的 Keepalived，查看 Master 和 Backup 两台主机的对应日志：<code>tail -f /var/log/messages</code><ul>
-<li>重启服务：<code>service keepalived restart</code></li>
-<li>如果第一台机重新接管了，则表示成功</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>模拟 Nginx 挂掉<ul>
-<li>关闭 Master 主机的 Nginx，查看 Master 和 Backup 两台主机的对应日志：<code>tail -f /var/log/messages</code><ul>
-<li>关闭服务：<code>/usr/local/nginx/sbin/nginx -s stop</code></li>
-<li>如果第二台机接管了，则表示成功</li>
-</ul>
-</li>
-<li>重新开启 Master 主机的 Nginx，查看 Master 和 Backup 两台主机的对应日志：<code>tail -f /var/log/messages</code><ul>
-<li>重启 Nginx 服务：<code>/usr/local/nginx/sbin/nginx -s reload</code></li>
-<li>重启 Keepalived 服务：<code>service keepalived restart</code></li>
-<li>如果第一台机重新接管了，则表示成功</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>可以优化的地方，改为双主热备，监控脚本上带有自启动相关细节，后续再进行。</li>
-<li>日志中常用的几句话解释：<ul>
-<li><code>Entering to MASTER STATE</code>，变成 Master 状态<ul>
-<li><code>Netlink reflector reports IP 192.168.1.50 added</code>，一般变为 Master 状态，都要重新加入虚拟 IP，一般叫法叫做：虚拟 IP 重新漂移到 Master 机子上</li>
-</ul>
-</li>
-<li><code>Entering BACKUP STATE</code>，变成 Backup 状态<ul>
-<li><code>Netlink reflector reports IP 192.168.1.50 removed</code>，一般变为 Backup 状态，都要移出虚拟 IP，一般叫法叫做：虚拟 IP 重新漂移到 Master 机子上</li>
-</ul>
-</li>
-<li><code>VRRP_Script(check_nginx) succeeded</code>，监控脚本执行成功</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://xutaibao.blog.51cto.com/7482722/1669123" target="_blank" rel="external">http://xutaibao.blog.51cto.com/7482722/1669123</a></li>
-<li><a href="https://m.oschina.net/blog/301710" target="_blank" rel="external">https://m.oschina.net/blog/301710</a></li>
-<li><a href="http://blog.csdn.net/u010028869/article/details/50612571" target="_blank" rel="external">http://blog.csdn.net/u010028869/article/details/50612571</a></li>
-<li><a href="http://blog.csdn.net/wanglei_storage/article/details/51175418" target="_blank" rel="external">http://blog.csdn.net/wanglei_storage/article/details/51175418</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Nginx-Keepalived-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nmon" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="nmon-系统性能监控工具的使用"><a href="#nmon-系统性能监控工具的使用" class="headerlink" title="nmon 系统性能监控工具的使用"></a>nmon 系统性能监控工具的使用</h1><h2 id="nmon-说明"><a href="#nmon-说明" class="headerlink" title="nmon 说明"></a>nmon 说明</h2><ul>
-<li>官网：<a href="http://nmon.sourceforge.net/pmwiki.php" target="_blank" rel="external">http://nmon.sourceforge.net/pmwiki.php</a></li>
-<li>分析工具 nmon analyser：<a href="https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Power+Systems/page/nmon_analyser" target="_blank" rel="external">https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Power+Systems/page/nmon_analyser</a></li>
-<li><blockquote>
-<p>nmon是一种在AIX与各种Linux操作系统上广泛使用的监控与分析工具， nmon所记录的信息是比较全面的，它能在系统运行过程中实时地捕捉系统资源的使用情况，并且能输出结果到文件中。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="下载-安装"><a href="#下载-安装" class="headerlink" title="下载/安装"></a>下载/安装</h2><ul>
-<li>Ubuntu：<code>sudo apt-get install -y nmon</code></li>
-<li>CentOS：<code>sudo yum install -y nmon</code>，前提是你已经有安装 epel 源<ul>
-<li>或者使用 RPM 包：<a href="http://pan.baidu.com/s/1hsFEoeg" target="_blank" rel="external">http://pan.baidu.com/s/1hsFEoeg</a><ul>
-<li>安装命令：<code>rpm -ivh nmon-14i-8.el6.x86_64.rpm</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>分析工具 nmon analyser：<a href="http://pan.baidu.com/s/1pKBLXrX" target="_blank" rel="external">http://pan.baidu.com/s/1pKBLXrX</a></li>
-</ul>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ul>
-<li>实时监控：<code>nmon</code></li>
-<li>后台监控：<code>cd /opt ; nmon -f -s 10 -c 360</code><ul>
-<li>前面的 cd /opt 表示，进入 opt 目录，nmon 生成的文件是在当前目录下。</li>
-<li>-f ：按标准格式输出文件名称：<hostname>_YYYYMMDD_HHMM.nmon</hostname></li>
-<li>-s ：每隔n秒抽样一次，这里为10秒</li>
-<li>-c ：取出多少个抽样数量，这里为360，即监控=10*360/3600=1小时</li>
-<li>该命令启动后，nmon 会在当前目录下生成监控文件，并持续写入资源数据，直至360个监控点收集完成——即监控1小时，这些操作均自动完成，无需手工干预，测试人员可以继续完成其他操作。如果想停止该监控，需要通过 <code>ps –ef|grep nmon</code> 查询进程号，然后杀掉该进程以停止监控。</li>
-</ul>
-</li>
-<li>定期监控：本质是 crontab 加上后台监控命令</li>
-</ul>
-<h2 id="解析监控文件"><a href="#解析监控文件" class="headerlink" title="解析监控文件"></a>解析监控文件</h2><ul>
-<li>把 nmon 文件转换成 csv 文件：<code>sort localhost_120427_0922.nmon &gt; localhost_120427_0922.csv</code></li>
-<li>把 csv 转换成 Excel 图表文件：<ul>
-<li>打开 nmon analyser 分析工具：nmon analyser v50_2.xlsm<ul>
-<li>点击 Analyse nmon data 会弹出一个弹出框，选择刚刚转换的 csv 文件，然后就会自动再转化成 excel 文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://os.51cto.com/art/201406/442795.htm" target="_blank" rel="external">Nmon命令行：Linux系统性能的监测利器</a></li>
-<li><a href="http://kumu1988.blog.51cto.com/4075018/1086256" target="_blank" rel="external">性能监控和分析工具–nmon</a></li>
-<li><a href="http://www.xuebuyuan.com/1439800.html" target="_blank" rel="external">nmon以及nmon analyser 教程</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Nmon/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Mysql-Optimize/">展开全文 >></a>
         </p>
       
 
@@ -1404,31 +248,28 @@ http {
     <article id="post-Off-line-Yum-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Off-line-Yum-Install/">Yum 下载安装包及对应依赖包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Off-line-Yum-Install/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Yum-下载安装包及对应依赖包"><a href="#Yum-下载安装包及对应依赖包" class="headerlink" title="Yum 下载安装包及对应依赖包"></a>Yum 下载安装包及对应依赖包</h1><hr>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><p>安装该软件：<code>yum install -y yum-plugin-downloadonly</code></p>
-</li>
-<li><p>以下载 openssh-server 为例：</p>
-<ul>
-<li><code>yum install -y openssh-server --downloadonly --downloaddir=/opt/ssh</code></li>
-<li>在 /opt/ssh 目录下有如下内容：</li>
-</ul>
-</li>
-</ul>
-<pre><code class="nginx">-rw-r--r--. 1 root root 280524 Aug 13  2015 openssh-5.3p1-112.el6_7.x86_64.rpm
--rw-r--r--. 1 root root 448872 Aug 13  2015 openssh-clients-5.3p1-112.el6_7.x86_64.rpm
--rw-r--r--. 1 root root 331544 Aug 13  2015 openssh-server-5.3p1-112.el6_7.x86_64.rpm
-</code></pre>
-<ul>
-<li>安装下载的 rpm 文件：<code>sudo rpm -ivh *.rpm</code></li>
-<li>利用 yum 安装 rpm 文件，并自动满足依赖的 rpm 文件：<code>sudo yum localinstall *.rpm</code></li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.jianshu.com/p/5930545b5591" target="_blank" rel="external">http://www.jianshu.com/p/5930545b5591</a> </li>
-</ul>
-
+        <h1 id="Yum-下载安装包及对应依赖包"><a href="#Yum-下载安装包及对应依赖包" class="headerlink" title="Yum 下载安装包及对应依赖包"></a>Yum 下载安装包及对应依赖包</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Off-line-Yum-Install/#more">more >></a>
+        
       
 
       
@@ -1436,6 +277,17 @@ http {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1470,92 +322,148 @@ http {
 
 
   
-    <article id="post-Openfire-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-RabbitMQ-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/RabbitMQ-Install-And-Settings/">RabbitMQ 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/RabbitMQ-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Openfire-安装和配置"><a href="#Openfire-安装和配置" class="headerlink" title="Openfire 安装和配置"></a>Openfire 安装和配置</h1><h2 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h2><ul>
+        <h1 id="RabbitMQ-安装和配置"><a href="#RabbitMQ-安装和配置" class="headerlink" title="RabbitMQ 安装和配置"></a>RabbitMQ 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/RabbitMQ-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/RabbitMQ-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Rap-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Rap-Install-And-Settings/">Rap 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Rap-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Rap-安装和配置"><a href="#Rap-安装和配置" class="headerlink" title="Rap 安装和配置"></a>Rap 安装和配置</h1><h2 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h2><ul>
 <li>系统：CentOS 6.7 64 位</li>
-<li>JDK 1.7 64 位</li>
 <li>MySQL 5.6</li>
+<li>JDK 1.8</li>
+<li>Tomcat 8</li>
+<li>Redis 3.0.7</li>
+<li>Rap 0.14.1</li>
 </ul>
-<h2 id="Openfire-说明"><a href="#Openfire-说明" class="headerlink" title="Openfire 说明"></a>Openfire 说明</h2><ul>
-<li>官网：<a href="http://www.igniterealtime.org/projects/openfire/" target="_blank" rel="external">http://www.igniterealtime.org/projects/openfire/</a></li>
-<li>官网下载：<a href="http://www.igniterealtime.org/downloads/index.jsp" target="_blank" rel="external">http://www.igniterealtime.org/downloads/index.jsp</a></li>
-<li>官网插件列表：<a href="http://www.igniterealtime.org/projects/openfire/plugins.jsp" target="_blank" rel="external">http://www.igniterealtime.org/projects/openfire/plugins.jsp</a></li>
-<li>官网文档：<a href="http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/" target="_blank" rel="external">http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/</a></li>
-<li>官网安装手册：<a href="http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/install-guide.html" target="_blank" rel="external">http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/install-guide.html</a></li>
-<li>官网安装手册-中文翻译版本：<a href="http://wiki.jabbercn.org/Openfire:%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97" target="_blank" rel="external">http://wiki.jabbercn.org/Openfire:%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97</a></li>
-<li>官网数据库部署手册：<a href="http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/database.html" target="_blank" rel="external">http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/database.html</a></li>
-<li>javadoc 文档：<a href="http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/javadoc/" target="_blank" rel="external">http://www.igniterealtime.org/builds/openfire/docs/latest/documentation/javadoc/</a></li>
-<li>连接管理工具（上千用户的时候用）：<http: www.igniterealtime.org="" projects="" openfire="" connection_manager.jsp=""></http:></li>
+<h2 id="Rap-说明"><a href="#Rap-说明" class="headerlink" title="Rap 说明"></a>Rap 说明</h2><ul>
+<li>官网：<a href="https://github.com/thx/RAP" target="_blank" rel="external">https://github.com/thx/RAP</a></li>
+<li>在线版：<a href="http://rap.taobao.org/" target="_blank" rel="external">http://rap.taobao.org/</a></li>
+<li>官网 Wiki：<a href="https://github.com/thx/RAP/wiki/home_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/home_cn</a></li>
+<li>官网部署手册：<a href="https://github.com/thx/RAP/wiki/deploy_manual_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/deploy_manual_cn</a></li>
+<li>用户手册：<a href="https://github.com/thx/RAP/wiki/user_manual_cn" target="_blank" rel="external">https://github.com/thx/RAP/wiki/user_manual_cn</a></li>
 </ul>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
-<li>官网下载：<a href="http://www.igniterealtime.org/downloads/index.jsp" target="_blank" rel="external">http://www.igniterealtime.org/downloads/index.jsp</a></li>
-<li>当前最新版本：<strong>4.0.2</strong>，下载文件：<code>openfire-4.0.2-1.i386.rpm</code></li>
+<li>官网下载：<a href="https://github.com/thx/RAP/releases" target="_blank" rel="external">https://github.com/thx/RAP/releases</a></li>
+<li>当前最新版本：<strong>0.14.1</strong></li>
+<li>下载 war 部署包：<a href="https://github.com/thx/RAP/releases" target="_blank" rel="external">https://github.com/thx/RAP/releases</a></li>
 </ul>
-<h2 id="安装-MySQL、JDK"><a href="#安装-MySQL、JDK" class="headerlink" title="安装 MySQL、JDK"></a>安装 MySQL、JDK</h2><ul>
+<h2 id="安装-MySQL、JDK、Tomcat、Redis"><a href="#安装-MySQL、JDK、Tomcat、Redis" class="headerlink" title="安装 MySQL、JDK、Tomcat、Redis"></a>安装 MySQL、JDK、Tomcat、Redis</h2><ul>
 <li><a href="Mysql-Install-And-Settings.md">MySQL 安装和配置</a></li>
 <li><a href="JDK-Install.md">JDK 安装</a></li>
+<li><a href="Tomcat-Install-And-Settings.md">Tomcat 安装和配置、优化</a></li>
+<li><a href="Redis-Install-And-Settings.md">Redis 安装和配置</a></li>
 </ul>
-<h2 id="安装-Openfire"><a href="#安装-Openfire" class="headerlink" title="安装 Openfire"></a>安装 Openfire</h2><ul>
-<li>要求：JDK 1.7 或以上，我这里使用 1.7</li>
-<li>CentOS 系列（Red Hat、Fedora）官网推荐安装 RPM 文件，因为有一些相关环境他们帮我们考虑了</li>
-<li>安装命令：<code>rpm -ivh openfire-4.0.2-1.i386.rpm</code></li>
-<li>Openfire 默认给我们生成安装目录：<strong>/opt/openfire</strong></li>
-<li>修改 JDK VM 参数：<code>vim /etc/sysconfig/openfire</code>，找到 23 行，打开 OPENFIRE_OPTS 删除这一行注释，分配多少 VM 你根据自己的机子来配置。</li>
-<li>初始化数据库：<ul>
-<li>请确保数据库是运行状态</li>
-<li>默认的初始化数据库脚本在（其他数据库类型的脚本也在这个目录下）：<strong>/opt/openfire/resources/database/openfire_mysql.sql</strong></li>
-<li>进入 MySQL 命令行状态：<code>mysql -u root -p</code><ul>
-<li>创建数据库并授权：<code>create database</code>openfire<code>character set utf8;grant all privileges on openfire.* to &#39;root&#39;@&#39;%&#39;;flush privileges;</code></li>
+<h2 id="安装-Rap"><a href="#安装-Rap" class="headerlink" title="安装 Rap"></a>安装 Rap</h2><ul>
+<li>创建数据库，并创建权限用户</li>
 </ul>
-</li>
-<li><strong>退出</strong> MySQL 命令行模式，<strong>在终端命令状态下</strong>，执行：<code>sudo mysql -u root -p openfire &lt; /opt/openfire/resources/database/openfire_mysql.sql</code></li>
+<pre><code class="sql">CREATE DATABASE `rap_db` CHARACTER SET utf8;
+CREATE USER &#39;rap&#39;@&#39;%&#39; IDENTIFIED BY &#39;123456&#39;;
+GRANT ALL PRIVILEGES ON rap_db.* TO &#39;rap&#39;@&#39;%&#39;;
+FLUSH PRIVILEGES;
+</code></pre>
+<ul>
+<li>把 RAP-0.14.1-SNAPSHOT.war 移动到 tomcat 的 webapp 目录下，删除其他多余的文件夹</li>
+<li>解压：<code>unzip -x RAP-0.14.1-SNAPSHOT.war -d ROOT</code></li>
+<li>初始化数据库：<code>mysql -u rap -p rap_db &lt; /usr/program/tomcat8/webapps/ROOT/WEB-INF/classes/database/initialize.sql</code></li>
+<li>修改连接数据库的配置信息：<code>vim /usr/program/tomcat8/webapps/ROOT/WEB-INF/classes/config.properties</code></li>
+<li>停掉防火墙：<code>service iptables stop</code></li>
+<li>启动 Redis：<code>/usr/local/bin/redis-server /etc/redis.conf</code></li>
+<li>启动 Tomcat：<code>sh /usr/program/tomcat8/bin/startup.sh ; tail -200f /usr/program/tomcat8/logs/catalina.out</code></li>
 </ul>
-</li>
-<li>先停掉防火墙：<code>service iptables stop</code></li>
-<li>启动：<code>/etc/init.d/openfire start</code></li>
-<li>查看进程：<code>ps aux | grep openfire</code></li>
-<li>停止：<code>/etc/init.d/openfire stop</code></li>
-<li>重启：<code>/etc/init.d/openfire restart</code></li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
-<li>访问 Web 管理界面：<code>http://192.168.1.113:9090</code></li>
-<li>开始向导配置 Openfire 具体步骤看下列一系列图：<ul>
-<li>需要注意的是：在配置数据库 URL 需要特别注意的是需要加入编码设置（你可以按我的这个链接来，但是 IP 和数据库名你自己修改）：<ul>
-<li><code>jdbc:mysql://192.168.1.113:3306/openfire?rewriteBatchedStatements=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</code></li>
-</ul>
-</li>
-<li>如果连接不了数据库，可以看错误日志：<code>cat /opt/openfire/logs/error.log</code></li>
-</ul>
-</li>
-<li><img src="images/Openfire-Settings-a-1.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-2.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-3.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-4.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-5.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-6.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-7.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-8.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-9.jpg" alt="设置"></li>
-</ul>
-<h2 id="使用-Spark-客户端"><a href="#使用-Spark-客户端" class="headerlink" title="使用 Spark 客户端"></a>使用 Spark 客户端</h2><ul>
-<li>Spark 是一个类似 QQ 的 IM 软件，只是功能比较简单。</li>
-<li>官网下载：<a href="http://www.igniterealtime.org/downloads/index.jsp" target="_blank" rel="external">http://www.igniterealtime.org/downloads/index.jsp</a></li>
-<li>官网 Windows 下有两个版本：<ul>
-<li><strong>spark_2_7_7.exe</strong> Offline installation, includes Java JRE (推荐安装这个，即使你有本机已经有了 JDK 环境) </li>
-<li><strong>spark_2_7_7_online.exe</strong> Online installation, does not include Java JRE</li>
-</ul>
-</li>
-<li>安装完 Spark，启动软件，更玩 QQ 一样道理，具体看下图。你可以用 Spark 登录 Admin 账号。</li>
-<li><img src="images/Openfire-Settings-a-11.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-12.jpg" alt="设置"></li>
-<li>现在访问 Web 管理界面，给所有在线的会员发个消息，如果你的 Spark 可以收到消息，那就说明整个环境是通的。</li>
-<li><img src="images/Openfire-Settings-a-10.jpg" alt="设置"></li>
-<li><img src="images/Openfire-Settings-a-13.jpg" alt="设置"></li>
-</ul>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p><a href="https://github.com/judasn/Linux-Tutorial" target="_blank" rel="external">judasn</a></p>
 
       
 
@@ -1564,11 +472,334 @@ http {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Openfire-Install-And-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Rap-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Nmon" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Nmon/">nmon</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Nmon/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="nmon-系统性能监控工具的使用"><a href="#nmon-系统性能监控工具的使用" class="headerlink" title="nmon 系统性能监控工具的使用"></a>nmon 系统性能监控工具的使用</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Nmon/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Nmon/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SSH" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/SSH/">SSH</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/SSH/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SSH（Secure-Shell）介绍"><a href="#SSH（Secure-Shell）介绍" class="headerlink" title="SSH（Secure Shell）介绍"></a>SSH（Secure Shell）介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/SSH/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/SSH/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CentOS-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/CentOS-Install/">iptables</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/CentOS-Install/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CentOS-安装"><a href="#CentOS-安装" class="headerlink" title="CentOS 安装"></a>CentOS 安装</h1><h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><ul>
+<li>本教程中主要演示了 VirtualBox 和 VMware Workstation 下安装 <code>CentOS 6.6</code> 的过程。</li>
+<li>VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机</li>
+<li>VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/11/22/CentOS-Install/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/CentOS-Install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CentOS-Virtual-Machine-Copy-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/">VMware 克隆 CentOS 后网卡信息修改</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="VMware-克隆-CentOS-后网卡信息修改"><a href="#VMware-克隆-CentOS-后网卡信息修改" class="headerlink" title="VMware 克隆 CentOS 后网卡信息修改"></a>VMware 克隆 CentOS 后网卡信息修改</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/">展开全文 >></a>
         </p>
       
 
@@ -1600,7 +831,7 @@ http {
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1706,6 +937,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1766,7 +1001,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1778,34 +1013,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -1814,15 +1021,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1838,11 +1053,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>

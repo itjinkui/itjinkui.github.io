@@ -2,6 +2,258 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>//zeroto.tech/2017/11/22/Nexus-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:19:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/centos-settings/CentOS-Network-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:17:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/centos-settings/CentOS-Extra-Packages/</loc>
+    
+    <lastmod>2018-08-02T07:14:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Zsh/</loc>
+    
+    <lastmod>2018-08-02T07:11:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Was-Hacked/</loc>
+    
+    <lastmod>2018-08-02T07:11:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/VPN/</loc>
+    
+    <lastmod>2018-08-02T07:10:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Vim-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:09:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Tomcat-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:06:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/SVN-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:04:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/SSH/</loc>
+    
+    <lastmod>2018-08-02T07:03:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Samba/</loc>
+    
+    <lastmod>2018-08-02T07:01:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Redis-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T07:00:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Rap-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:59:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/RabbitMQ-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:58:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Off-line-Yum-Install/</loc>
+    
+    <lastmod>2018-08-02T06:54:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/NTP/</loc>
+    
+    <lastmod>2018-08-02T06:52:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Nmon/</loc>
+    
+    <lastmod>2018-08-02T06:51:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Nginx-Keepalived-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:51:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Nginx-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:49:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/NFS/</loc>
+    
+    <lastmod>2018-08-02T06:49:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Mysql-Optimize/</loc>
+    
+    <lastmod>2018-08-02T06:47:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Mysql-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:47:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Maven-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:46:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Jira-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:45:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Jenkins-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:41:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/JDK-Install/</loc>
+    
+    <lastmod>2018-08-02T06:41:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Hsk-Install/</loc>
+    
+    <lastmod>2018-08-02T06:38:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/GitLab-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:38:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/FTP/</loc>
+    
+    <lastmod>2018-08-02T06:37:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/FastDFS-Nginx-Lua-GraphicsMagick/</loc>
+    
+    <lastmod>2018-08-02T06:36:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/FastDFS-Install-And-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:35:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Crontab/</loc>
+    
+    <lastmod>2018-08-02T06:32:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/</loc>
+    
+    <lastmod>2018-08-02T06:30:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/CentOS-Install/</loc>
+    
+    <lastmod>2018-08-02T06:28:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Bash/</loc>
+    
+    <lastmod>2018-08-02T06:24:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//zeroto.tech/2017/11/22/Iptables/</loc>
+    
+    <lastmod>2018-08-02T06:19:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>//zeroto.tech/2018/03/07/Spring%20Boot%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
     
     <lastmod>2018-06-22T01:16:11.000Z</lastmod>
@@ -149,7 +401,7 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/photos/ins.js</loc>
+    <loc>//zeroto.tech/photos/ins.json</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     
@@ -163,7 +415,7 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/photos/ins.json</loc>
+    <loc>//zeroto.tech/photos/ins.js</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     
@@ -184,321 +436,6 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/2017/11/22/TeamCity-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Nginx-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Nginx-Keepalived-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Nmon/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Off-line-Yum-Install/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Openfire-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Bash-Other-Bash/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/README/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/RabbitMQ-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Rap-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Redis-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/SSH/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/SVN-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Samba/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Solr-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/FTP/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/FastDFS-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/TOC/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Bash/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Tomcat-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Ubuntu-Install-VMware/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Ubuntu-Install/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Ubuntu-Popular-Software/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Ubuntu-Specific-Command/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Ubuntu/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/VPN/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Vim-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/GitLab-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Was-Hacked/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Zsh/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/config/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/FastDFS-Nginx-Lua-GraphicsMagick/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Hsk-Install/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Iptables/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/JDK-Install/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/CentOS-Install/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/other/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Jira-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Jenkins-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/CentOS-Virtual-Machine-Copy-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/CentOS/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Maven-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Mysql-Install-And-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Crontab/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/centos-settings/CentOS-Extra-Packages/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>//zeroto.tech/2017/11/22/centos-settings/Clear-Cache/</loc>
     
     <lastmod>2017-11-22T09:32:19.000Z</lastmod>
@@ -506,14 +443,7 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/2017/11/22/centos-settings/CentOS-Network-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/centos-settings/Clear-Tmp-Directory/</loc>
+    <loc>//zeroto.tech/2017/11/22/config/</loc>
     
     <lastmod>2017-11-22T09:32:19.000Z</lastmod>
     
@@ -534,77 +464,7 @@
   </url>
   
   <url>
-    <loc>//zeroto.tech/2017/11/22/centos-settings/centos-settings-toc/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/ubuntu-settings/Network-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/ubuntu-settings/Ubuntu-Create-Desktop/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/ubuntu-settings/Ubuntu-Popular-Settings/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/ubuntu-settings/Ubuntu-Extra-Packages/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/ubuntu-settings/ubuntu-settings-toc/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Mysql-Optimize/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/NFS/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Mysql-Tutorial/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/NTP/</loc>
-    
-    <lastmod>2017-11-22T09:32:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/2017/11/22/Nexus-Install-And-Settings/</loc>
+    <loc>//zeroto.tech/2017/11/22/centos-settings/Clear-Tmp-Directory/</loc>
     
     <lastmod>2017-11-22T09:32:19.000Z</lastmod>
     

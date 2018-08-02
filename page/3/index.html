@@ -165,349 +165,31 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Jenkins-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Crontab" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Jenkins-安装和配置"><a href="#Jenkins-安装和配置" class="headerlink" title="Jenkins 安装和配置"></a>Jenkins 安装和配置</h1><h2 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h2><ul>
-<li>Jenkins 安装<ul>
-<li>官网：<a href="http://jenkins-ci.org/" target="_blank" rel="external">http://jenkins-ci.org/</a></li>
-<li>官网帮助中心：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins</a></li>
-<li>官网使用 Tomcat 部署方式指导：<a href="https://wiki.jenkins-ci.org/display/JENKINS/Tomcat" target="_blank" rel="external">https://wiki.jenkins-ci.org/display/JENKINS/Tomcat</a></li>
-<li>此时（20160207） Jenkins 最新版本为：<strong>1.647</strong></li>
-<li>JDK 最低要求是 JDK 7，官网推荐是 JDK 8</li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>Jenkins 下载：<code>wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war</code> （大小：61 M）<ul>
-<li>我们假设这个 Tomcat 就是为了 Jenkins 专用的</li>
-<li>把下载下来的 jenkins.war 移到 Tomcat 的 webapps 目录下，比如我的是：<code>/usr/program/tomcat8/webapps</code></li>
-<li>把 Jenkins.war 改名为 ROOT.war：<code>mv jenkins.war ROOT.war</code></li>
-<li>删除 Tomcat 下 webapps 目录下多余的一些目录</li>
-<li>首次启动 Tomcat，让 Tomcat 解压 war</li>
-<li>设置 JENKINS_HOME：<ul>
-<li>寻找 jenkins home 目录地址：<code>find / -name .jenkins</code>，我这边得到的结果是：<code>/root/.jenkins</code></li>
-<li>对在 Tomcat 文章中讲解的系统变量 <code>CATALINA_OPTS</code> 进行设置：<ul>
-<li>旧值：<pre><code>CATALINA_OPTS=&quot;-server -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot;
-export CATALINA_OPTS
-</code></pre></li>
-<li>改为：<pre><code>CATALINA_OPTS=&quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot;
-export CATALINA_OPTS
-</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Jenkins 各个组件配置：<ul>
-<li>访问：<a href="http://192.168.0.110:8080/configure" target="_blank" rel="external">http://192.168.0.110:8080/configure</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>其他问题<ul>
-<li>如果访问的时候报这个异常：<code>java.net.UnknownHostException</code>，可以查看这篇文章：<a href="http://stackoverflow.com/questions/4969156/java-net-unknownhostexception" target="_blank" rel="external">http://stackoverflow.com/questions/4969156/java-net-unknownhostexception</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://stackoverflow.com/questions/4969156/java-net-unknownhostexception" target="_blank" rel="external">http://stackoverflow.com/questions/4969156/java-net-unknownhostexception</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Jenkins-Install-And-Settings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Bash-Other-Bash" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Bash-其他常用命令"><a href="#Bash-其他常用命令" class="headerlink" title="Bash 其他常用命令"></a>Bash 其他常用命令</h1><h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ul>
-<li>编辑 hosts 文件：<code>vim /etc/hosts</code>，添加内容格式：<code>127.0.0.1 www.youmeek.com</code></li>
-<li>RPM 文件操作命令：<ul>
-<li>安装<ul>
-<li><code>rpm -i example.rpm</code>，安装 example.rpm 包</li>
-<li><code>rpm -iv example.rpm</code>，安装 example.rpm 包并在安装过程中显示正在安装的文件信息</li>
-<li><code>rpm -ivh example.rpm</code>，安装 example.rpm 包并在安装过程中显示正在安装的文件信息及安装进度</li>
-</ul>
-</li>
-<li>查询<ul>
-<li><code>rpm -qa | grep jdk</code>，查看 jdk 是否被安装</li>
-</ul>
-</li>
-<li>卸载<ul>
-<li><code>rpm -e jdk</code>，卸载 jdk（一般卸载的时候都要先用 rpm -qa 看下整个软件的全名）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看某个配置文件，排除掉里面以 # 开头的注释内容：<ul>
-<li><code>grep &#39;^[^#]&#39; /etc/openvpn/server.conf</code></li>
-</ul>
-</li>
-<li>查看某个配置文件，排除掉里面以 # 开头和 ; 开头的注释内容：<ul>
-<li><code>grep &#39;^[^#;]&#39; /etc/openvpn/server.conf</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Bash-Other-Bash/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Crontab/">Crontab</a>
+    </h1>
   
-    <article id="post-CentOS-Install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2017/11/22/Crontab/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CentOS-安装"><a href="#CentOS-安装" class="headerlink" title="CentOS 安装"></a>CentOS 安装</h1><h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><ul>
-<li>本教程中主要演示了 VirtualBox 和 VMware Workstation 下安装 <code>CentOS 6.6</code> 的过程。</li>
-<li>VirtualBox 是免费开源，我个人在使用经历中遇到过很多次崩溃、安装有问题等，所以它不是我主推的虚拟机</li>
-<li>VMware Workstation 是商业软件，很好用，一些辅助功能也很到位，主推该虚拟机。</li>
-</ul>
-<h2 id="VirtualBox-下安装-CentOS-过程"><a href="#VirtualBox-下安装-CentOS-过程" class="headerlink" title="VirtualBox 下安装 CentOS 过程"></a>VirtualBox 下安装 CentOS 过程</h2><ul>
-<li>VirtualBox 的介绍和下载<ul>
-<li>官网：<a href="https://www.virtualbox.org/" target="_blank" rel="external">https://www.virtualbox.org/</a></li>
-<li>wiki：<a href="https://zh.wikipedia.org/zh/VirtualBox" target="_blank" rel="external">https://zh.wikipedia.org/zh/VirtualBox</a></li>
-<li>百度 wiki：<a href="http://baike.baidu.com/view/1047853.htm" target="_blank" rel="external">http://baike.baidu.com/view/1047853.htm</a></li>
-<li>百度云下载（32 位和 64 位一体）：<a href="http://pan.baidu.com/s/1kTR3hOj" target="_blank" rel="external">http://pan.baidu.com/s/1kTR3hOj</a></li>
-<li>官网下载：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">https://www.virtualbox.org/wiki/Downloads</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>安装细节开始：<ul>
-<li><img src="images/CentOS-Install-VirtualBox-a-1.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图标注 1 所示：点击 <code>新建</code> 一个虚拟机。</li>
-<li>如上图标注 2 所示：在填写 <code>名称</code> 的时候，输入 <code>CentOS</code> 相关字眼的时候，下面的版本类型会跟着变化，自动识别为 <code>Red Hat</code></li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-2.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图标注 1 所示：我们装的是 64 位系统，如果你本机内存足够大，建议可以给 2 ~ 4 G 的容量</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-3.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-4.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-5.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-6.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图所示，命名最好规范，最好要带上系统版本号，硬盘大小建议在 8 ~ 20 G</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-b-1.gif" alt="VirtualBox 下安装"><ul>
-<li>如上图 gif 演示，当我们创建好虚拟机之后，需要选择模拟光驱进行系统镜像安装</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-7.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-8.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图箭头所示，我们这里选择 <code>Skip</code>，跳过对镜像的检查，这个一般需要检查很久，而且我们用 iso 文件安装的，一般没这个必要</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-9.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-12.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图标注 1 所示，建议 Linux 纯新手使用简体中文环境</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-13.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-14.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-15.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图标注 1 所示，因为我们是用全新的虚拟机，虚拟出来的硬盘都是空的，所以这里可以忽略所有数据</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-16.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-17.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-18.jpg" alt="VirtualBox 下安装"><ul>
-<li>再次强调下，root 账号也就是图上所说的 <code>根账号</code>，它是最顶级账号，密码最好别忘记了</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-19.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-20.jpg" alt="VirtualBox 下安装"><ul>
-<li>如上图标注 1 所示，因为我们是用全新的虚拟机，所以这里选择 <code>使用所有空间</code> ，然后 CentOS 会按它默认的方式进行分区</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-21.jpg" alt="VirtualBox 下安装"></li>
-<li><img src="images/CentOS-Install-VirtualBox-a-22.jpg" alt="VirtualBox 下安装"><ul>
-<li><code>Desktop</code> 代表：图形界面版，会默认安装很多软件，建议新手选择此模式，我后面其他文章的讲解都是基于此系统下，如果你不是此模式的系统可能在安装某些软件的时候会出现某些依赖包没有安装的情况</li>
-<li><code>basic sever</code> 代表：命令行界面，有良好基础的基本都会喜欢这个 </li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-23.jpg" alt="VirtualBox 下安装"><ul>
-<li>上一步我选择的是 <code>Desktop</code> 所以有很多软件需要安装，这个过程大概需要 5 ~ 10 分钟</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-24.jpg" alt="VirtualBox 下安装"><ul>
-<li>安装完成</li>
-</ul>
-</li>
-<li><img src="images/CentOS-Install-VirtualBox-a-25.jpg" alt="VirtualBox 下安装"> <ul>
-<li>安装完成后一定要把盘片删除，防止系统启动的时候去读盘，重新进入安装系统模式</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="VMware-下安装-CentOS-过程"><a href="#VMware-下安装-CentOS-过程" class="headerlink" title="VMware 下安装 CentOS 过程"></a>VMware 下安装 CentOS 过程</h2><ul>
-<li>VMware Workstation 的介绍和下载<ul>
-<li>官网：<a href="https://www.vmware.com/products/workstation" target="_blank" rel="external">https://www.vmware.com/products/workstation</a></li>
-<li>wiki：<a href="https://zh.wikipedia.org/wiki/VMware_Workstation" target="_blank" rel="external">https://zh.wikipedia.org/wiki/VMware_Workstation</a></li>
-<li>百度 wiki：<a href="http://baike.baidu.com/view/555554.htm" target="_blank" rel="external">http://baike.baidu.com/view/555554.htm</a></li>
-<li>百度云下载（64 位）：<a href="http://pan.baidu.com/s/1eRuJAFK" target="_blank" rel="external">http://pan.baidu.com/s/1eRuJAFK</a></li>
-<li>官网下载：<a href="http://www.vmware.com/products/workstation/workstation-evaluation" target="_blank" rel="external">http://www.vmware.com/products/workstation/workstation-evaluation</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>安装细节开始：<ul>
-<li><img src="images/CentOS-install-VMware-a-1.jpg" alt="VMware 下安装"> </li>
-<li><img src="images/CentOS-install-VMware-a-2.jpg" alt="VMware 下安装"><ul>
-<li>默认 VMware 选择的是 <code>典型</code> 我不推荐，我下面的步骤是选择 <code>自定义（高级）</code>。如果你非常了解 Linux 系统倒是可以考虑选择 <code>典型</code>，在它默认安装完的系统上可以很好地按你的需求进行修改</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-3.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-4.jpg" alt="VMware 下安装"><ul>
-<li>牢记：不要在这一步就选择镜像文件，不然也会直接进入 <code>典型</code> 模式，直接按它的规则进行系统安装</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-5.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-6.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-7.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-8.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-9.jpg" alt="VMware 下安装"><ul>
-<li>桥接模式：（建议选择此模式）创建一个独立的虚拟主机，在桥接模式下的虚拟主机网络一般要为其配 IP 地址、子网掩码、默认网关（虚拟机ip地址要与主机ip地址处于同网段）</li>
-<li>NAT 模式：把物理主机作为路由器进行访问互联网，优势:联网简单，劣势:虚拟主机无法与物理主机通讯</li>
-<li>主机模式：把虚拟主机网络与真实网络隔开，但是各个虚拟机之间可以互相连接，虚拟机和物理机也可以连接</li>
-<li><blockquote>
-<p>上面解释来源：<a href="http://jingyan.baidu.com/article/3f16e003cd0a0d2591c103b4.html" target="_blank" rel="external">http://jingyan.baidu.com/article/3f16e003cd0a0d2591c103b4.html</a></p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-10.jpg" alt="VMware 下安装"><ul>
-<li>Buslogic 和 LSIlogic 都是虚拟硬盘 SCSI 设备的类型，旧版本的 OS 默认的是 Buslogic，LSIlogic 类型的硬盘改进了性能，对于小文件的读取速度有提高，支持非 SCSI 硬盘比较好。</li>
-<li><blockquote>
-<p>上面解释来源：<a href="http://www.cnblogs.com/R-zqiang/archive/2012/11/23/2785134.html" target="_blank" rel="external">http://www.cnblogs.com/R-zqiang/archive/2012/11/23/2785134.html</a></p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-11.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-12.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-13.jpg" alt="VMware 下安装"><ul>
-<li>强烈建议至少要给 20 G，不然装不了多少软件的</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-14.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-15.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-b-1.gif" alt="VMware 下安装"><ul>
-<li>如上图 gif 所示，在创建完虚拟机之后，我们要加载系统镜像，然后启动虚拟机进行安装，接下来的安装步骤跟上面使用 VirtualBox 安装细节基本一样，不一样的地方是我这里选择的是自定义分区，不再是选择默认分区方式</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-16.jpg" alt="VMware 下安装"><ul>
-<li>如上图箭头所示，这里我们选择自定义分区方式</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-b-2.gif" alt="VMware 下安装"><ul>
-<li>如上图 gif 所示，我只把最基本的区分出来，如果你有自己的需求可以自己设置</li>
-<li>简单分区方案：<ul>
-<li><code>/boot</code> == 500 M（主分区）</li>
-<li><code>/swap</code> == 2 G（逻辑分区）一般大家的说法这个大小是跟你机子的内存大小相关的，也有说法内存大不需要这个，但是还是建议分，虚拟机内存 2 G，所以我分 2 G</li>
-<li><code>/</code> == 剩余容量（逻辑分区）剩余的空间都给了根分区</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><img src="images/CentOS-install-VMware-a-17.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-18.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-19.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-20.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-21.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-22.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-23.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-24.jpg" alt="VMware 下安装"></li>
-<li><img src="images/CentOS-install-VMware-a-25.jpg" alt="VMware 下安装"></li>
-</ul>
-</li>
-</ul>
-
+        <h1 id="Crontab-介绍"><a href="#Crontab-介绍" class="headerlink" title="Crontab 介绍"></a>Crontab 介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Crontab/#more">more >></a>
+        
       
 
       
@@ -515,204 +197,22 @@ export CATALINA_OPTS
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/CentOS-Install/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Maven-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Maven-安装和配置"><a href="#Maven-安装和配置" class="headerlink" title="Maven 安装和配置"></a>Maven 安装和配置</h1><h2 id="Maven-安装"><a href="#Maven-安装" class="headerlink" title="Maven 安装"></a>Maven 安装</h2><ul>
-<li><p>Maven 安装</p>
-<ul>
-<li>官网：<a href="http://maven.apache.org/" target="_blank" rel="external">http://maven.apache.org/</a></li>
-<li>官网下载：<a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></li>
-<li>历史版本下载：<a href="https://archive.apache.org/dist/maven/binaries/" target="_blank" rel="external">https://archive.apache.org/dist/maven/binaries/</a></li>
-<li>此时（20160208） Maven 最新版本为：<strong>3.3.9</strong></li>
-<li>Maven 3.3 的 JDK 最低要求是 JDK 7</li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>下载压缩包：<code>wget http://mirrors.cnnic.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz</code></li>
-<li>解压：<code>tar zxvf apache-maven-3.3.9-bin.tar.gz</code></li>
-<li>修改目录名，默认的太长了：<code>mv apache-maven-3.3.9/ maven3.3.9/</code></li>
-<li>移到我个人习惯的安装目录下：<code>mv maven3.3.9/ /usr/program</code></li>
-<li>环境变量设置：<code>vim /etc/profile</code></li>
-<li><p>在文件最尾巴添加下面内容：</p>
-<pre><code class="ini"># Maven
-MAVEN_HOME=/usr/program/maven3.3.9
-PATH=$PATH:$MAVEN_HOME/bin
-MAVEN_OPTS=&quot;-Xms256m -Xmx356m&quot;
-export MAVEN_HOME
-export PATH
-export MAVEN_OPTS
-</code></pre>
-</li>
-<li><p>刷新配置文件：<code>source /etc/profile</code></p>
-</li>
-<li>测试是否安装成功：<code>mvn -version</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><ul>
-<li>配置项目连接上私服</li>
-<li>全局方式配置：</li>
-</ul>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-
-&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
-
-    &lt;!--本地仓库位置--&gt;
-    &lt;localRepository&gt;D:/maven/my_local_repository&lt;/localRepository&gt;
-
-    &lt;pluginGroups&gt;
-    &lt;/pluginGroups&gt;
-
-    &lt;proxies&gt;
-    &lt;/proxies&gt;
-
-    &lt;!--设置 Nexus 认证信息--&gt;
-    &lt;servers&gt;
-        &lt;server&gt;
-            &lt;id&gt;nexus-releases&lt;/id&gt;
-            &lt;username&gt;admin&lt;/username&gt;
-            &lt;password&gt;admin123&lt;/password&gt;
-        &lt;/server&gt;
-        &lt;server&gt;
-            &lt;id&gt;nexus-snapshots&lt;/id&gt;
-            &lt;username&gt;admin&lt;/username&gt;
-            &lt;password&gt;admin123&lt;/password&gt;
-        &lt;/server&gt;
-    &lt;/servers&gt;
-
-    &lt;!--设置 Nexus 镜像，后面只要本地没对应的以来，则到 Nexus 去找--&gt;
-    &lt;mirrors&gt;
-        &lt;mirror&gt;
-            &lt;id&gt;nexus-releases&lt;/id&gt;
-            &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-            &lt;url&gt;http://localhost:8081/nexus/content/groups/public&lt;/url&gt;
-        &lt;/mirror&gt;
-        &lt;mirror&gt;
-            &lt;id&gt;nexus-snapshots&lt;/id&gt;
-            &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-            &lt;url&gt;http://localhost:8081/nexus/content/groups/public-snapshots&lt;/url&gt;
-        &lt;/mirror&gt;
-    &lt;/mirrors&gt;
-
-
-    &lt;profiles&gt;
-        &lt;profile&gt;
-            &lt;id&gt;nexus&lt;/id&gt;
-            &lt;repositories&gt;
-                &lt;repository&gt;
-                    &lt;id&gt;nexus-releases&lt;/id&gt;
-                    &lt;url&gt;http://nexus-releases&lt;/url&gt;
-                    &lt;releases&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/releases&gt;
-                    &lt;snapshots&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/snapshots&gt;
-                &lt;/repository&gt;
-                &lt;repository&gt;
-                    &lt;id&gt;nexus-snapshots&lt;/id&gt;
-                    &lt;url&gt;http://nexus-snapshots&lt;/url&gt;
-                    &lt;releases&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/releases&gt;
-                    &lt;snapshots&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/snapshots&gt;
-                &lt;/repository&gt;
-            &lt;/repositories&gt;
-            &lt;pluginRepositories&gt;
-                &lt;pluginRepository&gt;
-                    &lt;id&gt;nexus-releases&lt;/id&gt;
-                    &lt;url&gt;http://nexus-releases&lt;/url&gt;
-                    &lt;releases&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/releases&gt;
-                    &lt;snapshots&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/snapshots&gt;
-                &lt;/pluginRepository&gt;
-                &lt;pluginRepository&gt;
-                    &lt;id&gt;nexus-snapshots&lt;/id&gt;
-                    &lt;url&gt;http://nexus-snapshots&lt;/url&gt;
-                    &lt;releases&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/releases&gt;
-                    &lt;snapshots&gt;
-                        &lt;enabled&gt;true&lt;/enabled&gt;
-                    &lt;/snapshots&gt;
-                &lt;/pluginRepository&gt;
-            &lt;/pluginRepositories&gt;
-        &lt;/profile&gt;
-    &lt;/profiles&gt;
-
-    &lt;activeProfiles&gt;
-        &lt;activeProfile&gt;nexus&lt;/activeProfile&gt;
-    &lt;/activeProfiles&gt;
-
-&lt;/settings&gt;
-</code></pre>
-<ul>
-<li>项目级别：</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://maven.apache.org/install.html" target="_blank" rel="external">http://maven.apache.org/install.html</a></li>
-<li><a href="http://www.tutorialspoint.com/maven/index.htm" target="_blank" rel="external">http://www.tutorialspoint.com/maven/index.htm</a></li>
-<li><a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank" rel="external">http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a></li>
-<li><a href="http://maven.apache.org/guides/getting-started/index.html" target="_blank" rel="external">http://maven.apache.org/guides/getting-started/index.html</a></li>
-<li><a href="http://maven.apache.org/general.html" target="_blank" rel="external">http://maven.apache.org/general.html</a></li>
-<li><a href="http://stackoverflow.com/questions/6950346/infrastructure-with-maven-jenkins-nexus" target="_blank" rel="external">http://stackoverflow.com/questions/6950346/infrastructure-with-maven-jenkins-nexus</a></li>
-<li><a href="http://blog.csdn.net/sxyx2008/article/details/7975129" target="_blank" rel="external">http://blog.csdn.net/sxyx2008/article/details/7975129</a></li>
-<li><a href="http://blog.csdn.net/xuke6677/article/details/8482472" target="_blank" rel="external">http://blog.csdn.net/xuke6677/article/details/8482472</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Maven-Install-And-Settings/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Crontab/">展开全文 >></a>
         </p>
       
 
@@ -745,210 +245,28 @@ export MAVEN_OPTS
     <article id="post-Mysql-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Mysql-Install-And-Settings/">MySQL 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Mysql-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL-安装和配置"><a href="#MySQL-安装和配置" class="headerlink" title="MySQL 安装和配置"></a>MySQL 安装和配置</h1><h2 id="MySQL-安装"><a href="#MySQL-安装" class="headerlink" title="MySQL 安装"></a>MySQL 安装</h2><ul>
-<li>Mysql 安装<ul>
-<li>官网：<a href="http://www.mysql.com/" target="_blank" rel="external">http://www.mysql.com/</a></li>
-<li>官网下载：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></li>
-<li>官网 5.5 下载：<a href="http://dev.mysql.com/downloads/mysql/5.5.html#downloads" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/5.5.html#downloads</a></li>
-<li>官网 5.6 下载：<a href="http://dev.mysql.com/downloads/mysql/5.6.html#downloads" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/5.6.html#downloads</a></li>
-<li>官网 5.7 下载：<a href="http://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></li>
-<li>官网帮助中心：<a href="http://dev.mysql.com/doc/refman/5.6/en/source-installation.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.6/en/source-installation.html</a></li>
-<li>此时（20160210） Mysql 5.5 最新版本为：<strong>5.5.48</strong></li>
-<li>此时（20160210） Mysql 5.6 最新版本为：<strong>5.6.29</strong></li>
-<li>此时（20160210） Mysql 5.7 最新版本为：<strong>5.7.11</strong></li>
-<li>我个人习惯 <code>/opt</code> 目录下创建一个目录 <code>setups</code> 用来存放各种软件安装包；在 <code>/usr</code> 目录下创建一个 <code>program</code> 用来存放各种解压后的软件包，下面的讲解也都是基于此习惯</li>
-<li>我个人已经使用了第三方源：<code>EPEL、RepoForge</code>，如果你出现 <code>yum install XXXXX</code> 安装不成功的话，很有可能就是你没有相关源，请查看我对源设置的文章</li>
-<li>Mysql 5.6 下载：<code>wget http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.29.tar.gz</code> （大小：31 M）</li>
-<li>Mysql 5.7 下载：<code>wget http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.11.tar.gz</code> （大小：47 M）</li>
-<li>我们这次安装以 5.6 为实例<ul>
-<li>进入下载目录：<code>cd /opt/setups</code></li>
-<li>解压压缩包：<code>tar zxvf mysql-5.6.29.tar.gz</code></li>
-<li>移到解压包：<code>mv /opt/setups/mysql-5.6.29 /usr/program/</code></li>
-<li>安装依赖包、编译包：<code>yum install -y make gcc-c++ cmake bison-devel  ncurses-devel</code></li>
-<li>进入解压目录：<code>cd /usr/program/mysql-5.6.29/</code></li>
-<li>生成安装目录：<code>mkdir -p /usr/program/mysql/data</code></li>
-<li>生成配置（使用 InnoDB）：<code>sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/program/mysql -DMYSQL_DATADIR=/usr/program/mysql/data -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_EXTRA_CHARSETS:STRING=utf8 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DENABLED_LOCAL_INFILE=1</code><ul>
-<li>更多参数说明可以查看：<a href="http://dev.mysql.com/doc/refman/5.6/en/source-configuration-options.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.6/en/source-configuration-options.html</a></li>
-</ul>
-</li>
-<li>编译：<code>sudo make</code>，这个过程比较漫长，一般都在 30 分钟左右，具体还得看机子配置，如果最后结果有 error，建议删除整个 mysql 目录后重新解压一个出来继续处理</li>
-<li>安装：<code>sudo make install</code></li>
-<li>配置开机启动：<ul>
-<li><code>sudo cp /usr/program/mysql-5.6.29/support-files/mysql.server  /etc/init.d/mysql</code></li>
-<li><code>sudo chmod 755 /etc/init.d/mysql</code></li>
-<li><code>sudo chkconfig mysql on</code></li>
-</ul>
-</li>
-<li>复制一份配置文件： <code>sudo cp /usr/program/mysql-5.6.29/support-files/my-default.cnf /etc/my.cnf</code></li>
-<li>删除安装的目录：<code>rm -rf /usr/program/mysql-5.6.29/</code></li>
-<li>添加组和用户及安装目录权限<ul>
-<li><code>sudo groupadd mysql</code> #添加组</li>
-<li><code>sudo useradd -g mysql mysql -s /bin/false</code> #创建用户mysql并加入到mysql组，不允许mysql用户直接登录系统</li>
-<li><code>sudo chown -R mysql:mysql /usr/program/mysql/data</code> #设置MySQL数据库目录权限</li>
-</ul>
-</li>
-<li>初始化数据库：<code>sudo /usr/program/mysql/scripts/mysql_install_db --basedir=/usr/program/mysql --datadir=/usr/program/mysql/data --skip-name-resolve --user=mysql</code></li>
-<li>开放防火墙端口：<ul>
-<li><code>sudo iptables -I INPUT -p tcp -m tcp --dport 3306 -j ACCEPT</code></li>
-<li><code>sudo service iptables save</code></li>
-<li><code>sudo service iptables restart</code></li>
-</ul>
-</li>
-<li>禁用 selinux<ul>
-<li>编辑配置文件：<code>vim /etc/selinux/config</code></li>
-<li>把 <code>SELINUX=enforcing</code> 改为 <code>SELINUX=disabled</code></li>
-</ul>
-</li>
-<li>常用命令软连接，才可以在终端直接使用：mysql 和 mysqladmin 命令<ul>
-<li><code>sudo ln -s /usr/program/mysql/bin/mysql /usr/bin</code></li>
-<li><code>sudo ln -s /usr/program/mysql/bin/mysqladmin /usr/bin</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="MySQL-配置"><a href="#MySQL-配置" class="headerlink" title="MySQL 配置"></a>MySQL 配置</h2><ul>
-<li>官网配置参数解释：<a href="http://dev.mysql.com/doc/refman/5.6/en/mysqld-option-tables.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.6/en/mysqld-option-tables.html</a></li>
-<li>找一下当前系统中有多少个 my.cnf 文件：<code>find / -name &quot;my.cnf&quot;</code>，我查到的结果：</li>
-</ul>
-<pre><code class="nginx">/etc/my.cnf
-/usr/program/mysql/my.cnf
-/usr/program/mysql/mysql-test/suite/ndb/my.cnf
-/usr/program/mysql/mysql-test/suite/ndb_big/my.cnf
-.............
-/usr/program/mysql/mysql-test/suite/ndb_rpl/my.cnf
-</code></pre>
-<ul>
-<li>保留 <strong>/etc/my.cnf</strong> 和 <strong>/usr/program/mysql/mysql-test/</strong> 目录下配置文件，其他删除掉。</li>
-<li>我整理的一个单机版配置说明（MySQL 5.6，适用于 1G 内存的服务器）：<ul>
-<li><a href="MySQL-Settings/MySQL-5.6/1G-Memory-Machine/my-for-comprehensive.cnf">my.cnf</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="修改-root-账号密码"><a href="#修改-root-账号密码" class="headerlink" title="修改 root 账号密码"></a>修改 root 账号密码</h2><ul>
-<li>启动 Mysql 服务器：<code>service mysql start</code></li>
-<li>查看是否已经启动了：<code>ps aux | grep mysql</code></li>
-<li>默认安装情况下，root 的密码是空，所以为了方便我们可以设置一个密码，假设我设置为：123456</li>
-<li>终端下执行：<code>mysql -uroot</code><ul>
-<li>现在进入了 mysql 命令行管理界面，输入：<code>SET PASSWORD = PASSWORD(&#39;123456&#39;);</code></li>
-</ul>
-</li>
-<li>修改密码后，终端下执行：<code>mysql -uroot -p</code><ul>
-<li>根据提示，输入密码进度 mysql 命令行状态。</li>
-</ul>
-</li>
-<li>如果你在其他机子上连接该数据库机子报：<strong>Access denied for user ‘root’@’localhost’ (using password: YES)</strong><ul>
-<li>解决办法：</li>
-<li>在终端中执行：<code>service mysql stop</code></li>
-<li>在终端中执行：<code>/usr/program/mysql/bin/mysqld --skip-grant-tables</code><ul>
-<li>此时 MySQL 服务会一直处于监听状态，你需要另起一个终端窗口来执行接下来的操作</li>
-<li>在终端中执行：<code>mysql -u root mysql</code></li>
-<li>进入 MySQL 命令后执行：<code>UPDATE user SET Password=PASSWORD(&#39;填写你要的新密码&#39;) where USER=&#39;root&#39;;FLUSH PRIVILEGES;</code></li>
-<li>重启 MySQL 服务：<code>service mysql restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="MySQL-主从复制"><a href="#MySQL-主从复制" class="headerlink" title="MySQL 主从复制"></a>MySQL 主从复制</h2><h3 id="环境说明和注意点"><a href="#环境说明和注意点" class="headerlink" title="环境说明和注意点"></a>环境说明和注意点</h3><ul>
-<li>假设有两台服务器，一台做主，一台做从<ul>
-<li>MySQL 主信息：<ul>
-<li>IP：<strong>12.168.1.113</strong></li>
-<li>端口：<strong>3306</strong></li>
-</ul>
-</li>
-<li>MySQL 从信息：<ul>
-<li>IP：<strong>12.168.1.115</strong></li>
-<li>端口：<strong>3306</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>注意点<ul>
-<li>主 DB server 和从 DB server 数据库的版本一致</li>
-<li>主 DB server 和从 DB server 数据库数据一致</li>
-<li>主 DB server 开启二进制日志，主 DB server 和从 DB server 的 server-id 都必须唯一</li>
-</ul>
-</li>
-<li>优先操作：<ul>
-<li><strong>把主库的数据库复制到从库并导入</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="主库机子操作"><a href="#主库机子操作" class="headerlink" title="主库机子操作"></a>主库机子操作</h3><ul>
-<li><p>主库操作步骤</p>
-<ul>
-<li>创建一个目录：<code>mkdir -p /usr/program/mysql/data/mysql-bin</code></li>
-<li>主 DB 开启二进制日志功能：<code>vim /etc/my.cnf</code>，<ul>
-<li>添加一行：<code>log-bin = /usr/program/mysql/data/mysql-bin</code></li>
-<li>指定同步的数据库，如果不指定则同步全部数据库，其中 ssm 是我的数据库名：<code>binlog-do-db=ssm</code></li>
-</ul>
-</li>
-<li>主库关掉慢查询记录，用 SQL 语句查看当前是否开启：<code>SHOW VARIABLES LIKE &#39;%slow_query_log%&#39;;</code>，如果显示 OFF 则表示关闭，ON 表示开启</li>
-<li>重启主库 MySQL 服务</li>
-<li>进入 MySQL 命令行状态，执行 SQL 语句查询状态：<code>SHOW MASTER STATUS;</code><ul>
-<li>在显示的结果中，我们需要记录下 <strong>File</strong> 和 <strong>Position</strong> 值，等下从库配置有用。</li>
-</ul>
-</li>
-<li><p>设置授权用户 slave01 使用 123456 密码登录主库，这里 @ 后的 IP 为从库机子的 IP 地址，如果从库的机子有多个，我们需要多个这个 SQL 语句。</p>
-<pre><code class="SQL">grant replication slave on *.* to &#39;slave01&#39;@&#39;192.168.1.135&#39; identified by &#39;123456&#39;;
-flush privileges;
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="从库机子操作"><a href="#从库机子操作" class="headerlink" title="从库机子操作"></a>从库机子操作</h3><ul>
-<li><p>从库操作步骤</p>
-<ul>
-<li>从库开启慢查询记录，用 SQL 语句查看当前是否开启：<code>SHOW VARIABLES LIKE &#39;%slow_query_log%&#39;;</code>，如果显示 OFF 则表示关闭，ON 表示开启。</li>
-<li>测试从库机子是否能连上主库机子：<code>sudo mysql -h 192.168.1.105 -u slave01 -p</code>，必须要连上下面的操作才有意义。<ul>
-<li>由于不能排除是不是系统防火墙的问题，所以建议连不上临时关掉防火墙：<code>service iptables stop</code></li>
-<li>或是添加防火墙规则：<ul>
-<li>添加规则：<code>sudo iptables -I INPUT -p tcp -m tcp --dport 3306 -j ACCEPT</code></li>
-<li>保存规则：<code>sudo service iptables save</code></li>
-<li>重启 iptables：<code>sudo service iptables restart</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>修改配置文件：<code>vim /etc/my.cnf</code>，把 server-id 改为跟主库不一样</li>
-<li><p>在进入 MySQL 的命令行状态下，输入下面 SQL：</p>
-<pre><code class="SQL">CHANGE MASTER TO
-master_host=&#39;192.168.1.113&#39;,
-master_user=&#39;slave01&#39;,
-master_password=&#39;123456&#39;,
-master_port=3306,
-master_log_file=&#39;mysql3306-bin.000006&#39;,&gt;&gt;&gt;这个值复制刚刚让你记录的值
-master_log_pos=1120;&gt;&gt;&gt;这个值复制刚刚让你记录的值
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>执行该 SQL 语句，启动 slave 同步：<code>START SLAVE;</code></p>
-</li>
-<li>执行该 SQL 语句，查看从库机子同步状态：<code>SHOW SLAVE STATUS;</code></li>
-<li>在查看结果中必须下面两个值都是 Yes 才表示配置成功：<ul>
-<li><code>Slave_IO_Running:Yes</code><ul>
-<li>如果不是 Yes 也不是 No，而是 Connecting，那就表示从机连不上主库，需要你进一步排查连接问题。</li>
-</ul>
-</li>
-<li><code>Slave_SQL_Running:Yes</code></li>
-</ul>
-</li>
-<li>如果你的 Slave_IO_Running 是 No，一般如果你是在虚拟机上测试的话，从库的虚拟机是从主库的虚拟机上复制过来的，那一般都会这样的，因为两台的 MySQL 的 UUID 值一样。你可以检查从库下的错误日志：<code>cat /usr/program/mysql/data/mysql-error.log</code><ul>
-<li>如果里面提示 uuid 错误，你可以编辑从库的这个配置文件：<code>vim /usr/program/mysql/data/auto.cnf</code>，把配置文件中的：server-uuid 值随便改一下，保证和主库是不一样即可。</li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.cnblogs.com/xiongpq/p/3384681.html" target="_blank" rel="external">http://www.cnblogs.com/xiongpq/p/3384681.html</a></li>
-</ul>
-
+        <h1 id="MySQL-安装和配置"><a href="#MySQL-安装和配置" class="headerlink" title="MySQL 安装和配置"></a>MySQL 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Mysql-Install-And-Settings/#more">more >></a>
+        
       
 
       
@@ -956,6 +274,17 @@ master_log_pos=1120;&gt;&gt;&gt;这个值复制刚刚让你记录的值
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -990,42 +319,31 @@ master_log_pos=1120;&gt;&gt;&gt;这个值复制刚刚让你记录的值
 
 
   
-    <article id="post-ubuntu-settings/Ubuntu-Create-Desktop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Maven-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Maven-Install-And-Settings/">Maven 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Maven-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ubuntu-给-Dash-添加程序图标"><a href="#Ubuntu-给-Dash-添加程序图标" class="headerlink" title="Ubuntu 给 Dash 添加程序图标"></a>Ubuntu 给 Dash 添加程序图标</h1><h2 id="创建图标文件"><a href="#创建图标文件" class="headerlink" title="创建图标文件"></a>创建图标文件</h2><ul>
-<li>我们建设以创建 Eclipse 程序图标为例</li>
-<li>进入图标存放目录|：<code>cd /usr/share/applications</code></li>
-<li>创建文件并编辑：<code>sudo gedit eclipse.desktop</code><pre><code class="ini">[Desktop Entry]
-Name=eclipse
-Name[zh_CN]=eclipse
-Comment=eclipse Client
-Exec=/usr/programa/tools/eclipse/eclipse
-Icon=/usr/programa/tools/eclipse/icon.xpm
-Terminal=false
-Type=Application
-Categories=Application;
-Encoding=UTF-8
-StartupNotify=true
-</code></pre>
-</li>
-<li>重点参数说明（注意：路径使用完整路径）<ul>
-<li>Name 为你想要显示在 Launcher 中的名称</li>
-<li>Comment 为说明。</li>
-<li>Exec 为程序执行位置</li>
-<li>Icon 为图标所在路径</li>
-</ul>
-</li>
-<li>最后，打开 Dash，在顶部搜索框搜索 <strong>eclipse</strong>，此时你应该能搜到它，先单击试一下看能不能打开，如果可以打开，拖到该图标启动器上，下次就可以直接从启动器打开了</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li>图文资料：<a href="http://my.oschina.net/Obahua/blog/110612" target="_blank" rel="external">http://my.oschina.net/Obahua/blog/110612</a></li>
-<li>图文资料：<a href="http://www.cnblogs.com/enein/articles/2818864.html" target="_blank" rel="external">http://www.cnblogs.com/enein/articles/2818864.html</a></li>
-<li>图文资料：<a href="http://blog.chinaunix.net/uid-26404477-id-3462663.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-26404477-id-3462663.html</a></li>
-</ul>
-
+        <h1 id="Maven-安装和配置"><a href="#Maven-安装和配置" class="headerlink" title="Maven 安装和配置"></a>Maven 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Maven-Install-And-Settings/#more">more >></a>
+        
       
 
       
@@ -1033,11 +351,22 @@ StartupNotify=true
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/ubuntu-settings/Ubuntu-Create-Desktop/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/Maven-Install-And-Settings/">展开全文 >></a>
         </p>
       
 
@@ -1067,162 +396,111 @@ StartupNotify=true
 
 
   
-    <article id="post-Mysql-Optimize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-NTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/NTP/">NTP</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/NTP/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NTP（Network-Time-Protocol）介绍"><a href="#NTP（Network-Time-Protocol）介绍" class="headerlink" title="NTP（Network Time Protocol）介绍"></a>NTP（Network Time Protocol）介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/NTP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/NTP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-centos-settings/Clear-Tmp-Directory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL-优化"><a href="#MySQL-优化" class="headerlink" title="MySQL 优化"></a>MySQL 优化</h1><ul>
-<li>下面说的优化基于 MySQL 5.6，理论上 5.5 之后的都算试用，具体还是要看官网</li>
+        <h2 id="修改定时清理-tmp-目录下的文件"><a href="#修改定时清理-tmp-目录下的文件" class="headerlink" title="修改定时清理 /tmp 目录下的文件"></a>修改定时清理 /tmp 目录下的文件</h2><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><ul>
+<li>默认系统是超过 30 天不访问的文件自动清除的，但是有时候硬盘用得紧可以考虑修改周期</li>
 </ul>
-<h2 id="服务状态查询"><a href="#服务状态查询" class="headerlink" title="服务状态查询"></a>服务状态查询</h2><ul>
-<li>查看当前数据库的状态，常用的有：<ul>
-<li>查看当前MySQL中已经记录了多少条慢查询，前提是配置文件中开启慢查询记录了.<ul>
-<li><code>SHOW STATUS LIKE &#39;%slow_queries%&#39;;</code></li>
+<h2 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h2><ul>
+<li>编辑配置文件：<code>vim /etc/cron.daily/tmpwatch</code></li>
 </ul>
-</li>
-<li>查询当前MySQL中查询、更新、删除执行多少条了，可以通过这个来判断系统是侧重于读还是侧重于写，如果是写要考虑使用读写分离。<ul>
-<li><code>SHOW STATUS LIKE &#39;%Com_select%&#39;;</code></li>
-<li><code>SHOW STATUS LIKE &#39;%Com_update%&#39;;</code></li>
-<li><code>SHOW STATUS LIKE &#39;%Com_delete%&#39;;</code></li>
+<pre><code class="nginx">#! /bin/sh
+flags=-umc
+/usr/sbin/tmpwatch &quot;$flags&quot; -x /tmp/.X11-unix -x /tmp/.XIM-unix \
+        -x /tmp/.font-unix -x /tmp/.ICE-unix -x /tmp/.Test-unix \
+        -X &#39;/tmp/hsperfdata_*&#39; 10d /tmp
+/usr/sbin/tmpwatch &quot;$flags&quot; 30d /var/tmp
+for d in /var/{cache/man,catman}/{cat?,X11R6/cat?,local/cat?}; do
+    if [ -d &quot;$d&quot; ]; then
+        /usr/sbin/tmpwatch &quot;$flags&quot; -f 30d &quot;$d&quot;
+    fi
+done
+</code></pre>
+<ul>
+<li>上面这句话：<code>/usr/sbin/tmpwatch &quot;$flags&quot; -f 30d &quot;$d&quot;</code>，其中 <strong>30d</strong> 表示 30 天表示要备删除的周期文件，该值最低为 1。</li>
+<li>一般数据建议不要放在这个目录下，以免被系统误删</li>
 </ul>
-</li>
-<li>显示MySQL服务启动运行了多少时间，如果MySQL服务重启，该时间重新计算，单位秒<ul>
-<li><code>SHOW STATUS LIKE &#39;uptime&#39;;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><ul>
-<li>使用 EXPLAIN 进行 SQL 语句分析：<code>EXPLAIN SELECT * FROM sys_user;</code></li>
-<li>得到的结果有下面几列：<ul>
-<li>id，该列表示当前结果序号，无特殊意义，不重要</li>
-<li>select_type，表示 SELECT 语句的类型，有下面几种<ul>
-<li>SIMPLE，表示简单查询，其中不包括连接查询和子查询</li>
-<li>PRIMARY，表示主查询，或者是最外面的查询语句。比如你使用一个子查询语句，比如这条 SQL：<code>EXPLAIN SELECT * FROM (SELECT sys_user_id FROM sys_user WHERE sys_user_id = 1) AS temp_table;</code><ul>
-<li>这条 SQL 有两个结果，其中有一个结果的类型就是 PRIMARY</li>
-</ul>
-</li>
-<li>UNION，使用 UNION 的SQL是这个类型</li>
-<li>DERIVED，在 SQL 中 From 后面子查询</li>
-<li>SUBQUERY，子查询</li>
-<li>还有其他一些</li>
-</ul>
-</li>
-<li>table，表名或者是子查询的一个结果集</li>
-<li>type，表示表的链接类型，分别有（以下的连接类型的顺序是从最佳类型到最差类型）<strong>（这个属性重要）</strong>：<ul>
-<li>性能好：<ul>
-<li>system，表仅有一行，这是const类型的特列，平时不会出现，这个也可以忽略不计。</li>
-<li>const，数据表最多只有一个匹配行，因为只匹配一行数据，所以很快，常用于PRIMARY KEY或者UNIQUE索引的查询，可理解为const是最优化的。</li>
-<li>eq_ref，mysql手册是这样说的:”对于每个来自于前面的表的行组合，从该表中读取一行。这可能是最好的联接类型，除了const类型。它用在一个索引的所有部分被联接使用并且索引是UNIQUE(唯一键)也不是PRIMARY KEY(主键)”。eq_ref可以用于使用=比较带索引的列。</li>
-<li>ref，查询条件索引既不是UNIQUE(唯一键)也不是PRIMARY KEY(主键)的情况。ref可用于=或&lt;或&gt;操作符的带索引的列。</li>
-<li>ref_or_null，该联接类型如同ref，但是添加了MySQL可以专门搜索包含NULL值的行。在解决子查询中经常使用该联接类型的优化。</li>
-</ul>
-</li>
-<li>性能较差：<ul>
-<li>index_merge，该联接类型表示使用了索引合并优化方法。在这种情况下，key列包含了使用的索引的清单，key_len包含了使用的索引的最长的关键元素。</li>
-<li>unique_subquery，该类型替换了下面形式的IN子查询的ref: <code>value IN (SELECT primary_key FROM single_table WHERE some_expr)</code>。unique_subquery 是一个索引查找函数,可以完全替换子查询,效率更高。</li>
-<li>index_subquery，该联接类型类似于unique_subquery。可以替换IN子查询,但只适合下列形式的子查询中的非唯一索引: <code>value IN (SELECT key_column FROM single_table WHERE some_expr)</code></li>
-<li>range，只检索给定范围的行,使用一个索引来选择行。</li>
-<li>index，该联接类型与ALL相同,除了只有索引树被扫描。这通常比ALL快,因为索引文件通常比数据文件小。</li>
-</ul>
-</li>
-<li>性能最差：<ul>
-<li>ALL，对于每个来自于先前的表的行组合,进行完整的表扫描。（性能最差）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>possible_keys，指出MySQL能使用哪个索引在该表中找到行。如果该列为NULL，说明没有使用索引，可以对该列创建索引来提供性能。<strong>（这个属性重要）</strong></li>
-<li>key，显示MySQL实际决定使用的键(索引)。如果没有选择索引,键是NULL。<strong>（这个属性重要）</strong></li>
-<li>key_len，显示MySQL决定使用的键长度。如果键是NULL,则长度为NULL。注意：key_len是确定了MySQL将实际使用的索引长度。</li>
-<li>ref，显示使用哪个列或常数与key一起从表中选择行。</li>
-<li>rows，显示MySQL认为它执行查询时必须检查的行数。<strong>（这个属性重要）</strong></li>
-<li>Extra，该列包含MySQL解决查询的详细信息：<ul>
-<li>Distinct:MySQL发现第1个匹配行后,停止为当前的行组合搜索更多的行。</li>
-<li>Not exists:MySQL能够对查询进行LEFT JOIN优化,发现1个匹配LEFT JOIN标准的行后,不再为前面的的行组合在该表内检查更多的行。</li>
-<li>range checked for each record (index map: #):MySQL没有发现好的可以使用的索引,但发现如果来自前面的表的列值已知,可能部分索引可以使用。</li>
-<li>Using filesort:MySQL需要额外的一次传递,以找出如何按排序顺序检索行。</li>
-<li>Using index:从只使用索引树中的信息而不需要进一步搜索读取实际的行来检索表中的列信息。</li>
-<li>Using temporary:为了解决查询,MySQL需要创建一个临时表来容纳结果。</li>
-<li>Using where:WHERE 子句用于限制哪一个行匹配下一个表或发送到客户。</li>
-<li>Using sort_union(…), Using union(…), Using intersect(…):这些函数说明如何为index_merge联接类型合并索引扫描。</li>
-<li>Using index for group-by:类似于访问表的Using index方式,Using index for group-by表示MySQL发现了一个索引,可以用来查 询GROUP BY或DISTINCT查询的所有列,而不要额外搜索硬盘访问实际的表。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>了解对索引不生效的查询情况 <strong>（这个属性重要）</strong><ul>
-<li>使用LIKE关键字的查询，在使用LIKE关键字进行查询的查询语句中，如果匹配字符串的第一个字符为“%”，索引不起作用。只有“%”不在第一个位置，索引才会生效。</li>
-<li>使用联合索引的查询，MySQL可以为多个字段创建索引，一个索引可以包括16个字段。对于联合索引，只有查询条件中使用了这些字段中第一个字段时，索引才会生效。</li>
-<li>使用OR关键字的查询，查询语句的查询条件中只有OR关键字，且OR前后的两个条件中的列都是索引列时，索引才会生效，否则，索引不生效。</li>
-</ul>
-</li>
-<li>子查询优化<ul>
-<li>MySQL从4.1版本开始支持子查询，使用子查询进行SELECT语句嵌套查询，可以一次完成很多逻辑上需要多个步骤才能完成的SQL操作。</li>
-<li>子查询虽然很灵活，但是执行效率并不高。</li>
-<li>执行子查询时，MYSQL需要创建临时表，查询完毕后再删除这些临时表，所以，子查询的速度会受到一定的影响。</li>
-<li>优化：<ul>
-<li>可以使用连接查询（JOIN）代替子查询，连接查询时不需要建立临时表，其速度比子查询快。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h2><ul>
-<li>将字段很多的表分解成多个表<ul>
-<li>对于字段较多的表，如果有些字段的使用频率很低，可以将这些字段分离出来形成新表。</li>
-<li>因为当一个表的数据量很大时，会由于使用频率低的字段的存在而变慢。</li>
-</ul>
-</li>
-<li>增加中间表<ul>
-<li>对于需要经常联合查询的表，可以建立中间表以提高查询效率。</li>
-<li>通过建立中间表，将需要通过联合查询的数据插入到中间表中，然后将原来的联合查询改为对中间表的查询。</li>
-</ul>
-</li>
-<li>增加冗余字段<ul>
-<li>设计数据表时应尽量遵循范式理论的规约，尽可能的减少冗余字段，让数据库设计看起来精致、优雅。但是，合理的加入冗余字段可以提高查询速度。</li>
-</ul>
-</li>
-</ul>
-<h2 id="插入数据的优化（适用于-InnoDB）"><a href="#插入数据的优化（适用于-InnoDB）" class="headerlink" title="插入数据的优化（适用于 InnoDB）"></a>插入数据的优化（适用于 InnoDB）</h2><ul>
-<li>插入数据时，影响插入速度的主要是索引、唯一性校验、一次插入的数据条数等。</li>
-<li>开发环境情况下的考虑：<ul>
-<li>开发场景中，如果需要初始化数据，导入数据等一些操作，而且是开发人员进行处理的，可以考虑在插入数据之前，先禁用整张表的索引，<ul>
-<li>禁用索引使用 SQL：<code>ALTER TABLE table_name DISABLE KEYS;</code></li>
-<li>当导入完数据之后，重新让MySQL创建索引，并开启索引：<code>ALTER TABLE table_name ENABLE KEYS;</code></li>
-</ul>
-</li>
-<li>如果表中有字段是有唯一性约束的，可以先禁用，然后在开启：<ul>
-<li>禁用唯一性检查的语句：<code>SET UNIQUE_CHECKS = 0;</code></li>
-<li>开启唯一性检查的语句：<code>SET UNIQUE_CHECKS = 1;</code></li>
-</ul>
-</li>
-<li>禁用外键检查（建议还是少量用外键，而是采用代码逻辑来处理）<ul>
-<li>插入数据之前执行禁止对外键的检查，数据插入完成后再恢复，可以提供插入速度。</li>
-<li>禁用：<code>SET foreign_key_checks = 0;</code></li>
-<li>开启：<code>SET foreign_key_checks = 1;</code></li>
-</ul>
-</li>
-<li>使用批量插入数据</li>
-<li>禁止自动提交<ul>
-<li>插入数据之前执行禁止事务的自动提交，数据插入完成后再恢复，可以提供插入速度。</li>
-<li>禁用：<code>SET autocommit = 0;</code></li>
-<li>开启：<code>SET autocommit = 1;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="服务器优化"><a href="#服务器优化" class="headerlink" title="服务器优化"></a>服务器优化</h2><ul>
-<li>好硬件大家都知道，这里没啥好说</li>
-<li>通过优化 MySQL 的参数可以提高资源利用率，从而达到提高 MySQL 服务器性能的目的。<ul>
-<li>可以看我整理的这篇文章：<a href="https://github.com/judasn/Linux-Tutorial/blob/master/MySQL-Settings/MySQL-5.6/1G-Memory-Machine/my-for-comprehensive.cnf" target="_blank" rel="external">https://github.com/judasn/Linux-Tutorial/blob/master/MySQL-Settings/MySQL-5.6/1G-Memory-Machine/my-for-comprehensive.cnf</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>
+
       
 
       
@@ -1234,7 +512,84 @@ StartupNotify=true
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/Mysql-Optimize/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/centos-settings/Clear-Tmp-Directory/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Nexus-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Nexus-Install-And-Settings/">Nexus 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Nexus-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Nexus-安装和配置"><a href="#Nexus-安装和配置" class="headerlink" title="Nexus 安装和配置"></a>Nexus 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Nexus-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Nexus-Install-And-Settings/">展开全文 >></a>
         </p>
       
 
@@ -1267,68 +622,28 @@ StartupNotify=true
     <article id="post-NFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/NFS/">NFS</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/NFS/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="NFS（Network-FileSystem）介绍"><a href="#NFS（Network-FileSystem）介绍" class="headerlink" title="NFS（Network FileSystem）介绍"></a>NFS（Network FileSystem）介绍</h1><h2 id="NFS-安装"><a href="#NFS-安装" class="headerlink" title="NFS 安装"></a>NFS 安装</h2><ul>
-<li><p>查看是否已安装：</p>
-<ul>
-<li>CentOS：<code>rpm -qa | grep nfs-*</code></li>
-<li>Ubuntu：<code>dpkg -l | grep nfs-*</code></li>
-</ul>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>CentOS 5：<code>sudo yum install -y nfs-utils portmap</code></li>
-<li>CentOS 6：<code>sudo yum install -y nfs-utils rpcbind</code></li>
-<li>Ubuntu：<code>sudo apt-get install -y nfs-common nfs-kernel-server</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="NFS-服务器配置文件常用参数"><a href="#NFS-服务器配置文件常用参数" class="headerlink" title="NFS 服务器配置文件常用参数"></a>NFS 服务器配置文件常用参数</h2><ul>
-<li><p>配置文件介绍（记得先备份）：<code>sudo vim /etc/exports</code></p>
-<ul>
-<li>默认配置文件里面是没啥内容的，我们需要自己加上配置内容，一行表示共享一个目录。为了方便使用，共享的目录最好将权限设置为 777（<code>chmod 777 folderName</code>）。</li>
-<li>假设在配置文件里面加上：<code>/opt/mytest 192.168.0.0/55(rw,sync,all_squash,anonuid=501,anongid=501,no_subtree_check)</code></li>
-<li>该配置解释：<ul>
-<li>/opt/mytest 表示我们要共享的目录</li>
-<li>192.168.0.0/55 表示内网中这个网段区间的IP是可以进行访问的，如果要任意网段都可以访问，可以用 <code>*</code> 号表示</li>
-<li>(rw,sync,all_squash,anonuid=501,anongid=501,no_subtree_check) 表示权限<ul>
-<li>rw：是可读写（ro是只读）</li>
-<li>sync：同步模式，表示内存中的数据时时刻刻写入磁盘（async：非同步模式，内存中数据定期存入磁盘）</li>
-<li>all_squash：表示不管使用NFS的用户是谁，其身份都会被限定为一个指定的普通用户身份。（no_root_squash：其他客户端主机的root用户对该目录有至高权限控制。root_squash：表示其他客户端主机的root用户对该目录有普通用户权限控制）</li>
-<li>anonuid/anongid：要和root_squash或all_squash选项一同使用，表示指定使用NFS的用户被限定后的uid和gid，前提是本图片服务器的/etc/passwd中存在这一的uid和gid</li>
-<li>no_subtree_check：不检查父目录的权限</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>启动服务：</p>
-<ul>
-<li><code>/etc/init.d/rpcbind restart</code></li>
-<li><code>/etc/init.d/nfs-kernel-server restart</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="NFS-客户端访问"><a href="#NFS-客户端访问" class="headerlink" title="NFS 客户端访问"></a>NFS 客户端访问</h2><ul>
-<li>客户端要访问服务端的共享目录需要对其共享的目录进行挂载，在挂载之前先检查下：<code>showmount -e 192.168.1.25</code>（这个 IP 是 NFS 的服务器端 IP）<ul>
-<li>如果显示：/opt/mytest 相关信息表示成功了。</li>
-</ul>
-</li>
-<li>现在开始对其进行挂载：<code>mount -t nfs 192.168.1.25:/opt/mytest/ /mytest/</code><ul>
-<li>在客户端机器上输入命令：<code>df -h</code> 可以看到多了一个 mytest 分区。然后我们可以再创建一个软链接，把软链接放在 war 包的目录下，这样上传的图片都会跑到另外一台服务器上了。软链接相关内容请自行搜索。</li>
-</ul>
-</li>
-</ul>
-<h2 id="NFS-资料"><a href="#NFS-资料" class="headerlink" title="NFS 资料"></a>NFS 资料</h2><ul>
-<li><a href="http://wiki.jikexueyuan.com/project/linux/nfs.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/linux/nfs.html</a> </li>
-<li><a href="http://www.jb51.net/os/RedHat/77993.html" target="_blank" rel="external">http://www.jb51.net/os/RedHat/77993.html</a> </li>
-<li><a href="http://www.cnblogs.com/Charles-Zhang-Blog/archive/2013/02/05/2892879.html" target="_blank" rel="external">http://www.cnblogs.com/Charles-Zhang-Blog/archive/2013/02/05/2892879.html</a> </li>
-<li><a href="http://www.linuxidc.com/Linux/2013-08/89154.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2013-08/89154.htm</a> </li>
-<li><a href="http://www.centoscn.com/image-text/config/2015/0111/4475.html" target="_blank" rel="external">http://www.centoscn.com/image-text/config/2015/0111/4475.html</a> </li>
-</ul>
-
+        <h1 id="NFS（Network-FileSystem）介绍"><a href="#NFS（Network-FileSystem）介绍" class="headerlink" title="NFS（Network FileSystem）介绍"></a>NFS（Network FileSystem）介绍</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/NFS/#more">more >></a>
+        
       
 
       
@@ -1336,6 +651,17 @@ StartupNotify=true
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1370,9 +696,86 @@ StartupNotify=true
 
 
   
+    <article id="post-Nginx-Install-And-Settings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/22/Nginx-Install-And-Settings/">Nginx 安装和配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/22/Nginx-Install-And-Settings/" class="archive-article-date">
+  	<time datetime="2017-11-22T09:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Nginx-安装和配置"><a href="#Nginx-安装和配置" class="headerlink" title="Nginx 安装和配置"></a>Nginx 安装和配置</h1>
+        
+          <a class="article-more-a" href="/2017/11/22/Nginx-Install-And-Settings/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java 程序员眼中的 Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/22/Nginx-Install-And-Settings/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1478,6 +881,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java 程序员眼中的 Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1538,7 +945,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1550,34 +957,6 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">iText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
@@ -1586,15 +965,23 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件工程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
+                <a href="javascript:void(0)" class="js-tag color1">iText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jfreechart</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1610,11 +997,31 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高可用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">比特币</a>
               </li>
             
             <div class="clearfix"></div>
