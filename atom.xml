@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2019-02-28T06:44:59.000Z</updated>
+  <updated>2019-03-26T07:52:04.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -16,11 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="//zeroto.tech/2019/03/26/reminder%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>//zeroto.tech/2019/03/26/reminder项目改造记录/</id>
+    <published>2019-03-26T03:31:47.000Z</published>
+    <updated>2019-03-26T07:52:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="页面去掉struts2-标签"><a href="#页面去掉struts2-标签" class="headerlink" title="页面去掉struts2 标签"></a>页面去掉struts2 标签</h3><p>1、<br><img src="media/15535866655895.jpg" alt=""></p>
+<p><img src="media/15535867203658.jpg" alt=""></p>
+<p>2、</p>
+<p><img src="media/15535865186016.jpg" alt=""></p>
+<p><img src="media/15535861077687.jpg" alt=""></p>
+<p>原项目是basePath ，新架构后台改为了basePaths<br><img src="media/15535865767949.jpg" alt=""></p>
+<p><img src="media/15535862389634.jpg" alt=""></p>
+<p><img src="media/15535861536724.jpg" alt=""></p>
+<h3 id="spring-security-taglibs-3升级到4"><a href="#spring-security-taglibs-3升级到4" class="headerlink" title="spring-security-taglibs 3升级到4"></a>spring-security-taglibs 3升级到4</h3><p><img src="media/15535864105432.jpg" alt=""></p>
+<p>ifAnyGranted 改为：access=”hasAnyAuthority()”</p>
+<p><img src="media/15535864715124.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;页面去掉struts2-标签&quot;&gt;&lt;a href=&quot;#页面去掉struts2-标签&quot; class=&quot;headerlink&quot; title=&quot;页面去掉struts2 标签&quot;&gt;&lt;/a&gt;页面去掉struts2 标签&lt;/h3&gt;&lt;p&gt;1、&lt;br&gt;&lt;img src=&quot;media/
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="//zeroto.tech/2019/03/12/2019-03-12/"/>
+    <id>//zeroto.tech/2019/03/12/2019-03-12/</id>
+    <published>2019-03-12T06:15:16.000Z</published>
+    <updated>2019-03-12T07:10:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="单期提前划扣，线上配置"><a href="#单期提前划扣，线上配置" class="headerlink" title="单期提前划扣，线上配置"></a>单期提前划扣，线上配置</h1><p>1、销售系统：webservice 添加了一个 单期提前划扣，<br>关键字：BESPOKE_DEDUCT_REPAYMENT<br>值1：<a href="http://borrower.p2phz.com:8080/webservice/PublicWebserviceImpl?wsdl" target="_blank" rel="external">http://borrower.p2phz.com:8080/webservice/PublicWebserviceImpl?wsdl</a></p>
+<p>2、贷后平台 -&gt; 预约类型，添加了一个字典项<br>名称：单期提前划扣预约<br>关键字：30</p>
+<p>3、单期提前划扣 ，按钮权限<br>控件名称：单期提前划扣<br>控件关键字：BORROWER_PREDEDUCT<br>页面关键字：BORROWER_SALE_CONTRACT_LIST</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;单期提前划扣，线上配置&quot;&gt;&lt;a href=&quot;#单期提前划扣，线上配置&quot; class=&quot;headerlink&quot; title=&quot;单期提前划扣，线上配置&quot;&gt;&lt;/a&gt;单期提前划扣，线上配置&lt;/h1&gt;&lt;p&gt;1、销售系统：webservice 添加了一个 单期提前划扣，&lt;br
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>IntelliJ IDEA 从SVN检出Maven项目到Tomcat部署</title>
     <link href="//zeroto.tech/2019/02/28/IDEA%E8%B5%B7%E6%AD%A5/"/>
     <id>//zeroto.tech/2019/02/28/IDEA起步/</id>
     <published>2019-02-28T06:10:48.000Z</published>
-    <updated>2019-02-28T06:44:59.000Z</updated>
+    <updated>2019-03-26T01:52:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><ul>
 <li>下载IDEA（不要下载社区版），并激活</li>
@@ -44,7 +94,53 @@
 <p><img src="media/15513358498640.jpg" alt=""></p>
 <p><img src="media/15513359067539.jpg" alt=""></p>
 <p><img src="media/15513359970045.jpg" alt=""></p>
-<h2 id="Tomcat-端口号与项目中bootstrap-yml里面的port配置一致即可-启动。"><a href="#Tomcat-端口号与项目中bootstrap-yml里面的port配置一致即可-启动。" class="headerlink" title="Tomcat 端口号与项目中bootstrap.yml里面的port配置一致即可 启动。"></a>Tomcat 端口号与项目中bootstrap.yml里面的port配置一致即可 启动。</h2>]]></content>
+<h2 id="Tomcat-端口号与项目中bootstrap-yml里面的port配置一致即可-启动。"><a href="#Tomcat-端口号与项目中bootstrap-yml里面的port配置一致即可-启动。" class="headerlink" title="Tomcat 端口号与项目中bootstrap.yml里面的port配置一致即可 启动。"></a>Tomcat 端口号与项目中bootstrap.yml里面的port配置一致即可 启动。</h2><p><img src="/Users/jinkui/Library/Application Support/typora-user-images/image-20190311183809279.png" alt="image-20190311183809279"></p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ol>
+<li>Use ⇧⌘⏎ to complete a current statement such as if, do-while, try-catch, return (or a method call) into a syntactically correct construct (e.g. add curly braces).</li>
+<li>⌘ + F  在当前文件进行文本查找</li>
+<li>⌘ + R 在当前文件进行文本替换</li>
+<li>⌘ + Z 撤销</li>
+<li>⌘ + Y 复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面;（自定义）</li>
+<li>⌘ + X 剪切光标所在行 或 剪切选择内容</li>
+<li>⌘ + C 复制光标所在行 或 复制选择内容</li>
+<li>⌘ + D 删除光标所在行或删除选中的行（自定义）</li>
+<li>⌘ + E 显示最近打开的文件记录列表</li>
+<li>⌘ + O 类大纲（自定义）</li>
+<li>⌘ + L 在当前文件跳转到指定行处</li>
+<li>⌘ + G <a href="https://www.jetbrains.com/help/rider/Finding_and_Replacing_Text_in_File.html#search_through_current_file" target="_blank" rel="external">查找下一个/移至下一个出现</a></li>
+<li>⌘ + J 插入自定义动态代码模板</li>
+<li>⌘ + P 根据输入的 <strong>类名</strong> 查找类文件 （自定义）</li>
+<li>⌘ + shift + O 根据输入的 <strong>文件名</strong> 查找文件 </li>
+<li><strong>⇧ + F6</strong> It is possible to rename CSS selectors directly from HTML. Position the caret at the selector to be renamed and press ⇧F6 (Refactor | Rename).</li>
+<li>⌘ + shift + U 大小写转换</li>
+<li>⌘ + shift + ↩  自动结束代码，行末自动添加分号</li>
+<li>alt + P 显示方法的参数信息（自定义）</li>
+<li>⌘ + N 生成代码（getter、setter、构造函数、hashCode/equals,toString）</li>
+<li><strong>⌘ + shift+V</strong>  从最近的缓冲区粘贴</li>
+<li>Use ⌘↑ keyboard shortcut to show the navigation bar, and arrow keys to locate the necessary files or folders.</li>
+<li><strong>⌘ + shift+上/下箭头</strong>  向上或向下移动</li>
+<li>⌘ + alt + L  可以再src 下直接Optimize imports</li>
+<li>⌃ + alt + O 自动导包</li>
+</ol>
+<p><a href="">四、Compile and Run（编译和运行）</a></p>
+<p><strong>⌘F9</strong>  编译Project</p>
+<p><strong>⌘⇧F9</strong>  编译选择的文件、包或模块</p>
+<p><strong>⌃⌥R</strong>  弹出 Run 的可选择菜单</p>
+<p><strong>⌃⌥D</strong>  弹出 Debug 的可选择菜单</p>
+<p><strong>⌃R</strong>  运行</p>
+<p><strong>⌃D</strong>  调试</p>
+<p><strong>⌃⇧R, ⌃⇧D</strong>  从编辑器运行上下文环境配置</p>
+<p><a href="">五、Debugging（调试）</a></p>
+<p><strong>F8</strong>  进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</p>
+<p><strong>F7</strong>  进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</p>
+<p><strong>⇧F7</strong>  智能步入，断点所在行上有多个方法调用，会弹出进入哪个方法</p>
+<p><strong>⇧F8</strong>  跳出</p>
+<p><strong>⌥F9</strong>  运行到光标处，如果光标前有其他断点会进入到该断点</p>
+<p><strong>⌥F8</strong>  计算表达式（可以更改变量值使其生效）</p>
+<p><strong>⌘⌥R</strong>  恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上</p>
+<p><strong>⌘F8</strong>  切换断点（若光标当前行有断点则取消断点，没有则加上断点）</p>
+<p><strong>⌘⇧F8</strong>  查看断点信息</p>
+]]></content>
     
     <summary type="html">
     
@@ -1451,11 +1547,11 @@ Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-fro
     </summary>
     
     
+      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
+    
       <category term="计算机" scheme="//zeroto.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="//zeroto.tech/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
     
       <category term="软件工程" scheme="//zeroto.tech/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
