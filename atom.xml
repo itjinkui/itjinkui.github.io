@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2019-03-26T01:52:30.000Z</updated>
+  <updated>2019-05-23T05:52:56.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -14,6 +14,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 常用命令</title>
+    <link href="//zeroto.tech/2019/05/22/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>//zeroto.tech/2019/05/22/Git常用命令速查表/</id>
+    <published>2019-05-22T08:55:44.000Z</published>
+    <updated>2019-05-23T05:52:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h3><h4 id="大览"><a href="#大览" class="headerlink" title="大览"></a>大览</h4><ul>
+<li>master 默认开发分支</li>
+<li>Origin 默认远程版本库</li>
+<li>Head 默认开发分支</li>
+<li>Head^ Head的父提交</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><ul>
+<li>git clone <url> 从远程仓库拷贝代码到本地</url></li>
+<li>git init 创建 Git 库</li>
+</ul>
+<h4 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h4><ul>
+<li>git branch xxx_dev 创建名字为 <code>xxx_dev</code> 的分支</li>
+<li>git branch -d xxx_dev 删除<code>xxx_dev</code> 的分支</li>
+<li>git branch 查看当前的分支名称</li>
+<li>git branch -r ：查看远程分支</li>
+<li>git merge <branch> 将 branch 分支合并到当前分支</branch></li>
+<li>git checkout xxx_dev 切换到名字为 <code>xxx_dev</code> 的分支</li>
+<li>git checkout 可以将 HEAD 移到一个新的分支，并更新工作目录。因为可能会覆盖本地的修改，所以执行这个指令之前，你需要 stash 或者 commit 暂存区和工作区的更改。</li>
+<li>git push origin xxx_dev 执行推送的操作，完成本地分支向远程分支的同步</li>
+<li>git tag 查看标签</li>
+<li>git tag xxx_dev 基于最新提交创建名字为 <code>xxx_dev</code> 标签</li>
+<li>git tag -d xxx_dev 删除<code>xxx_dev</code> 的标签<ul>
+<li>打标签 git tag -a v1.01 -m “Release version 1.01”</li>
+<li>提交标签到远程仓库 ：<code>git push origin --tags</code></li>
+<li>查看某两次 tag 之间的 commit ：<code>git log --pretty=oneline tagA..tagB</code></li>
+<li>查看某次 tag 之后的 commit ：<code>git log --pretty=oneline tagA..</code></li>
+</ul>
+</li>
+<li>git checkout  <branch tag=""> 切换到指定分支或标签；可以将 HEAD 移到一个新的分支，并更新工作目录。因为可能会覆盖本地的修改，所以执行这个指令之前，你需要 stash 或者 commit 暂存区和工作区的更改。</branch></li>
+</ul>
+<p><strong>这两个命令都是把修改从一个分支集成到另一个分支上，它们只是以非常不同的方式进行</strong></p>
+<p>何时使用：</p>
+<ol>
+<li>如果你对修改不够果断，请使用合并操作</li>
+<li>根据你希望的历史记录的样子，而选择使用变基或合并操作</li>
+</ol>
+<ul>
+<li>git merge 把本地代码和已经取得的远程仓库代码合并</li>
+<li>git rebase  ，是复位基底的意思。使用变基时，意味着使用另一个分支作为集成修改的新基础</li>
+</ul>
+<p> <strong>Git 提交代码时候写错 commit 信息后，如何重新设置 commit 信息？</strong></p>
+<p>可以通过 <code>git commit --amend</code> 来对本次 commit 进行修改。</p>
+<h4 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h4><ul>
+<li>git status 查看当前仓库的状态</li>
+<li>git diff 查看本次修改与上次修改的内容的区别</li>
+<li>git show 显示某次提交的内容 git show $id</li>
+<li>git add <file> 把现在所要添加的文件放到暂存区中</file></li>
+<li>git rm <file> 从版本库中删除文件</file></li>
+<li>git reset <file> 从暂存区恢复到工作文件</file></li>
+<li>git reset HEAD^ 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</li>
+<li>git commit 把 git add 到暂存区的内容提交到代码区中</li>
+<li>git stash 暂存</li>
+<li>git stash pop 恢复最近一次的暂存</li>
+</ul>
+<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="#### 远程操作"></a>#### 远程操作</h4><ul>
+<li>git pull 抓取远程仓库所有分支更新并合并到本地</li>
+<li><code>git push origin master</code> ：将本地主分支推到远程主分支</li>
+<li>使用 <code>git fetch</code> 是取回远端更新，不会对本地执行 merge 操作，不会去动你的本地的内容。而 <code>git pull</code> 会更新你本地代码到服务器上对应分支的最新版本</li>
+<li>git remote -v 查看远程版本库信息</li>
+<li>git remote  show <remote> 查看指定远程版本库信息</remote></li>
+<li>git remote add <remote> <url> 添加远程版本库</url></remote></li>
+</ul>
+<p><img src="/assets/blogImg/image-20190523093108311.png" alt="image-20190523093108311"></p>
+<p>来自于 <a href="&lt;http://svip.iocoder.cn/Git/Interview/">&lt;http://svip.iocoder.cn/Git/Interview/</a>&gt;</p>
+<p>🦅 <strong>reset 与 rebase 有什么区别？</strong></p>
+<ul>
+<li>reset 操作，不修改 commit 相关的东西，只会去修改 <code>.git</code> 目录下的东西。</li>
+<li>rebase 操作，会试图修改你已经 commit 的东西，比如覆盖 commit 的历史等，但是不能使用 rebase 来修改已经 push 过的内容，容易出现兼容性问题。rebase 还可以来解决内容的冲突，解决两个人修改了同一份内容，然后失败的问题。</li>
+</ul>
+<p>推荐看看 <a href="https://codeday.me/bug/20171012/84739.html" target="_blank" rel="external">《“git reset”和“git rebase”有什么区别？》</a> 。</p>
+<p>🦅 <strong>reset 与 revert 与 checkout 有什么区别？</strong></p>
+<p>首先是它们的共同点：用来撤销代码仓库中的某些更改。</p>
+<p>然后是不同点：</p>
+<ul>
+<li><p>1）从 commit 层面来说：</p>
+<ul>
+<li><p><code>git reset</code> ，可以将一个分支的末端指向之前的一个 commit 。然后再下次 Git 执行垃圾回收的时候，会把这个 commit 之后的 commit 都扔掉。<code>git reset</code> 还支持三种标记，用来标记 reset 指令影响的范围：</p>
+<ul>
+<li><p><code>--mixed</code> ：会影响到暂存区和历史记录区。也是默认选项；</p>
+</li>
+<li><p><code>--soft</code> ：只影响历史记录区；</p>
+</li>
+<li><p><code>--hard</code>：影响工作区、暂存区和历史记录区。</p>
+<blockquote>
+<p>注意：因为 <code>git reset</code> 是直接删除 commit 记录，从而会影响到其他开发人员的分支，所以不要在公共分支（比如 develop）做这个操作。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><code>git checkout</code> ，可以将 HEAD 移到一个新的分支，并更新工作目录。因为可能会覆盖本地的修改，所以执行这个指令之前，你需要 stash 或者 commit 暂存区和工作区的更改。</p>
+</li>
+<li><p><code>git revert</code> ，和 <code>git reset</code> 的目的是一样的，但是做法不同，它会以创建新的 commit 的方式来撤销 commit ，这样能保留之前的 commit 历史，比较安全。另外，同样因为可能会覆盖本地的修改，所以执行这个指令之前，你需要 stash 或者 commit 暂存区和工作区的更改。</p>
+</li>
+</ul>
+</li>
+<li><p>2）从文件层面来说</p>
+<ul>
+<li><code>git reset</code> ，只是把文件从历史记录区拿到暂存区，不影响工作区的内容。而且支持 <code>--mixed</code>、<code>--soft</code> 和 <code>--hard</code> 。</li>
+<li><code>git checkout</code> ，则是把文件从历史记录拿到工作区，不影响暂存区的内容。</li>
+<li><code>git revert</code> ，不支持文件层面的操作。</li>
+</ul>
+</li>
+</ul>
+<p>总的来说，回答关键点：</p>
+<ul>
+<li>对于 commit 层面和文件层面，这三个指令本身功能差别很大。</li>
+<li><code>git revert</code> 不支持文件层面的操作。</li>
+<li>不要在公共分支做 <code>git reset</code> 操作。</li>
+</ul>
+<p>🦅 <strong>不小心用 git reset –hard 指令把提交理掉了，有机会救回來吗？</strong></p>
+<p>放心，基本上东西进了 Git 就不容易消失，它們只是以一种我们肉眼看不懂的格式存放在 Git 空间裡。我们可以透過 <code>git reflog</code> 指令去翻一下被 reset 的那個 Commit 的编号值，然後再做一次 <code>git reset --hard</code> 就可以把它救回來了。</p>
+<p><img src="/assets/blogImg/image-20190523110912323.png" alt="image-20190523110912323"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Git-常用命令&quot;&gt;&lt;a href=&quot;#Git-常用命令&quot; class=&quot;headerlink&quot; title=&quot;Git 常用命令&quot;&gt;&lt;/a&gt;Git 常用命令&lt;/h3&gt;&lt;h4 id=&quot;大览&quot;&gt;&lt;a href=&quot;#大览&quot; class=&quot;headerlink&quot; title=&quot;大览&quot;&gt;&lt;/a&gt;大览&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;master 默认开发分支&lt;/li&gt;
+&lt;li&gt;Origin 默认远程版本库&lt;/li&gt;
+&lt;li&gt;Head 默认开发分支&lt;/li&gt;
+&lt;li&gt;Head^ Head的父提交&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="Git 常用命令" scheme="//zeroto.tech/tags/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>IntelliJ IDEA 从SVN检出Maven项目到Tomcat部署</title>
@@ -153,9 +293,10 @@
     <link href="//zeroto.tech/2018/11/28/Quartz%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E8%A1%A8%E4%BB%8B%E7%BB%8D/"/>
     <id>//zeroto.tech/2018/11/28/Quartz定时任务相关表介绍/</id>
     <published>2018-11-28T06:14:14.000Z</published>
-    <updated>2019-02-28T06:06:51.000Z</updated>
+    <updated>2019-05-23T05:53:51.000Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息"><a href="#1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息" class="headerlink" title="1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息"></a>1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息</h5><table>
+    <content type="html"><![CDATA[<h5 id="1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息"><a href="#1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息" class="headerlink" title="1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息"></a>1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息</h5><a id="more"></a>
+<table>
 <thead>
 <tr>
 <th>表字段</th>
@@ -600,7 +741,7 @@
     
     <summary type="html">
     
-      &lt;h5 id=&quot;1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息&quot;&gt;&lt;a href=&quot;#1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息&quot; class=&quot;headerlink&quot; title=&quot;1. q
+      &lt;h5 id=&quot;1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息&quot;&gt;&lt;a href=&quot;#1-qrtz-job-details：存储每一个已配置的-jobDetail-的详细信息&quot; class=&quot;headerlink&quot; title=&quot;1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息&quot;&gt;&lt;/a&gt;1. qrtz_job_details：存储每一个已配置的 jobDetail 的详细信息&lt;/h5&gt;
     
     </summary>
     
