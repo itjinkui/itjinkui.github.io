@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//zeroto.tech/"/>
-  <updated>2019-03-26T07:52:04.000Z</updated>
+  <updated>2019-03-26T01:52:30.000Z</updated>
   <id>//zeroto.tech/</id>
   
   <author>
@@ -14,56 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="//zeroto.tech/2019/03/26/reminder%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0%E8%AE%B0%E5%BD%95/"/>
-    <id>//zeroto.tech/2019/03/26/reminder项目改造记录/</id>
-    <published>2019-03-26T03:31:47.000Z</published>
-    <updated>2019-03-26T07:52:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="页面去掉struts2-标签"><a href="#页面去掉struts2-标签" class="headerlink" title="页面去掉struts2 标签"></a>页面去掉struts2 标签</h3><p>1、<br><img src="media/15535866655895.jpg" alt=""></p>
-<p><img src="media/15535867203658.jpg" alt=""></p>
-<p>2、</p>
-<p><img src="media/15535865186016.jpg" alt=""></p>
-<p><img src="media/15535861077687.jpg" alt=""></p>
-<p>原项目是basePath ，新架构后台改为了basePaths<br><img src="media/15535865767949.jpg" alt=""></p>
-<p><img src="media/15535862389634.jpg" alt=""></p>
-<p><img src="media/15535861536724.jpg" alt=""></p>
-<h3 id="spring-security-taglibs-3升级到4"><a href="#spring-security-taglibs-3升级到4" class="headerlink" title="spring-security-taglibs 3升级到4"></a>spring-security-taglibs 3升级到4</h3><p><img src="media/15535864105432.jpg" alt=""></p>
-<p>ifAnyGranted 改为：access=”hasAnyAuthority()”</p>
-<p><img src="media/15535864715124.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;页面去掉struts2-标签&quot;&gt;&lt;a href=&quot;#页面去掉struts2-标签&quot; class=&quot;headerlink&quot; title=&quot;页面去掉struts2 标签&quot;&gt;&lt;/a&gt;页面去掉struts2 标签&lt;/h3&gt;&lt;p&gt;1、&lt;br&gt;&lt;img src=&quot;media/
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="//zeroto.tech/2019/03/12/2019-03-12/"/>
-    <id>//zeroto.tech/2019/03/12/2019-03-12/</id>
-    <published>2019-03-12T06:15:16.000Z</published>
-    <updated>2019-03-12T07:10:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="单期提前划扣，线上配置"><a href="#单期提前划扣，线上配置" class="headerlink" title="单期提前划扣，线上配置"></a>单期提前划扣，线上配置</h1><p>1、销售系统：webservice 添加了一个 单期提前划扣，<br>关键字：BESPOKE_DEDUCT_REPAYMENT<br>值1：<a href="http://borrower.p2phz.com:8080/webservice/PublicWebserviceImpl?wsdl" target="_blank" rel="external">http://borrower.p2phz.com:8080/webservice/PublicWebserviceImpl?wsdl</a></p>
-<p>2、贷后平台 -&gt; 预约类型，添加了一个字典项<br>名称：单期提前划扣预约<br>关键字：30</p>
-<p>3、单期提前划扣 ，按钮权限<br>控件名称：单期提前划扣<br>控件关键字：BORROWER_PREDEDUCT<br>页面关键字：BORROWER_SALE_CONTRACT_LIST</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;单期提前划扣，线上配置&quot;&gt;&lt;a href=&quot;#单期提前划扣，线上配置&quot; class=&quot;headerlink&quot; title=&quot;单期提前划扣，线上配置&quot;&gt;&lt;/a&gt;单期提前划扣，线上配置&lt;/h1&gt;&lt;p&gt;1、销售系统：webservice 添加了一个 单期提前划扣，&lt;br
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>IntelliJ IDEA 从SVN检出Maven项目到Tomcat部署</title>
@@ -1547,11 +1497,11 @@ Successfully created .eslintrc.js file in /Users/jinkui/VSCodeProjects/xmall-fro
     </summary>
     
     
-      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
-    
       <category term="计算机" scheme="//zeroto.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="网络" scheme="//zeroto.tech/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Linux" scheme="//zeroto.tech/tags/Linux/"/>
     
       <category term="软件工程" scheme="//zeroto.tech/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
     
