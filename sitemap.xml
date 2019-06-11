@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//zeroto.tech/2018/11/28/Quartz%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E8%A1%A8%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>//zeroto.tech/2019/05/22/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/</loc>
     
-    <lastmod>2019-05-23T05:53:51.000Z</lastmod>
+    <lastmod>2019-06-11T02:13:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>//zeroto.tech/2019/05/22/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/</loc>
+    <loc>//zeroto.tech/2018/11/28/Quartz%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E8%A1%A8%E4%BB%8B%E7%BB%8D/</loc>
     
-    <lastmod>2019-05-23T05:52:56.000Z</lastmod>
+    <lastmod>2019-05-23T05:53:51.000Z</lastmod>
     
   </url>
   
@@ -177,6 +177,13 @@
   </url>
   
   <url>
+    <loc>//zeroto.tech/photos/ins.json</loc>
+    
+    <lastmod>2018-03-09T09:52:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>//zeroto.tech/photos/lazyload.min.js</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
@@ -192,13 +199,6 @@
   
   <url>
     <loc>//zeroto.tech/photos/ins.css</loc>
-    
-    <lastmod>2018-03-09T09:52:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//zeroto.tech/photos/ins.json</loc>
     
     <lastmod>2018-03-09T09:52:52.000Z</lastmod>
     

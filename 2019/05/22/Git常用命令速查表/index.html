@@ -26,7 +26,12 @@ Head 默认开发分支
 Head^ Head的父提交">
 <meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523093108311.png">
 <meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523110912323.png">
-<meta property="og:updated_time" content="2019-05-23T05:52:56.000Z">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523141340237.png">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523144308255.png">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523145633497.png">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523145855146.png">
+<meta property="og:image" content="//zeroto.tech/assets/blogImg/image-20190523152036290.png">
+<meta property="og:updated_time" content="2019-06-11T02:13:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 常用命令">
 <meta name="twitter:description" content="Git 常用命令大览
@@ -211,7 +216,6 @@ ga('send', 'pageview');
 <li>Head 默认开发分支</li>
 <li>Head^ Head的父提交</li>
 </ul>
-<hr>
 <a id="more"></a>
 <h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><ul>
 <li>git clone <url> 从远程仓库拷贝代码到本地</url></li>
@@ -250,18 +254,30 @@ ga('send', 'pageview');
 <p> <strong>Git 提交代码时候写错 commit 信息后，如何重新设置 commit 信息？</strong></p>
 <p>可以通过 <code>git commit --amend</code> 来对本次 commit 进行修改。</p>
 <h4 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h4><ul>
-<li>git status 查看当前仓库的状态</li>
-<li>git diff 查看本次修改与上次修改的内容的区别</li>
-<li>git show 显示某次提交的内容 git show $id</li>
-<li>git add <file> 把现在所要添加的文件放到暂存区中</file></li>
-<li>git rm <file> 从版本库中删除文件</file></li>
-<li>git reset <file> 从暂存区恢复到工作文件</file></li>
-<li>git reset HEAD^ 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</li>
-<li>git commit 把 git add 到暂存区的内容提交到代码区中</li>
-<li>git stash 暂存</li>
-<li>git stash pop 恢复最近一次的暂存</li>
+<li><p>git status 查看当前仓库的状态</p>
+</li>
+<li><p>git diff 查看本次修改与上次修改的内容的区别</p>
+</li>
+<li><p>git show 显示某次提交的内容 git show $id</p>
+</li>
+<li><p>git add <file> 把现在所要添加的文件放到暂存区中</file></p>
+</li>
+<li><p>git rm <file> 从版本库中删除文件</file></p>
+</li>
+<li><p>git reset <file> 从暂存区恢复到工作文件</file></p>
+</li>
+<li><p>git reset HEAD^ 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
+</li>
+<li><p>git commit 把 git add 到暂存区的内容提交到代码区中</p>
+</li>
+<li><p>git stash 暂存</p>
+</li>
+<li><p>git stash pop 恢复最近一次的暂存</p>
+</li>
+<li><p>git reset HEAD^ —hard <a href="https://gitbook.tw/chapters/using-git/reset-commit.html" target="_blank" rel="external">刚才的Commit后悔了，想要拆掉重做）</a></p>
+</li>
 </ul>
-<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="#### 远程操作"></a>#### 远程操作</h4><ul>
+<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h4><ul>
 <li>git pull 抓取远程仓库所有分支更新并合并到本地</li>
 <li><code>git push origin master</code> ：将本地主分支推到远程主分支</li>
 <li>使用 <code>git fetch</code> 是取回远端更新，不会对本地执行 merge 操作，不会去动你的本地的内容。而 <code>git pull</code> 会更新你本地代码到服务器上对应分支的最新版本</li>
@@ -270,7 +286,8 @@ ga('send', 'pageview');
 <li>git remote add <remote> <url> 添加远程版本库</url></remote></li>
 </ul>
 <p><img src="/assets/blogImg/image-20190523093108311.png" alt="image-20190523093108311"></p>
-<p>来自于 <a href="&lt;http://svip.iocoder.cn/Git/Interview/">&lt;http://svip.iocoder.cn/Git/Interview/</a>&gt;</p>
+<p>来自于 <a href="http://svip.iocoder.cn/Git/Interview/" target="_blank" rel="external">芋道源码</a></p>
+<p><a href="https://gitbook.tw/interview" target="_blank" rel="external">Git 面试题</a></p>
 <p>🦅 <strong>reset 与 rebase 有什么区别？</strong></p>
 <ul>
 <li>reset 操作，不修改 commit 相关的东西，只会去修改 <code>.git</code> 目录下的东西。</li>
@@ -319,6 +336,12 @@ ga('send', 'pageview');
 <p>🦅 <strong>不小心用 git reset –hard 指令把提交理掉了，有机会救回來吗？</strong></p>
 <p>放心，基本上东西进了 Git 就不容易消失，它們只是以一种我们肉眼看不懂的格式存放在 Git 空间裡。我们可以透過 <code>git reflog</code> 指令去翻一下被 reset 的那個 Commit 的编号值，然後再做一次 <code>git reset --hard</code> 就可以把它救回來了。</p>
 <p><img src="/assets/blogImg/image-20190523110912323.png" alt="image-20190523110912323"></p>
+<p><img src="/assets/blogImg/image-20190523141340237.png" alt="image-20190523141340237"></p>
+<p><img src="/assets/blogImg/image-20190523144308255.png" alt="image-20190523144308255"></p>
+<p><img src="/assets/blogImg/image-20190523145633497.png" alt="image-20190523145633497"></p>
+<p><img src="/assets/blogImg/image-20190523145855146.png" alt="image-20190523145855146"></p>
+<p>参考资料 <a href="https://gitbook.tw/chapters/github/using-force-push.html" target="_blank" rel="external">【状况题】听说git push -f这个指令很可怕</a></p>
+<p><img src="/assets/blogImg/image-20190523152036290.png" alt="image-20190523152036290"></p>
 
       
 
@@ -332,7 +355,7 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git 常用命令</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -565,11 +588,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git 常用命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA 部署Maven项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,11 +600,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">J.U.C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">单例</a>
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA 部署Maven项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +612,14 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">J.U.C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">单例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Homebrew</a>
               </li>
              
@@ -605,11 +628,11 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Quartz 分布式任务</a>
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+                <a href="javascript:void(0)" class="js-tag color3">Quartz 分布式任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,23 +644,15 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sublime Text</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Visual Studio Code</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sublime Text</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,6 +664,10 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">iText</a>
               </li>
              
@@ -657,23 +676,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高可用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,7 +696,7 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,6 +709,22 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高可用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Systemd</a>
               </li>
              
               <li class="article-tag-list-item">
