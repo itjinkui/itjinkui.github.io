@@ -8,21 +8,15 @@
   <link rel="dns-prefetch" href="//zeroto.tech">
   <!--prettify代码高亮主题css引入-->
   <link href="/plugins/prettify/prettify.css" rel="stylesheet">
-  <title>Java内存模型看并发（一） | zeroto的博客</title>
+  <title>你真的会写单例吗？ | zeroto的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java内存模型所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java内存模型看并发（一）">
+<meta property="og:title" content="你真的会写单例吗？">
 <meta property="og:url" content="//zeroto.tech/2017/11/01/JVM-1/index.html">
 <meta property="og:site_name" content="zeroto的博客">
-<meta property="og:description" content="Java内存模型所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？">
-<meta property="og:image" content="//zeroto.tech/assets/blogImg/JUtH_20121024_RuntimeDataAreas_1_MemoryModel-1.png">
-<meta property="og:image" content="//zeroto.tech/assets/blogImg/JUtH_20121024_RuntimeDataAreas_2_MemoryModel-1.png">
 <meta property="og:updated_time" content="2018-06-06T07:25:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java内存模型看并发（一）">
-<meta name="twitter:description" content="Java内存模型所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？">
-<meta name="twitter:image" content="//zeroto.tech/assets/blogImg/JUtH_20121024_RuntimeDataAreas_1_MemoryModel-1.png">
+<meta name="twitter:title" content="你真的会写单例吗？">
   
     <link rel="alternative" href="/atom.xml" title="zeroto的博客" type="application/atom+xml">
   
@@ -174,7 +168,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Java内存模型看并发（一）
+      你真的会写单例吗？
     </h1>
   
 
@@ -193,23 +187,8 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><p>所有的Java开发人员可能会遇到这样的困惑？我该为堆内存设置多大空间呢？OutOfMemoryError的异常到底涉及到运行时数据的哪块区域？该怎么解决呢？</p>
-<a id="more"></a>
-<p>对象和类的数据存储在3个不同的内存区域：堆（heap space）、方法区（method area）、本地区（native area）。</p>
-<p>堆内存存放对象以及数组的数据，方法区存放类的信息（包括类名、方法、字段）、静态变量、编译器编译后的代码，本地区包含线程栈、本地方法栈等存放线程</p>
-<p><img src="/assets/blogImg/JUtH_20121024_RuntimeDataAreas_1_MemoryModel-1.png" alt="RuntimeDataAreas_1_MemoryModel-1"></p>
-<p>方法区有时被称为持久代（PermGen）。</p>
-<p><img src="/assets/blogImg/JUtH_20121024_RuntimeDataAreas_2_MemoryModel-1.png" alt="RuntimeDataAreas_2_MemoryModel-1"></p>
-<p>所有的对象在实例化后的整个运行周期内，都被存放在堆内存中。堆内存又被划分成不同的部分：伊甸区(Eden)，幸存者区域(Survivor Sapce)，老年代（Old Generation Space）。</p>
-<p>方法的执行都是伴随着线程的。原始类型的本地变量以及引用都存放在线程栈中。而引用关联的对象比如String，都存在在堆中。</p>
 <h2 id="你真的会写单例吗"><a href="#你真的会写单例吗" class="headerlink" title="你真的会写单例吗"></a>你真的会写单例吗</h2><pre><code class="java">/**   
- * 漫画：什么是单例模式？见：https://mp.weixin.qq.com/s/pAYYcvh4IRvLs5WYgiPe3A
- * https://blankj.com/2016/04/21/really-use-singleton/
- * @ClassName: Singleton.java
- * @Description: 单例模式实现方式&lt;br&gt;
- * 1、双重锁检测&lt;br&gt;
- * 2、静态内部类&lt;br&gt;
- * 3、饿汉式
+ * 参见: https://mp.weixin.qq.com/s/2UYXNzgTCEZdEfuGIbcczA
  *
  * @author: zhangjk
  * @date: 2018年3月7日 下午2:05:53 
